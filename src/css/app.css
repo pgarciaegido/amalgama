@@ -1,0 +1,6 @@
+@import './algo';
+
+body{
+	color: black;
+	display: flex;
+}

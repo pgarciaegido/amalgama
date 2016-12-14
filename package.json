@@ -1,0 +1,39 @@
+{
+  "name": "amalgama",
+  "version": "0.1.0",
+  "description": "debate website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "standard": {
+    "ignore": [
+      "/dist"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgarciaegido/amalgama.git"
+  },
+  "author": "Pablo Egido <pgarciaegido@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pgarciaegido/amalgama/issues"
+  },
+  "homepage": "https://github.com/pgarciaegido/amalgama#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "css-mqpacker": "^5.0.1",
+    "csswring": "^5.1.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-uglify": "^2.0.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.2.0",
+    "postcss-mixins": "^5.4.0",
+    "postcss-nested": "^1.0.0",
+    "standard": "^8.6.0",
+    "webpack": "^1.14.0",
+    "webpack-stream": "^3.2.0"
+  }
+}
