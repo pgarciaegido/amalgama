@@ -40,13 +40,14 @@ gulp.task('css', function () {
 
 // Tarea para vigilar los cambios
 gulp.task('watch', function () {
-  gulp.watch('./src/*.css', ['css']) // El array ejecuta la tarea CSS.
+  gulp.watch('src/css/**/*.css', ['css']) // El array ejecuta la tarea CSS.
+  gulp.watch('src/js/*.js', ['scripts'])
+  gulp.watch('src/img/*', ['images'])
   gulp.watch('./dist/*.html').on('change', browserSync.reload)
 })
 
 // Bundle js with webpack
 gulp.task('scripts', function () {
-  console.log('working...')
   return gulp.src('./src/js/app.js')
     .pipe(gulpWebpack({
       output: {filename: 'app.js'},
@@ -55,5 +56,10 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('./dist/js'))
 })
 
-gulp.task('default', ['watch', 'serve', 'css', 'scripts'])
+gulp.task('images', function () {
+  return gulp.src('./src/img/*')
+    .pipe(gulp.dest('./dist/img'))
+})
+
+gulp.task('default', ['watch', 'serve', 'css', 'scripts', 'images'])
 gulp.task('build', ['scripts', 'css'])

@@ -1,0 +1,38 @@
+.Navbar{
+	border-bottom: 1px solid $gray-soft;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	&-logo{
+		height:30px;
+		cursor: pointer;
+	}
+	&-menu{
+		margin: 0;
+		display: flex;
+		justify-content: space-between;
+		&-item{
+			height: 100%;
+			border-right: 1px solid $gray-soft;
+			display: flex;
+			align-items: center;
+			list-style-type: none;
+			padding: 0 11px;
+			a{
+				@mixin navbar;
+				text-decoration: none;
+				color: $black;
+			}
+		}
+		&-item:nth-child(5), &-item:nth-child(6) {
+			background-color: $gray-soft;
+		}
+		&-item:nth-child(6){
+			font-weight: 700;
+		}
+	}
+	&-search{
+		height: 30px;
+		cursor: pointer;
+	}
+}

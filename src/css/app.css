@@ -1,11 +1,16 @@
 @import './variables';
 @import './mixins';
 
+@import './partials/navbar';
+
+
+
 body{
-	color: black;
-	display: flex;
+	margin: 0;
 }
 
-h1{
-	@mixin tagsDesktop;
+.container{
+	margin: 0 auto;
+	max-width: 1000px;
 }
+

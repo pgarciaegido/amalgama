@@ -4,7 +4,8 @@
   "description": "debate website",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "start": "gulp default"
   },
   "standard": {
     "ignore": [

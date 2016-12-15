@@ -4,21 +4,20 @@
 *******TYPE
 */
 
-@define-mixin navbar weight {
-	/*font-family: fira;*/
+@define-mixin navbar {
+	font-family: 'Fira Sans', sans-serif;
 	font-size: 1em;
-	font-weight: weight;
 }
 
 @define-mixin tagsDesktop {
-	/*font-family: fira;*/
+	font-family: 'Fira Sans', sans-serif;
 	font-size: 1em;
 	font-style: italic;
 	color: $gray;
 }
 
 @define-mixin sectionDivider {
-	/*font-family: fira;*/
+	font-family: 'Fira Sans', sans-serif;
 	font-size: $h2;
 	font-weight: 700;
 	font-style: italic;
