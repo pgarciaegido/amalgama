@@ -12,6 +12,25 @@
       "/dist"
     ]
   },
+  "stylelint": {
+    "rules": {
+        "block-no-empty": null,
+        "color-no-invalid-hex": true,
+        "comment-empty-line-before": [ "always", {
+          "ignore": ["stylelint-commands", "between-comments"]
+        } ],
+        "declaration-colon-space-after": "always",
+        "indentation": ["tab", {
+          "except": ["value"]
+        }],
+        "max-empty-lines": 2,
+        "rule-nested-empty-line-before": [ "always", {
+          "except": ["first-nested"],
+          "ignore": ["after-comment"]
+        } ],
+        "unit-whitelist": ["em", "rem", "%", "s", "px"]
+      }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pgarciaegido/amalgama.git"
@@ -29,6 +48,7 @@
     "csswring": "^5.1.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.2.0",
+    "gulp-stylelint": "^3.6.0",
     "gulp-uglify": "^2.0.0",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.2.0",

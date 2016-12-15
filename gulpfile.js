@@ -4,8 +4,9 @@ var cssnext = require('postcss-cssnext')
 var cssnested = require('postcss-nested')
 var mixins = require('postcss-mixins')
 var atImport = require('postcss-import') // Para importar archivos
-var vars = require('postcss-simple-vars') //vars like in Sass
+var vars = require('postcss-simple-vars') // vars like in Sass
 var csswring = require('csswring') // Minify
+var styleLint = require('gulp-stylelint') // Linter
 var mqpacker = require('css-mqpacker') // Mete las querys en una sola
 var browserSync = require('browser-sync').create()
 var gulpWebpack = require('webpack-stream')
@@ -18,6 +19,16 @@ gulp.task('serve', function () {
       baseDir: './dist'
     }
   })
+})
+
+// CSS linter
+gulp.task('csslinter', function () {
+  return gulp.src('src/css/**/*.css')
+    .pipe(styleLint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }))
 })
 
 // Tarea para procesar CSS
