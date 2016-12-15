@@ -4,6 +4,7 @@ var cssnext = require('postcss-cssnext')
 var cssnested = require('postcss-nested')
 var mixins = require('postcss-mixins')
 var atImport = require('postcss-import') // Para importar archivos
+var vars = require('postcss-simple-vars') //vars like in Sass
 var csswring = require('csswring') // Minify
 var mqpacker = require('css-mqpacker') // Mete las querys en una sola
 var browserSync = require('browser-sync').create()
@@ -23,6 +24,7 @@ gulp.task('serve', function () {
 gulp.task('css', function () {
   var procesos = [
     atImport(),
+    vars(),
     mixins(),
     cssnested,
     cssnext({browsers: ['>5%', 'ie 8']}),

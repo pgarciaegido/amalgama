@@ -1,6 +1,11 @@
-@import './algo';
+@import './variables';
+@import './mixins';
 
 body{
 	color: black;
 	display: flex;
+}
+
+h1{
+	@mixin tagsDesktop;
 }
