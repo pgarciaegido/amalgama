@@ -14,13 +14,25 @@
 		display: flex;
 		justify-content: space-between;
 
+		@media (--tablet){
+			padding-left: 0;
+		}
+
+		@media (--tablet-small){
+			display: none;
+		}
+
 		&-item{
 			height: 100%;
 			border-right: 1px solid $gray-soft;
 			display: flex;
 			align-items: center;
 			list-style-type: none;
-			padding: 0 11px;
+			padding: 0 $margin5-desktop;
+			
+			@media (--tablet){
+				padding: 0 6px;
+			}
 
 			a{
 				@mixin navbar;
@@ -30,16 +42,40 @@
 		}
 
 		&-item:nth-child(5), &-item:nth-child(6) {
-			background-color: $gray-soft;
+			background-color: $blue;
+			border-right: none;
+			border-radius: 10px 0 0 10px;
+
+			a{
+				color: white;
+			}
 		}
+
+		&-item:nth-child(5){
+			margin-left: $margin5-desktop;
+			border-radius: 10px 0 0 10px;
+		}
+
 
 		&-item:nth-child(6){
 			font-weight: 700;
+			border-radius: 0 10px 10px 0;
+			border-left: 1px solid white;
 		}
 	}
 
-	&-search{
-		height: 30px;
-		cursor: pointer;
+	&-icon{
+		&-menu{
+			display: none;
+
+			@media (--tablet-small){
+				display: block;
+			}
+		}
+
+		&-search{
+			height: 30px;
+			cursor: pointer;
+		}
 	}
 }

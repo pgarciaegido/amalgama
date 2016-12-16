@@ -14,22 +14,46 @@
   },
   "stylelint": {
     "rules": {
-        "block-no-empty": null,
-        "color-no-invalid-hex": true,
-        "comment-empty-line-before": [ "always", {
-          "ignore": ["stylelint-commands", "between-comments"]
-        } ],
-        "declaration-colon-space-after": "always",
-        "indentation": ["tab", {
-          "except": ["value"]
-        }],
-        "max-empty-lines": 2,
-        "rule-nested-empty-line-before": [ "always", {
-          "except": ["first-nested"],
-          "ignore": ["after-comment"]
-        } ],
-        "unit-whitelist": ["em", "rem", "%", "s", "px"]
-      }
+      "block-no-empty": null,
+      "color-no-invalid-hex": true,
+      "comment-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "stylelint-commands",
+            "between-comments"
+          ]
+        }
+      ],
+      "declaration-colon-space-after": "always",
+      "indentation": [
+        "tab",
+        {
+          "except": [
+            "value"
+          ]
+        }
+      ],
+      "max-empty-lines": 2,
+      "rule-nested-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ]
+        }
+      ],
+      "unit-whitelist": [
+        "em",
+        "rem",
+        "%",
+        "s",
+        "px"
+      ]
+    }
   },
   "repository": {
     "type": "git",
@@ -50,6 +74,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-stylelint": "^3.6.0",
     "gulp-uglify": "^2.0.0",
+    "panini": "^1.3.1",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.2.0",
     "postcss-mixins": "^5.4.0",

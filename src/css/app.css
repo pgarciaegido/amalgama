@@ -1,15 +1,7 @@
 @import './variables';
 @import './mixins';
+@import './media';
 
+
+@import './partials/body';
 @import './partials/navbar';
-
-
-body{
-	margin: 0;
-}
-
-.container{
-	margin: 0 auto;
-	max-width: 1000px;
-}
-

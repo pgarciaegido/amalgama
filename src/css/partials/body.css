@@ -1,0 +1,13 @@
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	
+	@media (--tablet){
+		padding: 0 $margin3-mobile;
+	}
+}
+
+.container{
+	margin: 0 auto;
+	max-width: 1000px;
+}

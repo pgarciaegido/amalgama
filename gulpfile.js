@@ -11,6 +11,7 @@ var mqpacker = require('css-mqpacker') // Mete las querys en una sola
 var browserSync = require('browser-sync').create()
 var gulpWebpack = require('webpack-stream')
 var webpack = require('webpack') // brings compatibility with uglify
+var panini = require('panini')
 
 // Servidor de desarrollo
 gulp.task('serve', function () {
@@ -21,14 +22,17 @@ gulp.task('serve', function () {
   })
 })
 
-// CSS linter
-gulp.task('csslinter', function () {
-  return gulp.src('src/css/**/*.css')
-    .pipe(styleLint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
+// Panini HTML modules
+gulp.task('panini', function () {
+  gulp.src('src/pages/**/*.html')
+    .pipe(panini({
+      root: 'src/pages/',
+      layouts: 'src/layouts/',
+      partials: 'src/partials/',
+      helpers: 'helpers/',
+      data: 'data/'
     }))
+    .pipe(gulp.dest('./dist'))
 })
 
 // Tarea para procesar CSS
@@ -39,8 +43,8 @@ gulp.task('css', function () {
     mixins(),
     cssnested,
     cssnext({browsers: ['>5%', 'ie 8']}),
-    mqpacker,
-    csswring()
+    mqpacker
+    // csswring()
   ]
 
   return gulp.src('./src/css/app.css')
@@ -51,6 +55,7 @@ gulp.task('css', function () {
 
 // Tarea para vigilar los cambios
 gulp.task('watch', function () {
+  gulp.watch('src/{layouts,partials,pages}/**/*', ['panini'])
   gulp.watch('src/css/**/*.css', ['css']) // El array ejecuta la tarea CSS.
   gulp.watch('src/js/*.js', ['scripts'])
   gulp.watch('src/img/*', ['images'])
@@ -72,5 +77,15 @@ gulp.task('images', function () {
     .pipe(gulp.dest('./dist/img'))
 })
 
-gulp.task('default', ['watch', 'serve', 'css', 'scripts', 'images'])
+// CSS linter
+gulp.task('csslinter', function () {
+  return gulp.src('src/css/**/*.css')
+    .pipe(styleLint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }))
+})
+
+gulp.task('default', ['watch', 'serve', 'css', 'scripts', 'images', 'panini'])
 gulp.task('build', ['scripts', 'css'])
