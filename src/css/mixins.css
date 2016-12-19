@@ -28,3 +28,13 @@
 ***********LAYOUT
 */
 
+@define-mixin bigButton {
+	padding: $margin4-desktop 50px;
+	background-color: $blue;
+	border-radius: $radius;
+	color: white;
+	font-size: $h3;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
+}

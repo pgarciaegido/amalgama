@@ -1,9 +1,26 @@
 .Latest{
+	margin-top: $margin1-desktop;
+	padding-bottom: $margin3-desktop;
+	border-bottom: 5px solid $gray-soft;
+	margin-bottom: $margin2-desktop;
+
 	&-title{
 		font-size: $title;
 		line-height: 1em;
+		margin-bottom: $margin4-desktop;
 	}
+
 	&-entradilla{
 		font-size: $h4;
+		line-height: $h4-lh;
+		margin-top: $margin3-desktop;
+		margin-bottom: $margin2-desktop;
+	}
+
+	&-button{
+		@mixin bigButton;
+		display: block;
+		margin: $margin3-desktop auto 0 auto;
+		text-align: center;
 	}
 }

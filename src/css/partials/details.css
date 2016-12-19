@@ -1,0 +1,30 @@
+.Details{
+	display: flex;
+	color: $gray;
+
+	&-date{
+		margin-right: $margin5-desktop;
+
+		&-icon{
+			margin-right: $margin5-desktop;
+			width: 15px;
+			fill: $gray;
+		}
+
+		&-text{
+			@mixin tagsDesktop
+		}
+	}
+
+	&-tags{
+		
+		&-icon{
+			margin-right: $margin5-desktop;
+			width: 15px;
+		}
+
+		&-text{
+			@mixin tagsDesktop;
+		}
+	}
+}

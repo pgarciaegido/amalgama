@@ -18,6 +18,8 @@ $margin2-mobile: 30px;
 $margin3-mobile: 15px;
 
 
+$radius: 10px;
+
 /*
 **************COLORS
 */
@@ -45,7 +47,7 @@ $h2-lh: 2.5em;
 $h3: 1.5em;
 
 $h4: 1.15em; /*Entradillas*/
-$h4-lh: 1.75em;
+$h4-lh: 1.4em;
 
 $p: 1em;
 $p-lh: 1.5em;
