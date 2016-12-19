@@ -12,6 +12,7 @@ var browserSync = require('browser-sync').create()
 var gulpWebpack = require('webpack-stream')
 var webpack = require('webpack') // brings compatibility with uglify
 var panini = require('panini')
+var plumber = require('gulp-plumber') //on error it stops from crashing
 
 // Servidor de desarrollo
 gulp.task('serve', function () {
@@ -48,6 +49,7 @@ gulp.task('css', function () {
   ]
 
   return gulp.src('./src/css/app.css')
+    .pipe(plumber())
     .pipe(postcss(procesos))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())

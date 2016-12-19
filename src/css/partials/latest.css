@@ -1,0 +1,9 @@
+.Latest{
+	&-title{
+		font-size: $title;
+		line-height: 1em;
+	}
+	&-entradilla{
+		font-size: $h4;
+	}
+}
