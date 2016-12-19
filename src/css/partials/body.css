@@ -3,7 +3,7 @@ body{
 	font-family: 'Roboto', sans-serif;
 	color: $black;
 	
-	@media (--tablet){
+	@media (--desktop){
 		padding: 0 $margin3-mobile;
 	}
 }

@@ -1,0 +1,8 @@
+#aside{
+	width: 25%;
+	padding-top: $margin1-desktop;
+
+	@media (max-width: 750px){
+		display: none;
+	}
+}

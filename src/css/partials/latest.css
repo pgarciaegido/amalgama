@@ -5,9 +5,14 @@
 	margin-bottom: $margin2-desktop;
 
 	&-title{
+		margin-top: 0;
 		font-size: $title;
 		line-height: 1em;
 		margin-bottom: $margin4-desktop;
+
+		@media (--tablet-small){
+			font-size: $h1-mobile;
+		}
 	}
 
 	&-entradilla{

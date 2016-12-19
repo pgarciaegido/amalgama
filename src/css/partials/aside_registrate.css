@@ -1,0 +1,56 @@
+.Aside_registrate{
+	border-top: 11px solid $gray;
+	padding-top: $margin4-desktop;
+	padding-bottom: $margin4-desktop;
+	border-bottom: 3px solid $gray-soft;
+
+	&-title{
+		@mixin sectionDivider;
+		margin: 0;
+		margin-bottom: $margin5-desktop;
+	}
+
+	&-subtitle{
+		margin: 0;
+		margin-bottom: $margin4-desktop;
+	}
+
+	&-form{
+		display: block;
+		padding-bottom: $margin4-desktop;
+		border-bottom: 1px solid $gray-soft;
+
+		label{
+			margin-bottom: $margin4-desktop;
+
+			input{
+				display: block;
+				padding: 6px;
+				width: 100%;
+				border-radius: $radius;
+				background-color: $gray-soft;
+				border: none;
+				margin-top: $margin5-desktop;
+				margin-bottom: $margin4-desktop;
+			}
+		}
+
+		&-button{
+			@mixin normalButton;
+			display: block;
+			margin: 0 auto;
+		}	
+	}
+
+	&-facebook{
+		@mixin socialMediaButton;
+		background-color: #3b5998;
+		margin-top: $margin4-desktop;
+		margin-bottom: $margin3-desktop;
+	}
+
+	&-google{
+		@mixin socialMediaButton;
+		background-color: #f44336;
+	}
+}

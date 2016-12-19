@@ -1,0 +1,8 @@
+#main{
+	width: 75%;
+	padding-right: $margin4-desktop;
+
+	@media (max-width: 750px){
+		width: 100%;
+	}
+}

@@ -38,3 +38,21 @@
 	border: none;
 	cursor: pointer;
 }
+
+@define-mixin normalButton {
+	padding: $margin5-desktop 30px;
+	background-color: $blue;
+	border-radius: $radius;
+	color: white;
+	font-size: $p;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
+}
+
+@define-mixin socialMediaButton {
+	@mixin normalButton;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+}

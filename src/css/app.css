@@ -2,9 +2,16 @@
 @import './mixins';
 @import './media';
 
-
 @import './partials/body';
 @import './partials/navbar';
+
+@import './partials/index';
+@import './partials/main';
+@import './partials/aside';
+
 @import './partials/latest';
 @import './partials/details';
 @import './partials/votes_bar';
+
+
+@import './partials/aside_registrate'
