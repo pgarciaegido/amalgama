@@ -5,6 +5,10 @@
 		position: relative;
 		margin-bottom: $margin4-desktop;
 
+		@media(--mobile){
+			margin-bottom: $margin2-mobile
+		}
+
 		&-red{
 			width: 100%;
 			height: 20px;

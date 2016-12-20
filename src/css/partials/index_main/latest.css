@@ -4,6 +4,12 @@
 	border-bottom: 5px solid $gray-soft;
 	margin-bottom: $margin2-desktop;
 
+	@media (--mobile){
+		margin-top: $margin1-mobile;
+		padding-bottom: $margin2-mobile;
+		margin-bottom: $margin2-mobile;
+	}
+
 	&-title{
 		margin-top: 0;
 		font-size: $title;
@@ -24,6 +30,11 @@
 		line-height: $h4-lh;
 		margin-top: $margin3-desktop;
 		margin-bottom: $margin2-desktop;
+
+		@media (--mobile){
+			margin-top: $margin2-mobile;
+			margin-bottom: $margin2-mobile;
+		}
 	}
 
 	&-button{
@@ -34,6 +45,10 @@
 
 		@media (--desktop){
 			padding: $margin4-desktop 30px;
+		}
+
+		@media (--mobile){
+			margin: $margin2-mobile auto 0 auto;
 		}
 	}
 }

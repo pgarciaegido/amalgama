@@ -2,12 +2,24 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding-top: $margin2-desktop;
+	
+	@media (--tablet){
+		display: block;
+	}
+
+	@media (--mobile){
+		padding-top: $margin1-mobile;
+	}
 
 	&-article{
 		width: 47%;
 		padding-bottom: $margin3-desktop;
 		box-shadow: 0px 24px 3px -24px #ccc;
 		margin-bottom: $margin2-desktop;
+
+		@media (--tablet){
+			width: 100%;
+		}
 
 		&-title{
 			margin: 0;
@@ -21,15 +33,29 @@
 
 		&-button{
 			@mixin normalButton;
+
+			@media(--tablet){
+				display: block;
+				margin: 0 auto;
+			}
 		}
 	}
 
 	.par{
 		padding-left: 15px;
+
+		@media (--tablet){
+			padding-left: 0;
+		}
 	}
 
 	.impar{
 		padding-right: 15px;
 		border-right: 1px solid $gray-soft;
+
+		@media (--tablet){
+			padding-right: 0;
+			border: none;
+		}
 	}
 }

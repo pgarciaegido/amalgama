@@ -11,10 +11,17 @@
 		@media (--desktop){
 			padding: $margin4-desktop 30px;
 		}
+		@media (--mobile-small){
+			padding: $margin3-mobile 20px;
+		}
 	}
 
 	&-participa{
 		font-size: $h2;
+
+		@media (--mobile){
+			display: none;
+		}
 	}
 
 	&-registrate{
@@ -22,6 +29,10 @@
 
 		@media (--desktop){
 			padding: $margin4-desktop 30px;
+		}
+
+		@media (--mobile-small){
+			padding: $margin3-mobile 20px;
 		}
 	}
 }

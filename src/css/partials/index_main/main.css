@@ -1,6 +1,6 @@
 #main{
 	width: 75%;
-	padding-right: $margin4-desktop;
+	padding-right: $margin3-desktop;
 
 	@media (--tablet){
 		width: 100%;
