@@ -1,5 +1,4 @@
-var telarero = require('./telarero.js')
+require('jquery')
+require('./navbar')
 
-var a = 'aaaaa'
 
-telarero(tusmuertos);

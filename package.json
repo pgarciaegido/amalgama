@@ -83,5 +83,8 @@
     "standard": "^8.6.0",
     "webpack": "^1.14.0",
     "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
   }
 }

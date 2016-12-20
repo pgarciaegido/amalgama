@@ -70,7 +70,7 @@ gulp.task('scripts', function () {
     .pipe(gulpWebpack({
       output: {filename: 'app.js'},
       plugins: [new webpack.optimize.UglifyJsPlugin()]
-    }, webpack)) // Minifies
+     }, webpack)) // Minifies
     .pipe(gulp.dest('./dist/js'))
 })
 

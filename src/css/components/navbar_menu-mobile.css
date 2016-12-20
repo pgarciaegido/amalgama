@@ -1,23 +1,26 @@
 #bg{
 	height: 100vh;
 	width: 100vw;
+	left: 0;
+	right:0;
 	display: none;
 	position: absolute;
 	background-color: black;
 	opacity: 0.8;
 	z-index: 2;
-
 }
 
 .Navbar_menu{
-	display: none;
+	display: block;
 	position: absolute;
 	padding: 10px;
 	background: $gray;
-	left: 0;
+	left: -999px;
 	height: 100vh;
 	z-index: 4;
 	width: 50%;
+	transition: all .3s cubic-bezier(0, 0, 0, 1.01);
+
 
 	&-menu{
 		padding: 0;
@@ -45,4 +48,9 @@
 			}
 		}
 	}
+}
+
+.active{
+	display: block;
+	left: 0px;
 }
