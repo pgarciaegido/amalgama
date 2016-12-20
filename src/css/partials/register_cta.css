@@ -1,0 +1,27 @@
+.Register_cta{
+	display: flex;
+	justify-content: space-between;
+	padding: $margin5-desktop;
+	background-color: $gray-soft;
+	border-radius: 5px;
+
+	&-accede{
+		@mixin bigButton;
+		
+		@media (--desktop){
+			padding: $margin4-desktop 30px;
+		}
+	}
+
+	&-participa{
+		font-size: $h2;
+	}
+
+	&-registrate{
+		@mixin bigButton;
+
+		@media (--desktop){
+			padding: $margin4-desktop 30px;
+		}
+	}
+}

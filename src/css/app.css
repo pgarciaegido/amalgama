@@ -12,6 +12,10 @@
 @import './partials/latest';
 @import './partials/details';
 @import './partials/votes_bar';
+@import './partials/register_cta';
+@import './partials/feed';
 
 
-@import './partials/aside_registrate'
+@import './partials/aside_registrate';
+@import './partials/aside_temas';
+@import './partials/aside_subscribe';

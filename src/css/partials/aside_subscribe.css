@@ -1,0 +1,34 @@
+.Aside_subscribe{
+	@mixin asideContainer;
+
+	&-title{
+		@mixin sectionDivider;
+		margin: 0;
+		margin-bottom: $margin5-desktop;
+	}
+
+	&-subtitle{
+		line-height: 1.33em;
+	}
+
+	&-form{
+		display: block;
+		padding-bottom: $margin4-desktop;
+
+		&-label{
+			margin-bottom: $margin4-desktop;	
+
+			input{
+				@mixin formInput;
+				margin-top: $margin5-desktop;
+				margin-bottom: $margin4-desktop;
+			}
+		}
+
+		&-button{
+			@mixin normalButton;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}

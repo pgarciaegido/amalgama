@@ -1,8 +1,5 @@
 .Aside_registrate{
-	border-top: 11px solid $gray;
-	padding-top: $margin4-desktop;
-	padding-bottom: $margin4-desktop;
-	border-bottom: 3px solid $gray-soft;
+	@mixin asideContainer
 
 	&-title{
 		@mixin sectionDivider;
@@ -13,6 +10,7 @@
 	&-subtitle{
 		margin: 0;
 		margin-bottom: $margin4-desktop;
+		line-height: 1.33em;
 	}
 
 	&-form{
@@ -24,12 +22,7 @@
 			margin-bottom: $margin4-desktop;
 
 			input{
-				display: block;
-				padding: 6px;
-				width: 100%;
-				border-radius: $radius;
-				background-color: $gray-soft;
-				border: none;
+				@mixin formInput;
 				margin-top: $margin5-desktop;
 				margin-bottom: $margin4-desktop;
 			}
@@ -47,10 +40,18 @@
 		background-color: #3b5998;
 		margin-top: $margin4-desktop;
 		margin-bottom: $margin3-desktop;
+
+		@media (--tablet){
+			font-size: $p-tablet;
+		}
 	}
 
 	&-google{
 		@mixin socialMediaButton;
 		background-color: #f44336;
+
+		@media (--tablet){
+			font-size: $p-tablet;
+		}
 	}
 }

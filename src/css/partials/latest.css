@@ -27,5 +27,9 @@
 		display: block;
 		margin: $margin3-desktop auto 0 auto;
 		text-align: center;
+
+		@media (--desktop){
+			padding: $margin4-desktop 30px;
+		}
 	}
 }

@@ -1,0 +1,35 @@
+.Aside_temas{
+	@mixin asideContainer;
+
+	&-title{
+		@mixin sectionDivider;
+		margin: 0;
+		margin-bottom: $margin5-desktop;
+	}
+
+	&-tema{
+		padding: $margin5-desktop $margin5-desktop $margin5-desktop $margin4-desktop ;
+		background-color: $gray-soft;
+
+		&-title{
+			font-weight: 700;
+			
+			@media (--tablet){
+				font-size: $p-tablet;
+			}
+		}
+
+		&-info{
+			display: flex;
+			justify-content: space-between;
+
+			&-votes{
+				color: $gray;
+			}
+
+			&-balance{
+				color: $red;
+			}
+		}
+	}
+}

@@ -1,6 +1,10 @@
 .Details{
 	display: flex;
 	color: $gray;
+	
+	@media (--desktop){
+		font-size: $p-tablet;
+	}
 
 	&-date{
 		margin-right: $margin5-desktop;
@@ -9,6 +13,10 @@
 			margin-right: $margin5-desktop;
 			width: 15px;
 			fill: $gray;
+
+			@media (--desktop){
+				width: 12px;
+			}
 		}
 
 		&-text{
@@ -21,6 +29,10 @@
 		&-icon{
 			margin-right: $margin5-desktop;
 			width: 15px;
+
+			@media (--desktop){
+				width: 12px;
+			}
 		}
 
 		&-text{

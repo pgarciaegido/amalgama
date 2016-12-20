@@ -28,9 +28,19 @@
 ***********LAYOUT
 */
 
+
+@define-mixin blueButton {
+	
+	background: #5ab3fc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #5ab3fc 1%, #5b86ff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #5ab3fc 1%,#5b86ff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #5ab3fc 1%,#5b86ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ab3fc', endColorstr='#5b86ff',GradientType=0 ); /* IE6-9 */
+}
+
 @define-mixin bigButton {
 	padding: $margin4-desktop 50px;
-	background-color: $blue;
+	@mixin blueButton;
 	border-radius: $radius;
 	color: white;
 	font-size: $h3;
@@ -41,7 +51,7 @@
 
 @define-mixin normalButton {
 	padding: $margin5-desktop 30px;
-	background-color: $blue;
+	@mixin blueButton;
 	border-radius: $radius;
 	color: white;
 	font-size: $p;
@@ -51,8 +61,49 @@
 }
 
 @define-mixin socialMediaButton {
-	@mixin normalButton;
+	padding: $margin5-desktop 30px;
+	border-radius: $radius;
+	color: white;
+	font-size: $p;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
 	padding-left: 0;
 	padding-right: 0;
 	width: 100%;
+}
+
+@define-mixin formInput {
+	display: block;
+	padding: 6px;
+	width: 100%;
+	border-radius: $radius;
+	background-color: $gray-soft;
+	border: none;
+}
+
+@define-mixin asideContainer {
+	border-top: 11px solid $gray;
+	padding-top: $margin4-desktop;
+	padding-bottom: $margin4-desktop;
+	border-bottom: 3px solid $gray-soft;
+	margin-bottom: $margin2-desktop;
+}
+
+@define-mixin voteBarRed{
+
+	background: #e05357; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e05357 0%, #e0141b 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #e05357 0%,#e0141b 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #e05357 0%,#e0141b 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05357', endColorstr='#e0141b',GradientType=0 ); /* IE6-9 */
+}
+
+@define-mixin voteBarGreen{
+
+	background: #86cc86; /* Old browsers */
+	background: -moz-linear-gradient(top,  #86cc86 0%, #3dcc3d 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #86cc86 0%,#3dcc3d 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #86cc86 0%,#3dcc3d 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86cc86', endColorstr='#3dcc3d',GradientType=0 ); /* IE6-9 */
 }
