@@ -12,7 +12,7 @@ var browserSync = require('browser-sync').create()
 var gulpWebpack = require('webpack-stream')
 var webpack = require('webpack') // brings compatibility with uglify
 var panini = require('panini')
-var plumber = require('gulp-plumber') //on error it stops from crashing
+var plumber = require('gulp-plumber') // on error it stops from crashing
 
 // Servidor de desarrollo
 gulp.task('serve', function () {
@@ -44,8 +44,8 @@ gulp.task('css', function () {
     mixins(),
     cssnested,
     cssnext({browsers: ['>5%', 'ie 8']}),
-    mqpacker
-    // csswring()
+    mqpacker,
+    csswring()
   ]
 
   return gulp.src('./src/css/app.css')
@@ -70,7 +70,7 @@ gulp.task('scripts', function () {
     .pipe(gulpWebpack({
       output: {filename: 'app.js'},
       plugins: [new webpack.optimize.UglifyJsPlugin()]
-     }, webpack)) // Minifies
+    }, webpack)) // Minifies
     .pipe(gulp.dest('./dist/js'))
 })
 

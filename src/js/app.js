@@ -1,4 +1,2 @@
 require('jquery')
 require('./navbar')
-
-

@@ -2,7 +2,7 @@
 	height: 100vh;
 	width: 100vw;
 	left: 0;
-	right:0;
+	right: 0;
 	display: none;
 	position: absolute;
 	background-color: black;
@@ -24,6 +24,7 @@
 
 	&-menu{
 		padding: 0;
+
 		&-item{
 			height: 100%;
 			display: flex;
@@ -42,6 +43,7 @@
 		&-item:nth-child(5), &-item:nth-child(6){
 			background-color: white;
 			border-radius: $radius;
+			
 			a{
 				color: $blue;
 				font-weight: 700;
