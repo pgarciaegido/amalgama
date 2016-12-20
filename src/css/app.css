@@ -1,21 +1,31 @@
+/*Variables, mixings, media queries*/
+
 @import './variables';
 @import './mixins';
 @import './media';
 
+/*Layout*/
+
 @import './partials/body';
-@import './partials/navbar';
 
-@import './partials/index';
-@import './partials/main';
-@import './partials/aside';
+/*Components*/
 
-@import './partials/latest';
-@import './partials/details';
-@import './partials/votes_bar';
-@import './partials/register_cta';
-@import './partials/feed';
+@import './components/navbar';
+@import './components/details';
+@import './components/votes_bar';
+@import './components/register_cta';
+
+/*Partials*/
+
+/*Index*/
+@import './partials/index_main/index';
+@import './partials/index_main/main';
+@import './partials/index_main/latest';
+@import './partials/index_main/feed';
 
 
-@import './partials/aside_registrate';
-@import './partials/aside_temas';
-@import './partials/aside_subscribe';
+/*Aside*/
+@import './partials/aside/aside';
+@import './partials/aside/aside_registrate';
+@import './partials/aside/aside_temas';
+@import './partials/aside/aside_subscribe';

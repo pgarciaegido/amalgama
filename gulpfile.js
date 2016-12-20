@@ -27,9 +27,9 @@ gulp.task('serve', function () {
 gulp.task('panini', function () {
   gulp.src('src/pages/**/*.html')
     .pipe(panini({
-      root: 'src/pages/',
-      layouts: 'src/layouts/',
-      partials: 'src/partials/',
+      root: 'src/html/pages/',
+      layouts: 'src/html/layouts/',
+      partials: 'src/html/partials/',
       helpers: 'helpers/',
       data: 'data/'
     }))

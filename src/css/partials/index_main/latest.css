@@ -9,6 +9,10 @@
 		font-size: $title;
 		line-height: 1em;
 		margin-bottom: $margin4-desktop;
+		
+		@media (--tablet){
+			font-size: $h1-tablet;
+		}
 
 		@media (--tablet-small){
 			font-size: $h1-mobile;
