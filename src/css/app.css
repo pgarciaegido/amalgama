@@ -11,6 +11,7 @@
 /*Components*/
 
 @import './components/navbar';
+@import './components/navbar_menu-mobile';
 @import './components/details';
 @import './components/votes_bar';
 @import './components/register_cta';

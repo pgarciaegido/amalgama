@@ -41,6 +41,15 @@
 			}
 		}
 
+		&-item:nth-child(-n+4):hover{
+			padding-bottom: 6px;
+			border-bottom: blue solid 4px;
+
+			a{
+				color: $blue;
+			}
+		}
+
 		&-item:nth-child(5), &-item:nth-child(6) {
 			@mixin blueButton;
 			border-right: none;
@@ -55,7 +64,6 @@
 			margin-left: $margin5-desktop;
 			border-radius: 10px 0 0 10px;
 		}
-
 
 		&-item:nth-child(6){
 			font-weight: 700;

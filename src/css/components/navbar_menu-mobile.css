@@ -1,0 +1,48 @@
+#bg{
+	height: 100vh;
+	width: 100vw;
+	display: none;
+	position: absolute;
+	background-color: black;
+	opacity: 0.8;
+	z-index: 2;
+
+}
+
+.Navbar_menu{
+	display: none;
+	position: absolute;
+	padding: 10px;
+	background: $gray;
+	left: 0;
+	height: 100vh;
+	z-index: 4;
+	width: 50%;
+
+	&-menu{
+		padding: 0;
+		&-item{
+			height: 100%;
+			display: flex;
+			align-items: center;
+			list-style-type: none;
+			padding: 15px;
+			margin: 15px 0;
+
+			a{
+				@mixin navbar;
+				text-decoration: none;
+				color: white;
+			}
+		}
+
+		&-item:nth-child(5), &-item:nth-child(6){
+			background-color: white;
+			border-radius: $radius;
+			a{
+				color: $blue;
+				font-weight: 700;
+			}
+		}
+	}
+}
