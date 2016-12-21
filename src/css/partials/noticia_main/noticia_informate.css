@@ -3,5 +3,23 @@
 	&-encabezado{
 		@mixin sectionDivider;
 		margin: 0;
+		margin-bottom: $margin4-desktop;
+	}
+
+	&-media{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		a{
+
+			div{
+				width: 150px;
+				height: 60px;
+				background-color: white;
+				border-radius: $radius;
+				border: 2px solid $gray;
+				margin-bottom: $margin3-desktop;
+			}
+		}
 	}
 }
