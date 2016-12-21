@@ -1,0 +1,52 @@
+.Noticia_comentarios_list{
+	&-order{
+		display: flex;
+		margin-bottom: $margin4-desktop;
+
+		&-votes{
+			padding: 15px;
+
+			p{
+				margin: 0;
+			}
+		}
+
+		&-new{
+			padding: 15px;
+			background-color: $blue;
+			border-radius: $radius;
+
+			p{
+				margin: 0;
+				color: white;
+			}
+		}
+	}
+
+	&-comments{
+		height: 500px;
+		overflow-y: scroll;
+		background-color: $gray-soft;
+		margin-bottom: $margin5-desktop;
+	}
+
+	&-buttons{
+		display: flex;
+		justify-content: space-between;
+
+		&-agree{
+			@mixin bigButton;
+			@mixin voteBarGreen;
+			width: 47%;
+			padding: 10px;
+			font-size: 1em;
+		}
+
+		&-comment{
+			@mixin bigButton;
+			width: 47%;
+			padding: 10px;
+			font-size: 1em;
+		}
+	}
+}

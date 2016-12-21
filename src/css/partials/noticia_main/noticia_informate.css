@@ -1,4 +1,5 @@
 .Noticia_informate{
+	padding-bottom: $margin2-desktop;
 	&-encabezado{
 		@mixin sectionDivider;
 		margin: 0;

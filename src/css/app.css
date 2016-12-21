@@ -20,15 +20,17 @@
 
 /*Index*/
 @import './partials/index_main/index';
-@import './partials/index_main/main';
-@import './partials/index_main/latest';
-@import './partials/index_main/feed';
+@import './partials/index_main/index_main';
+@import './partials/index_main/index_latest';
+@import './partials/index_main/index_feed';
 
 /*Noticia*/
 @import './partials/noticia_main/noticia';
 @import './partials/noticia_main/noticia_main';
 @import './partials/noticia_main/noticia_cuerpo';
 @import './partials/noticia_main/noticia_informate';
+@import './partials/noticia_main/noticia_comentarios';
+@import './partials/noticia_main/noticia_comentarios_list';
 
 /*Aside*/
 @import './partials/aside/aside';

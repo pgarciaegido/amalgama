@@ -1,0 +1,46 @@
+.Noticia_comentarios{
+	padding-top: $margin2-desktop;
+
+	&-encabezado{
+		@mixin sectionDivider;
+	}
+
+	&-comentarios{
+		display: flex;
+		justify-content: space-between;
+
+		&-up{
+			width: 50%;
+			padding-right: 30px;
+			&-header{	
+				display: flex;
+				justify-content: space-between;
+
+				&-title{
+					font-weight: 700;
+				}
+
+				&-votes{
+					color: $green;
+				}
+			}
+		}
+
+		&-down{
+			width: 50%;
+			padding-left: 30px;
+			&-header{
+				display: flex;
+				justify-content: space-between;
+
+				&-title{
+					font-weight: 700;
+				}
+
+				&-votes{
+					color: $red;
+				}
+			}
+		}
+	}
+}
