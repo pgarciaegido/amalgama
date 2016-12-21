@@ -75,21 +75,45 @@
 	&-icon{
 		&-menu{
 			display: none;
+			@mixin noTouchHightlight;
 
 			@media (--tablet-small){
 				display: block;
 			}
 		}
 
-		&-search{
-			height: 30px;
-			cursor: pointer;
-		}
-
 		&-close{
 			display: none;
 			height: 25px;
 			padding-top: 3px;
+			@mixin noTouchHightlight;
 		}
 	}
+
+	&-search{
+		display: flex;
+		position: relative;
+/*		width: 200px;*/
+
+		&-input{
+			@mixin formInput;
+			position: absolute;
+			top: 50px;
+			left: 9999px;
+			width: 200px;
+			transition: all .3s ease;
+		}
+
+		&-icon{
+			height: 30px;
+			cursor: pointer;
+			margin-left: 10px;
+			@mixin noTouchHightlight;
+		}
+	}
+}
+
+.search-active{
+	left: -150px;
+	transition: all .3s ease;
 }

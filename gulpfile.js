@@ -68,8 +68,8 @@ gulp.task('watch', function () {
 gulp.task('scripts', function () {
   return gulp.src('./src/js/app.js')
     .pipe(gulpWebpack({
-      output: {filename: 'app.js'},
-      plugins: [new webpack.optimize.UglifyJsPlugin()]
+      output: {filename: 'app.js'}
+      // plugins: [new webpack.optimize.UglifyJsPlugin()]
     }, webpack)) // Minifies
     .pipe(gulp.dest('./dist/js'))
 })
