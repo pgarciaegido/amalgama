@@ -1,0 +1,6 @@
+.Noticia_informate{
+	&-encabezado{
+		@mixin sectionDivider;
+		margin: 0;
+	}
+}

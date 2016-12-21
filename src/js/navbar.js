@@ -7,7 +7,6 @@ var $input = $('.Navbar-search-input')
 var $menuMob = $('.Navbar_menu')
 var $bg = $('#bg')
 
-
 // -------OPEN MENU
 
 function openMenu () {
@@ -32,10 +31,10 @@ function closeMenu () {
 var searchOpened = false
 
 function searchInput () {
-  if (!searchOpened){
+  if (!searchOpened) {
     $input.addClass('search-active')
     searchOpened = true
-  } else{
+  } else {
     $input.removeClass('search-active')
     searchOpened = false
   }
