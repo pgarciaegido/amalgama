@@ -24,6 +24,11 @@
 @import './partials/index_main/latest';
 @import './partials/index_main/feed';
 
+/*Noticia*/
+
+@import './partials/noticia_main/noticia';
+@import './partials/noticia_main/noticia_main';
+@import './partials/noticia_main/noticia_cuerpo';
 
 /*Aside*/
 @import './partials/aside/aside';

@@ -60,6 +60,11 @@
 	cursor: pointer;
 }
 
+@define-mixin hoverButton {
+	gradient: none;
+	background: $blue;
+}
+
 @define-mixin socialMediaButton {
 	padding: $margin5-desktop 30px;
 	border-radius: $radius;

@@ -16,6 +16,10 @@
 		}
 	}
 
+	&-accede:hover{
+		@mixin hoverButton;
+	}
+
 	&-participa{
 		font-size: $h2;
 
@@ -34,5 +38,9 @@
 		@media (--mobile-small){
 			padding: $margin3-mobile 20px;
 		}
+	}
+
+	&-registrate:hover{
+		@mixin hoverButton;
 	}
 }

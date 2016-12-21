@@ -1,7 +1,7 @@
 .Latest{
 	margin-top: $margin1-desktop;
 	padding-bottom: $margin3-desktop;
-	border-bottom: 5px solid $gray-soft;
+	border-bottom: $border-section;
 	margin-bottom: $margin2-desktop;
 
 	@media (--mobile){
@@ -50,5 +50,9 @@
 		@media (--mobile){
 			margin: $margin2-mobile auto 0 auto;
 		}
+	}
+
+	&-button:hover{
+		@mixin hoverButton;
 	}
 }

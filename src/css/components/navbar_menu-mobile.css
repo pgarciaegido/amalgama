@@ -21,7 +21,6 @@
 	width: 50%;
 	transition: all .3s cubic-bezier(0, 0, 0, 1.01);
 
-
 	&-menu{
 		padding: 0;
 
@@ -43,7 +42,7 @@
 		&-item:nth-child(5), &-item:nth-child(6){
 			background-color: white;
 			border-radius: $radius;
-			
+
 			a{
 				color: $blue;
 				font-weight: 700;

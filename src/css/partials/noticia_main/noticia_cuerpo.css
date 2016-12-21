@@ -1,0 +1,37 @@
+.Noticia_cuerpo{
+	padding-bottom: $margin2-desktop;
+	border-bottom: $border-section;
+	margin-bottom: $margin3-desktop;
+	&-breadcrumb{
+		@mixin sectionDivider;
+		margin-top: $margin3-desktop;
+		margin-bottom: $margin4-desktop;
+	}
+
+	&-title{
+		margin-top: 0;
+		font-size: $title;
+		line-height: 1em;
+		margin-bottom: $margin4-desktop;
+
+		@media (--tablet){
+			font-size: $h1-tablet;
+		}
+
+		@media (--tablet-small){
+			font-size: $h1-mobile;
+		}
+	}
+
+	&-entradilla{
+		font-size: $h4;
+		line-height: $h4-lh;
+		margin-top: $margin3-desktop;
+		margin-bottom: $margin2-desktop;
+
+		@media (--mobile){
+			margin-top: $margin2-mobile;
+			margin-bottom: $margin2-mobile;
+		}
+	}
+}

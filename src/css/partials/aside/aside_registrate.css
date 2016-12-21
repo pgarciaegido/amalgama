@@ -1,6 +1,6 @@
 .Aside_registrate{
-	@mixin asideContainer
-
+	@mixin asideContainer;
+	
 	&-title{
 		@mixin sectionDivider;
 		margin: 0;
@@ -32,6 +32,10 @@
 			@mixin normalButton;
 			display: block;
 			margin: 0 auto;
+		}
+
+		&-button:hover{
+			@mixin hoverButton;
 		}	
 	}
 
@@ -46,6 +50,10 @@
 		}
 	}
 
+	&-facebook:hover{
+		opacity: .9;
+	}
+
 	&-google{
 		@mixin socialMediaButton;
 		background-color: #f44336;
@@ -53,5 +61,9 @@
 		@media (--tablet){
 			font-size: $p-tablet;
 		}
+	}
+
+	&-google:hover{
+		opacity: .9;
 	}
 }

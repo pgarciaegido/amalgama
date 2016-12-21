@@ -1,0 +1,9 @@
+#noticia_main{
+	width: 75%;
+	padding-right: $margin3-desktop;
+
+	@media (--tablet){
+		width: 100%;
+		padding-right: 0;
+	}
+}

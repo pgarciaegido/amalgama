@@ -39,6 +39,10 @@
 				margin: 0 auto;
 			}
 		}
+
+		&-button:hover{
+			@mixin hoverButton;
+		}
 	}
 
 	.par{
