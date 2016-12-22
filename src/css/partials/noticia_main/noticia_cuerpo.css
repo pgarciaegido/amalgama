@@ -2,6 +2,7 @@
 	padding-bottom: $margin2-desktop;
 	border-bottom: $border-section;
 	margin-bottom: $margin3-desktop;
+
 	&-breadcrumb{
 		@mixin sectionDivider;
 		margin-top: $margin3-desktop;

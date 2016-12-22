@@ -1,5 +1,6 @@
 .Noticia_informate{
 	padding-bottom: $margin2-desktop;
+
 	&-encabezado{
 		@mixin sectionDivider;
 		margin: 0;
@@ -7,11 +8,11 @@
 	}
 
 	&-media{
-		display:flex;
+		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		a{
 
+		a{
 			div{
 				width: 150px;
 				height: 60px;

@@ -1,6 +1,7 @@
 #noticia_main{
 	width: 75%;
 	padding-right: $margin3-desktop;
+	padding-bottom: $margin2-desktop;
 
 	@media (--tablet){
 		width: 100%;

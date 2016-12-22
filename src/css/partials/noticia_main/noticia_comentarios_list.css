@@ -26,10 +26,62 @@
 	}
 
 	&-comments{
+		position: relative;
 		height: 500px;
 		padding: 2px;
 		overflow-y: scroll;
 		background-color: $gray-soft;
 		margin-bottom: $margin5-desktop;
+
+		&-create{
+			top: 0;
+			position: absolute;
+			width: 99%;
+			height: 100%;
+
+			/*background-color: black;*/
+			/*opacity: .3;*/
+
+			textarea{
+				width: 85%;
+				height: 50%;
+				padding: 20px;
+				position: absolute;
+				display: block;
+				margin: 0 auto;
+				bottom: 40px;
+				@mixin boxShadow;
+			}
+
+			&-buttons{
+				
+				&-enviar{
+					@mixin normalButton;
+					position: absolute;
+					bottom: 0;
+					width: 45%;
+				}
+
+				&-enviar:hover{
+					gradient: none;
+					background: $blue;
+				}
+
+				&-cancelar{
+					@mixin normalButton;
+					@mixin voteBarRed;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 45%;
+				}
+
+				&-cancelar:hover{
+					gradient: none;
+					background: $red;
+				}	
+			}
+		}
 	}
+
 }

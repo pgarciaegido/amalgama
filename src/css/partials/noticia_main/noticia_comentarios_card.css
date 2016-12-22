@@ -2,6 +2,7 @@
 	background-color: white;
 	padding: 20px;
 	margin-bottom: 4px;
+
 	&-user{
 		display: flex;
 		justify-content: space-between;
@@ -9,6 +10,7 @@
 
 		&-info{
 			display: flex;
+
 			&-avatar{
 				margin-right: 10px;
 				width: 35px;
@@ -22,7 +24,6 @@
 				font-size: $comment-card;
 			}
 		}
-
 
 		&-date{
 			margin: 0;
@@ -56,7 +57,7 @@
 
 			&-icon{
 				margin-top: -4px;
-				margin-right:4px;
+				margin-right: 4px;
 				width: 15px;
 				cursor: pointer;
 			}

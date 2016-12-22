@@ -117,3 +117,9 @@
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 }
+
+@define-mixin boxShadow{
+	-webkit-box-shadow: -4px -1px 61px -14px rgba(0,0,0,0.56);
+	-moz-box-shadow: -4px -1px 61px -14px rgba(0,0,0,0.56);
+	box-shadow: -4px -1px 61px -14px rgba(0,0,0,0.56);
+}
