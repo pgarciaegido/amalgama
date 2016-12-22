@@ -38,9 +38,7 @@
 			position: absolute;
 			width: 99%;
 			height: 100%;
-
-			/*background-color: black;*/
-			/*opacity: .3;*/
+			display: none;
 
 			textarea{
 				width: 85%;
@@ -54,7 +52,7 @@
 			}
 
 			&-buttons{
-				
+
 				&-enviar{
 					@mixin normalButton;
 					position: absolute;

@@ -1,10 +1,10 @@
 var $ = require('jquery')
 
-var $thumbUp = $('.Noticia_comentarios-comentarios-up-header-icon')
-var $thumbDown = $('.Noticia_comentarios-comentarios-down-header-icon')
+var $thumbUp = $('.Noticia_comentarios-comentarios-agree-header-icon')
+var $thumbDown = $('.Noticia_comentarios-comentarios-disagree-header-icon')
 
-var $votesAgree = $('.Noticia_comentarios-comentarios-up-header-votes')
-var $votesDisagree = $('.Noticia_comentarios-comentarios-down-header-votes')
+var $votesAgree = $('.Noticia_comentarios-comentarios-agree-header-votes')
+var $votesDisagree = $('.Noticia_comentarios-comentarios-disagree-header-votes')
 
 var $votesBar = $('.Votes_bar-colors-green')
 var $votesGreenNum = $('.Votes_bar-numbers-green')
