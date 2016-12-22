@@ -6,6 +6,7 @@
 		&-votes{
 			padding: 15px;
 
+
 			p{
 				margin: 0;
 			}
@@ -15,6 +16,7 @@
 			padding: 15px;
 			background-color: $blue;
 			border-radius: $radius;
+			cursor: pointer;
 
 			p{
 				margin: 0;
@@ -28,25 +30,5 @@
 		overflow-y: scroll;
 		background-color: $gray-soft;
 		margin-bottom: $margin5-desktop;
-	}
-
-	&-buttons{
-		display: flex;
-		justify-content: space-between;
-
-		&-agree{
-			@mixin bigButton;
-			@mixin voteBarGreen;
-			width: 47%;
-			padding: 10px;
-			font-size: 1em;
-		}
-
-		&-comment{
-			@mixin bigButton;
-			width: 47%;
-			padding: 10px;
-			font-size: 1em;
-		}
 	}
 }

@@ -23,6 +23,10 @@
 				&-votes{
 					color: $green;
 				}
+
+				&-icon{
+					cursor: pointer;
+				}
 			}
 		}
 
@@ -40,7 +44,55 @@
 				&-votes{
 					color: $red;
 				}
+
+				&-icon{
+					cursor: pointer;
+				}
+			}
+		}
+
+		&-buttons{
+			display: flex;
+			justify-content: space-between;
+
+			&-agree{
+				@mixin bigButton;
+				@mixin voteBarGreen;
+				width: 47%;
+				padding: 10px;
+				font-size: 1em;
+			}
+
+			&-agree:hover{
+				gradient: none;
+				background: $green;
+			}
+
+			&-disagree{
+				@mixin bigButton;
+				@mixin voteBarRed;
+				width: 47%;
+				padding: 10px;
+				font-size: 1em;
+			}
+
+			&-disagree:hover{
+				gradient: none;
+				background: $red;
+			}
+
+			&-comment{
+				@mixin bigButton;
+				width: 47%;
+				padding: 10px;
+				font-size: 1em;
+			}
+
+			&-comment:hover{
+				@mixin hoverButton;
 			}
 		}
 	}
+
+
 }
