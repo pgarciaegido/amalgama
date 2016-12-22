@@ -1,0 +1,70 @@
+.Noticias_comentarios_card{
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 4px;
+	&-user{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 25px;
+
+		&-info{
+			display: flex;
+			&-avatar{
+				margin-right: 10px;
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+			}
+
+			&-username{
+				margin: 0;
+				font-weight: 700;
+				font-size: $comment-card;
+			}
+		}
+
+
+		&-date{
+			margin: 0;
+			font-style: italic;
+			font-size: $comment-card;
+		}
+	}
+
+	&-comment{
+		margin: 0;
+		padding-bottom: 15px;
+		border-bottom: 2px solid $gray-soft;
+		font-size: $comment-card;
+		line-height: 1.3em;
+	}
+
+	&-feedback{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 15px;
+
+		&-reply{
+			margin: 0;
+			font-size: $comment-card;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		&-like{
+			display: flex;
+
+			&-icon{
+				margin-top: -4px;
+				margin-right:4px;
+				width: 15px;
+				cursor: pointer;
+			}
+
+			&-counter{
+				margin: 0;
+				font-size: $comment-card;
+			}
+		}
+	}
+}

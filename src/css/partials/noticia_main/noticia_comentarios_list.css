@@ -27,6 +27,7 @@
 
 	&-comments{
 		height: 500px;
+		padding: 2px;
 		overflow-y: scroll;
 		background-color: $gray-soft;
 		margin-bottom: $margin5-desktop;
