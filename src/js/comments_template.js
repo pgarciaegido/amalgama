@@ -14,7 +14,9 @@ module.exports = function (comment) {
     <p class="Noticias_comentarios_card-feedback-reply">Responder</p>
     <div class="Noticias_comentarios_card-feedback-like">
       <img src="img/thumbs-up-black.svg" alt="" class="Noticias_comentarios_card-feedback-like-icon">
-      <p class="Noticias_comentarios_card-feedback-like-counter">10 me gusta</p>
+      <img src="img/thumbs-up-black-filled.svg" alt="" class="Noticias_comentarios_card-feedback-like-icon-liked">
+      <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">10</p>
+      <span class="Noticias_comentarios_card-feedback-like-counter">me gusta</span>
     </div>
   </div>
 </div>`

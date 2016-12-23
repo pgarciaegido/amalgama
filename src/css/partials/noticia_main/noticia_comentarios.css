@@ -28,6 +28,11 @@
 
 				&-icon{
 					cursor: pointer;
+
+					&-liked{
+						display: none;
+						cursor: pointer;
+					}
 				}
 			}
 		}
@@ -50,6 +55,11 @@
 
 				&-icon{
 					cursor: pointer;
+
+					&-liked{
+						display: none;
+						cursor: pointer;
+					}
 				}
 			}
 		}

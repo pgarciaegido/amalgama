@@ -1,7 +1,11 @@
 var $ = require('jquery')
+var votesLiked = require ('./votesLiked')
 
 var $thumbUp = $('.Noticia_comentarios-comentarios-agree-header-icon')
+var $thumbUpLiked = $('.Noticia_comentarios-comentarios-agree-header-icon-liked')
+
 var $thumbDown = $('.Noticia_comentarios-comentarios-disagree-header-icon')
+var $thumbDownLiked = $('.Noticia_comentarios-comentarios-disagree-header-icon-liked')
 
 var $votesAgree = $('.Noticia_comentarios-comentarios-agree-header-votes')
 var $votesDisagree = $('.Noticia_comentarios-comentarios-disagree-header-votes')
@@ -9,13 +13,6 @@ var $votesDisagree = $('.Noticia_comentarios-comentarios-disagree-header-votes')
 var $votesBar = $('.Votes_bar-colors-green')
 var $votesGreenNum = $('.Votes_bar-numbers-green')
 var $votesRedNum = $('.Votes_bar-numbers-red')
-
-function votesUp (votes, barNum) {
-  var temp = votes.text()
-  var newNumber = Number(temp) + 1
-  votes.text(newNumber)
-  barNum.text(newNumber)
-}
 
 function getPercentage () {
   var agree = Number($votesAgree.text())
@@ -30,12 +27,22 @@ getPercentage()
 // Event handlers (the parameters are passed this way, otherwise ill be triggered on reload)
 
 $thumbUp.on('click', function () {
-  votesUp($votesAgree, $votesGreenNum)
+  votesLiked(true, $votesAgree, $votesGreenNum, $thumbUpLiked)
+  getPercentage()
+})
+
+$thumbUpLiked.on('click', function () {
+  votesLiked(false, $votesAgree, $votesGreenNum, $thumbUp)
   getPercentage()
 })
 
 $thumbDown.on('click', function () {
-  votesUp($votesDisagree, $votesRedNum)
+  votesLiked(true, $votesDisagree, $votesRedNum, $thumbDownLiked)
+  getPercentage()
+})
+
+$thumbDownLiked.on('click', function () {
+  votesLiked(false, $votesDisagree, $votesRedNum, $thumbDown)
   getPercentage()
 })
 
