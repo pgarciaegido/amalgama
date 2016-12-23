@@ -10,7 +10,7 @@ module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   else{ attr = id_ }
   var counter = parent.find(attr)
   var temp = counter.text()
-
+  // debugger
   if (sign == true)
     var newNumber = Number(temp) + 1
   else if (sign == false)
