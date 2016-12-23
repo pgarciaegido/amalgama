@@ -27,22 +27,22 @@ getPercentage()
 // Event handlers (the parameters are passed this way, otherwise ill be triggered on reload)
 
 $thumbUp.on('click', function () {
-  votesLiked(true, $votesAgree, $votesGreenNum, $thumbUpLiked)
+  votesLiked($(this), true, $votesAgree, $votesGreenNum, $thumbUpLiked)
   getPercentage()
 })
 
 $thumbUpLiked.on('click', function () {
-  votesLiked(false, $votesAgree, $votesGreenNum, $thumbUp)
+  votesLiked($(this), false, $votesAgree, $votesGreenNum, $thumbUp)
   getPercentage()
 })
 
 $thumbDown.on('click', function () {
-  votesLiked(true, $votesDisagree, $votesRedNum, $thumbDownLiked)
+  votesLiked($(this), true, $votesDisagree, $votesRedNum, $thumbDownLiked)
   getPercentage()
 })
 
 $thumbDownLiked.on('click', function () {
-  votesLiked(false, $votesDisagree, $votesRedNum, $thumbDown)
+  votesLiked($(this), false, $votesDisagree, $votesRedNum, $thumbDown)
   getPercentage()
 })
 

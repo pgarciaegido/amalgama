@@ -43,6 +43,9 @@ function addComment(textarea, comment) {
   comment.append(card(userComment))
 }
 
+function votesLikeNews () {
+
+}
 
 // Event Handlers
 
@@ -72,10 +75,20 @@ $enviarDisagree.on('click', function () {
   createHide($createDisagree, $commentsDisagree, $textDisagree)
 })
 
-$commentLikeIcon.on('click', '.Noticias_comentarios_card-feedback-like-icon', function(){
-  votesLiked(true, $commentLikeCounter, null, $commentLikeIconLiked)
+$commentLikeIcon.on('click', function(){
+  votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
 })
 
-$commentLikeIconLiked.on('click', '.Noticias_comentarios_card-feedback-like-icon-liked', function(){
-  votesLiked(false, $commentLikeCounter, null, $commentLikeIcon)
+$commentLikeIconLiked.on('click', function(){
+  votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIcon)
+})
+
+// Appended cards are whatched so the event pops
+
+$(document).on('click', '#new-card', function (){
+  votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
+})
+
+$(document).on('click', '#new-card-liked', function (){
+  votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIconLiked)
 })
