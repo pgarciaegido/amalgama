@@ -123,3 +123,13 @@
 	-moz-box-shadow: -4px -1px 61px -14px rgba(0,0,0,0.56);
 	box-shadow: -4px -1px 61px -14px rgba(0,0,0,0.56);
 }
+
+@define-mixin commentsHeaderMobile{
+	margin-bottom: $margin2-mobile;
+	width: 100%;
+	padding-right: 0;
+	padding: 0 $margin3-mobile;
+	border-radius: $radius;
+	box-sizing: border-box;
+	cursor: pointer; 
+}

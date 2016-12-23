@@ -1,7 +1,9 @@
 var $ = require('jquery')
-var yo = require('yo-yo')
 var card = require('./comments_template')
 var votesLiked = require('./votesLiked')
+var moment = require('moment')
+
+// Variables
 
 var $comentarAgree = $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment')
 var $comentarDisagree = $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment')
@@ -25,26 +27,27 @@ var $commentLikeIcon = $('.Noticias_comentarios_card-feedback-like-icon')
 var $commentLikeIconLiked = $('.Noticias_comentarios_card-feedback-like-icon-liked')
 
 var $commentLikeCounter = $('#comments-like-counter')
+
 // Functions
 
-function createShow(create, comment) {
+// ---- Displays textarea
+function createShow (create, comment) {
   create.css('display', 'block')
   comment.scrollTop(0).css('overflow-y', 'hidden')
 }
 
-function createHide(create, comment, textarea) {
+// ---- Hide textarea
+function createHide (create, comment, textarea) {
   create.css('display', 'none')
   comment.css('overflow-y', 'scroll')
   textarea.val('')
 }
 
-function addComment(textarea, comment) {
+// ---- Inserts the card template, including the comment and the date
+function addComment (textarea, comment) {
   var userComment = textarea.val()
-  comment.append(card(userComment))
-}
-
-function votesLikeNews () {
-
+  var date = moment().format('D MMM YYYY')
+  comment.append(card(userComment, date))
 }
 
 // Event Handlers
@@ -75,20 +78,20 @@ $enviarDisagree.on('click', function () {
   createHide($createDisagree, $commentsDisagree, $textDisagree)
 })
 
-$commentLikeIcon.on('click', function(){
+$commentLikeIcon.on('click', function () {
   votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
 })
 
-$commentLikeIconLiked.on('click', function(){
+$commentLikeIconLiked.on('click', function () {
   votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIcon)
 })
 
 // Appended cards are whatched so the event pops
 
-$(document).on('click', '#new-card', function (){
+$(document).on('click', '#new-card', function () {
   votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
 })
 
-$(document).on('click', '#new-card-liked', function (){
+$(document).on('click', '#new-card-liked', function () {
   votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIconLiked)
 })

@@ -1,6 +1,10 @@
 .Noticia_informate{
 	padding-bottom: $margin2-desktop;
 
+	@media (--mobile){
+		padding-bottom: $margin2-mobile;
+	}
+
 	&-encabezado{
 		@mixin sectionDivider;
 		margin: 0;

@@ -3,9 +3,13 @@
 		display: flex;
 		margin-bottom: $margin4-desktop;
 
+		@media (--mobile-big){
+			justify-content: space-between;
+			display: none;
+		}
+
 		&-votes{
 			padding: 15px;
-
 
 			p{
 				margin: 0;
@@ -32,6 +36,10 @@
 		overflow-y: scroll;
 		background-color: $gray-soft;
 		margin-bottom: $margin5-desktop;
+		
+		@media (--mobile-big){
+			display: none;
+		}
 
 		&-create{
 			top: 0;
@@ -52,7 +60,6 @@
 			}
 
 			&-buttons{
-
 				&-enviar{
 					@mixin normalButton;
 					position: absolute;

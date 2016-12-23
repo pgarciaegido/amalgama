@@ -10,9 +10,18 @@
 		display: flex;
 		justify-content: space-between;
 
+		@media (--mobile-big){
+			display: block;
+		}
+
 		&-agree{
 			width: 50%;
 			padding-right: 30px;
+
+			@media (--mobile-big) {
+				@mixin commentsHeaderMobile;
+				border: 2px solid $green;
+			}
 
 			&-header{	
 				display: flex;
@@ -23,23 +32,33 @@
 				}
 
 				&-votes{
-					color: $green;
-				}
+					display: flex;
 
-				&-icon{
-					cursor: pointer;
+					&-counter{
+						color: $green;
+						padding-right: $margin4-desktop;
+					}
 
-					&-liked{
-						display: none;
+					&-icon{
 						cursor: pointer;
+
+						&-liked{
+							display: none;
+							cursor: pointer;
+						}
 					}
 				}
+
 			}
 		}
 
 		&-disagree{
 			width: 50%;
 			padding-left: 30px;
+
+			@media (--mobile-big) {
+				@mixin commentsHeaderMobile;
+				border: 2px solid $red;			}
 
 			&-header{
 				display: flex;
@@ -50,15 +69,19 @@
 				}
 
 				&-votes{
-					color: $red;
-				}
+					display: flex;
 
-				&-icon{
-					cursor: pointer;
-
-					&-liked{
-						display: none;
+					&-counter{
+						color: $red;
+						padding-right: $margin4-desktop;
+					}
+					&-icon{
 						cursor: pointer;
+
+						&-liked{
+							display: none;
+							cursor: pointer;
+						}
 					}
 				}
 			}
@@ -67,6 +90,10 @@
 		&-buttons{
 			display: flex;
 			justify-content: space-between;
+
+			@media (--mobile-big){
+				display: none;
+			}
 
 			&-agree{
 				@mixin bigButton;
