@@ -32,6 +32,7 @@
 @import './partials/noticia_main/noticia_comentarios';
 @import './partials/noticia_main/noticia_comentarios_list';
 @import './partials/noticia_main/noticia_comentarios_card';
+@import './partials/noticia_main/noticia_hide_on_mobile';
 
 /*Aside*/
 @import './partials/aside/aside';

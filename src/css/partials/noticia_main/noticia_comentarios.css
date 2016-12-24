@@ -9,6 +9,7 @@
 	&-comentarios{
 		display: flex;
 		justify-content: space-between;
+		@mixin noTapHighlight;
 
 		@media (--mobile-big){
 			display: block;
@@ -20,15 +21,28 @@
 
 			@media (--mobile-big) {
 				@mixin commentsHeaderMobile;
-				border: 2px solid $green;
 			}
 
 			&-header{	
 				display: flex;
 				justify-content: space-between;
 
+				@media (--mobile-big) {
+					@mixin commentsHeaderMobile;
+					border: 2px solid $green;
+				}
+
 				&-title{
 					font-weight: 700;
+				}
+
+				&-arrow{
+					display: none;
+
+					@media (--mobile-big){
+						display: block;
+						padding: 0 30px;
+					}
 				}
 
 				&-votes{
@@ -58,14 +72,28 @@
 
 			@media (--mobile-big) {
 				@mixin commentsHeaderMobile;
-				border: 2px solid $red;			}
+			}
 
 			&-header{
 				display: flex;
 				justify-content: space-between;
+				
+				@media (--mobile-big) {
+					@mixin commentsHeaderMobile;
+					border: 2px solid $red;
+				}
 
 				&-title{
 					font-weight: 700;
+				}
+
+				&-arrow{
+					display: none;
+
+					@media (--mobile-big){
+						display: block;
+						padding: 0 30px;
+					}
 				}
 
 				&-votes{
@@ -90,10 +118,6 @@
 		&-buttons{
 			display: flex;
 			justify-content: space-between;
-
-			@media (--mobile-big){
-				display: none;
-			}
 
 			&-agree{
 				@mixin bigButton;
@@ -133,6 +157,4 @@
 			}
 		}
 	}
-
-
 }

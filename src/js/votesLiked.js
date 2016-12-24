@@ -18,7 +18,6 @@ module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   counter.text(newNumber)
   if (barNum !== null)
     barNum.text(newNumber)
-  console.log(newNumber)
   that.css('display', 'none')
   that.siblings(newHandler).css('display', 'block')
 }

@@ -1,8 +1,11 @@
+html, body{
+	overflow-x: hidden;
+}
 body{
+	position: relative;
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	color: $black;
-	overflow-x: hidden;
 	
 	@media (--desktop){
 		padding: 0 $margin3-mobile;

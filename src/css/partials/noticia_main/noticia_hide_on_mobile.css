@@ -1,0 +1,6 @@
+.Noticia_hide_on_mobile{
+
+	@media (--mobile-big){
+		display: none;
+	}
+}

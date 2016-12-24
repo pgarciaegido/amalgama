@@ -3,7 +3,7 @@ var card = require('./comments_template')
 var votesLiked = require('./votesLiked')
 var moment = require('moment')
 
-// Variables
+// //////////////////////////// Variables
 
 var $comentarAgree = $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment')
 var $comentarDisagree = $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment')
@@ -28,7 +28,15 @@ var $commentLikeIconLiked = $('.Noticias_comentarios_card-feedback-like-icon-lik
 
 var $commentLikeCounter = $('#comments-like-counter')
 
-// Functions
+var $arrowAgree = $('.Noticia_comentarios-comentarios-agree-header-arrow')
+var $arrowDisagree = $('.Noticia_comentarios-comentarios-disagree-header-arrow')
+
+var $titleAgree = $('.Noticia_comentarios-comentarios-agree-header-title')
+var $titleDisagree = $('.Noticia_comentarios-comentarios-disagree-header-title')
+
+var $commentsMobile = $($('.Noticia_hide_on_mobile'))
+
+// //////////////////////////// Functions
 
 // ---- Displays textarea
 function createShow (create, comment) {
@@ -50,8 +58,42 @@ function addComment (textarea, comment) {
   comment.append(card(userComment, date))
 }
 
-// Event Handlers
+// ----- Open Comments on Mobile
 
+var agreeOpened
+var disagreeOpened 
+function commentsMobile (ev) {
+  // debugger
+  if ($(ev.target).attr('class').indexOf('disagree') != -1){
+    if(disagreeOpened === false || disagreeOpened === undefined){
+      $($commentsMobile[3]).css('display', 'flex')
+      $($commentsMobile[4]).css('display', 'block')
+      $($commentsMobile[5]).css('display', 'flex')
+      disagreeOpened = true
+    } else{
+      $($commentsMobile[3]).css('display', 'none')
+      $($commentsMobile[4]).css('display', 'none')
+      $($commentsMobile[5]).css('display', 'none')
+      disagreeOpened = false
+    }
+  } else {
+    if(agreeOpened === false || agreeOpened === undefined){
+      $($commentsMobile[0]).css('display', 'flex')
+      $($commentsMobile[1]).css('display', 'block')
+      $($commentsMobile[2]).css('display', 'flex')
+      agreeOpened = true
+    } else {
+      $($commentsMobile[0]).css('display', 'none')
+      $($commentsMobile[1]).css('display', 'none')
+      $($commentsMobile[2]).css('display', 'none')
+      agreeOpened = false
+    }
+  }
+}
+
+// ////////////////////////// Event Handlers
+
+// ------ Creates input
 $comentarAgree.on('click', function () {
   createShow($createAgree, $commentsAgree)
 })
@@ -60,6 +102,8 @@ $comentarDisagree.on('click', function () {
   createShow($createDisagree, $commentsDisagree)
 })
 
+// ----- Inside input, cancel and close
+
 $cancelarAgree.on('click', function () {
   createHide($createAgree, $commentsAgree, $textAgree)
 })
@@ -67,6 +111,8 @@ $cancelarAgree.on('click', function () {
 $cancelarDisagree.on('click', function () {
   createHide($createDisagree, $commentsDisagree, $textDisagree)
 })
+
+// ------ Inside input, sends and close
 
 $enviarAgree.on('click', function () {
   addComment($textAgree, $commentsAgree)
@@ -78,9 +124,13 @@ $enviarDisagree.on('click', function () {
   createHide($createDisagree, $commentsDisagree, $textDisagree)
 })
 
+//  -----Likes a comment
+
 $commentLikeIcon.on('click', function () {
   votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
 })
+
+// ----- Dislikes a comment already liked
 
 $commentLikeIconLiked.on('click', function () {
   votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIcon)
@@ -95,3 +145,9 @@ $(document).on('click', '#new-card', function () {
 $(document).on('click', '#new-card-liked', function () {
   votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIconLiked)
 })
+
+// ----- Open and close menu when mobile
+
+$arrowAgree.add($titleAgree).on('click', commentsMobile)
+
+$arrowDisagree.add($titleDisagree).on('click', commentsMobile)
