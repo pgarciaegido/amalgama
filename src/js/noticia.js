@@ -17,12 +17,22 @@ var $votesBar = $('.Votes_bar-colors-green')
 var $votesGreenNum = $('.Votes_bar-numbers-green')
 var $votesRedNum = $('.Votes_bar-numbers-red')
 
+// ///////////////FUNCTIONS
+
+// ------ Get porcentage of the votes bar and adjust it acording to the vote number 
+
 function getPercentage () {
   var agree = Number($votesAgree.text())
   var total = agree + Number($votesDisagree.text())
   var percentage = agree / total * 100
   $votesBar.css('width', percentage + '%')
 }
+
+// ---- Call the function so its done on loading
+
+getPercentage()
+
+// ---- Change the colors of button when clicked
 
 function buttonClicked (button, clicked, color) {
   if (clicked === false) {
@@ -36,10 +46,10 @@ function buttonClicked (button, clicked, color) {
   }
 }
 
-// Sets the bar width first.
-getPercentage()
 
-// Event handlers (the parameters are passed this way, otherwise ill be triggered on reload)
+// ////////Event handlers (the parameters are passed this way, otherwise ill be triggered on reload)
+
+// ----- Votes on clicking the thumb up/down icon
 
 $thumbUp.on('click', function () {
   votesLiked($(this), true, $votesAgree, $votesGreenNum, $thumbUpLiked)
@@ -64,6 +74,8 @@ $thumbDownLiked.on('click', function () {
   buttonClicked($disagreeBottom, true, '#e13c42')
   getPercentage()
 })
+
+// ------Votes on clicking agree / disagree buttons
 
 $agreeBottom.on('click', function () {
   if ($thumbUp.css('display') == 'block') {

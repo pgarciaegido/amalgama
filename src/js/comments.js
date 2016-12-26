@@ -62,8 +62,8 @@ function addComment (textarea, comment) {
 
 var agreeOpened
 var disagreeOpened 
+
 function commentsMobile (ev) {
-  // debugger
   if ($(ev.target).attr('class').indexOf('disagree') != -1){
     if(disagreeOpened === false || disagreeOpened === undefined){
       $($commentsMobile[3]).css('display', 'flex')

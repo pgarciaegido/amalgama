@@ -1,21 +1,26 @@
-require('jquery')
+var $ = require('jquery')
+
+// ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
 
 module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
-  var parent = that.parent() // Gets parent, looks for child either with an id or a class
-  var id = votes.attr('id')
-  var id_ = '#' + id
-  var clss = '.' + votes.attr('class')
-  var attr, newNumber
-  if (id === undefined) { attr = clss }
-  else { attr = id_ }
-  var counter = parent.find(attr)
+  //--- Gets counter number through the class name
+  var counter = that.siblings()
+  counter = counter.map(function () {
+    if( $(this).attr('class').indexOf('counter') !== -1)
+      return this
+  })
   var temp = counter.text()
+
+  // ----if the sign is positive, we add 1, otherwise, we substract 1
 
   if (sign === true)
     newNumber = Number(temp) + 1
   else if (sign === false)
     newNumber = Number(temp) - 1
   counter.text(newNumber)
+
+  // ------if the number is related directly with votes bar, change that numbers too
+
   if (barNum !== null)
     barNum.text(newNumber)
   that.css('display', 'none')
