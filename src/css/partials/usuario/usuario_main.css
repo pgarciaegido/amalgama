@@ -1,0 +1,8 @@
+.Usuario_main{
+	width: 75%;
+	padding-right: $margin5-desktop;
+
+	@media (--tablet-small){
+		width: 100%;
+	}
+}

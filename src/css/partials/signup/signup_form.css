@@ -43,7 +43,6 @@
 	}
 
 	&-form{
-
 		label{
 			display: block;
 			margin-bottom: $margin5-desktop;
@@ -57,12 +56,12 @@
 		label:nth-child(3){
 			margin-bottom: $margin3-desktop;
 		}
-		
+
 		&-submit{
 			@mixin normalButton;
 			@mixin blueButton;
 			display: block;
-			margin:0 auto;
+			margin: 0 auto;
 		}
 
 		&-submit:hover{

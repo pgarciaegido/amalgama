@@ -16,7 +16,7 @@ module.exports = function (comment, date) {
       <img src="img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon">
       <img src="img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked">
       <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">10</p>
-      <span class="Noticias_comentarios_card-feedback-like-counter">me gusta</span>
+      <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>
     </div>
   </div>
 </div>`

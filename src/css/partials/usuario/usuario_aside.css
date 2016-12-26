@@ -1,0 +1,32 @@
+.Usuario_aside{
+	width: 25%;
+	padding: $margin3-desktop;
+	background-color: $gray-soft;
+	height: 65px;
+
+	@media (--tablet-small){
+		display: none;
+	}
+
+	&-stats{
+
+		&-comments{
+			display: flex;
+			margin-bottom: $margin4-desktop;
+			
+			&-counter{
+				margin: 0;
+				margin-right: $margin5-desktop;
+			}
+		}
+
+		&-thumbsup{
+			display: flex;
+
+			&-counter{
+				margin: 0;
+				margin-right: $margin5-desktop;
+			}
+		}
+	}
+}

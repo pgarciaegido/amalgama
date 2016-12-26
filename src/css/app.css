@@ -45,7 +45,15 @@
 @import './partials/login/login';
 @import './partials/login/login_form';
 
+/*Usuario*/
+
+@import './partials/usuario/usuario';
+@import './partials/usuario/usuario_main';
+@import './partials/usuario/usuario_main_profile';
+@import './partials/usuario/usuario_aside';
+
 /*Aside*/
+
 @import './partials/aside/aside';
 @import './partials/aside/aside_registrate';
 @import './partials/aside/aside_temas';
