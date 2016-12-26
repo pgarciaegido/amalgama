@@ -61,23 +61,25 @@ function addComment (textarea, comment) {
 // ----- Open Comments on Mobile
 
 var agreeOpened
-var disagreeOpened 
+var disagreeOpened
+
+// ---- $commentsMobile is an array of dom elements.
 
 function commentsMobile (ev) {
-  if ($(ev.target).attr('class').indexOf('disagree') != -1){
-    if(disagreeOpened === false || disagreeOpened === undefined){
+  if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
+    if (disagreeOpened === false || disagreeOpened === undefined) {
       $($commentsMobile[3]).css('display', 'flex')
       $($commentsMobile[4]).css('display', 'block')
       $($commentsMobile[5]).css('display', 'flex')
       disagreeOpened = true
-    } else{
+    } else {
       $($commentsMobile[3]).css('display', 'none')
       $($commentsMobile[4]).css('display', 'none')
       $($commentsMobile[5]).css('display', 'none')
       disagreeOpened = false
     }
   } else {
-    if(agreeOpened === false || agreeOpened === undefined){
+    if (agreeOpened === false || agreeOpened === undefined) {
       $($commentsMobile[0]).css('display', 'flex')
       $($commentsMobile[1]).css('display', 'block')
       $($commentsMobile[2]).css('display', 'flex')

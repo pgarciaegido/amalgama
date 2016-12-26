@@ -34,6 +34,17 @@
 @import './partials/noticia_main/noticia_comentarios_card';
 @import './partials/noticia_main/noticia_hide_on_mobile';
 
+/*Signup*/
+
+@import './partials/signup/signup';
+@import './partials/signup/signup_image';
+@import './partials/signup/signup_form';
+
+/*Login*/
+
+@import './partials/login/login';
+@import './partials/login/login_form';
+
 /*Aside*/
 @import './partials/aside/aside';
 @import './partials/aside/aside_registrate';

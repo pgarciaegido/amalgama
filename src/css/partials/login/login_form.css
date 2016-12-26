@@ -1,0 +1,70 @@
+.Login_form{
+	width: 100%;
+
+	&-title{
+		margin: 0;
+		margin-bottom: $margin4-desktop;
+		font-size: $title;
+
+		@media (--tablet){
+			font-size: 2em;
+		}
+	}
+
+	&-subtitle{
+		margin-bottom: $margin3-desktop;
+		font-size: $p;
+		line-height: $p-lh;
+	}
+
+	&-social{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: $margin3-desktop;
+
+		&-facebook{
+			@mixin socialMediaButton;
+			width: 45%;
+			background-color: #3b5998;
+		}
+
+		&-google{
+			@mixin socialMediaButton;
+			width: 45%;
+			background-color: #f44336;
+		}
+
+		&-facebook:hover, &-google:hover{
+			opacity: .9;
+		}
+	}
+
+	&-form{
+
+		label{
+			display: block;
+			margin-bottom: $margin5-desktop;
+
+			input{
+				@mixin formInput;
+				margin-top: $margin5-desktop;
+				width: 100%;
+			}
+		}
+
+		label:nth-child(2){
+			margin-bottom: $margin3-desktop;
+		}
+		
+		&-submit{
+			@mixin normalButton;
+			@mixin blueButton;
+			display: block;
+			margin:0 auto;
+		}
+
+		&-submit:hover{
+			@mixin hoverButton;
+		}
+	}
+}

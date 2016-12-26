@@ -19,7 +19,7 @@ var $votesRedNum = $('.Votes_bar-numbers-red')
 
 // ///////////////FUNCTIONS
 
-// ------ Get porcentage of the votes bar and adjust it acording to the vote number 
+// ------ Get porcentage of the votes bar and adjust it acording to the vote number
 
 function getPercentage () {
   var agree = Number($votesAgree.text())
@@ -35,17 +35,26 @@ getPercentage()
 // ---- Change the colors of button when clicked
 
 function buttonClicked (button, clicked, color) {
+  // -- Fets the height of the button and reduces 1 px when clicked (UX)
+  var height = button.css('height')
+  var heightClicked = height.match(/\d/g).join('')
+  heightClicked = (Number(heightClicked) - 1).toString().concat('px')
+  var heightUnclicked = height.match(/\d/g).join('')
+  heightUnclicked = (Number(heightUnclicked) + 1).toString().concat('px')
+
+  console.log(heightClicked)
   if (clicked === false) {
     button.css({'background': '#f1f1f1',
                 'color': color,
-                'border': '2px solid' + color})
+                'border': '2px solid' + color,
+                'height': heightClicked})
   } else if (clicked === true) {
     button.css({'background': color,
                 'color': 'white',
-                'border': 'none'})
+                'border': 'none',
+                'height': heightUnclicked})
   }
 }
-
 
 // ////////Event handlers (the parameters are passed this way, otherwise ill be triggered on reload)
 
@@ -78,7 +87,7 @@ $thumbDownLiked.on('click', function () {
 // ------Votes on clicking agree / disagree buttons
 
 $agreeBottom.on('click', function () {
-  if ($thumbUp.css('display') == 'block') {
+  if ($thumbUp.css('display') === 'block') {
     votesLiked($thumbUp, true, $votesAgree, $votesGreenNum, $thumbUpLiked)
     buttonClicked($agreeBottom, false, '#7ace7a')
   } else {
@@ -89,7 +98,7 @@ $agreeBottom.on('click', function () {
 })
 
 $disagreeBottom.on('click', function () {
-  if ($thumbDown.css('display') == 'block') {
+  if ($thumbDown.css('display') === 'block') {
     votesLiked($thumbDown, true, $votesDisagree, $votesRedNum, $thumbDownLiked)
     buttonClicked($disagreeBottom, false, '#e13c42')
   } else {

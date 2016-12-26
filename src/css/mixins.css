@@ -82,6 +82,7 @@
 	display: block;
 	padding: 6px;
 	width: 100%;
+	box-sizing: border-box;
 	border-radius: $radius;
 	background-color: $gray-soft;
 	border: none;
