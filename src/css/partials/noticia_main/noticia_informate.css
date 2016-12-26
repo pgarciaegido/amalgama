@@ -17,6 +17,11 @@
 		justify-content: space-between;
 
 		a{
+
+			@media (--mobile-small){
+				width: 100%;
+			}
+
 			div{
 				width: 150px;
 				height: 60px;
@@ -25,9 +30,19 @@
 				border: 2px solid $gray;
 				margin-bottom: $margin3-desktop;
 
+				@media (--mobile-small){
+					width: 100%;
+				}
+
 				img{
 					width: 100%;
 					padding-top: 4px;
+
+					@media (--mobile-small){
+						width: 50%;
+						display: block;
+						margin: 0 auto;
+					}
 				}
 			}
 		}

@@ -46,12 +46,3 @@ $burguer.on('click', openMenu)
 $close.on('click', closeMenu)
 $bg.on('click', closeMenu)
 $search.on('click', searchInput)
-
-window.onresize = function (ev) {
-  if (window.innerWidth > 700) {
-    $close.css('display', 'none')
-    $burguer.css('display', 'none')
-  } else {
-    $burguer.css('display', 'block')
-  }
-}

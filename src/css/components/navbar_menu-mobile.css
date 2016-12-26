@@ -32,6 +32,11 @@
 			padding: 15px;
 			margin: 15px 0;
 
+			@media (--mobile-small){
+				padding: 10px;
+				margin: 10px 0;
+			}
+
 			a{
 				@mixin navbar;
 				text-decoration: none;

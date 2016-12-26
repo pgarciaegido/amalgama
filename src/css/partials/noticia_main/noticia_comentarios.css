@@ -30,10 +30,15 @@
 				@media (--mobile-big) {
 					@mixin commentsHeaderMobile;
 					border: 2px solid $green;
+
 				}
 
 				&-title{
 					font-weight: 700;
+
+					@media(--mobile-small){
+						font-size: 1.1em;
+					}
 				}
 
 				&-arrow{
@@ -51,6 +56,10 @@
 					&-counter{
 						color: $green;
 						padding-right: $margin4-desktop;
+
+						@media(--mobile-small){
+							font-size: 1.1em;
+						}
 					}
 
 					&-icon{
@@ -85,6 +94,10 @@
 
 				&-title{
 					font-weight: 700;
+
+					@media(--mobile-small){
+						font-size: 1.1em;
+					}
 				}
 
 				&-arrow{
@@ -102,6 +115,10 @@
 					&-counter{
 						color: $red;
 						padding-right: $margin4-desktop;
+
+						@media(--mobile-small){
+							font-size: 1.1em;
+						}
 					}
 					&-icon{
 						cursor: pointer;
@@ -125,6 +142,8 @@
 				width: 47%;
 				padding: 10px;
 				font-size: 1em;
+				-webkit-appearance: none;
+
 			}
 
 			&-agree:hover{
@@ -138,6 +157,7 @@
 				width: 47%;
 				padding: 10px;
 				font-size: 1em;
+				-webkit-appearance: none;
 			}
 
 			&-disagree:hover{
