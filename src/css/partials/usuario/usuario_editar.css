@@ -1,0 +1,19 @@
+.Usuario_editar{
+	
+	&-title{
+		margin: $margin2-desktop 0;
+
+		@media (--tablet-small){
+			margin: $margin2-mobile 0;
+		}
+	}
+
+	&-container{
+		display: flex;
+		justify-content: space-between;
+
+		@media (--tablet-small){
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+.Usuario_editar_data{
+	width: 58.33333%;
+
+	@media (--tablet-small){
+		width: 100%;
+	}
+
+	&-title{
+		margin: 0;
+		margin-bottom: $margin3-desktop;
+
+		@media (--tablet-small){
+			margin-top: $margin1-mobile;
+			margin-bottom: $margin3-mobile;
+		}
+	}
+
+	&-form{
+		
+		label{
+			input{
+				@mixin formInput;
+				display: block;
+				margin: $margin4-desktop 0;
+			}
+		}
+
+		input[type="submit"]{
+			@mixin normalButton;
+		}
+
+		input[type="submit"]:hover{
+			background: $blue;
+		}
+	}
+}

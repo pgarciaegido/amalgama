@@ -54,6 +54,12 @@
 @import './partials/usuario/usuario_main_comments';
 @import './partials/usuario/usuario_main_comments-card';
 
+/*Usuario editar*/
+
+@import './partials/usuario/usuario_editar';
+@import './partials/usuario/usuario_editar_personal';
+@import './partials/usuario/usuario_editar_data';
+
 /*Aside*/
 
 @import './partials/aside/aside';

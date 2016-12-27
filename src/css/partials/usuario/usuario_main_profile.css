@@ -106,5 +106,9 @@
 				margin: 0 auto;
 			}
 		}
+
+		&-editar:hover{
+			background: $blue;
+		}
 	}
 }

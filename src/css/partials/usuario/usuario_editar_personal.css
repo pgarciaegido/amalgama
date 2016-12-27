@@ -1,0 +1,105 @@
+.Usuario_editar_personal{
+	width: 33.3333333%;
+
+	@media (--tablet-small){
+		width: 100%;
+	}
+
+	&-avtitle{
+		margin: 0;
+		margin-bottom: $margin3-desktop;
+
+		@media (--tablet-small){
+			margin-bottom: $margin3-mobile;
+		}
+	}
+
+	&-avatar{
+		padding: $margin4-desktop 0;
+		border: 2px solid $gray-soft;
+		margin-bottom: $margin2-desktop;
+
+		&-imagen{
+			display: block;
+			margin: 0 auto;
+			margin-bottom: $margin4-desktop;
+			border-radius: 50%;
+		}
+
+		&-button{
+			@mixin normalButton;
+			display: block;
+			margin: 0 auto;
+		}
+
+		&-button:hover{
+			background: $blue;
+		}
+	}
+
+	&-rstitle{
+		margin: 0;
+		margin-bottom: $margin3-desktop;
+	}
+
+	&-rrss{
+
+		img{
+			width: 44px;
+		}
+
+		&-facebook{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: $margin4-desktop;
+
+			&-icon{
+				margin-right: 10px;
+			}
+
+			&-input{
+				@mixin formInput;
+				background: #3b5998;
+				padding: 10px;
+				border: none;
+				color: white;
+			}
+		}
+
+		&-twitter{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: $margin4-desktop;
+
+			&-icon{
+				margin-right: 10px;
+			}
+
+			&-input{
+				@mixin formInput;
+				padding: 10px;
+				background: #4099ff;
+				border: none;
+				color: white;
+			}
+		}
+
+		&-linkedin{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: $margin4-desktop;
+
+			&-icon{
+				margin-right: 10px;
+			}
+
+			&-input{
+				@mixin formInput;
+				padding: 10px;
+				background: #0077b5;
+				border: none;
+				color: white;
+			}
+		}
+	}
+}
