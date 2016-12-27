@@ -1,0 +1,55 @@
+.Usuario_main_comments-card{
+	padding-bottom: $margin3-desktop;
+	border-bottom: 3px solid $gray-soft;
+	margin-bottom: $margin4-desktop;
+
+	&-title{
+		margin: 0;
+		margin-bottom: $margin3-desktop;
+
+		@media (--mobile-big){
+			font-size: 1.4em;
+		}
+	}
+
+	&-text{
+		margin: 0;
+		padding-left: 10px;
+		border-left: 5px solid $gray-soft;
+		margin-bottom: $margin4-desktop ;
+		line-height: $p-lh;
+	}
+
+	&-details{
+		display: flex;
+		justify-content: space-between;
+
+		&-date{
+			margin: 0;
+			margin-top: 5px;
+			font-size: $comment-card;
+			font-style: italic;
+		}
+
+		&-like{
+			display: flex;
+
+			&-icon{
+				margin-top: -4px;
+				margin-right: 4px;
+				width: 15px;
+			}
+
+			&-counter{
+				margin: 0;
+				font-size: $comment-card;
+			}
+
+			span{
+				padding-left: 6px;
+				margin: 0;
+				font-size: $comment-card;
+			}
+		}
+	}
+}

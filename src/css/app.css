@@ -51,6 +51,8 @@
 @import './partials/usuario/usuario_main';
 @import './partials/usuario/usuario_main_profile';
 @import './partials/usuario/usuario_aside';
+@import './partials/usuario/usuario_main_comments';
+@import './partials/usuario/usuario_main_comments-card';
 
 /*Aside*/
 

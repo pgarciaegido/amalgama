@@ -3,7 +3,7 @@
 	padding: $margin3-desktop;
 	background-color: $gray-soft;
 	height: 65px;
-
+	
 	@media (--tablet-small){
 		display: none;
 	}

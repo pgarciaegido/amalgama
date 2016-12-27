@@ -1,4 +1,8 @@
 #usuario{
 	padding-top: $margin2-desktop;
 	display: flex;
+
+	@media (--tablet-small){
+		display: block;
+	}
 }
