@@ -1,5 +1,5 @@
 var $ = require('jquery')
-var card = require('./comments_template')
+var card = require('./noticia_comcard/index')
 var votesLiked = require('./votesLiked')
 var moment = require('moment')
 
@@ -96,7 +96,7 @@ function commentsMobile (ev) {
 // ////////////////////////// Event Handlers
 
 // ------ Creates input
-$comentarAgree.on('click', function () {
+$(document).on('click', '#comentar-agree', function () {
   createShow($createAgree, $commentsAgree)
 })
 
@@ -150,6 +150,6 @@ $(document).on('click', '#new-card-liked', function () {
 
 // ----- Open and close menu when mobile
 
-$arrowAgree.add($titleAgree).on('click', commentsMobile)
+$arrowAgree.add($titleAgree).bind('click', commentsMobile)
 
-$arrowDisagree.add($titleDisagree).on('click', commentsMobile)
+$arrowDisagree.add($titleDisagree).bind('click', commentsMobile)

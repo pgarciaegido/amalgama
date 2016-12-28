@@ -2,6 +2,7 @@ var yo = require('yo-yo')
 var votesBar = require('../votes_bar/index')
 var details = require('../details/index')
 var feed = require('../feed/index')
+var registrate = require('../registrate_cta/index')
 
 module.exports = yo`<div id="main">
 	<section id="Latest" class="Latest">
@@ -11,10 +12,6 @@ module.exports = yo`<div id="main">
 			${votesBar()}
 		<button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
 	</section>
-	<div class="Register_cta">
-		<button class="Register_cta-accede">Accede</button>
-		<h2 class="Register_cta-participa">¡Participa!</h2>
-		<button class="Register_cta-registrate">Regístrate</button>
-	</div>
+	${registrate()}
 	${feed}
 </div>`
