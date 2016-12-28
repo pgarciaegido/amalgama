@@ -9,7 +9,9 @@ app.get('/', function (req, res) {
 	res.render('index')
 })
 
-app.use('/noticia', express.static('dist/noticia.html'))
+app.get('/noticia', function (req, res) {
+	res.render('index')
+})
 
 app.use('/registrate', express.static('dist/signup.html'))
 

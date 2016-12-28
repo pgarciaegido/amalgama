@@ -1,5 +1,8 @@
 require('jquery')
-// require('../server')
+var page = require('page')
 require('./js/noticia')
 require('./js/comments')
+require('./noticia/index')
 require('./homepage')
+
+page()
