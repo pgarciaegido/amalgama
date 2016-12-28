@@ -34,7 +34,7 @@ gulp.task('panini', function () {
       helpers: 'helpers/',
       data: 'data/'
     }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/amalgama'))
 })
 
 // Tarea para procesar CSS
@@ -52,7 +52,7 @@ gulp.task('css', function () {
   return gulp.src('./src/css/app.css')
     .pipe(plumber())
     .pipe(postcss(procesos))
-    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./dist/amalgama/css'))
     .pipe(browserSync.stream())
 })
 
@@ -62,7 +62,7 @@ gulp.task('watch', function () {
   gulp.watch('src/css/**/*.css', ['css']) // El array ejecuta la tarea CSS.
   gulp.watch('src/js/*.js', ['scripts'])
   gulp.watch('src/img/*', ['images'])
-  gulp.watch('./dist/*.html').on('change', browserSync.reload)
+  gulp.watch('./dist/amalgama/*.html').on('change', browserSync.reload)
 })
 
 // Bundle js with webpack
@@ -72,13 +72,13 @@ gulp.task('scripts', function () {
       output: {filename: 'app.js'}
       // plugins: [new webpack.optimize.UglifyJsPlugin()]
     }, webpack)) // Minifies
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/amalgama'))
 })
 
 gulp.task('images', function () {
   return gulp.src('./src/img/**/*')
     // .pipe(imagemin())
-    .pipe(gulp.dest('./dist/img'))
+    .pipe(gulp.dest('./dist/amalgama/img'))
 })
 
 // CSS linter
@@ -91,5 +91,15 @@ gulp.task('csslinter', function () {
     }))
 })
 
-gulp.task('default', ['watch', 'css', 'scripts', 'images'/*, 'panini'*/])
+gulp.task('sendServer', function () {
+  return gulp.src('server.js')
+    .pipe(gulp.dest('./dist/amalgama'))
+})
+
+gulp.task('sendJson', function () {
+  return gulp.src('package.json')
+    .pipe(gulp.dest('./dist/amalgama'))
+})
+
+gulp.task('default', ['watch', 'css', 'scripts', 'images', 'sendServer', 'sendJson'/*, 'panini'*/])
 gulp.task('build', ['scripts', 'css'])
