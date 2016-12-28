@@ -28,9 +28,8 @@
 ***********LAYOUT
 */
 
-
+/* ---------------- Buttons -----------*/
 @define-mixin blueButton {
-	
 	background: #5ab3fc; /* Old browsers */
 	background: -moz-linear-gradient(top,  #5ab3fc 1%, #5b86ff 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  #5ab3fc 1%,#5b86ff 100%); /* Chrome10-25,Safari5.1-6 */
@@ -78,6 +77,8 @@
 	width: 100%;
 }
 
+/* ---------------- Inputs ------------*/
+
 @define-mixin formInput {
 	display: block;
 	padding: 6px;
@@ -89,6 +90,8 @@
 	border: 2px solid $gray;
 }
 
+/* -----------------Desktop aside Layout ----------------*/
+
 @define-mixin asideContainer {
 	border-top: 11px solid $gray;
 	padding-top: $margin4-desktop;
@@ -96,6 +99,8 @@
 	border-bottom: 3px solid $gray-soft;
 	margin-bottom: $margin2-desktop;
 }
+
+/* ----------------- Votes bar effects ----------------*/
 
 @define-mixin voteBarRed{
 
@@ -114,10 +119,18 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86cc86', endColorstr='#3dcc3d',GradientType=0 ); /* IE6-9 */
 }
 
+/* ------------------- Avoids effects on mobile interaction ------------*/
+
 @define-mixin noTouchHightlight{
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 }
+
+@define-mixin noTapHighlight{
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/* ----------------- Others -------------------*/
 
 @define-mixin boxShadow{
 	-webkit-box-shadow: -4px -1px 61px -14px rgba(0,0,0,0.56);
@@ -135,6 +148,7 @@
 	cursor: pointer; 
 }
 
-@define-mixin noTapHighlight{
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+@define-mixin removeAnchorStyles{
+	color: white;
+	text-decoration: none;
 }

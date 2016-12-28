@@ -9,11 +9,10 @@
 	}
 
 	&-stats{
-
 		&-comments{
 			display: flex;
 			margin-bottom: $margin4-desktop;
-			
+
 			&-counter{
 				margin: 0;
 				margin-right: $margin5-desktop;

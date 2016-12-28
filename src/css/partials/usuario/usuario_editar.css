@@ -1,5 +1,6 @@
 .Usuario_editar{
-	
+	padding-bottom: $margin1-desktop;
+
 	&-title{
 		margin: $margin2-desktop 0;
 

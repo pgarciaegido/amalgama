@@ -38,6 +38,10 @@
 	}
 
 	&-button{
+		a{
+			@mixin removeAnchorStyles;
+		}
+		
 		@mixin bigButton;
 		display: block;
 		margin: $margin3-desktop auto 0 auto;

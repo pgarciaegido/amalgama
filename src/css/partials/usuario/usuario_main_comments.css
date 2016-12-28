@@ -17,7 +17,7 @@
 
 		&-comments{
 			display: flex;
-			
+
 			&-counter{
 				margin: 0;
 				margin-right: $margin5-desktop;
@@ -91,6 +91,7 @@
 		}
 
 	}
+
 	&-container{
 		padding: $margin3-desktop;
 	}

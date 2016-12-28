@@ -34,8 +34,8 @@
 	}
 
 	&-info{
-
 		box-sizing: border-box;
+
 		&-main{
 			display: flex;
 			margin-bottom: 30px;
@@ -88,6 +88,7 @@
 				}
 			}
 		}
+
 		&-editar{
 			@mixin normalButton;
 			display: inline;
