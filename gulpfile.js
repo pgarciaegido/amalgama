@@ -16,13 +16,13 @@ var plumber = require('gulp-plumber') // on error it stops from crashing
 var imagemin = require('gulp-imagemin')
 
 // Servidor de desarrollo
-gulp.task('serve', function () {
-  browserSync.init({
-    server: {
-      baseDir: './dist'
-    }
-  })
-})
+// gulp.task('serve', function () {
+//   browserSync.init({
+//     server: {
+//       baseDir: './dist'
+//     }
+//   })
+// })
 
 // Panini HTML modules
 gulp.task('panini', function () {
@@ -72,7 +72,7 @@ gulp.task('scripts', function () {
       output: {filename: 'app.js'}
       // plugins: [new webpack.optimize.UglifyJsPlugin()]
     }, webpack)) // Minifies
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('./dist'))
 })
 
 gulp.task('images', function () {
@@ -91,5 +91,5 @@ gulp.task('csslinter', function () {
     }))
 })
 
-gulp.task('default', ['watch', 'serve', 'css', 'scripts', 'images', 'panini'])
+gulp.task('default', ['watch', 'css', 'scripts', 'images'/*, 'panini'*/])
 gulp.task('build', ['scripts', 'css'])

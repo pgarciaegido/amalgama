@@ -2,10 +2,10 @@
   "name": "amalgama",
   "version": "0.1.0",
   "description": "debate website",
-  "main": "gulpfile.js",
+  "main": "server.js",
   "scripts": {
     "test": "standard",
-    "start": "gulp default"
+    "start": "concurrently \"gulp default\" \"node server\""
   },
   "standard": {
     "ignore": [
