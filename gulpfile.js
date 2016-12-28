@@ -67,7 +67,7 @@ gulp.task('watch', function () {
 
 // Bundle js with webpack
 gulp.task('scripts', function () {
-  return gulp.src('./src/js/app.js')
+  return gulp.src('./src/app.js')
     .pipe(gulpWebpack({
       output: {filename: 'app.js'}
       // plugins: [new webpack.optimize.UglifyJsPlugin()]
