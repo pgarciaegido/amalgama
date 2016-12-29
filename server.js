@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+var PORT = process.env.PORT || 8080
 
 app.set('view engine', 'pug')
 
@@ -29,6 +30,6 @@ app.get('/accede', function(req, res) {
 	res.render('index')
 })
 
-app.listen(5000, function () {
-	console.log('Escuchando en puerto 5000!!!')
+app.listen(PORT, function () {
+	console.log('Escuchando en puerto ' + PORT + '!')
 })
