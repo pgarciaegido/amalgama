@@ -70,6 +70,7 @@ gulp.task('scripts', function () {
   return gulp.src('./src/app.js')
     .pipe(gulpWebpack({
       output: {filename: 'app.js'}
+      // node: {fs: "empty"}
       // plugins: [new webpack.optimize.UglifyJsPlugin()]
     }, webpack)) // Minifies
     .pipe(gulp.dest('./dist'))

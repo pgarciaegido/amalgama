@@ -45,13 +45,21 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var page = __webpack_require__(1)
+	var $ = __webpack_require__(5)
+	// require('pug')
 
-	__webpack_require__(5)
+	__webpack_require__(6)
 	__webpack_require__(25)
 	__webpack_require__(145)
 	__webpack_require__(148)
 	__webpack_require__(150)
 	__webpack_require__(152)
+
+
+	$.get( "api/user/pegido", function( data ) {
+	  console.log(data.email)
+	  alert( "Load was performed." );
+	});
 
 	page()
 
@@ -1277,23 +1285,6 @@
 
 /***/ },
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(6)
-	var header = __webpack_require__(7)
-	var page = __webpack_require__(1)
-	var template = __webpack_require__(18)
-	var aside = __webpack_require__(23)
-
-	page('/', header,  function(ctx, next){
-		__webpack_require__(24)
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
-	  next()
-	}, aside)
-
-/***/ },
-/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11519,10 +11510,27 @@
 
 
 /***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(5)
+	var header = __webpack_require__(7)
+	var page = __webpack_require__(1)
+	var template = __webpack_require__(18)
+	var aside = __webpack_require__(23)
+
+	page('/', header,  function(ctx, next){
+		__webpack_require__(24)
+	  var main = document.getElementById('main-container');
+	  $(main).empty().append(template);
+	  next()
+	}, aside)
+
+/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var yo = __webpack_require__(8)
 
 	module.exports = function(ctx, next){
@@ -12995,7 +13003,7 @@
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var yo = __webpack_require__(8)
 
 	module.exports = function (ctx, next) {
@@ -13048,7 +13056,7 @@
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 
 	var $burguer = $('.Navbar-icon-menu')
 	var $close = $('.Navbar-icon-close')
@@ -13101,7 +13109,7 @@
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var header = __webpack_require__(7)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(26)
@@ -13263,7 +13271,7 @@
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var card = __webpack_require__(28)
 	var votesLiked = __webpack_require__(30)
 	var moment = __webpack_require__(31)
@@ -13387,7 +13395,7 @@
 /* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 
 	// ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
 
@@ -28322,7 +28330,7 @@
 /* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 
 	module.exports = {
 	 'comentarAgree': $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
@@ -28351,7 +28359,7 @@
 /* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var votesLiked = __webpack_require__(30)
 
 	// ///////////////FUNCTIONS
@@ -28458,7 +28466,7 @@
 /* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 
 	module.exports = {	
 	 'thumbUp': $('#thumbup'),
@@ -28478,7 +28486,7 @@
 /* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var header = __webpack_require__(7)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(146)
@@ -28578,7 +28586,7 @@
 /* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var header = __webpack_require__(7)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(149)
@@ -28638,7 +28646,7 @@
 /* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(151)
 
@@ -28682,7 +28690,7 @@
 /* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(6)
+	var $ = __webpack_require__(5)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(153)
 
