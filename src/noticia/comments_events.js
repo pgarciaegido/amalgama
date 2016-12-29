@@ -3,39 +3,6 @@ var card = require('./noticia_comcard/index')
 var votesLiked = require('./votesLiked')
 var moment = require('moment')
 
-// //////////////////////////// Variables
-
-var $comentarAgree = $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment')
-var $comentarDisagree = $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment')
-
-var $cancelarAgree = $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar')
-var $cancelarDisagree = $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar')
-
-var $createAgree = $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create')
-var $createDisagree = $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create')
-
-var $commentsAgree = $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments')
-var $commentsDisagree = $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments')
-
-var $enviarAgree = $commentsAgree.find('.Noticia_comentarios_list-comments-create-buttons-enviar')
-var $enviarDisagree = $commentsDisagree.find('.Noticia_comentarios_list-comments-create-buttons-enviar')
-
-var $textAgree = $commentsAgree.find('#textarea')
-var $textDisagree = $commentsDisagree.find('#textarea')
-
-var $commentLikeIcon = $('.Noticias_comentarios_card-feedback-like-icon')
-var $commentLikeIconLiked = $('.Noticias_comentarios_card-feedback-like-icon-liked')
-
-var $commentLikeCounter = $('#comments-like-counter')
-
-var $arrowAgree = $('.Noticia_comentarios-comentarios-agree-header-arrow')
-var $arrowDisagree = $('.Noticia_comentarios-comentarios-disagree-header-arrow')
-
-var $titleAgree = $('.Noticia_comentarios-comentarios-agree-header-title')
-var $titleDisagree = $('.Noticia_comentarios-comentarios-disagree-header-title')
-
-var $commentsMobile = $($('.Noticia_hide_on_mobile'))
-
 // //////////////////////////// Functions
 
 // ---- Displays textarea
@@ -66,28 +33,29 @@ var disagreeOpened
 // ---- $commentsMobile is an array of dom elements.
 
 function commentsMobile (ev) {
+  var v = require('./comments_events_vars')
   if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
     if (disagreeOpened === false || disagreeOpened === undefined) {
-      $($commentsMobile[3]).css('display', 'flex')
-      $($commentsMobile[4]).css('display', 'block')
-      $($commentsMobile[5]).css('display', 'flex')
+      $(v.commentsMobile[3]).css('display', 'flex')
+      $(v.commentsMobile[4]).css('display', 'block')
+      $(v.commentsMobile[5]).css('display', 'flex')
       disagreeOpened = true
     } else {
-      $($commentsMobile[3]).css('display', 'none')
-      $($commentsMobile[4]).css('display', 'none')
-      $($commentsMobile[5]).css('display', 'none')
+      $(v.commentsMobile[3]).css('display', 'none')
+      $(v.commentsMobile[4]).css('display', 'none')
+      $(v.commentsMobile[5]).css('display', 'none')
       disagreeOpened = false
     }
   } else {
     if (agreeOpened === false || agreeOpened === undefined) {
-      $($commentsMobile[0]).css('display', 'flex')
-      $($commentsMobile[1]).css('display', 'block')
-      $($commentsMobile[2]).css('display', 'flex')
+      $(v.commentsMobile[0]).css('display', 'flex')
+      $(v.commentsMobile[1]).css('display', 'block')
+      $(v.commentsMobile[2]).css('display', 'flex')
       agreeOpened = true
     } else {
-      $($commentsMobile[0]).css('display', 'none')
-      $($commentsMobile[1]).css('display', 'none')
-      $($commentsMobile[2]).css('display', 'none')
+      $(v.commentsMobile[0]).css('display', 'none')
+      $(v.commentsMobile[1]).css('display', 'none')
+      $(v.commentsMobile[2]).css('display', 'none')
       agreeOpened = false
     }
   }
@@ -97,59 +65,55 @@ function commentsMobile (ev) {
 
 // ------ Creates input
 $(document).on('click', '#comentar-agree', function () {
-  createShow($createAgree, $commentsAgree)
+  var v = require('./comments_events_vars')
+  createShow(v.createAgree, v.commentsAgree)
 })
 
-$comentarDisagree.on('click', function () {
-  createShow($createDisagree, $commentsDisagree)
+$(document).on('click', '#comentar-disagree', function () {
+  var v = require('./comments_events_vars')
+  createShow(v.createDisagree, v.commentsDisagree)
 })
 
-// ----- Inside input, cancel and close
+// // ----- Inside input, cancel and close
 
-$cancelarAgree.on('click', function () {
-  createHide($createAgree, $commentsAgree, $textAgree)
+$(document).on('click', '#cancelar-comments', function () {
+  var v = require('./comments_events_vars')
+  if(this.parentElement.parentElement.parentElement.parentElement.parentElement.id.indexOf('disagree') == -1){
+    createHide(v.createAgree, v.commentsAgree, v.textAgree)
+  } else {
+    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
+  }
 })
 
-$cancelarDisagree.on('click', function () {
-  createHide($createDisagree, $commentsDisagree, $textDisagree)
+// // ------ Inside input, sends and close
+
+$(document).on('click', '#enviar-comments', function () {
+  var v = require('./comments_events_vars')
+  if(this.parentElement.parentElement.parentElement.parentElement.parentElement.id.indexOf('disagree') == -1){
+    addComment(v.textAgree, v.commentsAgree)
+    createHide(v.createAgree, v.commentsAgree, v.textAgree)
+  } else {
+    addComment(v.textDisagree, v.commentsDisagree)
+    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
+  }
 })
 
-// ------ Inside input, sends and close
-
-$enviarAgree.on('click', function () {
-  addComment($textAgree, $commentsAgree)
-  createHide($createAgree, $commentsAgree, $textAgree)
-})
-
-$enviarDisagree.on('click', function () {
-  addComment($textDisagree, $commentsDisagree)
-  createHide($createDisagree, $commentsDisagree, $textDisagree)
-})
-
-//  -----Likes a comment
-
-$commentLikeIcon.on('click', function () {
-  votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
-})
-
-// ----- Dislikes a comment already liked
-
-$commentLikeIconLiked.on('click', function () {
-  votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIcon)
-})
-
-// Appended cards are whatched so the event pops
+// ----------- Like comments
 
 $(document).on('click', '#new-card', function () {
-  votesLiked($(this), true, $commentLikeCounter, null, $commentLikeIconLiked)
+  var v = require('./comments_events_vars')
+  votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
 })
 
 $(document).on('click', '#new-card-liked', function () {
-  votesLiked($(this), false, $commentLikeCounter, null, $commentLikeIconLiked)
+  var v = require('./comments_events_vars')
+  votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
 })
 
-// ----- Open and close menu when mobile
+// // ----- Open and close menu when mobile
 
-$arrowAgree.add($titleAgree).bind('click', commentsMobile)
+$(document).on('click', '#arrow-agree', commentsMobile)
+$(document).on('click', '#title-agree', commentsMobile)
 
-$arrowDisagree.add($titleDisagree).bind('click', commentsMobile)
+$(document).on('click', '#arrow-disagree', commentsMobile)
+$(document).on('click', '#title-disagree', commentsMobile)

@@ -16,8 +16,8 @@ module.exports = function () {
 	<div class="Noticia_comentarios_list-comments-create">
 		<textarea name="create" id="textarea" cols="30" rows="10"></textarea>
 		<div class="Noticia_comentarios_list-comments-create-buttons">
-			<button class="Noticia_comentarios_list-comments-create-buttons-enviar">Enviar</button>
-			<button class="Noticia_comentarios_list-comments-create-buttons-cancelar">Cancelar</button>
+			<button id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar">Enviar</button>
+			<button id="cancelar-comments" class="Noticia_comentarios_list-comments-create-buttons-cancelar">Cancelar</button>
 		</div>
 	</div>
 </div>

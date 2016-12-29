@@ -39,8 +39,8 @@ ${registrate()}
 	<div class="Noticia_comentarios-comentarios">
 		<div class="Noticia_comentarios-comentarios-agree">
 			<div class="Noticia_comentarios-comentarios-agree-header">
-				<h2 class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-				<img src="img/arrow-green.svg" alt="" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+				<h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
+				<img src="img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
 				<div class="Noticia_comentarios-comentarios-agree-header-votes">
 					<h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">2</h2>
 					<img src="img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
@@ -57,8 +57,8 @@ ${registrate()}
 		</div>
 		<div class="Noticia_comentarios-comentarios-disagree">
 			<div class="Noticia_comentarios-comentarios-disagree-header">
-				<h2 class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
-				<img src="img/arrow-red.svg" alt="" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
+				<h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
+				<img src="img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
 				<div class="Noticia_comentarios-comentarios-disagree-header-votes">
 					<h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">23</h2>
 					<img src="img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
@@ -70,7 +70,7 @@ ${registrate()}
 			</div>
 			<div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 				<button id="disagree-button" class="Noticia_comentarios-comentarios-buttons-disagree">En contra</button>
-				<button class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
+				<button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
 			</div>
 		</div>
 	</div>
