@@ -1,4 +1,5 @@
 var page = require('page')
+require('pug')
 
 require('./homepage')
 require('./noticia')
