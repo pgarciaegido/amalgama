@@ -12,12 +12,8 @@ module.exports = yo`<div id="login">
 				<button class="Login_form-social-google">Accede con Google</button>
 			</div>
 			<form action="" class="Login_form-form">
-				<label for="" class="Login_form-form-name">Nombre de usuario o email: </br>
-					<input type="text" placeholder="Introduzca su nombre de usuario o email" />
-				</label>
-				<label for="" class="Login_form-form-password">Contraseña: </br>
-					<input type="password" />
-				</label>
+				<input type="text" placeholder="Introduzca su nombre de usuario o email" />
+				<input type="password" />
 				<input class="Login_form-form-submit" type="Submit" value="Accede">
 			</form>
 		</div>

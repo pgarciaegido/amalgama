@@ -1,30 +1,25 @@
 var yo = require('yo-yo')
 
 module.exports = function () {
-	return yo`
-	<div id="signup">
+	return yo`<div id="signup">
 		<div class="Signup_image">
 			<img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
 		</div>
 		<div class="Signup_form">
-		<h1 class="Signup_form-title">¡Regístrate y opina!</h1>
-		<h3 class="Signup_form-subtitle">Regístrate y podrás votar y opinar en todos los temas. ¡No te llevará más de 2 minutos!</h3>
-		<div class="Signup_form-social">
-			<button class="Signup_form-social-facebook">Regístrate con Facebook</button>
-			<button class="Signup_form-social-google">Regístrate con Google</button>
-		</div>
-		<form action="" class="Signup_form-form">
-			<label for="" class="Signup_form-form-name">Nombre de usuario: </br>
-				<input type="text" placeholder="Introduzca su nombre de usuario" />
-			</label>
-			<label for="" class="Signup_form-form-email">Email: </br>
-				<input type="email" placeholder="Introduzca su correo electrónico"/>
-			</label>
-			<label for="" class="Signup_form-form-password">Contraseña: </br>
-				<input type="password" />
-			</label>
-			<input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!">
-		</form>
+			<h1 class="Signup_form-title">¡Regístrate y opina!</h1>
+			<h3 class="Signup_form-subtitle">Regístrate y podrás votar y opinar en todos los temas. ¡No te llevará más de 2 minutos!</h3>
+			<div class="Signup_form-social">
+				<button class="Signup_form-social-facebook">Regístrate con Facebook</button>
+				<button class="Signup_form-social-google">Regístrate con Google</button>
+			</div>
+			<form action="" class="Signup_form-form">
+				<div>
+					<input type="text" placeholder="Introduzca su nombre de usuario" />
+					<input type="email" placeholder="Introduzca su correo electrónico"/>
+					<input type="password" />
+				</div>
+				<input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
+			</form>
 		</div>
 	</div>`
 }
