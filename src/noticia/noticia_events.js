@@ -1,37 +1,22 @@
 var $ = require('jquery')
 var votesLiked = require('./votesLiked')
-// var va = require('./noticia_events_variables')
-
-var $thumbUp = $('#thumbup')
-var $thumbUpLiked = $('#thumbup-liked')
-
-var $thumbDown = $('#thumbdown')
-var $thumbDownLiked = $('#thumbdown-liked')
-
-var $votesAgree = $('.Noticia_comentarios-comentarios-agree-header-votes-counter')
-var $votesDisagree = $('.Noticia_comentarios-comentarios-disagree-header-votes-counter')
-
-var $agreeBottom = $('#agree-button')
-var $disagreeBottom = $('#disagree-button')
-
-var $votesBar = $('.Votes_bar-colors-green')
-var $votesGreenNum = $('.Votes_bar-numbers-green')
-var $votesRedNum = $('.Votes_bar-numbers-red')
 
 // ///////////////FUNCTIONS
 
 // ------ Get porcentage of the votes bar and adjust it acording to the vote number
 
 function getPercentage () {
-  var agree = Number($votesAgree.text())
-  var total = agree + Number($votesDisagree.text())
+  var v = require('./noticia_events_vars')
+  var agree = Number(v.votesAgree.text())
+  var total = agree + Number(v.votesDisagree.text())
   var percentage = agree / total * 100
-  $votesBar.css('width', percentage + '%')
+  v.votesBar.css('width', percentage + '%')
 }
 
 // ---- Call the function so its done on loading
-
-getPercentage()
+$(document).ready(function(){
+  getPercentage()
+})
 
 // ---- Change the colors of button when clicked
 
@@ -61,49 +46,55 @@ function buttonClicked (button, clicked, color) {
 // ----- Votes on clicking the thumb up/down icon
 
 $(document).on('click', '#thumbup', function () {
-  votesLiked($(this), true, $votesAgree, $votesGreenNum, $thumbUpLiked)
-  // buttonClicked($agreeBottom, false, '#7ace7a')
+  var v = require('./noticia_events_vars')
+  votesLiked($(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
+  buttonClicked(v.agreeBottom, false, '#7ace7a')
   getPercentage()
 })
 
 $(document).on('click', '#thumbup-liked', function () {
-  votesLiked($(this), false, $votesAgree, $votesGreenNum, $thumbUp)
-  // buttonClicked($agreeBottom, true, '#7ace7a')
+  var v = require('./noticia_events_vars')
+  votesLiked($(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp)
+  buttonClicked(v.agreeBottom, true, '#7ace7a')
   getPercentage()
 })
 
 $(document).on('click', '#thumbdown', function () {
-  votesLiked($(this), true, $votesDisagree, $votesRedNum, $thumbDownLiked)
-  // buttonClicked($disagreeBottom, false, '#e13c42')
+  var v = require('./noticia_events_vars')
+  votesLiked($(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
+  buttonClicked(v.disagreeBottom, false, '#e13c42')
   getPercentage()
 })
 
 $(document).on('click', '#thumbdown-liked', function () {
-  votesLiked($(this), false, $votesDisagree, $votesRedNum, $thumbDown)
-  // buttonClicked($disagreeBottom, true, '#e13c42')
+  var v = require('./noticia_events_vars')
+  votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown)
+  buttonClicked(v.disagreeBottom, true, '#e13c42')
   getPercentage()
 })
 
 // ------Votes on clicking agree / disagree buttons
 
 $(document).on('click', '#agree-button', function () {
-  if ($thumbUp.css('display') === 'block') {
-    votesLiked($thumbUp, true, $votesAgree, $votesGreenNum, $thumbUpLiked)
-    // buttonClicked($(this), false, '#7ace7a')
+  var v = require('./noticia_events_vars')
+  if (v.thumbUp.css('display') === 'block') {
+    votesLiked(v.thumbUp, true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
+    buttonClicked($(this), false, '#7ace7a')
   } else {
-    votesLiked($thumbUpLiked, false, $votesAgree, $votesGreenNum, $thumbUp)
-    // buttonClicked($(this), true, '#7ace7a')
+    votesLiked(v.thumbUpLiked, false, v.votesAgree, v.votesGreenNum, v.thumbUp)
+    buttonClicked($(this), true, '#7ace7a')
   }
   getPercentage()
 })
 
 $(document).on('click', '#disagree-button', function () {
-  if ($thumbDown.css('display') === 'block') {
-    votesLiked($thumbDown, true, $votesDisagree, $votesRedNum, $thumbDownLiked)
-    // buttonClicked($(this), false, '#e13c42')
+  var v = require('./noticia_events_vars')
+  if (v.thumbDown.css('display') === 'block') {
+    votesLiked(v.thumbDown, true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
+    buttonClicked($(this), false, '#e13c42')
   } else {
-    votesLiked($thumbDownLiked, false, $votesDisagree, $votesRedNum, $thumbDown)
-    // buttonClicked($(this), true, '#e13c42')
+    votesLiked(v.thumbDownLiked, false, v.votesDisagree, v.votesRedNum, v.thumbDown)
+    buttonClicked($(this), true, '#e13c42')
   }
   getPercentage()
 })

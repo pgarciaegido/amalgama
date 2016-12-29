@@ -75,5 +75,6 @@ ${registrate()}
 		</div>
 	</div>
 </section>
+${votesBar()}
 </div>`
 }
