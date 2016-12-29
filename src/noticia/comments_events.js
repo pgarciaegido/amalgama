@@ -85,7 +85,7 @@ $(document).on('click', '#cancelar-comments', function () {
   }
 })
 
-// // ------ Inside input, sends and close
+// ------ Inside input, sends and close
 
 $(document).on('click', '#enviar-comments', function () {
   var v = require('./comments_events_vars')

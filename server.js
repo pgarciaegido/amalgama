@@ -1,9 +1,9 @@
 var express = require('express')
 var app = express()
 
-app.set('view engine', 'pug');
+app.set('view engine', 'pug')
 
-app.use(express.static('dist'));
+app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
 	res.render('index')
@@ -13,18 +13,20 @@ app.get('/noticia', function (req, res) {
 	res.render('index')
 })
 
-app.use('/registrate', express.static('dist/signup.html'))
+app.get('/usuario/pegido', function(req, res) {
+	res.render('index')
+})
 
-app.use('/accede', express.static('dist/login.html'))
+app.get('/usuario/pegido/editar', function(req, res) {
+	res.render('index')
+})
 
-app.use('/usuario/pegido', express.static('dist/usuario.html'))
+app.get('/registrate', function(req, res) {
+	res.render('index')
+})
 
-app.use('/usuario/pegido/editar', express.static('dist/usuario_editar.html'))
-
-
-
-app.get('/tusmuertos', function (req, res) {
-	res.sendFile(__dirname + '/dist/index.html')
+app.get('/accede', function(req, res) {
+	res.render('index')
 })
 
 app.listen(5000, function () {
