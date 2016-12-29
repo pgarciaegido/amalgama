@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "standard",
-    "start": "node server"
+    "start": "concurrently \"gulp default\" \"node server\""
   },
   "standard": {
     "ignore": [

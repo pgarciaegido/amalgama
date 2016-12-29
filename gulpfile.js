@@ -91,15 +91,5 @@ gulp.task('csslinter', function () {
     }))
 })
 
-gulp.task('sendServer', function () {
-  return gulp.src('server.js')
-    .pipe(gulp.dest('./dist'))
-})
-
-gulp.task('sendJson', function () {
-  return gulp.src('package.json')
-    .pipe(gulp.dest('./dist'))
-})
-
 gulp.task('default', ['watch', 'css', 'scripts', 'images', 'sendServer', 'sendJson'/*, 'panini'*/])
 gulp.task('build', ['scripts', 'css'])
