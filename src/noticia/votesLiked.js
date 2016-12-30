@@ -6,24 +6,27 @@ module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   // --- Gets counter number through the class name
   var counter = that.siblings()
   counter = counter.map(function () {
-    if ($(this).attr('class').indexOf('counter') !== -1)
+    if ($(this).attr('class').indexOf('counter') !== -1) {
       return this
+    }
   })
   var temp = counter.text()
 
   // ----if the sign is positive, we add 1, otherwise, we substract 1
 
   var newNumber
-  if (sign === true)
+  if (sign === true) {
     newNumber = Number(temp) + 1
-  else if (sign === false)
+  } else if (sign === false) {
     newNumber = Number(temp) - 1
+  }
   counter.text(newNumber)
 
   // ------if the number is related directly with votes bar, change that numbers too
 
-  if (barNum !== null)
+  if (barNum !== null) {
     barNum.text(newNumber)
+  }
   that.css('display', 'none')
   that.siblings(newHandler).css('display', 'block')
 }

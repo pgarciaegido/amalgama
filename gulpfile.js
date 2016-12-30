@@ -13,7 +13,7 @@ var gulpWebpack = require('webpack-stream')
 var webpack = require('webpack') // brings compatibility with uglify
 var panini = require('panini')
 var plumber = require('gulp-plumber') // on error it stops from crashing
-var imagemin = require('gulp-imagemin')
+// var imagemin = require('gulp-imagemin')
 
 // Servidor de desarrollo
 // gulp.task('serve', function () {
@@ -92,5 +92,5 @@ gulp.task('csslinter', function () {
     }))
 })
 
-gulp.task('default', ['watch', 'css', 'scripts', 'images' /*, 'panini'*/])
+gulp.task('default', ['watch', 'css', 'scripts', 'images'/* , 'panini' */])
 gulp.task('build', ['scripts', 'css'])

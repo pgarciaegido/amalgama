@@ -66,7 +66,7 @@ function commentsMobile (ev) {
 // ------ Creates input
 $(document).on('click', '#comentar-agree', function () {
   var v = require('./comments_events_vars')
-  if($('#cancelar-comments').data().resolve === undefined){
+  if ($('#cancelar-comments').data().resolve === undefined) {
     createShow(v.createAgree, v.commentsAgree)
     $('#cancelar-comments').data('resolve', 'agree')
   }
@@ -74,7 +74,7 @@ $(document).on('click', '#comentar-agree', function () {
 
 $(document).on('click', '#comentar-disagree', function () {
   var v = require('./comments_events_vars')
-  if($('#cancelar-comments').data().resolve === undefined){
+  if ($('#cancelar-comments').data().resolve === undefined) {
     createShow(v.createDisagree, v.commentsDisagree)
     $('#cancelar-comments').data('resolve', 'disagree')
   }
@@ -84,7 +84,7 @@ $(document).on('click', '#comentar-disagree', function () {
 
 $(document).on('click', '#cancelar-comments', function () {
   var v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === 'agree'){
+  if ($('#cancelar-comments').data().resolve === 'agree') {
     createHide(v.createAgree, v.commentsAgree, v.textAgree)
   } else if ($('#cancelar-comments').data().resolve === 'disagree') {
     createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
@@ -96,10 +96,10 @@ $(document).on('click', '#cancelar-comments', function () {
 
 $(document).on('click', '#enviar-comments', function () {
   var v = require('./comments_events_vars')
-  if($('#cancelar-comments').data().resolve === 'agree'){
+  if ($('#cancelar-comments').data().resolve === 'agree') {
     addComment(v.textAgree, v.commentsAgree)
     createHide(v.createAgree, v.commentsAgree, v.textAgree)
-  } else if ($('#cancelar-comments').data().resolve === 'disagree'){
+  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
     addComment(v.textDisagree, v.commentsDisagree)
     createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
   }

@@ -14,7 +14,7 @@ function getPercentage () {
 }
 
 // ---- Call the function so its done on loading
-$(document).ready(function(){
+$(document).ready(function () {
   getPercentage()
 })
 

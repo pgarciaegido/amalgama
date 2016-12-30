@@ -54,13 +54,14 @@
 	__webpack_require__(150)
 	__webpack_require__(152)
 
-
-	// $.get( "api/user/pegido", function( data ) {
-	//   console.log(data.email)
-	//   alert( "Load was performed." );
+	// $.get( "api/news", function( data ) {
+	//   console.log(data)
+	//   request = data
+	// 	console.log(request.title)
 	// });
 
 	page()
+
 
 /***/ },
 /* 1 */
@@ -11518,12 +11519,13 @@
 	var template = __webpack_require__(18)
 	var aside = __webpack_require__(23)
 
-	page('/', header,  function(ctx, next){
-		__webpack_require__(24)
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	page('/', header, function (ctx, next) {
+	  __webpack_require__(24)
+	  var main = document.getElementById('main-container')
+	  $(main).empty().append(template)
 	  next()
 	}, aside)
+
 
 /***/ },
 /* 7 */
@@ -11532,39 +11534,39 @@
 	var $ = __webpack_require__(5)
 	var yo = __webpack_require__(8)
 
-	module.exports = function(ctx, next){
-		var container = $('#header-container')
-		container.append(el)
-		next()
+	module.exports = function (ctx, next) {
+	  var container = $('#header-container')
+	  container.append(el)
+	  next()
 	}
 
 	var el = yo`<div>
 	<nav class="Navbar">
-		<img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />
-		<img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />
-		<a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>
-		<ul class="Navbar-menu">
-			<li class="Navbar-menu-item"><a href="/">HOME</a></li>
-			<li class="Navbar-menu-item"><a href="/noticia">ESPAÑA</a></li>
-			<li class="Navbar-menu-item"><a href="#">INTERNACIONAL</a></li>
-			<li class="Navbar-menu-item"><a href="#">ECONOMÍA</a></li>
-			<li class="Navbar-menu-item"><a href="./login.html">ACCEDE</a></li>
-			<li class="Navbar-menu-item"><a href="./signup.html">REGISTRATE</a></li>
-		</ul>
-		<div class="Navbar-search">
-			<input type="search" class="Navbar-search-input">
-			<img src="/img/search.svg" alt="search" class="Navbar-search-icon">
-		</div>
+	  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />
+	  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />
+	  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>
+	  <ul class="Navbar-menu">
+	    <li class="Navbar-menu-item"><a href="/">HOME</a></li>
+	    <li class="Navbar-menu-item"><a href="/noticia">ESPAÑA</a></li>
+	    <li class="Navbar-menu-item"><a href="#">INTERNACIONAL</a></li>
+	    <li class="Navbar-menu-item"><a href="#">ECONOMÍA</a></li>
+	    <li class="Navbar-menu-item"><a href="./login.html">ACCEDE</a></li>
+	    <li class="Navbar-menu-item"><a href="./signup.html">REGISTRATE</a></li>
+	  </ul>
+	  <div class="Navbar-search">
+	    <input type="search" class="Navbar-search-input">
+	    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">
+	  </div>
 	</nav>
 	<nav class="Navbar_menu">
-		<ul class="Navbar_menu-menu">
-			<li class="Navbar_menu-menu-item"><a href="#">HOME</a></li>
-			<li class="Navbar_menu-menu-item"><a href="#">ESPAÑA</a></li>
-			<li class="Navbar_menu-menu-item"><a href="#">INTERNACIONAL</a></li>
-			<li class="Navbar_menu-menu-item"><a href="#">ECONOMÍA</a></li>
-			<li class="Navbar_menu-menu-item"><a href="#">ACCEDE</a></li>
-			<li class="Navbar_menu-menu-item"><a href="#">REGISTRATE</a></li>
-		</ul>
+	  <ul class="Navbar_menu-menu">
+	    <li class="Navbar_menu-menu-item"><a href="#">HOME</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="#">ESPAÑA</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="#">INTERNACIONAL</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="#">ECONOMÍA</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="#">ACCEDE</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="#">REGISTRATE</a></li>
+	  </ul>
 	</nav>
 	<div id="bg"></div>
 	</div>`
@@ -12915,16 +12917,17 @@
 	var registrate = __webpack_require__(22)
 
 	module.exports = yo`<div id="main">
-		<section id="Latest" class="Latest">
-			<h1 class="Latest-title">Renzi dimitirá mañana tras la aprovación de los presupuestos</h1>
-				${details()}
-			<h4 class="Latest-entradilla">Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi</h4>
-				${votesBar()}
-			<button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
-		</section>
-		${registrate()}
-		${feed}
+	  <section id="Latest" class="Latest">
+	    <h1 class="Latest-title">Renzi dimitirá mañana tras la aprovación de los presupuestos</h1>
+	      ${details()}
+	    <h4 class="Latest-entradilla">Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi</h4>
+	      ${votesBar()}
+	    <button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
+	  </section>
+	  ${registrate()}
+	  ${feed}
 	</div>`
+
 
 /***/ },
 /* 19 */
@@ -12932,18 +12935,19 @@
 
 	var yo = __webpack_require__(8)
 
-	module.exports = function () {
-		return yo`<div class="Votes_bar">
-				<div class="Votes_bar-colors">
-					<div class="Votes_bar-colors-red"></div>
-					<div class="Votes_bar-colors-green"></div>
-				</div>
-				<div class="Votes_bar-numbers">
-					<span class="Votes_bar-numbers-green">220</span>
-					<span class="Votes_bar-numbers-red">220</span>
-				</div>
-			</div>`
-		}
+	module.exports = function (agree, disagree) {
+	  return yo`<div class="Votes_bar">
+	      <div class="Votes_bar-colors">
+	        <div class="Votes_bar-colors-red"></div>
+	        <div class="Votes_bar-colors-green"></div>
+	      </div>
+	      <div class="Votes_bar-numbers">
+	        <span class="Votes_bar-numbers-green">${agree}</span>
+	        <span class="Votes_bar-numbers-red">${disagree}</span>
+	      </div>
+	    </div>`
+	}
+
 
 /***/ },
 /* 20 */
@@ -12951,18 +12955,19 @@
 
 	var yo = __webpack_require__(8)
 
-	module.exports = function () {
-		return yo`<div class="Details">
-					<div class="Details-date">
-						<img class="Details-date-icon" src="/img/clock.svg" />
-						<span class="Details-date-text">7 diciembre 2016</span>
-					</div>
-					<div class="Details-tags">
-						<img class="Details-tags-icon" src="/img/price-tags.svg" />
-						<span class="Details-tags-text">Internacional</span>
-					</div>
-				</div>`
-		}
+	module.exports = function (date, tags) {
+
+	  return yo`<div class="Details">
+	        <div class="Details-date">
+	          <img class="Details-date-icon" src="/img/clock.svg" />
+	          <span class="Details-date-text">${date}</span>
+	        </div>
+	        <div class="Details-tags">
+	          <img class="Details-tags-icon" src="/img/price-tags.svg" />
+	          <span class="Details-tags-text">${tags}</span>
+	        </div>
+	      </div>`
+	}
 
 
 /***/ },
@@ -12974,15 +12979,16 @@
 	var votesBar = __webpack_require__(19)
 
 	module.exports = yo`<div class="Feed">
-			<article class="Feed-article impar">
-				<h2 class="Feed-article-title">Es necesaria la subida de impuestos del PP?</h2>
-					${details()}
-				<div class="Feed-article-bars">
-					${votesBar()}
-				</div>
-				<button class="Feed-article-button">Ver más</button>
-			</article>
-		</div>`
+	    <article class="Feed-article impar">
+	      <h2 class="Feed-article-title">Es necesaria la subida de impuestos del PP?</h2>
+	        ${details()}
+	      <div class="Feed-article-bars">
+	        ${votesBar()}
+	      </div>
+	      <button class="Feed-article-button">Ver más</button>
+	    </article>
+	  </div>`
+
 
 /***/ },
 /* 22 */
@@ -12991,12 +12997,13 @@
 	var yo = __webpack_require__(8)
 
 	module.exports = function () {
-		return yo`<div class="Register_cta">
-			<button class="Register_cta-accede">Accede</button>
-			<h2 class="Register_cta-participa">¡Participa!</h2>
-			<button class="Register_cta-registrate">Regístrate</button>
-		</div>`
+	  return yo`<div class="Register_cta">
+	    <button class="Register_cta-accede">Accede</button>
+	    <h2 class="Register_cta-participa">¡Participa!</h2>
+	    <button class="Register_cta-registrate">Regístrate</button>
+	  </div>`
 	}
+
 
 /***/ },
 /* 23 */
@@ -13006,50 +13013,51 @@
 	var yo = __webpack_require__(8)
 
 	module.exports = function (ctx, next) {
-		var container = $('#main-container')
-		container.append(el)
+	  var container = $('#main-container')
+	  container.append(el)
 	}
 
 	var el = yo`<aside id="aside">
-		<div class="Aside_registrate">
-			<h2 class="Aside_registrate-title">Regístrate</h2>
-			<p class="Aside_registrate-subtitle">
-				Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
-			</p>
-			<form class="Aside_registrate-form" action="">
-				<label for="">Nombre usuario: 
-					<input type="text">
-				</label>
-				<label for="">Email: 
-					<input type="email">
-				</label>
-				<label for="">Contraseña: 
-					<input type="password">
-				</label>
-				<input class="Aside_registrate-form-button" type="submit" value="Regístrate">
-			</form>
-			<button class="Aside_registrate-facebook">Regístrate con Facebook</button>
-			<button class="Aside_registrate-google">Regístrate con Google</button>
-		</div>
-		<div class="Aside_temas">
-			<h2 class="Aside_temas-title">Temas más votados</h2>
-			<div class="Aside_temas-tema">
-				<p class="Aside_temas-tema-title">Renzi dimite en Italia a pesar del las ventajas de las encuestas</p>
-				<div class="Aside_temas-tema-info">
-					<span class="Aside_temas-tema-info-votes">1300 votos</span>
-					<span class="Aside_temas-tema-info-balance">-42</span>
-				</div>
-			</div>	
-		</div>
-		<div class="Aside_subscribe">
-			<h2 class="Aside_subscribe-title">¡Suscríbete</h2>
-			<p class="Aside_subscribe-subtitle">Suscríbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>
-			<form action="" class="Aside_subscribe-form">
-				<label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>
-				<input class="Aside_subscribe-form-button"type="submit" value="¡Regístrame!">
-			</form>
-		</div>
+	  <div class="Aside_registrate">
+	    <h2 class="Aside_registrate-title">Regístrate</h2>
+	    <p class="Aside_registrate-subtitle">
+	      Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
+	    </p>
+	    <form class="Aside_registrate-form" action="">
+	      <label for="">Nombre usuario: 
+	        <input type="text">
+	      </label>
+	      <label for="">Email: 
+	        <input type="email">
+	      </label>
+	      <label for="">Contraseña: 
+	        <input type="password">
+	      </label>
+	      <input class="Aside_registrate-form-button" type="submit" value="Regístrate">
+	    </form>
+	    <button class="Aside_registrate-facebook">Regístrate con Facebook</button>
+	    <button class="Aside_registrate-google">Regístrate con Google</button>
+	  </div>
+	  <div class="Aside_temas">
+	    <h2 class="Aside_temas-title">Temas más votados</h2>
+	    <div class="Aside_temas-tema">
+	      <p class="Aside_temas-tema-title">Renzi dimite en Italia a pesar del las ventajas de las encuestas</p>
+	      <div class="Aside_temas-tema-info">
+	        <span class="Aside_temas-tema-info-votes">1300 votos</span>
+	        <span class="Aside_temas-tema-info-balance">-42</span>
+	      </div>
+	    </div>  
+	  </div>
+	  <div class="Aside_subscribe">
+	    <h2 class="Aside_subscribe-title">¡Suscríbete</h2>
+	    <p class="Aside_subscribe-subtitle">Suscríbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>
+	    <form action="" class="Aside_subscribe-form">
+	      <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>
+	      <input class="Aside_subscribe-form-button"type="submit" value="¡Regístrame!">
+	    </form>
+	  </div>
 	</aside>`
+
 
 /***/ },
 /* 24 */
@@ -13104,6 +13112,7 @@
 	$bg.on('click', closeMenu)
 	$search.on('click', searchInput)
 
+
 /***/ },
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
@@ -13114,97 +13123,108 @@
 	var template = __webpack_require__(26)
 	var aside = __webpack_require__(23)
 
-	page('/noticia', header,  function(ctx, next){
-		__webpack_require__(24)
-		__webpack_require__(29)
-		__webpack_require__(143)
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	page('/noticia', header, getNews, function (ctx, next) {
+	  __webpack_require__(24)
+	  __webpack_require__(29)
+	  __webpack_require__(143)
+	  var main = document.getElementById('main-container')
+	  $(main).empty().append(template(ctx.news))
 	  next()
 	}, aside)
+
+	// ctx is an object!
+
+	function getNews (ctx, next) {
+	  $.get('/api/news', function (data) {
+	    // ctx is an object, then we add the news
+	    ctx.news = data
+	    next()
+	  })
+	}
+
 
 /***/ },
 /* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(8)
+	var $ = __webpack_require__(5)
 	var details = __webpack_require__(20)
 	var votesBar = __webpack_require__(19)
 	var comList = __webpack_require__(27)
 	var registrate = __webpack_require__(22)
 
-
-	module.exports = function () {
-		return yo`<div id="noticia_main">
+	module.exports = function (n) {
+	  return yo`<div id="noticia_main">
 	<section class="Noticia_cuerpo">
-		<h2 class="Noticia_cuerpo-breadcrumb">España</h2>
-		<h1 class="Noticia_cuerpo-title">Renzi dimitirá esta tarde tras la aprobación de los presupuestos</h1>
-		${details()}
-		<h4 class="Noticia_cuerpo-entradilla">Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi</h4>
-		${votesBar()}
+	  <h2 class="Noticia_cuerpo-breadcrumb">España</h2>
+	  <h1 class="Noticia_cuerpo-title">${n.title}</h1>
+	  ${details(n.date, n.tags)}
+	  <h4 class="Noticia_cuerpo-entradilla">${n.subtitle}</h4>
+	  ${votesBar(n.agreeVotes, n.disagreeVotes)}
 	</section>
 	<section class="Noticia_informate">
-		<h2 class="Noticia_informate-encabezado">
-			Infórmate
-		</h2>
-		<div class="Noticia_informate-media">
-			<a class="Noticia_informate-media-item" href="#">
-				<div><img src="img/media/el-pais.svg" alt="" /></div>
-			</a>
-			<a class="Noticia_informate-media-item" href="#">
-				<div><img src="img/media/el-mundo.svg" alt="" /></div>
-			</a>
-			<a class="Noticia_informate-media-item" href="#">
-				<div><img src="img/media/the-guardian.svg" alt="" /></div>
-			</a>
-			<a class="Noticia_informate-media-item" href="#">
-				<div><img src="img/media/the-new-york-times.svg" alt="" /></div>
-			</a>
-		</div>
+	  <h2 class="Noticia_informate-encabezado">
+	    Infórmate
+	  </h2>
+	  <div class="Noticia_informate-media">
+	    <a class="Noticia_informate-media-item" href="#">
+	      <div><img src="img/media/el-pais.svg" alt="" /></div>
+	    </a>
+	    <a class="Noticia_informate-media-item" href="#">
+	      <div><img src="img/media/el-mundo.svg" alt="" /></div>
+	    </a>
+	    <a class="Noticia_informate-media-item" href="#">
+	      <div><img src="img/media/the-guardian.svg" alt="" /></div>
+	    </a>
+	    <a class="Noticia_informate-media-item" href="#">
+	      <div><img src="img/media/the-new-york-times.svg" alt="" /></div>
+	    </a>
+	  </div>
 	</section>
 	${registrate()}
 	<section class="Noticia_comentarios">
-		<h2 class="Noticia_comentarios-encabezado">Participa</h2>
-		<div class="Noticia_comentarios-comentarios">
-			<div class="Noticia_comentarios-comentarios-agree">
-				<div class="Noticia_comentarios-comentarios-agree-header">
-					<h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-					<img src="img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
-					<div class="Noticia_comentarios-comentarios-agree-header-votes">
-						<h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">2</h2>
-						<img src="img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
-						<img src="img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
-					</div>
-				</div>
-				<div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
-					${comList()}
-				</div>
-				<div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
-					<button id="agree-button" class="Noticia_comentarios-comentarios-buttons-agree">A favor</button>
-					<button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
-				</div>
-			</div>
-			<div class="Noticia_comentarios-comentarios-disagree">
-				<div class="Noticia_comentarios-comentarios-disagree-header">
-					<h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
-					<img src="img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
-					<div class="Noticia_comentarios-comentarios-disagree-header-votes">
-						<h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">23</h2>
-						<img src="img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
-						<img src="img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
-					</div>
-				</div>
-				<div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
-					${comList()}
-				</div>
-				<div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
-					<button id="disagree-button" class="Noticia_comentarios-comentarios-buttons-disagree">En contra</button>
-					<button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
-				</div>
-			</div>
-		</div>
+	  <h2 class="Noticia_comentarios-encabezado">Participa</h2>
+	  <div class="Noticia_comentarios-comentarios">
+	    <div class="Noticia_comentarios-comentarios-agree">
+	      <div class="Noticia_comentarios-comentarios-agree-header">
+	        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
+	        <img src="img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+	        <div class="Noticia_comentarios-comentarios-agree-header-votes">
+	          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
+	          <img src="img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
+	          <img src="img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
+	        </div>
+	      </div>
+	      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
+	        ${comList()}
+	      </div>
+	      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
+	        <button id="agree-button" class="Noticia_comentarios-comentarios-buttons-agree">A favor</button>
+	        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
+	      </div>
+	    </div>
+	    <div class="Noticia_comentarios-comentarios-disagree">
+	      <div class="Noticia_comentarios-comentarios-disagree-header">
+	        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
+	        <img src="img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
+	        <div class="Noticia_comentarios-comentarios-disagree-header-votes">
+	          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
+	          <img src="img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
+	          <img src="img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
+	        </div>
+	      </div>
+	      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
+	        ${comList()}
+	      </div>
+	      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
+	        <button id="disagree-button" class="Noticia_comentarios-comentarios-buttons-disagree">En contra</button>
+	        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
+	      </div>
+	    </div>
+	  </div>
 	</section>
-	${votesBar()}
+	${votesBar(n.agreeVotes, n.disagreeVotes)}
 	</div>`
 	}
 
@@ -13217,26 +13237,28 @@
 	var comCard = __webpack_require__(28)
 
 	module.exports = function () {
-		return yo`<div>
+	  return yo`<div>
 	<div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">
-		<div class="Noticia_comentarios_list-order-votes">
-			<p>Más votado</p>
-		</div>
-		<div class="Noticia_comentarios_list-order-new">
-			<p>Más nuevos</p>
-		</div>
+	  <div class="Noticia_comentarios_list-order-votes">
+	    <p>Más votado</p>
+	  </div>
+	  <div class="Noticia_comentarios_list-order-new">
+	    <p>Más nuevos</p>
+	  </div>
 	</div>
 	<div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
-		${comCard()}
-		<div class="Noticia_comentarios_list-comments-create">
-			<textarea name="create" id="textarea" cols="30" rows="10"></textarea>
-			<div class="Noticia_comentarios_list-comments-create-buttons">
-				<button id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar">Enviar</button>
-				<button id="cancelar-comments" class="Noticia_comentarios_list-comments-create-buttons-cancelar">Cancelar</button>
-			</div>
-		</div>
+	  ${comCard()}
+	  <div class="Noticia_comentarios_list-comments-create">
+	    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>
+	    <div class="Noticia_comentarios_list-comments-create-buttons">
+	      <button id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar">Enviar</button>
+	      <button id="cancelar-comments" class="Noticia_comentarios_list-comments-create-buttons-cancelar">Cancelar</button>
+	    </div>
+	  </div>
 	</div>
-	</div>` }
+	</div>`
+	}
+
 
 /***/ },
 /* 28 */
@@ -13265,6 +13287,7 @@
 	  </div>
 	</div>`
 	}
+
 
 /***/ },
 /* 29 */
@@ -13338,7 +13361,7 @@
 	// ------ Creates input
 	$(document).on('click', '#comentar-agree', function () {
 	  var v = __webpack_require__(142)
-	  if($('#cancelar-comments').data().resolve === undefined){
+	  if ($('#cancelar-comments').data().resolve === undefined) {
 	    createShow(v.createAgree, v.commentsAgree)
 	    $('#cancelar-comments').data('resolve', 'agree')
 	  }
@@ -13346,7 +13369,7 @@
 
 	$(document).on('click', '#comentar-disagree', function () {
 	  var v = __webpack_require__(142)
-	  if($('#cancelar-comments').data().resolve === undefined){
+	  if ($('#cancelar-comments').data().resolve === undefined) {
 	    createShow(v.createDisagree, v.commentsDisagree)
 	    $('#cancelar-comments').data('resolve', 'disagree')
 	  }
@@ -13356,7 +13379,7 @@
 
 	$(document).on('click', '#cancelar-comments', function () {
 	  var v = __webpack_require__(142)
-	  if ($('#cancelar-comments').data().resolve === 'agree'){
+	  if ($('#cancelar-comments').data().resolve === 'agree') {
 	    createHide(v.createAgree, v.commentsAgree, v.textAgree)
 	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
 	    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
@@ -13368,10 +13391,10 @@
 
 	$(document).on('click', '#enviar-comments', function () {
 	  var v = __webpack_require__(142)
-	  if($('#cancelar-comments').data().resolve === 'agree'){
+	  if ($('#cancelar-comments').data().resolve === 'agree') {
 	    addComment(v.textAgree, v.commentsAgree)
 	    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-	  } else if ($('#cancelar-comments').data().resolve === 'disagree'){
+	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
 	    addComment(v.textDisagree, v.commentsDisagree)
 	    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
 	  }
@@ -13398,6 +13421,7 @@
 	$(document).on('click', '#arrow-disagree', commentsMobile)
 	$(document).on('click', '#title-disagree', commentsMobile)
 
+
 /***/ },
 /* 30 */
 /***/ function(module, exports, __webpack_require__) {
@@ -13410,24 +13434,27 @@
 	  // --- Gets counter number through the class name
 	  var counter = that.siblings()
 	  counter = counter.map(function () {
-	    if ($(this).attr('class').indexOf('counter') !== -1)
+	    if ($(this).attr('class').indexOf('counter') !== -1) {
 	      return this
+	    }
 	  })
 	  var temp = counter.text()
 
 	  // ----if the sign is positive, we add 1, otherwise, we substract 1
 
 	  var newNumber
-	  if (sign === true)
+	  if (sign === true) {
 	    newNumber = Number(temp) + 1
-	  else if (sign === false)
+	  } else if (sign === false) {
 	    newNumber = Number(temp) - 1
+	  }
 	  counter.text(newNumber)
 
 	  // ------if the number is related directly with votes bar, change that numbers too
 
-	  if (barNum !== null)
+	  if (barNum !== null) {
 	    barNum.text(newNumber)
+	  }
 	  that.css('display', 'none')
 	  that.siblings(newHandler).css('display', 'block')
 	}
@@ -28340,27 +28367,28 @@
 	var $ = __webpack_require__(5)
 
 	module.exports = {
-	 'comentarAgree': $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	 'comentarDisagree': $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	 'cancelarAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
-	 'cancelarDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
-	 'createAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
-	 'createDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
-	 'commentsAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),
-	 'commentsDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments'),
-	 'enviarAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
-	 'enviarDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
-	 'textAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('#textarea'),
-	 'textDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('#textarea'),
-	 'commentLikeIcon': $('.Noticias_comentarios_card-feedback-like-icon'),
-	 'commentLikeIconLiked': $('.Noticias_comentarios_card-feedback-like-icon-liked'),
-	 'commentLikeCounter': $('#comments-like-counter'),
-	 'arrowAgree': $('.Noticia_comentarios-comentarios-agree-header-arrow'),
-	 'arrowDisagree': $('.Noticia_comentarios-comentarios-disagree-header-arrow'),
-	 'titleAgree': $('.Noticia_comentarios-comentarios-agree-header-title'),
-	 'titleDisagree': $('.Noticia_comentarios-comentarios-disagree-header-title'),
-	 'commentsMobile': $($('.Noticia_hide_on_mobile'))
-	}	
+	  'comentarAgree': $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
+	  'comentarDisagree': $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
+	  'cancelarAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
+	  'cancelarDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
+	  'createAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
+	  'createDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
+	  'commentsAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),
+	  'commentsDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments'),
+	  'enviarAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
+	  'enviarDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
+	  'textAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('#textarea'),
+	  'textDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('#textarea'),
+	  'commentLikeIcon': $('.Noticias_comentarios_card-feedback-like-icon'),
+	  'commentLikeIconLiked': $('.Noticias_comentarios_card-feedback-like-icon-liked'),
+	  'commentLikeCounter': $('#comments-like-counter'),
+	  'arrowAgree': $('.Noticia_comentarios-comentarios-agree-header-arrow'),
+	  'arrowDisagree': $('.Noticia_comentarios-comentarios-disagree-header-arrow'),
+	  'titleAgree': $('.Noticia_comentarios-comentarios-agree-header-title'),
+	  'titleDisagree': $('.Noticia_comentarios-comentarios-disagree-header-title'),
+	  'commentsMobile': $($('.Noticia_hide_on_mobile'))
+	}
+
 
 /***/ },
 /* 143 */
@@ -28382,7 +28410,7 @@
 	}
 
 	// ---- Call the function so its done on loading
-	$(document).ready(function(){
+	$(document).ready(function () {
 	  getPercentage()
 	})
 
@@ -28475,19 +28503,20 @@
 
 	var $ = __webpack_require__(5)
 
-	module.exports = {	
-	 'thumbUp': $('#thumbup'),
-	 'thumbUpLiked': $('#thumbup-liked'),
-	 'thumbDown': $('#thumbdown'),
-	 'thumbDownLiked': $('#thumbdown-liked'),
-	 'votesAgree': $('.Noticia_comentarios-comentarios-agree-header-votes-counter'),
-	 'votesDisagree': $('.Noticia_comentarios-comentarios-disagree-header-votes-counter'),
-	 'agreeBottom': $('#agree-button'),
-	 'disagreeBottom': $('#disagree-button'),
-	 'votesBar': $('.Votes_bar-colors-green'),
-	 'votesGreenNum': $('.Votes_bar-numbers-green'),
-	 'votesRedNum': $('.Votes_bar-numbers-red')
+	module.exports = {
+	  'thumbUp': $('#thumbup'),
+	  'thumbUpLiked': $('#thumbup-liked'),
+	  'thumbDown': $('#thumbdown'),
+	  'thumbDownLiked': $('#thumbdown-liked'),
+	  'votesAgree': $('.Noticia_comentarios-comentarios-agree-header-votes-counter'),
+	  'votesDisagree': $('.Noticia_comentarios-comentarios-disagree-header-votes-counter'),
+	  'agreeBottom': $('#agree-button'),
+	  'disagreeBottom': $('#disagree-button'),
+	  'votesBar': $('.Votes_bar-colors-green'),
+	  'votesGreenNum': $('.Votes_bar-numbers-green'),
+	  'votesRedNum': $('.Votes_bar-numbers-red')
 	}
+
 
 /***/ },
 /* 145 */
@@ -28498,10 +28527,10 @@
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(146)
 
-	page('/usuario/pegido', header,  function(ctx, next) {
-		__webpack_require__(24)
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	page('/usuario/pegido', header, function (ctx, next) {
+	  __webpack_require__(24)
+	  var main = document.getElementById('main-container')
+	  $(main).empty().append(template)
 	})
 
 
@@ -28513,60 +28542,61 @@
 	var card = __webpack_require__(147)
 
 	module.exports = yo`<div id="usuario">
-		<div class="Usuario_main">
-			<div class="Usuario_main_profile">
-				<div class="Usuario_main_profile-avatar">
-					<img src="/img/avatar.jpg" alt="avatar" />
-				</div>
-				<div class="Usuario_main_profile-info">
-					<div class="Usuario_main_profile-info-main">
-						<h2 class="Usuario_main_profile-info-main-username">pegido</h2>
-						<h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>
-					</div>
-					<div class="Usuario_main_profile-info-links">
-						<a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>
-						<a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>
-						<a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>
-					</div>
-					<button class="Usuario_main_profile-info-editar">Editar perfil</button>
-				</div>
-			</div>
-			<div class="Usuario_main_comments">
-				<div class="Usuario_main_comments-stats">
-					<div class="Usuario_main_comments-stats-comments">
-						<h3 class="Usuario_main_comments-stats-comments-counter">17</h3>
-						<span class="Usuario_main_comments-stats-comments-text">Comentarios</span>
-					</div>
-					<div class="Usuario_main_comments-stats-thumbsup">
-						<h3 class="Usuario_main_comments-stats-thumbsup-counter">17</h3>
-						<span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>
-					</div>
-				</div>
-				<div class="Usuario_main_comments-header">
-					<h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>
-					<div class="Usuario_main_comments-header-order">
-						<button class="Usuario_main_comments-header-order-votes">Más votados</button>
-						<button class="Usuario_main_comments-header-order-new">Más nuevos</button>
-					</div>
-				</div>
-				<div class="Usuario_main_comments-container">
-					${card()}
-				</div>
-			</div>
-		</div>
-		<div class="Usuario_aside">
-			<div class="Usuario_aside-stats">
-				<div class="Usuario_aside-stats-comments">
-					<h3 class="Usuario_aside-stats-comments-counter">17</h3>
-					<span class="Usuario_aside-stats-comments-text">Comentarios</span>
-				</div>
-				<div class="Usuario_aside-stats-thumbsup">
-					<h3 class="Usuario_aside-stats-thumbsup-counter">17</h3>
-					<span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>
-				</div>
-			</div>
-		</div>
+	  <div class="Usuario_main">
+	    <div class="Usuario_main_profile">
+	      <div class="Usuario_main_profile-avatar">
+	        <img src="/img/avatar.jpg" alt="avatar" />
+	      </div>
+	      <div class="Usuario_main_profile-info">
+	        <div class="Usuario_main_profile-info-main">
+	          <h2 class="Usuario_main_profile-info-main-username">pegido</h2>
+	          <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>
+	        </div>
+	        <div class="Usuario_main_profile-info-links">
+	          <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>
+	          <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>
+	          <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>
+	        </div>
+	        <button class="Usuario_main_profile-info-editar">Editar perfil</button>
+	      </div>
+	    </div>
+	    <div class="Usuario_main_comments">
+	      <div class="Usuario_main_comments-stats">
+	        <div class="Usuario_main_comments-stats-comments">
+	          <h3 class="Usuario_main_comments-stats-comments-counter">17</h3>
+	          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>
+	        </div>
+	        <div class="Usuario_main_comments-stats-thumbsup">
+	          <h3 class="Usuario_main_comments-stats-thumbsup-counter">17</h3>
+	          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>
+	        </div>
+	      </div>
+	      <div class="Usuario_main_comments-header">
+	        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>
+	        <div class="Usuario_main_comments-header-order">
+	          <button class="Usuario_main_comments-header-order-votes">Más votados</button>
+	          <button class="Usuario_main_comments-header-order-new">Más nuevos</button>
+	        </div>
+	      </div>
+	      <div class="Usuario_main_comments-container">
+	        ${card()}
+	      </div>
+	    </div>
+	  </div>
+	  <div class="Usuario_aside">
+	    <div class="Usuario_aside-stats">
+	      <div class="Usuario_aside-stats-comments">
+	        <h3 class="Usuario_aside-stats-comments-counter">17</h3>
+	        <span class="Usuario_aside-stats-comments-text">Comentarios</span>
+	      </div>
+	      <div class="Usuario_aside-stats-thumbsup">
+	        <h3 class="Usuario_aside-stats-thumbsup-counter">17</h3>
+	        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>
+	      </div>
+	    </div>
+	  </div>
 	</div>`
+
 
 /***/ },
 /* 147 */
@@ -28575,19 +28605,20 @@
 	var yo = __webpack_require__(8)
 
 	module.exports = function () {
-		return yo`<div class="Usuario_main_comments-card">
-		<h2 class="Usuario_main_comments-card-title">Mateo Renzi dice una cosa y luego la otra y tal y cual</h2>
-		<p class="Usuario_main_comments-card-text">	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo delectus molestias, omnis, deleniti rem vero quibusdam ea ut aliquid, nulla possimus ipsum quas facilis minus sunt obcaecati necessitatibus pariatur.</p>
-		<div class="Usuario_main_comments-card-details">
-			<p class="Usuario_main_comments-card-details-date">04 diciembre de 2016</p>
-			<div class="Usuario_main_comments-card-details-like">
-				<img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">
-				<p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">10</p>
-				<span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>
-			</div>
-		</div>
+	  return yo`<div class="Usuario_main_comments-card">
+	  <h2 class="Usuario_main_comments-card-title">Mateo Renzi dice una cosa y luego la otra y tal y cual</h2>
+	  <p class="Usuario_main_comments-card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo delectus molestias, omnis, deleniti rem vero quibusdam ea ut aliquid, nulla possimus ipsum quas facilis minus sunt obcaecati necessitatibus pariatur.</p>
+	  <div class="Usuario_main_comments-card-details">
+	    <p class="Usuario_main_comments-card-details-date">04 diciembre de 2016</p>
+	    <div class="Usuario_main_comments-card-details-like">
+	      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">
+	      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">10</p>
+	      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>
+	    </div>
+	  </div>
 	</div>`
 	}
+
 
 /***/ },
 /* 148 */
@@ -28598,11 +28629,12 @@
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(149)
 
-	page('/usuario/pegido/editar', header,  function(ctx, next) {
-		__webpack_require__(24)
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	page('/usuario/pegido/editar', header, function (ctx, next) {
+	  __webpack_require__(24)
+	  var main = document.getElementById('main-container')
+	  $(main).empty().append(template)
 	})
+
 
 /***/ },
 /* 149 */
@@ -28611,43 +28643,44 @@
 	var yo = __webpack_require__(8)
 
 	module.exports = yo`<div id="usuario_editar" class="Usuario_editar">
-		<h1 class="Usuario_editar-title">Editar perfil</h1>
-		<div class="Usuario_editar-container">
-			<div class="Usuario_editar_personal">
-				<h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>
-				<div class="Usuario_editar_personal-avatar">
-					<img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />
-					<button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>
-				</div>
-				<h2 class="Usuario_editar_personal-rstitle">Mis Redes Sociales</h2>
-				<div class="Usuario_editar_personal-rrss">
-					<div class="Usuario_editar_personal-rrss-facebook">
-						<img src="/img/facebook.svg" alt="" class="Usuario_editar_personal-rrss-facebook-icon">
-						<input type="text" class="Usuario_editar_personal-rrss-facebook-input" />
-					</div>
-					<div class="Usuario_editar_personal-rrss-twitter">
-						<img src="/img/twitter.svg" alt="" class="Usuario_editar_personal-rrss-twitter-icon">
-						<input type="text" class="Usuario_editar_personal-rrss-twitter-input" />
-					</div>
-					<div class="Usuario_editar_personal-rrss-linkedin">
-						<img src="/img/linkedin.svg" alt="" class="Usuario_editar_personal-rrss-linkedin-icon">
-						<input type="text" class="Usuario_editar_personal-rrss-linkedin-input" />
-					</div>
-				</div>
-			</div>
-			<div class="Usuario_editar_data">
-				<h2 class="Usuario_editar_data-title">Mis datos</h2>
-				<form action="" class="Usuario_editar_data-form">
-					<label class="Usuario_editar_data-form-username" for="">Nombre de usuario:<input type="text" /></label>
-					<label class="Usuario_editar_data-form-email" for="">Correo electrónico:<input type="email" /></label>
-					<label class="Usuario_editar_data-form-newpass" for="">Nueva contraseña:<input type="password" /></label>
-					<label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contraseña:<input type="password" /></label>
-					<label class="Usuario_editar_data-form-currentpass" for="">Contraseña actual:<input type="password" /></label>
-					<input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">
-				</form>
-			</div>
-		</div>
+	  <h1 class="Usuario_editar-title">Editar perfil</h1>
+	  <div class="Usuario_editar-container">
+	    <div class="Usuario_editar_personal">
+	      <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>
+	      <div class="Usuario_editar_personal-avatar">
+	        <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />
+	        <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>
+	      </div>
+	      <h2 class="Usuario_editar_personal-rstitle">Mis Redes Sociales</h2>
+	      <div class="Usuario_editar_personal-rrss">
+	        <div class="Usuario_editar_personal-rrss-facebook">
+	          <img src="/img/facebook.svg" alt="" class="Usuario_editar_personal-rrss-facebook-icon">
+	          <input type="text" class="Usuario_editar_personal-rrss-facebook-input" />
+	        </div>
+	        <div class="Usuario_editar_personal-rrss-twitter">
+	          <img src="/img/twitter.svg" alt="" class="Usuario_editar_personal-rrss-twitter-icon">
+	          <input type="text" class="Usuario_editar_personal-rrss-twitter-input" />
+	        </div>
+	        <div class="Usuario_editar_personal-rrss-linkedin">
+	          <img src="/img/linkedin.svg" alt="" class="Usuario_editar_personal-rrss-linkedin-icon">
+	          <input type="text" class="Usuario_editar_personal-rrss-linkedin-input" />
+	        </div>
+	      </div>
+	    </div>
+	    <div class="Usuario_editar_data">
+	      <h2 class="Usuario_editar_data-title">Mis datos</h2>
+	      <form action="" class="Usuario_editar_data-form">
+	        <label class="Usuario_editar_data-form-username" for="">Nombre de usuario:<input type="text" /></label>
+	        <label class="Usuario_editar_data-form-email" for="">Correo electrónico:<input type="email" /></label>
+	        <label class="Usuario_editar_data-form-newpass" for="">Nueva contraseña:<input type="password" /></label>
+	        <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contraseña:<input type="password" /></label>
+	        <label class="Usuario_editar_data-form-currentpass" for="">Contraseña actual:<input type="password" /></label>
+	        <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">
+	      </form>
+	    </div>
+	  </div>
 	</div>`
+
 
 /***/ },
 /* 150 */
@@ -28657,10 +28690,11 @@
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(151)
 
-	page('/registrate', function(ctx, next) {
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	page('/registrate', function (ctx, next) {
+	  var main = document.getElementById('main-container')
+	  $(main).empty().append(template)
 	})
+
 
 /***/ },
 /* 151 */
@@ -28669,27 +28703,27 @@
 	var yo = __webpack_require__(8)
 
 	module.exports = function () {
-		return yo`<div id="signup">
-			<div class="Signup_image">
-				<img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
-			</div>
-			<div class="Signup_form">
-				<h1 class="Signup_form-title">¡Regístrate y opina!</h1>
-				<h3 class="Signup_form-subtitle">Regístrate y podrás votar y opinar en todos los temas. ¡No te llevará más de 2 minutos!</h3>
-				<div class="Signup_form-social">
-					<button class="Signup_form-social-facebook">Regístrate con Facebook</button>
-					<button class="Signup_form-social-google">Regístrate con Google</button>
-				</div>
-				<form action="" class="Signup_form-form">
-					<div>
-						<input type="text" placeholder="Introduzca su nombre de usuario" />
-						<input type="email" placeholder="Introduzca su correo electrónico"/>
-						<input type="password" />
-					</div>
-					<input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
-				</form>
-			</div>
-		</div>`
+	  return yo`<div id="signup">
+	    <div class="Signup_image">
+	      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
+	    </div>
+	    <div class="Signup_form">
+	      <h1 class="Signup_form-title">¡Regístrate y opina!</h1>
+	      <h3 class="Signup_form-subtitle">Regístrate y podrás votar y opinar en todos los temas. ¡No te llevará más de 2 minutos!</h3>
+	      <div class="Signup_form-social">
+	        <button class="Signup_form-social-facebook">Regístrate con Facebook</button>
+	        <button class="Signup_form-social-google">Regístrate con Google</button>
+	      </div>
+	      <form action="" class="Signup_form-form">
+	        <div>
+	          <input type="text" placeholder="Introduzca su nombre de usuario" />
+	          <input type="email" placeholder="Introduzca su correo electrónico"/>
+	          <input type="password" />
+	        </div>
+	        <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
+	      </form>
+	    </div>
+	  </div>`
 	}
 
 
@@ -28701,10 +28735,11 @@
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(153)
 
-	page('/accede', function(ctx, next){
-	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	page('/accede', function (ctx, next) {
+	  var main = document.getElementById('main-container')
+	  $(main).empty().append(template)
 	})
+
 
 /***/ },
 /* 153 */
@@ -28713,23 +28748,24 @@
 	var yo = __webpack_require__(8)
 
 	module.exports = yo`<div id="login">
-			<div class="Signup_image">
-				<img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
-			</div>
-			<div class="Login_form">
-				<h1 class="Login_form-title">Accede a tu cuenta</h1>
-				<h3 class="Login_form-subtitle">Accede a tu cuenta a través de Facebook, Google, o tu email</h3>
-				<div class="Login_form-social">
-					<button class="Login_form-social-facebook">Accede con Facebook</button>
-					<button class="Login_form-social-google">Accede con Google</button>
-				</div>
-				<form action="" class="Login_form-form">
-					<input type="text" placeholder="Introduzca su nombre de usuario o email" />
-					<input type="password" />
-					<input class="Login_form-form-submit" type="Submit" value="Accede">
-				</form>
-			</div>
-		</div>`
+	    <div class="Signup_image">
+	      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
+	    </div>
+	    <div class="Login_form">
+	      <h1 class="Login_form-title">Accede a tu cuenta</h1>
+	      <h3 class="Login_form-subtitle">Accede a tu cuenta a través de Facebook, Google, o tu email</h3>
+	      <div class="Login_form-social">
+	        <button class="Login_form-social-facebook">Accede con Facebook</button>
+	        <button class="Login_form-social-google">Accede con Google</button>
+	      </div>
+	      <form action="" class="Login_form-form">
+	        <input type="text" placeholder="Introduzca su nombre de usuario o email" />
+	        <input type="password" />
+	        <input class="Login_form-form-submit" type="Submit" value="Accede">
+	      </form>
+	    </div>
+	  </div>`
+
 
 /***/ }
 /******/ ]);
