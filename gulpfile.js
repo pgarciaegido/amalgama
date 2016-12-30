@@ -92,5 +92,5 @@ gulp.task('csslinter', function () {
     }))
 })
 
-gulp.task('default', ['watch', 'css', 'scripts', 'images', 'sendServer', 'sendJson'/*, 'panini'*/])
+gulp.task('default', ['watch', 'css', 'scripts', 'images' /*, 'panini'*/])
 gulp.task('build', ['scripts', 'css'])

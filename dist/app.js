@@ -46,7 +46,6 @@
 
 	var page = __webpack_require__(1)
 	var $ = __webpack_require__(5)
-	// require('pug')
 
 	__webpack_require__(6)
 	__webpack_require__(25)
@@ -56,10 +55,10 @@
 	__webpack_require__(152)
 
 
-	$.get( "api/user/pegido", function( data ) {
-	  console.log(data.email)
-	  alert( "Load was performed." );
-	});
+	// $.get( "api/user/pegido", function( data ) {
+	//   console.log(data.email)
+	//   alert( "Load was performed." );
+	// });
 
 	page()
 
@@ -13339,36 +13338,44 @@
 	// ------ Creates input
 	$(document).on('click', '#comentar-agree', function () {
 	  var v = __webpack_require__(142)
-	  createShow(v.createAgree, v.commentsAgree)
+	  if($('#cancelar-comments').data().resolve === undefined){
+	    createShow(v.createAgree, v.commentsAgree)
+	    $('#cancelar-comments').data('resolve', 'agree')
+	  }
 	})
 
 	$(document).on('click', '#comentar-disagree', function () {
 	  var v = __webpack_require__(142)
-	  createShow(v.createDisagree, v.commentsDisagree)
+	  if($('#cancelar-comments').data().resolve === undefined){
+	    createShow(v.createDisagree, v.commentsDisagree)
+	    $('#cancelar-comments').data('resolve', 'disagree')
+	  }
 	})
 
 	// // ----- Inside input, cancel and close
 
 	$(document).on('click', '#cancelar-comments', function () {
 	  var v = __webpack_require__(142)
-	  if(this.parentElement.parentElement.parentElement.parentElement.parentElement.id.indexOf('disagree') == -1){
+	  if ($('#cancelar-comments').data().resolve === 'agree'){
 	    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-	  } else {
+	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
 	    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
 	  }
+	  $('#cancelar-comments').data().resolve = undefined
 	})
 
 	// ------ Inside input, sends and close
 
 	$(document).on('click', '#enviar-comments', function () {
 	  var v = __webpack_require__(142)
-	  if(this.parentElement.parentElement.parentElement.parentElement.parentElement.id.indexOf('disagree') == -1){
+	  if($('#cancelar-comments').data().resolve === 'agree'){
 	    addComment(v.textAgree, v.commentsAgree)
 	    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-	  } else {
+	  } else if ($('#cancelar-comments').data().resolve === 'disagree'){
 	    addComment(v.textDisagree, v.commentsDisagree)
 	    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
 	  }
+	  $('#cancelar-comments').data().resolve = undefined
 	})
 
 	// ----------- Like comments
