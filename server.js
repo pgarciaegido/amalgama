@@ -64,7 +64,8 @@ app.get('/api/user/pegido', function (req, res) {
 })
 
 app.get('/api/news', function (req, res) {
-  var news = {
+  var news = [
+  {
     id: 1,
     title: 'Mateo Renzi es la persona indicada para liderar el cambio en italia',
     date: '12 diciembre 2016',
@@ -72,7 +73,18 @@ app.get('/api/news', function (req, res) {
     subtitle: 'Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi',
     agreeVotes: 12,
     disagreeVotes: 18
+  },
+  {
+    id: 2,
+    title: 'Puigdemont promete para 2017 un referéndum “legal y vinculante”',
+    date: '30 diciembre 2016',
+    tags: ['España, ', 'Cataluña'],
+    subtitle: 'Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi',
+    agreeVotes: 25,
+    disagreeVotes: 40
   }
+  ]
+
 
   res.send(news)
 })
