@@ -1,22 +1,8 @@
 var $ = require('jquery')
 var votesLiked = require('./votesLiked')
+var getPercentage = require('../votes_bar/get_percentage')
 
 // ///////////////FUNCTIONS
-
-// ------ Get porcentage of the votes bar and adjust it acording to the vote number
-
-function getPercentage () {
-  var v = require('./noticia_events_vars')
-  var agree = Number(v.votesAgree.text())
-  var total = agree + Number(v.votesDisagree.text())
-  var percentage = agree / total * 100
-  v.votesBar.css('width', percentage + '%')
-}
-
-// ---- Call the function so its done on loading
-$(document).ready(function () {
-  getPercentage()
-})
 
 // ---- Change the colors of button when clicked
 
@@ -49,28 +35,40 @@ $(document).on('click', '#thumbup', function () {
   var v = require('./noticia_events_vars')
   votesLiked($(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
   buttonClicked(v.agreeBottom, false, '#7ace7a')
-  getPercentage()
+
+  var agree = Number($('.Votes_bar-numbers-green').html())
+  var disagree = Number($('.Votes_bar-numbers-red').html())
+  getPercentage(agree, disagree)
 })
 
 $(document).on('click', '#thumbup-liked', function () {
   var v = require('./noticia_events_vars')
   votesLiked($(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp)
   buttonClicked(v.agreeBottom, true, '#7ace7a')
-  getPercentage()
+
+  var agree = Number($('.Votes_bar-numbers-green').html())
+  var disagree = Number($('.Votes_bar-numbers-red').html())
+  getPercentage(agree, disagree)
 })
 
 $(document).on('click', '#thumbdown', function () {
   var v = require('./noticia_events_vars')
   votesLiked($(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
   buttonClicked(v.disagreeBottom, false, '#e13c42')
-  getPercentage()
+
+  var agree = Number($('.Votes_bar-numbers-green').html())
+  var disagree = Number($('.Votes_bar-numbers-red').html())
+  getPercentage(agree, disagree)
 })
 
 $(document).on('click', '#thumbdown-liked', function () {
   var v = require('./noticia_events_vars')
   votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown)
   buttonClicked(v.disagreeBottom, true, '#e13c42')
-  getPercentage()
+  
+  var agree = Number($('.Votes_bar-numbers-green').html())
+  var disagree = Number($('.Votes_bar-numbers-red').html())
+  getPercentage(agree, disagree)
 })
 
 // ------Votes on clicking agree / disagree buttons
@@ -84,7 +82,9 @@ $(document).on('click', '#agree-button', function () {
     votesLiked(v.thumbUpLiked, false, v.votesAgree, v.votesGreenNum, v.thumbUp)
     buttonClicked($(this), true, '#7ace7a')
   }
-  getPercentage()
+  var agree = Number($('.Votes_bar-numbers-green').html())
+  var disagree = Number($('.Votes_bar-numbers-red').html())
+  getPercentage(agree, disagree)
 })
 
 $(document).on('click', '#disagree-button', function () {
@@ -96,6 +96,8 @@ $(document).on('click', '#disagree-button', function () {
     votesLiked(v.thumbDownLiked, false, v.votesDisagree, v.votesRedNum, v.thumbDown)
     buttonClicked($(this), true, '#e13c42')
   }
-  getPercentage()
+  var agree = Number($('.Votes_bar-numbers-green').html())
+  var disagree = Number($('.Votes_bar-numbers-red').html())
+  getPercentage(agree, disagree)
 })
 
