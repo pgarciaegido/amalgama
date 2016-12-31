@@ -4,6 +4,7 @@ var $ = require('jquery')
 
 module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   // --- Gets counter number through the class name
+  debugger
   var counter = that.siblings()
   counter = counter.map(function () {
     if ($(this).attr('class').indexOf('counter') !== -1) {
@@ -25,7 +26,7 @@ module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   // ------if the number is related directly with votes bar, change that numbers too
 
   if (barNum !== null) {
-    barNum.text(newNumber)
+    $('.Votes_bar').find(barNum).html(newNumber)
   }
   that.css('display', 'none')
   that.siblings(newHandler).css('display', 'block')

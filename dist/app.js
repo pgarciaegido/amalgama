@@ -13225,7 +13225,6 @@
 
 	function buttonClicked (button, clicked, color) {
 	  // -- Fits the height of the button and reduces 1 px when clicked (UX)
-	  debugger
 	  var height = button.css('height')
 	  var heightClicked = height.substr(0, 2)
 	  heightClicked = (Number(heightClicked) - 1).toString().concat('px')
@@ -13320,6 +13319,7 @@
 
 	module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
 	  // --- Gets counter number through the class name
+	  debugger
 	  var counter = that.siblings()
 	  counter = counter.map(function () {
 	    if ($(this).attr('class').indexOf('counter') !== -1) {
@@ -13341,7 +13341,7 @@
 	  // ------if the number is related directly with votes bar, change that numbers too
 
 	  if (barNum !== null) {
-	    barNum.text(newNumber)
+	    $('.Votes_bar').find(barNum).html(newNumber)
 	  }
 	  that.css('display', 'none')
 	  that.siblings(newHandler).css('display', 'block')

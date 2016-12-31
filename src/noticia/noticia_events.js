@@ -8,7 +8,6 @@ var getPercentage = require('../votes_bar/get_percentage')
 
 function buttonClicked (button, clicked, color) {
   // -- Fits the height of the button and reduces 1 px when clicked (UX)
-  debugger
   var height = button.css('height')
   var heightClicked = height.substr(0, 2)
   heightClicked = (Number(heightClicked) - 1).toString().concat('px')
