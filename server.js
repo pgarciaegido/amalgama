@@ -82,9 +82,26 @@ app.get('/api/news', function (req, res) {
     subtitle: 'Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi',
     agreeVotes: 25,
     disagreeVotes: 40
+  },
+  {
+    id: 3,
+    title: 'Merkel califica al terrorismo islamista como el “mayor desafío” de Alemania',
+    date: '31 diciembre 2016',
+    tags: ['Alemania, ', 'Internacional'],
+    subtitle: 'Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi',
+    agreeVotes: 50,
+    disagreeVotes: 42
+  },
+  {
+    id: 4,
+    title: '¿Cómo se construye un héroe olímpico?',
+    date: '31 diciembre 2016',
+    tags: ['Opinion, ', 'Deportes'],
+    subtitle: 'Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi',
+    agreeVotes: 12,
+    disagreeVotes: 5
   }
   ]
-
 
   res.send(news)
 })

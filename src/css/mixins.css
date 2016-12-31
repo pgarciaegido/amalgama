@@ -11,7 +11,7 @@
 
 @define-mixin tagsDesktop {
 	font-family: 'Fira Sans', sans-serif;
-	font-size: 1em;
+	font-size: .9em;
 	font-style: italic;
 	color: $gray;
 }

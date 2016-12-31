@@ -14,6 +14,11 @@ module.exports = function (n, latest) {
     <button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
   </section>
   ${registrate()}
-  ${feed}
+  <div class="Feed">
+  ${n.pop()}
+  ${n.reverse().map(function (nw) {
+    return feed(nw)
+  })}
+  </div>
 </div>`
 }

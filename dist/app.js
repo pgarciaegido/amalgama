@@ -12931,7 +12931,12 @@
 	    <button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
 	  </section>
 	  ${registrate()}
-	  ${feed}
+	  <div class="Feed">
+	  ${n.pop()}
+	  ${n.reverse().map(function (nw) {
+	    return feed(nw)
+	  })}
+	  </div>
 	</div>`
 	}
 
@@ -13003,17 +13008,16 @@
 	var details = __webpack_require__(21)
 	var votesBar = __webpack_require__(19)
 
-	module.exports = yo`<div class="Feed">
-	    <article class="Feed-article impar">
-	      <h2 class="Feed-article-title">Es necesaria la subida de impuestos del PP?</h2>
-	        ${details()}
+	module.exports = function (n) {
+		return yo`<article class="Feed-article">
+	      <h2 class="Feed-article-title">${n.title}</h2>
+	        ${details(n.date, n.tags)}
 	      <div class="Feed-article-bars">
-	        ${votesBar()}
+	        ${votesBar(n.agreeVotes, n.disagreeVotes)}
 	      </div>
 	      <button class="Feed-article-button">Ver más</button>
-	    </article>
-	  </div>`
-
+	    </article>`
+	}
 
 /***/ },
 /* 23 */
