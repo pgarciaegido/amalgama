@@ -7,8 +7,9 @@ var getNew = require('../ajax/get_new')
 
 page('/', header, getNew, function (ctx, next) {
   require('../header/events')
-  // gets the bars percentage done
   require('../noticia/noticia_events')
+  require('../feed/feed_events')
+
   var main = document.getElementById('main-container')
   // we get the latest so we fill the latest new withit
   var latest = ctx.news.length - 1

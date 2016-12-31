@@ -1,5 +1,6 @@
 var page = require('page')
 var $ = require('jquery')
+var articles = require('./feed/feed_events')
 
 require('./homepage')
 require('./noticia')
@@ -8,10 +9,8 @@ require('./usuario_editar')
 require('./signup')
 require('./login')
 
-// $.get( "api/news", function( data ) {
-//   console.log(data)
-//   request = data
-// 	console.log(request.title)
-// });
+$(document).ready(function () {
+  articles()
+})
 
 page()

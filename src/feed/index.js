@@ -1,4 +1,5 @@
 var yo = require('yo-yo')
+var $ = require('jquery')
 var details = require('../details/index')
 var votesBar = require('../votes_bar/index')
 
