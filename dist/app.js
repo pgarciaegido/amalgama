@@ -47,8 +47,9 @@
 	var page = __webpack_require__(1)
 	var $ = __webpack_require__(5)
 	var articles = __webpack_require__(6)
+	var percentage = __webpack_require__(7)
 
-	__webpack_require__(7)
+	__webpack_require__(8)
 	__webpack_require__(31)
 	__webpack_require__(148)
 	__webpack_require__(151)
@@ -57,6 +58,7 @@
 
 	$(document).ready(function () {
 	  articles()
+	  percentage()
 	})
 
 	page()
@@ -11514,8 +11516,11 @@
 
 	var $ = __webpack_require__(5)
 
+	// Get heights of titles and details, so we can add padding to equal the cards
+
 	module.exports = function articles () {
 	  var heights = []
+	  // Get heights of elements
 	  $('.Feed-article').each(function (i, obj) {
 
 	    var title = $(this).find($('.Feed-article-title'))
@@ -11526,13 +11531,18 @@
 	    var total = title + details
 	    heights.push(total)
 	  })
+
+	  // Get highest card
 	  var votesBar = $('.Feed-article').find($('.Votes_bar'))
 	  var highest = 0;
+
 	  for (var i in heights) {
 	    if(heights[i] > highest){
 	      highest = heights [i]
 	    }
 	  }
+
+	  // Add padding to the shortest cards
 	  votesBar.each(function (i, obj) {
 	    if (heights[i] !== highest){
 	      var padding = highest - heights[i] + 'px'
@@ -11547,23 +11557,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var header = __webpack_require__(8)
-	var page = __webpack_require__(1)
-	var template = __webpack_require__(19)
-	var aside = __webpack_require__(25)
-	var getNew = __webpack_require__(26)
 
-	page('/', header, getNew, function (ctx, next) {
-	  __webpack_require__(27)
-	  __webpack_require__(28)
-	  __webpack_require__(6)
-
-	  var main = document.getElementById('main-container')
-	  // we get the latest so we fill the latest new withit
-	  var latest = ctx.news.length - 1
-	  $(main).empty().append(template(ctx.news, latest))
-	  next()
-	}, aside)
+	module.exports = function getPercentage () {
+	  $('.Votes_bar').each(function (i, obj) {
+	  	var agree = Number($(obj).find($('.Votes_bar-numbers-green')).html())
+	  	var disagree = Number($(obj).find($('.Votes_bar-numbers-red')).html())
+	  	var total = agree + disagree
+	  	var percentage = agree/total * 100
+	  	$(obj).find($('.Votes_bar-colors-green')).css('width', percentage + '%')
+	  })
+	}
 
 
 /***/ },
@@ -11571,7 +11574,38 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var yo = __webpack_require__(9)
+	var header = __webpack_require__(9)
+	var page = __webpack_require__(1)
+	var template = __webpack_require__(20)
+	var aside = __webpack_require__(25)
+	var getNew = __webpack_require__(26)
+	var articles = __webpack_require__(6)
+	var percentage = __webpack_require__(7)
+
+	page('/', header, getNew, function (ctx, next) {
+	  __webpack_require__(27)
+	  __webpack_require__(28)
+	  __webpack_require__(6)
+
+	  $(document).ready(function () {
+	  	articles()
+	    percentage()
+	  })
+
+	  var main = document.getElementById('main-container')
+	  // we get the latest so we fill the latest" section with it
+	  var latest = ctx.news.length - 1
+	  $(main).empty().append(template(ctx.news, latest))
+	  next()
+	}, aside)
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(5)
+	var yo = __webpack_require__(10)
 
 	module.exports = function (ctx, next) {
 	  var container = $('#header-container')
@@ -11612,12 +11646,12 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bel = __webpack_require__(10) // turns template tag into DOM elements
-	var morphdom = __webpack_require__(17) // efficiently diffs + morphs two DOM elements
-	var defaultEvents = __webpack_require__(18) // default events to be copied when dom elements update
+	var bel = __webpack_require__(11) // turns template tag into DOM elements
+	var morphdom = __webpack_require__(18) // efficiently diffs + morphs two DOM elements
+	var defaultEvents = __webpack_require__(19) // default events to be copied when dom elements update
 
 	module.exports = bel
 
@@ -11654,12 +11688,12 @@
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var document = __webpack_require__(11)
-	var hyperx = __webpack_require__(13)
-	var onload = __webpack_require__(15)
+	var document = __webpack_require__(12)
+	var hyperx = __webpack_require__(14)
+	var onload = __webpack_require__(16)
 
 	var SVGNS = 'http://www.w3.org/2000/svg'
 	var XLINKNS = 'http://www.w3.org/1999/xlink'
@@ -11809,12 +11843,12 @@
 
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {var topLevel = typeof global !== 'undefined' ? global :
 	    typeof window !== 'undefined' ? window : {}
-	var minDoc = __webpack_require__(12);
+	var minDoc = __webpack_require__(13);
 
 	if (typeof document !== 'undefined') {
 	    module.exports = document;
@@ -11831,16 +11865,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var attrToProp = __webpack_require__(14)
+	var attrToProp = __webpack_require__(15)
 
 	var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
 	var ATTR_KEY = 5, ATTR_KEY_W = 6
@@ -12106,7 +12140,7 @@
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = attributeToProperty
@@ -12131,12 +12165,12 @@
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* global MutationObserver */
-	var document = __webpack_require__(11)
-	var window = __webpack_require__(16)
+	var document = __webpack_require__(12)
+	var window = __webpack_require__(17)
 	var watch = Object.create(null)
 	var KEY_ID = 'onloadid' + (new Date() % 9e6).toString(36)
 	var KEY_ATTR = 'data-' + KEY_ID
@@ -12224,7 +12258,7 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {if (typeof window !== "undefined") {
@@ -12240,7 +12274,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12904,7 +12938,7 @@
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -12946,11 +12980,11 @@
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
-	var votesBar = __webpack_require__(20)
+	var yo = __webpack_require__(10)
+	var votesBar = __webpack_require__(21)
 	var details = __webpack_require__(22)
 	var feed = __webpack_require__(23)
 	var registrate = __webpack_require__(24)
@@ -12976,17 +13010,13 @@
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 	var $ = __webpack_require__(5)
-	var getPercentage = __webpack_require__(21)
 
 	module.exports = function (agree, disagree) {
-	  $(document).ready(function () {
-	    getPercentage(agree, disagree)
-	  })
 	  return yo`<div class="Votes_bar">
 	      <div class="Votes_bar-colors">
 	        <div class="Votes_bar-colors-red"></div>
@@ -13001,23 +13031,10 @@
 
 
 /***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(5)
-
-	module.exports = function getPercentage (agree, disagree) {
-	  var total = agree + disagree
-	  var percentage = agree / total * 100
-	  $('.Votes_bar-colors-green').css('width', percentage + '%')
-	}
-
-
-/***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = function (date, tags) {
 
@@ -13038,10 +13055,10 @@
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 	var $ = __webpack_require__(5)
 	var details = __webpack_require__(22)
-	var votesBar = __webpack_require__(20)
+	var votesBar = __webpack_require__(21)
 
 	module.exports = function (n) {
 		return yo`<article class="Feed-article">
@@ -13058,7 +13075,7 @@
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = function () {
 	  return yo`<div class="Register_cta">
@@ -13074,7 +13091,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = function (ctx, next) {
 	  var container = $('#main-container')
@@ -13200,7 +13217,7 @@
 
 	var $ = __webpack_require__(5)
 	var votesLiked = __webpack_require__(29)
-	var getPercentage = __webpack_require__(21)
+	var getPercentage = __webpack_require__(7)
 
 	// ///////////////FUNCTIONS
 
@@ -13208,10 +13225,11 @@
 
 	function buttonClicked (button, clicked, color) {
 	  // -- Fits the height of the button and reduces 1 px when clicked (UX)
+	  debugger
 	  var height = button.css('height')
-	  var heightClicked = height.match(/\d/g).join('')
+	  var heightClicked = height.substr(0, 2)
 	  heightClicked = (Number(heightClicked) - 1).toString().concat('px')
-	  var heightUnclicked = height.match(/\d/g).join('')
+	  var heightUnclicked = height.substr(0, 2)
 	  heightUnclicked = (Number(heightUnclicked) + 1).toString().concat('px')
 
 	  if (clicked === false) {
@@ -13236,9 +13254,7 @@
 	  votesLiked($(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
 	  buttonClicked(v.agreeBottom, false, '#7ace7a')
 
-	  var agree = Number($('.Votes_bar-numbers-green').html())
-	  var disagree = Number($('.Votes_bar-numbers-red').html())
-	  getPercentage(agree, disagree)
+	  getPercentage()
 	})
 
 	$(document).on('click', '#thumbup-liked', function () {
@@ -13246,9 +13262,7 @@
 	  votesLiked($(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp)
 	  buttonClicked(v.agreeBottom, true, '#7ace7a')
 
-	  var agree = Number($('.Votes_bar-numbers-green').html())
-	  var disagree = Number($('.Votes_bar-numbers-red').html())
-	  getPercentage(agree, disagree)
+	  getPercentage()
 	})
 
 	$(document).on('click', '#thumbdown', function () {
@@ -13256,9 +13270,7 @@
 	  votesLiked($(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
 	  buttonClicked(v.disagreeBottom, false, '#e13c42')
 
-	  var agree = Number($('.Votes_bar-numbers-green').html())
-	  var disagree = Number($('.Votes_bar-numbers-red').html())
-	  getPercentage(agree, disagree)
+	  getPercentage()
 	})
 
 	$(document).on('click', '#thumbdown-liked', function () {
@@ -13266,9 +13278,7 @@
 	  votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown)
 	  buttonClicked(v.disagreeBottom, true, '#e13c42')
 	  
-	  var agree = Number($('.Votes_bar-numbers-green').html())
-	  var disagree = Number($('.Votes_bar-numbers-red').html())
-	  getPercentage(agree, disagree)
+	  getPercentage()
 	})
 
 	// ------Votes on clicking agree / disagree buttons
@@ -13282,9 +13292,8 @@
 	    votesLiked(v.thumbUpLiked, false, v.votesAgree, v.votesGreenNum, v.thumbUp)
 	    buttonClicked($(this), true, '#7ace7a')
 	  }
-	  var agree = Number($('.Votes_bar-numbers-green').html())
-	  var disagree = Number($('.Votes_bar-numbers-red').html())
-	  getPercentage(agree, disagree)
+
+	  getPercentage()
 	})
 
 	$(document).on('click', '#disagree-button', function () {
@@ -13296,11 +13305,9 @@
 	    votesLiked(v.thumbDownLiked, false, v.votesDisagree, v.votesRedNum, v.thumbDown)
 	    buttonClicked($(this), true, '#e13c42')
 	  }
-	  var agree = Number($('.Votes_bar-numbers-green').html())
-	  var disagree = Number($('.Votes_bar-numbers-red').html())
-	  getPercentage(agree, disagree)
-	})
 
+	  getPercentage()
+	})
 
 
 /***/ },
@@ -13367,16 +13374,22 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var header = __webpack_require__(8)
+	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(32)
 	var aside = __webpack_require__(25)
 	var getNew = __webpack_require__(26)
+	var percentage = __webpack_require__(7)
 
 	page('/noticia', header, getNew, function (ctx, next) {
 	  __webpack_require__(27)
 	  __webpack_require__(35)
 	  __webpack_require__(28)
+
+	  $(document).ready(function () {
+	    percentage()
+	  })
+
 	  var main = document.getElementById('main-container')
 	  $(main).empty().append(template(ctx.news[0]))
 	  next()
@@ -13387,10 +13400,10 @@
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 	var $ = __webpack_require__(5)
 	var details = __webpack_require__(22)
-	var votesBar = __webpack_require__(20)
+	var votesBar = __webpack_require__(21)
 	var comList = __webpack_require__(33)
 	var registrate = __webpack_require__(24)
 
@@ -13473,7 +13486,7 @@
 /* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 	var comCard = __webpack_require__(34)
 
 	module.exports = function () {
@@ -13504,7 +13517,7 @@
 /* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = function (comment, date) {
 	  return yo`<div class="Noticias_comentarios_card">
@@ -28597,7 +28610,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var header = __webpack_require__(8)
+	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(149)
 
@@ -28612,7 +28625,7 @@
 /* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 	var card = __webpack_require__(150)
 
 	module.exports = yo`<div id="usuario">
@@ -28676,7 +28689,7 @@
 /* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = function () {
 	  return yo`<div class="Usuario_main_comments-card">
@@ -28699,7 +28712,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var header = __webpack_require__(8)
+	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(152)
 
@@ -28714,7 +28727,7 @@
 /* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = yo`<div id="usuario_editar" class="Usuario_editar">
 	  <h1 class="Usuario_editar-title">Editar perfil</h1>
@@ -28774,7 +28787,7 @@
 /* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = function () {
 	  return yo`<div id="signup">
@@ -28819,7 +28832,7 @@
 /* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var yo = __webpack_require__(9)
+	var yo = __webpack_require__(10)
 
 	module.exports = yo`<div id="login">
 	    <div class="Signup_image">

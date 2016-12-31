@@ -4,7 +4,6 @@ var $ = require('jquery')
 
 module.exports = function articles () {
   var heights = []
-  
   // Get heights of elements
   $('.Feed-article').each(function (i, obj) {
 
