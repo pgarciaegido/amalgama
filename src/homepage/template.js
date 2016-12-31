@@ -9,9 +9,9 @@ module.exports = function (n, latest) {
   <section id="Latest" class="Latest">
     <h1 class="Latest-title">${n[latest].title}</h1>
       ${details(n[latest].date, n[latest].tags)}
-    <h4 class="Latest-entradilla">${n.subtitle}</h4>
+    <h4 class="Latest-entradilla">${n[latest].subtitle}</h4>
       ${votesBar(n[latest].agreeVotes, n[latest].disagreeVotes)}
-    <button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
+    <button class="Latest-button"><a href="./noticia/${n[latest].id}">Ver más</a></button>
   </section>
   ${registrate()}
   <div class="Feed">

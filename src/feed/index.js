@@ -10,6 +10,6 @@ module.exports = function (n) {
       <div class="Feed-article-bars">
         ${votesBar(n.agreeVotes, n.disagreeVotes)}
       </div>
-      <button class="Feed-article-button">Ver más</button>
+      <button class="Feed-article-button"><a href="./noticia/${n.id}">Ver más</a></button>
     </article>`
 }

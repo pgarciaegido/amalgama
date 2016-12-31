@@ -35,10 +35,14 @@
 
 		&-button{
 			@mixin normalButton;
-
+			
 			@media(--tablet){
 				display: block;
 				margin: 0 auto;
+			}
+
+			a{
+				@mixin removeAnchorStyles;
 			}
 		}
 

@@ -20,16 +20,16 @@ module.exports = function (n) {
   </h2>
   <div class="Noticia_informate-media">
     <a class="Noticia_informate-media-item" href="#">
-      <div><img src="img/media/el-pais.svg" alt="" /></div>
+      <div><img src="/img/media/el-pais.svg" alt="" /></div>
     </a>
     <a class="Noticia_informate-media-item" href="#">
-      <div><img src="img/media/el-mundo.svg" alt="" /></div>
+      <div><img src="/img/media/el-mundo.svg" alt="" /></div>
     </a>
     <a class="Noticia_informate-media-item" href="#">
-      <div><img src="img/media/the-guardian.svg" alt="" /></div>
+      <div><img src="/img/media/the-guardian.svg" alt="" /></div>
     </a>
     <a class="Noticia_informate-media-item" href="#">
-      <div><img src="img/media/the-new-york-times.svg" alt="" /></div>
+      <div><img src="/img/media/the-new-york-times.svg" alt="" /></div>
     </a>
   </div>
 </section>
@@ -40,11 +40,11 @@ ${registrate()}
     <div class="Noticia_comentarios-comentarios-agree">
       <div class="Noticia_comentarios-comentarios-agree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-        <img src="img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
         <div class="Noticia_comentarios-comentarios-agree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
-          <img src="img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
-          <img src="img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
+          <img src="/img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
+          <img src="/img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
@@ -58,11 +58,11 @@ ${registrate()}
     <div class="Noticia_comentarios-comentarios-disagree">
       <div class="Noticia_comentarios-comentarios-disagree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
-        <img src="img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
+        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
         <div class="Noticia_comentarios-comentarios-disagree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
-          <img src="img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
-          <img src="img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
+          <img src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
+          <img src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">

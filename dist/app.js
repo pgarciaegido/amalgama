@@ -12994,9 +12994,9 @@
 	  <section id="Latest" class="Latest">
 	    <h1 class="Latest-title">${n[latest].title}</h1>
 	      ${details(n[latest].date, n[latest].tags)}
-	    <h4 class="Latest-entradilla">${n.subtitle}</h4>
+	    <h4 class="Latest-entradilla">${n[latest].subtitle}</h4>
 	      ${votesBar(n[latest].agreeVotes, n[latest].disagreeVotes)}
-	    <button class="Latest-button"><a href="./noticia.html">Ver más</a></button>
+	    <button class="Latest-button"><a href="./noticia/${n[latest].id}">Ver más</a></button>
 	  </section>
 	  ${registrate()}
 	  <div class="Feed">
@@ -13067,7 +13067,7 @@
 	      <div class="Feed-article-bars">
 	        ${votesBar(n.agreeVotes, n.disagreeVotes)}
 	      </div>
-	      <button class="Feed-article-button">Ver más</button>
+	      <button class="Feed-article-button"><a href="./noticia/${n.id}">Ver más</a></button>
 	    </article>`
 	}
 
@@ -13381,7 +13381,7 @@
 	var getNew = __webpack_require__(26)
 	var percentage = __webpack_require__(7)
 
-	page('/noticia', header, getNew, function (ctx, next) {
+	page('/noticia/:id', header, getNew, function (ctx, next) {
 	  __webpack_require__(27)
 	  __webpack_require__(35)
 	  __webpack_require__(28)
@@ -13390,8 +13390,14 @@
 	    percentage()
 	  })
 
+	  // coger id de la url para pedir ese post al json
+	  var url = window.location.href.split('/')
+	  var id = url[4]
+
+	  window.scrollTo(0, 0);
+
 	  var main = document.getElementById('main-container')
-	  $(main).empty().append(template(ctx.news[0]))
+	  $(main).empty().append(template(ctx.news[id]))
 	  next()
 	}, aside)
 
@@ -13422,16 +13428,16 @@
 	  </h2>
 	  <div class="Noticia_informate-media">
 	    <a class="Noticia_informate-media-item" href="#">
-	      <div><img src="img/media/el-pais.svg" alt="" /></div>
+	      <div><img src="/img/media/el-pais.svg" alt="" /></div>
 	    </a>
 	    <a class="Noticia_informate-media-item" href="#">
-	      <div><img src="img/media/el-mundo.svg" alt="" /></div>
+	      <div><img src="/img/media/el-mundo.svg" alt="" /></div>
 	    </a>
 	    <a class="Noticia_informate-media-item" href="#">
-	      <div><img src="img/media/the-guardian.svg" alt="" /></div>
+	      <div><img src="/img/media/the-guardian.svg" alt="" /></div>
 	    </a>
 	    <a class="Noticia_informate-media-item" href="#">
-	      <div><img src="img/media/the-new-york-times.svg" alt="" /></div>
+	      <div><img src="/img/media/the-new-york-times.svg" alt="" /></div>
 	    </a>
 	  </div>
 	</section>
@@ -13442,11 +13448,11 @@
 	    <div class="Noticia_comentarios-comentarios-agree">
 	      <div class="Noticia_comentarios-comentarios-agree-header">
 	        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-	        <img src="img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+	        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
 	        <div class="Noticia_comentarios-comentarios-agree-header-votes">
 	          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
-	          <img src="img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
-	          <img src="img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
+	          <img src="/img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
+	          <img src="/img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
 	        </div>
 	      </div>
 	      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
@@ -13460,11 +13466,11 @@
 	    <div class="Noticia_comentarios-comentarios-disagree">
 	      <div class="Noticia_comentarios-comentarios-disagree-header">
 	        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
-	        <img src="img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
+	        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
 	        <div class="Noticia_comentarios-comentarios-disagree-header-votes">
 	          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
-	          <img src="img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
-	          <img src="img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
+	          <img src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
+	          <img src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
 	        </div>
 	      </div>
 	      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
@@ -13523,7 +13529,7 @@
 	  return yo`<div class="Noticias_comentarios_card">
 	  <div class="Noticias_comentarios_card-user">
 	    <div class="Noticias_comentarios_card-user-info">
-	      <img src="img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />
+	      <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />
 	      <p class="Noticias_comentarios_card-user-info-username">pegido</p>
 	    </div>
 	    <p class="Noticias_comentarios_card-user-date">${date}</p>
@@ -13532,8 +13538,8 @@
 	  <div class="Noticias_comentarios_card-feedback">
 	    <p class="Noticias_comentarios_card-feedback-reply">Responder</p>
 	    <div class="Noticias_comentarios_card-feedback-like">
-	      <img src="img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon">
-	      <img src="img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked">
+	      <img src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon">
+	      <img src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked">
 	      <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">10</p>
 	      <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>
 	    </div>

@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
-app.get('/noticia', function (req, res) {
+app.get('/noticia/:id', function (req, res) {
   res.render('index')
 })
 
@@ -66,7 +66,7 @@ app.get('/api/user/pegido', function (req, res) {
 app.get('/api/news', function (req, res) {
   var news = [
   {
-    id: 1,
+    id: 0,
     title: 'Mateo Renzi es la persona indicada para liderar el cambio en italia',
     date: '12 diciembre 2016',
     tags: ['internacional, ', 'italia'],
@@ -75,7 +75,7 @@ app.get('/api/news', function (req, res) {
     disagreeVotes: 18
   },
   {
-    id: 2,
+    id: 1,
     title: 'Puigdemont promete para 2017 un referéndum “legal y vinculante”',
     date: '30 diciembre 2016',
     tags: ['España, ', 'Cataluña'],
@@ -84,7 +84,7 @@ app.get('/api/news', function (req, res) {
     disagreeVotes: 40
   },
   {
-    id: 3,
+    id: 2,
     title: 'Merkel califica al terrorismo islamista como el “mayor desafío” de Alemania',
     date: '31 diciembre 2016',
     tags: ['Alemania, ', 'Internacional'],
@@ -93,7 +93,7 @@ app.get('/api/news', function (req, res) {
     disagreeVotes: 42
   },
   {
-    id: 4,
+    id: 3,
     title: '¿Cómo se construye un héroe olímpico?',
     date: '31 diciembre 2016',
     tags: ['Opinion, ', 'Deportes'],
