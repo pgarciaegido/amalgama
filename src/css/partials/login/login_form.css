@@ -40,19 +40,14 @@
 	}
 
 	&-form{
-		label{
-			display: block;
-			margin-bottom: $margin5-desktop;
-
-			input{
-				@mixin formInput;
-				margin-top: $margin5-desktop;
-				width: 100%;
-			}
+		input{
+			@mixin formInput;
+			margin-top: $margin5-desktop;
+			width: 100%;
 		}
 
-		label:nth-child(2){
-			margin-bottom: $margin3-desktop;
+		input:first-child{
+			margin-bottom: $margin5-desktop;
 		}
 
 		&-submit{

@@ -14,8 +14,11 @@ module.exports = function () {
       </div>
       <form action="" class="Signup_form-form">
         <div>
+          Nombre de usuario
           <input type="text" placeholder="Introduzca su nombre de usuario" />
+          Email
           <input type="email" placeholder="Introduzca su correo electrónico"/>
+          Contraseña
           <input type="password" />
         </div>
         <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />

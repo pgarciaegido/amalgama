@@ -11620,11 +11620,11 @@
 	  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>
 	  <ul class="Navbar-menu">
 	    <li class="Navbar-menu-item"><a href="/">HOME</a></li>
-	    <li class="Navbar-menu-item"><a href="/noticia">ESPAÑA</a></li>
+	    <li class="Navbar-menu-item"><a href="#">ESPAÑA</a></li>
 	    <li class="Navbar-menu-item"><a href="#">INTERNACIONAL</a></li>
 	    <li class="Navbar-menu-item"><a href="#">ECONOMÍA</a></li>
-	    <li class="Navbar-menu-item"><a href="./login.html">ACCEDE</a></li>
-	    <li class="Navbar-menu-item"><a href="./signup.html">REGISTRATE</a></li>
+	    <li class="Navbar-menu-item"><a href="./accede">ACCEDE</a></li>
+	    <li class="Navbar-menu-item"><a href="./registrate">REGISTRATE</a></li>
 	  </ul>
 	  <div class="Navbar-search">
 	    <input type="search" class="Navbar-search-input">
@@ -11633,12 +11633,12 @@
 	</nav>
 	<nav class="Navbar_menu">
 	  <ul class="Navbar_menu-menu">
-	    <li class="Navbar_menu-menu-item"><a href="#">HOME</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="/">HOME</a></li>
 	    <li class="Navbar_menu-menu-item"><a href="#">ESPAÑA</a></li>
 	    <li class="Navbar_menu-menu-item"><a href="#">INTERNACIONAL</a></li>
 	    <li class="Navbar_menu-menu-item"><a href="#">ECONOMÍA</a></li>
-	    <li class="Navbar_menu-menu-item"><a href="#">ACCEDE</a></li>
-	    <li class="Navbar_menu-menu-item"><a href="#">REGISTRATE</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="./accede">ACCEDE</a></li>
+	    <li class="Navbar_menu-menu-item"><a href="./registrate">REGISTRATE</a></li>
 	  </ul>
 	</nav>
 	<div id="bg"></div>
@@ -28809,8 +28809,11 @@
 	      </div>
 	      <form action="" class="Signup_form-form">
 	        <div>
+	          Nombre de usuario
 	          <input type="text" placeholder="Introduzca su nombre de usuario" />
+	          Email
 	          <input type="email" placeholder="Introduzca su correo electrónico"/>
+	          Contraseña
 	          <input type="password" />
 	        </div>
 	        <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
@@ -28852,8 +28855,10 @@
 	        <button class="Login_form-social-google">Accede con Google</button>
 	      </div>
 	      <form action="" class="Login_form-form">
+	        Nombre de usuario o email
 	        <input type="text" placeholder="Introduzca su nombre de usuario o email" />
-	        <input type="password" />
+	        Contraseña
+	        <input type="password" placeholder="Introduzca su contraseña"/>
 	        <input class="Login_form-form-submit" type="Submit" value="Accede">
 	      </form>
 	    </div>
