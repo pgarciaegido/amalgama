@@ -28780,11 +28780,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
+	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(154)
 
-	page('/registrate', function (ctx, next) {
+	page('/registrate', header, function (ctx, next) {
+		__webpack_require__(27)
 	  var main = document.getElementById('main-container')
+	  if($('body').height() < window.innerHeight){
+	  	$('body').css('overflow', 'hidden')
+	  }
 	  $(main).empty().append(template)
 	})
 
@@ -28828,11 +28833,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
+	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(156)
 
-	page('/accede', function (ctx, next) {
+	page('/accede', header, function (ctx, next) {
+		__webpack_require__(27)
 	  var main = document.getElementById('main-container')
+	  if($('body').height() < window.innerHeight){
+	  	$('body').css('overflow', 'hidden')
+	  }
 	  $(main).empty().append(template)
 	})
 
