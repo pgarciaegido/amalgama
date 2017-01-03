@@ -16,10 +16,12 @@ page('/', header, getNew, function (ctx, next) {
   	articles()
     percentage()
   })
-
   var main = document.getElementById('main-container')
   // we get the latest so we fill the latest" section with it
   var latest = ctx.news.length - 1
+  var latestNew = ctx.news[latest]
   $(main).empty().append(template(ctx.news, latest))
+  // Gets the element poped on template back to array, so we can use them all on the aside
+  ctx.news.unshift(latestNew) 
   next()
 }, aside)

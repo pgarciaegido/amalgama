@@ -1,12 +1,17 @@
 var $ = require('jquery')
 var yo = require('yo-yo')
+var masVotados = require('./mas_votados')
+var getNews = require('../ajax/get_new')
 
-module.exports = function (ctx, next) {
+module.exports = function (ctx) {
   var container = $('#main-container')
-  container.append(el)
+  var ordered = orderTemas(ctx.news)
+  container.append(el(ordered))
+  colorBalance()
 }
 
-var el = yo`<aside id="aside">
+var el = function (news) {
+  return yo`<aside id="aside">
   <div class="Aside_registrate">
     <h2 class="Aside_registrate-title">Regístrate</h2>
     <p class="Aside_registrate-subtitle">
@@ -29,13 +34,9 @@ var el = yo`<aside id="aside">
   </div>
   <div class="Aside_temas">
     <h2 class="Aside_temas-title">Temas más votados</h2>
-    <div class="Aside_temas-tema">
-      <p class="Aside_temas-tema-title">Renzi dimite en Italia a pesar del las ventajas de las encuestas</p>
-      <div class="Aside_temas-tema-info">
-        <span class="Aside_temas-tema-info-votes">1300 votos</span>
-        <span class="Aside_temas-tema-info-balance">-42</span>
-      </div>
-    </div>  
+    ${news.map(function (nw) {
+      return masVotados (nw)
+    })}
   </div>
   <div class="Aside_subscribe">
     <h2 class="Aside_subscribe-title">¡Suscríbete</h2>
@@ -46,3 +47,27 @@ var el = yo`<aside id="aside">
     </form>
   </div>
 </aside>`
+}
+
+// Get the total number of votes, and ordering it so it shows from higher to lower. 
+function orderTemas (arr) {
+  for (var i = 0; i< arr.length; i++) {  
+    arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes
+    arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes
+  }
+  var byTotal = arr.slice(0)
+  byTotal.sort(function (a, b) {
+    return b.total - a.total;
+  })
+  return byTotal
+}
+
+// If the balance is positive, color = green
+function colorBalance () {
+  $('.Aside_temas-tema').each(function () {
+    var balance = $(this).find($('.Aside_temas-tema-info-balance'))
+    if (balance.html().charAt(0) !== '-'){
+      balance.css('color', '#7ace7a')
+    }
+  })
+}

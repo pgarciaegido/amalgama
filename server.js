@@ -72,7 +72,7 @@ app.get('/api/news', function (req, res) {
     tags: ['internacional, ', 'italia'],
     subtitle: 'Antes, sobre las 17.30, el todavía primer ministro comparecerá ante la dirección nacional del Partido Democrático (PD), del que es secretario general, para informar de la situación. Una reunión que se prevé tensa por cuanto el sector crítico del partido de centroizquierda ha hecho campaña por el no a las reformas constitucionales que pretendía Renzi',
     agreeVotes: 12,
-    disagreeVotes: 18
+    disagreeVotes: 18,
   },
   {
     id: 1,
