@@ -1,31 +1,27 @@
 var express = require('express')
 var app = express()
 var PORT = process.env.PORT || 8080
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
 
 var bodyParser = require('body-parser')
+var User = require('./data/models/user').User
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
 // ------------ DB
-mongoose.connect('mongodb://localhost/users') // localhost/nombrebasedatos
-
-var userSchemaJSON = {
-  username: String,
-  email: String,
-  password: String
-}
-
-var user_schema = new Schema(userSchemaJSON)
-
-var User = mongoose.model("User", user_schema)
 
 app.post('/usersignup', function (req, res) {
 
-  var user = new User({username: req.body.username, email: req.body.email, password: req.body.password})
+  var user = new User({username: req.body.username,
+                       email: req.body.email,
+                       password: req.body.password,
+                       password_confirmation: req.body.password_confirmation
+                     })
+
+  console.log(user.password_confirmation)
   user.save(function () {
     res.send("guardamos tus datos")
   })

@@ -28863,6 +28863,8 @@
 	          <input type="email" placeholder="Introduzca su correo electrónico" name="email"/>
 	          Contraseña
 	          <input type="password" name="password" />
+	          Confirma tu contraseña
+	          <input type="password" name="password_confirmation" />
 	        </div>
 	        <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
 	      </form>
