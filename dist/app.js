@@ -13095,7 +13095,6 @@
 	var $ = __webpack_require__(5)
 	var yo = __webpack_require__(10)
 	var masVotados = __webpack_require__(26)
-	var getNews = __webpack_require__(27)
 
 	module.exports = function (ctx) {
 	  var container = $('#main-container')
@@ -13160,7 +13159,6 @@
 	function colorBalance () {
 	  $('.Aside_temas-tema').each(function () {
 	    var balance = $(this).find($('.Aside_temas-tema-info-balance'))
-	    console.log(balance.html().charAt(0))
 	    if (balance.html().charAt(0) !== '-'){
 	      balance.css('color', '#7ace7a')
 	    }
@@ -13178,7 +13176,7 @@
 		return yo`<div class="Aside_temas-tema">
 	      <p class="Aside_temas-tema-title">${post.title}</p>
 	      <div class="Aside_temas-tema-info">
-	        <span class="Aside_temas-tema-info-votes">${post.total}</span>
+	        <span class="Aside_temas-tema-info-votes">${post.total} votos</span>
 	        <span class="Aside_temas-tema-info-balance">${post.balance}</span>
 	      </div>
 	    </div>`
@@ -28857,14 +28855,14 @@
 	        <button class="Signup_form-social-facebook">Regístrate con Facebook</button>
 	        <button class="Signup_form-social-google">Regístrate con Google</button>
 	      </div>
-	      <form action="" class="Signup_form-form">
+	      <form action="usersignup" method="post" class="Signup_form-form">
 	        <div>
 	          Nombre de usuario
-	          <input type="text" placeholder="Introduzca su nombre de usuario" />
+	          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />
 	          Email
-	          <input type="email" placeholder="Introduzca su correo electrónico"/>
+	          <input type="email" placeholder="Introduzca su correo electrónico" name="email"/>
 	          Contraseña
-	          <input type="password" />
+	          <input type="password" name="password" />
 	        </div>
 	        <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
 	      </form>

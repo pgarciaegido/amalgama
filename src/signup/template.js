@@ -12,14 +12,14 @@ module.exports = function () {
         <button class="Signup_form-social-facebook">Regístrate con Facebook</button>
         <button class="Signup_form-social-google">Regístrate con Google</button>
       </div>
-      <form action="" class="Signup_form-form">
+      <form action="usersignup" method="post" class="Signup_form-form">
         <div>
           Nombre de usuario
-          <input type="text" placeholder="Introduzca su nombre de usuario" />
+          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />
           Email
-          <input type="email" placeholder="Introduzca su correo electrónico"/>
+          <input type="email" placeholder="Introduzca su correo electrónico" name="email"/>
           Contraseña
-          <input type="password" />
+          <input type="password" name="password" />
         </div>
         <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
       </form>

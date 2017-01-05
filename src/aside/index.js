@@ -1,7 +1,6 @@
 var $ = require('jquery')
 var yo = require('yo-yo')
 var masVotados = require('./mas_votados')
-var getNews = require('../ajax/get_new')
 
 module.exports = function (ctx) {
   var container = $('#main-container')
