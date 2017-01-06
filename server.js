@@ -21,8 +21,11 @@ app.post('/usersignup', function (req, res) {
                        password_confirmation: req.body.password_confirmation
                      })
 
-  console.log(user.password_confirmation)
-  user.save(function () {
+  console.log(user.password_confirmation) 
+  user.save(function (err) {
+    if (err) {
+      console.log(String(err))
+    }
     res.send("guardamos tus datos")
   })
 })
