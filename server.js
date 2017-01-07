@@ -21,12 +21,24 @@ app.post('/usersignup', function (req, res) {
                        password_confirmation: req.body.password_confirmation
                      })
 
-  console.log(user.password_confirmation) 
-  user.save(function (err) {
-    if (err) {
+// Using callbacks
+  // user.save(function (err) {
+  //   if (err) {
+  //     console.log(String(err))
+  //   }
+  //   res.send("guardamos tus datos")
+  // })
+
+// Using promises --> PREFERED
+
+  user.save().then(function (us) {
+    console.log(us)
+    res.send('Guardamos tu info')
+  }, function (err) {
+    if(err){
       console.log(String(err))
+      res.send('No pudimos guardar tu info')
     }
-    res.send("guardamos tus datos")
   })
 })
 
