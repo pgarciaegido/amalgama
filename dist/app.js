@@ -13464,7 +13464,6 @@
 	// ctx is an object!
 
 	module.exports = function getCurrentUser (ctx, next) {
-		debugger
 	  $.get('/api/currentUser', function (data) {
 	    // ctx is an object, then we add the news
 	    ctx.user = data
@@ -13481,7 +13480,6 @@
 	var yo = __webpack_require__(10)
 
 	module.exports = function (ctx, next) {
-	  debugger
 	  console.log(ctx.user)
 	  var container = $('#header-container')
 	  container.append(el(ctx.user))
@@ -13503,7 +13501,7 @@
 	  <div class="Navbar-user">
 	    <div class="Navbar-user-info">
 	      <img class="Navbar-user-info-avatar" src="/img/avatar.jpg" />
-	      <p class="Navbar-user-info-username">${user.password}</p>
+	      <p class="Navbar-user-info-username">${user.username}</p>
 	    </div>
 	    <button class="Navbar-user-info-editar">Editar</button>
 	    <button class="Navbar-user-info-logout">Salir</button>

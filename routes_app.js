@@ -18,8 +18,9 @@ router.get('imagenes/:id/edit', function (req, res) {
 
 router.route('/imagenes/:id')
 	.get(function (req, res) {
-		
-		res.render('show')
+		Image.findById(req.params.id, function(err, imagen) {
+			res.render('show', {imagen:imagen})
+		})
 	})
 	.put(function (req, res) {
 
@@ -41,7 +42,8 @@ router.route('/imagenes/:id')
 
 		imagen.save(function (err) {
 			if(!err){
-				res.redirect('/imagenes/' + imagen._id)
+				console.log(imagen)
+				res.redirect('/app/imagenes/' + imagen._id)
 			}
 			else{
 				res.render(err)
