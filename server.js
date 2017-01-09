@@ -90,7 +90,12 @@ app.use('/app', router_app)
 // This sets the current user info on this route, so we make an ajax call to get it on the client side 
 app.use('/api/currentuser', session_middleware)
 app.get('/api/currentuser', function (req, res) {
-  User.findById(req.session.user_id, function(err, user) {
+
+  var usersProjection = {
+      password: false
+  }
+
+  User.findById(req.session.user_id, usersProjection, function(err, user) {
     res.send(user)
   })
 })
