@@ -1,13 +1,13 @@
 var $ = require('jquery')
-var header = require('../header/index')
+var headerLogged = require('../header_logged/index')
 var page = require('page')
 var template = require('./template')
-var aside = require('../aside/index')
+var asideLogged = require('../aside_logged')
 var getNew = require('../ajax/get_new')
 var articles = require('../feed/feed_events')
 var percentage = require('../votes_bar/get_percentage')
 
-page('/app', header, getNew, function (ctx, next) {
+page('/app', headerLogged, getNew, function (ctx, next) {
   require('../header/events')
   require('../noticia/noticia_events')
   require('../feed/feed_events')
@@ -24,4 +24,4 @@ page('/app', header, getNew, function (ctx, next) {
   // Gets the element poped on template back to array, so we can use them all on the aside
   ctx.news.unshift(latestNew) 
   next()
-}, aside)
+}, asideLogged)
