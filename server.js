@@ -4,11 +4,18 @@ var PORT = process.env.PORT || 8080
 
 var bodyParser = require('body-parser')
 var User = require('./data/models/user').User
+var session = require('express-session')
+var router_app = require('./routes_app')
+var session_middleware = require('./src/middlewares/session')
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(session({
+  secret: 'dkjsrhoaiwunflkjasmnflawrjioqwuhtioq4uhtf',
+  resave: false,
+  saveUninitialized: false
+}))
 
 app.set('view engine', 'pug')
 
@@ -45,7 +52,7 @@ app.post('/usersignup', function (req, res) {
   // Using callbacks
   // user.save(function (err) {
   //   if (err) {
-  //     console.log(String(err))
+  //     String(err))
   //   }
   //   res.send("guardamos tus datos")
   // })
@@ -68,13 +75,15 @@ app.get('/accede', function (req, res) {
 })
 
 app.post('/sessions', function (req, res) {
-  
-  User.findOne({email: req.body.email, password: req.body.password}, function (err, docs) {
-    console.log(docs)
-    res.send('Hola mundo')
-  })
 
+  User.findOne({email: req.body.email, password: req.body.password}, function (err, user) {
+    req.session.user_id = user._id
+    res.redirect('/app')
+  })
 })
+
+app.use('/app', session_middleware)
+app.use('/app', router_app)
 
 // //////////////////////////////////////////////////////////////////////
 
