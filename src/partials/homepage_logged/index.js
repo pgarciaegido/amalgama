@@ -1,4 +1,5 @@
 var $ = require('jquery')
+var getCurrentUser = require('../ajax/get_current_user')
 var headerLogged = require('../header_logged/index')
 var page = require('page')
 var template = require('./template')
@@ -7,11 +8,10 @@ var getNew = require('../ajax/get_new')
 var articles = require('../feed/feed_events')
 var percentage = require('../votes_bar/get_percentage')
 
-page('/app', headerLogged, getNew, function (ctx, next) {
+page('/app', getCurrentUser, headerLogged, getNew, function (ctx, next) {
   require('../header/events')
   require('../noticia/noticia_events')
   require('../feed/feed_events')
-
   $(document).ready(function () {
   	articles()
     percentage()

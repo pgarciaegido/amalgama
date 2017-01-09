@@ -74,6 +74,7 @@ app.get('/accede', function (req, res) {
   res.render('index')
 })
 
+//Used when login
 app.post('/sessions', function (req, res) {
 
   User.findOne({email: req.body.email, password: req.body.password}, function (err, user) {
@@ -86,6 +87,13 @@ app.use('/app', session_middleware)
 app.use('/app', router_app)
 
 // //////////////////////////////////////////////////////////////////////
+// This sets the current user info on this route, so we make an ajax call to get it on the client side 
+app.use('/api/currentuser', session_middleware)
+app.get('/api/currentuser', function (req, res) {
+  User.findById(req.session.user_id, function(err, user) {
+    res.send(user)
+  })
+})
 
 app.get('/api/user/pegido', function (req, res) {
   var user = {
