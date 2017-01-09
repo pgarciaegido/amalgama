@@ -10,38 +10,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
-// ------------ DB
-
-app.post('/usersignup', function (req, res) {
-
-  var user = new User({username: req.body.username,
-                       email: req.body.email,
-                       password: req.body.password,
-                       password_confirmation: req.body.password_confirmation
-                     })
-
-// Using callbacks
-  // user.save(function (err) {
-  //   if (err) {
-  //     console.log(String(err))
-  //   }
-  //   res.send("guardamos tus datos")
-  // })
-
-// Using promises --> PREFERED
-
-  user.save().then(function (us) {
-    console.log(us)
-    res.send('Guardamos tu info')
-  }, function (err) {
-    if(err){
-      console.log(String(err))
-      res.send('No pudimos guardar tu info')
-    }
-  })
-})
-
 app.set('view engine', 'pug')
 
 app.use(express.static('dist'))
@@ -66,12 +34,49 @@ app.get('/registrate', function (req, res) {
   res.render('index')
 })
 
-app.get('/accede', function (req, res) {
-  User.find(function (err,doc) {
-    console.log(doc)
-    res.render('index')
+app.post('/usersignup', function (req, res) {
+
+  var user = new User({username: req.body.username,
+                       email: req.body.email,
+                       password: req.body.password,
+                       password_confirmation: req.body.password_confirmation
+                     })
+
+  // Using callbacks
+  // user.save(function (err) {
+  //   if (err) {
+  //     console.log(String(err))
+  //   }
+  //   res.send("guardamos tus datos")
+  // })
+
+  // Using promises --> PREFERED
+
+  user.save().then(function (us) {
+    console.log(us)
+    res.send('Guardamos tu info')
+  }, function (err) {
+    if(err){
+      console.log(String(err))
+      res.send('No pudimos guardar tu info')
+    }
   })
 })
+
+app.get('/accede', function (req, res) {
+  res.render('index')
+})
+
+app.post('/sessions', function (req, res) {
+  
+  User.findOne({email: req.body.email, password: req.body.password}, function (err, docs) {
+    console.log(docs)
+    res.send('Hola mundo')
+  })
+
+})
+
+// //////////////////////////////////////////////////////////////////////
 
 app.get('/api/user/pegido', function (req, res) {
   var user = {
