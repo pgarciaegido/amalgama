@@ -8,7 +8,7 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,700i|Roboto:400,700', rel='stylesheet')
   body
     h1 subir nueva imagen
-    form(action="/app/imagenes/:id" method="POST")
+    form(action="/app/updateimage" method="POST")
       label(for="title") Título
       input(type="text" name="title" id="title")
       label(for="archivo")

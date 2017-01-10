@@ -20,7 +20,9 @@ var el = function (news, user) {
     <h3 class="Aside_profile-username">${user.username}</h3>
     <div class="Aside_profile-buttons">
       <button class="Aside_profile-buttons-edit">Editar</button>
-      <button class="Aside_profile-buttons-logout">Cerrar sesión</button>
+      <form method="POST" action="/app/logout">
+        <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />
+      </form>
     </div>
   </div>
   <div class="Aside_temas">
