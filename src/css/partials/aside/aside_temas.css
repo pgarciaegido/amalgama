@@ -9,7 +9,6 @@
 
 	&-tema{
 		padding: $margin5-desktop $margin5-desktop $margin5-desktop $margin4-desktop ;
-		background-color: $gray-soft;
 
 		&-title{
 			font-weight: 700;
@@ -32,5 +31,9 @@
 				font-weight: 700;
 			}
 		}
+	}
+
+	&-tema:nth-of-type(even){
+		background-color: $gray-soft;
 	}
 }

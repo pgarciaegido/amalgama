@@ -1,4 +1,4 @@
-var User = require('../../data/models/user').User
+var User = require('../data/models/user').User
 
 module.exports = function (req, res, next) {
 	if(!req.session.user_id) {

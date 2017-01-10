@@ -13556,7 +13556,6 @@
 	var colorBalance = __webpack_require__(27).color
 
 	module.exports = function (ctx) {
-	  debugger
 	  var container = $('#main-container')
 	  var ordered = orderTemas(ctx.news)
 	  var user = ctx.user

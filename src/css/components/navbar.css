@@ -53,7 +53,7 @@
 		&-item:nth-child(5), &-item:nth-child(6) {
 			@mixin blueButton;
 			border-right: none;
-			border-radius: 10px 0 0 10px;
+			border-radius: 10px;
 
 			a{
 				color: white;

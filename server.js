@@ -2,19 +2,21 @@ var express = require('express')
 var app = express()
 var PORT = process.env.PORT || 8080
 
-var bodyParser = require('body-parser')
-var User = require('./data/models/user').User
-var session = require('express-session')
-var router_app = require('./routes_app')
-var session_middleware = require('./src/middlewares/session')
+var bodyParser = require('body-parser') // req.body ---> Parse forms inputs
+var User = require('./data/models/user').User // Collection User
+var cookieSession = require('cookie-session')  
+var router_app = require('./routes_app') // App/ routes
+var session_middleware = require('./middlewares/session') // middleware to ensure that user is logged in
+var methodOverride = require('method-override') // Overrides the POST method for PUT
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({
-  secret: 'dkjsrhoaiwunflkjasmnflawrjioqwuhtioq4uhtf',
-  resave: false,
-  saveUninitialized: false
+app.use(methodOverride('_method'))
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['llave-1', 'llave-2']
 }))
 
 app.set('view engine', 'pug')
@@ -48,14 +50,6 @@ app.post('/usersignup', function (req, res) {
                        password: req.body.password,
                        password_confirmation: req.body.password_confirmation
                      })
-
-  // Using callbacks
-  // user.save(function (err) {
-  //   if (err) {
-  //     String(err))
-  //   }
-  //   res.send("guardamos tus datos")
-  // })
 
   // Using promises --> PREFERED
 

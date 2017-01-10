@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+    title Amalgama
+    link(rel='stylesheet', href='/css/app.css')
+    link(href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700,700i|Roboto:400,700', rel='stylesheet')
+  body
+    h1 imagenes
+    div(class="imagenes-container")
+      for imagen in imagenes
+        h2=imagen.title
+        a(href="/app/imagenes/" + imagen._id + "/edit") Editar
+        a(href="/app/imagenes/" + imagen._id + "/remove") Eliminar
