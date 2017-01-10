@@ -12,7 +12,7 @@ var el = function () {
 <nav class="Navbar">
   <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />
   <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />
-  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>
+  <a href="/app"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>
   <ul class="Navbar-menu">
     <li class="Navbar-menu-item"><a href="/">HOME</a></li>
     <li class="Navbar-menu-item"><a href="#">ESPAÑA</a></li>

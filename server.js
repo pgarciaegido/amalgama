@@ -10,20 +10,34 @@ var session_middleware = require('./middlewares/session') // middleware to ensur
 var methodOverride = require('method-override') // Overrides the POST method for PUT
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// Overrides method in forms (from post to put)
 
 app.use(methodOverride('_method'))
+
+// Use cookies for user sessions so its not necesary to log in again
 
 app.use(cookieSession({
   name: 'session',
   keys: ['llave-1', 'llave-2']
 }))
 
+// We use pug as the view engine
+
 app.set('view engine', 'pug')
+
+// Serve the DIST folder
 
 app.use(express.static('dist'))
 
+// If there is no sesion, send to /app and app will send to login
+
 app.get('/', function (req, res) {
+  res.redirect('/app')
+})
+
+app.get('/invitado', function (req, res) {
   res.render('index')
 })
 
@@ -55,7 +69,7 @@ app.post('/usersignup', function (req, res) {
 
   user.save().then(function (us) {
     console.log(us)
-    res.send('Guardamos tu info')
+    res.redirect('/app')
   }, function (err) {
     if(err){
       console.log(String(err))
@@ -72,10 +86,18 @@ app.get('/accede', function (req, res) {
 app.post('/sessions', function (req, res) {
 
   User.findOne({email: req.body.email, password: req.body.password}, function (err, user) {
-    req.session.user_id = user._id
-    res.redirect('/app')
+    // if there is no user, gets back to /accede
+    if (!user) {
+      console.log(err)
+      res.redirect('/accede')
+    } else {
+      req.session.user_id = user._id
+      res.redirect('/app')
+    }
   })
 })
+
+// Use session_middleware to ensure the user is logged in, and then we route from /app.
 
 app.use('/app', session_middleware)
 app.use('/app', router_app)
@@ -92,39 +114,6 @@ app.get('/api/currentuser', function (req, res) {
   User.findById(req.session.user_id, usersProjection, function(err, user) {
     res.send(user)
   })
-})
-
-app.get('/api/user/pegido', function (req, res) {
-  var user = {
-    username: 'pegido',
-    email: 'pgarciaegido@gmail.com',
-    password: '123456789',
-    avatar: '/img/avatar.jpg',
-    location: 'Oviedo',
-    rrss: {
-      facebook: 'https://www.facebook.com/pablopolge',
-      twitter: 'https://twitter.com/PolPolvo',
-      linkedin: 'https://www.linkedin.com/in/pablo-garc%C3%ADa-egido-42115359?trk=hp-identity-name'
-    },
-    posts: [
-      {
-        id: 1,
-        noticiaId: 1,
-        post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo delectus molestias, omnis, deleniti rem vero quibusdam ea ut aliquid, nulla possimus ipsum quas facilis minus sunt obcaecati necessitatibus pariatur.',
-        date: '04 diciembre de 2016',
-        likes: 10
-      },
-      {
-        id: 2,
-        noticiaId: 1,
-        post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo delectus molestias, omnis, deleniti rem vero quibusdam ea ut aliquid, nulla possimus ipsum quas facilis minus sunt obcaecati necessitatibus pariatur.',
-        date: '05 diciembre de 2016',
-        likes: 9
-      }
-    ]
-  }
-
-  res.send(user)
 })
 
 app.get('/api/news', function (req, res) {

@@ -4,7 +4,6 @@ var articles = require('./partials/feed/feed_events')
 var percentage = require('./partials/votes_bar/get_percentage')
 
 require('./partials/homepage')
-require('./partials/homepage_logged')
 require('./partials/noticia')
 require('./partials/usuario')
 require('./partials/usuario_editar')

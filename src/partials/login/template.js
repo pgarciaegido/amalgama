@@ -18,5 +18,7 @@ module.exports = yo`<div id="login">
         <input type="password" placeholder="Introduzca su contraseña" name="password"/>
         <input class="Login_form-form-submit" type="Submit" value="Accede">
       </form>
+      <h2>No tengo cuenta! Quisiera registrarme</h2>
+      <a href="/registrate"><button>Regístrame!</button></a>
     </div>
   </div>`

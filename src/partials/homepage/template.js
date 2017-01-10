@@ -1,7 +1,7 @@
   var yo = require('yo-yo')
 var votesBar = require('../votes_bar/index')
 var details = require('../details/index')
-var feed = require('../feed/index')
+var feed = require('../feed/index').notLogged
 var registrate = require('../registrate_cta/index')
 
 module.exports = function (n, latest) {
@@ -11,7 +11,7 @@ module.exports = function (n, latest) {
       ${details(n[latest].date, n[latest].tags)}
     <h4 class="Latest-entradilla">${n[latest].subtitle}</h4>
       ${votesBar(n[latest].agreeVotes, n[latest].disagreeVotes)}
-    <button class="Latest-button"><a href="./noticia/${n[latest].id}">Ver más</a></button>
+    <button class="Latest-button"><a href="/accede">Ver más</a></button>
   </section>
   ${registrate()}
   <div class="Feed">

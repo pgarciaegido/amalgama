@@ -18,15 +18,17 @@ var el = function (news) {
     <p class="Aside_registrate-subtitle">
       Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
     </p>
-    <form class="Aside_registrate-form" action="">
+    <form class="Aside_registrate-form" action="/usersignup" method="POST">
       <label for="">Nombre usuario: 
-        <input type="text">
+        <input name ="username" type="text">
       </label>
       <label for="">Email: 
-        <input type="email">
+        <input name="email" type="email">
       </label>
       <label for="">Contraseña: 
-        <input type="password">
+        <input name="password" type="password">
+      <label for="">Repita la contraseña: 
+        <input name="password_confirmation" type="password">
       </label>
       <input class="Aside_registrate-form-button" type="submit" value="Regístrate">
     </form>
