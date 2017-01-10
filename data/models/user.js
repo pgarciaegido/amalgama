@@ -33,7 +33,7 @@ user_schema.virtual('password_confirmation').get(function () {
 })
 
 // Our collection in mongodb is named after the string (first param), but it turns 
-// it to plural (adding S)
+// it to plural (adding S) 
 var User = mongoose.model('User', user_schema)
 
 module.exports.User = User

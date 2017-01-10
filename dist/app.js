@@ -13480,13 +13480,12 @@
 	var yo = __webpack_require__(10)
 
 	module.exports = function (ctx, next) {
-	  console.log(ctx.user)
 	  var container = $('#header-container')
-	  container.append(el(ctx.user))
+	  container.append(el())
 	  next()
 	}
 
-	var el = function (user) {
+	var el = function () {
 	  return yo`<div>
 	<nav class="Navbar">
 	  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />
@@ -13497,15 +13496,8 @@
 	    <li class="Navbar-menu-item"><a href="#">ESPAÑA</a></li>
 	    <li class="Navbar-menu-item"><a href="#">INTERNACIONAL</a></li>
 	    <li class="Navbar-menu-item"><a href="#">ECONOMÍA</a></li>
+	    <li class="Navbar-menu-item"><a href="#">MI PERFIL</a></li>
 	  </ul>
-	  <div class="Navbar-user">
-	    <div class="Navbar-user-info">
-	      <img class="Navbar-user-info-avatar" src="/img/avatar.jpg" />
-	      <p class="Navbar-user-info-username">${user.username}</p>
-	    </div>
-	    <button class="Navbar-user-info-editar">Editar</button>
-	    <button class="Navbar-user-info-logout">Salir</button>
-	  </div>
 	  <div class="Navbar-search">
 	    <input type="search" class="Navbar-search-input">
 	    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">
@@ -13564,14 +13556,25 @@
 	var colorBalance = __webpack_require__(27).color
 
 	module.exports = function (ctx) {
+	  debugger
 	  var container = $('#main-container')
 	  var ordered = orderTemas(ctx.news)
-	  container.append(el(ordered))
+	  var user = ctx.user
+	  container.append(el(ordered, user))
 	  colorBalance()
 	}
 
-	var el = function (news) {
+	var el = function (news, user) {
 	  return yo`<aside id="aside">
+	  <div class="Aside_profile">
+	    <h2 class="Aside_profile-title">Mi perfil</h2>
+	    <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />
+	    <h3 class="Aside_profile-username">${user.username}</h3>
+	    <div class="Aside_profile-buttons">
+	      <button class="Aside_profile-buttons-edit">Editar</button>
+	      <button class="Aside_profile-buttons-logout">Cerrar sesión</button>
+	    </div>
+	  </div>
 	  <div class="Aside_temas">
 	    <h2 class="Aside_temas-title">Temas más votados</h2>
 	    ${news.map(function (nw) {

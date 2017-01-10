@@ -2,13 +2,12 @@ var $ = require('jquery')
 var yo = require('yo-yo')
 
 module.exports = function (ctx, next) {
-  console.log(ctx.user)
   var container = $('#header-container')
-  container.append(el(ctx.user))
+  container.append(el())
   next()
 }
 
-var el = function (user) {
+var el = function () {
   return yo`<div>
 <nav class="Navbar">
   <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />
@@ -19,15 +18,8 @@ var el = function (user) {
     <li class="Navbar-menu-item"><a href="#">ESPAÑA</a></li>
     <li class="Navbar-menu-item"><a href="#">INTERNACIONAL</a></li>
     <li class="Navbar-menu-item"><a href="#">ECONOMÍA</a></li>
+    <li class="Navbar-menu-item"><a href="#">MI PERFIL</a></li>
   </ul>
-  <div class="Navbar-user">
-    <div class="Navbar-user-info">
-      <img class="Navbar-user-info-avatar" src="/img/avatar.jpg" />
-      <p class="Navbar-user-info-username">${user.username}</p>
-    </div>
-    <button class="Navbar-user-info-editar">Editar</button>
-    <button class="Navbar-user-info-logout">Salir</button>
-  </div>
   <div class="Navbar-search">
     <input type="search" class="Navbar-search-input">
     <img src="/img/search.svg" alt="search" class="Navbar-search-icon">

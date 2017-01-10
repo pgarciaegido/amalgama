@@ -1,0 +1,32 @@
+.Aside_profile{
+	@mixin asideContainer;
+	
+	&-title{
+		@mixin sectionDivider;
+		margin: 0;
+		margin-bottom: $margin5-desktop;
+	}
+
+	&-avatar{
+		display: block;
+		margin: 0 auto;
+		border-radius: 50%;
+		width: 100px;
+	}
+
+	&-username{
+		text-align: center;
+	}
+
+	&-buttons{
+		display: flex;
+		justify-content: space-around;
+
+		&-edit, &-logout{
+			@mixin normalButton;
+			font-size: .8em;
+			padding: 0 10px;
+			height: 40px;
+		}
+	}
+}
