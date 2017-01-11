@@ -11590,27 +11590,18 @@
 	// Homepage when not logged in
 
 	page('/invitado', header, getNew, function (ctx, next) {
-	  __webpack_require__(33)
-	  __webpack_require__(34)
-	  __webpack_require__(6)
-
-	  $(document).ready(function () {
-	    articles()
-	    percentage()
-	  })
-	  var main = document.getElementById('main-container')
-	  // we get the latest so we fill the latest" section with it
-	  var latest = ctx.news.length - 1
-	  var latestNew = ctx.news[latest]
-	  $(main).empty().append(template(ctx.news, latest))
-	  // Gets the element poped on template back to array, so we can use them all on the aside
-	  ctx.news.unshift(latestNew) 
+	  loadHomepage(ctx)
 	  next()
 	}, aside)
 
 	// Homepage when logged in
 
 	page('/app', getCurrentUser, headerLogged, getNew, function (ctx, next) {
+	  loadHomepage(ctx)
+	  next()
+	}, asideLogged)
+
+	function loadHomepage(ctx) {
 	  __webpack_require__(33)
 	  __webpack_require__(34)
 	  __webpack_require__(6)
@@ -11625,8 +11616,7 @@
 	  $(main).empty().append(templateLogged(ctx.news, latest))
 	  // Gets the element poped on template back to array, so we can use them all on the aside
 	  ctx.news.unshift(latestNew) 
-	  next()
-	}, asideLogged)
+	}
 
 
 /***/ },
