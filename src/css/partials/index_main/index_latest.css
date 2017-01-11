@@ -2,7 +2,7 @@
 	margin-top: $margin1-desktop;
 	padding-bottom: $margin3-desktop;
 	border-bottom: $border-section;
-	margin-bottom: $margin2-desktop;
+	margin-bottom: 0;
 
 	@media (--mobile){
 		margin-top: $margin1-mobile;

@@ -1,7 +1,7 @@
 var $ = require('jquery')
 var yo = require('yo-yo')
 
-module.exports = function (ctx, next) {
+module.exports = function logged (ctx, next) {
   var container = $('#header-container')
   container.append(el())
   next()

@@ -4,10 +4,12 @@ var PORT = process.env.PORT || 8080
 
 var bodyParser = require('body-parser') // req.body ---> Parse forms inputs
 var User = require('./data/models/user').User // Collection User
-var cookieSession = require('cookie-session')  
+var cookieSession = require('cookie-session')
 var router_app = require('./routes_app') // App/ routes
 var session_middleware = require('./middlewares/session') // middleware to ensure that user is logged in
 var methodOverride = require('method-override') // Overrides the POST method for PUT
+// var session = require('express-session')
+// var RedisStore = require('connect-redis')(session)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -16,12 +18,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(methodOverride('_method'))
 
-// Use cookies for user sessions so its not necesary to log in again
-
 app.use(cookieSession({
   name: 'session',
-  keys: ['llave-1', 'llave-2']
+  keys: ['llave1', 'llave2']
 }))
+
+// var sessionMiddleware = session({
+//   store: new RedisStore({}),
+//   secret: 'super ultra secret word'
+// })
+// app.use(sessionMiddleware)
 
 // We use pug as the view engine
 
@@ -34,6 +40,7 @@ app.use(express.static('dist'))
 // If there is no sesion, send to /app and app will send to login
 
 app.get('/', function (req, res) {
+  // res.send('wtf')
   res.redirect('/app')
 })
 
@@ -41,17 +48,17 @@ app.get('/invitado', function (req, res) {
   res.render('index')
 })
 
-app.get('/noticia/:id', function (req, res) {
-  res.render('index')
-})
+// app.get('/noticia/:id', function (req, res) {
+//   res.render('index')
+// })
 
-app.get('/usuario/pegido', function (req, res) {
-  res.render('index')
-})
+// app.get('/usuario/pegido', function (req, res) {
+//   res.render('index')
+// })
 
-app.get('/usuario/pegido/editar', function (req, res) {
-  res.render('index')
-})
+// app.get('/usuario/pegido/editar', function (req, res) {
+//   res.render('index')
+// })
 
 app.get('/registrate', function (req, res) {
   res.render('index')

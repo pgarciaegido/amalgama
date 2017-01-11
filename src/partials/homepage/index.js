@@ -8,12 +8,9 @@ var articles = require('../feed/feed_events')
 var percentage = require('../votes_bar/get_percentage')
 
 var getCurrentUser = require('../ajax/get_current_user')
-var headerLogged = require('../header_logged/index')
+var headerLogged = require('../header/index_logged')
 var templateLogged = require('./template_logged')
 var asideLogged = require('../aside_logged')
-
-
-
 
 // Homepage when not logged in
 
@@ -23,7 +20,7 @@ page('/invitado', header, getNew, function (ctx, next) {
   require('../feed/feed_events')
 
   $(document).ready(function () {
-  	articles()
+    articles()
     percentage()
   })
   var main = document.getElementById('main-container')

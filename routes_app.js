@@ -4,7 +4,7 @@ var router = express.Router()
 var image_finder_middleware = require('./middlewares/find_image')
 var multer = require('multer')
 var ext = require('file-extension');
-var fs = require('fs')
+var fs = require('fs-extra')
 
 // ************ UPLOADING FILES SET UP
 
@@ -67,14 +67,19 @@ router.route('/imagenes/:id')
 
 router.route('/updateimage')
 	.post(upload, function (req, res) {
-		console.log(req.file)
+		var extension = req.file.originalname.split('.').pop()
 		var data = {
 			title: req.body.title,
-			creator: res.locals.user._id
+			creator: res.locals.user._id,
+			extension: extension
 		}
 		var imagen = new Image(data)
+		console.log(req.file.path)
+		console.log(imagen._id)
+		console.log(extension)
 		imagen.save(function (err) {
 			if(!err){
+				fs.copy(req.file.path, './dist/img/uploads/' + imagen._id + '.' + extension)
 				res.redirect('/app/imagenes/' + imagen._id)
 			}
 			else{
