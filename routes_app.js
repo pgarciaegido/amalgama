@@ -2,6 +2,24 @@ var express = require('express')
 var Image = require('./data/models/images.js')
 var router = express.Router()
 var image_finder_middleware = require('./middlewares/find_image')
+var multer = require('multer')
+var ext = require('file-extension');
+var fs = require('fs')
+
+// ************ UPLOADING FILES SET UP
+
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-' + Date.now() + '.' + ext(file.originalname));
+  }
+});
+
+var upload = multer({ storage : storage}).single('archivo');
+
+// ************ UPLOADING FILES SET UP
 
 router.get('/', function (req, res) {
 	res.render('index')
@@ -48,8 +66,8 @@ router.route('/imagenes/:id')
 	})
 
 router.route('/updateimage')
-	.post(function (req, res) {
-		console.log(res.locals.user._id)
+	.post(upload, function (req, res) {
+		console.log(req.file)
 		var data = {
 			title: req.body.title,
 			creator: res.locals.user._id
@@ -60,7 +78,6 @@ router.route('/updateimage')
 				res.redirect('/app/imagenes/' + imagen._id)
 			}
 			else{
-				console.log(imagen)
 				res.render(err)
 			}
 		})
@@ -76,6 +93,7 @@ mientras que su valor es lo que hemos pasado en el callback! */
 
 router.route('/imagenes')
 	.get(function (req, res) {
+		// pasarle el creator hace que solo muestr las imagenes subidas por el usuario
 		Image.find({creator: res.locals.user._id}, function (err, imagenes) {
 			if (err) {
 				console.log('hay un error ' + err)
