@@ -3,7 +3,7 @@ var header = require('../header/index')
 var page = require('page')
 var template = require('./template')
 var aside = require('../aside/index')
-var getNew = require('../ajax/get_new')
+var getNew = require('../ajax').getNew
 var percentage = require('../votes_bar/get_percentage')
 
 page('/noticia/:id', header, getNew, function (ctx, next) {

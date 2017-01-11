@@ -1,7 +1,12 @@
 var $ = require('jquery')
 
+
+module.exports = {
+  order: orderTemas,
+  color: colorBalance
+}
 // Get the total number of votes, and ordering it so it shows from higher to lower. 
-module.exports.order = function orderTemas (arr) {
+function orderTemas (arr) {
   for (var i = 0; i< arr.length; i++) {  
     arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes
     arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes
@@ -14,7 +19,7 @@ module.exports.order = function orderTemas (arr) {
 }
 
 // If the balance is positive, color = green
-module.exports.color = function colorBalance () {
+function colorBalance () {
   $('.Aside_temas-tema').each(function () {
     var balance = $(this).find($('.Aside_temas-tema-info-balance'))
     if (balance.html().charAt(0) !== '-'){
