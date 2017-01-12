@@ -13028,9 +13028,20 @@
 	        </div>
 	        <div class="Details-tags">
 	          <img class="Details-tags-icon" src="/img/price-tags.svg" />
-	          <span class="Details-tags-text">${tags}</span>
+	          <span class="Details-tags-text">${displayTags(tags)}</span>
 	        </div>
 	      </div>`
+	}
+
+	function displayTags (tags) {
+	  console.log('pasa por aquí')
+	  var text = ''
+	  tags.map(function (tag) {
+	    console.log(tag)
+	    text = text + tag + ' '
+	  })
+	  console.log(text)
+	  return text
 	}
 
 

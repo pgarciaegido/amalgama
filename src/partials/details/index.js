@@ -9,7 +9,15 @@ module.exports = function (date, tags) {
         </div>
         <div class="Details-tags">
           <img class="Details-tags-icon" src="/img/price-tags.svg" />
-          <span class="Details-tags-text">${tags}</span>
+          <span class="Details-tags-text">${displayTags(tags)}</span>
         </div>
       </div>`
+}
+
+function displayTags (tags) {
+  var text = ''
+  tags.map(function (tag) {
+    text = text + tag + '  '
+  })
+  return text
 }
