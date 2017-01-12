@@ -1,6 +1,6 @@
 var yo = require('yo-yo')
 
-module.exports = function () {
+module.exports = function cta () {
 	if(document.URL.indexOf('invitado') > 0){
 	  return yo`<div class="Register_cta">
 	    <button class="Register_cta-accede">Accede</button>

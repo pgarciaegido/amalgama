@@ -38,13 +38,11 @@
 	}
 
 	&-button{
-		a{
-			@mixin removeAnchorStyles;
-		}
-		
 		@mixin bigButton;
+		width: 30%;
 		display: block;
 		margin: $margin3-desktop auto 0 auto;
+		text-decoration: none;
 		text-align: center;
 
 		@media (--desktop){

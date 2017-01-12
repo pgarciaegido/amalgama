@@ -11618,7 +11618,7 @@
 	  // we get the latest so we fill the latest" section with it
 	  var latest = ctx.news.length - 1
 	  var latestNew = ctx.news[latest]
-	  $(main).empty().append(templateLogged(ctx.news, latest))
+	  $(main).empty().append(template(ctx.news, latest))
 	  // Gets the element poped on template back to array, so we can use them all on the aside
 	  ctx.news.unshift(latestNew) 
 	}
@@ -11628,7 +11628,7 @@
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	  var yo = __webpack_require__(10)
+	var yo = __webpack_require__(10)
 	var votesBar = __webpack_require__(20)
 	var details = __webpack_require__(21)
 	var feed = __webpack_require__(22)
@@ -11641,7 +11641,7 @@
 	      ${details(n[latest].date, n[latest].tags)}
 	    <h4 class="Latest-entradilla">${n[latest].subtitle}</h4>
 	      ${votesBar(n[latest].agreeVotes, n[latest].disagreeVotes)}
-	    <button class="Latest-button"><a href="/accede">Ver más</a></button>
+	      ${latestButton(n, latest)}
 	  </section>
 	  ${registrate()}
 	  <div class="Feed">
@@ -11653,6 +11653,13 @@
 	</div>`
 	}
 
+	function latestButton (n, latest) {
+	  if (document.URL.indexOf('invitado') != -1){
+	    return yo`<a href="/accede" class="Latest-button">Ver más</a>` 
+	  } else {
+	    return yo`<a href="./noticia/${n[latest].id}" class="Latest-button">Ver más</a>`
+	  }
+	}
 
 /***/ },
 /* 10 */
@@ -13072,7 +13079,7 @@
 
 	var yo = __webpack_require__(10)
 
-	module.exports = function () {
+	module.exports = function cta () {
 		if(document.URL.indexOf('invitado') > 0){
 		  return yo`<div class="Register_cta">
 		    <button class="Register_cta-accede">Accede</button>
