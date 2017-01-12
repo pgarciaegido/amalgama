@@ -5,7 +5,6 @@ var feed = require('../feed/index')
 var registrate = require('../registrate_cta')
 
 module.exports = function (n, latest) {
-  console.log(n[latest].agreeVotes)
 	return yo`<div id="main">
   <section id="Latest" class="Latest">
     <h1 class="Latest-title">${n[latest].title}</h1>

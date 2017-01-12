@@ -9,6 +9,7 @@ var cookieSession = require('cookie-session')
 var router_app = require('./routes_app') // App/ routes
 var session_middleware = require('./middlewares/session') // middleware to ensure that user is logged in
 var methodOverride = require('method-override') // Overrides the POST method for PUT
+var moment = require('moment')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -45,11 +46,10 @@ app.get('/createPost', function(req, res) {
 })
 
 app.post('/createPost', function(req, res) {
-  console.log(req.body.agree)
-  console.log(req.body.disagree)
   var post = new Post({
+    id: req.body.id,
     title: req.body.title,
-    date: req.body.date,
+    date: moment().format('DD/MM/YYYY'),
     tags: req.body.tags,
     subtitle: req.body.subtitle,
     agreeVotes: req.body.agree,

@@ -2,8 +2,9 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var posts_schema = new Schema({
+	id: {type: Number, required: true},
 	title: {type: String, required: true},
-	date: {type: Date, required: true},
+	date: {type: String},
 	tags: {type: Array, required: true},
 	subtitle: {type: String, required: true},
 	agreeVotes: {type: Number},

@@ -10,6 +10,7 @@ module.exports = {
 function getNew (ctx, next) {
   $.get('/api/news', function (data) {
     // ctx is an object, then we add the news
+    console.log(data)
     ctx.news = data
     next()
   })

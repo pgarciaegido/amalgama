@@ -11632,7 +11632,6 @@
 	var registrate = __webpack_require__(23)
 
 	module.exports = function (n, latest) {
-	  console.log(n[latest].agreeVotes)
 		return yo`<div id="main">
 	  <section id="Latest" class="Latest">
 	    <h1 class="Latest-title">${n[latest].title}</h1>
@@ -13104,6 +13103,7 @@
 	function getNew (ctx, next) {
 	  $.get('/api/news', function (data) {
 	    // ctx is an object, then we add the news
+	    console.log(data)
 	    ctx.news = data
 	    next()
 	  })
