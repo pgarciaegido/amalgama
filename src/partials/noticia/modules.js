@@ -5,7 +5,8 @@ var votesBar = require('../votes_bar')
 module.exports = {
   cuerpo: noticiaCuerpo,
   informate: noticiaInformate,
-  comentarios: noticiaComentarios
+  comentarios: noticiaComentarios,
+  card: comCard
 }
 
 function noticiaCuerpo (n) {

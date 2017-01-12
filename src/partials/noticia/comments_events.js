@@ -1,5 +1,5 @@
 var $ = require('jquery')
-var card = require('./noticia_comcard/index')
+var card = require('./modules').card
 var votesLiked = require('./votesLiked')
 var moment = require('moment')
 

@@ -34,6 +34,10 @@ router.get('/noticia/:id', function (req, res) {
   res.render('index')
 })
 
+router.get('/usuario/:username', function (req, res) {
+  res.render('index')
+})
+
 /* ********************* IMAGENES ************************ */
 
 router.get('/imagenes/new', function (req, res) {
