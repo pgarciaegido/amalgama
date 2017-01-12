@@ -44,6 +44,8 @@ function asideSuscribe () {
 			</div>`
 }
 
+// ****** TEMAS
+
 function temas (news) {
 	return yo`<div class="Aside_temas">
 	  <h2 class="Aside_temas-title">Temas más votados</h2>
@@ -62,6 +64,8 @@ function masVotados (post) {
       </div>
     </div>`
 }
+
+// ****** TEMAS
 
 function profile (user) {
 	return yo`<div class="Aside_profile">

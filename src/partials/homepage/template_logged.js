@@ -1,7 +1,7 @@
   var yo = require('yo-yo')
 var votesBar = require('../votes_bar/index')
 var details = require('../details/index')
-var feed = require('../feed/index').logged
+var feed = require('../feed/index')
 
 module.exports = function (n, latest) {
 	return yo`<div id="main">

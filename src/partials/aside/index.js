@@ -4,6 +4,7 @@ var yo = require('yo-yo')
 var orderTemas = require('./logics').order
 var colorBalance = require('./logics').color
 
+// Requires the modules files --> object.
 var mod = require('./modules')
 
 module.exports = function aside (ctx) {

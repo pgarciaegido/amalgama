@@ -9,11 +9,12 @@ var getCurrentUser = require('../ajax').getCurrentUser
 var articles = require('../feed/feed_events')
 var percentage = require('../votes_bar/get_percentage')
 
-
 var headerLogged = require('../header/index_logged')
 var templateLogged = require('./template_logged')
 
 var aside = require('../aside')
+
+/**************HAY QUE CORREGIR LA FUNCION DE HOMEPAGE PARA QUE AÑADA AMBOS TEMPLATES ****/
 
 // Homepage when not logged in
 
@@ -25,7 +26,6 @@ page('/invitado', header, getNew, function (ctx, next) {
 // Homepage when logged in
 
 page('/app', getCurrentUser, headerLogged, getNew, function (ctx, next) {
-  console.log(getNew)
   loadHomepage(ctx)
   next()
 }, aside)

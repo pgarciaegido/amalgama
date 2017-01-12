@@ -3,24 +3,30 @@ var $ = require('jquery')
 var details = require('../details/index')
 var votesBar = require('../votes_bar/index')
 
-module.exports.notLogged = function (n) {
-	return yo`<article class="Feed-article">
+module.exports = function feed (n) {
+  var routeInv = '/accede'
+  var routeUser = './noticia/' + n.id
+
+  return yo`<article class="Feed-article">
       <h2 class="Feed-article-title">${n.title}</h2>
         ${details(n.date, n.tags)}
       <div class="Feed-article-bars">
         ${votesBar(n.agreeVotes, n.disagreeVotes)}
       </div>
-      <button class="Feed-article-button"><a href="/accede">Ver más</a></button>
+        ${feedButton(routeUser, routeInv)}
     </article>`
 }
 
-module.exports.logged = function (n) {
-	return yo`<article class="Feed-article">
-      <h2 class="Feed-article-title">${n.title}</h2>
-        ${details(n.date, n.tags)}
-      <div class="Feed-article-bars">
-        ${votesBar(n.agreeVotes, n.disagreeVotes)}
-      </div>
-      <button class="Feed-article-button"><a href="./noticia/${n.id}">Ver más</a></button>
-    </article>`
+function feedButton (routeUser, routeInv) {
+  if (document.URL.indexOf('invitado') == -1){
+    console.log('debe pasar por aquí')
+    return feedButtonTemp(routeUser)
+  } else {
+    return feedButtonTemp(routeInv)
+  }
+}
+
+function feedButtonTemp (route) {
+  console.log('esta es la ruta del template ' + route)
+  return yo`<a href=${route}><button class="Feed-article-button">Ver más</button></a>`
 }

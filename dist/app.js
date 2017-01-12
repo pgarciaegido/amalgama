@@ -11577,18 +11577,19 @@
 	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(20)
-	var aside = __webpack_require__(25)
 
-	var getNew = __webpack_require__(28).getNew
-	var getCurrentUser = __webpack_require__(28).getCurrentUser
+	var getNew = __webpack_require__(25).getNew
+	var getCurrentUser = __webpack_require__(25).getCurrentUser
 
 	var articles = __webpack_require__(6)
 	var percentage = __webpack_require__(7)
 
+	var headerLogged = __webpack_require__(26)
+	var templateLogged = __webpack_require__(27)
 
-	var headerLogged = __webpack_require__(29)
-	var templateLogged = __webpack_require__(30)
-	// var asideLogged = require('../aside/index_logged')
+	var aside = __webpack_require__(28)
+
+	/**************HAY QUE CORREGIR LA FUNCION DE HOMEPAGE PARA QUE AÑADA AMBOS TEMPLATES ****/
 
 	// Homepage when not logged in
 
@@ -11600,7 +11601,6 @@
 	// Homepage when logged in
 
 	page('/app', getCurrentUser, headerLogged, getNew, function (ctx, next) {
-	  console.log(getNew)
 	  loadHomepage(ctx)
 	  next()
 	}, aside)
@@ -13014,7 +13014,7 @@
 	  var yo = __webpack_require__(10)
 	var votesBar = __webpack_require__(21)
 	var details = __webpack_require__(22)
-	var feed = __webpack_require__(23).notLogged
+	var feed = __webpack_require__(23)
 	var registrate = __webpack_require__(24)
 
 	module.exports = function (n, latest) {
@@ -13088,27 +13088,34 @@
 	var details = __webpack_require__(22)
 	var votesBar = __webpack_require__(21)
 
-	module.exports.notLogged = function (n) {
-		return yo`<article class="Feed-article">
+	module.exports = function feed (n) {
+	  var routeInv = '/accede'
+	  var routeUser = './noticia/' + n.id
+
+	  return yo`<article class="Feed-article">
 	      <h2 class="Feed-article-title">${n.title}</h2>
 	        ${details(n.date, n.tags)}
 	      <div class="Feed-article-bars">
 	        ${votesBar(n.agreeVotes, n.disagreeVotes)}
 	      </div>
-	      <button class="Feed-article-button"><a href="/accede">Ver más</a></button>
+	        ${feedButton(routeUser, routeInv)}
 	    </article>`
 	}
 
-	module.exports.logged = function (n) {
-		return yo`<article class="Feed-article">
-	      <h2 class="Feed-article-title">${n.title}</h2>
-	        ${details(n.date, n.tags)}
-	      <div class="Feed-article-bars">
-	        ${votesBar(n.agreeVotes, n.disagreeVotes)}
-	      </div>
-	      <button class="Feed-article-button"><a href="./noticia/${n.id}">Ver más</a></button>
-	    </article>`
+	function feedButton (routeUser, routeInv) {
+	  if (document.URL.indexOf('invitado') == -1){
+	    console.log('debe pasar por aquí')
+	    return feedButtonTemp(routeUser)
+	  } else {
+	    return feedButtonTemp(routeInv)
+	  }
 	}
+
+	function feedButtonTemp (route) {
+	  console.log('esta es la ruta del template ' + route)
+	  return yo`<a href=${route}><button class="Feed-article-button">Ver más</button></a>`
+	}
+
 
 /***/ },
 /* 24 */
@@ -13130,158 +13137,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
-	var yo = __webpack_require__(10)
-
-	var orderTemas = __webpack_require__(26).order
-	var colorBalance = __webpack_require__(26).color
-
-	var mod = __webpack_require__(27)
-
-	module.exports = function aside (ctx) {
-	  var container = $('#main-container')
-	  var ordered = orderTemas(ctx.news)
-	  if (document.URL.indexOf('invitado') == -1) {
-	    var user = ctx.user
-	    container.append(userTemplate(ordered, user))
-	  } else {
-	    container.append(invitadoTemplate(ordered))
-	  }
-	  colorBalance()
-	}
-
-	var invitadoTemplate = function (news) {
-	  return yo`<aside id="aside">
-	  ${mod.register()}
-	  ${mod.temas(news)}
-	  ${mod.suscribe()}
-	  </aside>`
-	}
-
-	var userTemplate = function (news, user) {
-	  return yo`<aside id="aside">
-	  ${mod.profile(user)}
-	  ${mod.temas(news)}
-	  ${mod.suscribe()}
-	</aside>`
-	}
-
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(5)
-
-	// Get the total number of votes, and ordering it so it shows from higher to lower. 
-	module.exports.order = function orderTemas (arr) {
-	  for (var i = 0; i< arr.length; i++) {  
-	    arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes
-	    arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes
-	  }
-	  var byTotal = arr.slice(0)
-	  byTotal.sort(function (a, b) {
-	    return b.total - a.total;
-	  })
-	  return byTotal
-	}
-
-	// If the balance is positive, color = green
-	module.exports.color = function colorBalance () {
-	  $('.Aside_temas-tema').each(function () {
-	    var balance = $(this).find($('.Aside_temas-tema-info-balance'))
-	    if (balance.html().charAt(0) !== '-'){
-	      balance.css('color', '#7ace7a')
-	    }
-	  })
-	}
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var yo = __webpack_require__(10)
-
-	module.exports = {
-		register: asideRegister,
-		suscribe: asideSuscribe,
-		temas: temas,
-		profile: profile
-	}
-
-	function asideRegister () {
-		return yo`<div class="Aside_registrate">
-		  <h2 class="Aside_registrate-title">Regístrate</h2>
-		  <p class="Aside_registrate-subtitle">
-		    Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
-		  </p>
-		  <form class="Aside_registrate-form" action="/usersignup" method="POST">
-		    <label for="">Nombre usuario: 
-		      <input name ="username" type="text">
-		    </label>
-		    <label for="">Email: 
-		      <input name="email" type="email">
-		    </label>
-		    <label for="">Contraseña: 
-		      <input name="password" type="password">
-		    <label for="">Repita la contraseña: 
-		      <input name="password_confirmation" type="password">
-		    </label>
-		    <input class="Aside_registrate-form-button" type="submit" value="Regístrate">
-		  </form>
-		  <button class="Aside_registrate-facebook">Regístrate con Facebook</button>
-		  <button class="Aside_registrate-google">Regístrate con Google</button>
-		</div>`
-	}
-
-	function asideSuscribe () {
-		return yo`<div class="Aside_subscribe">
-				  <h2 class="Aside_subscribe-title">¡Suscríbete</h2>
-				  <p class="Aside_subscribe-subtitle">Suscríbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>
-				  <form action="" class="Aside_subscribe-form">
-				    <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>
-				    <input class="Aside_subscribe-form-button"type="submit" value="¡Regístrame!">
-				  </form>
-				</div>`
-	}
-
-	function temas (news) {
-		return yo`<div class="Aside_temas">
-		  <h2 class="Aside_temas-title">Temas más votados</h2>
-		  ${news.map(function (post) {
-		    return masVotados (post)
-		  })}
-		</div>`
-	}
-
-	function masVotados (post) {
-		return yo`<div class="Aside_temas-tema">
-	      <p class="Aside_temas-tema-title">${post.title}</p>
-	      <div class="Aside_temas-tema-info">
-	        <span class="Aside_temas-tema-info-votes">${post.total} votos</span>
-	        <span class="Aside_temas-tema-info-balance">${post.balance}</span>
-	      </div>
-	    </div>`
-	}
-
-	function profile (user) {
-		return yo`<div class="Aside_profile">
-		    <h2 class="Aside_profile-title">Mi perfil</h2>
-		    <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />
-		    <h3 class="Aside_profile-username">${user.username}</h3>
-		    <div class="Aside_profile-buttons">
-		      <button class="Aside_profile-buttons-edit">Editar</button>
-		      <form method="POST" action="/app/logout">
-		        <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />
-		      </form>
-		    </div>
-		  </div>`
-	}
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(5)
 
 	// ctx is an object!
 
@@ -13292,7 +13147,6 @@
 
 	function getNew (ctx, next) {
 	  $.get('/api/news', function (data) {
-	  	console.log('Getnews done!')
 	    // ctx is an object, then we add the news
 	    ctx.news = data
 	    next()
@@ -13301,7 +13155,6 @@
 
 	function getCurrentUser (ctx, next) {
 	  $.get('/api/currentUser', function (data) {
-	  	console.log('Current_user done!')
 	    // ctx is an object, then we add the news
 	    ctx.user = data
 	    next()
@@ -13310,7 +13163,7 @@
 
 
 /***/ },
-/* 29 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
@@ -13355,13 +13208,13 @@
 
 
 /***/ },
-/* 30 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	  var yo = __webpack_require__(10)
 	var votesBar = __webpack_require__(21)
 	var details = __webpack_require__(22)
-	var feed = __webpack_require__(23).logged
+	var feed = __webpack_require__(23)
 
 	module.exports = function (n, latest) {
 		return yo`<div id="main">
@@ -13381,6 +13234,169 @@
 	</div>`
 	}
 
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(5)
+	var yo = __webpack_require__(10)
+
+	var orderTemas = __webpack_require__(29).order
+	var colorBalance = __webpack_require__(29).color
+
+	// Requires the modules files --> object.
+	var mod = __webpack_require__(30)
+
+	module.exports = function aside (ctx) {
+	  var container = $('#main-container')
+	  var ordered = orderTemas(ctx.news)
+	  if (document.URL.indexOf('invitado') == -1) {
+	    var user = ctx.user
+	    container.append(userTemplate(ordered, user))
+	  } else {
+	    container.append(invitadoTemplate(ordered))
+	  }
+	  colorBalance()
+	}
+
+	var invitadoTemplate = function (news) {
+	  return yo`<aside id="aside">
+	  ${mod.register()}
+	  ${mod.temas(news)}
+	  ${mod.suscribe()}
+	  </aside>`
+	}
+
+	var userTemplate = function (news, user) {
+	  return yo`<aside id="aside">
+	  ${mod.profile(user)}
+	  ${mod.temas(news)}
+	  ${mod.suscribe()}
+	</aside>`
+	}
+
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(5)
+
+
+	module.exports = {
+	  order: orderTemas,
+	  color: colorBalance
+	}
+	// Get the total number of votes, and ordering it so it shows from higher to lower. 
+	function orderTemas (arr) {
+	  for (var i = 0; i< arr.length; i++) {  
+	    arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes
+	    arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes
+	  }
+	  var byTotal = arr.slice(0)
+	  byTotal.sort(function (a, b) {
+	    return b.total - a.total;
+	  })
+	  return byTotal
+	}
+
+	// If the balance is positive, color = green
+	function colorBalance () {
+	  $('.Aside_temas-tema').each(function () {
+	    var balance = $(this).find($('.Aside_temas-tema-info-balance'))
+	    if (balance.html().charAt(0) !== '-'){
+	      balance.css('color', '#7ace7a')
+	    }
+	  })
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var yo = __webpack_require__(10)
+
+	module.exports = {
+		register: asideRegister,
+		suscribe: asideSuscribe,
+		temas: temas,
+		profile: profile
+	}
+
+	// ****** Aside templates
+	function asideRegister () {
+		return yo`<div class="Aside_registrate">
+		  <h2 class="Aside_registrate-title">Regístrate</h2>
+		  <p class="Aside_registrate-subtitle">
+		    Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
+		  </p>
+		  <form class="Aside_registrate-form" action="/usersignup" method="POST">
+		    <label for="">Nombre usuario: 
+		      <input name ="username" type="text">
+		    </label>
+		    <label for="">Email: 
+		      <input name="email" type="email">
+		    </label>
+		    <label for="">Contraseña: 
+		      <input name="password" type="password">
+		    <label for="">Repita la contraseña: 
+		      <input name="password_confirmation" type="password">
+		    </label>
+		    <input class="Aside_registrate-form-button" type="submit" value="Regístrate">
+		  </form>
+		  <button class="Aside_registrate-facebook">Regístrate con Facebook</button>
+		  <button class="Aside_registrate-google">Regístrate con Google</button>
+		</div>`
+	}
+
+	function asideSuscribe () {
+		return yo`<div class="Aside_subscribe">
+				  <h2 class="Aside_subscribe-title">¡Suscríbete</h2>
+				  <p class="Aside_subscribe-subtitle">Suscríbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>
+				  <form action="" class="Aside_subscribe-form">
+				    <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>
+				    <input class="Aside_subscribe-form-button"type="submit" value="¡Regístrame!">
+				  </form>
+				</div>`
+	}
+
+	// ****** TEMAS
+
+	function temas (news) {
+		return yo`<div class="Aside_temas">
+		  <h2 class="Aside_temas-title">Temas más votados</h2>
+		  ${news.map(function (post) {
+		    return masVotados (post)
+		  })}
+		</div>`
+	}
+
+	function masVotados (post) {
+		return yo`<div class="Aside_temas-tema">
+	      <p class="Aside_temas-tema-title">${post.title}</p>
+	      <div class="Aside_temas-tema-info">
+	        <span class="Aside_temas-tema-info-votes">${post.total} votos</span>
+	        <span class="Aside_temas-tema-info-balance">${post.balance}</span>
+	      </div>
+	    </div>`
+	}
+
+	// ****** TEMAS
+
+	function profile (user) {
+		return yo`<div class="Aside_profile">
+		    <h2 class="Aside_profile-title">Mi perfil</h2>
+		    <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />
+		    <h3 class="Aside_profile-username">${user.username}</h3>
+		    <div class="Aside_profile-buttons">
+		      <button class="Aside_profile-buttons-edit">Editar</button>
+		      <form method="POST" action="/app/logout">
+		        <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />
+		      </form>
+		    </div>
+		  </div>`
+	}
 
 /***/ },
 /* 31 */
@@ -13602,8 +13618,8 @@
 	var header = __webpack_require__(9)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(36)
-	var aside = __webpack_require__(25)
-	var getNew = __webpack_require__(28).getNew
+	var aside = __webpack_require__(28)
+	var getNew = __webpack_require__(25).getNew
 	var percentage = __webpack_require__(7)
 
 	page('/noticia/:id', header, getNew, function (ctx, next) {

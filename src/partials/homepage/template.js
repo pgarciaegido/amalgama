@@ -1,7 +1,7 @@
   var yo = require('yo-yo')
 var votesBar = require('../votes_bar/index')
 var details = require('../details/index')
-var feed = require('../feed/index').notLogged
+var feed = require('../feed/index')
 var registrate = require('../registrate_cta/index')
 
 module.exports = function (n, latest) {
