@@ -11632,6 +11632,7 @@
 	var registrate = __webpack_require__(23)
 
 	module.exports = function (n, latest) {
+	  console.log(n[latest].agreeVotes)
 		return yo`<div id="main">
 	  <section id="Latest" class="Latest">
 	    <h1 class="Latest-title">${n[latest].title}</h1>
@@ -13584,7 +13585,6 @@
 
 	  // coger id de la url para pedir ese post al json
 	  var id = document.URL.split('/').pop()
-	  console.log(id)
 	  window.scrollTo(0, 0);
 
 	  var main = document.getElementById('main-container')

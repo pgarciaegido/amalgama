@@ -45,13 +45,15 @@ app.get('/createPost', function(req, res) {
 })
 
 app.post('/createPost', function(req, res) {
+  console.log(req.body.agree)
+  console.log(req.body.disagree)
   var post = new Post({
     title: req.body.title,
     date: req.body.date,
     tags: req.body.tags,
     subtitle: req.body.subtitle,
-    agree: req.body.agree,
-    disagree: req.body.disagree
+    agreeVotes: req.body.agree,
+    disagreeVotes: req.body.disagree
 
   })
   
@@ -143,7 +145,9 @@ app.get('/api/currentuser', function (req, res) {
 
 app.get('/api/news', function(req, res) {
   Post.find(function (err, post) {
-    console.log(post)
+    if(err) {
+      console.log (err)
+    }
     res.send(post)
   })
 })

@@ -7,7 +7,7 @@ var posts_schema = new Schema({
 	tags: {type: Array, required: true},
 	subtitle: {type: String, required: true},
 	agreeVotes: {type: Number},
-	disagreeVotes: {type: Number},
+	disagreeVotes: {type: Number}
 })
 
 var Posts = mongoose.model('post', posts_schema)
