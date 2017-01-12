@@ -25,7 +25,17 @@ router.get('/', function (req, res) {
 	res.render('index')
 })
 
-/* REST */
+router.post('/logout', function (req, res) {
+	req.session = null
+	res.redirect('/app')
+})
+
+router.get('/noticia/:id', function (req, res) {
+  res.render('index')
+})
+
+/* ********************* IMAGENES ************************ */
+
 router.get('/imagenes/new', function (req, res) {
 	res.render('app')
 })
@@ -88,10 +98,6 @@ router.route('/updateimage')
 		})
 	})	
 
-router.post('/logout', function (req, res) {
-	req.session = null
-	res.redirect('/app')
-})
 
 /* Al hacer res.render , y meter de segundo par un objeto, el key name es el nombre que queremos
 mientras que su valor es lo que hemos pasado en el callback! */
@@ -124,5 +130,7 @@ router.route('/imagenes')
 			}
 		})
 	})
+
+/* ********************* IMAGENES ************************ */
 
 module.exports = router

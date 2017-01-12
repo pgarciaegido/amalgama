@@ -5,7 +5,7 @@ var votesBar = require('../votes_bar/index')
 
 module.exports = function feed (n) {
   var routeInv = '/accede'
-  var routeUser = './noticia/' + n.id
+  var routeUser = './app/noticia/' + n.id
 
   return yo`<article class="Feed-article">
       <h2 class="Feed-article-title">${n.title}</h2>

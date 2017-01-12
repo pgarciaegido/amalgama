@@ -10,9 +10,6 @@ var header = require('../header/index')
 var articles = require('../feed/feed_events')
 var percentage = require('../votes_bar/get_percentage')
 
-// var headerLogged = require('../header/index_logged')
-var templateLogged = require('./template_logged')
-
 var aside = require('../aside')
 
 /**************HAY QUE CORREGIR LA FUNCION DE HOMEPAGE PARA QUE AÑADA AMBOS TEMPLATES ****/
