@@ -24,24 +24,21 @@
 
 		&-item{
 			height: 100%;
+			padding: 0 $margin5-desktop;
 			border-right: 1px solid $gray-soft;
 			display: flex;
 			align-items: center;
 			list-style-type: none;
-			padding: 0 $margin5-desktop;
+			@mixin navbar;
+			text-decoration: none;
+			color: $black;
 			
 			@media (--tablet){
 				padding: 0 6px;
 			}
-
-			a{
-				@mixin navbar;
-				text-decoration: none;
-				color: $black;
-			}
 		}
 
-		&-item:nth-child(-n+4):hover{
+		&-item:hover{
 			padding-bottom: 6px;
 			border-bottom: blue solid 4px;
 
@@ -50,23 +47,44 @@
 			}
 		}
 
-		&-item:nth-child(5), &-item:nth-child(6) {
-			@mixin blueButton;
-			border-right: none;
-			border-radius: 10px;
-
-			a{
-				color: white;
-			}
+		&-item:nth-child(5){
+			@mixin blueButton
+			color: white;
 		}
 
-		&-item:nth-child(5):hover, &-item:nth-child(6):hover{
-			@mixin hoverButton;
-		}	
+
+		div {
+			display: flex;
+			a{
+				@mixin blueButton;
+				padding: 0 $margin5-desktop;
+				list-style-type: none;
+				display: flex;
+				align-items: center;
+				height: 100%;
+				color: white;
+				text-decoration: none;
+				border-right: none;
+				border-radius: 10px;
+			}
+
+			a:hover{
+				@mixin hoverButton;
+				border: none;
+				padding-bottom: none;
+			}
+		}
 
 		&-item:nth-child(5){
 			margin-left: $margin5-desktop;
 			border-radius: 10px;
+			color: white;
+		}
+
+		&-item:nth-child(5):hover{
+			@mixin hoverButton;
+			padding-bottom: 0;
+			border: 0;
 		}
 	}
 

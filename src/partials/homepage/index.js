@@ -1,15 +1,16 @@
 var $ = require('jquery')
-var header = require('../header/index')
 var page = require('page')
+
 var template = require('./template')
 
 var getNew = require('../ajax').getNew
 var getCurrentUser = require('../ajax').getCurrentUser
+var header = require('../header/index')
 
 var articles = require('../feed/feed_events')
 var percentage = require('../votes_bar/get_percentage')
 
-var headerLogged = require('../header/index_logged')
+// var headerLogged = require('../header/index_logged')
 var templateLogged = require('./template_logged')
 
 var aside = require('../aside')
@@ -25,7 +26,7 @@ page('/invitado', header, getNew, function (ctx, next) {
 
 // Homepage when logged in
 
-page('/app', getCurrentUser, headerLogged, getNew, function (ctx, next) {
+page('/app', getCurrentUser, header, getNew, function (ctx, next) {
   loadHomepage(ctx)
   next()
 }, aside)

@@ -19,7 +19,6 @@ module.exports = function feed (n) {
 
 function feedButton (routeUser, routeInv) {
   if (document.URL.indexOf('invitado') == -1){
-    console.log('debe pasar por aquí')
     return feedButtonTemp(routeUser)
   } else {
     return feedButtonTemp(routeInv)
@@ -27,6 +26,5 @@ function feedButton (routeUser, routeInv) {
 }
 
 function feedButtonTemp (route) {
-  console.log('esta es la ruta del template ' + route)
   return yo`<a href=${route}><button class="Feed-article-button">Ver más</button></a>`
 }

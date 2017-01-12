@@ -31,6 +31,8 @@
 			list-style-type: none;
 			padding: 15px;
 			margin: 15px 0;
+			text-decoration: none;
+			color: white;
 
 			@media (--mobile-small){
 				padding: 10px;
@@ -44,13 +46,16 @@
 			}
 		}
 
-		&-item:nth-child(5), &-item:nth-child(6){
+		&-item:nth-child(5){
 			background-color: white;
 			border-radius: $radius;
+			color: $blue;
+			font-weight: 700;
+		}
 
+		div{
 			a{
-				color: $blue;
-				font-weight: 700;
+				text-decoration: none;
 			}
 		}
 	}
