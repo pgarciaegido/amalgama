@@ -12,7 +12,7 @@ var percentage = require('../votes_bar/get_percentage')
 
 var aside = require('../aside')
 
-/**************HAY QUE CORREGIR LA FUNCION DE HOMEPAGE PARA QUE AÑADA AMBOS TEMPLATES ****/
+/** ************HAY QUE CORREGIR LA FUNCION DE HOMEPAGE PARA QUE AÑADA AMBOS TEMPLATES ****/
 
 // Homepage when not logged in
 
@@ -28,7 +28,7 @@ page('/app', getCurrentUser, header, getNew, function (ctx, next) {
   next()
 }, aside)
 
-function loadHomepage(ctx) {
+function loadHomepage (ctx) {
   require('../header/events')
   require('../noticia/noticia_events')
   require('../feed/feed_events')
@@ -42,5 +42,5 @@ function loadHomepage(ctx) {
   var latestNew = ctx.news[latest]
   $(main).empty().append(template(ctx.news, latest))
   // Gets the element poped on template back to array, so we can use them all on the aside
-  ctx.news.unshift(latestNew) 
+  ctx.news.unshift(latestNew)
 }

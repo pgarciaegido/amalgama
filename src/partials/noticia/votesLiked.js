@@ -4,7 +4,6 @@ var $ = require('jquery')
 
 module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   // --- Gets counter number through the class name
-  debugger
   var counter = that.siblings()
   counter = counter.map(function () {
     if ($(this).attr('class').indexOf('counter') !== -1) {

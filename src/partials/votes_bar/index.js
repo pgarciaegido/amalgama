@@ -1,5 +1,4 @@
 var yo = require('yo-yo')
-var $ = require('jquery')
 
 module.exports = function (agree, disagree) {
   return yo`<div class="Votes_bar">

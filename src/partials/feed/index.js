@@ -1,5 +1,4 @@
 var yo = require('yo-yo')
-var $ = require('jquery')
 var details = require('../details/index')
 var votesBar = require('../votes_bar/index')
 
@@ -18,7 +17,7 @@ module.exports = function feed (n) {
 }
 
 function feedButton (routeUser, routeInv) {
-  if (document.URL.indexOf('invitado') == -1){
+  if (document.URL.indexOf('invitado') == -1) {
     return feedButtonTemp(routeUser)
   } else {
     return feedButtonTemp(routeInv)

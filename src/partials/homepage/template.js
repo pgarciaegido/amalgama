@@ -5,7 +5,7 @@ var feed = require('../feed/index')
 var registrate = require('../registrate_cta')
 
 module.exports = function (n, latest) {
-	return yo`<div id="main">
+  return yo`<div id="main">
   <section id="Latest" class="Latest">
     <h1 class="Latest-title">${n[latest].title}</h1>
       ${details(n[latest].date, n[latest].tags)}
@@ -24,8 +24,8 @@ module.exports = function (n, latest) {
 }
 
 function latestButton (n, latest) {
-  if (document.URL.indexOf('invitado') != -1){
-    return yo`<a href="/accede" class="Latest-button">Ver más</a>` 
+  if (document.URL.indexOf('invitado') != -1) {
+    return yo`<a href="/accede" class="Latest-button">Ver más</a>`
   } else {
     return yo`<a href="./app/noticia/${n[latest].id}" class="Latest-button">Ver más</a>`
   }

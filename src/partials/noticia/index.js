@@ -18,7 +18,7 @@ page('/app/noticia/:id', getCurrentUser, header, getNew, function (ctx, next) {
 
   // coger id de la url para pedir ese post al json
   var id = document.URL.split('/').pop()
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 0)
 
   var main = document.getElementById('main-container')
   $(main).empty().append(template(ctx.news[id]))

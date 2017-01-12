@@ -2,10 +2,10 @@ var $ = require('jquery')
 var yo = require('yo-yo')
 
 module.exports = function header (ctx, next) {
-    var container = $('#header-container')
-    $(container).empty().append(template)
-    next()
-} 
+  var container = $('#header-container')
+  $(container).empty().append(template)
+  next()
+}
 
 var template = function headerTemplate () {
   return yo`<div>
@@ -39,7 +39,7 @@ var template = function headerTemplate () {
 }
 
 function headerDesktop () {
-  if (document.URL.indexOf('invitado') == -1){
+  if (document.URL.indexOf('invitado') == -1) {
     return yo`<a href="#" class="Navbar-menu-item"><li>MI PERFIL</li></a>`
   } else {
     return yo`<div>
@@ -50,7 +50,7 @@ function headerDesktop () {
 }
 
 function headerMobile () {
-  if (document.URL.indexOf('invitado') == -1){
+  if (document.URL.indexOf('invitado') == -1) {
     return yo`<a class="Navbar_menu-menu-item" href="#"><li>MI PERFIL</li></a>`
   } else {
     return yo`<div>

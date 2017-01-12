@@ -16,14 +16,14 @@ function buttonClicked (button, clicked, color) {
 
   if (clicked === false) {
     button.css({'background': '#f1f1f1',
-                'color': color,
-                'border': '2px solid' + color,
-                'height': heightClicked})
+      'color': color,
+      'border': '2px solid' + color,
+      'height': heightClicked})
   } else if (clicked === true) {
     button.css({'background': color,
-                'color': 'white',
-                'border': 'none',
-                'height': heightUnclicked})
+      'color': 'white',
+      'border': 'none',
+      'height': heightUnclicked})
   }
 }
 
@@ -59,7 +59,7 @@ $(document).on('click', '#thumbdown-liked', function () {
   var v = require('./noticia_events_vars')
   votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown)
   buttonClicked(v.disagreeBottom, true, '#e13c42')
-  
+
   getPercentage()
 })
 

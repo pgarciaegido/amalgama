@@ -6,8 +6,8 @@ var bodyParser = require('body-parser') // req.body ---> Parse forms inputs
 var User = require('./data/models/user').User // Collection User
 var Post = require('./data/models/posts')
 var cookieSession = require('cookie-session')
-var router_app = require('./routes_app') // App/ routes
-var session_middleware = require('./middlewares/session') // middleware to ensure that user is logged in
+var routerApp = require('./routes_app') // App/ routes
+var sessionMiddleware = require('./middlewares/session') // middleware to ensure that user is logged in
 var methodOverride = require('method-override') // Overrides the POST method for PUT
 var moment = require('moment')
 
@@ -41,24 +41,22 @@ app.get('/invitado', function (req, res) {
   res.render('index')
 })
 
-app.get('/createPost', function(req, res) {
+app.get('/createPost', function (req, res) {
   res.render('createPost')
 })
 
-app.post('/createPost', function(req, res) {
+app.post('/createPost', function (req, res) {
   var post = new Post({
     id: req.body.id,
     title: req.body.title,
-    date: moment().format('DD/MM/YYYY'),
+    date: moment().format('DD MM YYYY'),
     tags: req.body.tags,
     subtitle: req.body.subtitle,
     agreeVotes: req.body.agree,
     disagreeVotes: req.body.disagree
-
   })
-  
+
   post.save(function (err, post) {
-    console.log(post)
     if (!err) {
       res.redirect('/app')
     } else {
@@ -67,10 +65,6 @@ app.post('/createPost', function(req, res) {
     }
   })
 })
-
-// app.get('/noticia/:id', function (req, res) {
-//   res.render('index')
-// })
 
 // app.get('/usuario/pegido', function (req, res) {
 //   res.render('index')
@@ -85,12 +79,11 @@ app.get('/registrate', function (req, res) {
 })
 
 app.post('/usersignup', function (req, res) {
-
   var user = new User({username: req.body.username,
-                       email: req.body.email,
-                       password: req.body.password,
-                       password_confirmation: req.body.password_confirmation
-                     })
+    email: req.body.email,
+    password: req.body.password,
+    password_confirmation: req.body.password_confirmation
+  })
 
   // Using promises --> PREFERED
 
@@ -98,7 +91,7 @@ app.post('/usersignup', function (req, res) {
     console.log(us)
     res.redirect('/app')
   }, function (err) {
-    if(err){
+    if (err) {
       console.log(String(err))
       res.send('No pudimos guardar tu info')
     }
@@ -109,9 +102,8 @@ app.get('/accede', function (req, res) {
   res.render('index')
 })
 
-//Used when login
+// Used when login
 app.post('/sessions', function (req, res) {
-
   User.findOne({email: req.body.email, password: req.body.password}, function (err, user) {
     // if there is no user, gets back to /accede
     if (!user) {
@@ -124,29 +116,31 @@ app.post('/sessions', function (req, res) {
   })
 })
 
-// Use session_middleware to ensure the user is logged in, and then we route from /app.
+// Use sessionMiddleware to ensure the user is logged in, and then we route from /app.
 
-app.use('/app', session_middleware)
-app.use('/app', router_app)
+app.use('/app', sessionMiddleware)
+app.use('/app', routerApp)
 
 // //////////////////////////////////////////////////////////////////////
-// This sets the current user info on this route, so we make an ajax call to get it on the client side 
-app.use('/api/currentuser', session_middleware)
+// This sets the current user info on this route, so we make an ajax call to get it on the client side
+app.use('/api/currentuser', sessionMiddleware)
 app.get('/api/currentuser', function (req, res) {
-
   var usersProjection = {
-      password: false
+    password: false
   }
 
-  User.findById(req.session.user_id, usersProjection, function(err, user) {
+  User.findById(req.session.user_id, usersProjection, function (err, user) {
+    if (err) {
+      console.log(err)
+    }
     res.send(user)
   })
 })
 
-app.get('/api/news', function(req, res) {
+app.get('/api/news', function (req, res) {
   Post.find(function (err, post) {
-    if(err) {
-      console.log (err)
+    if (err) {
+      console.log(err)
     }
     res.send(post)
   })
