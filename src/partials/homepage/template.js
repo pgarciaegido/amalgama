@@ -27,6 +27,6 @@ function latestButton (n, latest) {
   if (document.URL.indexOf('invitado') != -1) {
     return yo`<a href="/accede" class="Latest-button">Ver más</a>`
   } else {
-    return yo`<a href="./app/noticia/${n[latest].id}" class="Latest-button">Ver más</a>`
+    return yo`<a href="./app/noticia/${n[latest]._id}" class="Latest-button">Ver más</a>`
   }
 }

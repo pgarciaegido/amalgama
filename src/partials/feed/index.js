@@ -4,7 +4,7 @@ var votesBar = require('../votes_bar/index')
 
 module.exports = function feed (n) {
   var routeInv = '/accede'
-  var routeUser = './app/noticia/' + n.id
+  var routeUser = './app/noticia/' + n._id
 
   return yo`<article class="Feed-article">
       <h2 class="Feed-article-title">${n.title}</h2>
@@ -25,5 +25,5 @@ function feedButton (routeUser, routeInv) {
 }
 
 function feedButtonTemp (route) {
-  return yo`<a href=${route}><button class="Feed-article-button">Ver más</button></a>`
+  return yo`<a href=${route} class="Feed-article-button">Ver más</a>`
 }

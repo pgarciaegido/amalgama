@@ -6,7 +6,7 @@ var cookieSession = require('cookie-session')
 var sessionMiddleware = require('./middlewares/session') // middleware to ensure that user is logged in
 var methodOverride = require('method-override') // Overrides the POST method for PUT
 
-var root = require('./controllers/signin_up')
+var user = require('./controllers/user')
 var render = require('./controllers/render').renderIndex
 var redirect = require('./controllers/render').redirectApp
 
@@ -34,9 +34,9 @@ app.use(cookieSession({
 app.get('/', redirect)
 app.get('/invitado', render)
 app.get('/registrate', render)
-app.post('/usersignup', root.signup)
+app.post('/usersignup', user.signup)
 app.get('/accede', render)
-app.post('/login', root.login)
+app.post('/login', user.login)
 
 // Use sessionMiddleware to ensure the user is logged in, and then we route from /app.
 

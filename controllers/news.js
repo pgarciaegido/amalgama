@@ -3,13 +3,12 @@ var moment = require('moment')
 
 function createNew (req, res) {
   var post = new Post({
-    id: req.body.id,
     title: req.body.title,
     date: moment().format('DD MM YYYY'),
     tags: req.body.tags,
     subtitle: req.body.subtitle,
-    agreeVotes: req.body.agree,
-    disagreeVotes: req.body.disagree
+    agreeVotes: req.body.agreeVotes,
+    disagreeVotes: req.body.disagreeVotes
   })
 
   post.save(function (err, post) {
@@ -29,6 +28,13 @@ function getNews (req, res) {
     if (err) {
       console.log(err)
     }
+    res.send(post)
+  })
+}
+
+function getNew (req, res) {
+  Post.findById(req.params.id, function (err, post) {
+    if (err) return console.log('Ha habido un error' + err)
     res.send(post)
   })
 }
@@ -55,6 +61,7 @@ function deleteNew (req, res) {
 module.exports = {
   createNew,
   getNews,
+  getNew,
   modifyNew,
   deleteNew
 }

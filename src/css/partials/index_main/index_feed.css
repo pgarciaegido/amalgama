@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding-top: $margin2-desktop;
-	
+
 	@media (--tablet){
 		display: block;
 	}
@@ -35,14 +35,13 @@
 
 		&-button{
 			@mixin normalButton;
-			
+			@mixin removeAnchorStyles;
+			text-align: center;
+			width: 25%;
+
 			@media(--tablet){
 				display: block;
 				margin: 0 auto;
-			}
-
-			a{
-				@mixin removeAnchorStyles;
 			}
 		}
 

@@ -11653,7 +11653,7 @@
 	  if (document.URL.indexOf('invitado') != -1) {
 	    return yo`<a href="/accede" class="Latest-button">Ver más</a>`
 	  } else {
-	    return yo`<a href="./app/noticia/${n[latest].id}" class="Latest-button">Ver más</a>`
+	    return yo`<a href="./app/noticia/${n[latest]._id}" class="Latest-button">Ver más</a>`
 	  }
 	}
 
@@ -13050,7 +13050,7 @@
 
 	module.exports = function feed (n) {
 	  var routeInv = '/accede'
-	  var routeUser = './app/noticia/' + n.id
+	  var routeUser = './app/noticia/' + n._id
 
 	  return yo`<article class="Feed-article">
 	      <h2 class="Feed-article-title">${n.title}</h2>
@@ -13071,7 +13071,7 @@
 	}
 
 	function feedButtonTemp (route) {
-	  return yo`<a href=${route}><button class="Feed-article-button">Ver más</button></a>`
+	  return yo`<a href=${route} class="Feed-article-button">Ver más</a>`
 	}
 
 
@@ -13102,12 +13102,21 @@
 
 	module.exports = {
 	  getNew: getNew,
+	  getPost: getPost,
 	  getCurrentUser: getCurrentUser
 	}
 
 	function getNew (ctx, next) {
 	  $.get('/api/news', function (data) {
 	    ctx.news = data
+	    next()
+	  })
+	}
+
+	function getPost (ctx, next) {
+	  var id = ctx.path.split('/').pop()
+	  $.get('/api/news/' + id, function (data) {
+	    ctx.post = data
 	    next()
 	  })
 	}
@@ -13573,11 +13582,11 @@
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(34)
 	var aside = __webpack_require__(26)
-	var getNew = __webpack_require__(24).getNew
+	var getPost = __webpack_require__(24).getPost
 	var getCurrentUser = __webpack_require__(24).getCurrentUser
 	var percentage = __webpack_require__(7)
 
-	page('/app/noticia/:id', getCurrentUser, header, getNew, function (ctx, next) {
+	page('/app/noticia/:id', getCurrentUser, header, getPost, function (ctx, next) {
 	  __webpack_require__(29)
 	  __webpack_require__(36)
 	  __webpack_require__(30)
@@ -13591,7 +13600,7 @@
 	  window.scrollTo(0, 0)
 
 	  var main = document.getElementById('main-container')
-	  $(main).empty().append(template(ctx.news[id]))
+	  $(main).empty().append(template(ctx.post))
 	  next()
 	}, aside)
 
