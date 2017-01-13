@@ -1,4 +1,5 @@
 var Post = require('../data/models/posts')
+var moment = require('moment')
 
 function createNew (req, res) {
   var post = new Post({
@@ -32,7 +33,28 @@ function getNews (req, res) {
   })
 }
 
+function modifyNew (req, res) {
+  var update = req.body
+
+  Post.findByIdAndUpdate(req.params.id, update, function (err, post) {
+    if (err) return console.log('Ha habido un error' + err)
+    res.redirect('/api/news')
+  })
+}
+
+function deleteNew (req, res) {
+  Post.findById(req.params.id, function (err, post) {
+    if (err) return console.log('Ha habido un error' + err)
+    post.remove(function (err) {
+      if (err) return console.log('Ha habido un error al borrar la noticia:' + err)
+      res.redirect('/api/news')
+    })
+  })
+}
+
 module.exports = {
   createNew,
-  getNews
+  getNews,
+  modifyNew,
+  deleteNew
 }
