@@ -29128,7 +29128,7 @@
 	        <button class="Login_form-social-facebook">Accede con Facebook</button>
 	        <button class="Login_form-social-google">Accede con Google</button>
 	      </div>
-	      <form action="/sessions" method="POST" class="Login_form-form">
+	      <form action="/login" method="POST" class="Login_form-form">
 	        Nombre de usuario o email
 	        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />
 	        Contraseña

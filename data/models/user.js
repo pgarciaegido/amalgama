@@ -2,7 +2,6 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 // users es el nombre de mi DB, aunque también se llama así mi collection dentro de ella. OJO.
-mongoose.connect('mongodb://heroku_b309pz7s:rokbgcdt1m9r767tmhugv141vi@ds161008.mlab.com:61008/heroku_b309pz7s') // localhost/nombrebasedatos
 
 var posiblesValores = ['M', 'F']
 var emailMatch = [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Coloca un email válido']
