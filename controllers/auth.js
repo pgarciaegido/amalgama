@@ -1,8 +1,10 @@
+var User = require('../data/models/user').User
+
+
 function signup (req, res) {
-  var user = new User({username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    password_confirmation: req.body.password_confirmation
+  var user = new User({
+    username: req.body.username,
+    email: req.body.email
   })
 
   // Using promises --> PREFERED

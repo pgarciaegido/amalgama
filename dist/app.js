@@ -13175,27 +13175,26 @@
 	}
 
 	function headerDesktop (user) {
-	  if (document.URL.indexOf('invitado') == -1) {
-	    return yo`<a href="/app/usuario/${user.username}" class="Navbar-menu-item"><li>MI PERFIL</li></a>`
-	  } else {
+	  if (document.URL.indexOf('/app') == -1) {
 	    return yo`<div>
 	                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>
 	                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>
 	              </div>`
+	  } else {
+	    return yo`<a href="/app/usuario/${user.username}" class="Navbar-menu-item"><li>MI PERFIL</li></a>`
 	  }
 	}
 
 	function headerMobile (user) {
-	  if (document.URL.indexOf('invitado') == -1) {
-	    return yo`<a class="Navbar_menu-menu-item" href="/app/usuario/${user.username}"><li>MI PERFIL</li></a>`
-	  } else {
+	  if (document.URL.indexOf('/app') == -1) {
 	    return yo`<div>
 	                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>
 	                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>
 	              </div>`
+	  } else {
+	    return yo`<a class="Navbar_menu-menu-item" href="/app/usuario/${user.username}"><li>MI PERFIL</li></a>`
 	  }
 	}
-
 
 
 /***/ },
@@ -29054,8 +29053,9 @@
 	var header = __webpack_require__(25)
 	var page = __webpack_require__(1)
 	var template = __webpack_require__(156)
+	var getCurrentUser = __webpack_require__(24).getCurrentUser
 
-	page('/registrate', header, function (ctx, next) {
+	page('/registrate', getCurrentUser, header, function (ctx, next) {
 	  __webpack_require__(29)
 	  var main = document.getElementById('main-container')
 	  if ($('body').height() < window.innerHeight) {

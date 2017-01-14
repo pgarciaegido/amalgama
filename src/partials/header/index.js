@@ -40,24 +40,23 @@ function headerTemplate (user) {
 }
 
 function headerDesktop (user) {
-  if (document.URL.indexOf('invitado') == -1) {
-    return yo`<a href="/app/usuario/${user.username}" class="Navbar-menu-item"><li>MI PERFIL</li></a>`
-  } else {
+  if (document.URL.indexOf('/app') == -1) {
     return yo`<div>
                 <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>
                 <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>
               </div>`
+  } else {
+    return yo`<a href="/app/usuario/${user.username}" class="Navbar-menu-item"><li>MI PERFIL</li></a>`
   }
 }
 
 function headerMobile (user) {
-  if (document.URL.indexOf('invitado') == -1) {
-    return yo`<a class="Navbar_menu-menu-item" href="/app/usuario/${user.username}"><li>MI PERFIL</li></a>`
-  } else {
+  if (document.URL.indexOf('/app') == -1) {
     return yo`<div>
                 <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>
                 <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>
               </div>`
+  } else {
+    return yo`<a class="Navbar_menu-menu-item" href="/app/usuario/${user.username}"><li>MI PERFIL</li></a>`
   }
 }
-
