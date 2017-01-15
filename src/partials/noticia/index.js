@@ -5,9 +5,10 @@ var template = require('./template')
 var aside = require('../aside')
 var getPost = require('../ajax').getPost
 var getCurrentUser = require('../ajax').getCurrentUser
+var getNews = require('../ajax').getNew
 var percentage = require('../votes_bar/get_percentage')
 
-page('/app/noticia/:id', getCurrentUser, header, getPost, function (ctx, next) {
+page('/app/noticia/:id', getNews, getCurrentUser, header, getPost, function (ctx, next) {
   require('../header/events')
   require('./comments_events')
   require('./noticia_events')

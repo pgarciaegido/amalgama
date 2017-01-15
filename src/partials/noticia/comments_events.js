@@ -2,126 +2,28 @@ var $ = require('jquery')
 var card = require('./modules').card
 var votesLiked = require('./votesLiked')
 var moment = require('moment')
-
-// //////////////////////////// Functions
-
-// ---- Displays textarea
-function createShow (create, comment) {
-  create.css('display', 'block')
-  comment.scrollTop(0).css('overflow-y', 'hidden')
-}
-
-// ---- Hide textarea
-function createHide (create, comment, textarea) {
-  create.css('display', 'none')
-  comment.css('overflow-y', 'scroll')
-  textarea.val('')
-}
-
-// ---- Inserts the card template, including the comment and the date
-function addComment (textarea, comment) {
-  var userComment = textarea.val()
-  var date = moment().format('D MMM YYYY')
-  comment.append(card(userComment, date))
-}
-
-// ----- Open Comments on Mobile
-
-var agreeOpened
-var disagreeOpened
-
-// ---- $commentsMobile is an array of dom elements.
-
-function commentsMobile (ev) {
-  var v = require('./comments_events_vars')
-  if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
-    if (disagreeOpened === false || disagreeOpened === undefined) {
-      $(v.commentsMobile[3]).css('display', 'flex')
-      $(v.commentsMobile[4]).css('display', 'block')
-      $(v.commentsMobile[5]).css('display', 'flex')
-      disagreeOpened = true
-    } else {
-      $(v.commentsMobile[3]).css('display', 'none')
-      $(v.commentsMobile[4]).css('display', 'none')
-      $(v.commentsMobile[5]).css('display', 'none')
-      disagreeOpened = false
-    }
-  } else {
-    if (agreeOpened === false || agreeOpened === undefined) {
-      $(v.commentsMobile[0]).css('display', 'flex')
-      $(v.commentsMobile[1]).css('display', 'block')
-      $(v.commentsMobile[2]).css('display', 'flex')
-      agreeOpened = true
-    } else {
-      $(v.commentsMobile[0]).css('display', 'none')
-      $(v.commentsMobile[1]).css('display', 'none')
-      $(v.commentsMobile[2]).css('display', 'none')
-      agreeOpened = false
-    }
-  }
-}
+var func = require('./comments_events_functions')
 
 // ////////////////////////// Event Handlers
 
 // ------ Creates input
-$(document).on('click', '#comentar-agree', function () {
-  var v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === undefined) {
-    createShow(v.createAgree, v.commentsAgree)
-    $('#cancelar-comments').data('resolve', 'agree')
-  }
-})
+$(document).on('click', '#comentar-agree', func.commentAgree)
+$(document).on('click', '#comentar-disagree', func.commentDisagree)
 
-$(document).on('click', '#comentar-disagree', function () {
-  var v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === undefined) {
-    createShow(v.createDisagree, v.commentsDisagree)
-    $('#cancelar-comments').data('resolve', 'disagree')
-  }
-})
-
-// // ----- Inside input, cancel and close
-
-$(document).on('click', '#cancelar-comments', function () {
-  var v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === 'agree') {
-    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-  }
-  $('#cancelar-comments').data().resolve = undefined
-})
+// ----- Inside input, cancels and closes the input
+$(document).on('click', '#cancelar-comments', func.cancelarComments)
 
 // ------ Inside input, sends and close
+$(document).on('click', '#enviar-comments', func.enviarComments)
 
-$(document).on('click', '#enviar-comments', function () {
-  var v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === 'agree') {
-    addComment(v.textAgree, v.commentsAgree)
-    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-    addComment(v.textDisagree, v.commentsDisagree)
-    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-  }
-  $('#cancelar-comments').data().resolve = undefined
-})
+
 
 // ----------- Like comments
-
-$(document).on('click', '#new-card', function () {
-  var v = require('./comments_events_vars')
-  votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
-})
-
-$(document).on('click', '#new-card-liked', function () {
-  var v = require('./comments_events_vars')
-  votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
-})
+$(document).on('click', '#new-card', func.likeComment)
+$(document).on('click', '#new-card-liked', func.likeComment)
 
 // // ----- Open and close menu when mobile
-
-$(document).on('click', '#arrow-agree', commentsMobile)
-$(document).on('click', '#title-agree', commentsMobile)
-
-$(document).on('click', '#arrow-disagree', commentsMobile)
-$(document).on('click', '#title-disagree', commentsMobile)
+$(document).on('click', '#arrow-agree', func.commentsMobile)
+$(document).on('click', '#title-agree', func.commentsMobile)
+$(document).on('click', '#arrow-disagree', func.commentsMobile)
+$(document).on('click', '#title-disagree', func.commentsMobile)

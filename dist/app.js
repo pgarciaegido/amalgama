@@ -51,10 +51,10 @@
 
 	__webpack_require__(8)
 	__webpack_require__(33)
-	__webpack_require__(149)
-	__webpack_require__(153)
-	__webpack_require__(155)
-	__webpack_require__(157)
+	__webpack_require__(150)
+	__webpack_require__(154)
+	__webpack_require__(156)
+	__webpack_require__(158)
 
 	$(document).ready(function () {
 	  articles()
@@ -13452,10 +13452,14 @@
 
 	// ----- Votes on clicking the thumb up/down icon
 
+	var green = '#7ace7a'
+	var red = '#e13c42'
+
+
 	$(document).on('click', '#thumbup', function () {
 	  var v = __webpack_require__(32)
 	  votesLiked($(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
-	  buttonClicked(v.agreeBottom, false, '#7ace7a')
+	  buttonClicked(v.agreeBottom, false, green)
 
 	  getPercentage()
 	})
@@ -13463,7 +13467,7 @@
 	$(document).on('click', '#thumbup-liked', function () {
 	  var v = __webpack_require__(32)
 	  votesLiked($(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp)
-	  buttonClicked(v.agreeBottom, true, '#7ace7a')
+	  buttonClicked(v.agreeBottom, true, green)
 
 	  getPercentage()
 	})
@@ -13471,7 +13475,7 @@
 	$(document).on('click', '#thumbdown', function () {
 	  var v = __webpack_require__(32)
 	  votesLiked($(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
-	  buttonClicked(v.disagreeBottom, false, '#e13c42')
+	  buttonClicked(v.disagreeBottom, false, red)
 
 	  getPercentage()
 	})
@@ -13479,7 +13483,7 @@
 	$(document).on('click', '#thumbdown-liked', function () {
 	  var v = __webpack_require__(32)
 	  votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown)
-	  buttonClicked(v.disagreeBottom, true, '#e13c42')
+	  buttonClicked(v.disagreeBottom, true, red)
 
 	  getPercentage()
 	})
@@ -13490,10 +13494,10 @@
 	  var v = __webpack_require__(32)
 	  if (v.thumbUp.css('display') === 'block') {
 	    votesLiked(v.thumbUp, true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
-	    buttonClicked($(this), false, '#7ace7a')
+	    buttonClicked($(this), false, green)
 	  } else {
 	    votesLiked(v.thumbUpLiked, false, v.votesAgree, v.votesGreenNum, v.thumbUp)
-	    buttonClicked($(this), true, '#7ace7a')
+	    buttonClicked($(this), true, green)
 	  }
 
 	  getPercentage()
@@ -13503,10 +13507,10 @@
 	  var v = __webpack_require__(32)
 	  if (v.thumbDown.css('display') === 'block') {
 	    votesLiked(v.thumbDown, true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
-	    buttonClicked($(this), false, '#e13c42')
+	    buttonClicked($(this), false, red)
 	  } else {
 	    votesLiked(v.thumbDownLiked, false, v.votesDisagree, v.votesRedNum, v.thumbDown)
-	    buttonClicked($(this), true, '#e13c42')
+	    buttonClicked($(this), true, red)
 	  }
 
 	  getPercentage()
@@ -13583,9 +13587,10 @@
 	var aside = __webpack_require__(26)
 	var getPost = __webpack_require__(24).getPost
 	var getCurrentUser = __webpack_require__(24).getCurrentUser
+	var getNews = __webpack_require__(24).getNew
 	var percentage = __webpack_require__(7)
 
-	page('/app/noticia/:id', getCurrentUser, header, getPost, function (ctx, next) {
+	page('/app/noticia/:id', getNews, getCurrentUser, header, getPost, function (ctx, next) {
 	  __webpack_require__(29)
 	  __webpack_require__(36)
 	  __webpack_require__(30)
@@ -13770,129 +13775,31 @@
 	var card = __webpack_require__(35).card
 	var votesLiked = __webpack_require__(31)
 	var moment = __webpack_require__(37)
-
-	// //////////////////////////// Functions
-
-	// ---- Displays textarea
-	function createShow (create, comment) {
-	  create.css('display', 'block')
-	  comment.scrollTop(0).css('overflow-y', 'hidden')
-	}
-
-	// ---- Hide textarea
-	function createHide (create, comment, textarea) {
-	  create.css('display', 'none')
-	  comment.css('overflow-y', 'scroll')
-	  textarea.val('')
-	}
-
-	// ---- Inserts the card template, including the comment and the date
-	function addComment (textarea, comment) {
-	  var userComment = textarea.val()
-	  var date = moment().format('D MMM YYYY')
-	  comment.append(card(userComment, date))
-	}
-
-	// ----- Open Comments on Mobile
-
-	var agreeOpened
-	var disagreeOpened
-
-	// ---- $commentsMobile is an array of dom elements.
-
-	function commentsMobile (ev) {
-	  var v = __webpack_require__(148)
-	  if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
-	    if (disagreeOpened === false || disagreeOpened === undefined) {
-	      $(v.commentsMobile[3]).css('display', 'flex')
-	      $(v.commentsMobile[4]).css('display', 'block')
-	      $(v.commentsMobile[5]).css('display', 'flex')
-	      disagreeOpened = true
-	    } else {
-	      $(v.commentsMobile[3]).css('display', 'none')
-	      $(v.commentsMobile[4]).css('display', 'none')
-	      $(v.commentsMobile[5]).css('display', 'none')
-	      disagreeOpened = false
-	    }
-	  } else {
-	    if (agreeOpened === false || agreeOpened === undefined) {
-	      $(v.commentsMobile[0]).css('display', 'flex')
-	      $(v.commentsMobile[1]).css('display', 'block')
-	      $(v.commentsMobile[2]).css('display', 'flex')
-	      agreeOpened = true
-	    } else {
-	      $(v.commentsMobile[0]).css('display', 'none')
-	      $(v.commentsMobile[1]).css('display', 'none')
-	      $(v.commentsMobile[2]).css('display', 'none')
-	      agreeOpened = false
-	    }
-	  }
-	}
+	var func = __webpack_require__(148)
 
 	// ////////////////////////// Event Handlers
 
 	// ------ Creates input
-	$(document).on('click', '#comentar-agree', function () {
-	  var v = __webpack_require__(148)
-	  if ($('#cancelar-comments').data().resolve === undefined) {
-	    createShow(v.createAgree, v.commentsAgree)
-	    $('#cancelar-comments').data('resolve', 'agree')
-	  }
-	})
+	$(document).on('click', '#comentar-agree', func.commentAgree)
+	$(document).on('click', '#comentar-disagree', func.commentDisagree)
 
-	$(document).on('click', '#comentar-disagree', function () {
-	  var v = __webpack_require__(148)
-	  if ($('#cancelar-comments').data().resolve === undefined) {
-	    createShow(v.createDisagree, v.commentsDisagree)
-	    $('#cancelar-comments').data('resolve', 'disagree')
-	  }
-	})
-
-	// // ----- Inside input, cancel and close
-
-	$(document).on('click', '#cancelar-comments', function () {
-	  var v = __webpack_require__(148)
-	  if ($('#cancelar-comments').data().resolve === 'agree') {
-	    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-	    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-	  }
-	  $('#cancelar-comments').data().resolve = undefined
-	})
+	// ----- Inside input, cancels and closes the input
+	$(document).on('click', '#cancelar-comments', func.cancelarComments)
 
 	// ------ Inside input, sends and close
+	$(document).on('click', '#enviar-comments', func.enviarComments)
 
-	$(document).on('click', '#enviar-comments', function () {
-	  var v = __webpack_require__(148)
-	  if ($('#cancelar-comments').data().resolve === 'agree') {
-	    addComment(v.textAgree, v.commentsAgree)
-	    createHide(v.createAgree, v.commentsAgree, v.textAgree)
-	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-	    addComment(v.textDisagree, v.commentsDisagree)
-	    createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-	  }
-	  $('#cancelar-comments').data().resolve = undefined
-	})
+
 
 	// ----------- Like comments
-
-	$(document).on('click', '#new-card', function () {
-	  var v = __webpack_require__(148)
-	  votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
-	})
-
-	$(document).on('click', '#new-card-liked', function () {
-	  var v = __webpack_require__(148)
-	  votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
-	})
+	$(document).on('click', '#new-card', func.likeComment)
+	$(document).on('click', '#new-card-liked', func.likeComment)
 
 	// // ----- Open and close menu when mobile
-
-	$(document).on('click', '#arrow-agree', commentsMobile)
-	$(document).on('click', '#title-agree', commentsMobile)
-
-	$(document).on('click', '#arrow-disagree', commentsMobile)
-	$(document).on('click', '#title-disagree', commentsMobile)
+	$(document).on('click', '#arrow-agree', func.commentsMobile)
+	$(document).on('click', '#title-agree', func.commentsMobile)
+	$(document).on('click', '#arrow-disagree', func.commentsMobile)
+	$(document).on('click', '#title-disagree', func.commentsMobile)
 
 
 /***/ },
@@ -28800,6 +28707,139 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
+	var card = __webpack_require__(35).card
+	var votesLiked = __webpack_require__(31)
+	var moment = __webpack_require__(37)
+
+	module.exports = {
+	  createShow,
+	  createHide,
+	  addComment,
+	  commentAgree,
+	  commentDisagree,
+	  cancelarComments,
+	  enviarComments,
+	  likeComment,
+	  commentsMobile
+	}
+
+	// //////////////////////////// Functions
+
+	// ---- Displays textarea
+	function createShow (create, comment) {
+	  create.css('display', 'block')
+	  comment.scrollTop(0).css('overflow-y', 'hidden')
+	}
+
+	// ---- Hide textarea
+	function createHide (create, comment, textarea) {
+	  create.css('display', 'none')
+	  comment.css('overflow-y', 'scroll')
+	  textarea.val('')
+	}
+
+	// ---- Inserts the card template, including the comment and the date
+	function addComment (textarea, comment) {
+	  var userComment = textarea.val()
+	  var date = moment().format('D MMM YYYY')
+	  comment.append(card(userComment, date))
+	}
+
+	// Opens input in agree
+	function commentAgree () {
+	  var v = __webpack_require__(149)
+	  if ($('#cancelar-comments').data().resolve === undefined) {
+	    func.createShow(v.createAgree, v.commentsAgree)
+	    $('#cancelar-comments').data('resolve', 'agree')
+	  }
+	}
+
+	// Opens input in disagree
+	function commentDisagree () {
+	  var v = __webpack_require__(149)
+	  if ($('#cancelar-comments').data().resolve === undefined) {
+	    func.createShow(v.createDisagree, v.commentsDisagree)
+	    $('#cancelar-comments').data('resolve', 'disagree')
+	  }
+	}
+
+	function cancelarComments () {
+	  var v = __webpack_require__(149)
+	  if ($('#cancelar-comments').data().resolve === 'agree') {
+	    func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
+	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
+	    func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
+	  }
+	  $('#cancelar-comments').data().resolve = undefined
+	}
+
+	// --------- Send comments
+	function enviarComments () {
+	  var v = __webpack_require__(149)
+	  if ($('#cancelar-comments').data().resolve === 'agree') {
+	    func.addComment(v.textAgree, v.commentsAgree)
+	    func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
+	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
+	    func.addComment(v.textDisagree, v.commentsDisagree)
+	    func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
+	  }
+	  $('#cancelar-comments').data().resolve = undefined
+	}
+
+
+	// ------- Likes / unlikes comment
+	function likeComment () {
+	  var v = __webpack_require__(149)
+	  if(this.id == 'new-card'){
+	    votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
+	  } else {
+	    votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
+	  }
+	}
+
+	// ----- Open Comments on Mobile
+	function commentsMobile (ev) {
+	  var agreeOpened
+	  var disagreeOpened
+	  commentsMobileInside(ev)
+	}
+
+	// ---- $commentsMobile is an array of dom elements.
+	function commentsMobileInside (ev) {
+	  var v = __webpack_require__(149)
+	  if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
+	    if (disagreeOpened === false || disagreeOpened === undefined) {
+	      $(v.commentsMobile[3]).css('display', 'flex')
+	      $(v.commentsMobile[4]).css('display', 'block')
+	      $(v.commentsMobile[5]).css('display', 'flex')
+	      disagreeOpened = true
+	    } else {
+	      $(v.commentsMobile[3]).css('display', 'none')
+	      $(v.commentsMobile[4]).css('display', 'none')
+	      $(v.commentsMobile[5]).css('display', 'none')
+	      disagreeOpened = false
+	    }
+	  } else {
+	    if (agreeOpened === false || agreeOpened === undefined) {
+	      $(v.commentsMobile[0]).css('display', 'flex')
+	      $(v.commentsMobile[1]).css('display', 'block')
+	      $(v.commentsMobile[2]).css('display', 'flex')
+	      agreeOpened = true
+	    } else {
+	      $(v.commentsMobile[0]).css('display', 'none')
+	      $(v.commentsMobile[1]).css('display', 'none')
+	      $(v.commentsMobile[2]).css('display', 'none')
+	      agreeOpened = false
+	    }
+	  }
+	}
+
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(5)
 
 	module.exports = {
 	  'comentarAgree': $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
@@ -28826,13 +28866,13 @@
 
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
 	var header = __webpack_require__(25)
 	var page = __webpack_require__(1)
-	var template = __webpack_require__(150)
+	var template = __webpack_require__(151)
 	var getCurrentUser = __webpack_require__(24).getCurrentUser
 
 	page('/app/usuario/:username', getCurrentUser, header, function (ctx, next) {
@@ -28844,12 +28884,12 @@
 
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(10)
-	var card = __webpack_require__(151)
-	var mod = __webpack_require__(152)
+	var card = __webpack_require__(152)
+	var mod = __webpack_require__(153)
 
 	// ///////// USUARIO TEMPLATE ///////////////////
 
@@ -28887,7 +28927,7 @@
 
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(10)
@@ -28909,11 +28949,11 @@
 
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(10)
-	var card = __webpack_require__(151)
+	var card = __webpack_require__(152)
 
 	// //////////// USUARIO MODULES ///////////////
 
@@ -28984,13 +29024,13 @@
 	}
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
 	var header = __webpack_require__(25)
 	var page = __webpack_require__(1)
-	var template = __webpack_require__(154)
+	var template = __webpack_require__(155)
 
 	page('/usuario/pegido/editar', header, function (ctx, next) {
 	  __webpack_require__(29)
@@ -29000,7 +29040,7 @@
 
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(10)
@@ -29046,16 +29086,15 @@
 
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
 	var header = __webpack_require__(25)
 	var page = __webpack_require__(1)
-	var template = __webpack_require__(156)
-	var getCurrentUser = __webpack_require__(24).getCurrentUser
+	var template = __webpack_require__(157)
 
-	page('/registrate', getCurrentUser, header, function (ctx, next) {
+	page('/registrate', header, function (ctx, next) {
 	  __webpack_require__(29)
 	  var main = document.getElementById('main-container')
 	  if ($('body').height() < window.innerHeight) {
@@ -29066,7 +29105,7 @@
 
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(10)
@@ -29102,13 +29141,13 @@
 
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(5)
 	var header = __webpack_require__(25)
 	var page = __webpack_require__(1)
-	var template = __webpack_require__(158)
+	var template = __webpack_require__(159)
 
 	page('/accede', header, function (ctx, next) {
 	  __webpack_require__(29)
@@ -29121,7 +29160,7 @@
 
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var yo = __webpack_require__(10)
