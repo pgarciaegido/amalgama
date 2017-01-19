@@ -11117,17 +11117,23 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Get heights of titles and details, so we can add padding to equal the cards
 
 	module.exports = function articles() {
+	  var _this = this;
+
 	  var heights = [];
 	  // Get heights of elements
-	  $('.Feed-article').each(function (i, obj) {
-	    var title = $(this).find($('.Feed-article-title'));
+	  (0, _jquery2.default)('.Feed-article').each(function (i, obj) {
+	    var title = (0, _jquery2.default)(_this).find((0, _jquery2.default)('.Feed-article-title'));
 	    title = title.outerHeight(true);
-	    var details = $(this).find($('.Details'));
+	    var details = (0, _jquery2.default)(_this).find((0, _jquery2.default)('.Details'));
 	    details = details.height();
 
 	    var total = title + details;
@@ -11135,7 +11141,7 @@
 	  });
 
 	  // Get highest card
-	  var votesBar = $('.Feed-article').find($('.Votes_bar'));
+	  var votesBar = (0, _jquery2.default)('.Feed-article').find((0, _jquery2.default)('.Votes_bar'));
 	  var highest = 0;
 
 	  for (var i in heights) {
@@ -11148,7 +11154,7 @@
 	  votesBar.each(function (i, obj) {
 	    if (heights[i] !== highest) {
 	      var padding = highest - heights[i] + 'px';
-	      $(obj).css('padding-top', padding);
+	      (0, _jquery2.default)(obj).css('padding-top', padding);
 	    }
 	  });
 	};
@@ -11159,15 +11165,19 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = function getPercentage() {
-	  $('.Votes_bar').each(function (i, obj) {
-	    var agree = Number($(obj).find($('.Votes_bar-numbers-green')).html());
-	    var disagree = Number($(obj).find($('.Votes_bar-numbers-red')).html());
+	  (0, _jquery2.default)('.Votes_bar').each(function (i, obj) {
+	    var agree = Number((0, _jquery2.default)(obj).find((0, _jquery2.default)('.Votes_bar-numbers-green')).html());
+	    var disagree = Number((0, _jquery2.default)(obj).find((0, _jquery2.default)('.Votes_bar-numbers-red')).html());
 	    var total = agree + disagree;
 	    var percentage = agree / total * 100;
-	    $(obj).find($('.Votes_bar-colors-green')).css('width', percentage + '%');
+	    (0, _jquery2.default)(obj).find((0, _jquery2.default)('.Votes_bar-colors-green')).css('width', percentage + '%');
 	  });
 	};
 
@@ -11177,49 +11187,67 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var page = __webpack_require__(1);
+	var _jquery = __webpack_require__(5);
 
-	var template = __webpack_require__(10);
+	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var getNew = __webpack_require__(25).getNew;
-	var getCurrentUser = __webpack_require__(25).getCurrentUser;
-	var header = __webpack_require__(26);
+	var _page = __webpack_require__(1);
 
-	var articles = __webpack_require__(7);
-	var percentage = __webpack_require__(8);
+	var _page2 = _interopRequireDefault(_page);
 
-	var aside = __webpack_require__(27);
+	var _template = __webpack_require__(10);
 
-	/** ************HAY QUE CORREGIR LA FUNCION DE HOMEPAGE PARA QUE AÑADA AMBOS TEMPLATES ****/
+	var _template2 = _interopRequireDefault(_template);
+
+	var _index = __webpack_require__(25);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _feed_events = __webpack_require__(7);
+
+	var _feed_events2 = _interopRequireDefault(_feed_events);
+
+	var _get_percentage = __webpack_require__(8);
+
+	var _get_percentage2 = _interopRequireDefault(_get_percentage);
+
+	var _aside = __webpack_require__(26);
+
+	var _aside2 = _interopRequireDefault(_aside);
+
+	var _ajax = __webpack_require__(29);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Homepage when not logged in
 
-	page('/invitado', header, getNew, function (ctx, next) {
+	(0, _page2.default)('/invitado', _index2.default, _ajax.getNew, function (ctx, next) {
 	  loadHomepage(ctx);
 	  next();
-	}, aside);
+	}, _aside2.default);
 
 	// Homepage when logged in
 
-	page('/app', getCurrentUser, header, getNew, function (ctx, next) {
+	(0, _page2.default)('/app', _ajax.getCurrentUser, _index2.default, _ajax.getNew, function (ctx, next) {
 	  loadHomepage(ctx);
 	  next();
-	}, aside);
+	}, _aside2.default);
 
 	function loadHomepage(ctx) {
 	  __webpack_require__(30);
 	  __webpack_require__(31);
 	  __webpack_require__(7);
-	  $(document).ready(function () {
-	    articles();
-	    percentage();
+	  (0, _jquery2.default)(document).ready(function () {
+	    (0, _feed_events2.default)();
+	    (0, _get_percentage2.default)();
 	  });
 	  var main = document.getElementById('main-container');
+
 	  // we get the latest so we fill the latest" section with it
 	  var latest = ctx.news.length - 1;
 	  var latestNew = ctx.news[latest];
-	  $(main).empty().append(template(ctx.news, latest));
+	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(ctx.news, latest));
+
 	  // Gets the element poped on template back to array, so we can use them all on the aside
 	  ctx.news.unshift(latestNew);
 	}
@@ -11234,25 +11262,41 @@
 	    _templateObject2 = _taggedTemplateLiteral(['<a href="/accede" class="Latest-button">Ver m\xE1s</a>'], ['<a href="/accede" class="Latest-button">Ver m\xE1s</a>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<a href="./app/noticia/', '" class="Latest-button">Ver m\xE1s</a>'], ['<a href="./app/noticia/', '" class="Latest-button">Ver m\xE1s</a>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _index = __webpack_require__(21);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _index3 = __webpack_require__(22);
+
+	var _index4 = _interopRequireDefault(_index3);
+
+	var _index5 = __webpack_require__(23);
+
+	var _index6 = _interopRequireDefault(_index5);
+
+	var _registrate_cta = __webpack_require__(24);
+
+	var _registrate_cta2 = _interopRequireDefault(_registrate_cta);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-	var votesBar = __webpack_require__(21);
-	var details = __webpack_require__(22);
-	var feed = __webpack_require__(23);
-	var registrate = __webpack_require__(24);
-
 	module.exports = function (n, latest) {
-	  return yo(_templateObject, n[latest].title, details(n[latest].date, n[latest].tags), n[latest].subtitle, votesBar(n[latest].agreeVotes, n[latest].disagreeVotes), latestButton(n, latest), registrate(), n.pop(), n.reverse().map(function (nw) {
-	    return feed(nw);
+	  return (0, _yoYo2.default)(_templateObject, n[latest].title, (0, _index4.default)(n[latest].date, n[latest].tags), n[latest].subtitle, (0, _index2.default)(n[latest].agreeVotes, n[latest].disagreeVotes), latestButton(n, latest), (0, _registrate_cta2.default)(), n.pop(), n.reverse().map(function (nw) {
+	    return (0, _index6.default)(nw);
 	  }));
 	};
 
 	function latestButton(n, latest) {
 	  if (document.URL.indexOf('invitado') != -1) {
-	    return yo(_templateObject2);
+	    return (0, _yoYo2.default)(_templateObject2);
 	  } else {
-	    return yo(_templateObject3, n[latest]._id);
+	    return (0, _yoYo2.default)(_templateObject3, n[latest]._id);
 	  }
 	}
 
@@ -12537,12 +12581,16 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div class="Votes_bar">\n      <div class="Votes_bar-colors">\n        <div class="Votes_bar-colors-red"></div>\n        <div class="Votes_bar-colors-green"></div>\n      </div>\n      <div class="Votes_bar-numbers">\n        <span class="Votes_bar-numbers-green">', '</span>\n        <span class="Votes_bar-numbers-red">', '</span>\n      </div>\n    </div>'], ['<div class="Votes_bar">\n      <div class="Votes_bar-colors">\n        <div class="Votes_bar-colors-red"></div>\n        <div class="Votes_bar-colors-green"></div>\n      </div>\n      <div class="Votes_bar-numbers">\n        <span class="Votes_bar-numbers-green">', '</span>\n        <span class="Votes_bar-numbers-red">', '</span>\n      </div>\n    </div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-
 	module.exports = function (agree, disagree) {
-	  return yo(_templateObject, agree, disagree);
+	  return (0, _yoYo2.default)(_templateObject, agree, disagree);
 	};
 
 /***/ },
@@ -12553,12 +12601,16 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div class="Details">\n        <div class="Details-date">\n          <img class="Details-date-icon" src="/img/clock.svg" />\n          <span class="Details-date-text">', '</span>\n        </div>\n        <div class="Details-tags">\n          <img class="Details-tags-icon" src="/img/price-tags.svg" />\n          <span class="Details-tags-text">', '</span>\n        </div>\n      </div>'], ['<div class="Details">\n        <div class="Details-date">\n          <img class="Details-date-icon" src="/img/clock.svg" />\n          <span class="Details-date-text">', '</span>\n        </div>\n        <div class="Details-tags">\n          <img class="Details-tags-icon" src="/img/price-tags.svg" />\n          <span class="Details-tags-text">', '</span>\n        </div>\n      </div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-
 	module.exports = function (date, tags) {
-	  return yo(_templateObject, date, displayTags(tags));
+	  return (0, _yoYo2.default)(_templateObject, date, displayTags(tags));
 	};
 
 	function displayTags(tags) {
@@ -12578,17 +12630,27 @@
 	var _templateObject = _taggedTemplateLiteral(['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>'], ['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>'], ['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>']);
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	var _yoYo = __webpack_require__(11);
 
-	var yo = __webpack_require__(11);
-	var details = __webpack_require__(22);
-	var votesBar = __webpack_require__(21);
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _index = __webpack_require__(22);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _index3 = __webpack_require__(21);
+
+	var _index4 = _interopRequireDefault(_index3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function feed(n) {
 	  var routeInv = '/accede';
 	  var routeUser = './app/noticia/' + n._id;
 
-	  return yo(_templateObject, n.title, details(n.date, n.tags), votesBar(n.agreeVotes, n.disagreeVotes), feedButton(routeUser, routeInv));
+	  return (0, _yoYo2.default)(_templateObject, n.title, (0, _index2.default)(n.date, n.tags), (0, _index4.default)(n.agreeVotes, n.disagreeVotes), feedButton(routeUser, routeInv));
 	};
 
 	function feedButton(routeUser, routeInv) {
@@ -12600,7 +12662,7 @@
 	}
 
 	function feedButtonTemp(route) {
-	  return yo(_templateObject2, route);
+	  return (0, _yoYo2.default)(_templateObject2, route);
 	}
 
 /***/ },
@@ -12611,56 +12673,22 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <button class="Register_cta-accede">Accede</button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate">Reg\xEDstrate</button>\n    </div>'], ['<div class="Register_cta">\n      <button class="Register_cta-accede">Accede</button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate">Reg\xEDstrate</button>\n    </div>']);
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	var _yoYo = __webpack_require__(11);
 
-	var yo = __webpack_require__(11);
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function cta() {
 	  if (document.URL.indexOf('invitado') > 0) {
-	    return yo(_templateObject);
+	    return (0, _yoYo2.default)(_templateObject);
 	  }
 	};
 
 /***/ },
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var $ = __webpack_require__(5);
-
-	// ctx is an object!
-
-	module.exports = {
-	  getNew: getNew,
-	  getPost: getPost,
-	  getCurrentUser: getCurrentUser
-	};
-
-	function getNew(ctx, next) {
-	  $.get('/api/news', function (data) {
-	    ctx.news = data;
-	    next();
-	  });
-	}
-
-	function getPost(ctx, next) {
-	  var id = ctx.path.split('/').pop();
-	  $.get('/api/news/' + id, function (data) {
-	    ctx.post = data;
-	    next();
-	  });
-	}
-
-	function getCurrentUser(ctx, next) {
-	  $.get('/api/currentUser', function (data) {
-	    ctx.user = data;
-	    next();
-	  });
-	}
-
-/***/ },
-/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12671,40 +12699,47 @@
 	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>']),
 	    _templateObject5 = _taggedTemplateLiteral(['<a class="Navbar_menu-menu-item" href="/app/usuario/', '"><li>MI PERFIL</li></a>'], ['<a class="Navbar_menu-menu-item" href="/app/usuario/', '"><li>MI PERFIL</li></a>']);
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	var _jquery = __webpack_require__(5);
 
-	var $ = __webpack_require__(5);
-	var yo = __webpack_require__(11);
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function header(ctx, next) {
 	  var user = ctx.user;
-	  var container = $('#header-container');
-	  $(container).empty().append(headerTemplate(user));
+	  var container = (0, _jquery2.default)('#header-container');
+	  (0, _jquery2.default)(container).empty().append(headerTemplate(user));
 	  next();
 	};
 
 	function headerTemplate(user) {
-	  return yo(_templateObject, headerDesktop(user), headerMobile(user));
+	  return (0, _yoYo2.default)(_templateObject, headerDesktop(user), headerMobile(user));
 	}
 
 	function headerDesktop(user) {
 	  if (document.URL.indexOf('/app') == -1) {
-	    return yo(_templateObject2);
+	    return (0, _yoYo2.default)(_templateObject2);
 	  } else {
-	    return yo(_templateObject3, user.username);
+	    return (0, _yoYo2.default)(_templateObject3, user.username);
 	  }
 	}
 
 	function headerMobile(user) {
 	  if (document.URL.indexOf('/app') == -1) {
-	    return yo(_templateObject4);
+	    return (0, _yoYo2.default)(_templateObject4);
 	  } else {
-	    return yo(_templateObject5, user.username);
+	    return (0, _yoYo2.default)(_templateObject5, user.username);
 	  }
 	}
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12712,49 +12747,59 @@
 	var _templateObject = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n  </aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n  </aside>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>']);
 
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _logics = __webpack_require__(27);
+
+	var _modules = __webpack_require__(28);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var $ = __webpack_require__(5);
-	var yo = __webpack_require__(11);
-
-	var orderTemas = __webpack_require__(28).order;
-	var colorBalance = __webpack_require__(28).color;
-
 	// Requires the modules files --> object.
-	var mod = __webpack_require__(29);
+
 
 	module.exports = function aside(ctx) {
-	  var container = $('#main-container');
-	  var ordered = orderTemas(ctx.news);
+	  var container = (0, _jquery2.default)('#main-container');
+	  var ordered = (0, _logics.orderTemas)(ctx.news);
 	  if (document.URL.indexOf('invitado') == -1) {
 	    var user = ctx.user;
 	    container.append(userTemplate(ordered, user));
 	  } else {
 	    container.append(invitadoTemplate(ordered));
 	  }
-	  colorBalance();
+	  (0, _logics.colorBalance)();
 	};
 
 	var invitadoTemplate = function invitadoTemplate(news) {
-	  return yo(_templateObject, mod.register(), mod.temas(news), mod.suscribe());
+	  return (0, _yoYo2.default)(_templateObject, (0, _modules.asideRegister)(), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
 	};
 
 	var userTemplate = function userTemplate(news, user) {
-	  return yo(_templateObject2, mod.profile(user), mod.temas(news), mod.suscribe());
+	  return (0, _yoYo2.default)(_templateObject2, (0, _modules.profile)(user), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
 	};
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
 
-	module.exports = {
-	  order: orderTemas,
-	  color: colorBalance
-	};
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = { orderTemas: orderTemas, colorBalance: colorBalance };
+
 	// Get the total number of votes, and ordering it so it shows from higher to lower.
 	function orderTemas(arr) {
 	  for (var i = 0; i < arr.length; i++) {
@@ -12770,12 +12815,61 @@
 
 	// If the balance is positive, color = green
 	function colorBalance() {
-	  $('.Aside_temas-tema').each(function () {
-	    var balance = $(this).find($('.Aside_temas-tema-info-balance'));
+	  (0, _jquery2.default)('.Aside_temas-tema').each(function () {
+	    var balance = (0, _jquery2.default)(this).find((0, _jquery2.default)('.Aside_temas-tema-info-balance'));
 	    if (balance.html().charAt(0) !== '-') {
 	      balance.css('color', '#7ace7a');
 	    }
 	  });
+	}
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario:\n        <input name ="username" type="text">\n      </label>\n      <label for="">Email:\n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a:\n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a:\n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>'], ['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario:\n        <input name ="username" type="text">\n      </label>\n      <label for="">Email:\n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a:\n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a:\n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>'], ['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>'], ['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>'], ['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit">Editar</button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit">Editar</button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = { asideRegister: asideRegister, asideSuscribe: asideSuscribe, temas: temas, profile: profile };
+
+	// ****** Aside templates
+	function asideRegister() {
+	  return (0, _yoYo2.default)(_templateObject);
+	}
+
+	function asideSuscribe() {
+	  return (0, _yoYo2.default)(_templateObject2);
+	}
+
+	// ****** TEMAS
+
+	function temas(news) {
+	  return (0, _yoYo2.default)(_templateObject3, news.map(function (post) {
+	    return masVotados(post);
+	  }));
+	}
+
+	function masVotados(post) {
+	  return (0, _yoYo2.default)(_templateObject4, post.title, post.total, post.balance);
+	}
+
+	// ****** TEMAS
+
+	function profile(user) {
+	  return (0, _yoYo2.default)(_templateObject5, user.username);
 	}
 
 /***/ },
@@ -12784,48 +12878,40 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario: \n        <input name ="username" type="text">\n      </label>\n      <label for="">Email: \n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a: \n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a: \n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>'], ['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario: \n        <input name ="username" type="text">\n      </label>\n      <label for="">Email: \n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a: \n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a: \n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>'], ['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>'], ['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>'], ['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit">Editar</button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit">Editar</button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
+	var _jquery = __webpack_require__(5);
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var yo = __webpack_require__(11);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// ctx is an object!
 
 	module.exports = {
-	  register: asideRegister,
-	  suscribe: asideSuscribe,
-	  temas: temas,
-	  profile: profile
+	  getNew: getNew,
+	  getPost: getPost,
+	  getCurrentUser: getCurrentUser
 	};
 
-	// ****** Aside templates
-	function asideRegister() {
-	  return yo(_templateObject);
+	function getNew(ctx, next) {
+	  _jquery2.default.get('/api/news', function (data) {
+	    ctx.news = data;
+	    next();
+	  });
 	}
 
-	function asideSuscribe() {
-	  return yo(_templateObject2);
+	function getPost(ctx, next) {
+	  var id = ctx.path.split('/').pop();
+	  _jquery2.default.get('/api/news/' + id, function (data) {
+	    ctx.post = data;
+	    next();
+	  });
 	}
 
-	// ****** TEMAS
-
-	function temas(news) {
-	  return yo(_templateObject3, news.map(function (post) {
-	    return masVotados(post);
-	  }));
-	}
-
-	function masVotados(post) {
-	  return yo(_templateObject4, post.title, post.total, post.balance);
-	}
-
-	// ****** TEMAS
-
-	function profile(user) {
-	  return yo(_templateObject5, user.username);
+	function getCurrentUser(ctx, next) {
+	  _jquery2.default.get('/api/currentUser', function (data) {
+	    ctx.user = data;
+	    next();
+	  });
 	}
 
 /***/ },
@@ -12834,14 +12920,18 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
 
-	var $burguer = $('.Navbar-icon-menu');
-	var $close = $('.Navbar-icon-close');
-	var $search = $('.Navbar-search-icon');
-	var $input = $('.Navbar-search-input');
-	var $menuMob = $('.Navbar_menu');
-	var $bg = $('#bg');
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var $burguer = (0, _jquery2.default)('.Navbar-icon-menu');
+	var $close = (0, _jquery2.default)('.Navbar-icon-close');
+	var $search = (0, _jquery2.default)('.Navbar-search-icon');
+	var $input = (0, _jquery2.default)('.Navbar-search-input');
+	var $menuMob = (0, _jquery2.default)('.Navbar_menu');
+	var $bg = (0, _jquery2.default)('#bg');
 
 	// -------OPEN MENU
 
@@ -12849,7 +12939,7 @@
 	  $menuMob.addClass('active');
 	  $bg.css('display', 'block');
 	  $burguer.css('display', 'none');
-	  $('body').css('overflow-y', 'hidden');
+	  (0, _jquery2.default)('body').css('overflow-y', 'hidden');
 	  $close.css('display', 'block');
 	}
 
@@ -12859,7 +12949,7 @@
 	  $menuMob.removeClass('active');
 	  $bg.css('display', 'none');
 	  $close.css('display', 'none');
-	  $('body').css('overflow-y', 'scroll');
+	  (0, _jquery2.default)('body').css('overflow-y', 'scroll');
 	  $burguer.css('display', 'block');
 	}
 
@@ -12889,9 +12979,19 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var votesLiked = __webpack_require__(32);
-	var getPercentage = __webpack_require__(8);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _votesLiked = __webpack_require__(32);
+
+	var _votesLiked2 = _interopRequireDefault(_votesLiked);
+
+	var _get_percentage = __webpack_require__(8);
+
+	var _get_percentage2 = _interopRequireDefault(_get_percentage);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// ///////////////FUNCTIONS
 
@@ -12925,64 +13025,64 @@
 	var green = '#7ace7a';
 	var red = '#e13c42';
 
-	$(document).on('click', '#thumbup', function () {
+	(0, _jquery2.default)(document).on('click', '#thumbup', function () {
 	  var v = __webpack_require__(33);
-	  votesLiked($(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked);
+	  (0, _votesLiked2.default)((0, _jquery2.default)(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked);
 	  buttonClicked(v.agreeBottom, false, green);
 
-	  getPercentage();
+	  (0, _get_percentage2.default)();
 	});
 
-	$(document).on('click', '#thumbup-liked', function () {
+	(0, _jquery2.default)(document).on('click', '#thumbup-liked', function () {
 	  var v = __webpack_require__(33);
-	  votesLiked($(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp);
+	  (0, _votesLiked2.default)((0, _jquery2.default)(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp);
 	  buttonClicked(v.agreeBottom, true, green);
 
-	  getPercentage();
+	  (0, _get_percentage2.default)();
 	});
 
-	$(document).on('click', '#thumbdown', function () {
+	(0, _jquery2.default)(document).on('click', '#thumbdown', function () {
 	  var v = __webpack_require__(33);
-	  votesLiked($(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked);
+	  (0, _votesLiked2.default)((0, _jquery2.default)(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked);
 	  buttonClicked(v.disagreeBottom, false, red);
 
-	  getPercentage();
+	  (0, _get_percentage2.default)();
 	});
 
-	$(document).on('click', '#thumbdown-liked', function () {
+	(0, _jquery2.default)(document).on('click', '#thumbdown-liked', function () {
 	  var v = __webpack_require__(33);
-	  votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown);
+	  (0, _votesLiked2.default)((0, _jquery2.default)(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown);
 	  buttonClicked(v.disagreeBottom, true, red);
 
-	  getPercentage();
+	  (0, _get_percentage2.default)();
 	});
 
 	// ------Votes on clicking agree / disagree buttons
 
-	$(document).on('click', '#agree-button', function () {
+	(0, _jquery2.default)(document).on('click', '#agree-button', function () {
 	  var v = __webpack_require__(33);
 	  if (v.thumbUp.css('display') === 'block') {
-	    votesLiked(v.thumbUp, true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked);
-	    buttonClicked($(this), false, green);
+	    (0, _votesLiked2.default)(v.thumbUp, true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked);
+	    buttonClicked((0, _jquery2.default)(this), false, green);
 	  } else {
-	    votesLiked(v.thumbUpLiked, false, v.votesAgree, v.votesGreenNum, v.thumbUp);
-	    buttonClicked($(this), true, green);
+	    (0, _votesLiked2.default)(v.thumbUpLiked, false, v.votesAgree, v.votesGreenNum, v.thumbUp);
+	    buttonClicked((0, _jquery2.default)(this), true, green);
 	  }
 
-	  getPercentage();
+	  (0, _get_percentage2.default)();
 	});
 
-	$(document).on('click', '#disagree-button', function () {
+	(0, _jquery2.default)(document).on('click', '#disagree-button', function () {
 	  var v = __webpack_require__(33);
 	  if (v.thumbDown.css('display') === 'block') {
-	    votesLiked(v.thumbDown, true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked);
-	    buttonClicked($(this), false, red);
+	    (0, _votesLiked2.default)(v.thumbDown, true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked);
+	    buttonClicked((0, _jquery2.default)(this), false, red);
 	  } else {
-	    votesLiked(v.thumbDownLiked, false, v.votesDisagree, v.votesRedNum, v.thumbDown);
-	    buttonClicked($(this), true, red);
+	    (0, _votesLiked2.default)(v.thumbDownLiked, false, v.votesDisagree, v.votesRedNum, v.thumbDown);
+	    buttonClicked((0, _jquery2.default)(this), true, red);
 	  }
 
-	  getPercentage();
+	  (0, _get_percentage2.default)();
 	});
 
 /***/ },
@@ -12991,7 +13091,11 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
 
@@ -12999,7 +13103,7 @@
 	  // --- Gets counter number through the class name
 	  var counter = that.siblings();
 	  counter = counter.map(function () {
-	    if ($(this).attr('class').indexOf('counter') !== -1) {
+	    if ((0, _jquery2.default)(this).attr('class').indexOf('counter') !== -1) {
 	      return this;
 	    }
 	  });
@@ -13007,7 +13111,7 @@
 
 	  // ----if the sign is positive, we add 1, otherwise, we substract 1
 
-	  var newNumber;
+	  var newNumber = void 0;
 	  if (sign === true) {
 	    newNumber = Number(temp) + 1;
 	  } else if (sign === false) {
@@ -13018,7 +13122,7 @@
 	  // ------if the number is related directly with votes bar, change that numbers too
 
 	  if (barNum !== null) {
-	    $('.Votes_bar').find(barNum).html(newNumber);
+	    (0, _jquery2.default)('.Votes_bar').find(barNum).html(newNumber);
 	  }
 	  that.css('display', 'none');
 	  that.siblings(newHandler).css('display', 'block');
@@ -13030,20 +13134,24 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
-	  'thumbUp': $('#thumbup'),
-	  'thumbUpLiked': $('#thumbup-liked'),
-	  'thumbDown': $('#thumbdown'),
-	  'thumbDownLiked': $('#thumbdown-liked'),
-	  'votesAgree': $('.Noticia_comentarios-comentarios-agree-header-votes-counter'),
-	  'votesDisagree': $('.Noticia_comentarios-comentarios-disagree-header-votes-counter'),
-	  'agreeBottom': $('#agree-button'),
-	  'disagreeBottom': $('#disagree-button'),
-	  'votesBar': $('.Votes_bar-colors-green'),
-	  'votesGreenNum': $('.Votes_bar-numbers-green'),
-	  'votesRedNum': $('.Votes_bar-numbers-red')
+	  'thumbUp': (0, _jquery2.default)('#thumbup'),
+	  'thumbUpLiked': (0, _jquery2.default)('#thumbup-liked'),
+	  'thumbDown': (0, _jquery2.default)('#thumbdown'),
+	  'thumbDownLiked': (0, _jquery2.default)('#thumbdown-liked'),
+	  'votesAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-votes-counter'),
+	  'votesDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-votes-counter'),
+	  'agreeBottom': (0, _jquery2.default)('#agree-button'),
+	  'disagreeBottom': (0, _jquery2.default)('#disagree-button'),
+	  'votesBar': (0, _jquery2.default)('.Votes_bar-colors-green'),
+	  'votesGreenNum': (0, _jquery2.default)('.Votes_bar-numbers-green'),
+	  'votesRedNum': (0, _jquery2.default)('.Votes_bar-numbers-red')
 	};
 
 /***/ },
@@ -13052,23 +13160,41 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var header = __webpack_require__(26);
-	var page = __webpack_require__(1);
-	var template = __webpack_require__(35);
-	var aside = __webpack_require__(27);
-	var getPost = __webpack_require__(25).getPost;
-	var getCurrentUser = __webpack_require__(25).getCurrentUser;
-	var getNews = __webpack_require__(25).getNew;
-	var percentage = __webpack_require__(8);
+	var _jquery = __webpack_require__(5);
 
-	page('/app/noticia/:id', getNews, getCurrentUser, header, getPost, function (ctx, next) {
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(25);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(35);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	var _aside = __webpack_require__(26);
+
+	var _aside2 = _interopRequireDefault(_aside);
+
+	var _get_percentage = __webpack_require__(8);
+
+	var _get_percentage2 = _interopRequireDefault(_get_percentage);
+
+	var _ajax = __webpack_require__(29);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _page2.default)('/app/noticia/:id', _ajax.getNew, _ajax.getCurrentUser, _index2.default, _ajax.getPost, function (ctx, next) {
 	  __webpack_require__(30);
 	  __webpack_require__(37);
 	  __webpack_require__(31);
 
-	  $(document).ready(function () {
-	    percentage();
+	  (0, _jquery2.default)(document).ready(function () {
+	    (0, _get_percentage2.default)();
 	  });
 
 	  // coger id de la url para pedir ese post al json
@@ -13076,9 +13202,9 @@
 	  window.scrollTo(0, 0);
 
 	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template(ctx.post));
+	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(ctx.post));
 	  next();
-	}, aside);
+	}, _aside2.default);
 
 /***/ },
 /* 35 */
@@ -13088,14 +13214,24 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="noticia_main">\n  ', '\n  ', '\n  ', '\n  ', '\n</div>'], ['<div id="noticia_main">\n  ', '\n  ', '\n  ', '\n  ', '\n</div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _index = __webpack_require__(21);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _modules = __webpack_require__(36);
+
+	var _modules2 = _interopRequireDefault(_modules);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-	var votesBar = __webpack_require__(21);
-	var mod = __webpack_require__(36);
-
 	module.exports = function (n) {
-	  return yo(_templateObject, mod.cuerpo(n), mod.informate(), mod.comentarios(n), votesBar(n.agreeVotes, n.disagreeVotes));
+	  return (0, _yoYo2.default)(_templateObject, _modules2.default.noticiaCuerpo(n), _modules2.default.noticiaInformate(), _modules2.default.noticiaComentarios(n), (0, _index2.default)(n.agreeVotes, n.disagreeVotes));
 	};
 
 /***/ },
@@ -13119,10 +13255,10 @@
 	var votesBar = __webpack_require__(21);
 
 	module.exports = {
-	  cuerpo: noticiaCuerpo,
-	  informate: noticiaInformate,
-	  comentarios: noticiaComentarios,
-	  card: comCard
+	  noticiaCuerpo: noticiaCuerpo,
+	  noticiaInformate: noticiaInformate,
+	  noticiaComentarios: noticiaComentarios,
+	  comCard: comCard
 	};
 
 	function noticiaCuerpo(n) {
@@ -13165,33 +13301,47 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var card = __webpack_require__(36).card;
-	var votesLiked = __webpack_require__(32);
-	var moment = __webpack_require__(38);
-	var func = __webpack_require__(148);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _modules = __webpack_require__(36);
+
+	var _votesLiked = __webpack_require__(32);
+
+	var _votesLiked2 = _interopRequireDefault(_votesLiked);
+
+	var _moment = __webpack_require__(38);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _comments_events_functions = __webpack_require__(148);
+
+	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// ////////////////////////// Event Handlers
 
 	// ------ Creates input
-	$(document).on('click', '#comentar-agree', func.commentAgree);
-	$(document).on('click', '#comentar-disagree', func.commentDisagree);
+	(0, _jquery2.default)(document).on('click', '#comentar-agree', _comments_events_functions2.default.commentAgree);
+	(0, _jquery2.default)(document).on('click', '#comentar-disagree', _comments_events_functions2.default.commentDisagree);
 
 	// ----- Inside input, cancels and closes the input
-	$(document).on('click', '#cancelar-comments', func.cancelarComments);
+	(0, _jquery2.default)(document).on('click', '#cancelar-comments', _comments_events_functions2.default.cancelarComments);
 
 	// ------ Inside input, sends and close
-	$(document).on('click', '#enviar-comments', func.enviarComments);
+	(0, _jquery2.default)(document).on('click', '#enviar-comments', _comments_events_functions2.default.enviarComments);
 
 	// ----------- Like comments
-	$(document).on('click', '#new-card', func.likeComment);
-	$(document).on('click', '#new-card-liked', func.likeComment);
+	(0, _jquery2.default)(document).on('click', '#new-card', _comments_events_functions2.default.likeComment);
+	(0, _jquery2.default)(document).on('click', '#new-card-liked', _comments_events_functions2.default.likeComment);
 
 	// // ----- Open and close menu when mobile
-	$(document).on('click', '#arrow-agree', func.commentsMobile);
-	$(document).on('click', '#title-agree', func.commentsMobile);
-	$(document).on('click', '#arrow-disagree', func.commentsMobile);
-	$(document).on('click', '#title-disagree', func.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#arrow-agree', _comments_events_functions2.default.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#title-agree', _comments_events_functions2.default.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#arrow-disagree', _comments_events_functions2.default.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
 
 /***/ },
 /* 38 */
@@ -27901,10 +28051,21 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var card = __webpack_require__(36).card;
-	var votesLiked = __webpack_require__(32);
-	var moment = __webpack_require__(38);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _modules = __webpack_require__(36);
+
+	var _votesLiked = __webpack_require__(32);
+
+	var _votesLiked2 = _interopRequireDefault(_votesLiked);
+
+	var _moment = __webpack_require__(38);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
 	  createShow: createShow,
@@ -27936,93 +28097,93 @@
 	// ---- Inserts the card template, including the comment and the date
 	function addComment(textarea, comment) {
 	  var userComment = textarea.val();
-	  var date = moment().format('D MMM YYYY');
+	  var date = (0, _moment2.default)().format('D MMM YYYY');
 	  comment.append(card(userComment, date));
 	}
 
 	// Opens input in agree
 	function commentAgree() {
 	  var v = __webpack_require__(149);
-	  if ($('#cancelar-comments').data().resolve === undefined) {
+	  if ((0, _jquery2.default)('#cancelar-comments').data().resolve === undefined) {
 	    func.createShow(v.createAgree, v.commentsAgree);
-	    $('#cancelar-comments').data('resolve', 'agree');
+	    (0, _jquery2.default)('#cancelar-comments').data('resolve', 'agree');
 	  }
 	}
 
 	// Opens input in disagree
 	function commentDisagree() {
 	  var v = __webpack_require__(149);
-	  if ($('#cancelar-comments').data().resolve === undefined) {
+	  if ((0, _jquery2.default)('#cancelar-comments').data().resolve === undefined) {
 	    func.createShow(v.createDisagree, v.commentsDisagree);
-	    $('#cancelar-comments').data('resolve', 'disagree');
+	    (0, _jquery2.default)('#cancelar-comments').data('resolve', 'disagree');
 	  }
 	}
 
 	function cancelarComments() {
 	  var v = __webpack_require__(149);
-	  if ($('#cancelar-comments').data().resolve === 'agree') {
+	  if ((0, _jquery2.default)('#cancelar-comments').data().resolve === 'agree') {
 	    func.createHide(v.createAgree, v.commentsAgree, v.textAgree);
-	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
+	  } else if ((0, _jquery2.default)('#cancelar-comments').data().resolve === 'disagree') {
 	    func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree);
 	  }
-	  $('#cancelar-comments').data().resolve = undefined;
+	  (0, _jquery2.default)('#cancelar-comments').data().resolve = undefined;
 	}
 
 	// --------- Send comments
 	function enviarComments() {
 	  var v = __webpack_require__(149);
-	  if ($('#cancelar-comments').data().resolve === 'agree') {
+	  if ((0, _jquery2.default)('#cancelar-comments').data().resolve === 'agree') {
 	    func.addComment(v.textAgree, v.commentsAgree);
 	    func.createHide(v.createAgree, v.commentsAgree, v.textAgree);
-	  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
+	  } else if ((0, _jquery2.default)('#cancelar-comments').data().resolve === 'disagree') {
 	    func.addComment(v.textDisagree, v.commentsDisagree);
 	    func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree);
 	  }
-	  $('#cancelar-comments').data().resolve = undefined;
+	  (0, _jquery2.default)('#cancelar-comments').data().resolve = undefined;
 	}
 
 	// ------- Likes / unlikes comment
 	function likeComment() {
 	  var v = __webpack_require__(149);
 	  if (this.id == 'new-card') {
-	    votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked);
+	    (0, _votesLiked2.default)((0, _jquery2.default)(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked);
 	  } else {
-	    votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked);
+	    (0, _votesLiked2.default)((0, _jquery2.default)(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked);
 	  }
 	}
 
 	// ----- Open Comments on Mobile
 	function commentsMobile(ev) {
-	  var agreeOpened;
-	  var disagreeOpened;
+	  var agreeOpened = void 0;
+	  var disagreeOpened = void 0;
 	  commentsMobileInside(ev);
 	}
 
 	// ---- $commentsMobile is an array of dom elements.
 	function commentsMobileInside(ev) {
 	  var v = __webpack_require__(149);
-	  if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
+	  if ((0, _jquery2.default)(ev.target).attr('class').indexOf('disagree') !== -1) {
 	    if (disagreeOpened === false || disagreeOpened === undefined) {
-	      $(v.commentsMobile[3]).css('display', 'flex');
-	      $(v.commentsMobile[4]).css('display', 'block');
-	      $(v.commentsMobile[5]).css('display', 'flex');
+	      (0, _jquery2.default)(v.commentsMobile[3]).css('display', 'flex');
+	      (0, _jquery2.default)(v.commentsMobile[4]).css('display', 'block');
+	      (0, _jquery2.default)(v.commentsMobile[5]).css('display', 'flex');
 	      disagreeOpened = true;
 	    } else {
-	      $(v.commentsMobile[3]).css('display', 'none');
-	      $(v.commentsMobile[4]).css('display', 'none');
-	      $(v.commentsMobile[5]).css('display', 'none');
+	      (0, _jquery2.default)(v.commentsMobile[3]).css('display', 'none');
+	      (0, _jquery2.default)(v.commentsMobile[4]).css('display', 'none');
+	      (0, _jquery2.default)(v.commentsMobile[5]).css('display', 'none');
 	      disagreeOpened = false;
 	    }
 	  } else {
 	    if (agreeOpened === false || agreeOpened === undefined) {
-	      $(v.commentsMobile[0]).css('display', 'flex');
-	      $(v.commentsMobile[1]).css('display', 'block');
-	      $(v.commentsMobile[2]).css('display', 'flex');
+	      (0, _jquery2.default)(v.commentsMobile[0]).css('display', 'flex');
+	      (0, _jquery2.default)(v.commentsMobile[1]).css('display', 'block');
+	      (0, _jquery2.default)(v.commentsMobile[2]).css('display', 'flex');
 	      agreeOpened = true;
 	    } else {
-	      $(v.commentsMobile[0]).css('display', 'none');
-	      $(v.commentsMobile[1]).css('display', 'none');
-	      $(v.commentsMobile[2]).css('display', 'none');
+	      (0, _jquery2.default)(v.commentsMobile[0]).css('display', 'none');
+	      (0, _jquery2.default)(v.commentsMobile[1]).css('display', 'none');
+	      (0, _jquery2.default)(v.commentsMobile[2]).css('display', 'none');
 	      agreeOpened = false;
 	    }
 	  }
@@ -28034,29 +28195,33 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
-	  'comentarAgree': $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	  'comentarDisagree': $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	  'cancelarAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
-	  'cancelarDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
-	  'createAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
-	  'createDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
-	  'commentsAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),
-	  'commentsDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments'),
-	  'enviarAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
-	  'enviarDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
-	  'textAgree': $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('#textarea'),
-	  'textDisagree': $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('#textarea'),
-	  'commentLikeIcon': $('.Noticias_comentarios_card-feedback-like-icon'),
-	  'commentLikeIconLiked': $('.Noticias_comentarios_card-feedback-like-icon-liked'),
-	  'commentLikeCounter': $('#comments-like-counter'),
-	  'arrowAgree': $('.Noticia_comentarios-comentarios-agree-header-arrow'),
-	  'arrowDisagree': $('.Noticia_comentarios-comentarios-disagree-header-arrow'),
-	  'titleAgree': $('.Noticia_comentarios-comentarios-agree-header-title'),
-	  'titleDisagree': $('.Noticia_comentarios-comentarios-disagree-header-title'),
-	  'commentsMobile': $($('.Noticia_hide_on_mobile'))
+	  'comentarAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
+	  'comentarDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
+	  'cancelarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
+	  'cancelarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
+	  'createAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
+	  'createDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
+	  'commentsAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),
+	  'commentsDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments'),
+	  'enviarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
+	  'enviarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
+	  'textAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('#textarea'),
+	  'textDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('#textarea'),
+	  'commentLikeIcon': (0, _jquery2.default)('.Noticias_comentarios_card-feedback-like-icon'),
+	  'commentLikeIconLiked': (0, _jquery2.default)('.Noticias_comentarios_card-feedback-like-icon-liked'),
+	  'commentLikeCounter': (0, _jquery2.default)('#comments-like-counter'),
+	  'arrowAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-arrow'),
+	  'arrowDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-arrow'),
+	  'titleAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-title'),
+	  'titleDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-title'),
+	  'commentsMobile': (0, _jquery2.default)('.Noticia_hide_on_mobile')
 	};
 
 /***/ },
@@ -28065,17 +28230,31 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var header = __webpack_require__(26);
-	var page = __webpack_require__(1);
-	var template = __webpack_require__(151);
-	var getCurrentUser = __webpack_require__(25).getCurrentUser;
+	var _jquery = __webpack_require__(5);
 
-	page('/app/usuario/:username', getCurrentUser, header, function (ctx, next) {
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(25);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(151);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	var _ajax = __webpack_require__(29);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _page2.default)('/app/usuario/:username', _ajax.getCurrentUser, _index2.default, function (ctx, next) {
 	  var user = ctx.user;
 	  __webpack_require__(30);
 	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template(user));
+	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(user));
 	});
 
 /***/ },
@@ -28088,27 +28267,37 @@
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_main">\n    ', '\n    ', '\n  </div>'], ['<div class="Usuario_main">\n    ', '\n    ', '\n  </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_aside">\n    <div class="Usuario_aside-stats">\n      <div class="Usuario_aside-stats-comments">\n        <h3 class="Usuario_aside-stats-comments-counter">17</h3>\n        <span class="Usuario_aside-stats-comments-text">Comentarios</span>\n      </div>\n      <div class="Usuario_aside-stats-thumbsup">\n        <h3 class="Usuario_aside-stats-thumbsup-counter">17</h3>\n        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Usuario_aside">\n    <div class="Usuario_aside-stats">\n      <div class="Usuario_aside-stats-comments">\n        <h3 class="Usuario_aside-stats-comments-counter">17</h3>\n        <span class="Usuario_aside-stats-comments-text">Comentarios</span>\n      </div>\n      <div class="Usuario_aside-stats-thumbsup">\n        <h3 class="Usuario_aside-stats-thumbsup-counter">17</h3>\n        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>\n      </div>\n    </div>\n  </div>']);
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	var _yoYo = __webpack_require__(11);
 
-	var yo = __webpack_require__(11);
-	var card = __webpack_require__(152);
-	var mod = __webpack_require__(153);
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _comments_card = __webpack_require__(152);
+
+	var _comments_card2 = _interopRequireDefault(_comments_card);
+
+	var _modules = __webpack_require__(153);
+
+	var _modules2 = _interopRequireDefault(_modules);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	// ///////// USUARIO TEMPLATE ///////////////////
 
 	module.exports = function userTemplate(user) {
-	  return yo(_templateObject, usuarioMain(user), usuarioStatsAside());
+	  return (0, _yoYo2.default)(_templateObject, usuarioMain(user), usuarioStatsAside());
 	};
 
 	// ***** Profile and comments are found in MODULES.JS
 
 	function usuarioMain(user) {
-	  return yo(_templateObject2, mod.profile(user), mod.comments());
+	  return (0, _yoYo2.default)(_templateObject2, _modules2.default.usuarioProfile(user), _modules2.default.usuarioComments());
 	}
 
-	// ** The stats of the user appear here, and in the 
+	// ** The stats of the user appear here, and in the
 	function usuarioStatsAside() {
-	  return yo(_templateObject3);
+	  return (0, _yoYo2.default)(_templateObject3);
 	}
 
 /***/ },
@@ -28119,12 +28308,16 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">Mateo Renzi dice una cosa y luego la otra y tal y cual</h2>\n  <p class="Usuario_main_comments-card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo delectus molestias, omnis, deleniti rem vero quibusdam ea ut aliquid, nulla possimus ipsum quas facilis minus sunt obcaecati necessitatibus pariatur.</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">04 diciembre de 2016</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">10</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>'], ['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">Mateo Renzi dice una cosa y luego la otra y tal y cual</h2>\n  <p class="Usuario_main_comments-card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nemo delectus molestias, omnis, deleniti rem vero quibusdam ea ut aliquid, nulla possimus ipsum quas facilis minus sunt obcaecati necessitatibus pariatur.</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">04 diciembre de 2016</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">10</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-
 	module.exports = function () {
-	  return yo(_templateObject);
+	  return (0, _yoYo2.default)(_templateObject);
 	};
 
 /***/ },
@@ -28139,40 +28332,47 @@
 	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>']),
 	    _templateObject5 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-container">\n    ', '\n  </div>'], ['<div class="Usuario_main_comments-container">\n    ', '\n  </div>']);
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+	var _yoYo = __webpack_require__(11);
 
-	var yo = __webpack_require__(11);
-	var card = __webpack_require__(152);
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _comments_card = __webpack_require__(152);
+
+	var _comments_card2 = _interopRequireDefault(_comments_card);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	// //////////// USUARIO MODULES ///////////////
 
 	module.exports = {
-	  profile: usuarioProfile,
-	  comments: usuarioComments
+	  usuarioProfile: usuarioProfile,
+	  usuarioComments: usuarioComments
 	};
 
 	function usuarioProfile(user) {
-	  return yo(_templateObject, user.username);
+	  return (0, _yoYo2.default)(_templateObject, user.username);
 	}
 
 	function usuarioComments() {
-	  return yo(_templateObject2, usuarioStats(), usuarioCommentsHeader(), usuarioCommentsContainer());
+	  return (0, _yoYo2.default)(_templateObject2, usuarioStats(), usuarioCommentsHeader(), usuarioCommentsContainer());
 	}
 
 	// ************ SUBMODULES FOR THE COMMENTS SECTION
 
 	function usuarioStats() {
-	  return yo(_templateObject3);
+	  return (0, _yoYo2.default)(_templateObject3);
 	}
 
 	function usuarioCommentsHeader() {
-	  return yo(_templateObject4);
+	  return (0, _yoYo2.default)(_templateObject4);
 	}
 
 	// card is required in another file
 
 	function usuarioCommentsContainer() {
-	  return yo(_templateObject5, card());
+	  return (0, _yoYo2.default)(_templateObject5, (0, _comments_card2.default)());
 	}
 
 /***/ },
@@ -28181,15 +28381,28 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var header = __webpack_require__(26);
-	var page = __webpack_require__(1);
-	var template = __webpack_require__(155);
+	var _jquery = __webpack_require__(5);
 
-	page('/usuario/pegido/editar', header, function (ctx, next) {
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(25);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(155);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _page2.default)('/usuario/pegido/editar', _index2.default, function (ctx, next) {
 	  __webpack_require__(30);
 	  var main = document.getElementById('main-container');
-	  $(main).empty().append(template);
+	  (0, _jquery2.default)(main).empty().append(_template2.default);
 	});
 
 /***/ },
@@ -28200,11 +28413,15 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="usuario_editar" class="Usuario_editar">\n  <h1 class="Usuario_editar-title">Editar perfil</h1>\n  <div class="Usuario_editar-container">\n    <div class="Usuario_editar_personal">\n      <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n      <div class="Usuario_editar_personal-avatar">\n        <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n        <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n      </div>\n      <h2 class="Usuario_editar_personal-rstitle">Mis Redes Sociales</h2>\n      <div class="Usuario_editar_personal-rrss">\n        <div class="Usuario_editar_personal-rrss-facebook">\n          <img src="/img/facebook.svg" alt="" class="Usuario_editar_personal-rrss-facebook-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-facebook-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-twitter">\n          <img src="/img/twitter.svg" alt="" class="Usuario_editar_personal-rrss-twitter-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-twitter-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-linkedin">\n          <img src="/img/linkedin.svg" alt="" class="Usuario_editar_personal-rrss-linkedin-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-linkedin-input" />\n        </div>\n      </div>\n    </div>\n    <div class="Usuario_editar_data">\n      <h2 class="Usuario_editar_data-title">Mis datos</h2>\n      <form action="" class="Usuario_editar_data-form">\n        <label class="Usuario_editar_data-form-username" for="">Nombre de usuario:<input type="text" /></label>\n        <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input type="email" /></label>\n        <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input type="password" /></label>\n        <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n      </form>\n    </div>\n  </div>\n</div>'], ['<div id="usuario_editar" class="Usuario_editar">\n  <h1 class="Usuario_editar-title">Editar perfil</h1>\n  <div class="Usuario_editar-container">\n    <div class="Usuario_editar_personal">\n      <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n      <div class="Usuario_editar_personal-avatar">\n        <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n        <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n      </div>\n      <h2 class="Usuario_editar_personal-rstitle">Mis Redes Sociales</h2>\n      <div class="Usuario_editar_personal-rrss">\n        <div class="Usuario_editar_personal-rrss-facebook">\n          <img src="/img/facebook.svg" alt="" class="Usuario_editar_personal-rrss-facebook-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-facebook-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-twitter">\n          <img src="/img/twitter.svg" alt="" class="Usuario_editar_personal-rrss-twitter-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-twitter-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-linkedin">\n          <img src="/img/linkedin.svg" alt="" class="Usuario_editar_personal-rrss-linkedin-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-linkedin-input" />\n        </div>\n      </div>\n    </div>\n    <div class="Usuario_editar_data">\n      <h2 class="Usuario_editar_data-title">Mis datos</h2>\n      <form action="" class="Usuario_editar_data-form">\n        <label class="Usuario_editar_data-form-username" for="">Nombre de usuario:<input type="text" /></label>\n        <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input type="email" /></label>\n        <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input type="password" /></label>\n        <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n      </form>\n    </div>\n  </div>\n</div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-
-	module.exports = yo(_templateObject);
+	module.exports = (0, _yoYo2.default)(_templateObject);
 
 /***/ },
 /* 156 */
@@ -28212,18 +28429,31 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var header = __webpack_require__(26);
-	var page = __webpack_require__(1);
-	var template = __webpack_require__(157);
+	var _jquery = __webpack_require__(5);
 
-	page('/registrate', header, function (ctx, next) {
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(25);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(157);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _page2.default)('/registrate', _index2.default, function (ctx, next) {
 	  __webpack_require__(30);
 	  var main = document.getElementById('main-container');
-	  if ($('body').height() < window.innerHeight) {
-	    $('body').css('overflow', 'hidden');
+	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
+	    (0, _jquery2.default)('body').css('overflow', 'hidden');
 	  }
-	  $(main).empty().append(template);
+	  (0, _jquery2.default)(main).empty().append(_template2.default);
 	});
 
 /***/ },
@@ -28234,12 +28464,16 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="signup">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <h3 class="Signup_form-subtitle">Reg\xEDstrate y podr\xE1s votar y opinar en todos los temas. \xA1No te llevar\xE1 m\xE1s de 2 minutos!</h3>\n      <div class="Signup_form-social">\n        <button class="Signup_form-social-facebook">Reg\xEDstrate con Facebook</button>\n        <button class="Signup_form-social-google">Reg\xEDstrate con Google</button>\n      </div>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email"/>\n          Contrase\xF1a\n          <input type="password" name="password" />\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n    </div>\n  </div>'], ['<div id="signup">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <h3 class="Signup_form-subtitle">Reg\xEDstrate y podr\xE1s votar y opinar en todos los temas. \xA1No te llevar\xE1 m\xE1s de 2 minutos!</h3>\n      <div class="Signup_form-social">\n        <button class="Signup_form-social-facebook">Reg\xEDstrate con Facebook</button>\n        <button class="Signup_form-social-google">Reg\xEDstrate con Google</button>\n      </div>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email"/>\n          Contrase\xF1a\n          <input type="password" name="password" />\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n    </div>\n  </div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-
 	module.exports = function () {
-	  return yo(_templateObject);
+	  return (0, _yoYo2.default)(_templateObject);
 	};
 
 /***/ },
@@ -28248,18 +28482,31 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(5);
-	var header = __webpack_require__(26);
-	var page = __webpack_require__(1);
-	var template = __webpack_require__(159);
+	var _jquery = __webpack_require__(5);
 
-	page('/accede', header, function (ctx, next) {
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(25);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(159);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _page2.default)('/accede', _index2.default, function (ctx, next) {
 	  __webpack_require__(30);
 	  var main = document.getElementById('main-container');
-	  if ($('body').height() < window.innerHeight) {
-	    $('body').css('overflow', 'hidden');
+	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
+	    (0, _jquery2.default)('body').css('overflow', 'hidden');
 	  }
-	  $(main).empty().append(template);
+	  (0, _jquery2.default)(main).empty().append(_template2.default);
 	});
 
 /***/ },
@@ -28270,11 +28517,15 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>'], ['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>']);
 
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	var yo = __webpack_require__(11);
-
-	module.exports = yo(_templateObject);
+	module.exports = (0, _yoYo2.default)(_templateObject);
 
 /***/ }
 /******/ ]);

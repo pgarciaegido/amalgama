@@ -1,4 +1,4 @@
-var yo = require('yo-yo')
+import yo from 'yo-yo'
 
 module.exports = function cta () {
   if (document.URL.indexOf('invitado') > 0) {

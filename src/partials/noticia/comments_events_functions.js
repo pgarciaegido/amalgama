@@ -1,7 +1,7 @@
-var $ = require('jquery')
-var card = require('./modules').card
-var votesLiked = require('./votesLiked')
-var moment = require('moment')
+import $           from 'jquery'
+import { comCard } from './modules'
+import votesLiked  from './votesLiked'
+import moment      from 'moment'
 
 module.exports = {
   createShow,
@@ -32,14 +32,14 @@ function createHide (create, comment, textarea) {
 
 // ---- Inserts the card template, including the comment and the date
 function addComment (textarea, comment) {
-  var userComment = textarea.val()
-  var date = moment().format('D MMM YYYY')
+  let userComment = textarea.val()
+  let date = moment().format('D MMM YYYY')
   comment.append(card(userComment, date))
 }
 
 // Opens input in agree
 function commentAgree () {
-  var v = require('./comments_events_vars')
+  const v = require('./comments_events_vars')
   if ($('#cancelar-comments').data().resolve === undefined) {
     func.createShow(v.createAgree, v.commentsAgree)
     $('#cancelar-comments').data('resolve', 'agree')
@@ -48,7 +48,7 @@ function commentAgree () {
 
 // Opens input in disagree
 function commentDisagree () {
-  var v = require('./comments_events_vars')
+  const v = require('./comments_events_vars')
   if ($('#cancelar-comments').data().resolve === undefined) {
     func.createShow(v.createDisagree, v.commentsDisagree)
     $('#cancelar-comments').data('resolve', 'disagree')
@@ -56,7 +56,7 @@ function commentDisagree () {
 }
 
 function cancelarComments () {
-  var v = require('./comments_events_vars')
+  const v = require('./comments_events_vars')
   if ($('#cancelar-comments').data().resolve === 'agree') {
     func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
   } else if ($('#cancelar-comments').data().resolve === 'disagree') {
@@ -67,7 +67,7 @@ function cancelarComments () {
 
 // --------- Send comments
 function enviarComments () {
-  var v = require('./comments_events_vars')
+  const v = require('./comments_events_vars')
   if ($('#cancelar-comments').data().resolve === 'agree') {
     func.addComment(v.textAgree, v.commentsAgree)
     func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
@@ -81,7 +81,7 @@ function enviarComments () {
 
 // ------- Likes / unlikes comment
 function likeComment () {
-  var v = require('./comments_events_vars')
+  const v = require('./comments_events_vars')
   if(this.id == 'new-card'){
     votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
   } else {
@@ -91,8 +91,8 @@ function likeComment () {
 
 // ----- Open Comments on Mobile
 function commentsMobile (ev) {
-  var agreeOpened
-  var disagreeOpened
+  let agreeOpened
+  let disagreeOpened
   commentsMobileInside(ev)
 }
 

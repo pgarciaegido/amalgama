@@ -1,14 +1,13 @@
-var $ = require('jquery')
-var header = require('../header/index')
-var page = require('page')
-var template = require('./template')
-var aside = require('../aside')
-var getPost = require('../ajax').getPost
-var getCurrentUser = require('../ajax').getCurrentUser
-var getNews = require('../ajax').getNew
-var percentage = require('../votes_bar/get_percentage')
+import $          from 'jquery'
+import header     from '../header/index'
+import page       from 'page'
+import template   from './template'
+import aside      from '../aside'
+import percentage from '../votes_bar/get_percentage'
 
-page('/app/noticia/:id', getNews, getCurrentUser, header, getPost, function (ctx, next) {
+import { getNew, getPost, getCurrentUser } from '../ajax'
+
+page('/app/noticia/:id', getNew, getCurrentUser, header, getPost, (ctx, next) => {
   require('../header/events')
   require('./comments_events')
   require('./noticia_events')
@@ -18,10 +17,10 @@ page('/app/noticia/:id', getNews, getCurrentUser, header, getPost, function (ctx
   })
 
   // coger id de la url para pedir ese post al json
-  var id = document.URL.split('/').pop()
+  let id = document.URL.split('/').pop()
   window.scrollTo(0, 0)
 
-  var main = document.getElementById('main-container')
+  let main = document.getElementById('main-container')
   $(main).empty().append(template(ctx.post))
   next()
 }, aside)

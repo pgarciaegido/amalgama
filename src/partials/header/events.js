@@ -1,11 +1,11 @@
-var $ = require('jquery')
+import $ from 'jquery'
 
-var $burguer = $('.Navbar-icon-menu')
-var $close = $('.Navbar-icon-close')
-var $search = $('.Navbar-search-icon')
-var $input = $('.Navbar-search-input')
-var $menuMob = $('.Navbar_menu')
-var $bg = $('#bg')
+const $burguer = $('.Navbar-icon-menu')
+const $close = $('.Navbar-icon-close')
+const $search = $('.Navbar-search-icon')
+const $input = $('.Navbar-search-input')
+const $menuMob = $('.Navbar_menu')
+const $bg = $('#bg')
 
 // -------OPEN MENU
 
@@ -28,7 +28,7 @@ function closeMenu () {
 }
 
 // ------OPEN SEARCH
-var searchOpened = false
+let searchOpened = false
 
 function searchInput () {
   if (!searchOpened) {

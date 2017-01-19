@@ -1,8 +1,8 @@
-var $ = require('jquery')
-var card = require('./modules').card
-var votesLiked = require('./votesLiked')
-var moment = require('moment')
-var func = require('./comments_events_functions')
+import $           from 'jquery'
+import { comCard } from './modules'
+import votesLiked  from './votesLiked'
+import moment      from 'moment'
+import func        from './comments_events_functions'
 
 // ////////////////////////// Event Handlers
 

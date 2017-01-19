@@ -1,9 +1,9 @@
-var $ = require('jquery')
-var yo = require('yo-yo')
+import $  from 'jquery'
+import yo from 'yo-yo'
 
 module.exports = function header (ctx, next) {
-  var user = ctx.user
-  var container = $('#header-container')
+  let user = ctx.user
+  let container = $('#header-container')
   $(container).empty().append(headerTemplate(user))
   next()
 }

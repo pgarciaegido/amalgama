@@ -1,17 +1,16 @@
-var $ = require('jquery')
-var yo = require('yo-yo')
+import $  from 'jquery'
+import yo from 'yo-yo'
 
-var orderTemas = require('./logics').order
-var colorBalance = require('./logics').color
+import { orderTemas, colorBalance } from './logics'
 
 // Requires the modules files --> object.
-var mod = require('./modules')
+import { asideRegister, asideSuscribe, temas, profile } from './modules'
 
 module.exports = function aside (ctx) {
-  var container = $('#main-container')
-  var ordered = orderTemas(ctx.news)
+  const container = $('#main-container')
+  const ordered = orderTemas(ctx.news)
   if (document.URL.indexOf('invitado') == -1) {
-    var user = ctx.user
+    let user = ctx.user
     container.append(userTemplate(ordered, user))
   } else {
     container.append(invitadoTemplate(ordered))
@@ -19,18 +18,18 @@ module.exports = function aside (ctx) {
   colorBalance()
 }
 
-var invitadoTemplate = function (news) {
+const invitadoTemplate = function (news) {
   return yo`<aside id="aside">
-  ${mod.register()}
-  ${mod.temas(news)}
-  ${mod.suscribe()}
+  ${asideRegister()}
+  ${temas(news)}
+  ${asideSuscribe()}
   </aside>`
 }
 
-var userTemplate = function (news, user) {
+const userTemplate = function (news, user) {
   return yo`<aside id="aside">
-  ${mod.profile(user)}
-  ${mod.temas(news)}
-  ${mod.suscribe()}
+  ${profile(user)}
+  ${temas(news)}
+  ${asideSuscribe()}
 </aside>`
 }

@@ -1,4 +1,4 @@
-var yo = require('yo-yo')
+import yo from 'yo-yo'
 
 module.exports = function (agree, disagree) {
   return yo`<div class="Votes_bar">

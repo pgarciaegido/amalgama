@@ -1,6 +1,6 @@
-var yo = require('yo-yo')
-var card = require('./comments_card')
-var mod = require('./modules')
+import yo   from 'yo-yo'
+import card from './comments_card'
+import mod  from './modules'
 
 // ///////// USUARIO TEMPLATE ///////////////////
 
@@ -15,12 +15,12 @@ module.exports = function userTemplate (user) {
 
 function usuarioMain (user) {
   return yo`<div class="Usuario_main">
-    ${mod.profile(user)}
-    ${mod.comments()}
+    ${mod.usuarioProfile(user)}
+    ${mod.usuarioComments()}
   </div>`
 }
 
-// ** The stats of the user appear here, and in the 
+// ** The stats of the user appear here, and in the
 function usuarioStatsAside () {
   return yo`<div class="Usuario_aside">
     <div class="Usuario_aside-stats">

@@ -1,4 +1,4 @@
-var yo = require('yo-yo')
+import yo from 'yo-yo'
 
 module.exports = function (date, tags) {
   return yo`<div class="Details">
@@ -14,7 +14,7 @@ module.exports = function (date, tags) {
 }
 
 function displayTags (tags) {
-  var text = ''
+  let text = ''
   tags.map(function (tag) {
     text = text + tag + '  '
   })

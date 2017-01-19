@@ -1,20 +1,20 @@
-var $ = require('jquery')
+import $ from 'jquery'
 
 // ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
 
 module.exports = function votesLiked (that, sign, votes, barNum, newHandler) {
   // --- Gets counter number through the class name
-  var counter = that.siblings()
+  let counter = that.siblings()
   counter = counter.map(function () {
     if ($(this).attr('class').indexOf('counter') !== -1) {
       return this
     }
   })
-  var temp = counter.text()
+  let temp = counter.text()
 
   // ----if the sign is positive, we add 1, otherwise, we substract 1
 
-  var newNumber
+  let newNumber
   if (sign === true) {
     newNumber = Number(temp) + 1
   } else if (sign === false) {

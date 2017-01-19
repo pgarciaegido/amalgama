@@ -3,10 +3,10 @@ var details = require('../details')
 var votesBar = require('../votes_bar')
 
 module.exports = {
-  cuerpo: noticiaCuerpo,
-  informate: noticiaInformate,
-  comentarios: noticiaComentarios,
-  card: comCard
+  noticiaCuerpo,
+  noticiaInformate,
+  noticiaComentarios,
+  comCard
 }
 
 function noticiaCuerpo (n) {

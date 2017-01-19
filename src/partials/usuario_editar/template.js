@@ -1,4 +1,4 @@
-var yo = require('yo-yo')
+import yo from 'yo-yo'
 
 module.exports = yo`<div id="usuario_editar" class="Usuario_editar">
   <h1 class="Usuario_editar-title">Editar perfil</h1>

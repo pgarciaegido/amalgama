@@ -1,10 +1,10 @@
-var $ = require('jquery')
-var header = require('../header/index')
-var page = require('page')
-var template = require('./template')
+import $        from 'jquery'
+import header   from '../header/index'
+import page     from 'page'
+import template from './template'
 
-page('/usuario/pegido/editar', header, function (ctx, next) {
+page('/usuario/pegido/editar', header, (ctx, next) => {
   require('../header/events')
-  var main = document.getElementById('main-container')
+  let main = document.getElementById('main-container')
   $(main).empty().append(template)
 })

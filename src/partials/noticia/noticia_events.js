@@ -1,6 +1,6 @@
-var $ = require('jquery')
-var votesLiked = require('./votesLiked')
-var getPercentage = require('../votes_bar/get_percentage')
+import $             from 'jquery'
+import votesLiked    from './votesLiked'
+import getPercentage from '../votes_bar/get_percentage'
 
 // ///////////////FUNCTIONS
 
@@ -8,10 +8,10 @@ var getPercentage = require('../votes_bar/get_percentage')
 
 function buttonClicked (button, clicked, color) {
   // -- Fits the height of the button and reduces 1 px when clicked (UX)
-  var height = button.css('height')
-  var heightClicked = height.substr(0, 2)
+  let height = button.css('height')
+  let heightClicked = height.substr(0, 2)
   heightClicked = (Number(heightClicked) - 1).toString().concat('px')
-  var heightUnclicked = height.substr(0, 2)
+  let heightUnclicked = height.substr(0, 2)
   heightUnclicked = (Number(heightUnclicked) + 1).toString().concat('px')
 
   if (clicked === false) {
@@ -31,12 +31,12 @@ function buttonClicked (button, clicked, color) {
 
 // ----- Votes on clicking the thumb up/down icon
 
-var green = '#7ace7a'
-var red = '#e13c42'
+const green = '#7ace7a'
+const red = '#e13c42'
 
 
 $(document).on('click', '#thumbup', function () {
-  var v = require('./noticia_events_vars')
+  const v = require('./noticia_events_vars')
   votesLiked($(this), true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
   buttonClicked(v.agreeBottom, false, green)
 
@@ -44,7 +44,7 @@ $(document).on('click', '#thumbup', function () {
 })
 
 $(document).on('click', '#thumbup-liked', function () {
-  var v = require('./noticia_events_vars')
+  const v = require('./noticia_events_vars')
   votesLiked($(this), false, v.votesAgree, v.votesGreenNum, v.thumbUp)
   buttonClicked(v.agreeBottom, true, green)
 
@@ -52,7 +52,7 @@ $(document).on('click', '#thumbup-liked', function () {
 })
 
 $(document).on('click', '#thumbdown', function () {
-  var v = require('./noticia_events_vars')
+  const v = require('./noticia_events_vars')
   votesLiked($(this), true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
   buttonClicked(v.disagreeBottom, false, red)
 
@@ -60,7 +60,7 @@ $(document).on('click', '#thumbdown', function () {
 })
 
 $(document).on('click', '#thumbdown-liked', function () {
-  var v = require('./noticia_events_vars')
+  const v = require('./noticia_events_vars')
   votesLiked($(this), false, v.votesDisagree, v.votesRedNum, v.thumbDown)
   buttonClicked(v.disagreeBottom, true, red)
 
@@ -70,7 +70,7 @@ $(document).on('click', '#thumbdown-liked', function () {
 // ------Votes on clicking agree / disagree buttons
 
 $(document).on('click', '#agree-button', function () {
-  var v = require('./noticia_events_vars')
+  const v = require('./noticia_events_vars')
   if (v.thumbUp.css('display') === 'block') {
     votesLiked(v.thumbUp, true, v.votesAgree, v.votesGreenNum, v.thumbUpLiked)
     buttonClicked($(this), false, green)
@@ -83,7 +83,7 @@ $(document).on('click', '#agree-button', function () {
 })
 
 $(document).on('click', '#disagree-button', function () {
-  var v = require('./noticia_events_vars')
+  const v = require('./noticia_events_vars')
   if (v.thumbDown.css('display') === 'block') {
     votesLiked(v.thumbDown, true, v.votesDisagree, v.votesRedNum, v.thumbDownLiked)
     buttonClicked($(this), false, red)

@@ -1,10 +1,10 @@
-var yo = require('yo-yo')
-var details = require('../details/index')
-var votesBar = require('../votes_bar/index')
+import yo from 'yo-yo'
+import details from '../details/index'
+import votesBar from '../votes_bar/index'
 
 module.exports = function feed (n) {
-  var routeInv = '/accede'
-  var routeUser = './app/noticia/' + n._id
+  let routeInv = '/accede'
+  let routeUser = './app/noticia/' + n._id
 
   return yo`<article class="Feed-article">
       <h2 class="Feed-article-title">${n.title}</h2>

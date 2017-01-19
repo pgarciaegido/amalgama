@@ -1,11 +1,11 @@
-var yo = require('yo-yo')
-var card = require('./comments_card')
+import yo   from 'yo-yo'
+import card from './comments_card'
 
 // //////////// USUARIO MODULES ///////////////
 
 module.exports = {
-  profile: usuarioProfile,
-  comments: usuarioComments
+  usuarioProfile,
+  usuarioComments
 }
 
 function usuarioProfile (user) {

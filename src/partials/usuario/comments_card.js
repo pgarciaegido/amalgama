@@ -1,4 +1,4 @@
-var yo = require('yo-yo')
+import yo from 'yo-yo'
 
 module.exports = function () {
   return yo`<div class="Usuario_main_comments-card">

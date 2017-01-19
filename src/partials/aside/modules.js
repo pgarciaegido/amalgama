@@ -1,11 +1,6 @@
-var yo = require('yo-yo')
+import yo from 'yo-yo'
 
-module.exports = {
-  register: asideRegister,
-  suscribe: asideSuscribe,
-  temas: temas,
-  profile: profile
-}
+module.exports = { asideRegister, asideSuscribe, temas, profile }
 
 // ****** Aside templates
 function asideRegister () {
@@ -15,15 +10,15 @@ function asideRegister () {
       Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
     </p>
     <form class="Aside_registrate-form" action="/usersignup" method="POST">
-      <label for="">Nombre usuario: 
+      <label for="">Nombre usuario:
         <input name ="username" type="text">
       </label>
-      <label for="">Email: 
+      <label for="">Email:
         <input name="email" type="email">
       </label>
-      <label for="">Contraseña: 
+      <label for="">Contraseña:
         <input name="password" type="password">
-      <label for="">Repita la contraseña: 
+      <label for="">Repita la contraseña:
         <input name="password_confirmation" type="password">
       </label>
       <input class="Aside_registrate-form-button" type="submit" value="Regístrate">

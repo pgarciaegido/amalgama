@@ -1,8 +1,8 @@
-var yo = require('yo-yo')
-var votesBar = require('../votes_bar/index')
-var details = require('../details/index')
-var feed = require('../feed/index')
-var registrate = require('../registrate_cta')
+import yo         from 'yo-yo'
+import votesBar   from '../votes_bar/index'
+import details    from '../details/index'
+import feed       from '../feed/index'
+import registrate from '../registrate_cta'
 
 module.exports = function (n, latest) {
   return yo`<div id="main">
