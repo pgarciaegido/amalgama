@@ -1,16 +1,16 @@
-var page = require('page')
-var $ = require('jquery')
-var articles = require('./partials/feed/feed_events')
-var percentage = require('./partials/votes_bar/get_percentage')
+import page       from 'page'
+import $          from 'jquery'
+import articles   from './partials/feed/feed_events'
+import percentage from './partials/votes_bar/get_percentage'
 
-require('./partials/homepage')
-require('./partials/noticia')
-require('./partials/usuario')
-require('./partials/usuario_editar')
-require('./partials/signup')
-require('./partials/login')
+import './partials/homepage'
+import './partials/noticia'
+import './partials/usuario'
+import './partials/usuario_editar'
+import './partials/signup'
+import './partials/login'
 
-$(document).ready(function () {
+$(document).ready(() => {
   articles()
   percentage()
 })

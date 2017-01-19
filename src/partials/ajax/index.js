@@ -3,13 +3,13 @@ var $ = require('jquery')
 // ctx is an object!
 
 module.exports = {
-  getNew: getNew,
-  getPost: getPost,
-  getCurrentUser: getCurrentUser
+  getNew,
+  getPost,
+  getCurrentUser
 }
 
 function getNew (ctx, next) {
-  $.get('/api/news', function (data) {
+  $.get('/api/news', (data) => {
     ctx.news = data
     next()
   })
@@ -17,14 +17,14 @@ function getNew (ctx, next) {
 
 function getPost (ctx, next) {
   var id = ctx.path.split('/').pop()
-  $.get('/api/news/' + id, function (data) {
+  $.get('/api/news/' + id, (data) => {
     ctx.post = data
     next()
   })
 }
 
 function getCurrentUser (ctx, next) {
-  $.get('/api/currentUser', function (data) {
+  $.get('/api/currentUser', (data) => {
     ctx.user = data
     next()
   })

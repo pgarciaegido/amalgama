@@ -1,19 +1,23 @@
-var gulp = require('gulp')
-var postcss = require('gulp-postcss')
-var cssnext = require('postcss-cssnext')
-var cssnested = require('postcss-nested')
-var mixins = require('postcss-mixins')
-var atImport = require('postcss-import') // Para importar archivos
-var vars = require('postcss-simple-vars') // vars like in Sass
-var csswring = require('csswring') // Minify
-var styleLint = require('gulp-stylelint') // Linter
-var mqpacker = require('css-mqpacker') // Mete las querys en una sola
+var gulp        = require('gulp')
+var postcss     = require('gulp-postcss')
+var cssnext     = require('postcss-cssnext')
+var cssnested   = require('postcss-nested')
+var mixins      = require('postcss-mixins')
+var atImport    = require('postcss-import') // Para importar archivos
+var vars        = require('postcss-simple-vars') // vars like in Sass
+var csswring    = require('csswring') // Minify
+var styleLint   = require('gulp-stylelint') // Linter
+var mqpacker    = require('css-mqpacker') // Mete las querys en una sola
+
 var browserSync = require('browser-sync').create()
 var gulpWebpack = require('webpack-stream')
-var webpack = require('webpack') // brings compatibility with uglify
-var panini = require('panini')
-var plumber = require('gulp-plumber') // on error it stops from crashing
-// var imagemin = require('gulp-imagemin')
+var webpack     = require('webpack') // brings compatibility with uglify
+var panini      = require('panini')
+var plumber     = require('gulp-plumber') // on error it stops from crashing
+var sourcemaps  = require('gulp-sourcemaps')
+var babel       = require('gulp-babel')
+var babelLoader = require('babel-loader')
+
 
 // Servidor de desarrollo
 // gulp.task('serve', function () {
@@ -69,6 +73,14 @@ gulp.task('watch', function () {
 gulp.task('scripts', function () {
   return gulp.src('./src/app.js')
     .pipe(gulpWebpack({
+      module: {
+        loaders: [{
+          loader: 'babel-loader',
+          query: {
+            presets: ['es2015']
+          }
+        }]
+      },
       output: {filename: 'app.js'}
       // node: {fs: "empty"}
       // plugins: [new webpack.optimize.UglifyJsPlugin()]
