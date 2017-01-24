@@ -13111,12 +13111,12 @@
 
 	  // ----if the sign is positive, we add 1, otherwise, we substract 1
 
-	  var newNumber = void 0;
-	  if (sign === true) {
-	    newNumber = Number(temp) + 1;
-	  } else if (sign === false) {
-	    newNumber = Number(temp) - 1;
-	  }
+	  var newNumber = sign ? Number(temp) + 1 : Number(temp) - 1;
+	  // if (sign === true) {
+	  //   newNumber = Number(temp) + 1
+	  // } else if (sign === false) {
+	  //   newNumber = Number(temp) - 1
+	  // }
 	  counter.text(newNumber);
 
 	  // ------if the number is related directly with votes bar, change that numbers too
