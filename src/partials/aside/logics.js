@@ -4,7 +4,7 @@ module.exports = { orderTemas, colorBalance }
 
 // Get the total number of votes, and ordering it so it shows from higher to lower.
 function orderTemas (arr) {
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0, len = arr.length; i < len; i++) {
     arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes
     arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes
   }
