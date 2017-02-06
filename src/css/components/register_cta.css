@@ -7,7 +7,7 @@
 
 	&-accede{
 		@mixin bigButton;
-		
+
 		@media (--desktop){
 			padding: $margin4-desktop 30px;
 		}
@@ -15,6 +15,11 @@
 			padding: $margin3-mobile 20px;
 			font-size: 1em;
 		}
+	}
+
+	a{
+		text-decoration: none;
+		color: white;
 	}
 
 	&-accede:hover{
@@ -40,6 +45,11 @@
 			padding: $margin3-mobile 20px;
 			font-size: 1em;
 		}
+	}
+
+	a{
+		text-decoration: none;
+		color: white;
 	}
 
 	&-registrate:hover{

@@ -68,7 +68,7 @@ function profile (user) {
       <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />
       <h3 class="Aside_profile-username">${user.username}</h3>
       <div class="Aside_profile-buttons">
-        <button class="Aside_profile-buttons-edit">Editar</button>
+        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/${user.username}">Editar</a></button>
         <form method="POST" action="/app/logout">
           <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />
         </form>

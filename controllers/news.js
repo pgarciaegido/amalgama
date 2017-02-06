@@ -1,6 +1,7 @@
 var Post = require('../data/models/posts')
 var moment = require('moment')
 
+// Create news.
 function createNew (req, res) {
   var post = new Post({
     title: req.body.title,
@@ -23,6 +24,7 @@ function createNew (req, res) {
 
 }
 
+// Get list of all news.
 function getNews (req, res) {
   Post.find(function (err, post) {
     if (err) {
@@ -32,12 +34,16 @@ function getNews (req, res) {
   })
 }
 
+
+// Get only one new.
 function getNew (req, res) {
   Post.findById(req.params.id, function (err, post) {
     if (err) return console.log('Ha habido un error' + err)
     res.send(post)
   })
 }
+
+
 
 function modifyNew (req, res) {
   var update = req.body

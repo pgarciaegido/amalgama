@@ -1,6 +1,6 @@
 .Aside_profile{
 	@mixin asideContainer;
-	
+
 	&-title{
 		@mixin sectionDivider;
 		margin: 0;
@@ -27,6 +27,11 @@
 			font-size: .8em;
 			padding: 0 10px;
 			height: 40px;
+		}
+
+		a{
+			text-decoration: none;
+			color: white;
 		}
 	}
 }

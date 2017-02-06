@@ -12671,7 +12671,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <button class="Register_cta-accede">Accede</button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate">Reg\xEDstrate</button>\n    </div>'], ['<div class="Register_cta">\n      <button class="Register_cta-accede">Accede</button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate">Reg\xEDstrate</button>\n    </div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>'], ['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -12802,7 +12802,7 @@
 
 	// Get the total number of votes, and ordering it so it shows from higher to lower.
 	function orderTemas(arr) {
-	  for (var i = 0; i < arr.length; i++) {
+	  for (var i = 0, len = arr.length; i < len; i++) {
 	    arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes;
 	    arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes;
 	  }
@@ -12833,7 +12833,7 @@
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>'], ['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>'], ['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>'], ['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit">Editar</button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit">Editar</button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
+	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -12869,7 +12869,7 @@
 	// ****** TEMAS
 
 	function profile(user) {
-	  return (0, _yoYo2.default)(_templateObject5, user.username);
+	  return (0, _yoYo2.default)(_templateObject5, user.username, user.username);
 	}
 
 /***/ },
@@ -13112,11 +13112,6 @@
 	  // ----if the sign is positive, we add 1, otherwise, we substract 1
 
 	  var newNumber = sign ? Number(temp) + 1 : Number(temp) - 1;
-	  // if (sign === true) {
-	  //   newNumber = Number(temp) + 1
-	  // } else if (sign === false) {
-	  //   newNumber = Number(temp) - 1
-	  // }
 	  counter.text(newNumber);
 
 	  // ------if the number is related directly with votes bar, change that numbers too
