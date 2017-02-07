@@ -46,6 +46,7 @@
 	font-weight: 700;
 	border: none;
 	cursor: pointer;
+	transition: 0.4s;
 }
 
 @define-mixin normalButton {
@@ -57,11 +58,15 @@
 	font-weight: 700;
 	border: none;
 	cursor: pointer;
+	transition: 0.4s;
 }
 
 @define-mixin hoverButton {
-	gradient: none;
-	background: $blue;
+	background: #3ab3fc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3ab3fc 1%, #4b86ff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #3ab3fc 1%,#4b86ff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #3ab3fc 1%,#4b86ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3ab3fc', endColorstr='#4b86ff',GradientType=0 ); /* IE6-9 */
 }
 
 @define-mixin socialMediaButton {
@@ -75,6 +80,7 @@
 	padding-left: 0;
 	padding-right: 0;
 	width: 100%;
+	transition: 0.4s;
 }
 
 /* ---------------- Inputs ------------*/
@@ -117,6 +123,7 @@
 	background: -webkit-linear-gradient(top,  #86cc86 0%,#3dcc3d 99%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  #86cc86 0%,#3dcc3d 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86cc86', endColorstr='#3dcc3d',GradientType=0 ); /* IE6-9 */
+	transition: 3s;
 }
 
 /* ------------------- Avoids effects on mobile interaction ------------*/
@@ -145,7 +152,7 @@
 	padding: 0 $margin3-mobile;
 	border-radius: $radius;
 	box-sizing: border-box;
-	cursor: pointer; 
+	cursor: pointer;
 }
 
 @define-mixin removeAnchorStyles{
