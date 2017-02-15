@@ -1,4 +1,5 @@
 var Post = require('../data/models/posts')
+var User = require('../data/models/user').User
 var moment = require('moment')
 
 // Create news.
@@ -64,9 +65,18 @@ function deleteNew (req, res) {
 
 // Upvoting
 function upVote (req, res) {
-  // Takes the _id in the url here.
+
+  // Takes the _id in the url here and gets User id from session
+  let userId = req.session.user_id
   let id = req.headers.referer.split('/')[5]
+
+  let userUpdate = { $addToSet: { agreeVotes: id }}
   let update = { $inc: { agreeVotes: 1 }}
+
+  User.findByIdAndUpdate(userId, userUpdate, function (err, user){
+    if (err) return console.log('Ha habido un error' + err)
+  })
+
   Post.findByIdAndUpdate(id, update, function (err, post){
     if (err) return console.log('Ha habido un error' + err)
     res.redirect(`/app/noticia/${id}`)

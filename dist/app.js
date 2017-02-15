@@ -12910,6 +12910,7 @@
 	function getCurrentUser(ctx, next) {
 	  _jquery2.default.get('/api/currentUser', function (data) {
 	    ctx.user = data;
+	    console.log(data);
 	    next();
 	  });
 	}
