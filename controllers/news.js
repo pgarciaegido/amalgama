@@ -63,14 +63,17 @@ function deleteNew (req, res) {
   })
 }
 
-// Upvoting
+// voting
 function upVote (req, res) {
 
   // Takes the _id in the url here and gets User id from session
   let userId = req.session.user_id
   let id = req.headers.referer.split('/')[5]
 
+  // Push the id of the new to the user's array of upvoted news
   let userUpdate = { $addToSet: { agreeVotes: id }}
+
+  // Increases the agreeVotes of the new by 1
   let update = { $inc: { agreeVotes: 1 }}
 
   User.findByIdAndUpdate(userId, userUpdate, function (err, user){

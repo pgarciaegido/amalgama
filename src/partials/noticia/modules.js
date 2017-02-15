@@ -30,11 +30,11 @@ function noticiaInformate () {
   </section>`
 }
 
-function noticiaComentarios (n) {
+function noticiaComentarios (n, u) {
   return yo`<section class="Noticia_comentarios">
     <h2 class="Noticia_comentarios-encabezado">Participa</h2>
     <div class="Noticia_comentarios-comentarios">
-      ${noticiaComentariosAgree(n)}
+      ${noticiaComentariosAgree(n, u)}
       ${noticiaComentariosDisagree(n)}
     </div>
   </section>`
@@ -42,18 +42,32 @@ function noticiaComentarios (n) {
 
 // *********** Templates for agree and disagree
 
-function noticiaComentariosAgree (n) {
+// We loop throu all the liked news by user. If so, display one icon or other
+function votingForms (n, u) {
+  let voted = yo`<form>
+    <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
+  </form>`
+
+  let unVoted = yo`<form method="POST" action="/api/upvote">
+    <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
+  </form>`
+
+  for (let i in u.agreeVotes){
+    if(n._id === u.agreeVotes[i]){
+      return voted
+    }
+  }
+  return unVoted
+}
+
+function noticiaComentariosAgree (n, u) {
   return yo`<div class="Noticia_comentarios-comentarios-agree">
       <div class="Noticia_comentarios-comentarios-agree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-        <form method="POST" action="/api/upvote">
-          <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
-          <input type="submit" value="up" />
-        </form>
+        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
         <div class="Noticia_comentarios-comentarios-agree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
-          <img src="/img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
-          <img src="/img/thumbs-up-green-filled.svg" alt="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
+          ${votingForms(n, u)}
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">

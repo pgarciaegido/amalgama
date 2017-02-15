@@ -23,7 +23,7 @@
 				@mixin commentsHeaderMobile;
 			}
 
-			&-header{	
+			&-header{
 				display: flex;
 				justify-content: space-between;
 
@@ -62,12 +62,14 @@
 						}
 					}
 
+					/* Agree icons*/
 					&-icon{
 						cursor: pointer;
+						padding-top: 20px;
 
 						&-liked{
-							display: none;
 							cursor: pointer;
+							padding-top: 20px;
 						}
 					}
 				}
@@ -86,7 +88,7 @@
 			&-header{
 				display: flex;
 				justify-content: space-between;
-				
+
 				@media (--mobile-big) {
 					@mixin commentsHeaderMobile;
 					border: 2px solid $red;

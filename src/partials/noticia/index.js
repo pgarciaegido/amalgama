@@ -15,12 +15,13 @@ page('/app/noticia/:id', getNew, getCurrentUser, header, getPost, (ctx, next) =>
   $(document).ready(function () {
     percentage()
   })
-
+  
   // coger id de la url para pedir ese post al json
   let id = document.URL.split('/').pop()
   window.scrollTo(0, 0)
 
   let main = document.getElementById('main-container')
-  $(main).empty().append(template(ctx.post))
+  // The arguments are the news array, and the user object
+  $(main).empty().append(template(ctx.post, ctx.user))
   next()
 }, aside)
