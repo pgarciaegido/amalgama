@@ -11,6 +11,7 @@ api.get('/news/:id', newsCtrl.getNew)
 api.post('/createnew', newsCtrl.createNew)
 api.put('/modifynew/:id', newsCtrl.modifyNew)
 api.delete('/deletenew/:id', newsCtrl.deleteNew)
+api.post('/upvote', newsCtrl.upVote)
 
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)

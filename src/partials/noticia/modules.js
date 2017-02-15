@@ -46,7 +46,10 @@ function noticiaComentariosAgree (n) {
   return yo`<div class="Noticia_comentarios-comentarios-agree">
       <div class="Noticia_comentarios-comentarios-agree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+        <form method="POST" action="/api/upvote">
+          <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+          <input type="submit" value="up" />
+        </form>
         <div class="Noticia_comentarios-comentarios-agree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
           <img src="/img/thumbs-up-green.svg" alt="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />

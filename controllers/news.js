@@ -20,8 +20,6 @@ function createNew (req, res) {
       res.send('ha habido un error al guardar tu noticia.')
     }
   })
-
-
 }
 
 // Get list of all news.
@@ -64,10 +62,22 @@ function deleteNew (req, res) {
   })
 }
 
+// Upvoting
+function upVote (req, res) {
+  // Takes the _id in the url here.
+  let id = req.headers.referer.split('/')[5]
+  let update = { $inc: { agreeVotes: 1 }}
+  Post.findByIdAndUpdate(id, update, function (err, post){
+    if (err) return console.log('Ha habido un error' + err)
+    res.redirect(`/app/noticia/${id}`)
+  })
+}
+
 module.exports = {
   createNew,
   getNews,
   getNew,
   modifyNew,
-  deleteNew
+  deleteNew,
+  upVote
 }
