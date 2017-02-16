@@ -30,12 +30,12 @@ function noticiaInformate () {
   </section>`
 }
 
-function noticiaComentarios (n, u) {
+function noticiaComentarios (n, u, cA, cD) {
   return yo`<section class="Noticia_comentarios">
     <h2 class="Noticia_comentarios-encabezado">Participa</h2>
     <div class="Noticia_comentarios-comentarios">
-      ${noticiaComentariosAgree(n, u)}
-      ${noticiaComentariosDisagree(n, u)}
+      ${noticiaComentariosAgree(n, u, cA)}
+      ${noticiaComentariosDisagree(n, u, cD)}
     </div>
   </section>`
 }
@@ -83,7 +83,7 @@ function votingFormsDisagree (n, u) {
   return unVotedDisagree
 }
 
-function noticiaComentariosAgree (n, u) {
+function noticiaComentariosAgree (n, u, cA) {
   return yo`<div class="Noticia_comentarios-comentarios-agree">
       <div class="Noticia_comentarios-comentarios-agree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
@@ -94,7 +94,7 @@ function noticiaComentariosAgree (n, u) {
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
-        ${comList('agree')}
+        ${comList(cA, 'agree')}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 
@@ -103,7 +103,7 @@ function noticiaComentariosAgree (n, u) {
     </div>`
 }
 
-function noticiaComentariosDisagree (n, u) {
+function noticiaComentariosDisagree (n, u, cD) {
   return yo`<div class="Noticia_comentarios-comentarios-disagree">
       <div class="Noticia_comentarios-comentarios-disagree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
@@ -114,7 +114,7 @@ function noticiaComentariosDisagree (n, u) {
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
-        ${comList('disagree')}
+        ${comList(cD, 'disagree')}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 
@@ -125,7 +125,7 @@ function noticiaComentariosDisagree (n, u) {
 
 // ************* Template for list of comments
 
-function comList (a) {
+function comList (c, a) {
   return yo`<div>
   <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">
     <div class="Noticia_comentarios_list-order-votes">
@@ -136,7 +136,9 @@ function comList (a) {
     </div>
   </div>
   <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
-    ${comCard()}
+    ${c.map((c) => {
+      return comCard(c)
+    })}
     ${renderSendComment(a)}
   </div>
   </div>`
@@ -156,18 +158,17 @@ function renderSendComment (a) {
 
 // ************* Template for the comment card.
 
-function comCard (comment, date) {
+function comCard (comment) {
   return yo`<div class="Noticias_comentarios_card">
     <div class="Noticias_comentarios_card-user">
       <div class="Noticias_comentarios_card-user-info">
         <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />
-        <p class="Noticias_comentarios_card-user-info-username">pegido</p>
+        <p class="Noticias_comentarios_card-user-info-username">${comment.username}</p>
       </div>
-      <p class="Noticias_comentarios_card-user-date">${date}</p>
+      <p class="Noticias_comentarios_card-user-date">${comment.date}</p>
     </div>
-    <p class="Noticias_comentarios_card-comment">${comment}</p>
+    <p class="Noticias_comentarios_card-comment">${comment.comment}</p>
     <div class="Noticias_comentarios_card-feedback">
-      <p class="Noticias_comentarios_card-feedback-reply">Responder</p>
       <div class="Noticias_comentarios_card-feedback-like">
         <img src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon">
         <img src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked">

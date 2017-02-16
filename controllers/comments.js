@@ -52,17 +52,6 @@ function getComments (req, res) {
 }
 
 // Gets all the comments made in an specific post
-function getCommentsPost (req, res) {
-
-  let postId = req.url.split('/').pop()
-  let condition = {postid: postId, agree: true}
-  Com.find(condition, function(err, comments) {
-    if (err){
-      console.log(err)
-    }
-    res.send(comments)
-  })
-}
 
 function getCommentsPost (req, res) {
   let path = req._parsedUrl.path

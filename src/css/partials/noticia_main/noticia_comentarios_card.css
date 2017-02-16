@@ -42,15 +42,8 @@
 
 	&-feedback{
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;;
 		margin-top: 15px;
-
-		&-reply{
-			margin: 0;
-			font-size: $comment-card;
-			font-weight: 700;
-			cursor: pointer;
-		}
 
 		&-like{
 			display: flex;

@@ -6,7 +6,8 @@ module.exports = {
   getNew,
   getPost,
   getCurrentUser,
-  getComments
+  getCommentsAgree,
+  getCommentsDisagree
 }
 
 function getNew (ctx, next) {
@@ -32,10 +33,18 @@ function getCurrentUser (ctx, next) {
   })
 }
 
-function getComments (ctx, next) {
+function getCommentsAgree (ctx, next) {
   var id = ctx.path.split('/').pop()
-  $.get('/api/getcommentpost/' + id, (data) => {
-    ctx.comments = data
+  $.get('/api/get-comment-post-agree/' + id, (data) => {
+    ctx.commentsAgree = data
+    next()
+  })
+}
+
+function getCommentsDisagree (ctx, next) {
+  var id = ctx.path.split('/').pop()
+  $.get('/api/get-comment-post-disagree/' + id, (data) => {
+    ctx.commentsDisagree = data
     next()
   })
 }

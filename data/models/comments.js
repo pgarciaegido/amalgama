@@ -9,6 +9,8 @@ var commentsSchema = new Schema({
   disagree: Boolean,
   comment: {type: String, minlength: [2, 'El post tiene que ser mayor que 2 caracteres'], maxlength: [500, 'El post es demasiado largo']},
   date: String,
+  likes: Number,
+  likedBy: Array
 })
 
 var Comments = mongoose.model('Comments', commentsSchema)
