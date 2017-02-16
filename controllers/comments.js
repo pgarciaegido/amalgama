@@ -6,7 +6,9 @@ var moment = require('moment')
 // Creates new comment
 function createComment (req, res) {
   let postRoute = req._parsedUrl.path
+  // The postiD is used on the second query
   let postId = req.headers.referer.split('/').pop()
+
   // Makes a query to the user collection to get the username of the author
   User.findById(req.session.user_id, function(err, user){
     if(err){
@@ -18,7 +20,6 @@ function createComment (req, res) {
     let disag = postRoute === '/commentdisagree' ? true : false
 
     // Queries to get how many comments we have, so we can number our comments
-
     let arg = {postid: postId, agree: ag, disagree: disag}
 
     Com.find(arg, function (err, comments) {
@@ -35,7 +36,8 @@ function createComment (req, res) {
         agree: ag,
         disagree: disag,
         comment: req.body.create,
-        date: 'now'
+        date: 'now',
+        likes: 0
       })
 
       // Save the comment in the db
@@ -104,15 +106,32 @@ function getCommentsUser (req, res) {
 
 // Likes comment
 function likeComment (req, res) {
+
+  let postId = req.headers.referer.split('/').pop()
   let userId = req.session.user_id
-  let id = req.headers.referer.split('/').pop()
+  let path = req._parsedUrl.path
+  let commentId = path.split('/').pop()
+  let update
+  console.log(postId, userId, path, commentId)
+
+  if (path.indexOf('unlike') === -1){
+    update = { $addToSet: { likedBy: userId }, $inc: { likes: 1 } }
+  } else {
+    update = { $pull: { likedBy: userId }, $inc: { likes: -1 } }
+  }
 
 
+  Com.findByIdAndUpdate(commentId, update, function (err, comment) {
+    if(err) console.log(err)
+    console.log(comment)
+    res.redirect('/')
+  })
 }
 
 module.exports = {
   createComment,
   getComments,
   getCommentsPost,
-  getCommentsUser
+  getCommentsUser,
+  likeComment
 }

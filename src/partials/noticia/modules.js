@@ -94,7 +94,7 @@ function noticiaComentariosAgree (n, u, cA) {
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
-        ${comList(cA, 'agree')}
+        ${comList(u, cA, 'agree')}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 
@@ -114,7 +114,7 @@ function noticiaComentariosDisagree (n, u, cD) {
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
-        ${comList(cD, 'disagree')}
+        ${comList(u, cD, 'disagree')}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 
@@ -125,7 +125,7 @@ function noticiaComentariosDisagree (n, u, cD) {
 
 // ************* Template for list of comments
 
-function comList (c, a) {
+function comList (u, c, a) {
   return yo`<div>
   <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">
     <div class="Noticia_comentarios_list-order-votes">
@@ -137,7 +137,7 @@ function comList (c, a) {
   </div>
   <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
     ${c.map((c) => {
-      return comCard(c)
+      return comCard(u, c)
     })}
     ${renderSendComment(a)}
   </div>
@@ -158,7 +158,7 @@ function renderSendComment (a) {
 
 // ************* Template for the comment card.
 
-function comCard (comment) {
+function comCard (user, comment) {
   return yo`<div class="Noticias_comentarios_card">
     <div class="Noticias_comentarios_card-user">
       <div class="Noticias_comentarios_card-user-info">
@@ -171,11 +171,29 @@ function comCard (comment) {
     <div class="Noticias_comentarios_card-feedback">
       <p>#<span>${comment.number}</span></p>
       <div class="Noticias_comentarios_card-feedback-like">
-        <img src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon">
-        <img src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked">
-        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">10</p>
+        ${comCardForms(user, comment)}
+        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">${comment.likes}</p>
         <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>
       </div>
     </div>
   </div>`
+}
+
+// Renders comment like button
+function comCardForms (user, comment) {
+
+  if (comment.likedBy.length > 0){
+    // if the logged user's id is on the array of liked comments, render liked button
+    return comment.likedBy.map((user_id) => {
+      if (user_id === user._id){
+        return yo`<form method="POST" action="/api/comment-unlike/${comment._id}">
+          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />
+          </form>`
+      }
+    })
+  }
+  // otherwise return non liked button
+  return yo`<form method="POST" action="/api/comment-like/${comment._id}">
+    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />
+  </form>`
 }

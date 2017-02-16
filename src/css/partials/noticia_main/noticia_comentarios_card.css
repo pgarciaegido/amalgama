@@ -55,7 +55,6 @@
 				cursor: pointer;
 
 				&-liked{
-					display: none;
 					margin-top: -4px;
 					margin-right: 4px;
 					width: 15px;

@@ -26,6 +26,9 @@ api.get('/getcommentuser/:username', comCtrl.getCommentsUser)
 api.post('/commentagree', comCtrl.createComment)
 api.post('/commentdisagree', comCtrl.createComment)
 
+api.post('/comment-like/:id', comCtrl.likeComment)
+api.post('/comment-unlike/:id', comCtrl.likeComment)
+
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)
 
