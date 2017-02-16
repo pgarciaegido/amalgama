@@ -12888,7 +12888,8 @@
 	module.exports = {
 	  getNew: getNew,
 	  getPost: getPost,
-	  getCurrentUser: getCurrentUser
+	  getCurrentUser: getCurrentUser,
+	  getComments: getComments
 	};
 
 	function getNew(ctx, next) {
@@ -12910,6 +12911,14 @@
 	  _jquery2.default.get('/api/currentUser', function (data) {
 	    console.log(data);
 	    ctx.user = data;
+	    next();
+	  });
+	}
+
+	function getComments(ctx, next) {
+	  var id = ctx.path.split('/').pop();
+	  _jquery2.default.get('/api/getcommentpost/' + id, function (data) {
+	    ctx.comments = data;
 	    next();
 	  });
 	}
@@ -13007,7 +13016,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _page2.default)('/app/noticia/:id', _ajax.getNew, _ajax.getCurrentUser, _index2.default, _ajax.getPost, function (ctx, next) {
+	(0, _page2.default)('/app/noticia/:id', _ajax.getNew, _ajax.getCurrentUser, _ajax.getComments, _index2.default, _ajax.getPost, function (ctx, next) {
 	  __webpack_require__(30);
 	  __webpack_require__(34);
 
@@ -13018,6 +13027,8 @@
 	  // coger id de la url para pedir ese post al json
 	  var id = document.URL.split('/').pop();
 	  window.scrollTo(0, 0);
+
+	  console.log(ctx.comments);
 
 	  var main = document.getElementById('main-container');
 	  // The arguments are the news array, and the user object

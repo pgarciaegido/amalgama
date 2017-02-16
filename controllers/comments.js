@@ -55,7 +55,33 @@ function getComments (req, res) {
 function getCommentsPost (req, res) {
 
   let postId = req.url.split('/').pop()
-  let condition = {postid: postId}
+  let condition = {postid: postId, agree: true}
+  Com.find(condition, function(err, comments) {
+    if (err){
+      console.log(err)
+    }
+    res.send(comments)
+  })
+}
+
+function getCommentsPost (req, res) {
+  let path = req._parsedUrl.path
+  let postId = req.url.split('/').pop()
+  let condition
+
+  // Conditional where the condition changes depending POST url
+  if (path === `/get-comment-post/${postId}`)
+    // Shows all comments from a post
+    condition = {postid: postId}
+
+  else if (path === `/get-comment-post-agree/${postId}`)
+    // Shows only agree comments
+    condition = {postid: postId, agree: true}
+
+  else if (path === `/get-comment-post-disagree/${postId}`)
+    // Shows only disagree comments
+    condition = {postid: postId, disagree: true}
+
   Com.find(condition, function(err, comments) {
     if (err){
       console.log(err)

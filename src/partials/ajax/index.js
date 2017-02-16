@@ -5,7 +5,8 @@ import $ from 'jquery'
 module.exports = {
   getNew,
   getPost,
-  getCurrentUser
+  getCurrentUser,
+  getComments
 }
 
 function getNew (ctx, next) {
@@ -27,6 +28,14 @@ function getCurrentUser (ctx, next) {
   $.get('/api/currentUser', (data) => {
     console.log(data)
     ctx.user = data
+    next()
+  })
+}
+
+function getComments (ctx, next) {
+  var id = ctx.path.split('/').pop()
+  $.get('/api/getcommentpost/' + id, (data) => {
+    ctx.comments = data
     next()
   })
 }

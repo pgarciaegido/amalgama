@@ -5,9 +5,9 @@ import template   from './template'
 import aside      from '../aside'
 import percentage from '../votes_bar/get_percentage'
 
-import { getNew, getPost, getCurrentUser } from '../ajax'
+import { getNew, getPost, getCurrentUser, getComments } from '../ajax'
 
-page('/app/noticia/:id', getNew, getCurrentUser, header, getPost, (ctx, next) => {
+page('/app/noticia/:id', getNew, getCurrentUser, getComments, header, getPost, (ctx, next) => {
   require('../header/events')
   require('./comments_events')
 
@@ -18,6 +18,8 @@ page('/app/noticia/:id', getNew, getCurrentUser, header, getPost, (ctx, next) =>
   // coger id de la url para pedir ese post al json
   let id = document.URL.split('/').pop()
   window.scrollTo(0, 0)
+  
+  console.log(ctx.comments)
 
   let main = document.getElementById('main-container')
   // The arguments are the news array, and the user object
