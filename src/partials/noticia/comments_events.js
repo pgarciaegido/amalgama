@@ -14,7 +14,7 @@ $(document).on('click', '#comentar-disagree', func.commentDisagree)
 $(document).on('click', '#cancelar-comments', func.cancelarComments)
 
 // ------ Inside input, sends and close
-$(document).on('click', '#enviar-comments', func.enviarComments)
+// $(document).on('click', '#enviar-comments', func.enviarComments)
 
 
 

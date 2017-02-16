@@ -41,7 +41,7 @@ function addComment (textarea, comment) {
 function commentAgree () {
   const v = require('./comments_events_vars')
   if ($('#cancelar-comments').data().resolve === undefined) {
-    func.createShow(v.createAgree, v.commentsAgree)
+    createShow(v.createAgree, v.commentsAgree)
     $('#cancelar-comments').data('resolve', 'agree')
   }
 }
@@ -50,7 +50,7 @@ function commentAgree () {
 function commentDisagree () {
   const v = require('./comments_events_vars')
   if ($('#cancelar-comments').data().resolve === undefined) {
-    func.createShow(v.createDisagree, v.commentsDisagree)
+    createShow(v.createDisagree, v.commentsDisagree)
     $('#cancelar-comments').data('resolve', 'disagree')
   }
 }

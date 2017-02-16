@@ -68,7 +68,7 @@ function vote (req, res) {
 
   // Takes the _id in the url here and gets User id from session
   let userId = req.session.user_id
-  let id = req.headers.referer.split('/')[5]
+  let id = req.headers.referer.split('/').pop()
 
   // Gets the post URL. '/upvote'
   let path = req._parsedUrl.path

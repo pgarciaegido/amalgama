@@ -9,7 +9,7 @@ var userSchema = new Schema({
   email: {type: String, required: 'El correo es obligatorio'},
   location: String,
   agreeVotes: Array,
-  disagreeVotes: Array
+  disagreeVotes: Array,
 })
 
 // Encripta la contraseña

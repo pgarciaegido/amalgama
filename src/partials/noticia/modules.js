@@ -137,10 +137,10 @@ function comList () {
   </div>
   <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
     ${comCard()}
-    <div class="Noticia_comentarios_list-comments-create">
+    <form method="POST" action="/api/comment" class="Noticia_comentarios_list-comments-create">
       <textarea name="create" id="textarea" cols="30" rows="10"></textarea>
       <div class="Noticia_comentarios_list-comments-create-buttons">
-        <button id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar">Enviar</button>
+        <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />
         <button id="cancelar-comments" class="Noticia_comentarios_list-comments-create-buttons-cancelar">Cancelar</button>
       </div>
     </div>
