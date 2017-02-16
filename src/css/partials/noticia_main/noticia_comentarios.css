@@ -124,10 +124,11 @@
 					}
 
 					&-icon{
+						padding-top: 20px; 
 						cursor: pointer;
 
 						&-liked{
-							display: none;
+							padding-top: 20px;
 							cursor: pointer;
 						}
 					}

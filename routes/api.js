@@ -11,7 +11,11 @@ api.get('/news/:id', newsCtrl.getNew)
 api.post('/createnew', newsCtrl.createNew)
 api.put('/modifynew/:id', newsCtrl.modifyNew)
 api.delete('/deletenew/:id', newsCtrl.deleteNew)
-api.post('/upvote', newsCtrl.upVote)
+
+api.post('/upvote', newsCtrl.vote)
+api.post('/unupvote', newsCtrl.vote)
+api.post('/downvote', newsCtrl.vote)
+api.post('/undownvote', newsCtrl.vote)
 
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)

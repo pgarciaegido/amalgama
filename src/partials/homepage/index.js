@@ -24,7 +24,6 @@ page('/app', getCurrentUser, header, getNew, (ctx, next) => {
 
 function loadHomepage (ctx) {
   require('../header/events')
-  require('../noticia/noticia_events')
   require('../feed/feed_events')
   $(document).ready(() => {
     articles()

@@ -64,17 +64,38 @@ function deleteNew (req, res) {
 }
 
 // voting
-function upVote (req, res) {
+function vote (req, res) {
 
   // Takes the _id in the url here and gets User id from session
   let userId = req.session.user_id
   let id = req.headers.referer.split('/')[5]
 
-  // Push the id of the new to the user's array of upvoted news
-  let userUpdate = { $addToSet: { agreeVotes: id }}
+  // Gets the post URL. '/upvote'
+  let path = req._parsedUrl.path
 
-  // Increases the agreeVotes of the new by 1
-  let update = { $inc: { agreeVotes: 1 }}
+  // Push the id of the new to the user's array of voted news
+  let userUpdate
+
+  // Increases/decreases the agreeVotes/disagreeVotes of the post by 1
+  let update
+
+  // Conditional where the POST url tells what we want to do
+  if (path === '/upvote') {
+    userUpdate = { $addToSet: { agreeVotes: id }}
+    update = { $inc: { agreeVotes: 1 }}
+  }
+  else if (path === '/unupvote') {
+    userUpdate = { $pull: { agreeVotes: id }}
+    update = { $inc: { agreeVotes: -1 }}
+  }
+  else if (path === '/downvote') {
+    userUpdate = { $addToSet: { disagreeVotes: id }}
+    update = { $inc: { disagreeVotes: 1 }}
+  }
+  else if (path === '/undownvote') {
+    userUpdate = { $pull: { disagreeVotes: id }}
+    update = { $inc: { disagreeVotes: -1 }}
+  }
 
   User.findByIdAndUpdate(userId, userUpdate, function (err, user){
     if (err) return console.log('Ha habido un error' + err)
@@ -92,5 +113,5 @@ module.exports = {
   getNew,
   modifyNew,
   deleteNew,
-  upVote
+  vote
 }

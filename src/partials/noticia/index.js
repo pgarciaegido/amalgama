@@ -10,12 +10,11 @@ import { getNew, getPost, getCurrentUser } from '../ajax'
 page('/app/noticia/:id', getNew, getCurrentUser, header, getPost, (ctx, next) => {
   require('../header/events')
   require('./comments_events')
-  require('./noticia_events')
 
   $(document).ready(function () {
     percentage()
   })
-  
+
   // coger id de la url para pedir ese post al json
   let id = document.URL.split('/').pop()
   window.scrollTo(0, 0)

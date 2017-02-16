@@ -35,7 +35,7 @@ function noticiaComentarios (n, u) {
     <h2 class="Noticia_comentarios-encabezado">Participa</h2>
     <div class="Noticia_comentarios-comentarios">
       ${noticiaComentariosAgree(n, u)}
-      ${noticiaComentariosDisagree(n)}
+      ${noticiaComentariosDisagree(n, u)}
     </div>
   </section>`
 }
@@ -43,21 +43,44 @@ function noticiaComentarios (n, u) {
 // *********** Templates for agree and disagree
 
 // We loop throu all the liked news by user. If so, display one icon or other
-function votingForms (n, u) {
-  let voted = yo`<form>
+// The third argument tells if returns agree or disagree
+function votingFormsAgree (n, u) {
+  const votedAgree = yo`<form method="POST" action="/api/unupvote">
     <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
   </form>`
 
-  let unVoted = yo`<form method="POST" action="/api/upvote">
+  const unVotedAgree = yo`<form method="POST" action="/api/upvote">
     <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
   </form>`
 
-  for (let i in u.agreeVotes){
-    if(n._id === u.agreeVotes[i]){
-      return voted
+  // Loop around users liked posts
+  for (let i in u.agreeVotes) {
+    // If the post id is inside the user's array
+    if (n._id === u.agreeVotes[i]) {
+        return votedAgree
     }
   }
-  return unVoted
+
+  return unVotedAgree
+}
+
+function votingFormsDisagree (n, u) {
+  const votedDisagree = yo`<form method="POST" action="/api/undownvote">
+    <input type="image" src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
+  </form>`
+
+  const unVotedDisagree = yo`<form method="POST" action="/api/downvote">
+    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
+  </form>`
+
+  for (let i in u.disagreeVotes) {
+    // If the post id is inside the user's array
+    if (n._id === u.disagreeVotes[i]) {
+        return votedDisagree
+    }
+  }
+
+  return unVotedDisagree
 }
 
 function noticiaComentariosAgree (n, u) {
@@ -67,35 +90,34 @@ function noticiaComentariosAgree (n, u) {
         <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
         <div class="Noticia_comentarios-comentarios-agree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
-          ${votingForms(n, u)}
+          ${votingFormsAgree(n, u)}
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
         ${comList()}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
-        <button id="agree-button" class="Noticia_comentarios-comentarios-buttons-agree">A favor</button>
+
         <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
       </div>
     </div>`
 }
 
-function noticiaComentariosDisagree (n) {
+function noticiaComentariosDisagree (n, u) {
   return yo`<div class="Noticia_comentarios-comentarios-disagree">
       <div class="Noticia_comentarios-comentarios-disagree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
         <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
         <div class="Noticia_comentarios-comentarios-disagree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
-          <img src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
-          <img src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
+          ${votingFormsDisagree(n, u)}
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
         ${comList()}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
-        <button id="disagree-button" class="Noticia_comentarios-comentarios-buttons-disagree">En contra</button>
+
         <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>
       </div>
     </div>`
