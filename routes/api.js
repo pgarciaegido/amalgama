@@ -18,7 +18,11 @@ api.post('/unupvote', newsCtrl.vote)
 api.post('/downvote', newsCtrl.vote)
 api.post('/undownvote', newsCtrl.vote)
 
-api.post('/comment', comCtrl.createAgreeComment)
+api.get('/getcomments', comCtrl.getComments)
+api.get('/getcommentpost/:id', comCtrl.getCommentsPost)
+api.get('/getcommentuser/:username', comCtrl.getCommentsUser)
+api.post('/commentagree', comCtrl.createComment)
+api.post('/commentdisagree', comCtrl.createComment)
 
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)

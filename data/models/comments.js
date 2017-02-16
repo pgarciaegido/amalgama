@@ -3,6 +3,7 @@ var Schema = mongoose.Schema
 
 var commentsSchema = new Schema({
   userid: String,
+  username: String,
   postid: String,
   agree: Boolean,
   disagree: Boolean,
