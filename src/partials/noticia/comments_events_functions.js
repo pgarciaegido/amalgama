@@ -9,7 +9,6 @@ module.exports = {
   addComment,
   commentAgree,
   commentDisagree,
-  cancelarComments,
   enviarComments,
   likeComment,
   commentsMobile
@@ -40,29 +39,13 @@ function addComment (textarea, comment) {
 // Opens input in agree
 function commentAgree () {
   const v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === undefined) {
-    createShow(v.createAgree, v.commentsAgree)
-    $('#cancelar-comments').data('resolve', 'agree')
-  }
+  createShow(v.createAgree, v.commentsAgree)
 }
 
 // Opens input in disagree
 function commentDisagree () {
   const v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === undefined) {
-    createShow(v.createDisagree, v.commentsDisagree)
-    $('#cancelar-comments').data('resolve', 'disagree')
-  }
-}
-
-function cancelarComments () {
-  const v = require('./comments_events_vars')
-  if ($('#cancelar-comments').data().resolve === 'agree') {
-    func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
-  } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-    func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-  }
-  $('#cancelar-comments').data().resolve = undefined
+  createShow(v.createDisagree, v.commentsDisagree)
 }
 
 // --------- Send comments

@@ -94,7 +94,7 @@ function noticiaComentariosAgree (n, u) {
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
-        ${comList()}
+        ${comList('agree')}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 
@@ -114,7 +114,7 @@ function noticiaComentariosDisagree (n, u) {
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
-        ${comList()}
+        ${comList('disagree')}
       </div>
       <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">
 
@@ -125,7 +125,7 @@ function noticiaComentariosDisagree (n, u) {
 
 // ************* Template for list of comments
 
-function comList () {
+function comList (a) {
   return yo`<div>
   <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">
     <div class="Noticia_comentarios_list-order-votes">
@@ -137,15 +137,21 @@ function comList () {
   </div>
   <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
     ${comCard()}
-    <form method="POST" action="/api/comment" class="Noticia_comentarios_list-comments-create">
-      <textarea name="create" id="textarea" cols="30" rows="10"></textarea>
-      <div class="Noticia_comentarios_list-comments-create-buttons">
-        <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />
-        <button id="cancelar-comments" class="Noticia_comentarios_list-comments-create-buttons-cancelar">Cancelar</button>
-      </div>
-    </div>
+    ${renderSendComment(a)}
   </div>
   </div>`
+}
+
+// Renders form for sending comments
+function renderSendComment (a) {
+  let post = a === 'agree' ? 'commentagree' : 'commentdisagree'
+
+  return yo`<form method="POST" action="/api/${post}" class="Noticia_comentarios_list-comments-create">
+    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>
+    <div class="Noticia_comentarios_list-comments-create-buttons">
+      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />
+    </div>
+  </form>`
 }
 
 // ************* Template for the comment card.

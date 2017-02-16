@@ -5,6 +5,7 @@ var moment = require('moment')
 
 // Creates new comment
 function createComment (req, res) {
+  let postRoute = req._parsedUrl.path
 
   // Makes a query to the user collection to get the username of the author
   User.findById(req.session.user_id, function(err, user){
@@ -12,13 +13,17 @@ function createComment (req, res) {
       return console.log(err)
     }
 
+    // Sets if the comment is on agree or in disagree
+    let ag = postRoute === '/commentagree' ? true : false
+    let disag = postRoute === '/commentdisagree' ? true : false
+
     // Fills the schema
     let comment = new Com ({
       userid: req.session.user_id,
       username: user.username,
       postid: req.headers.referer.split('/').pop(),
-      agree: true,
-      disagree: false,
+      agree: ag,
+      disagree: disag,
       comment: req.body.create,
       date: 'now'
     })
@@ -73,7 +78,7 @@ function getCommentsUser (req, res) {
 }
 
 module.exports = {
-  createAgreeComment,
+  createComment,
   getComments,
   getCommentsPost,
   getCommentsUser
