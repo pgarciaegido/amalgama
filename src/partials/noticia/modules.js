@@ -169,6 +169,7 @@ function comCard (comment) {
     </div>
     <p class="Noticias_comentarios_card-comment">${comment.comment}</p>
     <div class="Noticias_comentarios_card-feedback">
+      <p>#<span>${comment.number}</span></p>
       <div class="Noticias_comentarios_card-feedback-like">
         <img src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon">
         <img src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked">

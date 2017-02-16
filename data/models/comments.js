@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var commentsSchema = new Schema({
+  number: Number,
   userid: String,
   username: String,
   postid: String,
