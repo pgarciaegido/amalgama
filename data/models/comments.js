@@ -8,7 +8,7 @@ var commentsSchema = new Schema({
   postid: String,
   agree: Boolean,
   disagree: Boolean,
-  comment: {type: String, minlength: [2, 'El post tiene que ser mayor que 2 caracteres'], maxlength: [500, 'El post es demasiado largo']},
+  comment: {type: String, minlength: [2, 'El post tiene que ser mayor que 2 caracteres']},
   date: String,
   likes: Number,
   likedBy: Array

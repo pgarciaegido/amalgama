@@ -160,6 +160,7 @@ function renderSendComment (a) {
 
 function comCard (user, comment) {
   return yo`<div class="Noticias_comentarios_card">
+    <p class="Noticias_comentarios_card-counter">#<span>${comment.number}</span></p>
     <div class="Noticias_comentarios_card-user">
       <div class="Noticias_comentarios_card-user-info">
         <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />
@@ -169,7 +170,6 @@ function comCard (user, comment) {
     </div>
     <p class="Noticias_comentarios_card-comment">${comment.comment}</p>
     <div class="Noticias_comentarios_card-feedback">
-      <p class="Noticias_comentarios_card-feedback-counter">#<span>${comment.number}</span></p>
       <div class="Noticias_comentarios_card-feedback-like">
         ${comCardForms(user, comment)}
         <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">${comment.likes}</p>
