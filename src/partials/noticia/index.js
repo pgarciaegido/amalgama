@@ -19,6 +19,7 @@ page('/app/noticia/:id', getNew, getCurrentUser, getCommentsAgree, getCommentsDi
   $(document).ready(function () {
     percentage()
   })
+
   // coger id de la url para pedir ese post al json
   let id = document.URL.split('/').pop()
   window.scrollTo(0, 0)

@@ -130,6 +130,7 @@ function likeComment (req, res) {
   })
 }
 
+
 module.exports = {
   createComment,
   getComments,

@@ -149,6 +149,7 @@ function renderSendComment (a) {
   let post = a === 'agree' ? 'commentagree' : 'commentdisagree'
 
   return yo`<form method="POST" action="/api/${post}" class="Noticia_comentarios_list-comments-create">
+    <img src="/img/cancel-circle-gray.svg" id="close-${post}" class="Noticia_comentarios_list-comments-create-cancel" />
     <textarea name="create" id="textarea" cols="30" rows="10"></textarea>
     <div class="Noticia_comentarios_list-comments-create-buttons">
       <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />

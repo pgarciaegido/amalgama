@@ -3,8 +3,8 @@ import $ from 'jquery'
 module.exports = {
   'comentarAgree':        $('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
   'comentarDisagree':     $('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-  'cancelarAgree':        $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
-  'cancelarDisagree':     $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
+  'cancelarAgree':        $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-cancel'),
+  'cancelarDisagree':     $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-cancel'),
   'createAgree':          $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
   'createDisagree':       $('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
   'commentsAgree':        $('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),

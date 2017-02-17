@@ -51,9 +51,10 @@
 
 @define-mixin normalButton {
 	padding: $margin5-desktop 30px;
-	@mixin blueButton;
+	/*@mixin blueButton;*/
+	background-color: white;
 	border-radius: $radius;
-	color: white;
+	color: $blue;
 	font-size: $p;
 	font-weight: 700;
 	border: none;

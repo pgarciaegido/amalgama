@@ -13036,6 +13036,7 @@
 	  (0, _jquery2.default)(document).ready(function () {
 	    (0, _get_percentage2.default)();
 	  });
+
 	  // coger id de la url para pedir ese post al json
 	  var id = document.URL.split('/').pop();
 	  window.scrollTo(0, 0);
@@ -13094,7 +13095,7 @@
 	    _templateObject8 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
 	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
 	    _templateObject10 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <div class="Noticia_comentarios_list-order-votes">\n      <p>M\xE1s votado</p>\n    </div>\n    <div class="Noticia_comentarios_list-order-new">\n      <p>M\xE1s nuevos</p>\n    </div>\n  </div>\n  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <div class="Noticia_comentarios_list-order-votes">\n      <p>M\xE1s votado</p>\n    </div>\n    <div class="Noticia_comentarios_list-order-new">\n      <p>M\xE1s nuevos</p>\n    </div>\n  </div>\n  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
-	    _templateObject11 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
+	    _templateObject11 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
 	    _templateObject12 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
 	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-unlike/', '">\n          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>'], ['<form method="POST" action="/api/comment-unlike/', '">\n          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>']),
 	    _templateObject14 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>'], ['<form method="POST" action="/api/comment-like/', '">\n    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>']);
@@ -13179,7 +13180,7 @@
 	function renderSendComment(a) {
 	  var post = a === 'agree' ? 'commentagree' : 'commentdisagree';
 
-	  return yo(_templateObject11, post);
+	  return yo(_templateObject11, post, post);
 	}
 
 	// ************* Template for the comment card.
@@ -13233,6 +13234,10 @@
 	// ------ Creates input
 	(0, _jquery2.default)(document).on('click', '#comentar-agree', _comments_events_functions2.default.commentAgree);
 	(0, _jquery2.default)(document).on('click', '#comentar-disagree', _comments_events_functions2.default.commentDisagree);
+
+	// ------ Hides input
+	(0, _jquery2.default)(document).on('click', '#close-commentagree', _comments_events_functions2.default.commentCloseAgree);
+	(0, _jquery2.default)(document).on('click', '#close-commentdisagree', _comments_events_functions2.default.commentCloseDisagree);
 
 	// ----------- Like comments
 	(0, _jquery2.default)(document).on('click', '#new-card', _comments_events_functions2.default.likeComment);
@@ -28009,10 +28014,10 @@
 	module.exports = {
 	  createShow: createShow,
 	  createHide: createHide,
-	  addComment: addComment,
 	  commentAgree: commentAgree,
 	  commentDisagree: commentDisagree,
-	  enviarComments: enviarComments,
+	  commentCloseAgree: commentCloseAgree,
+	  commentCloseDisagree: commentCloseDisagree,
 	  likeComment: likeComment,
 	  commentsMobile: commentsMobile
 	};
@@ -28021,22 +28026,8 @@
 
 	// ---- Displays textarea
 	function createShow(create, comment) {
-	  create.css('display', 'block');
+	  create.addClass('create-comment-opened');
 	  comment.scrollTop(0).css('overflow-y', 'hidden');
-	}
-
-	// ---- Hide textarea
-	function createHide(create, comment, textarea) {
-	  create.css('display', 'none');
-	  comment.css('overflow-y', 'scroll');
-	  textarea.val('');
-	}
-
-	// ---- Inserts the card template, including the comment and the date
-	function addComment(textarea, comment) {
-	  var userComment = textarea.val();
-	  var date = (0, _moment2.default)().format('D MMM YYYY');
-	  comment.append(card(userComment, date));
 	}
 
 	// Opens input in agree
@@ -28049,6 +28040,23 @@
 	function commentDisagree() {
 	  var v = __webpack_require__(147);
 	  createShow(v.createDisagree, v.commentsDisagree);
+	}
+
+	// ---- Hide textarea
+	function createHide(create, comment, textarea) {
+	  create.removeClass('create-comment-opened');
+	  comment.css('overflow-y', 'scroll');
+	  textarea.val('');
+	}
+
+	function commentCloseAgree() {
+	  var v = __webpack_require__(147);
+	  createHide(v.createAgree, v.commentsAgree, v.textAgree);
+	}
+
+	function commentCloseDisagree() {
+	  var v = __webpack_require__(147);
+	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree);
 	}
 
 	// --------- Send comments
@@ -28126,8 +28134,8 @@
 	module.exports = {
 	  'comentarAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
 	  'comentarDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	  'cancelarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
-	  'cancelarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-buttons-cancelar'),
+	  'cancelarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-cancel'),
+	  'cancelarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-cancel'),
 	  'createAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
 	  'createDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
 	  'commentsAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),

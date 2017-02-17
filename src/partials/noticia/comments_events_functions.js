@@ -6,10 +6,10 @@ import moment      from 'moment'
 module.exports = {
   createShow,
   createHide,
-  addComment,
   commentAgree,
   commentDisagree,
-  enviarComments,
+  commentCloseAgree,
+  commentCloseDisagree,
   likeComment,
   commentsMobile
 }
@@ -18,22 +18,8 @@ module.exports = {
 
 // ---- Displays textarea
 function createShow (create, comment) {
-  create.css('display', 'block')
+  create.addClass('create-comment-opened')
   comment.scrollTop(0).css('overflow-y', 'hidden')
-}
-
-// ---- Hide textarea
-function createHide (create, comment, textarea) {
-  create.css('display', 'none')
-  comment.css('overflow-y', 'scroll')
-  textarea.val('')
-}
-
-// ---- Inserts the card template, including the comment and the date
-function addComment (textarea, comment) {
-  let userComment = textarea.val()
-  let date = moment().format('D MMM YYYY')
-  comment.append(card(userComment, date))
 }
 
 // Opens input in agree
@@ -47,6 +33,25 @@ function commentDisagree () {
   const v = require('./comments_events_vars')
   createShow(v.createDisagree, v.commentsDisagree)
 }
+
+// ---- Hide textarea
+function createHide (create, comment, textarea) {
+  create.removeClass('create-comment-opened')
+  comment.css('overflow-y', 'scroll')
+  textarea.val('')
+}
+
+function commentCloseAgree () {
+  const v = require('./comments_events_vars')
+  createHide(v.createAgree, v.commentsAgree, v.textAgree)
+}
+
+function commentCloseDisagree () {
+  const v = require('./comments_events_vars')
+  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
+}
+
+
 
 // --------- Send comments
 function enviarComments () {
