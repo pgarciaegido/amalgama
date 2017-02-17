@@ -104,27 +104,29 @@ function getCommentsUser (req, res) {
   })
 }
 
-// Likes comment
+// Likes or unlikes comment
 function likeComment (req, res) {
 
   let postId = req.headers.referer.split('/').pop()
   let userId = req.session.user_id
+
+  // POST path to determine if the comment was already clicked
   let path = req._parsedUrl.path
   let commentId = path.split('/').pop()
   let update
-  console.log(postId, userId, path, commentId)
 
+  // If the POST path doesn't include unlike, increase the vote and include de user on the array
   if (path.indexOf('unlike') === -1){
     update = { $addToSet: { likedBy: userId }, $inc: { likes: 1 } }
   } else {
+  // Otherwise remove the user from array and decrease 1.
     update = { $pull: { likedBy: userId }, $inc: { likes: -1 } }
   }
 
-
+  // From the commentId, update the value and redirect to the post
   Com.findByIdAndUpdate(commentId, update, function (err, comment) {
     if(err) console.log(err)
-    console.log(comment)
-    res.redirect('/')
+    res.redirect('/app/noticia/' + postId)
   })
 }
 

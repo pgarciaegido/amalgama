@@ -183,13 +183,13 @@ function comCard (user, comment) {
 function comCardForms (user, comment) {
   if (comment.likedBy.length > 0){
     // if the logged user's id is on the array of liked comments, render liked button
-    return comment.likedBy.map((user_id) => {
-      if (user_id === user._id){
+    for (let i in comment.likedBy){
+      if (comment.likedBy[i] === user._id){
         return yo`<form method="POST" action="/api/comment-unlike/${comment._id}">
           <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />
           </form>`
       }
-    })
+    }
   }
   // otherwise return non liked button
   return yo`<form method="POST" action="/api/comment-like/${comment._id}">

@@ -12910,7 +12910,6 @@
 
 	function getCurrentUser(ctx, next) {
 	  _jquery2.default.get('/api/currentUser', function (data) {
-	    console.log(data);
 	    ctx.user = data;
 	    next();
 	  });
@@ -13037,7 +13036,6 @@
 	  (0, _jquery2.default)(document).ready(function () {
 	    (0, _get_percentage2.default)();
 	  });
-	  console.log(ctx.commentsAgree, ctx.commentsDisagree);
 	  // coger id de la url para pedir ese post al json
 	  var id = document.URL.split('/').pop();
 	  window.scrollTo(0, 0);
@@ -13194,11 +13192,11 @@
 	function comCardForms(user, comment) {
 	  if (comment.likedBy.length > 0) {
 	    // if the logged user's id is on the array of liked comments, render liked button
-	    return comment.likedBy.map(function (user_id) {
-	      if (user_id === user._id) {
+	    for (var i in comment.likedBy) {
+	      if (comment.likedBy[i] === user._id) {
 	        return yo(_templateObject13, comment._id);
 	      }
-	    });
+	    }
 	  }
 	  // otherwise return non liked button
 	  return yo(_templateObject14, comment._id);

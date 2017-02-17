@@ -27,7 +27,6 @@ function getPost (ctx, next) {
 
 function getCurrentUser (ctx, next) {
   $.get('/api/currentUser', (data) => {
-    console.log(data)
     ctx.user = data
     next()
   })
