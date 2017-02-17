@@ -169,7 +169,7 @@ function comCard (user, comment) {
     </div>
     <p class="Noticias_comentarios_card-comment">${comment.comment}</p>
     <div class="Noticias_comentarios_card-feedback">
-      <p>#<span>${comment.number}</span></p>
+      <p class="Noticias_comentarios_card-feedback-counter">#<span>${comment.number}</span></p>
       <div class="Noticias_comentarios_card-feedback-like">
         ${comCardForms(user, comment)}
         <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">${comment.likes}</p>
@@ -181,7 +181,6 @@ function comCard (user, comment) {
 
 // Renders comment like button
 function comCardForms (user, comment) {
-
   if (comment.likedBy.length > 0){
     // if the logged user's id is on the array of liked comments, render liked button
     return comment.likedBy.map((user_id) => {
