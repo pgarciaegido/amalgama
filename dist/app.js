@@ -13239,6 +13239,9 @@
 	(0, _jquery2.default)(document).on('click', '#close-commentagree', _comments_events_functions2.default.commentCloseAgree);
 	(0, _jquery2.default)(document).on('click', '#close-commentdisagree', _comments_events_functions2.default.commentCloseDisagree);
 
+	(0, _jquery2.default)(document).on('click', '#comentar-closeagree', _comments_events_functions2.default.commentCloseAgree);
+	(0, _jquery2.default)(document).on('click', '#comentar-closedisagree', _comments_events_functions2.default.commentCloseDisagree);
+
 	// ----------- Like comments
 	(0, _jquery2.default)(document).on('click', '#new-card', _comments_events_functions2.default.likeComment);
 	(0, _jquery2.default)(document).on('click', '#new-card-liked', _comments_events_functions2.default.likeComment);
@@ -28025,38 +28028,44 @@
 	// //////////////////////////// Functions
 
 	// ---- Displays textarea
-	function createShow(create, comment) {
+	function createShow(create, comment, button) {
 	  create.addClass('create-comment-opened');
 	  comment.scrollTop(0).css('overflow-y', 'hidden');
+	  button.removeAttr('id');
 	}
 
 	// Opens input in agree
 	function commentAgree() {
 	  var v = __webpack_require__(147);
-	  createShow(v.createAgree, v.commentsAgree);
+	  createShow(v.createAgree, v.commentsAgree, v.comentarAgree);
+	  v.comentarAgree.attr('id', 'comentar-closeagree');
 	}
 
 	// Opens input in disagree
 	function commentDisagree() {
 	  var v = __webpack_require__(147);
-	  createShow(v.createDisagree, v.commentsDisagree);
+	  createShow(v.createDisagree, v.commentsDisagree, v.comentarDisagree);
+	  v.comentarDisagree.attr('id', 'comentar-closedisagree');
 	}
 
 	// ---- Hide textarea
-	function createHide(create, comment, textarea) {
+	function createHide(create, comment, textarea, button) {
 	  create.removeClass('create-comment-opened');
 	  comment.css('overflow-y', 'scroll');
 	  textarea.val('');
+	  button.removeAttr('id');
 	}
 
 	function commentCloseAgree() {
 	  var v = __webpack_require__(147);
-	  createHide(v.createAgree, v.commentsAgree, v.textAgree);
+	  createHide(v.createAgree, v.commentsAgree, v.textAgree, v.comentarAgree);
+	  v.comentarAgree.attr('id', 'comentar-agree');
 	}
 
 	function commentCloseDisagree() {
 	  var v = __webpack_require__(147);
-	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree);
+	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree);
+	  v.comentarDisagree.attr('id', 'comentar-disagree');
 	}
 
 	// --------- Send comments

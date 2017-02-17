@@ -14,6 +14,9 @@ $(document).on('click', '#comentar-disagree', func.commentDisagree)
 $(document).on('click', '#close-commentagree', func.commentCloseAgree)
 $(document).on('click', '#close-commentdisagree', func.commentCloseDisagree)
 
+$(document).on('click', '#comentar-closeagree', func.commentCloseAgree)
+$(document).on('click', '#comentar-closedisagree', func.commentCloseDisagree)
+
 // ----------- Like comments
 $(document).on('click', '#new-card', func.likeComment)
 $(document).on('click', '#new-card-liked', func.likeComment)

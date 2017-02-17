@@ -17,38 +17,44 @@ module.exports = {
 // //////////////////////////// Functions
 
 // ---- Displays textarea
-function createShow (create, comment) {
+function createShow (create, comment, button) {
   create.addClass('create-comment-opened')
   comment.scrollTop(0).css('overflow-y', 'hidden')
+  button.removeAttr('id')
 }
 
 // Opens input in agree
 function commentAgree () {
   const v = require('./comments_events_vars')
-  createShow(v.createAgree, v.commentsAgree)
+  createShow(v.createAgree, v.commentsAgree, v.comentarAgree)
+  v.comentarAgree.attr('id', 'comentar-closeagree')
 }
 
 // Opens input in disagree
 function commentDisagree () {
   const v = require('./comments_events_vars')
-  createShow(v.createDisagree, v.commentsDisagree)
+  createShow(v.createDisagree, v.commentsDisagree, v.comentarDisagree)
+  v.comentarDisagree.attr('id', 'comentar-closedisagree')
 }
 
 // ---- Hide textarea
-function createHide (create, comment, textarea) {
+function createHide (create, comment, textarea, button) {
   create.removeClass('create-comment-opened')
   comment.css('overflow-y', 'scroll')
   textarea.val('')
+  button.removeAttr('id')
 }
 
 function commentCloseAgree () {
   const v = require('./comments_events_vars')
-  createHide(v.createAgree, v.commentsAgree, v.textAgree)
+  createHide(v.createAgree, v.commentsAgree, v.textAgree, v.comentarAgree)
+  v.comentarAgree.attr('id', 'comentar-agree')
 }
 
 function commentCloseDisagree () {
   const v = require('./comments_events_vars')
-  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
+  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree)
+  v.comentarDisagree.attr('id', 'comentar-disagree')
 }
 
 
