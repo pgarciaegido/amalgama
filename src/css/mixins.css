@@ -39,12 +39,13 @@
 
 @define-mixin bigButton {
 	padding: $margin4-desktop 50px;
-	@mixin blueButton;
+	/*@mixin blueButton;*/
 	border-radius: $radius;
-	color: white;
+	background-color: white;
+	color: $blue;
 	font-size: $h3;
 	font-weight: 700;
-	border: none;
+	border: 2px solid #5b86ff;
 	cursor: pointer;
 	transition: 0.4s;
 }
@@ -53,7 +54,7 @@
 	padding: $margin5-desktop 30px;
 	/*@mixin blueButton;*/
 	background-color: white;
-	border-radius: $radius;
+	border-radius: 5px;
 	color: $blue;
 	font-size: $p;
 	font-weight: 700;

@@ -124,7 +124,7 @@
 					}
 
 					&-icon{
-						padding-top: 20px; 
+						padding-top: 20px;
 						cursor: pointer;
 
 						&-liked{
@@ -140,45 +140,24 @@
 			display: flex;
 			justify-content: space-between;
 
-			&-agree{
-				@mixin bigButton;
-				@mixin voteBarGreen;
-				width: 47%;
-				padding: 10px;
-				font-size: 1em;
-				-webkit-appearance: none;
-
-			}
-
-			&-agree:hover{
-				gradient: none;
-				background: $green;
-			}
-
-			&-disagree{
-				@mixin bigButton;
-				@mixin voteBarRed;
-				width: 47%;
-				padding: 10px;
-				font-size: 1em;
-				-webkit-appearance: none;
-			}
-
-			&-disagree:hover{
-				gradient: none;
-				background: $red;
-			}
-
 			&-comment{
 				@mixin bigButton;
-				width: 47%;
+				width: 100%;
 				padding: 10px;
 				font-size: 1em;
 			}
 
 			&-comment:hover{
-				@mixin hoverButton;
+				background-color: $gray-soft;
+				color: $blue-soft;
+				border: 2px solid $blue-soft;
 			}
 		}
 	}
+}
+
+#comentar-closeagree,
+#comentar-closedisagree{
+	color: $red;
+	border: 2px solid $red;
 }
