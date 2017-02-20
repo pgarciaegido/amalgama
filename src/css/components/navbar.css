@@ -32,7 +32,7 @@
 			@mixin navbar;
 			text-decoration: none;
 			color: $black;
-			
+
 			@media (--tablet){
 				padding: 0 6px;
 			}
@@ -46,12 +46,6 @@
 				color: $blue;
 			}
 		}
-
-		&-item:nth-child(5){
-			@mixin blueButton
-			color: white;
-		}
-
 
 		div {
 			display: flex;
@@ -76,15 +70,12 @@
 		}
 
 		&-item:nth-child(5){
-			margin-left: $margin5-desktop;
-			border-radius: 10px;
-			color: white;
+			@mixin blueButton;
+			color: $blue;
 		}
 
 		&-item:nth-child(5):hover{
 			@mixin hoverButton;
-			padding-bottom: 0;
-			border: 0;
 		}
 	}
 

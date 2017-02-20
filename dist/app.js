@@ -28020,9 +28020,7 @@
 	  commentAgree: commentAgree,
 	  commentDisagree: commentDisagree,
 	  commentCloseAgree: commentCloseAgree,
-	  commentCloseDisagree: commentCloseDisagree,
-	  likeComment: likeComment,
-	  commentsMobile: commentsMobile
+	  commentCloseDisagree: commentCloseDisagree
 	};
 
 	// //////////////////////////// Functions
@@ -28095,21 +28093,21 @@
 
 
 	// ------- Likes / unlikes comment
-	function likeComment() {
-	  var v = __webpack_require__(147);
-	  if (this.id == 'new-card') {
-	    (0, _votesLiked2.default)((0, _jquery2.default)(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked);
-	  } else {
-	    (0, _votesLiked2.default)((0, _jquery2.default)(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked);
-	  }
-	}
-
-	// ----- Open Comments on Mobile
-	function commentsMobile(ev) {
-	  var agreeOpened = void 0;
-	  var disagreeOpened = void 0;
-	  commentsMobileInside(ev);
-	}
+	// function likeComment () {
+	//   const v = require('./comments_events_vars')
+	//   if(this.id == 'new-card'){
+	//     votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
+	//   } else {
+	//     votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
+	//   }
+	// }
+	//
+	// // ----- Open Comments on Mobile
+	// function commentsMobile (ev) {
+	//   let agreeOpened
+	//   let disagreeOpened
+	//   commentsMobileInside(ev)
+	// }
 
 	// ---- $commentsMobile is an array of dom elements.
 	function commentsMobileInside(ev) {

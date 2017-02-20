@@ -9,9 +9,7 @@ module.exports = {
   commentAgree,
   commentDisagree,
   commentCloseAgree,
-  commentCloseDisagree,
-  likeComment,
-  commentsMobile
+  commentCloseDisagree
 }
 
 // //////////////////////////// Functions
@@ -67,7 +65,6 @@ function commentCloseDisagree () {
   createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree)
   v.comentarDisagree.attr('id', 'comentar-disagree')
   v.comentarDisagree.html('Comentar')
-
 }
 
 
@@ -87,14 +84,15 @@ function commentCloseDisagree () {
 
 
 // ------- Likes / unlikes comment
-function likeComment () {
-  const v = require('./comments_events_vars')
-  if(this.id == 'new-card'){
-    votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
-  } else {
-    votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
-  }
-}
+// function likeComment () {
+//   const v = require('./comments_events_vars')
+//   if(this.id == 'new-card'){
+//     votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
+//   } else {
+//     votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
+//   }
+// }
+//
 
 // ----- Open Comments on Mobile
 function commentsMobile (ev) {

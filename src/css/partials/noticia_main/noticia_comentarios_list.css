@@ -82,9 +82,7 @@
 				}
 
 				&-enviar:hover{
-					background-color: $gray-soft;
-					color: $blue-soft;
-					border: 2px solid $blue-soft;
+					@mixin hoverButton;
 				}
 			}
 		}
