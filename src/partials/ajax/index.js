@@ -6,6 +6,7 @@ module.exports = {
   getNew,
   getPost,
   getCurrentUser,
+  getAllComments,
   getCommentsAgree,
   getCommentsDisagree
 }
@@ -28,6 +29,13 @@ function getPost (ctx, next) {
 function getCurrentUser (ctx, next) {
   $.get('/api/currentUser', (data) => {
     ctx.user = data
+    next()
+  })
+}
+
+function getAllComments (ctx, next) {
+  $.get('/api/get-comments', (data) => {
+    ctx.comments = data
     next()
   })
 }

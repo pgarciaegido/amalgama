@@ -18,7 +18,7 @@ api.post('/unupvote', newsCtrl.vote)
 api.post('/downvote', newsCtrl.vote)
 api.post('/undownvote', newsCtrl.vote)
 
-api.get('/getcomments', comCtrl.getComments)
+api.get('/get-comments', comCtrl.getComments)
 api.get('/get-comment-post/:id', comCtrl.getCommentsPost)
 api.get('/get-comment-post-agree/:id', comCtrl.getCommentsPost)
 api.get('/get-comment-post-disagree/:id', comCtrl.getCommentsPost)

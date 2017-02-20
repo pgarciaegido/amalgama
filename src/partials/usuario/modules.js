@@ -28,24 +28,25 @@ function usuarioProfile (user) {
   </div>`
 }
 
-function usuarioComments () {
+function usuarioComments (comments) {
   return yo`<div class="Usuario_main_comments">
-      ${usuarioStats()}
+      ${usuarioStats(comments)}
       ${usuarioCommentsHeader()}
-      ${usuarioCommentsContainer()}
+      ${usuarioCommentsContainer(comments)}
     </div>`
 }
 
 // ************ SUBMODULES FOR THE COMMENTS SECTION
 
-function usuarioStats () {
+// User stats displayed in mobile and tablets
+function usuarioStats (comments) {
   return yo`<div class="Usuario_main_comments-stats">
         <div class="Usuario_main_comments-stats-comments">
-          <h3 class="Usuario_main_comments-stats-comments-counter">17</h3>
+          <h3 class="Usuario_main_comments-stats-comments-counter">${comments.length}</h3>
           <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>
         </div>
         <div class="Usuario_main_comments-stats-thumbsup">
-          <h3 class="Usuario_main_comments-stats-thumbsup-counter">17</h3>
+          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>
           <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>
         </div>
       </div>`
@@ -63,8 +64,10 @@ function usuarioCommentsHeader () {
 
 // card is required in another file
 
-function usuarioCommentsContainer () {
+function usuarioCommentsContainer (comments) {
   return yo`<div class="Usuario_main_comments-container">
-    ${card()}
+  ${comments.map((com) => {
+    return card(com)
+  })}
   </div>`
 }
