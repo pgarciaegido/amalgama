@@ -62,10 +62,10 @@ gulp.task('css', function () {
 
 // Tarea para vigilar los cambios
 gulp.task('watch', function () {
-  gulp.watch('src/{layouts,partials,pages}/**/*', ['panini'])
+  // gulp.watch('src/{layouts,partials,pages}/**/*', ['panini'])
   gulp.watch('src/css/**/*.css', ['css']) // El array ejecuta la tarea CSS.
   gulp.watch('src/js/*.js', ['scripts'])
-  gulp.watch('src/img/*', ['images'])
+  // gulp.watch('src/img/*', ['images'])
   gulp.watch('./dist/*.html').on('change', browserSync.reload)
 })
 

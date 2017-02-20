@@ -47,15 +47,9 @@
 
 @define-mixin normalButton {
 	padding: $margin5-desktop 30px;
-	/*@mixin blueButton;*/
-	background-color: white;
-	border-radius: 5px;
-	color: $blue;
+	@mixin blueButton;
 	font-size: $p;
 	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	transition: 0.4s;
 }
 
 @define-mixin hoverButton {

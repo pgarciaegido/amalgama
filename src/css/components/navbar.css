@@ -76,6 +76,7 @@
 
 		&-item:nth-child(5):hover{
 			@mixin hoverButton;
+			padding-bottom: 0;
 		}
 	}
 

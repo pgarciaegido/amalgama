@@ -18,7 +18,7 @@ $margin2-mobile: 30px;
 $margin3-mobile: 15px;
 
 
-$radius: 10px;
+$radius: 7px;
 
 $border-section: 5px solid #f1f1f1;
 
@@ -43,7 +43,7 @@ $black: #222;
 
 $title: 3em; /*Titulares*/
 
-$h2: 1.5em; 
+$h2: 1.5em;
 $h2-lh: 2.5em;
 
 $h3: 1.5em;

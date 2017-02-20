@@ -29,9 +29,13 @@
 			height: 40px;
 		}
 
+		&-edit:hover, &-logout:hover{
+			@mixin hoverButton;
+		}
+
 		a{
 			text-decoration: none;
-			color: white;
+			color: $blue;
 		}
 	}
 }

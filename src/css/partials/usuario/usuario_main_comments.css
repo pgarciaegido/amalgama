@@ -1,5 +1,5 @@
 .Usuario_main_comments{
-	
+
 	&-stats{
 		display: none;
 		padding: 20px;
@@ -53,7 +53,7 @@
 		justify-content: space-between;
 		padding-bottom: $margin2-desktop;
 		border-bottom: 2px solid $gray-soft;
-		
+
 		@media (--mobile-big){
 			display: block;
 			border-bottom: none;
@@ -72,7 +72,7 @@
 		}
 
 		&-order{
-			
+
 			@media (--mobile-big){
 				display: flex;
 				justify-content: space-around;
@@ -80,13 +80,18 @@
 
 			&-votes{
 				@mixin normalButton;
-				background: white;
-				color: $black;
+			}
+
+			&-votes:hover{
+				@mixin hoverButton;
 			}
 
 			&-new{
 				@mixin normalButton;
-				background: $blue;
+			}
+
+			&-new:hover{
+				@mixin hoverButton;
 			}
 		}
 

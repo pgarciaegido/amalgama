@@ -4,7 +4,7 @@
 	padding-bottom: $margin2-desktop;
 	border-bottom: 3px solid #f1f1f1;
 	margin-bottom: $margin3-desktop;
-	
+
 	@media (--tablet-small){
 		justify-content: center;
 	}
@@ -81,7 +81,7 @@
 
 			img{
 				width: 30px;
-				margin-right: $margin3-desktop;	
+				margin-right: $margin3-desktop;
 
 				@media (--tablet){
 					margin-right: 15px;
@@ -109,7 +109,7 @@
 		}
 
 		&-editar:hover{
-			background: $blue;
+			@mixin hoverButton;
 		}
 	}
 }

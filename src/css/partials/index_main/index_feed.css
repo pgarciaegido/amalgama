@@ -38,6 +38,7 @@
 			@mixin removeAnchorStyles;
 			text-align: center;
 			width: 25%;
+			color: $blue;
 
 			@media(--tablet){
 				display: block;
