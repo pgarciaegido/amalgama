@@ -22,34 +22,43 @@ function createComment (req, res) {
     // Queries to get how many comments we have, so we can number our comments
     let arg = {postid: postId, agree: ag, disagree: disag}
 
-    Com.find(arg, function (err, comments) {
-      if (err) return console.log('ha habido un error al obtener el numero de comentarios')
+    Post.findById(postId, function(err, post) {
+      if (err){
+        console.log(err)
+      }
 
-      let length = comments.length
+      Com.find(arg, function (err, comments) {
+        if (err) return console.log('ha habido un error al obtener el numero de comentarios')
 
-      // Fills the schema
-      let comment = new Com ({
-        number: length + 1,
-        userid: req.session.user_id,
-        username: user.username,
-        postid: req.headers.referer.split('/').pop(),
-        agree: ag,
-        disagree: disag,
-        comment: req.body.create,
-        date: moment().format('HH:mm - DD MMM'),
-        likes: 0
+        let length = comments.length
+
+        // Fills the schema
+        let comment = new Com ({
+          number: length + 1,
+          userid: req.session.user_id,
+          username: user.username,
+          postid: req.headers.referer.split('/').pop(),
+          postTitle: post.title,
+          agree: ag,
+          disagree: disag,
+          comment: req.body.create,
+          date: moment().format('HH:mm - DD MMM'),
+          likes: 0
+        })
+
+        // Save the comment in the db
+        comment.save(function (err, comment) {
+          if (!err) {
+            // Redirect to the post
+            console.log(comment)
+            res.redirect(req.headers.referer)
+          } else {
+            console.log(err)
+            res.send('ha habido un error al guardar tu comentario.')
+          }
+        })
       })
 
-      // Save the comment in the db
-      comment.save(function (err, comment) {
-        if (!err) {
-          // Redirect to the post
-          res.redirect(req.headers.referer)
-        } else {
-          console.log(err)
-          res.send('ha habido un error al guardar tu comentario.')
-        }
-      })
     })
   })
 }

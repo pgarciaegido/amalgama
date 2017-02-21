@@ -13251,8 +13251,8 @@
 	(0, _jquery2.default)(document).on('click', '#comentar-closedisagree', _comments_events_functions2.default.commentCloseDisagree);
 
 	// ----------- Like comments
-	(0, _jquery2.default)(document).on('click', '#new-card', _comments_events_functions2.default.likeComment);
-	(0, _jquery2.default)(document).on('click', '#new-card-liked', _comments_events_functions2.default.likeComment);
+	// $(document).on('click', '#new-card', func.likeComment)
+	// $(document).on('click', '#new-card-liked', func.likeComment)
 
 	// // ----- Open and close menu when mobile
 	(0, _jquery2.default)(document).on('click', '#arrow-agree', _comments_events_functions2.default.commentsMobile);
@@ -28028,7 +28028,8 @@
 	  commentAgree: commentAgree,
 	  commentDisagree: commentDisagree,
 	  commentCloseAgree: commentCloseAgree,
-	  commentCloseDisagree: commentCloseDisagree
+	  commentCloseDisagree: commentCloseDisagree,
+	  commentsMobile: commentsMobile
 	};
 
 	// //////////////////////////// Functions
@@ -28275,7 +28276,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">Mateo Renzi dice una cosa y luego la otra y tal y cual</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>'], ['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">Mateo Renzi dice una cosa y luego la otra y tal y cual</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">', '</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>'], ['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">', '</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28286,7 +28287,7 @@
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function (com) {
-	  return (0, _yoYo2.default)(_templateObject, com.comment, com.date, com.likedBy.length);
+	  return (0, _yoYo2.default)(_templateObject, com.postTitle, com.comment, com.date, com.likedBy.length);
 	};
 
 /***/ },
@@ -28330,6 +28331,7 @@
 
 	// ************ SUBMODULES FOR THE COMMENTS SECTION
 
+	// User stats displayed in mobile and tablets
 	function usuarioStats(comments) {
 	  return (0, _yoYo2.default)(_templateObject3, comments.length);
 	}

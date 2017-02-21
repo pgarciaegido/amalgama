@@ -9,7 +9,8 @@ module.exports = {
   commentAgree,
   commentDisagree,
   commentCloseAgree,
-  commentCloseDisagree
+  commentCloseDisagree,
+  commentsMobile
 }
 
 // //////////////////////////// Functions

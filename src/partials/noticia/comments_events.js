@@ -18,8 +18,8 @@ $(document).on('click', '#comentar-closeagree', func.commentCloseAgree)
 $(document).on('click', '#comentar-closedisagree', func.commentCloseDisagree)
 
 // ----------- Like comments
-$(document).on('click', '#new-card', func.likeComment)
-$(document).on('click', '#new-card-liked', func.likeComment)
+// $(document).on('click', '#new-card', func.likeComment)
+// $(document).on('click', '#new-card-liked', func.likeComment)
 
 // // ----- Open and close menu when mobile
 $(document).on('click', '#arrow-agree', func.commentsMobile)

@@ -6,6 +6,7 @@ var commentsSchema = new Schema({
   userid: String,
   username: String,
   postid: String,
+  postTitle: String,
   agree: Boolean,
   disagree: Boolean,
   comment: {type: String, minlength: [2, 'El post tiene que ser mayor que 2 caracteres']},
