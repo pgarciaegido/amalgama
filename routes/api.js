@@ -2,6 +2,7 @@ var express = require('express')
 var newsCtrl = require('../controllers/news')
 var userCtrl = require('../controllers/user')
 var comCtrl = require('../controllers/comments')
+var asideCtrl = require('../controllers/aside')
 
 var sessionMiddleware = require('../middlewares/session') // middleware to ensure that user is logged in
 
@@ -28,6 +29,8 @@ api.post('/commentdisagree', comCtrl.createComment)
 
 api.post('/comment-like/:id', comCtrl.likeComment)
 api.post('/comment-unlike/:id', comCtrl.likeComment)
+
+api.get('/order-temas', asideCtrl.orderTemas)
 
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)

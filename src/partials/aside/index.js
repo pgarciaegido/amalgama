@@ -1,14 +1,14 @@
 import $  from 'jquery'
 import yo from 'yo-yo'
 
-import { orderTemas, colorBalance } from './logics'
+import { colorBalance } from './logics'
 
 // Requires the modules files --> object.
 import { asideRegister, asideSuscribe, temas, profile } from './modules'
 
 module.exports = function aside (ctx) {
   const container = $('#main-container')
-  const ordered = orderTemas(ctx.news)
+  const ordered = ctx.ordered
   if (document.URL.indexOf('invitado') == -1) {
     let user = ctx.user
     container.append(userTemplate(ordered, user))

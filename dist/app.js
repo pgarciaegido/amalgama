@@ -11221,14 +11221,14 @@
 
 	// Homepage when not logged in
 
-	(0, _page2.default)('/invitado', _index2.default, _ajax.getNew, function (ctx, next) {
+	(0, _page2.default)('/invitado', _index2.default, _ajax.getNew, _ajax.getAsideNew, function (ctx, next) {
 	  loadHomepage(ctx);
 	  next();
 	}, _aside2.default);
 
 	// Homepage when logged in
 
-	(0, _page2.default)('/app', _ajax.getCurrentUser, _index2.default, _ajax.getNew, function (ctx, next) {
+	(0, _page2.default)('/app', _ajax.getCurrentUser, _index2.default, _ajax.getNew, _ajax.getAsideNew, function (ctx, next) {
 	  loadHomepage(ctx);
 	  next();
 	}, _aside2.default);
@@ -12767,7 +12767,7 @@
 
 	module.exports = function aside(ctx) {
 	  var container = (0, _jquery2.default)('#main-container');
-	  var ordered = (0, _logics.orderTemas)(ctx.news);
+	  var ordered = ctx.ordered;
 	  if (document.URL.indexOf('invitado') == -1) {
 	    var user = ctx.user;
 	    container.append(userTemplate(ordered, user));
@@ -12797,20 +12797,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	module.exports = { orderTemas: orderTemas, colorBalance: colorBalance };
-
-	// Get the total number of votes, and ordering it so it shows from higher to lower.
-	function orderTemas(arr) {
-	  for (var i = 0, len = arr.length; i < len; i++) {
-	    arr[i].total = arr[i].agreeVotes + arr[i].disagreeVotes;
-	    arr[i].balance = arr[i].agreeVotes - arr[i].disagreeVotes;
-	  }
-	  var byTotal = arr.slice(0);
-	  byTotal.sort(function (a, b) {
-	    return b.total - a.total;
-	  });
-	  return byTotal;
-	}
+	module.exports = { colorBalance: colorBalance };
 
 	// If the balance is positive, color = green
 	function colorBalance() {
@@ -12887,6 +12874,7 @@
 
 	module.exports = {
 	  getNew: getNew,
+	  getAsideNew: getAsideNew,
 	  getPost: getPost,
 	  getCurrentUser: getCurrentUser,
 	  getAllComments: getAllComments,
@@ -12897,6 +12885,13 @@
 	function getNew(ctx, next) {
 	  _jquery2.default.get('/api/news', function (data) {
 	    ctx.news = data;
+	    next();
+	  });
+	}
+
+	function getAsideNew(ctx, next) {
+	  _jquery2.default.get('/api/order-temas', function (data) {
+	    ctx.ordered = data;
 	    next();
 	  });
 	}
@@ -13037,7 +13032,7 @@
 	// getCommentsAgree gets the lists of comments agreeing. Same for disagree
 	// header renders header
 	// getPosts gets the post we are about to render
-	(0, _page2.default)('/app/noticia/:id', _ajax.getNew, _ajax.getCurrentUser, _ajax.getCommentsAgree, _ajax.getCommentsDisagree, _index2.default, _ajax.getPost, function (ctx, next) {
+	(0, _page2.default)('/app/noticia/:id', _ajax.getAsideNew, _ajax.getCurrentUser, _ajax.getCommentsAgree, _ajax.getCommentsDisagree, _index2.default, _ajax.getPost, function (ctx, next) {
 	  __webpack_require__(30);
 	  __webpack_require__(34);
 

@@ -4,6 +4,7 @@ import $ from 'jquery'
 
 module.exports = {
   getNew,
+  getAsideNew,
   getPost,
   getCurrentUser,
   getAllComments,
@@ -14,6 +15,13 @@ module.exports = {
 function getNew (ctx, next) {
   $.get('/api/news', (data) => {
     ctx.news = data
+    next()
+  })
+}
+
+function getAsideNew (ctx, next) {
+  $.get('/api/order-temas', (data) => {
+    ctx.ordered = data
     next()
   })
 }

@@ -6,18 +6,18 @@ import articles   from '../feed/feed_events'
 import percentage from '../votes_bar/get_percentage'
 import aside      from '../aside'
 
-import { getNew, getCurrentUser } from '../ajax'
+import { getNew, getAsideNew, getCurrentUser } from '../ajax'
 
 // Homepage when not logged in
 
-page('/invitado', header, getNew, (ctx, next) => {
+page('/invitado', header, getNew, getAsideNew, (ctx, next) => {
   loadHomepage(ctx)
   next()
 }, aside)
 
 // Homepage when logged in
 
-page('/app', getCurrentUser, header, getNew, (ctx, next) => {
+page('/app', getCurrentUser, header, getNew, getAsideNew, (ctx, next) => {
   loadHomepage(ctx)
   next()
 }, aside)
