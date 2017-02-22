@@ -1,7 +1,7 @@
 .Details{
 	display: flex;
 	color: $gray;
-	
+
 	@media (--desktop){
 		font-size: $p-tablet;
 	}
@@ -25,7 +25,7 @@
 	}
 
 	&-tags{
-		
+
 		&-icon{
 			margin-right: $margin5-desktop;
 			width: 15px;
@@ -36,7 +36,16 @@
 		}
 
 		&-text{
-			@mixin tagsDesktop;
+			padding-right: 10px;
+			a{
+				@mixin tagsDesktop;
+				text-decoration: none;
+				transition: 0.3s;
+			}
+
+			a:hover{
+				color: $blue;
+			}
 		}
 	}
 }

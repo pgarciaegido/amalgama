@@ -12598,7 +12598,8 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Details">\n        <div class="Details-date">\n          <img class="Details-date-icon" src="/img/clock.svg" />\n          <span class="Details-date-text">', '</span>\n        </div>\n        <div class="Details-tags">\n          <img class="Details-tags-icon" src="/img/price-tags.svg" />\n          <span class="Details-tags-text">', '</span>\n        </div>\n      </div>'], ['<div class="Details">\n        <div class="Details-date">\n          <img class="Details-date-icon" src="/img/clock.svg" />\n          <span class="Details-date-text">', '</span>\n        </div>\n        <div class="Details-tags">\n          <img class="Details-tags-icon" src="/img/price-tags.svg" />\n          <span class="Details-tags-text">', '</span>\n        </div>\n      </div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div class="Details">\n        <div class="Details-date">\n          <img class="Details-date-icon" src="/img/clock.svg" />\n          <span class="Details-date-text">', '</span>\n        </div>\n        <div class="Details-tags">\n          <img class="Details-tags-icon" src="/img/price-tags.svg" />\n          ', '\n        </div>\n      </div>'], ['<div class="Details">\n        <div class="Details-date">\n          <img class="Details-date-icon" src="/img/clock.svg" />\n          <span class="Details-date-text">', '</span>\n        </div>\n        <div class="Details-tags">\n          <img class="Details-tags-icon" src="/img/price-tags.svg" />\n          ', '\n        </div>\n      </div>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<span class="Details-tags-text"><a href="?', '">', '</a></span>'], ['<span class="Details-tags-text"><a href="?', '">', '</a></span>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -12613,11 +12614,9 @@
 	};
 
 	function displayTags(tags) {
-	  var text = '';
-	  tags.map(function (tag) {
-	    text = text + tag + '  ';
+	  return tags.map(function (tag) {
+	    return (0, _yoYo2.default)(_templateObject2, tag, tag);
 	  });
-	  return text;
 	}
 
 /***/ },
