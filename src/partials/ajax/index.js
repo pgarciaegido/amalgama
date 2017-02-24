@@ -9,7 +9,8 @@ module.exports = {
   getCurrentUser,
   getAllComments,
   getCommentsAgree,
-  getCommentsDisagree
+  getCommentsDisagree,
+  getSearch
 }
 
 function getNew (ctx, next) {
@@ -60,6 +61,16 @@ function getCommentsDisagree (ctx, next) {
   var id = ctx.path.split('/').pop()
   $.get('/api/get-comment-post-disagree/' + id, (data) => {
     ctx.commentsDisagree = data
+    next()
+  })
+}
+
+function getSearch (ctx, next) {
+  // Gets the query (if there is one)
+  // e.g. s="asturias" --> asturias
+  let query = ctx.querystring.split('=').pop()
+  $.get(`/api/buscar/?s=${query}`, (data) => {
+    ctx.search = data
     next()
   })
 }

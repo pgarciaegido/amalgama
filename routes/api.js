@@ -3,6 +3,7 @@ var newsCtrl = require('../controllers/news')
 var userCtrl = require('../controllers/user')
 var comCtrl = require('../controllers/comments')
 var asideCtrl = require('../controllers/aside')
+var searchCtrl = require('../controllers/search')
 
 var sessionMiddleware = require('../middlewares/session') // middleware to ensure that user is logged in
 
@@ -34,5 +35,7 @@ api.get('/order-temas', asideCtrl.orderTemas)
 
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)
+
+api.get('/buscar', searchCtrl.search)
 
 module.exports = api

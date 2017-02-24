@@ -15,6 +15,6 @@ module.exports = function (date, tags) {
 
 function displayTags (tags) {
   return tags.map(function (tag) {
-    return yo`<span class="Details-tags-text"><a href="?${tag}">${tag}</a></span>`
+    return yo`<span class="Details-tags-text"><a href="/app/buscar/?s=${tag}">${tag}</a></span>`
   })
 }

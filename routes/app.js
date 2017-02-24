@@ -30,7 +30,7 @@ router.post('/logout', function (req, res) {
 })
 
 router.get('/noticia/:id', render)
-
 router.get('/usuario/:username', render)
+router.get('/buscar/', render)
 
 module.exports = router

@@ -7,7 +7,7 @@ import percentage from '../votes_bar/get_percentage'
 
 import { getAsideNew, getPost, getCurrentUser, getCommentsAgree, getCommentsDisagree } from '../ajax'
 
-// getNew gets the list of all posts for the aside list
+// getAsideNew gets the list of all posts for the aside list
 // getCurrentUser gets the logged in user
 // getCommentsAgree gets the lists of comments agreeing. Same for disagree
 // header renders header
