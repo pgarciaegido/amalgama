@@ -72,9 +72,9 @@
 
 	__webpack_require__(152);
 
-	__webpack_require__(153);
+	__webpack_require__(154);
 
-	__webpack_require__(157);
+	__webpack_require__(158);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12940,10 +12940,9 @@
 	  // Gets the query (if there is one)
 	  // e.g. s="asturias" --> asturias
 	  var query = ctx.querystring.split('=').pop();
-	  console.log(query);
 	  _jquery2.default.get('/api/buscar/?s=' + query, function (data) {
+	    ctx.query = query;
 	    ctx.search = data;
-	    console.log(ctx.search);
 	    next();
 	  });
 	}
@@ -28315,6 +28314,10 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
+	var _template = __webpack_require__(153);
+
+	var _template2 = _interopRequireDefault(_template);
+
 	var _aside = __webpack_require__(26);
 
 	var _aside2 = _interopRequireDefault(_aside);
@@ -28327,20 +28330,49 @@
 	// // getAsideNew gets the list of all posts for the aside list
 	// // getCurrentUser gets the logged in user
 	// // header renders header
-
-	// import template   from './template'
 	(0, _page2.default)('/app/buscar/', _ajax.getSearch, _ajax.getAsideNew, _ajax.getCurrentUser, _index2.default, function (ctx, next) {
 	  __webpack_require__(30);
 
-	  // let main = document.getElementById('main-container')
-	  // The arguments are the news array, and the user object
-	  // $(main).empty().append(template(ctx.post, ctx.user, ctx.commentsAgree, ctx.commentsDisagree))
-	  console.log('ma meeen');
+	  var main = document.getElementById('main-container');
+	  var posts = ctx.search;
+	  var query = ctx.query;
+	  (0, _jquery2.default)(main).empty().append(_template2.default.template(posts, query));
 	  next();
 	}, _aside2.default);
 
 /***/ },
 /* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div id="search" class="Search">\n    <h1 class="Search-title">Buscar</h1>\n    <h2 class="Search-subtitle">Resultados de: ', '</h2>\n    ', '\n  </div>\n'], ['<div id="search" class="Search">\n    <h1 class="Search-title">Buscar</h1>\n    <h2 class="Search-subtitle">Resultados de: ', '</h2>\n    ', '\n  </div>\n']),
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Search-card">\n    <h3 class="Search-card-title">', '</h3>\n    <div class="Search-card-details">\n      <div class="Search-card-details-left">\n        <span class="Search-card-details-left-date">', '</span>\n        <span class="Search-card-details-left-votes">Votos: ', '</span>\n      </div>\n      <div class="Search-card-details-right">\n        <img src="/img/thumbs-up-green.svg" alt="" class="Search-card-details-right-up-img" />\n        <span class="Search-card-details-right-up-votes">', '</span>\n        <span>\xB7</span>\n        <span class="Search-card-details-right-down-votes">', '</span>\n        <img src="/img/thumbs-down-red.svg" alt="" class="Search-card-details-right-down-img" />\n      </div>\n    </div>\n  </div>'], ['<div class="Search-card">\n    <h3 class="Search-card-title">', '</h3>\n    <div class="Search-card-details">\n      <div class="Search-card-details-left">\n        <span class="Search-card-details-left-date">', '</span>\n        <span class="Search-card-details-left-votes">Votos: ', '</span>\n      </div>\n      <div class="Search-card-details-right">\n        <img src="/img/thumbs-up-green.svg" alt="" class="Search-card-details-right-up-img" />\n        <span class="Search-card-details-right-up-votes">', '</span>\n        <span>\xB7</span>\n        <span class="Search-card-details-right-down-votes">', '</span>\n        <img src="/img/thumbs-down-red.svg" alt="" class="Search-card-details-right-down-img" />\n      </div>\n    </div>\n  </div>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = {
+	  template: template
+	};
+
+	function template(posts, query) {
+	  return (0, _yoYo2.default)(_templateObject, query, posts.map(function (post) {
+	    return card(post);
+	  }));
+	}
+
+	function card(post) {
+	  return (0, _yoYo2.default)(_templateObject2, post.title, post.date, post.agreeVotes + post.disagreeVotes, post.agreeVotes, post.disagreeVotes);
+	}
+
+/***/ },
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28357,7 +28389,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(154);
+	var _template = __webpack_require__(155);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28383,7 +28415,7 @@
 	});
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28396,11 +28428,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(155);
+	var _comments_card = __webpack_require__(156);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(156);
+	var _modules = __webpack_require__(157);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28426,7 +28458,7 @@
 	}
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28446,7 +28478,7 @@
 	};
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28461,7 +28493,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(155);
+	var _comments_card = __webpack_require__(156);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -28504,7 +28536,7 @@
 	}
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28521,7 +28553,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(158);
+	var _template = __webpack_require__(159);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28534,7 +28566,7 @@
 	});
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

@@ -70,6 +70,7 @@ function getSearch (ctx, next) {
   // e.g. s="asturias" --> asturias
   let query = ctx.querystring.split('=').pop()
   $.get(`/api/buscar/?s=${query}`, (data) => {
+    ctx.query = query
     ctx.search = data
     next()
   })
