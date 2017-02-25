@@ -5,7 +5,7 @@ module.exports = {
 }
 
 function template (posts, query) {
-  return yo`<div id="search" class="Search">
+  return yo`<div id="main" class="Search">
     <h1 class="Search-title">Buscar</h1>
     <h2 class="Search-subtitle">Resultados de: ${query}</h2>
     ${posts.map((post) => {
@@ -16,7 +16,7 @@ function template (posts, query) {
 }
 
 function card (post) {
-  return yo`<div class="Search-card">
+  return yo`<a class="Search-card" href="/app/noticia/${post._id}"><div class="Search-card-container">
     <h3 class="Search-card-title">${post.title}</h3>
     <div class="Search-card-details">
       <div class="Search-card-details-left">
@@ -31,5 +31,5 @@ function card (post) {
         <img src="/img/thumbs-down-red.svg" alt="" class="Search-card-details-right-down-img" />
       </div>
     </div>
-  </div>`
+  </div></a>`
 }

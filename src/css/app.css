@@ -60,6 +60,10 @@
 @import './partials/usuario/usuario_editar_personal';
 @import './partials/usuario/usuario_editar_data';
 
+/*Search*/
+
+@import './partials/search/search';
+
 /*Aside*/
 
 @import './partials/aside/aside';
