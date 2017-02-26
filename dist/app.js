@@ -74,7 +74,7 @@
 
 	__webpack_require__(155);
 
-	__webpack_require__(159);
+	__webpack_require__(160);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27647,17 +27647,9 @@
 	  });
 	}
 
-	// function getCommentsUser (ctx, next) {
-	//   var user = ctx.pathname.split('/').pop()
-	//   $.get('/api/getcommentuser/' + user, (data) => {
-	//     ctx.userComments = data
-	//     next()
-	//   })
-	// }
-
 	function getCommentsUser(ctx, next) {
 	  var user = ctx.pathname.split('/').pop();
-	  _jquery2.default.get('/api/get-comment-user/' + user + '?' + ctx.querystring, function (data) {
+	  _jquery2.default.get('/api/get-comment-user/' + user, function (data) {
 	    ctx.userComments = data;
 	    next();
 	  });
@@ -28435,19 +28427,42 @@
 
 	var _template2 = _interopRequireDefault(_template);
 
+	var _comments = __webpack_require__(159);
+
+	var _comments2 = _interopRequireDefault(_comments);
+
 	var _ajax = __webpack_require__(140);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _page2.default)('/app/usuario/:username', _ajax.getCurrentUser, _ajax.getCommentsUser, _index2.default, function (ctx, next) {
-		console.log(ctx);
-		var user = ctx.user;
-		var userComments = void 0;
-
 		__webpack_require__(141);
+
+		var user = ctx.user;
+		var userComments = ctx.userComments;
+		var userCommentsLikes = [];
+		// Sorts by likes
+		_comments2.default.sortByLikes(userComments, userCommentsLikes);
+
 		var main = document.getElementById('main-container');
-		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, ctx.userComments));
+		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, userComments));
+
+		(0, _jquery2.default)(document).ready(function () {
+			(0, _jquery2.default)(document).on('click', '#usuario-sort-date', function (e) {
+				clickSort(e, user, userComments);
+			});
+
+			(0, _jquery2.default)(document).on('click', '#usuario-sort-likes', function (e) {
+				clickSort(e, user, userCommentsLikes);
+			});
+		});
 	});
+
+	function clickSort(e, user, userCom) {
+		e.preventDefault();
+		var main = document.getElementById('main-container');
+		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, userCom));
+	}
 
 /***/ },
 /* 156 */
@@ -28525,7 +28540,7 @@
 	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <button class="Usuario_main_profile-info-editar">Editar perfil</button>\n    </div>\n  </div>'], ['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <button class="Usuario_main_profile-info-editar">Editar perfil</button>\n    </div>\n  </div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>'], ['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>']),
 	    _templateObject5 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-container">\n  ', '\n  </div>'], ['<div class="Usuario_main_comments-container">\n  ', '\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
@@ -28576,6 +28591,28 @@
 
 /***/ },
 /* 159 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	  sortByLikes: sortByLikes
+	};
+
+	function sortByLikes(com, sorted) {
+	  var max = 0;
+	  for (var c in com) {
+	    if (com[c].likes >= max) {
+	      sorted.unshift(com[c]);
+	      max = com[c].likes;
+	    } else {
+	      sorted.push(com[c]);
+	    }
+	  }
+	}
+
+/***/ },
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28592,7 +28629,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(160);
+	var _template = __webpack_require__(161);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28605,7 +28642,7 @@
 	});
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

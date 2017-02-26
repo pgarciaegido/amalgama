@@ -51,9 +51,8 @@ function getAllComments (ctx, next) {
 }
 
 function getCommentsUser (ctx, next) {
-  // pathname doesnt include queries. e.g.
   var user = ctx.pathname.split('/').pop()
-  $.get('/api/get-comment-user/' + user + '?' + ctx.querystring, (data) => {
+  $.get('/api/get-comment-user/' + user, (data) => {
     ctx.userComments = data
     next()
   })

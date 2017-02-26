@@ -109,41 +109,16 @@ function getCommentsPost (req, res) {
 
 // Gets all the comments made in an specific user
 function getCommentsUser (req, res) {
-  let query = req.query
   let userName = req.params.username
   let condition = {username: userName}
-  let sort
 
-  // If query.order doesnt exist or is not likes, sort is empty
-  // so will sort by date
-  if (query.order === undefined || query.order !== 'likes') {
-    // The newest first
-    sort = {date : -1 }
-  } else if (query.order === 'likes') {
-    sort = {likes : -1 }
-  }
-
-  Com.find(condition).sort(sort).exec(function(err, comments) {
+  Com.find(condition).sort({date: -1}).exec(function(err, comments) {
     if (err){
       console.log(err)
     }
-    console.log(comments)
     res.send(comments)
   })
 }
-
-// function getCommentsUserByLikes (req, res) {
-//   console.log(req.query)
-//   let userName = req.url.split('/').pop()
-//   let condition = {username: userName}
-//   let sort = { likes: -1 }
-//   Com.find(condition).sort(sort).exec( function(err, comments) {
-//     if (err) {
-//       console.log(err)
-//     }
-//     res.send(comments)
-//   })
-// }
 
 // Likes or unlikes comment
 function likeComment (req, res) {

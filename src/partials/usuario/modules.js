@@ -56,8 +56,8 @@ function usuarioCommentsHeader () {
   return yo`<div class="Usuario_main_comments-header">
         <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>
         <div class="Usuario_main_comments-header-order">
-          <button class="Usuario_main_comments-header-order-votes">Más votados</button>
-          <button class="Usuario_main_comments-header-order-new">Más nuevos</button>
+          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">Más votados</button>
+          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new">Más nuevos</button>
         </div>
       </div>`
 }
