@@ -6,11 +6,8 @@ var moment = require('moment')
 function createNew (req, res) {
   var post = new Post({
     title: req.body.title,
-    date: moment().format('DD MM YYYY'),
-    tags: req.body.tags,
     subtitle: req.body.subtitle,
-    agreeVotes: req.body.agreeVotes,
-    disagreeVotes: req.body.disagreeVotes
+    tags: req.body.tags
   })
 
   post.save(function (err, post) {

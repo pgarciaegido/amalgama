@@ -42,7 +42,6 @@ function createComment (req, res) {
           agree: ag,
           disagree: disag,
           comment: req.body.create,
-          date: moment().format('HH:mm - DD MMM'),
           likes: 0
         })
 

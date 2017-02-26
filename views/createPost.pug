@@ -1,16 +1,28 @@
-form(method="POST" action="/createPost")
+form(method="POST" action="/api/createnew")
 	label title
-		input(type="text" name="title") 
-	label id
-		input(type="text" name="id")
-	label tags
-		input(type="checkbox" name="tags" value="España")
-		input(type="checkbox" name="tags" value="Internacional") 
-		input(type="checkbox" name="tags" value="Francia")
+		input(type="text" name="title")
+	br
 	label subtitle
 		input(type="text" name="subtitle")
-	label agree
-		input(type="text" name="agree")
-	label disagreee
-		input(type="text" name="disagree")
+		br
+	label TAGS
+		br
+		label Espana
+			input(type="checkbox" name="tags" value="España")
+			br
+		label Internacional
+			input(type="checkbox" name="tags" value="Internacional")
+			br
+		label Francia
+			input(type="checkbox" name="tags" value="Francia")
+			br
+		label Europa
+			input(type="checkbox" name="tags" value="Europa")
+			br
+		label China
+			input(type="checkbox" name="tags" value="China")
+			br
+		label Oriente Medio
+			input(type="checkbox" name="tags" value="Oriente Medio")
+			br
 	input(type="submit" value="Subelo")
