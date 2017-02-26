@@ -1,10 +1,12 @@
 import yo from 'yo-yo'
+import moment from 'moment'
+import formatDate from '../utils/date'
 
 module.exports = function (date, tags) {
   return yo`<div class="Details">
         <div class="Details-date">
           <img class="Details-date-icon" src="/img/clock.svg" />
-          <span class="Details-date-text">${date}</span>
+          <span class="Details-date-text">${formatDate(date)}</span>
         </div>
         <div class="Details-tags">
           <img class="Details-tags-icon" src="/img/price-tags.svg" />

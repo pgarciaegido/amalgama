@@ -1,6 +1,7 @@
 var yo = require('yo-yo')
 var details = require('../details')
 var votesBar = require('../votes_bar')
+var formatDate = require('../utils/date')
 
 module.exports = {
   noticiaCuerpo,
@@ -167,7 +168,7 @@ function comCard (user, comment) {
         <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />
         <p class="Noticias_comentarios_card-user-info-username">${comment.username}</p>
       </div>
-      <p class="Noticias_comentarios_card-user-date">${comment.date}</p>
+      <p class="Noticias_comentarios_card-user-date">${formatDate(comment.date)}</p>
     </div>
     <p class="Noticias_comentarios_card-comment">${comment.comment}</p>
     <div class="Noticias_comentarios_card-feedback">

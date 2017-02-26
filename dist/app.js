@@ -64,17 +64,17 @@
 
 	__webpack_require__(9);
 
-	__webpack_require__(31);
+	__webpack_require__(142);
 
-	__webpack_require__(33);
+	__webpack_require__(144);
 
-	__webpack_require__(150);
+	__webpack_require__(151);
 
-	__webpack_require__(152);
+	__webpack_require__(153);
 
-	__webpack_require__(154);
+	__webpack_require__(155);
 
-	__webpack_require__(158);
+	__webpack_require__(159);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11201,7 +11201,7 @@
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _index = __webpack_require__(25);
+	var _index = __webpack_require__(136);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -11213,11 +11213,11 @@
 
 	var _get_percentage2 = _interopRequireDefault(_get_percentage);
 
-	var _aside = __webpack_require__(26);
+	var _aside = __webpack_require__(137);
 
 	var _aside2 = _interopRequireDefault(_aside);
 
-	var _ajax = __webpack_require__(29);
+	var _ajax = __webpack_require__(140);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11236,7 +11236,7 @@
 	}, _aside2.default);
 
 	function loadHomepage(ctx) {
-	  __webpack_require__(30);
+	  __webpack_require__(141);
 	  __webpack_require__(7);
 	  (0, _jquery2.default)(document).ready(function () {
 	    (0, _feed_events2.default)();
@@ -11275,11 +11275,11 @@
 
 	var _index4 = _interopRequireDefault(_index3);
 
-	var _index5 = __webpack_require__(23);
+	var _index5 = __webpack_require__(134);
 
 	var _index6 = _interopRequireDefault(_index5);
 
-	var _registrate_cta = __webpack_require__(24);
+	var _registrate_cta = __webpack_require__(135);
 
 	var _registrate_cta2 = _interopRequireDefault(_registrate_cta);
 
@@ -12607,12 +12607,20 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
+	var _moment = __webpack_require__(23);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _date = __webpack_require__(133);
+
+	var _date2 = _interopRequireDefault(_date);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function (date, tags) {
-	  return (0, _yoYo2.default)(_templateObject, date, displayTags(tags));
+	  return (0, _yoYo2.default)(_templateObject, (0, _date2.default)(date), displayTags(tags));
 	};
 
 	function displayTags(tags) {
@@ -12623,742 +12631,6 @@
 
 /***/ },
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>'], ['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>'], ['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>']);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	var _index = __webpack_require__(22);
-
-	var _index2 = _interopRequireDefault(_index);
-
-	var _index3 = __webpack_require__(21);
-
-	var _index4 = _interopRequireDefault(_index3);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	module.exports = function feed(n) {
-	  var routeInv = '/accede';
-	  var routeUser = './app/noticia/' + n._id;
-
-	  return (0, _yoYo2.default)(_templateObject, n.title, (0, _index2.default)(n.date, n.tags), (0, _index4.default)(n.agreeVotes, n.disagreeVotes), feedButton(routeUser, routeInv));
-	};
-
-	function feedButton(routeUser, routeInv) {
-	  if (document.URL.indexOf('invitado') == -1) {
-	    return feedButtonTemp(routeUser);
-	  } else {
-	    return feedButtonTemp(routeInv);
-	  }
-	}
-
-	function feedButtonTemp(route) {
-	  return (0, _yoYo2.default)(_templateObject2, route);
-	}
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>'], ['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>']);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	module.exports = function cta() {
-	  if (document.URL.indexOf('invitado') > 0) {
-	    return (0, _yoYo2.default)(_templateObject);
-	  }
-	};
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />\n  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />\n  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />\n  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />\n  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>\n                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>\n                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>\n              </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<a href="/app/usuario/', '" class="Navbar-menu-item"><li>MI PERFIL</li></a>'], ['<a href="/app/usuario/', '" class="Navbar-menu-item"><li>MI PERFIL</li></a>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<a class="Navbar_menu-menu-item" href="/app/usuario/', '"><li>MI PERFIL</li></a>'], ['<a class="Navbar_menu-menu-item" href="/app/usuario/', '"><li>MI PERFIL</li></a>']);
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	module.exports = function header(ctx, next) {
-	  var user = ctx.user;
-	  var container = (0, _jquery2.default)('#header-container');
-	  (0, _jquery2.default)(container).empty().append(headerTemplate(user));
-	  next();
-	};
-
-	function headerTemplate(user) {
-	  return (0, _yoYo2.default)(_templateObject, headerDesktop(user), headerMobile(user));
-	}
-
-	function headerDesktop(user) {
-	  if (document.URL.indexOf('/app') == -1) {
-	    return (0, _yoYo2.default)(_templateObject2);
-	  } else {
-	    return (0, _yoYo2.default)(_templateObject3, user.username);
-	  }
-	}
-
-	function headerMobile(user) {
-	  if (document.URL.indexOf('/app') == -1) {
-	    return (0, _yoYo2.default)(_templateObject4);
-	  } else {
-	    return (0, _yoYo2.default)(_templateObject5, user.username);
-	  }
-	}
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n  </aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n  </aside>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>']);
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	var _logics = __webpack_require__(27);
-
-	var _modules = __webpack_require__(28);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	// Requires the modules files --> object.
-
-
-	module.exports = function aside(ctx) {
-	  var container = (0, _jquery2.default)('#main-container');
-	  var ordered = ctx.ordered;
-	  if (document.URL.indexOf('invitado') == -1) {
-	    var user = ctx.user;
-	    container.append(userTemplate(ordered, user));
-	  } else {
-	    container.append(invitadoTemplate(ordered));
-	  }
-	  (0, _logics.colorBalance)();
-	};
-
-	var invitadoTemplate = function invitadoTemplate(news) {
-	  return (0, _yoYo2.default)(_templateObject, (0, _modules.asideRegister)(), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
-	};
-
-	var userTemplate = function userTemplate(news, user) {
-	  return (0, _yoYo2.default)(_templateObject2, (0, _modules.profile)(user), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
-	};
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	module.exports = { colorBalance: colorBalance };
-
-	// If the balance is positive, color = green
-	function colorBalance() {
-	  (0, _jquery2.default)('.Aside_temas-tema').each(function () {
-	    var balance = (0, _jquery2.default)(this).find((0, _jquery2.default)('.Aside_temas-tema-info-balance'));
-	    if (balance.html().charAt(0) !== '-') {
-	      balance.css('color', '#7ace7a');
-	    }
-	  });
-	}
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario:\n        <input name ="username" type="text">\n      </label>\n      <label for="">Email:\n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a:\n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a:\n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>'], ['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario:\n        <input name ="username" type="text">\n      </label>\n      <label for="">Email:\n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a:\n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a:\n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>'], ['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>'], ['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>'], ['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	module.exports = { asideRegister: asideRegister, asideSuscribe: asideSuscribe, temas: temas, profile: profile };
-
-	// ****** Aside templates
-	function asideRegister() {
-	  return (0, _yoYo2.default)(_templateObject);
-	}
-
-	function asideSuscribe() {
-	  return (0, _yoYo2.default)(_templateObject2);
-	}
-
-	// ****** TEMAS
-
-	function temas(news) {
-	  return (0, _yoYo2.default)(_templateObject3, news.map(function (post) {
-	    return masVotados(post);
-	  }));
-	}
-
-	function masVotados(post) {
-	  return (0, _yoYo2.default)(_templateObject4, post.title, post.total, post.balance);
-	}
-
-	// ****** TEMAS
-
-	function profile(user) {
-	  return (0, _yoYo2.default)(_templateObject5, user.username, user.username);
-	}
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// ctx is an object!
-
-	module.exports = {
-	  getNew: getNew,
-	  getAsideNew: getAsideNew,
-	  getPost: getPost,
-	  getCurrentUser: getCurrentUser,
-	  getAllComments: getAllComments,
-	  getCommentsAgree: getCommentsAgree,
-	  getCommentsDisagree: getCommentsDisagree,
-	  getSearch: getSearch
-	};
-
-	function getNew(ctx, next) {
-	  _jquery2.default.get('/api/news', function (data) {
-	    ctx.news = data;
-	    next();
-	  });
-	}
-
-	function getAsideNew(ctx, next) {
-	  _jquery2.default.get('/api/order-temas', function (data) {
-	    ctx.ordered = data;
-	    next();
-	  });
-	}
-
-	function getPost(ctx, next) {
-	  var id = ctx.path.split('/').pop();
-	  _jquery2.default.get('/api/news/' + id, function (data) {
-	    ctx.post = data;
-	    next();
-	  });
-	}
-
-	function getCurrentUser(ctx, next) {
-	  _jquery2.default.get('/api/currentUser', function (data) {
-	    ctx.user = data;
-	    next();
-	  });
-	}
-
-	function getAllComments(ctx, next) {
-	  _jquery2.default.get('/api/get-comments', function (data) {
-	    ctx.comments = data;
-	    next();
-	  });
-	}
-
-	function getCommentsAgree(ctx, next) {
-	  var id = ctx.path.split('/').pop();
-	  _jquery2.default.get('/api/get-comment-post-agree/' + id, function (data) {
-	    ctx.commentsAgree = data;
-	    next();
-	  });
-	}
-
-	function getCommentsDisagree(ctx, next) {
-	  var id = ctx.path.split('/').pop();
-	  _jquery2.default.get('/api/get-comment-post-disagree/' + id, function (data) {
-	    ctx.commentsDisagree = data;
-	    next();
-	  });
-	}
-
-	function getSearch(ctx, next) {
-	  // Gets the query (if there is one)
-	  // e.g. s="asturias" --> asturias
-	  var query = ctx.querystring.split('=').pop();
-	  _jquery2.default.get('/api/buscar/?s=' + query, function (data) {
-	    ctx.query = query;
-	    ctx.search = data;
-	    next();
-	  });
-	}
-
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var $burguer = (0, _jquery2.default)('.Navbar-icon-menu');
-	var $close = (0, _jquery2.default)('.Navbar-icon-close');
-	var $search = (0, _jquery2.default)('.Navbar-search-icon');
-	var $input = (0, _jquery2.default)('.Navbar-search-input');
-	var $menuMob = (0, _jquery2.default)('.Navbar_menu');
-	var $bg = (0, _jquery2.default)('#bg');
-
-	// -------OPEN MENU
-
-	function openMenu() {
-	  $menuMob.addClass('active');
-	  $bg.css('display', 'block');
-	  $burguer.css('display', 'none');
-	  (0, _jquery2.default)('body').css('overflow-y', 'hidden');
-	  $close.css('display', 'block');
-	}
-
-	// -------CLOSE MENU
-
-	function closeMenu() {
-	  $menuMob.removeClass('active');
-	  $bg.css('display', 'none');
-	  $close.css('display', 'none');
-	  (0, _jquery2.default)('body').css('overflow-y', 'scroll');
-	  $burguer.css('display', 'block');
-	}
-
-	// ------OPEN SEARCH
-	var searchOpened = false;
-
-	function searchInput() {
-	  if (!searchOpened) {
-	    $input.addClass('search-active');
-	    searchOpened = true;
-	  } else {
-	    $input.removeClass('search-active');
-	    searchOpened = false;
-	  }
-	}
-
-	// -------EVENT HANDLERS
-
-	$burguer.on('click', openMenu);
-	$close.on('click', closeMenu);
-	$bg.on('click', closeMenu);
-	$search.on('click', searchInput);
-
-/***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _index = __webpack_require__(25);
-
-	var _index2 = _interopRequireDefault(_index);
-
-	var _page = __webpack_require__(1);
-
-	var _page2 = _interopRequireDefault(_page);
-
-	var _template = __webpack_require__(32);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	(0, _page2.default)('/accede', _index2.default, function (ctx, next) {
-	  __webpack_require__(30);
-	  var main = document.getElementById('main-container');
-	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
-	    (0, _jquery2.default)('body').css('overflow', 'hidden');
-	  }
-	  (0, _jquery2.default)(main).empty().append(_template2.default);
-	});
-
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>'], ['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>']);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	module.exports = (0, _yoYo2.default)(_templateObject);
-
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _index = __webpack_require__(25);
-
-	var _index2 = _interopRequireDefault(_index);
-
-	var _page = __webpack_require__(1);
-
-	var _page2 = _interopRequireDefault(_page);
-
-	var _template = __webpack_require__(34);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	var _aside = __webpack_require__(26);
-
-	var _aside2 = _interopRequireDefault(_aside);
-
-	var _get_percentage = __webpack_require__(8);
-
-	var _get_percentage2 = _interopRequireDefault(_get_percentage);
-
-	var _ajax = __webpack_require__(29);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// getAsideNew gets the list of all posts for the aside list
-	// getCurrentUser gets the logged in user
-	// getCommentsAgree gets the lists of comments agreeing. Same for disagree
-	// header renders header
-	// getPosts gets the post we are about to render
-	(0, _page2.default)('/app/noticia/:id', _ajax.getAsideNew, _ajax.getCurrentUser, _ajax.getCommentsAgree, _ajax.getCommentsDisagree, _index2.default, _ajax.getPost, function (ctx, next) {
-	  __webpack_require__(30);
-	  __webpack_require__(36);
-
-	  (0, _jquery2.default)(document).ready(function () {
-	    (0, _get_percentage2.default)();
-	  });
-
-	  // coger id de la url para pedir ese post al json
-	  var id = document.URL.split('/').pop();
-	  window.scrollTo(0, 0);
-
-	  var main = document.getElementById('main-container');
-	  // The arguments are the news array, and the user object
-	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(ctx.post, ctx.user, ctx.commentsAgree, ctx.commentsDisagree));
-	  next();
-	}, _aside2.default);
-
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<div id="noticia_main">\n  ', '\n  ', '\n  ', '\n  ', '\n</div>'], ['<div id="noticia_main">\n  ', '\n  ', '\n  ', '\n  ', '\n</div>']);
-
-	var _yoYo = __webpack_require__(11);
-
-	var _yoYo2 = _interopRequireDefault(_yoYo);
-
-	var _index = __webpack_require__(21);
-
-	var _index2 = _interopRequireDefault(_index);
-
-	var _modules = __webpack_require__(35);
-
-	var _modules2 = _interopRequireDefault(_modules);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	// The first argument is the post info
-	// Second is the loggedin user information
-	// Third is the list of comments agreeing with this post
-	// Fourth is the list of comments disagreeing with this post
-	module.exports = function (n, u, cA, cD) {
-	  return (0, _yoYo2.default)(_templateObject, _modules2.default.noticiaCuerpo(n), _modules2.default.noticiaInformate(), _modules2.default.noticiaComentarios(n, u, cA, cD), (0, _index2.default)(n.agreeVotes, n.disagreeVotes));
-	};
-
-/***/ },
-/* 35 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _templateObject = _taggedTemplateLiteral(['<section class="Noticia_cuerpo">\n    <h2 class="Noticia_cuerpo-breadcrumb">Espa\xF1a</h2>\n    <h1 class="Noticia_cuerpo-title">', '</h1>\n    ', '\n    <h4 class="Noticia_cuerpo-entradilla">', '</h4>\n    ', '\n  </section>'], ['<section class="Noticia_cuerpo">\n    <h2 class="Noticia_cuerpo-breadcrumb">Espa\xF1a</h2>\n    <h1 class="Noticia_cuerpo-title">', '</h1>\n    ', '\n    <h4 class="Noticia_cuerpo-entradilla">', '</h4>\n    ', '\n  </section>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<section class="Noticia_informate">\n    <h2 class="Noticia_informate-encabezado">Inf\xF3rmate</h2>\n    <div class="Noticia_informate-media">\n      <a class="Noticia_informate-media-item" href="#">\n        <div><img src="/img/media/el-pais.svg" alt="" /></div>\n      </a>\n    </div>\n  </section>'], ['<section class="Noticia_informate">\n    <h2 class="Noticia_informate-encabezado">Inf\xF3rmate</h2>\n    <div class="Noticia_informate-media">\n      <a class="Noticia_informate-media-item" href="#">\n        <div><img src="/img/media/el-pais.svg" alt="" /></div>\n      </a>\n    </div>\n  </section>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<section class="Noticia_comentarios">\n    <h2 class="Noticia_comentarios-encabezado">Participa</h2>\n    <div class="Noticia_comentarios-comentarios">\n      ', '\n      ', '\n    </div>\n  </section>'], ['<section class="Noticia_comentarios">\n    <h2 class="Noticia_comentarios-encabezado">Participa</h2>\n    <div class="Noticia_comentarios-comentarios">\n      ', '\n      ', '\n    </div>\n  </section>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<form method="POST" action="/api/unupvote">\n    <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />\n  </form>'], ['<form method="POST" action="/api/unupvote">\n    <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />\n  </form>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<form method="POST" action="/api/upvote">\n    <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/upvote">\n    <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />\n  </form>']),
-	    _templateObject6 = _taggedTemplateLiteral(['<form method="POST" action="/api/undownvote">\n    <input type="image" src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />\n  </form>'], ['<form method="POST" action="/api/undownvote">\n    <input type="image" src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />\n  </form>']),
-	    _templateObject7 = _taggedTemplateLiteral(['<form method="POST" action="/api/downvote">\n    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/downvote">\n    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>']),
-	    _templateObject8 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
-	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
-	    _templateObject10 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <div class="Noticia_comentarios_list-order-votes">\n      <p>M\xE1s votado</p>\n    </div>\n    <div class="Noticia_comentarios_list-order-new">\n      <p>M\xE1s nuevos</p>\n    </div>\n  </div>\n  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <div class="Noticia_comentarios_list-order-votes">\n      <p>M\xE1s votado</p>\n    </div>\n    <div class="Noticia_comentarios_list-order-new">\n      <p>M\xE1s nuevos</p>\n    </div>\n  </div>\n  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
-	    _templateObject11 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
-	    _templateObject12 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
-	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-unlike/', '">\n          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>'], ['<form method="POST" action="/api/comment-unlike/', '">\n          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>']),
-	    _templateObject14 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>'], ['<form method="POST" action="/api/comment-like/', '">\n    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>']);
-
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-	var yo = __webpack_require__(11);
-	var details = __webpack_require__(22);
-	var votesBar = __webpack_require__(21);
-
-	module.exports = {
-	  noticiaCuerpo: noticiaCuerpo,
-	  noticiaInformate: noticiaInformate,
-	  noticiaComentarios: noticiaComentarios,
-	  comCard: comCard
-	};
-
-	function noticiaCuerpo(n) {
-	  return yo(_templateObject, n.title, details(n.date, n.tags), n.subtitle, votesBar(n.agreeVotes, n.disagreeVotes));
-	}
-
-	function noticiaInformate() {
-	  return yo(_templateObject2);
-	}
-
-	function noticiaComentarios(n, u, cA, cD) {
-	  return yo(_templateObject3, noticiaComentariosAgree(n, u, cA), noticiaComentariosDisagree(n, u, cD));
-	}
-
-	// *********** Templates for agree and disagree
-
-	// We loop throu all the liked news by user. If so, display one icon or other
-	// The third argument tells if returns agree or disagree
-	function votingFormsAgree(n, u) {
-	  var votedAgree = yo(_templateObject4);
-
-	  var unVotedAgree = yo(_templateObject5);
-
-	  // Loop around users liked posts
-	  for (var i in u.agreeVotes) {
-	    // If the post id is inside the user's array
-	    if (n._id === u.agreeVotes[i]) {
-	      return votedAgree;
-	    }
-	  }
-
-	  return unVotedAgree;
-	}
-
-	function votingFormsDisagree(n, u) {
-	  var votedDisagree = yo(_templateObject6);
-
-	  var unVotedDisagree = yo(_templateObject7);
-
-	  for (var i in u.disagreeVotes) {
-	    // If the post id is inside the user's array
-	    if (n._id === u.disagreeVotes[i]) {
-	      return votedDisagree;
-	    }
-	  }
-
-	  return unVotedDisagree;
-	}
-
-	function noticiaComentariosAgree(n, u, cA) {
-	  return yo(_templateObject8, n.agreeVotes, votingFormsAgree(n, u), comList(u, cA, 'agree'));
-	}
-
-	function noticiaComentariosDisagree(n, u, cD) {
-	  return yo(_templateObject9, n.disagreeVotes, votingFormsDisagree(n, u), comList(u, cD, 'disagree'));
-	}
-
-	// ************* Template for list of comments
-
-	function comList(u, c, a) {
-	  return yo(_templateObject10, c.map(function (c) {
-	    return comCard(u, c);
-	  }), renderSendComment(a));
-	}
-
-	// Renders form for sending comments
-	function renderSendComment(a) {
-	  var post = a === 'agree' ? 'commentagree' : 'commentdisagree';
-
-	  return yo(_templateObject11, post, post);
-	}
-
-	// ************* Template for the comment card.
-
-	function comCard(user, comment) {
-	  return yo(_templateObject12, comment.number, comment.username, comment.date, comment.comment, comCardForms(user, comment), comment.likes);
-	}
-
-	// Renders comment like button
-	function comCardForms(user, comment) {
-	  if (comment.likedBy.length > 0) {
-	    // if the logged user's id is on the array of liked comments, render liked button
-	    for (var i in comment.likedBy) {
-	      if (comment.likedBy[i] === user._id) {
-	        return yo(_templateObject13, comment._id);
-	      }
-	    }
-	  }
-	  // otherwise return non liked button
-	  return yo(_templateObject14, comment._id);
-	}
-
-/***/ },
-/* 36 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _modules = __webpack_require__(35);
-
-	var _votesLiked = __webpack_require__(37);
-
-	var _votesLiked2 = _interopRequireDefault(_votesLiked);
-
-	var _moment = __webpack_require__(38);
-
-	var _moment2 = _interopRequireDefault(_moment);
-
-	var _comments_events_functions = __webpack_require__(148);
-
-	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// ////////////////////////// Event Handlers
-
-	// ------ Creates input
-	(0, _jquery2.default)(document).on('click', '#comentar-agree', _comments_events_functions2.default.commentAgree);
-	(0, _jquery2.default)(document).on('click', '#comentar-disagree', _comments_events_functions2.default.commentDisagree);
-
-	// ------ Hides input
-	(0, _jquery2.default)(document).on('click', '#close-commentagree', _comments_events_functions2.default.commentCloseAgree);
-	(0, _jquery2.default)(document).on('click', '#close-commentdisagree', _comments_events_functions2.default.commentCloseDisagree);
-
-	(0, _jquery2.default)(document).on('click', '#comentar-closeagree', _comments_events_functions2.default.commentCloseAgree);
-	(0, _jquery2.default)(document).on('click', '#comentar-closedisagree', _comments_events_functions2.default.commentCloseDisagree);
-
-	// ----------- Like comments
-	// $(document).on('click', '#new-card', func.likeComment)
-	// $(document).on('click', '#new-card-liked', func.likeComment)
-
-	// // ----- Open and close menu when mobile
-	(0, _jquery2.default)(document).on('click', '#arrow-agree', _comments_events_functions2.default.commentsMobile);
-	(0, _jquery2.default)(document).on('click', '#title-agree', _comments_events_functions2.default.commentsMobile);
-	(0, _jquery2.default)(document).on('click', '#arrow-disagree', _comments_events_functions2.default.commentsMobile);
-	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
-
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
-
-	module.exports = function votesLiked(that, sign, votes, barNum, newHandler) {
-	  // --- Gets counter number through the class name
-	  var counter = that.siblings();
-	  counter = counter.map(function () {
-	    if ((0, _jquery2.default)(this).attr('class').indexOf('counter') !== -1) {
-	      return this;
-	    }
-	  });
-	  var temp = counter.text();
-
-	  // ----if the sign is positive, we add 1, otherwise, we substract 1
-
-	  var newNumber = sign ? Number(temp) + 1 : Number(temp) - 1;
-	  counter.text(newNumber);
-
-	  // ------if the number is related directly with votes bar, change that numbers too
-
-	  if (barNum !== null) {
-	    (0, _jquery2.default)('.Votes_bar').find(barNum).html(newNumber);
-	  }
-	  that.css('display', 'none');
-	  that.siblings(newHandler).css('display', 'block');
-	};
-
-/***/ },
-/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {'use strict';
@@ -15172,7 +14444,7 @@
 	        if (!locales[name] && typeof module !== 'undefined' && module && module.exports) {
 	            try {
 	                oldLocale = globalLocale._abbr;
-	                __webpack_require__(39)("./" + name);
+	                __webpack_require__(24)("./" + name);
 	                // because defineLocale currently also sets the global locale, we
 	                // want to undo that for lazy loaded locales
 	                getSetGlobalLocale(oldLocale);
@@ -17562,226 +16834,226 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
 
 /***/ },
-/* 39 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 40,
-		"./af.js": 40,
-		"./ar": 41,
-		"./ar-dz": 42,
-		"./ar-dz.js": 42,
-		"./ar-ly": 43,
-		"./ar-ly.js": 43,
-		"./ar-ma": 44,
-		"./ar-ma.js": 44,
-		"./ar-sa": 45,
-		"./ar-sa.js": 45,
-		"./ar-tn": 46,
-		"./ar-tn.js": 46,
-		"./ar.js": 41,
-		"./az": 47,
-		"./az.js": 47,
-		"./be": 48,
-		"./be.js": 48,
-		"./bg": 49,
-		"./bg.js": 49,
-		"./bn": 50,
-		"./bn.js": 50,
-		"./bo": 51,
-		"./bo.js": 51,
-		"./br": 52,
-		"./br.js": 52,
-		"./bs": 53,
-		"./bs.js": 53,
-		"./ca": 54,
-		"./ca.js": 54,
-		"./cs": 55,
-		"./cs.js": 55,
-		"./cv": 56,
-		"./cv.js": 56,
-		"./cy": 57,
-		"./cy.js": 57,
-		"./da": 58,
-		"./da.js": 58,
-		"./de": 59,
-		"./de-at": 60,
-		"./de-at.js": 60,
-		"./de.js": 59,
-		"./dv": 61,
-		"./dv.js": 61,
-		"./el": 62,
-		"./el.js": 62,
-		"./en-au": 63,
-		"./en-au.js": 63,
-		"./en-ca": 64,
-		"./en-ca.js": 64,
-		"./en-gb": 65,
-		"./en-gb.js": 65,
-		"./en-ie": 66,
-		"./en-ie.js": 66,
-		"./en-nz": 67,
-		"./en-nz.js": 67,
-		"./eo": 68,
-		"./eo.js": 68,
-		"./es": 69,
-		"./es-do": 70,
-		"./es-do.js": 70,
-		"./es.js": 69,
-		"./et": 71,
-		"./et.js": 71,
-		"./eu": 72,
-		"./eu.js": 72,
-		"./fa": 73,
-		"./fa.js": 73,
-		"./fi": 74,
-		"./fi.js": 74,
-		"./fo": 75,
-		"./fo.js": 75,
-		"./fr": 76,
-		"./fr-ca": 77,
-		"./fr-ca.js": 77,
-		"./fr-ch": 78,
-		"./fr-ch.js": 78,
-		"./fr.js": 76,
-		"./fy": 79,
-		"./fy.js": 79,
-		"./gd": 80,
-		"./gd.js": 80,
-		"./gl": 81,
-		"./gl.js": 81,
-		"./he": 82,
-		"./he.js": 82,
-		"./hi": 83,
-		"./hi.js": 83,
-		"./hr": 84,
-		"./hr.js": 84,
-		"./hu": 85,
-		"./hu.js": 85,
-		"./hy-am": 86,
-		"./hy-am.js": 86,
-		"./id": 87,
-		"./id.js": 87,
-		"./is": 88,
-		"./is.js": 88,
-		"./it": 89,
-		"./it.js": 89,
-		"./ja": 90,
-		"./ja.js": 90,
-		"./jv": 91,
-		"./jv.js": 91,
-		"./ka": 92,
-		"./ka.js": 92,
-		"./kk": 93,
-		"./kk.js": 93,
-		"./km": 94,
-		"./km.js": 94,
-		"./ko": 95,
-		"./ko.js": 95,
-		"./ky": 96,
-		"./ky.js": 96,
-		"./lb": 97,
-		"./lb.js": 97,
-		"./lo": 98,
-		"./lo.js": 98,
-		"./lt": 99,
-		"./lt.js": 99,
-		"./lv": 100,
-		"./lv.js": 100,
-		"./me": 101,
-		"./me.js": 101,
-		"./mi": 102,
-		"./mi.js": 102,
-		"./mk": 103,
-		"./mk.js": 103,
-		"./ml": 104,
-		"./ml.js": 104,
-		"./mr": 105,
-		"./mr.js": 105,
-		"./ms": 106,
-		"./ms-my": 107,
-		"./ms-my.js": 107,
-		"./ms.js": 106,
-		"./my": 108,
-		"./my.js": 108,
-		"./nb": 109,
-		"./nb.js": 109,
-		"./ne": 110,
-		"./ne.js": 110,
-		"./nl": 111,
-		"./nl-be": 112,
-		"./nl-be.js": 112,
-		"./nl.js": 111,
-		"./nn": 113,
-		"./nn.js": 113,
-		"./pa-in": 114,
-		"./pa-in.js": 114,
-		"./pl": 115,
-		"./pl.js": 115,
-		"./pt": 116,
-		"./pt-br": 117,
-		"./pt-br.js": 117,
-		"./pt.js": 116,
-		"./ro": 118,
-		"./ro.js": 118,
-		"./ru": 119,
-		"./ru.js": 119,
-		"./se": 120,
-		"./se.js": 120,
-		"./si": 121,
-		"./si.js": 121,
-		"./sk": 122,
-		"./sk.js": 122,
-		"./sl": 123,
-		"./sl.js": 123,
-		"./sq": 124,
-		"./sq.js": 124,
-		"./sr": 125,
-		"./sr-cyrl": 126,
-		"./sr-cyrl.js": 126,
-		"./sr.js": 125,
-		"./ss": 127,
-		"./ss.js": 127,
-		"./sv": 128,
-		"./sv.js": 128,
-		"./sw": 129,
-		"./sw.js": 129,
-		"./ta": 130,
-		"./ta.js": 130,
-		"./te": 131,
-		"./te.js": 131,
-		"./tet": 132,
-		"./tet.js": 132,
-		"./th": 133,
-		"./th.js": 133,
-		"./tl-ph": 134,
-		"./tl-ph.js": 134,
-		"./tlh": 135,
-		"./tlh.js": 135,
-		"./tr": 136,
-		"./tr.js": 136,
-		"./tzl": 137,
-		"./tzl.js": 137,
-		"./tzm": 138,
-		"./tzm-latn": 139,
-		"./tzm-latn.js": 139,
-		"./tzm.js": 138,
-		"./uk": 140,
-		"./uk.js": 140,
-		"./uz": 141,
-		"./uz.js": 141,
-		"./vi": 142,
-		"./vi.js": 142,
-		"./x-pseudo": 143,
-		"./x-pseudo.js": 143,
-		"./yo": 144,
-		"./yo.js": 144,
-		"./zh-cn": 145,
-		"./zh-cn.js": 145,
-		"./zh-hk": 146,
-		"./zh-hk.js": 146,
-		"./zh-tw": 147,
-		"./zh-tw.js": 147
+		"./af": 25,
+		"./af.js": 25,
+		"./ar": 26,
+		"./ar-dz": 27,
+		"./ar-dz.js": 27,
+		"./ar-ly": 28,
+		"./ar-ly.js": 28,
+		"./ar-ma": 29,
+		"./ar-ma.js": 29,
+		"./ar-sa": 30,
+		"./ar-sa.js": 30,
+		"./ar-tn": 31,
+		"./ar-tn.js": 31,
+		"./ar.js": 26,
+		"./az": 32,
+		"./az.js": 32,
+		"./be": 33,
+		"./be.js": 33,
+		"./bg": 34,
+		"./bg.js": 34,
+		"./bn": 35,
+		"./bn.js": 35,
+		"./bo": 36,
+		"./bo.js": 36,
+		"./br": 37,
+		"./br.js": 37,
+		"./bs": 38,
+		"./bs.js": 38,
+		"./ca": 39,
+		"./ca.js": 39,
+		"./cs": 40,
+		"./cs.js": 40,
+		"./cv": 41,
+		"./cv.js": 41,
+		"./cy": 42,
+		"./cy.js": 42,
+		"./da": 43,
+		"./da.js": 43,
+		"./de": 44,
+		"./de-at": 45,
+		"./de-at.js": 45,
+		"./de.js": 44,
+		"./dv": 46,
+		"./dv.js": 46,
+		"./el": 47,
+		"./el.js": 47,
+		"./en-au": 48,
+		"./en-au.js": 48,
+		"./en-ca": 49,
+		"./en-ca.js": 49,
+		"./en-gb": 50,
+		"./en-gb.js": 50,
+		"./en-ie": 51,
+		"./en-ie.js": 51,
+		"./en-nz": 52,
+		"./en-nz.js": 52,
+		"./eo": 53,
+		"./eo.js": 53,
+		"./es": 54,
+		"./es-do": 55,
+		"./es-do.js": 55,
+		"./es.js": 54,
+		"./et": 56,
+		"./et.js": 56,
+		"./eu": 57,
+		"./eu.js": 57,
+		"./fa": 58,
+		"./fa.js": 58,
+		"./fi": 59,
+		"./fi.js": 59,
+		"./fo": 60,
+		"./fo.js": 60,
+		"./fr": 61,
+		"./fr-ca": 62,
+		"./fr-ca.js": 62,
+		"./fr-ch": 63,
+		"./fr-ch.js": 63,
+		"./fr.js": 61,
+		"./fy": 64,
+		"./fy.js": 64,
+		"./gd": 65,
+		"./gd.js": 65,
+		"./gl": 66,
+		"./gl.js": 66,
+		"./he": 67,
+		"./he.js": 67,
+		"./hi": 68,
+		"./hi.js": 68,
+		"./hr": 69,
+		"./hr.js": 69,
+		"./hu": 70,
+		"./hu.js": 70,
+		"./hy-am": 71,
+		"./hy-am.js": 71,
+		"./id": 72,
+		"./id.js": 72,
+		"./is": 73,
+		"./is.js": 73,
+		"./it": 74,
+		"./it.js": 74,
+		"./ja": 75,
+		"./ja.js": 75,
+		"./jv": 76,
+		"./jv.js": 76,
+		"./ka": 77,
+		"./ka.js": 77,
+		"./kk": 78,
+		"./kk.js": 78,
+		"./km": 79,
+		"./km.js": 79,
+		"./ko": 80,
+		"./ko.js": 80,
+		"./ky": 81,
+		"./ky.js": 81,
+		"./lb": 82,
+		"./lb.js": 82,
+		"./lo": 83,
+		"./lo.js": 83,
+		"./lt": 84,
+		"./lt.js": 84,
+		"./lv": 85,
+		"./lv.js": 85,
+		"./me": 86,
+		"./me.js": 86,
+		"./mi": 87,
+		"./mi.js": 87,
+		"./mk": 88,
+		"./mk.js": 88,
+		"./ml": 89,
+		"./ml.js": 89,
+		"./mr": 90,
+		"./mr.js": 90,
+		"./ms": 91,
+		"./ms-my": 92,
+		"./ms-my.js": 92,
+		"./ms.js": 91,
+		"./my": 93,
+		"./my.js": 93,
+		"./nb": 94,
+		"./nb.js": 94,
+		"./ne": 95,
+		"./ne.js": 95,
+		"./nl": 96,
+		"./nl-be": 97,
+		"./nl-be.js": 97,
+		"./nl.js": 96,
+		"./nn": 98,
+		"./nn.js": 98,
+		"./pa-in": 99,
+		"./pa-in.js": 99,
+		"./pl": 100,
+		"./pl.js": 100,
+		"./pt": 101,
+		"./pt-br": 102,
+		"./pt-br.js": 102,
+		"./pt.js": 101,
+		"./ro": 103,
+		"./ro.js": 103,
+		"./ru": 104,
+		"./ru.js": 104,
+		"./se": 105,
+		"./se.js": 105,
+		"./si": 106,
+		"./si.js": 106,
+		"./sk": 107,
+		"./sk.js": 107,
+		"./sl": 108,
+		"./sl.js": 108,
+		"./sq": 109,
+		"./sq.js": 109,
+		"./sr": 110,
+		"./sr-cyrl": 111,
+		"./sr-cyrl.js": 111,
+		"./sr.js": 110,
+		"./ss": 112,
+		"./ss.js": 112,
+		"./sv": 113,
+		"./sv.js": 113,
+		"./sw": 114,
+		"./sw.js": 114,
+		"./ta": 115,
+		"./ta.js": 115,
+		"./te": 116,
+		"./te.js": 116,
+		"./tet": 117,
+		"./tet.js": 117,
+		"./th": 118,
+		"./th.js": 118,
+		"./tl-ph": 119,
+		"./tl-ph.js": 119,
+		"./tlh": 120,
+		"./tlh.js": 120,
+		"./tr": 121,
+		"./tr.js": 121,
+		"./tzl": 122,
+		"./tzl.js": 122,
+		"./tzm": 123,
+		"./tzm-latn": 124,
+		"./tzm-latn.js": 124,
+		"./tzm.js": 123,
+		"./uk": 125,
+		"./uk.js": 125,
+		"./uz": 126,
+		"./uz.js": 126,
+		"./vi": 127,
+		"./vi.js": 127,
+		"./x-pseudo": 128,
+		"./x-pseudo.js": 128,
+		"./yo": 129,
+		"./yo.js": 129,
+		"./zh-cn": 130,
+		"./zh-cn.js": 130,
+		"./zh-hk": 131,
+		"./zh-hk.js": 131,
+		"./zh-tw": 132,
+		"./zh-tw.js": 132
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -17794,11 +17066,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 39;
+	webpackContext.id = 24;
 
 
 /***/ },
-/* 40 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -17810,7 +17082,7 @@
 	//! author : Werner Mollentze : https://github.com/wernerm
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -17877,7 +17149,7 @@
 	});
 
 /***/ },
-/* 41 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -17891,7 +17163,7 @@
 	//! author : forabi https://github.com/forabi
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18011,7 +17283,7 @@
 	});
 
 /***/ },
-/* 42 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18023,7 +17295,7 @@
 	//! author : Noureddine LOUAHEDJ : https://github.com/noureddineme
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18075,7 +17347,7 @@
 	});
 
 /***/ },
-/* 43 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18087,7 +17359,7 @@
 	//! author : Ali Hmer: https://github.com/kikoanis
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18193,7 +17465,7 @@
 	});
 
 /***/ },
-/* 44 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18206,7 +17478,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18258,7 +17530,7 @@
 	});
 
 /***/ },
-/* 45 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18270,7 +17542,7 @@
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18368,7 +17640,7 @@
 	});
 
 /***/ },
-/* 46 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18380,7 +17652,7 @@
 	//! author : Nader Toukabri : https://github.com/naderio
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18432,7 +17704,7 @@
 	});
 
 /***/ },
-/* 47 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18444,7 +17716,7 @@
 	//! author : topchiyev : https://github.com/topchiyev
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18544,7 +17816,7 @@
 	});
 
 /***/ },
-/* 48 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18558,7 +17830,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18682,7 +17954,7 @@
 	});
 
 /***/ },
-/* 49 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18694,7 +17966,7 @@
 	//! author : Krasen Borisov : https://github.com/kraz
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18777,7 +18049,7 @@
 	});
 
 /***/ },
-/* 50 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18789,7 +18061,7 @@
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -18899,7 +18171,7 @@
 	});
 
 /***/ },
-/* 51 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -18911,7 +18183,7 @@
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19021,7 +18293,7 @@
 	});
 
 /***/ },
-/* 52 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19033,7 +18305,7 @@
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19134,7 +18406,7 @@
 	});
 
 /***/ },
-/* 53 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19147,7 +18419,7 @@
 	//! based on (hr) translation by Bojan Marković
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19282,7 +18554,7 @@
 	});
 
 /***/ },
-/* 54 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19294,7 +18566,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19365,7 +18637,7 @@
 	});
 
 /***/ },
-/* 55 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19377,7 +18649,7 @@
 	//! author : petrbela : https://github.com/petrbela
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19556,7 +18828,7 @@
 	});
 
 /***/ },
-/* 56 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19568,7 +18840,7 @@
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19624,7 +18896,7 @@
 	});
 
 /***/ },
-/* 57 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19637,7 +18909,7 @@
 	//! author : https://github.com/ryangreaves
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19709,7 +18981,7 @@
 	});
 
 /***/ },
-/* 58 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19721,7 +18993,7 @@
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19774,7 +19046,7 @@
 	});
 
 /***/ },
-/* 59 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19788,7 +19060,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19857,7 +19129,7 @@
 	});
 
 /***/ },
-/* 60 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19872,7 +19144,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -19941,7 +19213,7 @@
 	});
 
 /***/ },
-/* 61 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -19953,7 +19225,7 @@
 	//! author : Jawish Hameed : https://github.com/jawish
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20025,7 +19297,7 @@
 	});
 
 /***/ },
-/* 62 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20037,7 +19309,7 @@
 	//! author : Aggelos Karalias : https://github.com/mehiel
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20129,7 +19401,7 @@
 	});
 
 /***/ },
-/* 63 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20141,7 +19413,7 @@
 	//! author : Jared Morse : https://github.com/jarcoal
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20198,7 +19470,7 @@
 	});
 
 /***/ },
-/* 64 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20210,7 +19482,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20263,7 +19535,7 @@
 	});
 
 /***/ },
-/* 65 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20275,7 +19547,7 @@
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20332,7 +19604,7 @@
 	});
 
 /***/ },
-/* 66 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20344,7 +19616,7 @@
 	//! author : Chris Cartlidge : https://github.com/chriscartlidge
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20401,7 +19673,7 @@
 	});
 
 /***/ },
-/* 67 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20413,7 +19685,7 @@
 	//! author : Luke McGregor : https://github.com/lukemcgregor
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20470,7 +19742,7 @@
 	});
 
 /***/ },
-/* 68 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20484,7 +19756,7 @@
 	//!          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20548,7 +19820,7 @@
 	});
 
 /***/ },
-/* 69 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20560,7 +19832,7 @@
 	//! author : Julio Napurí : https://github.com/julionc
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20634,7 +19906,7 @@
 	});
 
 /***/ },
-/* 70 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20645,7 +19917,7 @@
 	//! locale : Spanish (Dominican Republic) [es-do]
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20719,7 +19991,7 @@
 	});
 
 /***/ },
-/* 71 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20732,7 +20004,7 @@
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20804,7 +20076,7 @@
 	});
 
 /***/ },
-/* 72 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20816,7 +20088,7 @@
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20875,7 +20147,7 @@
 	});
 
 /***/ },
-/* 73 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -20887,7 +20159,7 @@
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -20988,7 +20260,7 @@
 	});
 
 /***/ },
-/* 74 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21000,7 +20272,7 @@
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21097,7 +20369,7 @@
 	});
 
 /***/ },
-/* 75 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21109,7 +20381,7 @@
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21162,7 +20434,7 @@
 	});
 
 /***/ },
-/* 76 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21174,7 +20446,7 @@
 	//! author : John Fischer : https://github.com/jfroffice
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21231,7 +20503,7 @@
 	});
 
 /***/ },
-/* 77 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21243,7 +20515,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21296,7 +20568,7 @@
 	});
 
 /***/ },
-/* 78 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21308,7 +20580,7 @@
 	//! author : Gaspard Bucher : https://github.com/gaspard
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21365,7 +20637,7 @@
 	});
 
 /***/ },
-/* 79 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21377,7 +20649,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21443,7 +20715,7 @@
 	});
 
 /***/ },
-/* 80 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21455,7 +20727,7 @@
 	//! author : Jon Ashdown : https://github.com/jonashdown
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21522,7 +20794,7 @@
 	});
 
 /***/ },
-/* 81 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21534,7 +20806,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21604,7 +20876,7 @@
 	});
 
 /***/ },
-/* 82 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21618,7 +20890,7 @@
 	//! author : Tal Ater : https://github.com/TalAter
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21709,7 +20981,7 @@
 	});
 
 /***/ },
-/* 83 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21721,7 +20993,7 @@
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21838,7 +21110,7 @@
 	});
 
 /***/ },
-/* 84 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21850,7 +21122,7 @@
 	//! author : Bojan Marković : https://github.com/bmarkovic
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -21988,7 +21260,7 @@
 	});
 
 /***/ },
-/* 85 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22000,7 +21272,7 @@
 	//! author : Adam Brunner : https://github.com/adambrunner
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22102,7 +21374,7 @@
 	});
 
 /***/ },
-/* 86 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22114,7 +21386,7 @@
 	//! author : Armendarabyan : https://github.com/armendarabyan
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22203,7 +21475,7 @@
 	});
 
 /***/ },
-/* 87 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22216,7 +21488,7 @@
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22291,7 +21563,7 @@
 	});
 
 /***/ },
-/* 88 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22303,7 +21575,7 @@
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22423,7 +21695,7 @@
 	});
 
 /***/ },
-/* 89 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22436,7 +21708,7 @@
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22498,7 +21770,7 @@
 	});
 
 /***/ },
-/* 90 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22510,7 +21782,7 @@
 	//! author : LI Long : https://github.com/baryon
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22579,7 +21851,7 @@
 	});
 
 /***/ },
-/* 91 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22592,7 +21864,7 @@
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22667,7 +21939,7 @@
 	});
 
 /***/ },
-/* 92 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22679,7 +21951,7 @@
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22760,7 +22032,7 @@
 	});
 
 /***/ },
-/* 93 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22772,7 +22044,7 @@
 	//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22852,7 +22124,7 @@
 	});
 
 /***/ },
-/* 94 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22864,7 +22136,7 @@
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22915,7 +22187,7 @@
 	});
 
 /***/ },
-/* 95 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22928,7 +22200,7 @@
 	//! author : Jeeeyul Lee <jeeeyul@gmail.com>
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -22985,7 +22257,7 @@
 	});
 
 /***/ },
-/* 96 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -22997,7 +22269,7 @@
 	//! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23077,7 +22349,7 @@
 	});
 
 /***/ },
-/* 97 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23090,7 +22362,7 @@
 	//! author : David Raison : https://github.com/kwisatz
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23220,7 +22492,7 @@
 	});
 
 /***/ },
-/* 98 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23232,7 +22504,7 @@
 	//! author : Ryan Hart : https://github.com/ryanhart2
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23295,7 +22567,7 @@
 	});
 
 /***/ },
-/* 99 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23307,7 +22579,7 @@
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23417,7 +22689,7 @@
 	});
 
 /***/ },
-/* 100 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23430,7 +22702,7 @@
 	//! author : Jānis Elmeris : https://github.com/JanisE
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23519,7 +22791,7 @@
 	});
 
 /***/ },
-/* 101 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23531,7 +22803,7 @@
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23627,7 +22899,7 @@
 	});
 
 /***/ },
-/* 102 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23639,7 +22911,7 @@
 	//! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23696,7 +22968,7 @@
 	});
 
 /***/ },
-/* 103 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23708,7 +22980,7 @@
 	//! author : Borislav Mickov : https://github.com/B0k0
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23791,7 +23063,7 @@
 	});
 
 /***/ },
-/* 104 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23803,7 +23075,7 @@
 	//! author : Floyd Pink : https://github.com/floydpink
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -23875,7 +23147,7 @@
 	});
 
 /***/ },
-/* 105 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -23888,7 +23160,7 @@
 	//! author : Vivek Athalye : https://github.com/vnathalye
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24059,7 +23331,7 @@
 	});
 
 /***/ },
-/* 106 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24071,7 +23343,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24146,7 +23418,7 @@
 	});
 
 /***/ },
-/* 107 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24159,7 +23431,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24234,7 +23506,7 @@
 	});
 
 /***/ },
-/* 108 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24248,7 +23520,7 @@
 	//! author : Tin Aung Lin : https://github.com/thanyawzinmin
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24335,7 +23607,7 @@
 	});
 
 /***/ },
-/* 109 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24348,7 +23620,7 @@
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24403,7 +23675,7 @@
 	});
 
 /***/ },
-/* 110 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24415,7 +23687,7 @@
 	//! author : suvash : https://github.com/suvash
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24531,7 +23803,7 @@
 	});
 
 /***/ },
-/* 111 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24544,7 +23816,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24622,7 +23894,7 @@
 	});
 
 /***/ },
-/* 112 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24635,7 +23907,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24713,7 +23985,7 @@
 	});
 
 /***/ },
-/* 113 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24725,7 +23997,7 @@
 	//! author : https://github.com/mechuwind
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24778,7 +24050,7 @@
 	});
 
 /***/ },
-/* 114 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24790,7 +24062,7 @@
 	//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -24907,7 +24179,7 @@
 	});
 
 /***/ },
-/* 115 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -24919,7 +24191,7 @@
 	//! author : Rafal Hirsz : https://github.com/evoL
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25017,7 +24289,7 @@
 	});
 
 /***/ },
-/* 116 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25029,7 +24301,7 @@
 	//! author : Jefferson : https://github.com/jalex79
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25086,7 +24358,7 @@
 	});
 
 /***/ },
-/* 117 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25098,7 +24370,7 @@
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25151,7 +24423,7 @@
 	});
 
 /***/ },
-/* 118 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25164,7 +24436,7 @@
 	//! author : Valentin Agachi : https://github.com/avaly
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25231,7 +24503,7 @@
 	});
 
 /***/ },
-/* 119 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25245,7 +24517,7 @@
 	//! author : Коренберг Марк : https://github.com/socketpair
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25419,7 +24691,7 @@
 	});
 
 /***/ },
-/* 120 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25431,7 +24703,7 @@
 	//! authors : Bård Rolstad Henriksen : https://github.com/karamell
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25484,7 +24756,7 @@
 	});
 
 /***/ },
-/* 121 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25496,7 +24768,7 @@
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25561,7 +24833,7 @@
 	});
 
 /***/ },
-/* 122 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25574,7 +24846,7 @@
 	//! based on work of petrbela : https://github.com/petrbela
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25727,7 +24999,7 @@
 	});
 
 /***/ },
-/* 123 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25739,7 +25011,7 @@
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25894,7 +25166,7 @@
 	});
 
 /***/ },
-/* 124 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25908,7 +25180,7 @@
 	//! author : Oerd Cukalla : https://github.com/oerd
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -25969,7 +25241,7 @@
 	});
 
 /***/ },
-/* 125 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -25981,7 +25253,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26076,7 +25348,7 @@
 	});
 
 /***/ },
-/* 126 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26088,7 +25360,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26183,7 +25455,7 @@
 	});
 
 /***/ },
-/* 127 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26195,7 +25467,7 @@
 	//! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26276,7 +25548,7 @@
 	});
 
 /***/ },
-/* 128 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26288,7 +25560,7 @@
 	//! author : Jens Alm : https://github.com/ulmus
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26347,7 +25619,7 @@
 	});
 
 /***/ },
-/* 129 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26359,7 +25631,7 @@
 	//! author : Fahad Kassim : https://github.com/fadsel
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26411,7 +25683,7 @@
 	});
 
 /***/ },
-/* 130 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26423,7 +25695,7 @@
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26546,7 +25818,7 @@
 	});
 
 /***/ },
-/* 131 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26558,7 +25830,7 @@
 	//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26640,7 +25912,7 @@
 	});
 
 /***/ },
-/* 132 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26653,7 +25925,7 @@
 	//! author : Onorio De J. Afonso : https://github.com/marobo
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26710,7 +25982,7 @@
 	});
 
 /***/ },
-/* 133 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26722,7 +25994,7 @@
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26782,7 +26054,7 @@
 	});
 
 /***/ },
-/* 134 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26794,7 +26066,7 @@
 	//! author : Dan Hagman : https://github.com/hagmandan
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26849,7 +26121,7 @@
 	});
 
 /***/ },
-/* 135 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26861,7 +26133,7 @@
 	//! author : Dominika Kruk : https://github.com/amaranthrose
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -26962,7 +26234,7 @@
 	});
 
 /***/ },
-/* 136 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -26975,7 +26247,7 @@
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27058,7 +26330,7 @@
 	});
 
 /***/ },
-/* 137 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27071,7 +26343,7 @@
 	//! author : Iustì Canun
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27155,7 +26427,7 @@
 	});
 
 /***/ },
-/* 138 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27167,7 +26439,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27218,7 +26490,7 @@
 	});
 
 /***/ },
-/* 139 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27230,7 +26502,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27281,7 +26553,7 @@
 	});
 
 /***/ },
-/* 140 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27294,7 +26566,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27427,7 +26699,7 @@
 	});
 
 /***/ },
-/* 141 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27439,7 +26711,7 @@
 	//! author : Sardor Muminov : https://github.com/muminoff
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27490,7 +26762,7 @@
 	});
 
 /***/ },
-/* 142 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27502,7 +26774,7 @@
 	//! author : Bang Nguyen : https://github.com/bangnk
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27575,7 +26847,7 @@
 	});
 
 /***/ },
-/* 143 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27587,7 +26859,7 @@
 	//! author : Andrew Hood : https://github.com/andrewhood125
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27645,7 +26917,7 @@
 	});
 
 /***/ },
-/* 144 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27657,7 +26929,7 @@
 	//! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27710,7 +26982,7 @@
 	});
 
 /***/ },
-/* 145 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27723,7 +26995,7 @@
 	//! author : Zeno Zeng : https://github.com/zenozeng
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27841,7 +27113,7 @@
 	});
 
 /***/ },
-/* 146 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27855,7 +27127,7 @@
 	//! author : Konstantin : https://github.com/skfd
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -27951,7 +27223,7 @@
 	});
 
 /***/ },
-/* 147 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -27964,7 +27236,7 @@
 	//! author : Chris Lam : https://github.com/hehachris
 
 	;(function (global, factory) {
-	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(38)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(38)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
+	    ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' && "function" === 'function' ? factory(__webpack_require__(23)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(23)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.moment);
 	})(undefined, function (moment) {
 	    'use strict';
 
@@ -28060,6 +27332,721 @@
 	});
 
 /***/ },
+/* 133 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = function formatDate(date) {
+	  // date comes like: 2017-02-26T12:25:57.688Z
+	  var year = date.slice(0, 4);
+	  var month = date.slice(5, 7);
+	  var day = date.slice(8, 10);
+	  var hour = date.slice(11, 13);
+	  var minute = date.slice(14, 16);
+	  return date = day + "/" + month + "/" + year + "   " + hour + ":" + minute;
+	};
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>'], ['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>'], ['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _index = __webpack_require__(22);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _index3 = __webpack_require__(21);
+
+	var _index4 = _interopRequireDefault(_index3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = function feed(n) {
+	  var routeInv = '/accede';
+	  var routeUser = './app/noticia/' + n._id;
+
+	  return (0, _yoYo2.default)(_templateObject, n.title, (0, _index2.default)(n.date, n.tags), (0, _index4.default)(n.agreeVotes, n.disagreeVotes), feedButton(routeUser, routeInv));
+	};
+
+	function feedButton(routeUser, routeInv) {
+	  if (document.URL.indexOf('invitado') == -1) {
+	    return feedButtonTemp(routeUser);
+	  } else {
+	    return feedButtonTemp(routeInv);
+	  }
+	}
+
+	function feedButtonTemp(route) {
+	  return (0, _yoYo2.default)(_templateObject2, route);
+	}
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>'], ['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = function cta() {
+	  if (document.URL.indexOf('invitado') > 0) {
+	    return (0, _yoYo2.default)(_templateObject);
+	  }
+	};
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />\n  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />\n  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />\n  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />\n  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>\n                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>\n                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>\n              </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<a href="/app/usuario/', '" class="Navbar-menu-item"><li>MI PERFIL</li></a>'], ['<a href="/app/usuario/', '" class="Navbar-menu-item"><li>MI PERFIL</li></a>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<a class="Navbar_menu-menu-item" href="/app/usuario/', '"><li>MI PERFIL</li></a>'], ['<a class="Navbar_menu-menu-item" href="/app/usuario/', '"><li>MI PERFIL</li></a>']);
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = function header(ctx, next) {
+	  var user = ctx.user;
+	  var container = (0, _jquery2.default)('#header-container');
+	  (0, _jquery2.default)(container).empty().append(headerTemplate(user));
+	  next();
+	};
+
+	function headerTemplate(user) {
+	  return (0, _yoYo2.default)(_templateObject, headerDesktop(user), headerMobile(user));
+	}
+
+	function headerDesktop(user) {
+	  if (document.URL.indexOf('/app') == -1) {
+	    return (0, _yoYo2.default)(_templateObject2);
+	  } else {
+	    return (0, _yoYo2.default)(_templateObject3, user.username);
+	  }
+	}
+
+	function headerMobile(user) {
+	  if (document.URL.indexOf('/app') == -1) {
+	    return (0, _yoYo2.default)(_templateObject4);
+	  } else {
+	    return (0, _yoYo2.default)(_templateObject5, user.username);
+	  }
+	}
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n  </aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n  </aside>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>']);
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _logics = __webpack_require__(138);
+
+	var _modules = __webpack_require__(139);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	// Requires the modules files --> object.
+
+
+	module.exports = function aside(ctx) {
+	  var container = (0, _jquery2.default)('#main-container');
+	  var ordered = ctx.ordered;
+	  if (document.URL.indexOf('invitado') == -1) {
+	    var user = ctx.user;
+	    container.append(userTemplate(ordered, user));
+	  } else {
+	    container.append(invitadoTemplate(ordered));
+	  }
+	  (0, _logics.colorBalance)();
+	};
+
+	var invitadoTemplate = function invitadoTemplate(news) {
+	  return (0, _yoYo2.default)(_templateObject, (0, _modules.asideRegister)(), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
+	};
+
+	var userTemplate = function userTemplate(news, user) {
+	  return (0, _yoYo2.default)(_templateObject2, (0, _modules.profile)(user), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
+	};
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = { colorBalance: colorBalance };
+
+	// If the balance is positive, color = green
+	function colorBalance() {
+	  (0, _jquery2.default)('.Aside_temas-tema').each(function () {
+	    var balance = (0, _jquery2.default)(this).find((0, _jquery2.default)('.Aside_temas-tema-info-balance'));
+	    if (balance.html().charAt(0) !== '-') {
+	      balance.css('color', '#7ace7a');
+	    }
+	  });
+	}
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario:\n        <input name ="username" type="text">\n      </label>\n      <label for="">Email:\n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a:\n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a:\n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>'], ['<div class="Aside_registrate">\n    <h2 class="Aside_registrate-title">Reg\xEDstrate</h2>\n    <p class="Aside_registrate-subtitle">\n      \xDAnete a la comunidad, vota y comparte tu opini\xF3n. \xA1Queremos escucharte!\n    </p>\n    <form class="Aside_registrate-form" action="/usersignup" method="POST">\n      <label for="">Nombre usuario:\n        <input name ="username" type="text">\n      </label>\n      <label for="">Email:\n        <input name="email" type="email">\n      </label>\n      <label for="">Contrase\xF1a:\n        <input name="password" type="password">\n      <label for="">Repita la contrase\xF1a:\n        <input name="password_confirmation" type="password">\n      </label>\n      <input class="Aside_registrate-form-button" type="submit" value="Reg\xEDstrate">\n    </form>\n    <button class="Aside_registrate-facebook">Reg\xEDstrate con Facebook</button>\n    <button class="Aside_registrate-google">Reg\xEDstrate con Google</button>\n  </div>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>'], ['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>'], ['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>'], ['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <img src="/img/avatar.jpg" alt="avatar" class="Aside_profile-avatar" />\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = { asideRegister: asideRegister, asideSuscribe: asideSuscribe, temas: temas, profile: profile };
+
+	// ****** Aside templates
+	function asideRegister() {
+	  return (0, _yoYo2.default)(_templateObject);
+	}
+
+	function asideSuscribe() {
+	  return (0, _yoYo2.default)(_templateObject2);
+	}
+
+	// ****** TEMAS
+
+	function temas(news) {
+	  return (0, _yoYo2.default)(_templateObject3, news.map(function (post) {
+	    return masVotados(post);
+	  }));
+	}
+
+	function masVotados(post) {
+	  return (0, _yoYo2.default)(_templateObject4, post.title, post.total, post.balance);
+	}
+
+	// ****** TEMAS
+
+	function profile(user) {
+	  return (0, _yoYo2.default)(_templateObject5, user.username, user.username);
+	}
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// ctx is an object!
+
+	module.exports = {
+	  getNew: getNew,
+	  getAsideNew: getAsideNew,
+	  getPost: getPost,
+	  getCurrentUser: getCurrentUser,
+	  getAllComments: getAllComments,
+	  getCommentsAgree: getCommentsAgree,
+	  getCommentsDisagree: getCommentsDisagree,
+	  getSearch: getSearch
+	};
+
+	function getNew(ctx, next) {
+	  _jquery2.default.get('/api/news', function (data) {
+	    ctx.news = data;
+	    next();
+	  });
+	}
+
+	function getAsideNew(ctx, next) {
+	  _jquery2.default.get('/api/order-temas', function (data) {
+	    ctx.ordered = data;
+	    next();
+	  });
+	}
+
+	function getPost(ctx, next) {
+	  var id = ctx.path.split('/').pop();
+	  _jquery2.default.get('/api/news/' + id, function (data) {
+	    ctx.post = data;
+	    next();
+	  });
+	}
+
+	function getCurrentUser(ctx, next) {
+	  _jquery2.default.get('/api/currentUser', function (data) {
+	    ctx.user = data;
+	    next();
+	  });
+	}
+
+	function getAllComments(ctx, next) {
+	  _jquery2.default.get('/api/get-comments', function (data) {
+	    ctx.comments = data;
+	    next();
+	  });
+	}
+
+	function getCommentsAgree(ctx, next) {
+	  var id = ctx.path.split('/').pop();
+	  _jquery2.default.get('/api/get-comment-post-agree/' + id, function (data) {
+	    ctx.commentsAgree = data;
+	    next();
+	  });
+	}
+
+	function getCommentsDisagree(ctx, next) {
+	  var id = ctx.path.split('/').pop();
+	  _jquery2.default.get('/api/get-comment-post-disagree/' + id, function (data) {
+	    ctx.commentsDisagree = data;
+	    next();
+	  });
+	}
+
+	function getSearch(ctx, next) {
+	  // Gets the query (if there is one)
+	  // e.g. s="asturias" --> asturias
+	  var query = ctx.querystring.split('=').pop();
+	  _jquery2.default.get('/api/buscar/?s=' + query, function (data) {
+	    ctx.query = query;
+	    ctx.search = data;
+	    next();
+	  });
+	}
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var $burguer = (0, _jquery2.default)('.Navbar-icon-menu');
+	var $close = (0, _jquery2.default)('.Navbar-icon-close');
+	var $search = (0, _jquery2.default)('.Navbar-search-icon');
+	var $input = (0, _jquery2.default)('.Navbar-search-input');
+	var $menuMob = (0, _jquery2.default)('.Navbar_menu');
+	var $bg = (0, _jquery2.default)('#bg');
+
+	// -------OPEN MENU
+
+	function openMenu() {
+	  $menuMob.addClass('active');
+	  $bg.css('display', 'block');
+	  $burguer.css('display', 'none');
+	  (0, _jquery2.default)('body').css('overflow-y', 'hidden');
+	  $close.css('display', 'block');
+	}
+
+	// -------CLOSE MENU
+
+	function closeMenu() {
+	  $menuMob.removeClass('active');
+	  $bg.css('display', 'none');
+	  $close.css('display', 'none');
+	  (0, _jquery2.default)('body').css('overflow-y', 'scroll');
+	  $burguer.css('display', 'block');
+	}
+
+	// ------OPEN SEARCH
+	var searchOpened = false;
+
+	function searchInput() {
+	  if (!searchOpened) {
+	    $input.addClass('search-active');
+	    searchOpened = true;
+	  } else {
+	    $input.removeClass('search-active');
+	    searchOpened = false;
+	  }
+	}
+
+	// -------EVENT HANDLERS
+
+	$burguer.on('click', openMenu);
+	$close.on('click', closeMenu);
+	$bg.on('click', closeMenu);
+	$search.on('click', searchInput);
+
+/***/ },
+/* 142 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(136);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(143);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(0, _page2.default)('/accede', _index2.default, function (ctx, next) {
+	  __webpack_require__(141);
+	  var main = document.getElementById('main-container');
+	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
+	    (0, _jquery2.default)('body').css('overflow', 'hidden');
+	  }
+	  (0, _jquery2.default)(main).empty().append(_template2.default);
+	});
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>'], ['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	module.exports = (0, _yoYo2.default)(_templateObject);
+
+/***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _index = __webpack_require__(136);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	var _template = __webpack_require__(145);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	var _aside = __webpack_require__(137);
+
+	var _aside2 = _interopRequireDefault(_aside);
+
+	var _get_percentage = __webpack_require__(8);
+
+	var _get_percentage2 = _interopRequireDefault(_get_percentage);
+
+	var _ajax = __webpack_require__(140);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// getAsideNew gets the list of all posts for the aside list
+	// getCurrentUser gets the logged in user
+	// getCommentsAgree gets the lists of comments agreeing. Same for disagree
+	// header renders header
+	// getPosts gets the post we are about to render
+	(0, _page2.default)('/app/noticia/:id', _ajax.getAsideNew, _ajax.getCurrentUser, _ajax.getCommentsAgree, _ajax.getCommentsDisagree, _index2.default, _ajax.getPost, function (ctx, next) {
+	  __webpack_require__(141);
+	  __webpack_require__(147);
+
+	  (0, _jquery2.default)(document).ready(function () {
+	    (0, _get_percentage2.default)();
+	  });
+
+	  // coger id de la url para pedir ese post al json
+	  var id = document.URL.split('/').pop();
+	  window.scrollTo(0, 0);
+
+	  var main = document.getElementById('main-container');
+	  // The arguments are the news array, and the user object
+	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(ctx.post, ctx.user, ctx.commentsAgree, ctx.commentsDisagree));
+	  next();
+	}, _aside2.default);
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div id="noticia_main">\n  ', '\n  ', '\n  ', '\n  ', '\n</div>'], ['<div id="noticia_main">\n  ', '\n  ', '\n  ', '\n  ', '\n</div>']);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _index = __webpack_require__(21);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _modules = __webpack_require__(146);
+
+	var _modules2 = _interopRequireDefault(_modules);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	// The first argument is the post info
+	// Second is the loggedin user information
+	// Third is the list of comments agreeing with this post
+	// Fourth is the list of comments disagreeing with this post
+	module.exports = function (n, u, cA, cD) {
+	  return (0, _yoYo2.default)(_templateObject, _modules2.default.noticiaCuerpo(n), _modules2.default.noticiaInformate(), _modules2.default.noticiaComentarios(n, u, cA, cD), (0, _index2.default)(n.agreeVotes, n.disagreeVotes));
+	};
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<section class="Noticia_cuerpo">\n    <h2 class="Noticia_cuerpo-breadcrumb">Espa\xF1a</h2>\n    <h1 class="Noticia_cuerpo-title">', '</h1>\n    ', '\n    <h4 class="Noticia_cuerpo-entradilla">', '</h4>\n    ', '\n  </section>'], ['<section class="Noticia_cuerpo">\n    <h2 class="Noticia_cuerpo-breadcrumb">Espa\xF1a</h2>\n    <h1 class="Noticia_cuerpo-title">', '</h1>\n    ', '\n    <h4 class="Noticia_cuerpo-entradilla">', '</h4>\n    ', '\n  </section>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<section class="Noticia_informate">\n    <h2 class="Noticia_informate-encabezado">Inf\xF3rmate</h2>\n    <div class="Noticia_informate-media">\n      <a class="Noticia_informate-media-item" href="#">\n        <div><img src="/img/media/el-pais.svg" alt="" /></div>\n      </a>\n    </div>\n  </section>'], ['<section class="Noticia_informate">\n    <h2 class="Noticia_informate-encabezado">Inf\xF3rmate</h2>\n    <div class="Noticia_informate-media">\n      <a class="Noticia_informate-media-item" href="#">\n        <div><img src="/img/media/el-pais.svg" alt="" /></div>\n      </a>\n    </div>\n  </section>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<section class="Noticia_comentarios">\n    <h2 class="Noticia_comentarios-encabezado">Participa</h2>\n    <div class="Noticia_comentarios-comentarios">\n      ', '\n      ', '\n    </div>\n  </section>'], ['<section class="Noticia_comentarios">\n    <h2 class="Noticia_comentarios-encabezado">Participa</h2>\n    <div class="Noticia_comentarios-comentarios">\n      ', '\n      ', '\n    </div>\n  </section>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<form method="POST" action="/api/unupvote">\n    <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />\n  </form>'], ['<form method="POST" action="/api/unupvote">\n    <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />\n  </form>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<form method="POST" action="/api/upvote">\n    <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/upvote">\n    <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />\n  </form>']),
+	    _templateObject6 = _taggedTemplateLiteral(['<form method="POST" action="/api/undownvote">\n    <input type="image" src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />\n  </form>'], ['<form method="POST" action="/api/undownvote">\n    <input type="image" src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />\n  </form>']),
+	    _templateObject7 = _taggedTemplateLiteral(['<form method="POST" action="/api/downvote">\n    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/downvote">\n    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>']),
+	    _templateObject8 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
+	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
+	    _templateObject10 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <div class="Noticia_comentarios_list-order-votes">\n      <p>M\xE1s votado</p>\n    </div>\n    <div class="Noticia_comentarios_list-order-new">\n      <p>M\xE1s nuevos</p>\n    </div>\n  </div>\n  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <div class="Noticia_comentarios_list-order-votes">\n      <p>M\xE1s votado</p>\n    </div>\n    <div class="Noticia_comentarios_list-order-new">\n      <p>M\xE1s nuevos</p>\n    </div>\n  </div>\n  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
+	    _templateObject11 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
+	    _templateObject12 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
+	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-unlike/', '">\n          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>'], ['<form method="POST" action="/api/comment-unlike/', '">\n          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>']),
+	    _templateObject14 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>'], ['<form method="POST" action="/api/comment-like/', '">\n    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>']);
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	var yo = __webpack_require__(11);
+	var details = __webpack_require__(22);
+	var votesBar = __webpack_require__(21);
+	var formatDate = __webpack_require__(133);
+
+	module.exports = {
+	  noticiaCuerpo: noticiaCuerpo,
+	  noticiaInformate: noticiaInformate,
+	  noticiaComentarios: noticiaComentarios,
+	  comCard: comCard
+	};
+
+	function noticiaCuerpo(n) {
+	  return yo(_templateObject, n.title, details(n.date, n.tags), n.subtitle, votesBar(n.agreeVotes, n.disagreeVotes));
+	}
+
+	function noticiaInformate() {
+	  return yo(_templateObject2);
+	}
+
+	function noticiaComentarios(n, u, cA, cD) {
+	  return yo(_templateObject3, noticiaComentariosAgree(n, u, cA), noticiaComentariosDisagree(n, u, cD));
+	}
+
+	// *********** Templates for agree and disagree
+
+	// We loop throu all the liked news by user. If so, display one icon or other
+	// The third argument tells if returns agree or disagree
+	function votingFormsAgree(n, u) {
+	  var votedAgree = yo(_templateObject4);
+
+	  var unVotedAgree = yo(_templateObject5);
+
+	  // Loop around users liked posts
+	  for (var i in u.agreeVotes) {
+	    // If the post id is inside the user's array
+	    if (n._id === u.agreeVotes[i]) {
+	      return votedAgree;
+	    }
+	  }
+
+	  return unVotedAgree;
+	}
+
+	function votingFormsDisagree(n, u) {
+	  var votedDisagree = yo(_templateObject6);
+
+	  var unVotedDisagree = yo(_templateObject7);
+
+	  for (var i in u.disagreeVotes) {
+	    // If the post id is inside the user's array
+	    if (n._id === u.disagreeVotes[i]) {
+	      return votedDisagree;
+	    }
+	  }
+
+	  return unVotedDisagree;
+	}
+
+	function noticiaComentariosAgree(n, u, cA) {
+	  return yo(_templateObject8, n.agreeVotes, votingFormsAgree(n, u), comList(u, cA, 'agree'));
+	}
+
+	function noticiaComentariosDisagree(n, u, cD) {
+	  return yo(_templateObject9, n.disagreeVotes, votingFormsDisagree(n, u), comList(u, cD, 'disagree'));
+	}
+
+	// ************* Template for list of comments
+
+	function comList(u, c, a) {
+	  return yo(_templateObject10, c.map(function (c) {
+	    return comCard(u, c);
+	  }), renderSendComment(a));
+	}
+
+	// Renders form for sending comments
+	function renderSendComment(a) {
+	  var post = a === 'agree' ? 'commentagree' : 'commentdisagree';
+
+	  return yo(_templateObject11, post, post);
+	}
+
+	// ************* Template for the comment card.
+
+	function comCard(user, comment) {
+	  return yo(_templateObject12, comment.number, comment.username, formatDate(comment.date), comment.comment, comCardForms(user, comment), comment.likes);
+	}
+
+	// Renders comment like button
+	function comCardForms(user, comment) {
+	  if (comment.likedBy.length > 0) {
+	    // if the logged user's id is on the array of liked comments, render liked button
+	    for (var i in comment.likedBy) {
+	      if (comment.likedBy[i] === user._id) {
+	        return yo(_templateObject13, comment._id);
+	      }
+	    }
+	  }
+	  // otherwise return non liked button
+	  return yo(_templateObject14, comment._id);
+	}
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _modules = __webpack_require__(146);
+
+	var _votesLiked = __webpack_require__(148);
+
+	var _votesLiked2 = _interopRequireDefault(_votesLiked);
+
+	var _moment = __webpack_require__(23);
+
+	var _moment2 = _interopRequireDefault(_moment);
+
+	var _comments_events_functions = __webpack_require__(149);
+
+	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// ////////////////////////// Event Handlers
+
+	// ------ Creates input
+	(0, _jquery2.default)(document).on('click', '#comentar-agree', _comments_events_functions2.default.commentAgree);
+	(0, _jquery2.default)(document).on('click', '#comentar-disagree', _comments_events_functions2.default.commentDisagree);
+
+	// ------ Hides input
+	(0, _jquery2.default)(document).on('click', '#close-commentagree', _comments_events_functions2.default.commentCloseAgree);
+	(0, _jquery2.default)(document).on('click', '#close-commentdisagree', _comments_events_functions2.default.commentCloseDisagree);
+
+	(0, _jquery2.default)(document).on('click', '#comentar-closeagree', _comments_events_functions2.default.commentCloseAgree);
+	(0, _jquery2.default)(document).on('click', '#comentar-closedisagree', _comments_events_functions2.default.commentCloseDisagree);
+
+	// ----------- Like comments
+	// $(document).on('click', '#new-card', func.likeComment)
+	// $(document).on('click', '#new-card-liked', func.likeComment)
+
+	// // ----- Open and close menu when mobile
+	(0, _jquery2.default)(document).on('click', '#arrow-agree', _comments_events_functions2.default.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#title-agree', _comments_events_functions2.default.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#arrow-disagree', _comments_events_functions2.default.commentsMobile);
+	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
+
+/***/ },
 /* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -28069,13 +28056,51 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(35);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _votesLiked = __webpack_require__(37);
+	// ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
+
+	module.exports = function votesLiked(that, sign, votes, barNum, newHandler) {
+	  // --- Gets counter number through the class name
+	  var counter = that.siblings();
+	  counter = counter.map(function () {
+	    if ((0, _jquery2.default)(this).attr('class').indexOf('counter') !== -1) {
+	      return this;
+	    }
+	  });
+	  var temp = counter.text();
+
+	  // ----if the sign is positive, we add 1, otherwise, we substract 1
+
+	  var newNumber = sign ? Number(temp) + 1 : Number(temp) - 1;
+	  counter.text(newNumber);
+
+	  // ------if the number is related directly with votes bar, change that numbers too
+
+	  if (barNum !== null) {
+	    (0, _jquery2.default)('.Votes_bar').find(barNum).html(newNumber);
+	  }
+	  that.css('display', 'none');
+	  that.siblings(newHandler).css('display', 'block');
+	};
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _modules = __webpack_require__(146);
+
+	var _votesLiked = __webpack_require__(148);
 
 	var _votesLiked2 = _interopRequireDefault(_votesLiked);
 
-	var _moment = __webpack_require__(38);
+	var _moment = __webpack_require__(23);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
@@ -28108,7 +28133,7 @@
 	// Calls createShow
 	// Gives the 'open' comment button an id so now is used to closeit
 	function commentAgree() {
-	  var v = __webpack_require__(149);
+	  var v = __webpack_require__(150);
 	  createShow(v.createAgree, v.commentsAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-closeagree');
 	  v.comentarAgree.html('Cerrar');
@@ -28116,7 +28141,7 @@
 
 	// Opens input in disagree
 	function commentDisagree() {
-	  var v = __webpack_require__(149);
+	  var v = __webpack_require__(150);
 	  createShow(v.createDisagree, v.commentsDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-closedisagree');
 	  v.comentarDisagree.html('Cerrar');
@@ -28133,14 +28158,14 @@
 	}
 
 	function commentCloseAgree() {
-	  var v = __webpack_require__(149);
+	  var v = __webpack_require__(150);
 	  createHide(v.createAgree, v.commentsAgree, v.textAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-agree');
 	  v.comentarAgree.html('Comentar');
 	}
 
 	function commentCloseDisagree() {
-	  var v = __webpack_require__(149);
+	  var v = __webpack_require__(150);
 	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-disagree');
 	  v.comentarDisagree.html('Comentar');
@@ -28180,7 +28205,7 @@
 
 	// ---- $commentsMobile is an array of dom elements.
 	function commentsMobileInside(ev) {
-	  var v = __webpack_require__(149);
+	  var v = __webpack_require__(150);
 	  if ((0, _jquery2.default)(ev.target).attr('class').indexOf('disagree') !== -1) {
 	    if (disagreeOpened === false || disagreeOpened === undefined) {
 	      (0, _jquery2.default)(v.commentsMobile[3]).css('display', 'flex');
@@ -28209,7 +28234,7 @@
 	}
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28244,7 +28269,7 @@
 	};
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28253,7 +28278,7 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(25);
+	var _index = __webpack_require__(136);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -28261,14 +28286,14 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(151);
+	var _template = __webpack_require__(152);
 
 	var _template2 = _interopRequireDefault(_template);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _page2.default)('/registrate', _index2.default, function (ctx, next) {
-	  __webpack_require__(30);
+	  __webpack_require__(141);
 	  var main = document.getElementById('main-container');
 	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
 	    (0, _jquery2.default)('body').css('overflow', 'hidden');
@@ -28277,7 +28302,7 @@
 	});
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28297,7 +28322,7 @@
 	};
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28306,7 +28331,7 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(25);
+	var _index = __webpack_require__(136);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -28314,15 +28339,15 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(153);
+	var _template = __webpack_require__(154);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _aside = __webpack_require__(26);
+	var _aside = __webpack_require__(137);
 
 	var _aside2 = _interopRequireDefault(_aside);
 
-	var _ajax = __webpack_require__(29);
+	var _ajax = __webpack_require__(140);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28331,7 +28356,7 @@
 	// // getCurrentUser gets the logged in user
 	// // header renders header
 	(0, _page2.default)('/app/buscar/', _ajax.getSearch, _ajax.getAsideNew, _ajax.getCurrentUser, _index2.default, function (ctx, next) {
-	  __webpack_require__(30);
+	  __webpack_require__(141);
 
 	  var main = document.getElementById('main-container');
 	  var posts = ctx.search;
@@ -28341,7 +28366,7 @@
 	}, _aside2.default);
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28372,7 +28397,7 @@
 	}
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28381,7 +28406,7 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(25);
+	var _index = __webpack_require__(136);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -28389,11 +28414,11 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(155);
+	var _template = __webpack_require__(156);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _ajax = __webpack_require__(29);
+	var _ajax = __webpack_require__(140);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28408,14 +28433,14 @@
 			}
 		}
 
-		__webpack_require__(30);
+		__webpack_require__(141);
 		var main = document.getElementById('main-container');
 		console.log(userComments);
 		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, userComments));
 	});
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28428,11 +28453,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(156);
+	var _comments_card = __webpack_require__(157);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(157);
+	var _modules = __webpack_require__(158);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28458,7 +28483,7 @@
 	}
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28478,7 +28503,7 @@
 	};
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28493,7 +28518,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(156);
+	var _comments_card = __webpack_require__(157);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -28536,7 +28561,7 @@
 	}
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28545,7 +28570,7 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(25);
+	var _index = __webpack_require__(136);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -28553,20 +28578,20 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(159);
+	var _template = __webpack_require__(160);
 
 	var _template2 = _interopRequireDefault(_template);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _page2.default)('/usuario/pegido/editar', _index2.default, function (ctx, next) {
-	  __webpack_require__(30);
+	  __webpack_require__(141);
 	  var main = document.getElementById('main-container');
 	  (0, _jquery2.default)(main).empty().append(_template2.default);
 	});
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
