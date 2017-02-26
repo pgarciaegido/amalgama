@@ -3,6 +3,14 @@ var User = require('../data/models/user').User
 var Com = require('../data/models/comments')
 var moment = require('moment')
 
+module.exports = {
+  createComment,
+  getComments,
+  getCommentsPost,
+  getCommentsUser,
+  likeComment
+}
+
 // Creates new comment
 function createComment (req, res) {
   let postRoute = req._parsedUrl.path
@@ -101,16 +109,41 @@ function getCommentsPost (req, res) {
 
 // Gets all the comments made in an specific user
 function getCommentsUser (req, res) {
-
-  let userName = req.url.split('/').pop()
+  let query = req.query
+  let userName = req.params.username
   let condition = {username: userName}
-  Com.find(condition, function(err, comments) {
+  let sort
+
+  // If query.order doesnt exist or is not likes, sort is empty
+  // so will sort by date
+  if (query.order === undefined || query.order !== 'likes') {
+    // The newest first
+    sort = {date : -1 }
+  } else if (query.order === 'likes') {
+    sort = {likes : -1 }
+  }
+
+  Com.find(condition).sort(sort).exec(function(err, comments) {
     if (err){
       console.log(err)
     }
+    console.log(comments)
     res.send(comments)
   })
 }
+
+// function getCommentsUserByLikes (req, res) {
+//   console.log(req.query)
+//   let userName = req.url.split('/').pop()
+//   let condition = {username: userName}
+//   let sort = { likes: -1 }
+//   Com.find(condition).sort(sort).exec( function(err, comments) {
+//     if (err) {
+//       console.log(err)
+//     }
+//     res.send(comments)
+//   })
+// }
 
 // Likes or unlikes comment
 function likeComment (req, res) {
@@ -136,13 +169,4 @@ function likeComment (req, res) {
     if(err) console.log(err)
     res.redirect('/app/noticia/' + postId)
   })
-}
-
-
-module.exports = {
-  createComment,
-  getComments,
-  getCommentsPost,
-  getCommentsUser,
-  likeComment
 }

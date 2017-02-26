@@ -37,8 +37,9 @@ api.get('/get-comment-post/:id', comCtrl.getCommentsPost)
 api.get('/get-comment-post-agree/:id', comCtrl.getCommentsPost)
 // Gets json of all disagree comments in certain post
 api.get('/get-comment-post-disagree/:id', comCtrl.getCommentsPost)
-// Gets json of all comments made by a user
-api.get('/getcommentuser/:username', comCtrl.getCommentsUser)
+// Gets json of all comments mabe by user
+// Depending on the query, returns it ordered by likes or date
+api.get('/get-comment-user/:username', comCtrl.getCommentsUser)
 // Inserts a new comment agreeing on a certain post
 api.post('/commentagree', comCtrl.createComment)
 // Inserts a new comment disagreeing on a certain post

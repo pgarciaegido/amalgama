@@ -27605,6 +27605,7 @@
 	  getPost: getPost,
 	  getCurrentUser: getCurrentUser,
 	  getAllComments: getAllComments,
+	  getCommentsUser: getCommentsUser,
 	  getCommentsAgree: getCommentsAgree,
 	  getCommentsDisagree: getCommentsDisagree,
 	  getSearch: getSearch
@@ -27642,6 +27643,22 @@
 	function getAllComments(ctx, next) {
 	  _jquery2.default.get('/api/get-comments', function (data) {
 	    ctx.comments = data;
+	    next();
+	  });
+	}
+
+	// function getCommentsUser (ctx, next) {
+	//   var user = ctx.pathname.split('/').pop()
+	//   $.get('/api/getcommentuser/' + user, (data) => {
+	//     ctx.userComments = data
+	//     next()
+	//   })
+	// }
+
+	function getCommentsUser(ctx, next) {
+	  var user = ctx.pathname.split('/').pop();
+	  _jquery2.default.get('/api/get-comment-user/' + user + '?' + ctx.querystring, function (data) {
+	    ctx.userComments = data;
 	    next();
 	  });
 	}
@@ -28422,21 +28439,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _page2.default)('/app/usuario/:username', _ajax.getCurrentUser, _ajax.getAllComments, _index2.default, function (ctx, next) {
+	(0, _page2.default)('/app/usuario/:username', _ajax.getCurrentUser, _ajax.getCommentsUser, _index2.default, function (ctx, next) {
+		console.log(ctx);
 		var user = ctx.user;
-		var userComments = [];
-
-		// Loops throu all the comments, those who are made by logged user get selected
-		for (var i in ctx.comments) {
-			if (ctx.comments[i].userid === ctx.user._id) {
-				userComments.push(ctx.comments[i]);
-			}
-		}
+		var userComments = void 0;
 
 		__webpack_require__(141);
 		var main = document.getElementById('main-container');
-		console.log(userComments);
-		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, userComments));
+		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, ctx.userComments));
 	});
 
 /***/ },
@@ -28494,12 +28504,16 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
+	var _date = __webpack_require__(133);
+
+	var _date2 = _interopRequireDefault(_date);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function (com) {
-	  return (0, _yoYo2.default)(_templateObject, com.postTitle, com.comment, com.date, com.likedBy.length);
+	  return (0, _yoYo2.default)(_templateObject, com.postTitle, com.comment, (0, _date2.default)(com.date), com.likedBy.length);
 	};
 
 /***/ },

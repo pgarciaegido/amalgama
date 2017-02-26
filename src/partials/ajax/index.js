@@ -8,6 +8,7 @@ module.exports = {
   getPost,
   getCurrentUser,
   getAllComments,
+  getCommentsUser,
   getCommentsAgree,
   getCommentsDisagree,
   getSearch
@@ -45,6 +46,15 @@ function getCurrentUser (ctx, next) {
 function getAllComments (ctx, next) {
   $.get('/api/get-comments', (data) => {
     ctx.comments = data
+    next()
+  })
+}
+
+function getCommentsUser (ctx, next) {
+  // pathname doesnt include queries. e.g.
+  var user = ctx.pathname.split('/').pop()
+  $.get('/api/get-comment-user/' + user + '?' + ctx.querystring, (data) => {
+    ctx.userComments = data
     next()
   })
 }
