@@ -3,6 +3,8 @@ import { comCard } from './modules'
 import votesLiked  from './votesLiked'
 import moment      from 'moment'
 import func        from './comments_events_functions'
+import v           from './comments_events_vars'
+import sort        from './comments_events_sort'
 
 // ////////////////////////// Event Handlers
 
@@ -17,9 +19,11 @@ $(document).on('click', '#close-commentdisagree', func.commentCloseDisagree)
 $(document).on('click', '#comentar-closeagree', func.commentCloseAgree)
 $(document).on('click', '#comentar-closedisagree', func.commentCloseDisagree)
 
-// ----------- Like comments
-// $(document).on('click', '#new-card', func.likeComment)
-// $(document).on('click', '#new-card-liked', func.likeComment)
+// ------ Sort comments
+v.buttonDateAgree.on('click', sort)
+v.buttonLikesAgree.on('click', sort)
+v.buttonDateDisagree.on('click', sort)
+v.buttonLikesDisagree.on('click', sort)
 
 // // ----- Open and close menu when mobile
 $(document).on('click', '#arrow-agree', func.commentsMobile)

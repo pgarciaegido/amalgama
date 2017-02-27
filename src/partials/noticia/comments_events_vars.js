@@ -20,5 +20,9 @@ module.exports = {
   'arrowDisagree':        $('.Noticia_comentarios-comentarios-disagree-header-arrow'),
   'titleAgree':           $('.Noticia_comentarios-comentarios-agree-header-title'),
   'titleDisagree':        $('.Noticia_comentarios-comentarios-disagree-header-title'),
-  'commentsMobile':       $('.Noticia_hide_on_mobile')
+  'commentsMobile':       $('.Noticia_hide_on_mobile'),
+  'buttonDateAgree':      $('#noticia-sort-new-agree'),
+  'buttonLikesAgree':     $('#noticia-sort-likes-agree'),
+  'buttonDateDisagree':   $('#noticia-sort-new-disagree'),
+  'buttonLikesDisagree':  $('#noticia-sort-likes-disagree')
 }

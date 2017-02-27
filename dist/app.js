@@ -68,13 +68,13 @@
 
 	__webpack_require__(144);
 
-	__webpack_require__(152);
+	__webpack_require__(153);
 
-	__webpack_require__(154);
+	__webpack_require__(155);
 
-	__webpack_require__(156);
+	__webpack_require__(157);
 
-	__webpack_require__(160);
+	__webpack_require__(161);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27838,8 +27838,6 @@
 	// header renders header
 	// getPosts gets the post we are about to render
 	(0, _page2.default)('/app/noticia/:id', _ajax.getAsideNew, _ajax.getCurrentUser, _ajax.getCommentsAgree, _ajax.getCommentsDisagree, _index2.default, _ajax.getPost, function (ctx, next) {
-	  __webpack_require__(141);
-	  __webpack_require__(148);
 
 	  var user = ctx.user;
 	  var commentsAgree = ctx.commentsAgree;
@@ -27853,40 +27851,8 @@
 
 	  (0, _jquery2.default)(document).ready(function () {
 	    (0, _get_percentage2.default)();
-
-	    var buttonDateAgree = (0, _jquery2.default)('#noticia-sort-new-agree');
-	    var buttonLikesAgree = (0, _jquery2.default)('#noticia-sort-likes-agree');
-	    var buttonDateDisagree = (0, _jquery2.default)('#noticia-sort-new-disagree');
-	    var buttonLikesDisagree = (0, _jquery2.default)('#noticia-sort-likes-disagree');
-	    var comContainer = void 0;
-
-	    buttonDateAgree.on('click', function (e) {
-	      comContainer = (0, _jquery2.default)('#noticia-comments-container-agree');
-	      clickSort(e, user, commentsAgree, comContainer);
-	      buttonDateAgree.addClass('sort-comments-active');
-	      buttonLikesAgree.removeClass('sort-comments-active');
-	    });
-
-	    buttonLikesAgree.on('click', function (e) {
-	      comContainer = (0, _jquery2.default)('#noticia-comments-container-agree');
-	      clickSort(e, user, commentsAgreeLikes, comContainer);
-	      buttonDateAgree.removeClass('sort-comments-active');
-	      buttonLikesAgree.addClass('sort-comments-active');
-	    });
-
-	    buttonDateDisagree.on('click', function (e) {
-	      comContainer = (0, _jquery2.default)('#noticia-comments-container-disagree');
-	      clickSort(e, user, commentsDisagree, comContainer);
-	      buttonDateDisagree.addClass('sort-comments-active');
-	      buttonLikesDisagree.removeClass('sort-comments-active');
-	    });
-
-	    buttonLikesDisagree.on('click', function (e) {
-	      comContainer = (0, _jquery2.default)('#noticia-comments-container-disagree');
-	      clickSort(e, user, commentsDisagreeLikes, comContainer);
-	      buttonDateDisagree.removeClass('sort-comments-active');
-	      buttonLikesDisagree.addClass('sort-comments-active');
-	    });
+	    __webpack_require__(141);
+	    __webpack_require__(148);
 	  });
 
 	  // coger id de la url para pedir ese post al json
@@ -27896,13 +27862,17 @@
 	  var main = document.getElementById('main-container');
 	  // The arguments are the news array, and the user object
 	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(ctx.post, ctx.user, ctx.commentsAgree, ctx.commentsDisagree));
+
+	  module.exports = {
+	    commentsAgree: commentsAgree,
+	    commentsDisagree: commentsDisagree,
+	    commentsAgreeLikes: commentsAgreeLikes,
+	    commentsDisagreeLikes: commentsDisagreeLikes,
+	    user: user
+	  };
+
 	  next();
 	}, _aside2.default);
-
-	function clickSort(e, user, userCom, container) {
-	  e.preventDefault();
-	  container.empty().append((0, _modules.sortComments)(user, userCom));
-	}
 
 /***/ },
 /* 145 */
@@ -27951,7 +27921,7 @@
 	    _templateObject7 = _taggedTemplateLiteral(['<form method="POST" action="/api/downvote">\n    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/downvote">\n    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>']),
 	    _templateObject8 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
 	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
-	    _templateObject10 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
+	    _templateObject10 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
 	    _templateObject11 = _taggedTemplateLiteral(['\n  ', '\n  '], ['\n  ', '\n  ']),
 	    _templateObject12 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
 	    _templateObject13 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
@@ -28031,7 +28001,7 @@
 	// ************* Template for list of comments
 	// d stands for agree or disagree
 	function comList(u, c, a) {
-	  return yo(_templateObject10, a, a, a, c.map(function (c) {
+	  return yo(_templateObject10, a, a, a, a, a, c.map(function (c) {
 	    return comCard(u, c);
 	  }), renderSendComment(a));
 	}
@@ -28115,6 +28085,14 @@
 
 	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
 
+	var _comments_events_vars = __webpack_require__(151);
+
+	var _comments_events_vars2 = _interopRequireDefault(_comments_events_vars);
+
+	var _comments_events_sort = __webpack_require__(152);
+
+	var _comments_events_sort2 = _interopRequireDefault(_comments_events_sort);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// ////////////////////////// Event Handlers
@@ -28130,9 +28108,11 @@
 	(0, _jquery2.default)(document).on('click', '#comentar-closeagree', _comments_events_functions2.default.commentCloseAgree);
 	(0, _jquery2.default)(document).on('click', '#comentar-closedisagree', _comments_events_functions2.default.commentCloseDisagree);
 
-	// ----------- Like comments
-	// $(document).on('click', '#new-card', func.likeComment)
-	// $(document).on('click', '#new-card-liked', func.likeComment)
+	// ------ Sort comments
+	_comments_events_vars2.default.buttonDateAgree.on('click', _comments_events_sort2.default);
+	_comments_events_vars2.default.buttonLikesAgree.on('click', _comments_events_sort2.default);
+	_comments_events_vars2.default.buttonDateDisagree.on('click', _comments_events_sort2.default);
+	_comments_events_vars2.default.buttonLikesDisagree.on('click', _comments_events_sort2.default);
 
 	// // ----- Open and close menu when mobile
 	(0, _jquery2.default)(document).on('click', '#arrow-agree', _comments_events_functions2.default.commentsMobile);
@@ -28265,31 +28245,6 @@
 	  v.comentarDisagree.html('Comentar');
 	}
 
-	// // --------- Send comments
-	// function enviarComments () {
-	//   const v = require('./comments_events_vars')
-	//   if ($('#cancelar-comments').data().resolve === 'agree') {
-	//     func.addComment(v.textAgree, v.commentsAgree)
-	//     func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
-	//   } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-	//     func.addComment(v.textDisagree, v.commentsDisagree)
-	//     func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-	//   }
-	//   $('#cancelar-comments').data().resolve = undefined
-	// }
-
-
-	// ------- Likes / unlikes comment
-	// function likeComment () {
-	//   const v = require('./comments_events_vars')
-	//   if(this.id == 'new-card'){
-	//     votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
-	//   } else {
-	//     votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
-	//   }
-	// }
-	//
-
 	// ----- Open Comments on Mobile
 	function commentsMobile(ev) {
 	  var agreeOpened = void 0;
@@ -28359,11 +28314,67 @@
 	  'arrowDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-arrow'),
 	  'titleAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-title'),
 	  'titleDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-title'),
-	  'commentsMobile': (0, _jquery2.default)('.Noticia_hide_on_mobile')
+	  'commentsMobile': (0, _jquery2.default)('.Noticia_hide_on_mobile'),
+	  'buttonDateAgree': (0, _jquery2.default)('#noticia-sort-new-agree'),
+	  'buttonLikesAgree': (0, _jquery2.default)('#noticia-sort-likes-agree'),
+	  'buttonDateDisagree': (0, _jquery2.default)('#noticia-sort-new-disagree'),
+	  'buttonLikesDisagree': (0, _jquery2.default)('#noticia-sort-likes-disagree')
 	};
 
 /***/ },
 /* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _modules = __webpack_require__(146);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = function sort(e) {
+	  var v = __webpack_require__(151);
+	  var c = __webpack_require__(144);
+	  console.log((0, _jquery2.default)(this));
+	  var thisData = (0, _jquery2.default)(this).attr('data-side');
+	  var thisSort = (0, _jquery2.default)(this).attr('data-sort');
+	  var container = (0, _jquery2.default)('#noticia-comments-container-' + thisData);
+	  var comments = void 0,
+	      sibling = void 0;
+
+	  if (thisData === 'agree') {
+	    if (thisSort === 'date') {
+	      comments = c.commentsAgree;
+	      sibling = v.buttonLikesAgree;
+	    } else if (thisSort === 'likes') {
+	      comments = c.commentsAgreeLikes;
+	      sibling = v.buttonDateAgree;
+	    }
+	  } else if (thisData === 'disagree') {
+	    if (thisSort === 'date') {
+	      comments = c.commentsDisagree;
+	      sibling = v.buttonLikesDisagree;
+	    } else if (thisSort === 'likes') {
+	      comments = c.commentsDisagreeLikes;
+	      sibling = v.buttonDateDisagree;
+	    }
+	  }
+
+	  clickSort(e, c.user, comments, container);
+	  (0, _jquery2.default)(this).addClass('sort-comments-active');
+	  sibling.removeClass('sort-comments-active');
+	};
+
+	function clickSort(e, user, userCom, container) {
+	  e.preventDefault();
+	  container.empty().append((0, _modules.sortComments)(user, userCom));
+	}
+
+/***/ },
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28380,7 +28391,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(153);
+	var _template = __webpack_require__(154);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28396,7 +28407,7 @@
 	});
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28416,7 +28427,7 @@
 	};
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28433,7 +28444,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(155);
+	var _template = __webpack_require__(156);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28460,7 +28471,7 @@
 	}, _aside2.default);
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28491,7 +28502,7 @@
 	}
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28508,11 +28519,11 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(157);
+	var _template = __webpack_require__(158);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _modules = __webpack_require__(159);
+	var _modules = __webpack_require__(160);
 
 	var _comments = __webpack_require__(147);
 
@@ -28562,7 +28573,7 @@
 	}
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28575,11 +28586,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(158);
+	var _comments_card = __webpack_require__(159);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(159);
+	var _modules = __webpack_require__(160);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28605,7 +28616,7 @@
 	}
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28629,7 +28640,7 @@
 	};
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28645,7 +28656,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(158);
+	var _comments_card = __webpack_require__(159);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -28695,7 +28706,7 @@
 	}
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28712,7 +28723,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(161);
+	var _template = __webpack_require__(162);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28725,7 +28736,7 @@
 	});
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

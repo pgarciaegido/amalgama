@@ -68,33 +68,6 @@ function commentCloseDisagree () {
   v.comentarDisagree.html('Comentar')
 }
 
-
-
-// // --------- Send comments
-// function enviarComments () {
-//   const v = require('./comments_events_vars')
-//   if ($('#cancelar-comments').data().resolve === 'agree') {
-//     func.addComment(v.textAgree, v.commentsAgree)
-//     func.createHide(v.createAgree, v.commentsAgree, v.textAgree)
-//   } else if ($('#cancelar-comments').data().resolve === 'disagree') {
-//     func.addComment(v.textDisagree, v.commentsDisagree)
-//     func.createHide(v.createDisagree, v.commentsDisagree, v.textDisagree)
-//   }
-//   $('#cancelar-comments').data().resolve = undefined
-// }
-
-
-// ------- Likes / unlikes comment
-// function likeComment () {
-//   const v = require('./comments_events_vars')
-//   if(this.id == 'new-card'){
-//     votesLiked($(this), true, v.commentLikeCounter, null, v.commentLikeIconLiked)
-//   } else {
-//     votesLiked($(this), false, v.commentLikeCounter, null, v.commentLikeIconLiked)
-//   }
-// }
-//
-
 // ----- Open Comments on Mobile
 function commentsMobile (ev) {
   let agreeOpened

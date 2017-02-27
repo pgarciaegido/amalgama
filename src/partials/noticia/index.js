@@ -15,8 +15,6 @@ import { getAsideNew, getPost, getCurrentUser, getCommentsAgree, getCommentsDisa
 // header renders header
 // getPosts gets the post we are about to render
 page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getCommentsDisagree, header, getPost, (ctx, next) => {
-  require('../header/events')
-  require('./comments_events')
 
   const user = ctx.user
   const commentsAgree = ctx.commentsAgree
@@ -30,40 +28,8 @@ page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getComme
 
   $(document).ready(function () {
     percentage()
-
-    let buttonDateAgree = $('#noticia-sort-new-agree')
-    let buttonLikesAgree = $('#noticia-sort-likes-agree')
-    let buttonDateDisagree = $('#noticia-sort-new-disagree')
-    let buttonLikesDisagree = $('#noticia-sort-likes-disagree')
-    let comContainer
-
-    buttonDateAgree.on('click',(e) => {
-      comContainer = $('#noticia-comments-container-agree')
-      clickSort(e, user, commentsAgree, comContainer)
-			buttonDateAgree.addClass('sort-comments-active')
-			buttonLikesAgree.removeClass('sort-comments-active')
-    })
-
-    buttonLikesAgree.on('click', (e) => {
-      comContainer = $('#noticia-comments-container-agree')
-      clickSort(e, user, commentsAgreeLikes, comContainer)
-			buttonDateAgree.removeClass('sort-comments-active')
-			buttonLikesAgree.addClass('sort-comments-active')
-    })
-
-    buttonDateDisagree.on('click',(e) => {
-      comContainer = $('#noticia-comments-container-disagree')
-      clickSort(e, user, commentsDisagree, comContainer)
-			buttonDateDisagree.addClass('sort-comments-active')
-			buttonLikesDisagree.removeClass('sort-comments-active')
-    })
-
-    buttonLikesDisagree.on('click', (e) => {
-      comContainer = $('#noticia-comments-container-disagree')
-      clickSort(e, user, commentsDisagreeLikes, comContainer)
-			buttonDateDisagree.removeClass('sort-comments-active')
-			buttonLikesDisagree.addClass('sort-comments-active')
-    })
+    require('../header/events')
+    require('./comments_events')
   })
 
   // coger id de la url para pedir ese post al json
@@ -73,10 +39,14 @@ page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getComme
   let main = document.getElementById('main-container')
   // The arguments are the news array, and the user object
   $(main).empty().append(template(ctx.post, ctx.user, ctx.commentsAgree, ctx.commentsDisagree))
+
+  module.exports = {
+    commentsAgree,
+    commentsDisagree,
+    commentsAgreeLikes,
+    commentsDisagreeLikes,
+    user
+  }
+
   next()
 }, aside)
-
-function clickSort (e, user, userCom, container) {
-	e.preventDefault()
-	container.empty().append(sortComments(user, userCom))
-}

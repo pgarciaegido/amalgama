@@ -130,8 +130,8 @@ function noticiaComentariosDisagree (n, u, cD) {
 function comList (u, c, a) {
   return yo`<div>
   <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">
-    <button id="noticia-sort-likes-${a}" class="Noticia_comentarios_list-order-votes">Más votado</button>
-    <button id="noticia-sort-new-${a}" class="Noticia_comentarios_list-order-new sort-comments-active">Más nuevos</button>
+    <button id="noticia-sort-likes-${a}" data-side="${a}" data-sort="likes" class="Noticia_comentarios_list-order-votes">Más votado</button>
+    <button id="noticia-sort-new-${a}" data-side="${a}" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">Más nuevos</button>
   </div>
   <div id="noticia-comments-container-${a}" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
     ${c.map((c) => {
