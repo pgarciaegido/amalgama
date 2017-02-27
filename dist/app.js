@@ -74,7 +74,7 @@
 
 	__webpack_require__(157);
 
-	__webpack_require__(161);
+	__webpack_require__(162);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28335,12 +28335,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// Reappends another array with reordered comments, date or likes
 	module.exports = function sort(e) {
+	  // Require DOM elements and comments
 	  var v = __webpack_require__(151);
 	  var c = __webpack_require__(144);
-	  console.log((0, _jquery2.default)(this));
-	  var thisData = (0, _jquery2.default)(this).attr('data-side');
-	  var thisSort = (0, _jquery2.default)(this).attr('data-sort');
+
+	  var thisData = (0, _jquery2.default)(this).attr('data-side'); //agree / disagree
+	  var thisSort = (0, _jquery2.default)(this).attr('data-sort'); // date / likes
 	  var container = (0, _jquery2.default)('#noticia-comments-container-' + thisData);
 	  var comments = void 0,
 	      sibling = void 0;
@@ -28364,6 +28366,7 @@
 	  }
 
 	  clickSort(e, c.user, comments, container);
+	  // For styling purposes
 	  (0, _jquery2.default)(this).addClass('sort-comments-active');
 	  sibling.removeClass('sort-comments-active');
 	};
@@ -28534,7 +28537,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _page2.default)('/app/usuario/:username', _ajax.getCurrentUser, _ajax.getCommentsUser, _index2.default, function (ctx, next) {
-		__webpack_require__(141);
 
 		var user = ctx.user;
 		var userComments = ctx.userComments;
@@ -28548,29 +28550,17 @@
 
 		// Event listeners
 		(0, _jquery2.default)(document).ready(function () {
-			// Changes the comments to be sorted by date
-			var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
-			buttonDate.on('click', function (e) {
-				clickSort(e, userComments);
-				buttonDate.addClass('sort-comments-active');
-				buttonLikes.removeClass('sort-comments-active');
-			});
-
-			// Changes the comments to be sorted by likes
-			var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
-			buttonLikes.on('click', function (e) {
-				clickSort(e, userCommentsLikes);
-				buttonLikes.addClass('sort-comments-active');
-				buttonDate.removeClass('sort-comments-active');
-			});
+			// Header events
+			__webpack_require__(141);
+			// Sorting comments events
+			__webpack_require__(161);
 		});
-	});
 
-	function clickSort(e, userCom) {
-		e.preventDefault();
-		var comContainer = document.getElementById('usuario-comments-container');
-		(0, _jquery2.default)(comContainer).empty().append((0, _modules.sortedComments)(userCom));
-	}
+		module.exports = {
+			userComments: userComments,
+			userCommentsLikes: userCommentsLikes
+		};
+	});
 
 /***/ },
 /* 158 */
@@ -28715,6 +28705,50 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
+	var _index = __webpack_require__(157);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	var _modules = __webpack_require__(160);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// Changes the comments to be sorted by date
+	var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
+	buttonDate.on('click', function (e) {
+	  var c = __webpack_require__(157);
+	  clickSort(e, c.userComments);
+
+	  buttonDate.addClass('sort-comments-active');
+	  buttonLikes.removeClass('sort-comments-active');
+	});
+
+	// Changes the comments to be sorted by likes
+	var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
+	buttonLikes.on('click', function (e) {
+	  var c = __webpack_require__(157);
+	  clickSort(e, c.userCommentsLikes);
+
+	  buttonLikes.addClass('sort-comments-active');
+	  buttonDate.removeClass('sort-comments-active');
+	});
+
+	function clickSort(e, userCom) {
+	  e.preventDefault();
+	  var comContainer = document.getElementById('usuario-comments-container');
+	  (0, _jquery2.default)(comContainer).empty().append((0, _modules.sortedComments)(userCom));
+	}
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
 	var _index = __webpack_require__(136);
 
 	var _index2 = _interopRequireDefault(_index);
@@ -28723,7 +28757,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(162);
+	var _template = __webpack_require__(163);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28736,7 +28770,7 @@
 	});
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

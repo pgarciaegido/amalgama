@@ -7,7 +7,6 @@ import comments           from '../utils/comments'
 import { getCurrentUser, getCommentsUser } from '../ajax'
 
 page('/app/usuario/:username', getCurrentUser, getCommentsUser, header, (ctx, next) => {
-	require('../header/events')
 
 	const user = ctx.user
 	const userComments = ctx.userComments
@@ -21,26 +20,14 @@ page('/app/usuario/:username', getCurrentUser, getCommentsUser, header, (ctx, ne
 
 	// Event listeners
 	$(document).ready(() => {
-		// Changes the comments to be sorted by date
-		const buttonDate = $('#usuario-sort-date')
-		buttonDate.on('click', (e) => {
-		  clickSort(e, userComments)
-			buttonDate.addClass('sort-comments-active')
-			buttonLikes.removeClass('sort-comments-active')
-		})
-
-		// Changes the comments to be sorted by likes
-		const buttonLikes = $('#usuario-sort-likes')
-		buttonLikes.on('click', (e) => {
-		  clickSort(e, userCommentsLikes)
-			buttonLikes.addClass('sort-comments-active')
-			buttonDate.removeClass('sort-comments-active')
-		})
+		// Header events
+		require('../header/events')
+		// Sorting comments events
+		require('./comments_events')
 	})
-})
 
-function clickSort (e, userCom) {
-	e.preventDefault()
-	let comContainer = document.getElementById('usuario-comments-container')
-	$(comContainer).empty().append(sortedComments(userCom))
-}
+	module.exports = {
+		userComments,
+		userCommentsLikes
+	}
+})
