@@ -11,7 +11,7 @@ page('/app/usuario/:username', getCurrentUser, getCommentsUser, header, (ctx, ne
 
 	const user = ctx.user
 	const userComments = ctx.userComments
-	const userCommentsLikes = []
+	let userCommentsLikes = []
 	// Sorts by likes
 	comments.sortByLikes(userComments, userCommentsLikes)
 
@@ -37,7 +37,6 @@ page('/app/usuario/:username', getCurrentUser, getCommentsUser, header, (ctx, ne
 			buttonDate.removeClass('sort-comments-active')
 		})
 	})
-
 })
 
 function clickSort (e, userCom) {

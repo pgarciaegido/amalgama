@@ -33,10 +33,10 @@ api.post('/undownvote', newsCtrl.vote)
 api.get('/get-comments', comCtrl.getComments)
 // Gets json of all comments in certain post
 api.get('/get-comment-post/:id', comCtrl.getCommentsPost)
-// Gets json of all agree comments in certain post
-api.get('/get-comment-post-agree/:id', comCtrl.getCommentsPost)
-// Gets json of all disagree comments in certain post
-api.get('/get-comment-post-disagree/:id', comCtrl.getCommentsPost)
+// // Gets json of all agree comments in certain post
+// api.get('/get-comment-post-agree/:id', comCtrl.getCommentsPost)
+// // Gets json of all disagree comments in certain post
+// api.get('/get-comment-post-disagree/:id', comCtrl.getCommentsPost)
 // Gets json of all comments mabe by user
 api.get('/get-comment-user/:username', comCtrl.getCommentsUser)
 // Inserts a new comment agreeing on a certain post

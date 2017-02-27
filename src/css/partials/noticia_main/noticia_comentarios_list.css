@@ -8,23 +8,21 @@
 		}
 
 		&-votes{
-			padding: 15px;
-
-			p{
-				margin: 0;
-			}
+			@mixin normalButton;
+			transition: 0.3s;
+			font-size: .8em;
+		}
+		&-votes:hover{
+			@mixin hoverButton;
 		}
 
 		&-new{
-			padding: 15px;
-			background-color: $blue;
-			border-radius: $radius;
-			cursor: pointer;
-
-			p{
-				margin: 0;
-				color: white;
-			}
+			@mixin normalButton;
+			transition: 0.3s;
+			font-size: .8em;
+		}
+		&-new:hover{
+			@mixin hoverButton;
 		}
 	}
 

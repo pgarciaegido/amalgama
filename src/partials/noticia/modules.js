@@ -7,7 +7,8 @@ module.exports = {
   noticiaCuerpo,
   noticiaInformate,
   noticiaComentarios,
-  comCard
+  comCard,
+  sortComments
 }
 
 function noticiaCuerpo (n) {
@@ -125,24 +126,28 @@ function noticiaComentariosDisagree (n, u, cD) {
 }
 
 // ************* Template for list of comments
-
+// d stands for agree or disagree
 function comList (u, c, a) {
   return yo`<div>
   <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">
-    <div class="Noticia_comentarios_list-order-votes">
-      <p>Más votado</p>
-    </div>
-    <div class="Noticia_comentarios_list-order-new">
-      <p>Más nuevos</p>
-    </div>
+    <button id="noticia-sort-likes-${a}" class="Noticia_comentarios_list-order-votes">Más votado</button>
+    <button id="noticia-sort-new-${a}" class="Noticia_comentarios_list-order-new sort-comments-active">Más nuevos</button>
   </div>
-  <div class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
+  <div id="noticia-comments-container-${a}" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">
     ${c.map((c) => {
       return comCard(u, c)
     })}
     ${renderSendComment(a)}
   </div>
   </div>`
+}
+
+function sortComments (u, c) {
+  return yo`
+  ${c.map((c) => {
+    return comCard(u, c)
+  })}
+  `
 }
 
 // Renders form for sending comments

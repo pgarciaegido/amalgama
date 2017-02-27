@@ -60,7 +60,7 @@ function getCommentsUser (ctx, next) {
 
 function getCommentsAgree (ctx, next) {
   var id = ctx.path.split('/').pop()
-  $.get('/api/get-comment-post-agree/' + id, (data) => {
+  $.get(`/api/get-comment-post/${id}?s=agree`, (data) => {
     ctx.commentsAgree = data
     next()
   })
@@ -68,7 +68,7 @@ function getCommentsAgree (ctx, next) {
 
 function getCommentsDisagree (ctx, next) {
   var id = ctx.path.split('/').pop()
-  $.get('/api/get-comment-post-disagree/' + id, (data) => {
+  $.get(`/api/get-comment-post/${id}?s=disagree`, (data) => {
     ctx.commentsDisagree = data
     next()
   })
