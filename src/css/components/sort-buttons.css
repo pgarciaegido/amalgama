@@ -1,0 +1,12 @@
+.sort-comments-active{
+  background-color: $blue;
+  color: white;
+  cursor: auto;
+}
+
+.sort-comments-active:hover{
+  background-color: $blue;
+  color: white;
+  cursor: auto;
+  border: 2px solid $blue;
+}

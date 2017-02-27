@@ -25,12 +25,16 @@ page('/app/usuario/:username', getCurrentUser, getCommentsUser, header, (ctx, ne
 		const buttonDate = $('#usuario-sort-date')
 		buttonDate.on('click', (e) => {
 		  clickSort(e, userComments)
+			buttonDate.addClass('sort-comments-active')
+			buttonLikes.removeClass('sort-comments-active')
 		})
 
 		// Changes the comments to be sorted by likes
 		const buttonLikes = $('#usuario-sort-likes')
 		buttonLikes.on('click', (e) => {
 		  clickSort(e, userCommentsLikes)
+			buttonLikes.addClass('sort-comments-active')
+			buttonDate.removeClass('sort-comments-active')
 		})
 	})
 

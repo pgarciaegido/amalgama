@@ -80,6 +80,7 @@
 
 			&-votes{
 				@mixin normalButton;
+				transition: 0.3s;
 			}
 
 			&-votes:hover{
@@ -88,6 +89,7 @@
 
 			&-new{
 				@mixin normalButton;
+				transition: 0.3s;
 			}
 
 			&-new:hover{

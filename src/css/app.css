@@ -8,14 +8,6 @@
 
 @import './partials/body';
 
-/*Components*/
-
-@import './components/navbar';
-@import './components/navbar_menu-mobile';
-@import './components/details';
-@import './components/votes_bar';
-@import './components/register_cta';
-
 /*Partials*/
 
 /*Index*/
@@ -71,3 +63,13 @@
 @import './partials/aside/aside_temas';
 @import './partials/aside/aside_subscribe';
 @import './partials/aside/aside_profile';
+
+
+/*Components*/
+
+@import './components/navbar';
+@import './components/navbar_menu-mobile';
+@import './components/details';
+@import './components/votes_bar';
+@import './components/register_cta';
+@import './components/sort-buttons';
