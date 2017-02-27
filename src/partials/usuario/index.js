@@ -2,6 +2,7 @@ import $                  from 'jquery'
 import header             from '../header/index'
 import page               from 'page'
 import template           from './template'
+import { sortedComments } from './modules'
 import comments           from '../utils/comments'
 import { getCurrentUser, getCommentsUser } from '../ajax'
 
@@ -15,25 +16,28 @@ page('/app/usuario/:username', getCurrentUser, getCommentsUser, header, (ctx, ne
 	comments.sortByLikes(userComments, userCommentsLikes)
 
 	// First, it will display comments sorted by date (DESC), as it comes from db
-  let main = document.getElementById('main-container')
+  const main = document.getElementById('main-container')
   $(main).empty().append(template(user, userComments))
 
 	// Event listeners
 	$(document).ready(() => {
 		// Changes the comments to be sorted by date
-		$(document).on('click', '#usuario-sort-date', (e) => {
-		  clickSort(e, user, userComments)
+		const buttonDate = $('#usuario-sort-date')
+		buttonDate.on('click', (e) => {
+		  clickSort(e, userComments)
 		})
 
 		// Changes the comments to be sorted by likes
-		$(document).on('click', '#usuario-sort-likes', (e) => {
-		  clickSort(e, user, userCommentsLikes)
+		const buttonLikes = $('#usuario-sort-likes')
+		buttonLikes.on('click', (e) => {
+		  clickSort(e, userCommentsLikes)
 		})
 	})
+
 })
 
-function clickSort (e, user, userCom) {
+function clickSort (e, userCom) {
 	e.preventDefault()
-	let main = document.getElementById('main-container')
-	$(main).empty().append(template(user, userCom))
+	let comContainer = document.getElementById('usuario-comments-container')
+	$(comContainer).empty().append(sortedComments(userCom))
 }

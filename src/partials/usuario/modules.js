@@ -5,7 +5,8 @@ import card from './comments_card'
 
 module.exports = {
   usuarioProfile,
-  usuarioComments
+  usuarioComments,
+  sortedComments
 }
 
 function usuarioProfile (user) {
@@ -65,9 +66,15 @@ function usuarioCommentsHeader () {
 // card is required in another file
 
 function usuarioCommentsContainer (comments) {
-  return yo`<div class="Usuario_main_comments-container">
+  return yo`<div id="usuario-comments-container" class="Usuario_main_comments-container">
   ${comments.map((com) => {
     return card(com)
   })}
   </div>`
+}
+
+function sortedComments (comments) {
+  return yo`${comments.map((com) => {
+    return card(com)
+  })}`
 }

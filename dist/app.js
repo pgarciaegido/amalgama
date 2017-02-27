@@ -28427,6 +28427,8 @@
 
 	var _template2 = _interopRequireDefault(_template);
 
+	var _modules = __webpack_require__(158);
+
 	var _comments = __webpack_require__(159);
 
 	var _comments2 = _interopRequireDefault(_comments);
@@ -28444,24 +28446,30 @@
 		// Sorts by likes
 		_comments2.default.sortByLikes(userComments, userCommentsLikes);
 
+		// First, it will display comments sorted by date (DESC), as it comes from db
 		var main = document.getElementById('main-container');
 		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, userComments));
 
+		// Event listeners
 		(0, _jquery2.default)(document).ready(function () {
-			(0, _jquery2.default)(document).on('click', '#usuario-sort-date', function (e) {
-				clickSort(e, user, userComments);
+			// Changes the comments to be sorted by date
+			var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
+			buttonDate.on('click', function (e) {
+				clickSort(e, userComments);
 			});
 
-			(0, _jquery2.default)(document).on('click', '#usuario-sort-likes', function (e) {
-				clickSort(e, user, userCommentsLikes);
+			// Changes the comments to be sorted by likes
+			var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
+			buttonLikes.on('click', function (e) {
+				clickSort(e, userCommentsLikes);
 			});
 		});
 	});
 
-	function clickSort(e, user, userCom) {
+	function clickSort(e, userCom) {
 		e.preventDefault();
-		var main = document.getElementById('main-container');
-		(0, _jquery2.default)(main).empty().append((0, _template2.default)(user, userCom));
+		var comContainer = document.getElementById('usuario-comments-container');
+		(0, _jquery2.default)(comContainer).empty().append((0, _modules.sortedComments)(userCom));
 	}
 
 /***/ },
@@ -28541,7 +28549,8 @@
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>'], ['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new">M\xE1s nuevos</button>\n        </div>\n      </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-container">\n  ', '\n  </div>'], ['<div class="Usuario_main_comments-container">\n  ', '\n  </div>']);
+	    _templateObject5 = _taggedTemplateLiteral(['<div id="usuario-comments-container" class="Usuario_main_comments-container">\n  ', '\n  </div>'], ['<div id="usuario-comments-container" class="Usuario_main_comments-container">\n  ', '\n  </div>']),
+	    _templateObject6 = _taggedTemplateLiteral(['', ''], ['', '']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28559,7 +28568,8 @@
 
 	module.exports = {
 	  usuarioProfile: usuarioProfile,
-	  usuarioComments: usuarioComments
+	  usuarioComments: usuarioComments,
+	  sortedComments: sortedComments
 	};
 
 	function usuarioProfile(user) {
@@ -28585,6 +28595,12 @@
 
 	function usuarioCommentsContainer(comments) {
 	  return (0, _yoYo2.default)(_templateObject5, comments.map(function (com) {
+	    return (0, _comments_card2.default)(com);
+	  }));
+	}
+
+	function sortedComments(comments) {
+	  return (0, _yoYo2.default)(_templateObject6, comments.map(function (com) {
 	    return (0, _comments_card2.default)(com);
 	  }));
 	}
