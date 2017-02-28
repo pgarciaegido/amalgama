@@ -28768,14 +28768,15 @@
 
 	var _template = __webpack_require__(163);
 
-	var _template2 = _interopRequireDefault(_template);
+	var _index3 = __webpack_require__(140);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _page2.default)('/app/usuario/pegido/editar', _index2.default, function (ctx, next) {
+	(0, _page2.default)('/app/editar/:username', _index3.getCurrentUser, _index2.default, function (ctx, next) {
 	  __webpack_require__(141);
+	  var user = ctx.user;
 	  var main = document.getElementById('main-container');
-	  (0, _jquery2.default)(main).empty().append(_template2.default);
+	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user));
 	});
 
 /***/ },
@@ -28784,7 +28785,9 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div id="usuario_editar" class="Usuario_editar">\n  <h1 class="Usuario_editar-title">Editar perfil</h1>\n  <div class="Usuario_editar-container">\n    <div class="Usuario_editar_personal">\n      <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n      <div class="Usuario_editar_personal-avatar">\n        <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n        <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n      </div>\n      <h2 class="Usuario_editar_personal-rstitle">Mis Redes Sociales</h2>\n      <div class="Usuario_editar_personal-rrss">\n        <div class="Usuario_editar_personal-rrss-facebook">\n          <img src="/img/facebook.svg" alt="" class="Usuario_editar_personal-rrss-facebook-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-facebook-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-twitter">\n          <img src="/img/twitter.svg" alt="" class="Usuario_editar_personal-rrss-twitter-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-twitter-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-linkedin">\n          <img src="/img/linkedin.svg" alt="" class="Usuario_editar_personal-rrss-linkedin-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-linkedin-input" />\n        </div>\n      </div>\n    </div>\n    <div class="Usuario_editar_data">\n      <h2 class="Usuario_editar_data-title">Mis datos</h2>\n      <form action="" class="Usuario_editar_data-form">\n        <label class="Usuario_editar_data-form-username" for="">Nombre de usuario:<input type="text" /></label>\n        <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input type="email" /></label>\n        <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input type="password" /></label>\n        <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n      </form>\n    </div>\n  </div>\n</div>'], ['<div id="usuario_editar" class="Usuario_editar">\n  <h1 class="Usuario_editar-title">Editar perfil</h1>\n  <div class="Usuario_editar-container">\n    <div class="Usuario_editar_personal">\n      <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n      <div class="Usuario_editar_personal-avatar">\n        <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n        <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n      </div>\n      <h2 class="Usuario_editar_personal-rstitle">Mis Redes Sociales</h2>\n      <div class="Usuario_editar_personal-rrss">\n        <div class="Usuario_editar_personal-rrss-facebook">\n          <img src="/img/facebook.svg" alt="" class="Usuario_editar_personal-rrss-facebook-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-facebook-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-twitter">\n          <img src="/img/twitter.svg" alt="" class="Usuario_editar_personal-rrss-twitter-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-twitter-input" />\n        </div>\n        <div class="Usuario_editar_personal-rrss-linkedin">\n          <img src="/img/linkedin.svg" alt="" class="Usuario_editar_personal-rrss-linkedin-icon">\n          <input type="text" class="Usuario_editar_personal-rrss-linkedin-input" />\n        </div>\n      </div>\n    </div>\n    <div class="Usuario_editar_data">\n      <h2 class="Usuario_editar_data-title">Mis datos</h2>\n      <form action="" class="Usuario_editar_data-form">\n        <label class="Usuario_editar_data-form-username" for="">Nombre de usuario:<input type="text" /></label>\n        <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input type="email" /></label>\n        <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input type="password" /></label>\n        <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input type="password" /></label>\n        <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n      </form>\n    </div>\n  </div>\n</div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    <div class="Usuario_editar-container">\n      ', '\n      ', '\n    </div>\n  </div>'], ['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    <div class="Usuario_editar-container">\n      ', '\n      ', '\n    </div>\n  </div>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_editar_personal">\n    <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n    <div class="Usuario_editar_personal-avatar">\n      <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n      <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n    </div>\n  </div>'], ['<div class="Usuario_editar_personal">\n    <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n    <div class="Usuario_editar_personal-avatar">\n      <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n      <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n    </div>\n  </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form action="" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input type="password" /></label>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form action="" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input type="password" /></label>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28794,7 +28797,21 @@
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	module.exports = (0, _yoYo2.default)(_templateObject);
+	module.exports = {
+	  template: template
+	};
+
+	function template(user) {
+	  return (0, _yoYo2.default)(_templateObject, user.username, avatar(), editarForm(user));
+	}
+
+	function avatar() {
+	  return (0, _yoYo2.default)(_templateObject2);
+	}
+
+	function editarForm(user) {
+	  return (0, _yoYo2.default)(_templateObject3, user.email);
+	}
 
 /***/ }
 /******/ ]);

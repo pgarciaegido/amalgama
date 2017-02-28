@@ -33,72 +33,7 @@
 		}
 
 		&-button:hover{
-			background: $blue;
-		}
-	}
-
-	&-rstitle{
-		margin: 0;
-		margin-bottom: $margin3-desktop;
-	}
-
-	&-rrss{
-		img{
-			width: 44px;
-		}
-
-		&-facebook{
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: $margin4-desktop;
-
-			&-icon{
-				margin-right: 10px;
-			}
-
-			&-input{
-				@mixin formInput;
-				background: #3b5998;
-				padding: 10px;
-				border: none;
-				color: white;
-			}
-		}
-
-		&-twitter{
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: $margin4-desktop;
-
-			&-icon{
-				margin-right: 10px;
-			}
-
-			&-input{
-				@mixin formInput;
-				padding: 10px;
-				background: #4099ff;
-				border: none;
-				color: white;
-			}
-		}
-
-		&-linkedin{
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: $margin4-desktop;
-
-			&-icon{
-				margin-right: 10px;
-			}
-
-			&-input{
-				@mixin formInput;
-				padding: 10px;
-				background: #0077b5;
-				border: none;
-				color: white;
-			}
+			@mixin hoverButton;
 		}
 	}
 }
