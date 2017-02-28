@@ -28570,7 +28570,7 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="usuario">\n  ', '\n  ', '\n</div>'], ['<div id="usuario">\n  ', '\n  ', '\n</div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_main">\n    ', '\n    ', '\n  </div>'], ['<div class="Usuario_main">\n    ', '\n    ', '\n  </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_aside">\n    <div class="Usuario_aside-stats">\n      <div class="Usuario_aside-stats-comments">\n        <h3 class="Usuario_aside-stats-comments-counter">', '</h3>\n        <span class="Usuario_aside-stats-comments-text">Comentarios</span>\n      </div>\n      <div class="Usuario_aside-stats-thumbsup">\n        <h3 class="Usuario_aside-stats-thumbsup-counter">??</h3>\n        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Usuario_aside">\n    <div class="Usuario_aside-stats">\n      <div class="Usuario_aside-stats-comments">\n        <h3 class="Usuario_aside-stats-comments-counter">', '</h3>\n        <span class="Usuario_aside-stats-comments-text">Comentarios</span>\n      </div>\n      <div class="Usuario_aside-stats-thumbsup">\n        <h3 class="Usuario_aside-stats-thumbsup-counter">??</h3>\n        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>\n      </div>\n    </div>\n  </div>']);
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_aside">\n    <div class="Usuario_aside-stats">\n      <div class="Usuario_aside-stats-comments">\n        <h3 class="Usuario_aside-stats-comments-counter">', '</h3>\n        <span class="Usuario_aside-stats-comments-text">Comentarios</span>\n      </div>\n      <div class="Usuario_aside-stats-thumbsup">\n        <h3 class="Usuario_aside-stats-thumbsup-counter">\n        ', '\n        </h3>\n        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Usuario_aside">\n    <div class="Usuario_aside-stats">\n      <div class="Usuario_aside-stats-comments">\n        <h3 class="Usuario_aside-stats-comments-counter">', '</h3>\n        <span class="Usuario_aside-stats-comments-text">Comentarios</span>\n      </div>\n      <div class="Usuario_aside-stats-thumbsup">\n        <h3 class="Usuario_aside-stats-thumbsup-counter">\n        ', '\n        </h3>\n        <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>\n      </div>\n    </div>\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28602,7 +28602,7 @@
 
 	// ** The stats of the user appear here, and in the main section, only on mobile and tablet
 	function usuarioStatsAside(comments) {
-	  return (0, _yoYo2.default)(_templateObject3, comments.length);
+	  return (0, _yoYo2.default)(_templateObject3, comments.length, _modules2.default.getLikes(comments));
 	}
 
 /***/ },
@@ -28637,7 +28637,7 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <button class="Usuario_main_profile-info-editar">Editar perfil</button>\n    </div>\n  </div>'], ['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <button class="Usuario_main_profile-info-editar">Editar perfil</button>\n    </div>\n  </div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>'], ['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new sort-comments-active">M\xE1s nuevos</button>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new sort-comments-active">M\xE1s nuevos</button>\n        </div>\n      </div>']),
 	    _templateObject5 = _taggedTemplateLiteral(['<div id="usuario-comments-container" class="Usuario_main_comments-container">\n  ', '\n  </div>'], ['<div id="usuario-comments-container" class="Usuario_main_comments-container">\n  ', '\n  </div>']),
 	    _templateObject6 = _taggedTemplateLiteral(['', ''], ['', '']);
@@ -28659,7 +28659,8 @@
 	module.exports = {
 	  usuarioProfile: usuarioProfile,
 	  usuarioComments: usuarioComments,
-	  sortedComments: sortedComments
+	  sortedComments: sortedComments,
+	  getLikes: getLikes
 	};
 
 	function usuarioProfile(user) {
@@ -28674,7 +28675,7 @@
 
 	// User stats displayed in mobile and tablets
 	function usuarioStats(comments) {
-	  return (0, _yoYo2.default)(_templateObject3, comments.length);
+	  return (0, _yoYo2.default)(_templateObject3, comments.length, getLikes(comments));
 	}
 
 	function usuarioCommentsHeader() {
@@ -28693,6 +28694,14 @@
 	  return (0, _yoYo2.default)(_templateObject6, comments.map(function (com) {
 	    return (0, _comments_card2.default)(com);
 	  }));
+	}
+
+	function getLikes(comments) {
+	  var counter = 0;
+	  for (var i in comments) {
+	    counter += comments[i].likes;
+	  }
+	  return counter;
 	}
 
 /***/ },
@@ -28763,7 +28772,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _page2.default)('/usuario/pegido/editar', _index2.default, function (ctx, next) {
+	(0, _page2.default)('/app/usuario/pegido/editar', _index2.default, function (ctx, next) {
 	  __webpack_require__(141);
 	  var main = document.getElementById('main-container');
 	  (0, _jquery2.default)(main).empty().append(_template2.default);

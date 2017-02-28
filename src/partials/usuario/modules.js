@@ -6,7 +6,8 @@ import card from './comments_card'
 module.exports = {
   usuarioProfile,
   usuarioComments,
-  sortedComments
+  sortedComments,
+  getLikes
 }
 
 function usuarioProfile (user) {
@@ -47,7 +48,7 @@ function usuarioStats (comments) {
           <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>
         </div>
         <div class="Usuario_main_comments-stats-thumbsup">
-          <h3 class="Usuario_main_comments-stats-thumbsup-counter">??</h3>
+          <h3 class="Usuario_main_comments-stats-thumbsup-counter">${getLikes(comments)}</h3>
           <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>
         </div>
       </div>`
@@ -77,4 +78,12 @@ function sortedComments (comments) {
   return yo`${comments.map((com) => {
     return card(com)
   })}`
+}
+
+function getLikes (comments) {
+  let counter = 0
+  for (let i in comments){
+    counter += comments[i].likes
+  }
+  return counter
 }

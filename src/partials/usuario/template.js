@@ -29,7 +29,9 @@ function usuarioStatsAside (comments) {
         <span class="Usuario_aside-stats-comments-text">Comentarios</span>
       </div>
       <div class="Usuario_aside-stats-thumbsup">
-        <h3 class="Usuario_aside-stats-thumbsup-counter">??</h3>
+        <h3 class="Usuario_aside-stats-thumbsup-counter">
+        ${mod.getLikes(comments)}
+        </h3>
         <span class="Usuario_aside-stats-thumbsup-text">Valoraciones</span>
       </div>
     </div>
