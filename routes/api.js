@@ -5,6 +5,7 @@ var comCtrl = require('../controllers/comments')
 var asideCtrl = require('../controllers/aside')
 var searchCtrl = require('../controllers/search')
 var renderCreate = require('../controllers/render').renderCreate
+var editUser = require('../controllers/user-editar')
 
 var sessionMiddleware = require('../middlewares/session') // middleware to ensure that user is logged in
 
@@ -47,6 +48,9 @@ api.post('/comment-unlike/:id', comCtrl.likeComment)
 
 // Gets the most voted posts (5 of them)
 api.get('/order-temas', asideCtrl.orderTemas)
+
+// Edits user info
+api.put('/editar-user/:id', editUser.editUser)
 
 api.use('/currentuser', sessionMiddleware)
 api.get('/currentuser', userCtrl.getCurrentUser)
