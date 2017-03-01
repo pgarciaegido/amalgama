@@ -1,6 +1,6 @@
 import yo from 'yo-yo'
 
-module.exports = function (err) {
+module.exports = function (feedback) {
   return yo`<div id="signup">
     <div class="Signup_image">
       <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
@@ -15,11 +15,11 @@ module.exports = function (err) {
       <form action="usersignup" method="post" class="Signup_form-form">
         <label>
           Nombre de usuario
-          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />
+          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="${feedback.n || ''}" />
         </label>
         <label>
           Email
-          <input type="email" placeholder="Introduzca su correo electrónico" name="email"/>
+          <input type="email" placeholder="Introduzca su correo electrónico" name="email" value="${feedback.m || ''}" />
         </label>
         <label>
           Contraseña
@@ -29,7 +29,7 @@ module.exports = function (err) {
           Confirma tu contraseña
           <input type="password" name="password_confirmation" />
         </label>
-        <div class="Signup_form-form-error">${err}</div>
+        <div class="Signup_form-form-error">${feedback.e || ''}</div>
         <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
       </form>
     </div>

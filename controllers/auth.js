@@ -2,6 +2,7 @@ var User = require('../data/models/user').User
 var u = require('./utils')
 
 function signup (req, res) {
+  var user = req.body.username
   var email = req.body.email
   var pass = req.body.password
   var repPass = req.body.password_confirmation
@@ -11,10 +12,10 @@ function signup (req, res) {
 
   // Validates email
   if (!emailValidation) {
-    res.redirect('/registrate?e=invalid')
+    res.redirect('/registrate?e=invalid?u=' + user + '?m=' + email)
   } // Validates password
   else if (!passValidation) {
-    res.redirect('/registrate?e=dif')
+    res.redirect('/registrate?e=dif?u=' + user + '?m=' + email)
   }
 
   var user = new User({

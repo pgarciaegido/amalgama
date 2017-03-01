@@ -8,11 +8,11 @@ const passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales
 const currentPassInvalid = "La contraseña actual es incorrecta."
 
 function errorMessage (query) {
-  if(query === "e=invalid") {
+  if(query === "invalid") {
     return emailInvalid
-  } else if (query === "e=dif") {
+  } else if (query === "dif") {
     return passwordNotMatch
-  } else if (query === "e=esame") {
+  } else if (query === "esame") {
     return emailSame
   }
   return ''
