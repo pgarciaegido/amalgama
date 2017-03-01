@@ -2,7 +2,6 @@ import $        from 'jquery'
 import header   from '../header/index'
 import page     from 'page'
 import template from './template'
-import { errorMessage } from '../utils/error_messages'
 import queryHandler from '../utils/query_handler'
 
 page('/registrate', header, (ctx, next) => {
@@ -13,8 +12,6 @@ page('/registrate', header, (ctx, next) => {
   // already converted in a proper message to send to client
   // If there are no queries, returns ''
   const feedback = queryHandler(query)
-
-  console.log(feedback)
 
   if ($('body').height() < window.innerHeight) {
     $('body').css('overflow', 'hidden')

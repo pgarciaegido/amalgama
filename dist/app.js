@@ -28398,9 +28398,7 @@
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _error_messages = __webpack_require__(155);
-
-	var _query_handler = __webpack_require__(156);
+	var _query_handler = __webpack_require__(155);
 
 	var _query_handler2 = _interopRequireDefault(_query_handler);
 
@@ -28447,6 +28445,35 @@
 
 /***/ },
 /* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _error_messages = __webpack_require__(156);
+
+	module.exports = function queryHandler(query) {
+	  if (query === '') return '';
+
+	  // e=error?u=user?m=mail
+	  var q = query.split('?');
+
+	  // Gives info in case of error so the user doesn't lose whats hes wrote
+	  var feedback = {};
+	  // For each query separated by ?, we create an object value:
+	  for (var i in q) {
+	    feedback[q[i].split('=')[0]] = q[i].split('=')[1];
+	  }
+	  // If there is an error query, translate it into a readable feedback message
+	  // to send to client using errorMessage function
+	  if (feedback.e) {
+	    feedback.e = (0, _error_messages.errorMessage)(feedback.e);
+	  }
+
+	  return feedback;
+	};
+
+/***/ },
+/* 156 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28470,35 +28497,6 @@
 	  }
 	  return '';
 	}
-
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _error_messages = __webpack_require__(155);
-
-	module.exports = function queryHandler(query) {
-	  if (query === '') return '';
-
-	  // e=error?u=user?m=mail
-	  var q = query.split('?');
-
-	  // Gives info in case of error so the user doesn't lose whats hes wrote
-	  var feedback = {};
-	  // For each query separated by ?, we create an object value:
-	  for (var i in q) {
-	    feedback[q[i].split('=')[0]] = q[i].split('=')[1];
-	  }
-	  // If there is an error query, translate it into a readable feedback message
-	  // to send to client using errorMessage function
-	  if (feedback.e) {
-	    feedback.e = (0, _error_messages.errorMessage)(feedback.e);
-	  }
-
-	  return feedback;
-	};
 
 /***/ },
 /* 157 */
@@ -28839,7 +28837,9 @@
 
 	var _template = __webpack_require__(165);
 
-	var _error_messages = __webpack_require__(155);
+	var _query_handler = __webpack_require__(155);
+
+	var _query_handler2 = _interopRequireDefault(_query_handler);
 
 	var _index3 = __webpack_require__(140);
 
@@ -28849,10 +28849,10 @@
 	  __webpack_require__(141);
 	  var user = ctx.user;
 	  var query = ctx.querystring;
-	  var error = (0, _error_messages.errorMessage)(query);
+	  var feedback = (0, _query_handler2.default)(query);
 
 	  var main = document.getElementById('main-container');
-	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user, error));
+	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user, feedback));
 	});
 
 /***/ },
@@ -28887,8 +28887,8 @@
 
 	// uses methodOverride to PUT a POST form. Notice the query ?_method=put
 	// IMPORTANT it looks that it doesnt work if there is another query
-	function editarForm(user, error) {
-	  return (0, _yoYo2.default)(_templateObject3, user._id, user.email, error);
+	function editarForm(user, feedback) {
+	  return (0, _yoYo2.default)(_templateObject3, user._id, user.email, feedback.e);
 	}
 
 /***/ }
