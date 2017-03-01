@@ -70,11 +70,11 @@
 
 	__webpack_require__(153);
 
-	__webpack_require__(155);
+	__webpack_require__(156);
 
-	__webpack_require__(157);
+	__webpack_require__(158);
 
-	__webpack_require__(162);
+	__webpack_require__(163);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28398,15 +28398,22 @@
 
 	var _template2 = _interopRequireDefault(_template);
 
+	var _error_messages = __webpack_require__(155);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _page2.default)('/registrate', _index2.default, function (ctx, next) {
 	  __webpack_require__(141);
-	  var main = document.getElementById('main-container');
+
+	  var query = ctx.querystring;
+	  var err = (0, _error_messages.errorMessage)(query);
+
 	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
 	    (0, _jquery2.default)('body').css('overflow', 'hidden');
 	  }
-	  (0, _jquery2.default)(main).empty().append(_template2.default);
+
+	  var main = document.getElementById('main-container');
+	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(err));
 	});
 
 /***/ },
@@ -28415,7 +28422,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div id="signup">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <h3 class="Signup_form-subtitle">Reg\xEDstrate y podr\xE1s votar y opinar en todos los temas. \xA1No te llevar\xE1 m\xE1s de 2 minutos!</h3>\n      <div class="Signup_form-social">\n        <button class="Signup_form-social-facebook">Reg\xEDstrate con Facebook</button>\n        <button class="Signup_form-social-google">Reg\xEDstrate con Google</button>\n      </div>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email"/>\n          Contrase\xF1a\n          <input type="password" name="password" />\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n    </div>\n  </div>'], ['<div id="signup">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <h3 class="Signup_form-subtitle">Reg\xEDstrate y podr\xE1s votar y opinar en todos los temas. \xA1No te llevar\xE1 m\xE1s de 2 minutos!</h3>\n      <div class="Signup_form-social">\n        <button class="Signup_form-social-facebook">Reg\xEDstrate con Facebook</button>\n        <button class="Signup_form-social-google">Reg\xEDstrate con Google</button>\n      </div>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email"/>\n          Contrase\xF1a\n          <input type="password" name="password" />\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n    </div>\n  </div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div id="signup">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <h3 class="Signup_form-subtitle">Reg\xEDstrate y podr\xE1s votar y opinar en todos los temas. \xA1No te llevar\xE1 m\xE1s de 2 minutos!</h3>\n      <div class="Signup_form-social">\n        <button class="Signup_form-social-facebook">Reg\xEDstrate con Facebook</button>\n        <button class="Signup_form-social-google">Reg\xEDstrate con Google</button>\n      </div>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <label>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />\n        </label>\n        <label>\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email"/>\n        </label>\n        <label>\n          Contrase\xF1a\n          <input type="password" name="password" />\n        </label>\n        <label>\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </label>\n        <div class="Signup_form-form-error">', '</div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n    </div>\n  </div>'], ['<div id="signup">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <h3 class="Signup_form-subtitle">Reg\xEDstrate y podr\xE1s votar y opinar en todos los temas. \xA1No te llevar\xE1 m\xE1s de 2 minutos!</h3>\n      <div class="Signup_form-social">\n        <button class="Signup_form-social-facebook">Reg\xEDstrate con Facebook</button>\n        <button class="Signup_form-social-google">Reg\xEDstrate con Google</button>\n      </div>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <label>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" />\n        </label>\n        <label>\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email"/>\n        </label>\n        <label>\n          Contrase\xF1a\n          <input type="password" name="password" />\n        </label>\n        <label>\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </label>\n        <div class="Signup_form-form-error">', '</div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n    </div>\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28425,12 +28432,38 @@
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	module.exports = function () {
-	  return (0, _yoYo2.default)(_templateObject);
+	module.exports = function (err) {
+	  return (0, _yoYo2.default)(_templateObject, err);
 	};
 
 /***/ },
 /* 155 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	  errorMessage: errorMessage
+	};
+
+	var emailInvalid = "El email es inválido. Revise que esté bien escrito.";
+	var emailSame = "El email introducido es el mismo que ya tiene su cuenta.";
+	var passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales.";
+	var currentPassInvalid = "La contraseña actual es incorrecta.";
+
+	function errorMessage(query) {
+	  if (query === "e=invalid") {
+	    return emailInvalid;
+	  } else if (query === "e=dif") {
+	    return passwordNotMatch;
+	  } else if (query === "e=esame") {
+	    return emailSame;
+	  }
+	  return '';
+	}
+
+/***/ },
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28447,7 +28480,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(156);
+	var _template = __webpack_require__(157);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28474,7 +28507,7 @@
 	}, _aside2.default);
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28505,7 +28538,7 @@
 	}
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28522,11 +28555,11 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(158);
+	var _template = __webpack_require__(159);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _modules = __webpack_require__(160);
+	var _modules = __webpack_require__(161);
 
 	var _comments = __webpack_require__(147);
 
@@ -28553,7 +28586,7 @@
 			// Header events
 			__webpack_require__(141);
 			// Sorting comments events
-			__webpack_require__(161);
+			__webpack_require__(162);
 		});
 
 		module.exports = {
@@ -28563,7 +28596,7 @@
 	});
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28576,11 +28609,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(159);
+	var _comments_card = __webpack_require__(160);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(160);
+	var _modules = __webpack_require__(161);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28606,7 +28639,7 @@
 	}
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28630,7 +28663,7 @@
 	};
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28646,7 +28679,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(159);
+	var _comments_card = __webpack_require__(160);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -28705,7 +28738,7 @@
 	}
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28714,18 +28747,18 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(157);
+	var _index = __webpack_require__(158);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _modules = __webpack_require__(160);
+	var _modules = __webpack_require__(161);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Changes the comments to be sorted by date
 	var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
 	buttonDate.on('click', function (e) {
-	  var c = __webpack_require__(157);
+	  var c = __webpack_require__(158);
 	  clickSort(e, c.userComments);
 
 	  buttonDate.addClass('sort-comments-active');
@@ -28735,7 +28768,7 @@
 	// Changes the comments to be sorted by likes
 	var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
 	buttonLikes.on('click', function (e) {
-	  var c = __webpack_require__(157);
+	  var c = __webpack_require__(158);
 	  clickSort(e, c.userCommentsLikes);
 
 	  buttonLikes.addClass('sort-comments-active');
@@ -28749,7 +28782,7 @@
 	}
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28766,9 +28799,9 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(163);
+	var _template = __webpack_require__(164);
 
-	var _error_messages = __webpack_require__(164);
+	var _error_messages = __webpack_require__(155);
 
 	var _index3 = __webpack_require__(140);
 
@@ -28779,12 +28812,13 @@
 	  var user = ctx.user;
 	  var query = ctx.querystring;
 	  var error = (0, _error_messages.errorMessage)(query);
+
 	  var main = document.getElementById('main-container');
 	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user, error));
 	});
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28817,32 +28851,6 @@
 	// IMPORTANT it looks that it doesnt work if there is another query
 	function editarForm(user, error) {
 	  return (0, _yoYo2.default)(_templateObject3, user._id, user.email, error);
-	}
-
-/***/ },
-/* 164 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-	  errorMessage: errorMessage
-	};
-
-	var emailInvalid = "El email es inválido. Revise que esté bien escrito.";
-	var emailSame = "El email introducido es el mismo que ya tiene su cuenta.";
-	var passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales.";
-	var currentPassInvalid = "La contraseña actual es incorrecta.";
-
-	function errorMessage(query) {
-	  if (query === "e=invalid") {
-	    return emailInvalid;
-	  } else if (query === "e=dif") {
-	    return passwordNotMatch;
-	  } else if (query === "e=esame") {
-	    return emailSame;
-	  }
-	  return '';
 	}
 
 /***/ }

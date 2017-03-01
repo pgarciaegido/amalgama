@@ -1,7 +1,7 @@
 .Signup_form{
 
 	@media(--tablet-small){
-		width: 100%;	
+		width: 100%;
 	}
 
 	&-title{
@@ -47,9 +47,13 @@
 			@mixin formInput;
 			margin-top: $margin5-desktop;
 		}
-		
+
 		input:first-child, input:nth-child(2){
 			margin-bottom: $margin5-desktop;
+		}
+
+		&-error{
+			@mixin errorMessage;
 		}
 
 		&-submit{

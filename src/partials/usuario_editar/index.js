@@ -2,7 +2,7 @@ import $                  from 'jquery'
 import header             from '../header/index'
 import page               from 'page'
 import { template }       from './template'
-import { errorMessage }   from './error_messages'
+import { errorMessage }   from '../utils/error_messages'
 import { getCurrentUser } from '../ajax/index'
 
 page('/app/editar/:username', getCurrentUser, header, (ctx, next) => {
@@ -10,6 +10,7 @@ page('/app/editar/:username', getCurrentUser, header, (ctx, next) => {
   const user = ctx.user
   const query = ctx.querystring
   const error = errorMessage(query)
+
   const main = document.getElementById('main-container')
   $(main).empty().append(template(user, error))
 })

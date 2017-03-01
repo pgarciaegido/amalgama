@@ -27,6 +27,13 @@
 /*
 ***********LAYOUT
 */
+/* --------- Error Messages --------- */
+@define-mixin errorMessage {
+	margin-bottom: 15px;
+	color: $red;
+	font-weight: 700;
+	text-align: center;
+}
 
 /* ---------------- Buttons -----------*/
 @define-mixin blueButton {

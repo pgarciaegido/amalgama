@@ -32,10 +32,7 @@
 		}
 
 		&-error{
-			margin-bottom: 15px;
-			color: $red;
-			font-weight: 700;
-			text-align: center;
+			@mixin errorMessage;
 		}
 
 		input[type="submit"]{

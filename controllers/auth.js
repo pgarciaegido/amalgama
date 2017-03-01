@@ -1,16 +1,32 @@
 var User = require('../data/models/user').User
-
+var u = require('./utils')
 
 function signup (req, res) {
+  var email = req.body.email
+  var pass = req.body.password
+  var repPass = req.body.password_confirmation
+
+  var emailValidation = u.validateEmail(email)
+  var passValidation = pass === repPass
+
+  // Validates email
+  if (!emailValidation) {
+    res.redirect('/registrate?e=invalid')
+  } // Validates password
+  else if (!passValidation) {
+    res.redirect('/registrate?e=dif')
+  }
+
   var user = new User({
     username: req.body.username,
-    email: req.body.email
+    email: email,
+    password: req.body.password
   })
 
-  // Using promises --> PREFERED
+  /* HERE THE PASSWORD GETS HASHED. LOGIS CON THE MODEL */
 
+  // Using promises --> PREFERED
   user.save().then(function (us) {
-    console.log(us)
     res.redirect('/app')
   }, function (err) {
     if (err) {
