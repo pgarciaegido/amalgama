@@ -21,7 +21,7 @@ function signup (req, res) {
   var user = new User({
     username: req.body.username,
     email: email,
-    password: req.body.password
+    password: pass
   })
 
   /* HERE THE PASSWORD GETS HASHED. LOGIS CON THE MODEL */
