@@ -25,6 +25,19 @@
 			}
 		}
 
+		&-currentpass{
+			input{
+				margin-bottom: 15px;
+			}
+		}
+
+		&-error{
+			margin-bottom: 15px;
+			color: $red;
+			font-weight: 700;
+			text-align: center;
+		}
+
 		input[type="submit"]{
 			@mixin normalButton;
 		}

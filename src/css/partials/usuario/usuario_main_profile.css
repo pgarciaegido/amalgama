@@ -95,6 +95,7 @@
 			position: absolute;
 			right: 5%;
 			bottom: 50px;
+			text-decoration: none;
 
 			@media (--tablet){
 				right: 2%;

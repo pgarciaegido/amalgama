@@ -25,7 +25,7 @@ function usuarioProfile (user) {
         <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>
         <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>
       </div>
-      <button class="Usuario_main_profile-info-editar">Editar perfil</button>
+      <a href="/app/editar/${user.username}" class="Usuario_main_profile-info-editar">Editar perfil</a>
     </div>
   </div>`
 }

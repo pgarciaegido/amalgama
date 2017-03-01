@@ -4,12 +4,12 @@ module.exports = {
   template
 }
 
-function template (user) {
+function template (user, error) {
   return yo`<div id="usuario_editar" class="Usuario_editar">
     <h1 class="Usuario_editar-title">${user.username}: Editar perfil</h1>
     <div class="Usuario_editar-container">
       ${avatar()}
-      ${editarForm(user)}
+      ${editarForm(user, error)}
     </div>
   </div>`
 }
@@ -26,7 +26,7 @@ function avatar () {
 
 // uses methodOverride to PUT a POST form. Notice the query ?_method=put
 // IMPORTANT it looks that it doesnt work if there is another query
-function editarForm (user) {
+function editarForm (user, error) {
   return yo`<div class="Usuario_editar_data">
     <h2 class="Usuario_editar_data-title">Mis datos</h2>
     <form method="post" action="/api/editar-user/${user._id}?_method=put" class="Usuario_editar_data-form">
@@ -34,6 +34,7 @@ function editarForm (user) {
       <label class="Usuario_editar_data-form-newpass" for="">Nueva contraseña:<input name="new_password" type="password" /></label>
       <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contraseña:<input name="validate_password" type="password" /></label>
       <label class="Usuario_editar_data-form-currentpass" for="">Contraseña actual:<input name="current_password" type="password" /></label>
+      <div class="Usuario_editar_data-form-error">${error}</div>
       <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">
     </form>
   </div>`

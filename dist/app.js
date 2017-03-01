@@ -28635,7 +28635,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <button class="Usuario_main_profile-info-editar">Editar perfil</button>\n    </div>\n  </div>'], ['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <button class="Usuario_main_profile-info-editar">Editar perfil</button>\n    </div>\n  </div>']),
+	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <a href="/app/editar/', '" class="Usuario_main_profile-info-editar">Editar perfil</a>\n    </div>\n  </div>'], ['<div class="Usuario_main_profile">\n    <div class="Usuario_main_profile-avatar">\n      <img src="/img/avatar.jpg" alt="avatar" />\n    </div>\n    <div class="Usuario_main_profile-info">\n      <div class="Usuario_main_profile-info-main">\n        <h2 class="Usuario_main_profile-info-main-username">', '</h2>\n        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>\n      </div>\n      <div class="Usuario_main_profile-info-links">\n        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>\n        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>\n      </div>\n      <a href="/app/editar/', '" class="Usuario_main_profile-info-editar">Editar perfil</a>\n    </div>\n  </div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>'], ['<div class="Usuario_main_comments">\n      ', '\n      ', '\n      ', '\n    </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-stats">\n        <div class="Usuario_main_comments-stats-comments">\n          <h3 class="Usuario_main_comments-stats-comments-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-comments-text">Comentarios</span>\n        </div>\n        <div class="Usuario_main_comments-stats-thumbsup">\n          <h3 class="Usuario_main_comments-stats-thumbsup-counter">', '</h3>\n          <span class="Usuario_main_comments-stats-thumbsup-text">Valoraciones</span>\n        </div>\n      </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new sort-comments-active">M\xE1s nuevos</button>\n        </div>\n      </div>'], ['<div class="Usuario_main_comments-header">\n        <h2 class="Usuario_main_comments-header-title">Mis comentarios</h2>\n        <div class="Usuario_main_comments-header-order">\n          <button id="usuario-sort-likes" class="Usuario_main_comments-header-order-votes">M\xE1s votados</button>\n          <button id="usuario-sort-date" class="Usuario_main_comments-header-order-new sort-comments-active">M\xE1s nuevos</button>\n        </div>\n      </div>']),
@@ -28664,7 +28664,7 @@
 	};
 
 	function usuarioProfile(user) {
-	  return (0, _yoYo2.default)(_templateObject, user.username);
+	  return (0, _yoYo2.default)(_templateObject, user.username, user.username);
 	}
 
 	function usuarioComments(comments) {
@@ -28768,6 +28768,8 @@
 
 	var _template = __webpack_require__(163);
 
+	var _error_messages = __webpack_require__(164);
+
 	var _index3 = __webpack_require__(140);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28775,8 +28777,10 @@
 	(0, _page2.default)('/app/editar/:username', _index3.getCurrentUser, _index2.default, function (ctx, next) {
 	  __webpack_require__(141);
 	  var user = ctx.user;
+	  var query = ctx.querystring;
+	  var error = (0, _error_messages.errorMessage)(query);
 	  var main = document.getElementById('main-container');
-	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user));
+	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user, error));
 	});
 
 /***/ },
@@ -28787,7 +28791,7 @@
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    <div class="Usuario_editar-container">\n      ', '\n      ', '\n    </div>\n  </div>'], ['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    <div class="Usuario_editar-container">\n      ', '\n      ', '\n    </div>\n  </div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_editar_personal">\n    <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n    <div class="Usuario_editar_personal-avatar">\n      <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n      <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n    </div>\n  </div>'], ['<div class="Usuario_editar_personal">\n    <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>\n    <div class="Usuario_editar_personal-avatar">\n      <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />\n      <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>\n    </div>\n  </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']);
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28801,8 +28805,8 @@
 	  template: template
 	};
 
-	function template(user) {
-	  return (0, _yoYo2.default)(_templateObject, user.username, avatar(), editarForm(user));
+	function template(user, error) {
+	  return (0, _yoYo2.default)(_templateObject, user.username, avatar(), editarForm(user, error));
 	}
 
 	function avatar() {
@@ -28811,8 +28815,34 @@
 
 	// uses methodOverride to PUT a POST form. Notice the query ?_method=put
 	// IMPORTANT it looks that it doesnt work if there is another query
-	function editarForm(user) {
-	  return (0, _yoYo2.default)(_templateObject3, user._id, user.email);
+	function editarForm(user, error) {
+	  return (0, _yoYo2.default)(_templateObject3, user._id, user.email, error);
+	}
+
+/***/ },
+/* 164 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	  errorMessage: errorMessage
+	};
+
+	var emailInvalid = "El email es inválido. Revise que esté bien escrito.";
+	var emailSame = "El email introducido es el mismo que ya tiene su cuenta.";
+	var passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales.";
+	var currentPassInvalid = "La contraseña actual es incorrecta.";
+
+	function errorMessage(query) {
+	  if (query === "e=invalid") {
+	    return emailInvalid;
+	  } else if (query === "e=dif") {
+	    return passwordNotMatch;
+	  } else if (query === "e=esame") {
+	    return emailSame;
+	  }
+	  return '';
 	}
 
 /***/ }

@@ -1,4 +1,5 @@
 var User = require('../data/models/user').User
+var u = require('./utils')
 
 module.exports = {
   editUser
@@ -14,25 +15,39 @@ function editUser (req, res) {
 
   var update
 
-  User.findById(id, function (err, u) {
-    console.log(u)
+  User.findById(id, function (err, usr) {
     if (err) console.log(err)
 
+    // If email is not valid and its not empty, redirect and alert a message
+    if (!u.validateEmail(newEmail) && newEmail !== ''){
+      res.redirect('/app/editar/' + usr.username + '?e=invalid')
+    }
+
+    // If the whole form is empty, just redirect to the same page
+    else if (newEmail === '' && newPass === '' && newPassVal === '' && currPass === '') {
+      res.redirect('/app/editar/' + usr.username)
+    }
+
     // Only modifying email
-    if (newPass === '' || newPassVal === '' || currPass === '') {
+    else if (newPass === '' || newPassVal === '' || currPass === '') {
       // If the email is the same of user, redirects to edit
-      if(req.body.email === u.email) {
-        res.redirect('/app/editar/' + u.username)
+      if(newEmail === usr.email) {
+        res.redirect('/app/editar/' + usr.username + '?e=esame')
       // If the email is different, update new Email
       } else {
         update = {$set: {email: newEmail}}
       }
     }
 
+    // Passwords dont match
+    else if (newPass !== newPassVal) {
+      res.redirect('/app/editar/' + usr.username + '?e=dif')
+    }
+
     // If both password match and current password is user password
-    else if (newPass === newPassVal && currPass === u.password){
+    else if (newPass === newPassVal && currPass === usr.password){
       // If the new email = user email
-      if (newEmail === u.email) {
+      if (newEmail === usr.email) {
         // Only update password
         update = {$set: {password: newPass}}
       } else {
