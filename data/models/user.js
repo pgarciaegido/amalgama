@@ -15,11 +15,9 @@ var UserSchema = new Schema({
 })
 
 // Encripta la contraseña
-
 UserSchema.pre('save', function(next) {
     var user = this;
-    console.log(user.password)
-    console.log(user)
+
     // only hash the password if it has been modified (or is new)
     if (!user.isModified('password')) return next();
 
@@ -37,6 +35,13 @@ UserSchema.pre('save', function(next) {
         });
     });
 });
+
+UserSchema.methods.comparePassword = function(candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+        if (err) return cb(err);
+        cb(null, isMatch);
+    });
+};
 
 // Our collection in mongodb is named after the string (first param), but it turns
 // it to plural (adding S)

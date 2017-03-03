@@ -37,15 +37,30 @@ function signup (req, res) {
   })
 }
 
+// Login
 function login (req, res) {
-  User.findOne({email: req.body.email, password: req.body.password}, function (err, user) {
-    // if there is no user, gets back to /accede
+  // Find user by username
+  User.findOne({username: req.body.username}, function (err, user) {
     if (!user) {
       console.log(err)
-      res.redirect('/accede')
+      // If there is no user with that name, returns error message
+      res.redirect('/accede?e=nouser?u=' + req.body.username)
     } else {
-      req.session.user_id = user._id
-      res.redirect('/app')
+      // comparePassword method defined in model. Returns true or false
+      user.comparePassword(req.body.password, function (err, isMatch) {
+        if (err){
+          console.log(err)
+          res.redirect('/accede')
+        }
+        if(isMatch){
+          // Cookies to remember user
+          req.session.user_id = user._id
+          res.redirect('/app')
+        }
+        else{
+          res.redirect('/accede?e=errpass?u=' + user.username)
+        }
+      })
     }
   })
 }

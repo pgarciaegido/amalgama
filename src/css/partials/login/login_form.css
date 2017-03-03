@@ -50,6 +50,11 @@
 			margin-bottom: $margin5-desktop;
 		}
 
+		&-error{
+			@mixin errorMessage;
+			margin-top: 10px;
+		}
+
 		&-submit{
 			@mixin normalButton;
 			@mixin blueButton;

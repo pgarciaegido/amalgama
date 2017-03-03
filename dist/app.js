@@ -66,9 +66,9 @@
 
 	__webpack_require__(142);
 
-	__webpack_require__(144);
+	__webpack_require__(146);
 
-	__webpack_require__(153);
+	__webpack_require__(155);
 
 	__webpack_require__(157);
 
@@ -27763,15 +27763,26 @@
 
 	var _template2 = _interopRequireDefault(_template);
 
+	var _query_handler = __webpack_require__(144);
+
+	var _query_handler2 = _interopRequireDefault(_query_handler);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _page2.default)('/accede', _index2.default, function (ctx, next) {
 	  __webpack_require__(141);
+
+	  var query = ctx.querystring;
+	  // Returns a object with all the queries separated and the error query
+	  // already converted in a proper message to send to client
+	  // If there are no queries, returns ''
+	  var feedback = (0, _query_handler2.default)(query);
+
 	  var main = document.getElementById('main-container');
 	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
 	    (0, _jquery2.default)('body').css('overflow', 'hidden');
 	  }
-	  (0, _jquery2.default)(main).empty().append(_template2.default);
+	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(feedback));
 	});
 
 /***/ },
@@ -27780,7 +27791,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>'], ['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="email" placeholder="Introduzca su nombre de usuario o email" name="email" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="', '" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <div class="Login_form-form-error">', '</div>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>'], ['<div id="login">\n    <div class="Signup_image">\n      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />\n    </div>\n    <div class="Login_form">\n      <h1 class="Login_form-title">Accede a tu cuenta</h1>\n      <h3 class="Login_form-subtitle">Accede a tu cuenta a trav\xE9s de Facebook, Google, o tu email</h3>\n      <div class="Login_form-social">\n        <button class="Login_form-social-facebook">Accede con Facebook</button>\n        <button class="Login_form-social-google">Accede con Google</button>\n      </div>\n      <form action="/login" method="POST" class="Login_form-form">\n        Nombre de usuario o email\n        <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="', '" />\n        Contrase\xF1a\n        <input type="password" placeholder="Introduzca su contrase\xF1a" name="password"/>\n        <div class="Login_form-form-error">', '</div>\n        <input class="Login_form-form-submit" type="Submit" value="Accede">\n      </form>\n      <h2>No tengo cuenta! Quisiera registrarme</h2>\n      <a href="/registrate"><button>Reg\xEDstrame!</button></a>\n    </div>\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -27790,10 +27801,73 @@
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-	module.exports = (0, _yoYo2.default)(_templateObject);
+	module.exports = function login(feedback) {
+	  return (0, _yoYo2.default)(_templateObject, feedback.u || '', feedback.e || '');
+	};
 
 /***/ },
 /* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _error_messages = __webpack_require__(145);
+
+	module.exports = function queryHandler(query) {
+	  if (query === '') return '';
+
+	  // e=error?u=user?m=mail
+	  var q = query.split('?');
+
+	  // Gives info in case of error so the user doesn't lose whats hes wrote
+	  var feedback = {};
+	  // For each query separated by ?, we create an object value:
+	  for (var i in q) {
+	    feedback[q[i].split('=')[0]] = q[i].split('=')[1];
+	  }
+	  // If there is an error query, translate it into a readable feedback message
+	  // to send to client using errorMessage function
+	  if (feedback.e) {
+	    feedback.e = (0, _error_messages.errorMessage)(feedback.e);
+	  }
+
+	  return feedback;
+	};
+
+/***/ },
+/* 145 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	  errorMessage: errorMessage
+	};
+
+	var emailInvalid = "El email es inválido. Revise que esté bien escrito.";
+	var emailSame = "El email introducido es el mismo que ya tiene su cuenta.";
+	var passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales.";
+	var currentPassInvalid = "La contraseña actual es incorrecta.";
+	var noUser = "El usuario introducido no existe.";
+	var errPass = "La contraseña es incorrecta.";
+
+	function errorMessage(query) {
+	  if (query === "invalid") {
+	    return emailInvalid;
+	  } else if (query === "dif") {
+	    return passwordNotMatch;
+	  } else if (query === "esame") {
+	    return emailSame;
+	  } else if (query === "nouser") {
+	    return noUser;
+	  } else if (query === "errpass") {
+	    return errPass;
+	  }
+	  return '';
+	}
+
+/***/ },
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27810,7 +27884,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(145);
+	var _template = __webpack_require__(147);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -27822,11 +27896,11 @@
 
 	var _get_percentage2 = _interopRequireDefault(_get_percentage);
 
-	var _comments = __webpack_require__(147);
+	var _comments = __webpack_require__(149);
 
 	var _comments2 = _interopRequireDefault(_comments);
 
-	var _modules = __webpack_require__(146);
+	var _modules = __webpack_require__(148);
 
 	var _ajax = __webpack_require__(140);
 
@@ -27852,7 +27926,7 @@
 	  (0, _jquery2.default)(document).ready(function () {
 	    (0, _get_percentage2.default)();
 	    __webpack_require__(141);
-	    __webpack_require__(148);
+	    __webpack_require__(150);
 	  });
 
 	  // coger id de la url para pedir ese post al json
@@ -27875,7 +27949,7 @@
 	}, _aside2.default);
 
 /***/ },
-/* 145 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27890,7 +27964,7 @@
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _modules = __webpack_require__(146);
+	var _modules = __webpack_require__(148);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -27907,7 +27981,7 @@
 	};
 
 /***/ },
-/* 146 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28040,7 +28114,7 @@
 	}
 
 /***/ },
-/* 147 */
+/* 149 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28062,7 +28136,7 @@
 	}
 
 /***/ },
-/* 148 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28071,9 +28145,9 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(146);
+	var _modules = __webpack_require__(148);
 
-	var _votesLiked = __webpack_require__(149);
+	var _votesLiked = __webpack_require__(151);
 
 	var _votesLiked2 = _interopRequireDefault(_votesLiked);
 
@@ -28081,15 +28155,15 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _comments_events_functions = __webpack_require__(150);
+	var _comments_events_functions = __webpack_require__(152);
 
 	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
 
-	var _comments_events_vars = __webpack_require__(151);
+	var _comments_events_vars = __webpack_require__(153);
 
 	var _comments_events_vars2 = _interopRequireDefault(_comments_events_vars);
 
-	var _comments_events_sort = __webpack_require__(152);
+	var _comments_events_sort = __webpack_require__(154);
 
 	var _comments_events_sort2 = _interopRequireDefault(_comments_events_sort);
 
@@ -28121,7 +28195,7 @@
 	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
 
 /***/ },
-/* 149 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28159,7 +28233,7 @@
 	};
 
 /***/ },
-/* 150 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28168,9 +28242,9 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(146);
+	var _modules = __webpack_require__(148);
 
-	var _votesLiked = __webpack_require__(149);
+	var _votesLiked = __webpack_require__(151);
 
 	var _votesLiked2 = _interopRequireDefault(_votesLiked);
 
@@ -28207,7 +28281,7 @@
 	// Calls createShow
 	// Gives the 'open' comment button an id so now is used to closeit
 	function commentAgree() {
-	  var v = __webpack_require__(151);
+	  var v = __webpack_require__(153);
 	  createShow(v.createAgree, v.commentsAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-closeagree');
 	  v.comentarAgree.html('Cerrar');
@@ -28215,7 +28289,7 @@
 
 	// Opens input in disagree
 	function commentDisagree() {
-	  var v = __webpack_require__(151);
+	  var v = __webpack_require__(153);
 	  createShow(v.createDisagree, v.commentsDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-closedisagree');
 	  v.comentarDisagree.html('Cerrar');
@@ -28232,14 +28306,14 @@
 	}
 
 	function commentCloseAgree() {
-	  var v = __webpack_require__(151);
+	  var v = __webpack_require__(153);
 	  createHide(v.createAgree, v.commentsAgree, v.textAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-agree');
 	  v.comentarAgree.html('Comentar');
 	}
 
 	function commentCloseDisagree() {
-	  var v = __webpack_require__(151);
+	  var v = __webpack_require__(153);
 	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-disagree');
 	  v.comentarDisagree.html('Comentar');
@@ -28254,7 +28328,7 @@
 
 	// ---- $commentsMobile is an array of dom elements.
 	function commentsMobileInside(ev) {
-	  var v = __webpack_require__(151);
+	  var v = __webpack_require__(153);
 	  if ((0, _jquery2.default)(ev.target).attr('class').indexOf('disagree') !== -1) {
 	    if (disagreeOpened === false || disagreeOpened === undefined) {
 	      (0, _jquery2.default)(v.commentsMobile[3]).css('display', 'flex');
@@ -28283,7 +28357,7 @@
 	}
 
 /***/ },
-/* 151 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28322,7 +28396,7 @@
 	};
 
 /***/ },
-/* 152 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28331,15 +28405,15 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(146);
+	var _modules = __webpack_require__(148);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Reappends another array with reordered comments, date or likes
 	module.exports = function sort(e) {
 	  // Require DOM elements and comments
-	  var v = __webpack_require__(151);
-	  var c = __webpack_require__(144);
+	  var v = __webpack_require__(153);
+	  var c = __webpack_require__(146);
 
 	  var thisData = (0, _jquery2.default)(this).attr('data-side'); //agree / disagree
 	  var thisSort = (0, _jquery2.default)(this).attr('data-sort'); // date / likes
@@ -28377,7 +28451,7 @@
 	}
 
 /***/ },
-/* 153 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28394,11 +28468,11 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(154);
+	var _template = __webpack_require__(156);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _query_handler = __webpack_require__(155);
+	var _query_handler = __webpack_require__(144);
 
 	var _query_handler2 = _interopRequireDefault(_query_handler);
 
@@ -28413,8 +28487,6 @@
 	  // If there are no queries, returns ''
 	  var feedback = (0, _query_handler2.default)(query);
 
-	  console.log(feedback);
-
 	  if ((0, _jquery2.default)('body').height() < window.innerHeight) {
 	    (0, _jquery2.default)('body').css('overflow', 'hidden');
 	  }
@@ -28424,7 +28496,7 @@
 	});
 
 /***/ },
-/* 154 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28442,61 +28514,6 @@
 	module.exports = function (feedback) {
 	  return (0, _yoYo2.default)(_templateObject, feedback.n || '', feedback.m || '', feedback.e || '');
 	};
-
-/***/ },
-/* 155 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _error_messages = __webpack_require__(156);
-
-	module.exports = function queryHandler(query) {
-	  if (query === '') return '';
-
-	  // e=error?u=user?m=mail
-	  var q = query.split('?');
-
-	  // Gives info in case of error so the user doesn't lose whats hes wrote
-	  var feedback = {};
-	  // For each query separated by ?, we create an object value:
-	  for (var i in q) {
-	    feedback[q[i].split('=')[0]] = q[i].split('=')[1];
-	  }
-	  // If there is an error query, translate it into a readable feedback message
-	  // to send to client using errorMessage function
-	  if (feedback.e) {
-	    feedback.e = (0, _error_messages.errorMessage)(feedback.e);
-	  }
-
-	  return feedback;
-	};
-
-/***/ },
-/* 156 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-	  errorMessage: errorMessage
-	};
-
-	var emailInvalid = "El email es inválido. Revise que esté bien escrito.";
-	var emailSame = "El email introducido es el mismo que ya tiene su cuenta.";
-	var passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales.";
-	var currentPassInvalid = "La contraseña actual es incorrecta.";
-
-	function errorMessage(query) {
-	  if (query === "invalid") {
-	    return emailInvalid;
-	  } else if (query === "dif") {
-	    return passwordNotMatch;
-	  } else if (query === "esame") {
-	    return emailSame;
-	  }
-	  return '';
-	}
 
 /***/ },
 /* 157 */
@@ -28597,7 +28614,7 @@
 
 	var _modules = __webpack_require__(162);
 
-	var _comments = __webpack_require__(147);
+	var _comments = __webpack_require__(149);
 
 	var _comments2 = _interopRequireDefault(_comments);
 
@@ -28837,7 +28854,7 @@
 
 	var _template = __webpack_require__(165);
 
-	var _query_handler = __webpack_require__(155);
+	var _query_handler = __webpack_require__(144);
 
 	var _query_handler2 = _interopRequireDefault(_query_handler);
 
