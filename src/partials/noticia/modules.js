@@ -21,15 +21,23 @@ function noticiaCuerpo (n) {
   </section>`
 }
 
-function noticiaInformate () {
+// For loops dont work here, so bit of a workaround looping trough the
+// object keys. Working well.
+function noticiaInformate (n) {
   return yo`<section class="Noticia_informate">
     <h2 class="Noticia_informate-encabezado">Infórmate</h2>
     <div class="Noticia_informate-media">
-      <a class="Noticia_informate-media-item" href="#">
-        <div><img src="/img/media/el-pais.svg" alt="" /></div>
-      </a>
+    ${Object.keys(n.media).map((key) => {
+      return mediaCard(n.media, key)
+    })}
     </div>
   </section>`
+}
+// Careful with media image name. 
+function mediaCard (media, key) {
+  return yo`<a target="_blank" class="Noticia_informate-media-item" href="${media[key]}">
+    <div><img src="/img/media/${key}.svg" alt="${key}" /></div>
+  </a>`
 }
 
 function noticiaComentarios (n, u, cA, cD) {

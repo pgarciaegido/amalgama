@@ -1,4 +1,5 @@
 import yo from 'yo-yo'
+import format from '../utils/date'
 
 module.exports = {
   template
@@ -20,7 +21,7 @@ function card (post) {
     <h3 class="Search-card-title">${post.title}</h3>
     <div class="Search-card-details">
       <div class="Search-card-details-left">
-        <span class="Search-card-details-left-date">${post.date}</span>
+        <span class="Search-card-details-left-date">${format(post.date)}</span>
         <span class="Search-card-details-left-votes">Votos: ${post.agreeVotes + post.disagreeVotes}</span>
       </div>
       <div class="Search-card-details-right">

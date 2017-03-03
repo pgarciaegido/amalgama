@@ -9,7 +9,7 @@ import mod      from './modules'
 module.exports = function (n, u, cA, cD) {
   return yo`<div id="noticia_main">
   ${mod.noticiaCuerpo(n)}
-  ${mod.noticiaInformate()}
+  ${mod.noticiaInformate(n)}
   ${mod.noticiaComentarios(n, u, cA, cD)}
   ${votesBar(n.agreeVotes, n.disagreeVotes)}
 </div>`

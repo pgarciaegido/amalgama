@@ -15,10 +15,11 @@ import { getAsideNew, getPost, getCurrentUser, getCommentsAgree, getCommentsDisa
 // header renders header
 // getPosts gets the post we are about to render
 page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getCommentsDisagree, header, getPost, (ctx, next) => {
-
+  const post = ctx.post
   const user = ctx.user
   const commentsAgree = ctx.commentsAgree
   const commentsDisagree = ctx.commentsDisagree
+  console.log(post)
 
   let commentsAgreeLikes = []
   let commentsDisagreeLikes = []
@@ -38,7 +39,7 @@ page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getComme
 
   let main = document.getElementById('main-container')
   // The arguments are the news array, and the user object
-  $(main).empty().append(template(ctx.post, ctx.user, ctx.commentsAgree, ctx.commentsDisagree))
+  $(main).empty().append(template(post, user, commentsAgree, commentsDisagree))
 
   module.exports = {
     commentsAgree,

@@ -7,11 +7,13 @@ function createNew (req, res) {
   var post = new Post({
     title: req.body.title,
     subtitle: req.body.subtitle,
-    tags: req.body.tags
+    tags: req.body.tags,
+    media: JSON.parse(req.body.media)
   })
 
   post.save(function (err, post) {
     if (!err) {
+      console.log(post)
       res.status(200).send({post: post})
     } else {
       console.log(err)
