@@ -5,8 +5,11 @@
 	padding: 10px 0;
 
 	&-logo{
-		height: 30px;
-		cursor: pointer;
+		background: no-repeat url(/img/sprite.svg) -2px -90px;
+    background-size: auto;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
 	}
 
 	&-menu{
@@ -83,16 +86,23 @@
 	&-icon{
 		&-menu{
 			display: none;
+			background: no-repeat url('/img/sprite.svg') -64px -2px;
+			background-size: auto;
+			height: 30px;
+			width: 30px;
 			@mixin noTouchHightlight;
 
 			@media (--tablet-small){
-				display: block;
+				display: inline-block;
 			}
 		}
 
 		&-close{
 			display: none;
-			height: 25px;
+			background: no-repeat url('/img/sprite.svg') -30px -2px;
+			background-size: auto;
+			height: 30px;
+			width: 30px;
 			padding-top: 3px;
 			@mixin noTouchHightlight;
 		}
@@ -112,7 +122,11 @@
 		}
 
 		&-icon{
+			background: no-repeat url('/img/sprite.svg') -138px -2px;
+			background-size: auto;
+			display:inline-block;
 			height: 30px;
+			width: 30px;
 			cursor: pointer;
 			margin-left: 10px;
 			@mixin noTouchHightlight;

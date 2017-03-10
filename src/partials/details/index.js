@@ -5,7 +5,7 @@ import formatDate from '../utils/date'
 module.exports = function (date, tags) {
   return yo`<div class="Details">
         <div class="Details-date">
-          <img class="Details-date-icon" src="/img/clock.svg" />
+          <span class="Details-date-icon"></span>
           <span class="Details-date-text">${formatDate(date)}</span>
         </div>
         <div class="Details-tags">

@@ -14,7 +14,7 @@ function openMenu () {
   $bg.css('display', 'block')
   $burguer.css('display', 'none')
   $('body').css('overflow-y', 'hidden')
-  $close.css('display', 'block')
+  $close.css('display', 'inline-block')
 }
 
 // -------CLOSE MENU
@@ -24,7 +24,7 @@ function closeMenu () {
   $bg.css('display', 'none')
   $close.css('display', 'none')
   $('body').css('overflow-y', 'scroll')
-  $burguer.css('display', 'block')
+  $burguer.css('display', 'inline-block')
 }
 
 // ------OPEN SEARCH

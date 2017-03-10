@@ -11,9 +11,9 @@ module.exports = function header (ctx, next) {
 function headerTemplate (user) {
   return yo`<div>
 <nav class="Navbar">
-  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />
-  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />
-  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>
+  <span class="Navbar-icon-menu"></span>
+  <span class="Navbar-icon-close"></span>
+  <a href="/"><div class="Navbar-logo"></div></a>
   <ul class="Navbar-menu">
     <a href="/" class="Navbar-menu-item"><li>HOME</li></a>
     <a href="#" class="Navbar-menu-item"><li>ESPAÑA</li></a>
@@ -23,7 +23,7 @@ function headerTemplate (user) {
   </ul>
   <div class="Navbar-search">
     <input type="search" class="Navbar-search-input">
-    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">
+    <span class="Navbar-search-icon"></span>
   </div>
 </nav>
 <nav class="Navbar_menu">

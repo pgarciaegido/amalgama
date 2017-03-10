@@ -27419,7 +27419,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />\n  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />\n  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <img src="/img/menu.svg" alt="menu" class="Navbar-icon-menu" />\n  <img src="/img/cancel-circle.svg" alt="close" class="Navbar-icon-close" />\n  <a href="/"><img class="Navbar-logo" src="/img/logo.svg" alt="logo"></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <img src="/img/search.svg" alt="search" class="Navbar-search-icon">\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
+	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/"><div class="Navbar-logo"></div></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/"><div class="Navbar-logo"></div></a>\n  <ul class="Navbar-menu">\n    <a href="/" class="Navbar-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n  <div class="Navbar-search">\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    <a href="/" class="Navbar_menu-menu-item"><li>HOME</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ESPA\xD1A</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>INTERNACIONAL</li></a>\n    <a href="#" class="Navbar_menu-menu-item"><li>ECONOM\xCDA</li></a>\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>\n                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar-menu"><li>ACCEDE</li></a>\n                <a href="./registrate" class="Navbar-menu"><li>REGISTRATE</li></a>\n              </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<a href="/app/usuario/', '" class="Navbar-menu-item"><li>MI PERFIL</li></a>'], ['<a href="/app/usuario/', '" class="Navbar-menu-item"><li>MI PERFIL</li></a>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>'], ['<div>\n                <a href="./accede"><li class="Navbar_menu-menu-item">ACCEDE</li></a>\n                <a href="./registrate"><li class="Navbar_menu-menu-item">REGISTRATE</li></a>\n              </div>']),
@@ -27708,7 +27708,7 @@
 	  $bg.css('display', 'block');
 	  $burguer.css('display', 'none');
 	  (0, _jquery2.default)('body').css('overflow-y', 'hidden');
-	  $close.css('display', 'block');
+	  $close.css('display', 'inline-block');
 	}
 
 	// -------CLOSE MENU
@@ -27718,7 +27718,7 @@
 	  $bg.css('display', 'none');
 	  $close.css('display', 'none');
 	  (0, _jquery2.default)('body').css('overflow-y', 'scroll');
-	  $burguer.css('display', 'block');
+	  $burguer.css('display', 'inline-block');
 	}
 
 	// ------OPEN SEARCH
@@ -28023,12 +28023,14 @@
 	  return yo(_templateObject, n.title, details(n.date, n.tags), n.subtitle, votesBar(n.agreeVotes, n.disagreeVotes));
 	}
 
+	// For loops dont work here, so bit of a workaround looping trough the
+	// object keys. Working well.
 	function noticiaInformate(n) {
 	  return yo(_templateObject2, Object.keys(n.media).map(function (key) {
 	    return mediaCard(n.media, key);
 	  }));
 	}
-
+	// Careful with media image name. 
 	function mediaCard(media, key) {
 	  return yo(_templateObject3, media[key], key, key);
 	}
