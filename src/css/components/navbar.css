@@ -13,9 +13,8 @@
 	}
 
 	&-menu{
-		margin: 0;
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 
 		@media (--tablet){
 			padding-left: 0;
@@ -28,58 +27,12 @@
 		&-item{
 			height: 100%;
 			padding: 0 $margin5-desktop;
-			border-right: 1px solid $gray-soft;
-			display: flex;
-			align-items: center;
+			font-weight: 700;
+			font-size: .8em;
 			list-style-type: none;
-			@mixin navbar;
 			text-decoration: none;
-			color: $black;
-
-			@media (--tablet){
-				padding: 0 6px;
-			}
-		}
-
-		&-item:hover{
-			padding-bottom: 6px;
-			border-bottom: blue solid 4px;
-
-			a{
-				color: $blue;
-			}
-		}
-
-		div {
-			display: flex;
-			a{
-				@mixin blueButton;
-				padding: 0 $margin5-desktop;
-				list-style-type: none;
-				display: flex;
-				align-items: center;
-				height: 100%;
-				color: white;
-				text-decoration: none;
-				border-right: none;
-				border-radius: 10px;
-			}
-
-			a:hover{
-				@mixin hoverButton;
-				border: none;
-				padding-bottom: none;
-			}
-		}
-
-		&-item:nth-child(5){
-			@mixin blueButton;
 			color: $blue;
-		}
-
-		&-item:nth-child(5):hover{
-			@mixin hoverButton;
-			padding-bottom: 0;
+			padding-top: 6px;
 		}
 	}
 

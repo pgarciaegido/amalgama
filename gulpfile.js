@@ -82,7 +82,7 @@ gulp.task('scripts', function () {
         }]
       },
       output: {filename: 'app.js'}
-      // node: {fs: "empty"}
+      // node: {fs: "empty"},
       // plugins: [new webpack.optimize.UglifyJsPlugin()]
     }, webpack)) // Minifies
     .pipe(gulp.dest('./dist'))
