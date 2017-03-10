@@ -49,7 +49,6 @@
 /*Usuario editar*/
 
 @import './partials/usuario/usuario_editar';
-@import './partials/usuario/usuario_editar_personal';
 @import './partials/usuario/usuario_editar_data';
 
 /*Search*/

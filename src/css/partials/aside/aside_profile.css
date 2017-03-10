@@ -6,14 +6,7 @@
 		margin: 0;
 		margin-bottom: $margin5-desktop;
 	}
-
-	&-avatar{
-		display: block;
-		margin: 0 auto;
-		border-radius: 50%;
-		width: 100px;
-	}
-
+	
 	&-username{
 		text-align: center;
 	}

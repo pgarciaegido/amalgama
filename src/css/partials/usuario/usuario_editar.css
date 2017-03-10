@@ -9,13 +9,4 @@
 			margin: $margin2-mobile 0;
 		}
 	}
-
-	&-container{
-		display: flex;
-		justify-content: space-between;
-
-		@media (--tablet-small){
-			display: block;
-		}
-	}
 }

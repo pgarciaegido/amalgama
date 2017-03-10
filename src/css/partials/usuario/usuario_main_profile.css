@@ -14,78 +14,19 @@
 		padding-bottom: $margin2-mobile;
 	}
 
-	&-avatar{
-		margin-right: $margin3-desktop;
-
-		@media (--mobile){
-			text-align: center;
-			margin-right: 0;
-			margin-bottom: $margin3-mobile;
-		}
-
-		img{
-			width: 130px;
-			border-radius: 50%;
-
-			@media (--mobile){
-				width: 100px;
-			}
-		}
-	}
-
 	&-info{
 		box-sizing: border-box;
 
-		&-main{
-			display: flex;
-			margin-bottom: 30px;
+		&-username{
+			margin: 0;
+			margin-right: $margin3-desktop;
+			font-size: $title;
+			font-weight: 700;
 
 			@media (--mobile){
-				display: block;
-			}
-
-			&-username{
-				margin: 0;
-				margin-right: $margin3-desktop;
-				font-size: $title;
-				font-weight: 700;
-
-				@media (--mobile){
-					text-align: center;
-					margin-right: 0;
-					margin-bottom: $margin3-mobile;
-				}
-			}
-
-			&-location{
-				margin-top: 17px;
-				font-size: $h2;
-				font-style: italic;
-
-				@media (--mobile){
-					text-align: center;
-					margin: 0;
-				}
-			}
-		}
-
-		&-links{
-			width: 100%;
-			display: inline;
-
-			@media (--mobile){
+				text-align: center;
+				margin-right: 0;
 				margin-bottom: $margin3-mobile;
-				display: flex;
-				justify-content: space-around;
-			}
-
-			img{
-				width: 30px;
-				margin-right: $margin3-desktop;
-
-				@media (--tablet){
-					margin-right: 15px;
-				}
 			}
 		}
 

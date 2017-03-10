@@ -12,19 +12,8 @@ module.exports = {
 
 function usuarioProfile (user) {
   return yo`<div class="Usuario_main_profile">
-    <div class="Usuario_main_profile-avatar">
-      <img src="/img/avatar.jpg" alt="avatar" />
-    </div>
     <div class="Usuario_main_profile-info">
-      <div class="Usuario_main_profile-info-main">
-        <h2 class="Usuario_main_profile-info-main-username">${user.username}</h2>
-        <h3 class="Usuario_main_profile-info-main-location">Oviedo</h3>
-      </div>
-      <div class="Usuario_main_profile-info-links">
-        <a href="#" class="Usuario_main_profile-info-links-facebook"><img src="/img/facebook.svg" alt=""></a>
-        <a href="#" class="Usuario_main_profile-info-links-twitter"><img src="/img/twitter.svg" alt=""></a>
-        <a href="#" class="Usuario_main_profile-info-links-linkedin"><img src="/img/linkedin.svg" alt=""></a>
-      </div>
+      <h2 class="Usuario_main_profile-info-username">${user.username}</h2>
       <a href="/app/editar/${user.username}" class="Usuario_main_profile-info-editar">Editar perfil</a>
     </div>
   </div>`

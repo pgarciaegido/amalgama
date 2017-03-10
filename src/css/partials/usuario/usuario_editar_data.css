@@ -1,6 +1,7 @@
 .Usuario_editar_data{
-	width: 58.33333%;
-
+	width: 50%;
+	margin: 0 auto;
+	
 	@media (--tablet-small){
 		width: 100%;
 	}

@@ -7,20 +7,7 @@ module.exports = {
 function template (user, error) {
   return yo`<div id="usuario_editar" class="Usuario_editar">
     <h1 class="Usuario_editar-title">${user.username}: Editar perfil</h1>
-    <div class="Usuario_editar-container">
-      ${avatar()}
-      ${editarForm(user, error)}
-    </div>
-  </div>`
-}
-
-function avatar () {
-  return yo`<div class="Usuario_editar_personal">
-    <h2 class="Usuario_editar_personal-avtitle">Mi avatar</h2>
-    <div class="Usuario_editar_personal-avatar">
-      <img src="/img/avatar.jpg" alt="" class="Usuario_editar_personal-avatar-imagen" />
-      <button class="Usuario_editar_personal-avatar-button">Cambiar avatar</button>
-    </div>
+    ${editarForm(user, error)}
   </div>`
 }
 
