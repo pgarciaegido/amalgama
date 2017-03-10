@@ -10,13 +10,12 @@
 		margin-right: $margin5-desktop;
 
 		&-icon{
-			margin-right: $margin5-desktop;
-			width: 15px;
-			fill: $gray;
-
-			@media (--desktop){
-				width: 12px;
-			}
+			margin-right: 5px;
+			display: inline-block;
+			background: no-repeat url(/img/sprite.svg) -96px -3px;
+			background-size: auto;
+			width: 13px;
+			height: 13px;
 		}
 
 		&-text{
@@ -27,12 +26,12 @@
 	&-tags{
 
 		&-icon{
-			margin-right: $margin5-desktop;
-			width: 15px;
-
-			@media (--desktop){
-				width: 12px;
-			}
+			margin-right: 5px;
+			display: inline-block;
+			background: no-repeat url(/img/sprite.svg) -114px -2px;
+			background-size: auto;
+			width: 13px;
+			height: 13px;
 		}
 
 		&-text{

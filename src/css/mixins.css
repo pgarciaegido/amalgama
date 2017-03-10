@@ -92,6 +92,14 @@
 	border: 2px solid $gray;
 }
 
+@define-mixin likePostSprite {
+	border: none;
+	background-size: auto;
+	width: 35px;
+	height: 33px;
+	cursor: pointer;
+}
+
 /* -----------------Desktop aside Layout ----------------*/
 
 @define-mixin asideContainer {

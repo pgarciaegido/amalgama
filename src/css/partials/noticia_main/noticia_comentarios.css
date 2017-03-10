@@ -62,14 +62,18 @@
 						}
 					}
 
+					form{
+						padding-top: 15px;
+					}
+
 					/* Agree icons*/
 					&-icon{
-						cursor: pointer;
-						padding-top: 20px;
+						@mixin likePostSprite;
+						background: no-repeat url(/img/sprite.svg) -63px -30px;
 
 						&-liked{
-							cursor: pointer;
-							padding-top: 20px;
+							@mixin likePostSprite;
+							background: no-repeat url(/img/sprite.svg) -63px -61px;
 						}
 					}
 				}
@@ -123,13 +127,18 @@
 						}
 					}
 
+					form{
+						padding-top: 15px;
+					}
+
+					/* Disagree icons*/
 					&-icon{
-						padding-top: 20px;
-						cursor: pointer;
+						@mixin likePostSprite;
+						background: no-repeat url(/img/sprite.svg) -28px -32px;
 
 						&-liked{
-							padding-top: 20px;
-							cursor: pointer;
+							@mixin likePostSprite;
+							background: no-repeat url(/img/sprite.svg) -95px -30px;
 						}
 					}
 				}

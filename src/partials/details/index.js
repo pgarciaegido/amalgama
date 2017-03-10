@@ -9,7 +9,7 @@ module.exports = function (date, tags) {
           <span class="Details-date-text">${formatDate(date)}</span>
         </div>
         <div class="Details-tags">
-          <img class="Details-tags-icon" src="/img/price-tags.svg" />
+          <span class="Details-tags-icon"></span>
           ${displayTags(tags)}
         </div>
       </div>`

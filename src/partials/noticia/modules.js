@@ -33,7 +33,7 @@ function noticiaInformate (n) {
     </div>
   </section>`
 }
-// Careful with media image name. 
+// Careful with media image name.
 function mediaCard (media, key) {
   return yo`<a target="_blank" class="Noticia_informate-media-item" href="${media[key]}">
     <div><img src="/img/media/${key}.svg" alt="${key}" /></div>
@@ -53,14 +53,13 @@ function noticiaComentarios (n, u, cA, cD) {
 // *********** Templates for agree and disagree
 
 // We loop throu all the liked news by user. If so, display one icon or other
-// The third argument tells if returns agree or disagree
 function votingFormsAgree (n, u) {
   const votedAgree = yo`<form method="POST" action="/api/unupvote">
-    <input type="image" src="/img/thumbs-up-green-filled.svg" alt="submit unvote" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
+    <input type="submit" value="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
   </form>`
 
   const unVotedAgree = yo`<form method="POST" action="/api/upvote">
-    <input type="image" src="/img/thumbs-up-green.svg" alt="submit upvote" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
+    <input type="submit" value="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
   </form>`
 
   // Loop around users liked posts
@@ -76,11 +75,11 @@ function votingFormsAgree (n, u) {
 
 function votingFormsDisagree (n, u) {
   const votedDisagree = yo`<form method="POST" action="/api/undownvote">
-    <input type="image" src="/img/thumbs-down-filled.svg" alt="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
+    <input type="submit" value="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
   </form>`
 
   const unVotedDisagree = yo`<form method="POST" action="/api/downvote">
-    <input type="image" src="/img/thumbs-down-red.svg" alt="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
+    <input type="submit" value="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
   </form>`
 
   for (let i in u.disagreeVotes) {
