@@ -63,16 +63,12 @@
 			margin-top: 3px;
 
 			&-icon{
-				margin-top: -4px;
-				margin-right: 4px;
-				width: 15px;
-				cursor: pointer;
+				@mixin likeCommentSprite;
+				background: no-repeat url(/img/sprite.svg) -2px -40px;
 
 				&-liked{
-					margin-top: -4px;
-					margin-right: 4px;
-					width: 15px;
-					cursor: pointer;
+					@mixin likeCommentSprite;
+					background: no-repeat url(/img/sprite.svg) -2px -19.5px;
 				}
 			}
 

@@ -100,6 +100,16 @@
 	cursor: pointer;
 }
 
+@define-mixin likeCommentSprite {
+	border: none;
+	margin-top: -4px;
+	margin-right: 4px;
+	width: 15px;
+	height: 15px;
+	background-size: auto;
+	cursor: pointer;
+}
+
 /* -----------------Desktop aside Layout ----------------*/
 
 @define-mixin asideContainer {

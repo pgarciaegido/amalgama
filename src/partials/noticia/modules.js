@@ -200,13 +200,13 @@ function comCardForms (user, comment) {
     for (let i in comment.likedBy){
       if (comment.likedBy[i] === user._id){
         return yo`<form method="POST" action="/api/comment-unlike/${comment._id}">
-          <input type="image" src="/img/thumbs-up-black-filled.svg" alt="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />
+          <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />
           </form>`
       }
     }
   }
   // otherwise return non liked button
   return yo`<form method="POST" action="/api/comment-like/${comment._id}">
-    <input type="image" src="/img/thumbs-up-black.svg" alt="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />
+    <input type="submit" value="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />
   </form>`
 }
