@@ -5,8 +5,11 @@
 	background-color: $gray-soft;
 	border-radius: 5px;
 
-	&-accede{
+	&-accede,
+	&-registrate{
 		@mixin bigButton;
+		text-decoration: none;
+		color: $blue;
 
 		@media (--desktop){
 			padding: $margin4-desktop 30px;
@@ -17,12 +20,8 @@
 		}
 	}
 
-	a{
-		text-decoration: none;
-		color: white;
-	}
-
-	&-accede:hover{
+	&-accede:hover,
+	&-registrate:hover{
 		@mixin hoverButton;
 	}
 
@@ -32,27 +31,5 @@
 		@media (--mobile){
 			display: none;
 		}
-	}
-
-	&-registrate{
-		@mixin bigButton;
-
-		@media (--desktop){
-			padding: $margin4-desktop 30px;
-		}
-
-		@media (--mobile-small){
-			padding: $margin3-mobile 20px;
-			font-size: 1em;
-		}
-	}
-
-	a{
-		text-decoration: none;
-		color: white;
-	}
-
-	&-registrate:hover{
-		@mixin hoverButton;
 	}
 }

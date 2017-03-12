@@ -3,9 +3,9 @@ import yo from 'yo-yo'
 module.exports = function cta () {
   if (document.URL.indexOf('invitado') > 0) {
     return yo`<div class="Register_cta">
-      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>
+      <a href="/accede" class="Register_cta-accede">Accede</a>
       <h2 class="Register_cta-participa">¡Participa!</h2>
-      <button class="Register_cta-registrate"><a href="/registrate">Regístrate</a></button>
+      <a href="/registrate" class="Register_cta-registrate">Regístrate</a>
     </div>`
   }
 }

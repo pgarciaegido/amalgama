@@ -27397,7 +27397,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>'], ['<div class="Register_cta">\n      <button class="Register_cta-accede"><a href="/accede">Accede</a></button>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <button class="Register_cta-registrate"><a href="/registrate">Reg\xEDstrate</a></button>\n    </div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div class="Register_cta">\n      <a href="/accede" class="Register_cta-accede">Accede</a>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <a href="/registrate" class="Register_cta-registrate">Reg\xEDstrate</a>\n    </div>'], ['<div class="Register_cta">\n      <a href="/accede" class="Register_cta-accede">Accede</a>\n      <h2 class="Register_cta-participa">\xA1Participa!</h2>\n      <a href="/registrate" class="Register_cta-registrate">Reg\xEDstrate</a>\n    </div>']);
 
 	var _yoYo = __webpack_require__(11);
 

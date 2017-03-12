@@ -49,8 +49,8 @@ gulp.task('css', function () {
     mixins(),
     cssnested,
     cssnext({browsers: ['>5%', 'ie 8']}),
-    mqpacker,
-    csswring()
+    mqpacker
+    // csswring() // Minifies!
   ]
 
   return gulp.src('./src/css/app.css')

@@ -46,7 +46,6 @@
 }
 
 @define-mixin bigButton {
-	padding: $margin4-desktop 50px;
 	@mixin blueButton;
 	font-size: $h3;
 	font-weight: 700;
