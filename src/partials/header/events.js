@@ -4,7 +4,10 @@ const $burguer = $('.Navbar-icon-menu')
 const $close = $('.Navbar-icon-close')
 const $search = $('.Navbar-search-icon')
 const $input = $('.Navbar-search-input')
-const $menuMob = $('.Navbar_menu')
+const $menuMob = $('.Navbar_menu_mob')
+const $menuDesktop = $('.Navbar-menu')
+const $logoAnchor = $('#header-logo-anchor')
+const $logoDiv = $('.Navbar-logo')
 const $bg = $('#bg')
 
 // -------OPEN MENU
@@ -33,9 +36,15 @@ let searchOpened = false
 function searchInput () {
   if (!searchOpened) {
     $input.addClass('search-active')
+    $menuDesktop.addClass('menu-search-active')
+    $logoDiv.addClass('logo-search-active')
+    $logoAnchor.addClass('logo-search-active')
     searchOpened = true
   } else {
     $input.removeClass('search-active')
+    $menuDesktop.removeClass('menu-search-active')
+    $logoDiv.removeClass('logo-search-active')
+    $logoAnchor.removeClass('logo-search-active')
     searchOpened = false
   }
 }

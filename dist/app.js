@@ -27419,11 +27419,11 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/"><div class="Navbar-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/"><div class="Navbar-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu">\n  <ul class="Navbar_menu-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
+	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Navbar-menu">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>'], ['<div class="Navbar-menu">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Navbar-menu">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>'], ['<div class="Navbar-menu">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar_menu-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu-menu-item">Registrate</a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar_menu-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu-menu-item">Registrate</a>\n              </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu-menu-item">Logout</a>\n              </div>'], ['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu-menu-item">Logout</a>\n              </div>']);
+	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar_menu_mob-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu_mob-menu-item">Registrate</a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar_menu_mob-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu_mob-menu-item">Registrate</a>\n              </div>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu_mob-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu-menu_mob-item">Logout</a>\n              </div>'], ['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu_mob-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu-menu_mob-item">Logout</a>\n              </div>']);
 
 	var _jquery = __webpack_require__(5);
 
@@ -27699,7 +27699,10 @@
 	var $close = (0, _jquery2.default)('.Navbar-icon-close');
 	var $search = (0, _jquery2.default)('.Navbar-search-icon');
 	var $input = (0, _jquery2.default)('.Navbar-search-input');
-	var $menuMob = (0, _jquery2.default)('.Navbar_menu');
+	var $menuMob = (0, _jquery2.default)('.Navbar_menu_mob');
+	var $menuDesktop = (0, _jquery2.default)('.Navbar-menu');
+	var $logoAnchor = (0, _jquery2.default)('#header-logo-anchor');
+	var $logoDiv = (0, _jquery2.default)('.Navbar-logo');
 	var $bg = (0, _jquery2.default)('#bg');
 
 	// -------OPEN MENU
@@ -27728,9 +27731,15 @@
 	function searchInput() {
 	  if (!searchOpened) {
 	    $input.addClass('search-active');
+	    $menuDesktop.addClass('menu-search-active');
+	    $logoDiv.addClass('logo-search-active');
+	    $logoAnchor.addClass('logo-search-active');
 	    searchOpened = true;
 	  } else {
 	    $input.removeClass('search-active');
+	    $menuDesktop.removeClass('menu-search-active');
+	    $logoDiv.removeClass('logo-search-active');
+	    $logoAnchor.removeClass('logo-search-active');
 	    searchOpened = false;
 	  }
 	}

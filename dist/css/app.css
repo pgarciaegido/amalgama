@@ -1491,6 +1491,8 @@ body{
 	height: 30px;
 	width: 100px;
 	cursor: pointer;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 }
 
 .Navbar-menu{
@@ -1498,6 +1500,8 @@ body{
 	display: flex;
 	-webkit-box-pack: end;
 	        justify-content: flex-end;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 }
 
 .Navbar-menu-item{
@@ -1548,8 +1552,8 @@ body{
 	border: none;
 	border: 2px solid #7b8085;
 	position: absolute;
-	top: 50px;
-	left: 9999px;
+	right: 39px;
+	top: -200px;
 	width: 200px;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
@@ -1568,9 +1572,13 @@ body{
 }
 
 .search-active{
-	left: -150px;
+	top: 0;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
+}
+
+.menu-search-active{
+	padding-right: 200px;
 }
 
 #bg{
@@ -1585,7 +1593,7 @@ body{
 	z-index: 2;
 }
 
-.Navbar_menu{
+.Navbar_menu_mob{
 	display: block;
 	position: absolute;
 	padding: 10px;
@@ -1598,11 +1606,11 @@ body{
 	transition: all .3s cubic-bezier(0, 0, 0, 1.01);
 }
 
-.Navbar_menu-menu{
+.Navbar_menu_mob-menu{
 	padding: 0;
 }
 
-.Navbar_menu-menu-item{
+.Navbar_menu_mob-menu-item{
 	height: 100%;
 	display: -webkit-box;
 	display: flex;
@@ -1617,14 +1625,14 @@ body{
 	color: #5b86ff;
 }
 
-.Navbar_menu-menu-item a{
+.Navbar_menu_mob-menu-item a{
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 1em;
 	text-decoration: none;
 	color: white;
 }
 
-.Navbar_menu-menu div a{
+.Navbar_menu_mob-menu div a{
 	text-decoration: none;
 }
 
@@ -1973,6 +1981,11 @@ body{
 	.Navbar-icon-menu{
 		display: inline-block;
 	}
+
+	.logo-search-active{
+		opacity: 0;
+		pointer-events: none;
+	}
 }
 
 @media (max-width: 400px){
@@ -2021,7 +2034,7 @@ body{
 		margin-right: 6px;
 	}
 
-	.Navbar_menu-menu-item{
+	.Navbar_menu_mob-menu-item{
 		padding: 10px;
 		margin: 10px 0;
 	}

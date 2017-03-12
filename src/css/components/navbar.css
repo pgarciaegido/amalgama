@@ -10,11 +10,13 @@
     height: 30px;
     width: 100px;
     cursor: pointer;
+		transition: 0.3s;
 	}
 
 	&-menu{
 		display: flex;
 		justify-content: flex-end;
+		transition: 0.3s;
 
 		@media (--tablet){
 			padding-left: 0;
@@ -68,8 +70,8 @@
 		&-input{
 			@mixin formInput;
 			position: absolute;
-			top: 50px;
-			left: 9999px;
+			right: 39px;
+			top: -200px;
 			width: 200px;
 			transition: all .3s ease;
 		}
@@ -88,6 +90,17 @@
 }
 
 .search-active{
-	left: -150px;
+	top: 0;
 	transition: all .3s ease;
+}
+
+.menu-search-active{
+	padding-right: 200px;
+}
+
+.logo-search-active{
+	@media (--tablet-small){
+		opacity: 0;
+		pointer-events: none;
+	}
 }
