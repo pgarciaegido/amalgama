@@ -2,36 +2,29 @@ import yo from 'yo-yo'
 
 module.exports = function (feedback) {
   return yo`<div id="signup">
-    <div class="Signup_image">
-      <img src="http://www.quickanddirtytips.com/sites/default/files/images/1329/speech-podium.jpg" alt="" class="Signup_image-img" />
-    </div>
     <div class="Signup_form">
       <h1 class="Signup_form-title">¡Regístrate y opina!</h1>
-      <h3 class="Signup_form-subtitle">Regístrate y podrás votar y opinar en todos los temas. ¡No te llevará más de 2 minutos!</h3>
-      <div class="Signup_form-social">
-        <button class="Signup_form-social-facebook">Regístrate con Facebook</button>
-        <button class="Signup_form-social-google">Regístrate con Google</button>
-      </div>
       <form action="usersignup" method="post" class="Signup_form-form">
-        <label>
+        <div>
           Nombre de usuario
           <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="${feedback.n || ''}" />
-        </label>
-        <label>
+        </div>
+        <div>
           Email
           <input type="email" placeholder="Introduzca su correo electrónico" name="email" value="${feedback.m || ''}" />
-        </label>
-        <label>
+        </div>
+        <div>
           Contraseña
           <input type="password" name="password" />
-        </label>
-        <label>
+        </div>
+        <div>
           Confirma tu contraseña
           <input type="password" name="password_confirmation" />
-        </label>
+        </div>
         <div class="Signup_form-form-error">${feedback.e || ''}</div>
         <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
       </form>
+      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3> 
     </div>
   </div>`
 }

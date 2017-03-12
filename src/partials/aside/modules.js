@@ -23,11 +23,10 @@ function asideRegister () {
       </label>
       <input class="Aside_registrate-form-button" type="submit" value="Regístrate">
     </form>
-    <button class="Aside_registrate-facebook">Regístrate con Facebook</button>
-    <button class="Aside_registrate-google">Regístrate con Google</button>
   </div>`
 }
 
+/* Still not including subscribe functionality */
 function asideSuscribe () {
   return yo`<div class="Aside_subscribe">
         <h2 class="Aside_subscribe-title">¡Suscríbete</h2>

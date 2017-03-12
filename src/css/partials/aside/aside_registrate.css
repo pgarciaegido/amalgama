@@ -1,6 +1,6 @@
 .Aside_registrate{
 	@mixin asideContainer;
-	
+
 	&-title{
 		@mixin sectionDivider;
 		margin: 0;
@@ -21,7 +21,10 @@
 		label{
 			margin-bottom: $margin4-desktop;
 
-			input{
+			input[type="text"],
+			input[type="email"],
+			input[type="password"]
+			{
 				@mixin formInput;
 				margin-top: $margin5-desktop;
 				margin-bottom: $margin4-desktop;
@@ -29,41 +32,15 @@
 		}
 
 		&-button{
-			@mixin normalButton;
+			@mixin blueButton;
+			padding: 15px 20px;
+			font-weight: 700;
 			display: block;
 			margin: 0 auto;
 		}
 
 		&-button:hover{
 			@mixin hoverButton;
-		}	
-	}
-
-	&-facebook{
-		@mixin socialMediaButton;
-		background-color: #3b5998;
-		margin-top: $margin4-desktop;
-		margin-bottom: $margin3-desktop;
-
-		@media (--tablet){
-			font-size: $p-tablet;
 		}
-	}
-
-	&-facebook:hover{
-		opacity: .9;
-	}
-
-	&-google{
-		@mixin socialMediaButton;
-		background-color: #f44336;
-
-		@media (--tablet){
-			font-size: $p-tablet;
-		}
-	}
-
-	&-google:hover{
-		opacity: .9;
 	}
 }

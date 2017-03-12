@@ -29,7 +29,6 @@
 /*Signup*/
 
 @import './partials/signup/signup';
-@import './partials/signup/signup_image';
 @import './partials/signup/signup_form';
 
 /*Login*/

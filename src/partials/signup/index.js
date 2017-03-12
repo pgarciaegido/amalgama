@@ -13,10 +13,6 @@ page('/registrate', header, (ctx, next) => {
   // If there are no queries, returns ''
   const feedback = queryHandler(query)
 
-  if ($('body').height() < window.innerHeight) {
-    $('body').css('overflow', 'hidden')
-  }
-
   const main = document.getElementById('main-container')
   $(main).empty().append(template(feedback))
 })

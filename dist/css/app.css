@@ -122,6 +122,7 @@ body{
 	margin: 35px auto 0 auto;
 	text-decoration: none;
 	text-align: center;
+	padding: 20px 30px;
 }
 
 .Latest-button:hover{
@@ -675,17 +676,7 @@ body{
 
 #signup{
 	padding-top: 50px;
-	display: -webkit-box;
-	display: flex;
-}
-
-.Signup_image{
-	max-width: 50%;
-}
-
-.Signup_image-img{
-	width: 100%;
-	height: 100%;
+	margin: 0 auto;
 }
 
 .Signup_form-title{
@@ -694,59 +685,13 @@ body{
 	font-size: 3em;
 }
 
-.Signup_form-subtitle{
-	margin-bottom: 35px;
-	font-size: 1em;
-	line-height: 1.5em;
+.Signup_form-form-input-container{
+	padding-top: 10px;
 }
 
-.Signup_form-social{
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-pack: justify;
-	        justify-content: space-between;
-	margin-bottom: 35px;
-}
-
-.Signup_form-social-facebook{
-	padding: 11px 30px;
-	border-radius: 7px;
-	color: white;
-	font-size: 1em;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	width: 45%;
-	background-color: #3b5998;
-}
-
-.Signup_form-social-google{
-	padding: 11px 30px;
-	border-radius: 7px;
-	color: white;
-	font-size: 1em;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	width: 45%;
-	background-color: #f44336;
-}
-
-.Signup_form-social-facebook:hover, .Signup_form-social-google:hover{
-	opacity: .9;
-}
-
-.Signup_form-form input{
+.Signup_form-form input[type=text],
+		.Signup_form-form input[type=email],
+		.Signup_form-form input[type=password]{
 	display: block;
 	padding: 6px;
 	width: 100%;
@@ -756,10 +701,7 @@ body{
 	border: none;
 	border: 2px solid #7b8085;
 	margin-top: 11px;
-}
-
-.Signup_form-form input:first-child, .Signup_form-form input:nth-child(2){
-	margin-bottom: 11px;
+	margin-bottom: 10px;
 }
 
 .Signup_form-form-error{
@@ -788,7 +730,7 @@ body{
 	transition: 0.4s;
 	display: block;
 	margin: 0 auto;
-	border: none !important;
+	margin-top: 20px;
 }
 
 .Signup_form-form-submit:hover{
@@ -797,16 +739,27 @@ body{
 	border: 2px solid #5bcbff;
 }
 
+.Signup_form-login a{
+	text-decoration: none;
+	color: #5b86ff;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.Signup_form-login a:hover{
+	color: #5bcbff;
+}
+
 /*Login*/
 
 #login{
 	padding-top: 50px;
-	display: -webkit-box;
-	display: flex;
+	margin: 0 auto;
 }
 
 .Login_form{
-	width: 100%;
+	display: block;
+	margin: 0 auto;
 }
 
 .Login_form-title{
@@ -821,53 +774,12 @@ body{
 	line-height: 1.5em;
 }
 
-.Login_form-social{
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-pack: justify;
-	        justify-content: space-between;
-	margin-bottom: 35px;
+.Login_form-form{
+	margin-bottom: 30px;
 }
 
-.Login_form-social-facebook{
-	padding: 11px 30px;
-	border-radius: 7px;
-	color: white;
-	font-size: 1em;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	width: 45%;
-	background-color: #3b5998;
-}
-
-.Login_form-social-google{
-	padding: 11px 30px;
-	border-radius: 7px;
-	color: white;
-	font-size: 1em;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	width: 45%;
-	background-color: #f44336;
-}
-
-.Login_form-social-facebook:hover, .Login_form-social-google:hover{
-	opacity: .9;
-}
-
-.Login_form-form input{
+.Login_form-form input[type=text],
+		.Login_form-form input[type=password]{
 	display: block;
 	padding: 6px;
 	width: 100%;
@@ -877,11 +789,8 @@ body{
 	border: none;
 	border: 2px solid #7b8085;
 	margin-top: 11px;
-	width: 100%;
-}
-
-.Login_form-form input:first-child{
 	margin-bottom: 11px;
+	width: 100%;
 }
 
 .Login_form-form-error{
@@ -893,7 +802,6 @@ body{
 }
 
 .Login_form-form-submit{
-	padding: 11px 30px;
 	border-radius: 7px;
 	background-color: white;
 	color: #5b86ff;
@@ -901,14 +809,8 @@ body{
 	cursor: pointer;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
-	font-size: 1em;
+	padding: 10px 20px;
 	font-weight: 700;
-	border-radius: 7px;
-	background-color: white;
-	color: #5b86ff;
-	border: 2px solid #5b86ff;
-	cursor: pointer;
-	transition: 0.4s;
 	display: block;
 	margin: 0 auto;
 }
@@ -917,6 +819,21 @@ body{
 	background-color: #f1f1f1;
 	color: #5bcbff;
 	border: 2px solid #5bcbff;
+}
+
+.Login_form-signup-title{
+	text-align: center;
+}
+
+.Login_form-signup-title a{
+	text-decoration: none;
+	color: #5b86ff;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.Login_form-signup-title a:hover{
+	color: #5bcbff;
 }
 
 /*Usuario*/
@@ -1355,7 +1272,10 @@ body{
 	margin-bottom: 20px;
 }
 
-.Aside_registrate-form label input{
+.Aside_registrate-form label input[type="text"],
+			.Aside_registrate-form label input[type="email"],
+			.Aside_registrate-form label input[type="password"]
+			{
 	display: block;
 	padding: 6px;
 	width: 100%;
@@ -1369,7 +1289,6 @@ body{
 }
 
 .Aside_registrate-form-button{
-	padding: 11px 30px;
 	border-radius: 7px;
 	background-color: white;
 	color: #5b86ff;
@@ -1377,7 +1296,7 @@ body{
 	cursor: pointer;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
-	font-size: 1em;
+	padding: 15px 20px;
 	font-weight: 700;
 	display: block;
 	margin: 0 auto;
@@ -1387,48 +1306,6 @@ body{
 	background-color: #f1f1f1;
 	color: #5bcbff;
 	border: 2px solid #5bcbff;
-}
-
-.Aside_registrate-facebook{
-	padding: 11px 30px;
-	border-radius: 7px;
-	color: white;
-	font-size: 1em;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	background-color: #3b5998;
-	margin-top: 20px;
-	margin-bottom: 35px;
-}
-
-.Aside_registrate-facebook:hover{
-	opacity: .9;
-}
-
-.Aside_registrate-google{
-	padding: 11px 30px;
-	border-radius: 7px;
-	color: white;
-	font-size: 1em;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	padding-left: 0;
-	padding-right: 0;
-	width: 100%;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	background-color: #f44336;
-}
-
-.Aside_registrate-google:hover{
-	opacity: .9;
 }
 
 .Aside_temas{
@@ -1878,6 +1755,7 @@ body{
 	font-weight: 700;
 	text-decoration: none;
 	color: #5b86ff;
+	padding: 20px 30px;
 }
 
 .Register_cta-accede:hover,
@@ -1910,17 +1788,8 @@ body{
 		padding: 0 15px;
 	}
 
-	.Latest-button{
-		padding: 20px 30px;
-	}
-
 	.Details{
 		font-size: 0.8em;
-	}
-
-	.Register_cta-accede,
-	.Register_cta-registrate{
-		padding: 20px 30px;
 	}
 }
 
@@ -1981,14 +1850,6 @@ body{
 
 	#aside{
 		display: none;
-	}
-
-	.Aside_registrate-facebook{
-		font-size: 0.8em;
-	}
-
-	.Aside_registrate-google{
-		font-size: 0.8em;
 	}
 
 	.Aside_temas-tema-title{
@@ -2064,10 +1925,6 @@ body{
 
 	.Noticia_cuerpo-title{
 		font-size: 2em;
-	}
-
-	.Signup_image{
-		display: none;
 	}
 
 	.Signup_form{

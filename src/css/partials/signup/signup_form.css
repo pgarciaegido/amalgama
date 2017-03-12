@@ -14,42 +14,18 @@
 		}
 	}
 
-	&-subtitle{
-		margin-bottom: $margin3-desktop;
-		font-size: $p;
-		line-height: $p-lh;
-	}
-
-	&-social{
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: $margin3-desktop;
-
-		&-facebook{
-			@mixin socialMediaButton;
-			width: 45%;
-			background-color: #3b5998;
-		}
-
-		&-google{
-			@mixin socialMediaButton;
-			width: 45%;
-			background-color: #f44336;
-		}
-
-		&-facebook:hover, &-google:hover{
-			opacity: .9;
-		}
-	}
-
 	&-form{
-		input{
+
+		&-input-container{
+			padding-top: 10px;
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=password]{
 			@mixin formInput;
 			margin-top: $margin5-desktop;
-		}
-
-		input:first-child, input:nth-child(2){
-			margin-bottom: $margin5-desktop;
+			margin-bottom: 10px;
 		}
 
 		&-error{
@@ -61,11 +37,24 @@
 			@mixin blueButton;
 			display: block;
 			margin: 0 auto;
-			border: none !important;
+			margin-top: 20px;
 		}
 
 		&-submit:hover{
 			@mixin hoverButton;
+		}
+	}
+
+	&-login{
+
+		a{
+			text-decoration: none;
+			color: $blue;
+			transition: 0.3s;
+		}
+		
+		a:hover{
+			color: $blue-soft;
 		}
 	}
 }

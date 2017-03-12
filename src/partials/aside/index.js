@@ -22,7 +22,6 @@ const invitadoTemplate = function (news) {
   return yo`<aside id="aside">
   ${asideRegister()}
   ${temas(news)}
-  ${asideSuscribe()}
   </aside>`
 }
 

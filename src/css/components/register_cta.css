@@ -10,10 +10,8 @@
 		@mixin bigButton;
 		text-decoration: none;
 		color: $blue;
+		padding: $margin4-desktop 30px;
 
-		@media (--desktop){
-			padding: $margin4-desktop 30px;
-		}
 		@media (--mobile-small){
 			padding: $margin3-mobile 20px;
 			font-size: 1em;

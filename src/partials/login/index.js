@@ -14,8 +14,5 @@ page('/accede', header, (ctx, next) => {
   const feedback = queryHandler(query)
 
   let main = document.getElementById('main-container')
-  if ($('body').height() < window.innerHeight) {
-    $('body').css('overflow', 'hidden')
-  }
   $(main).empty().append(template(feedback))
 })

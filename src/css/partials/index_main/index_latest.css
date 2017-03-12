@@ -15,7 +15,7 @@
 		font-size: $title;
 		line-height: 1em;
 		margin-bottom: $margin4-desktop;
-		
+
 		@media (--tablet){
 			font-size: $h1-tablet;
 		}
@@ -44,10 +44,7 @@
 		margin: $margin3-desktop auto 0 auto;
 		text-decoration: none;
 		text-align: center;
-
-		@media (--desktop){
-			padding: $margin4-desktop 30px;
-		}
+		padding: $margin4-desktop 30px;
 
 		@media (--mobile){
 			margin: $margin2-mobile auto 0 auto;

@@ -1,5 +1,6 @@
 .Login_form{
-	width: 100%;
+	display: block;
+	margin: 0 auto;
 
 	&-title{
 		margin: 0;
@@ -17,37 +18,15 @@
 		line-height: $p-lh;
 	}
 
-	&-social{
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: $margin3-desktop;
-
-		&-facebook{
-			@mixin socialMediaButton;
-			width: 45%;
-			background-color: #3b5998;
-		}
-
-		&-google{
-			@mixin socialMediaButton;
-			width: 45%;
-			background-color: #f44336;
-		}
-
-		&-facebook:hover, &-google:hover{
-			opacity: .9;
-		}
-	}
-
 	&-form{
-		input{
+		margin-bottom: 30px;
+
+		input[type=text],
+		input[type=password]{
 			@mixin formInput;
 			margin-top: $margin5-desktop;
-			width: 100%;
-		}
-
-		input:first-child{
 			margin-bottom: $margin5-desktop;
+			width: 100%;
 		}
 
 		&-error{
@@ -56,14 +35,30 @@
 		}
 
 		&-submit{
-			@mixin normalButton;
 			@mixin blueButton;
+			padding: 10px 20px;
+			font-weight: 700;
 			display: block;
 			margin: 0 auto;
 		}
 
 		&-submit:hover{
 			@mixin hoverButton;
+		}
+	}
+
+	&-signup{
+		&-title{
+			text-align: center;
+			a{
+				text-decoration: none;
+				color: $blue;
+				transition: 0.3s;
+			}
+
+			a:hover{
+				color: $blue-soft;
+			}
 		}
 	}
 }
