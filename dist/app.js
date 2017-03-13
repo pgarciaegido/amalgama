@@ -27419,11 +27419,11 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu"></span>\n  <span class="Navbar-icon-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input">\n    <span class="Navbar-search-icon"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<div class="Navbar-menu">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>'], ['<div class="Navbar-menu">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<div class="Navbar-menu">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>'], ['<div class="Navbar-menu">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>']),
+	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu" id="header-burguer"></span>\n  <span class="Navbar-icon-close" id="header-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input" id="header-search-input">\n    <span class="Navbar-search-icon" id="header-search"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob" id="header-menu-mobile">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu" id="header-burguer"></span>\n  <span class="Navbar-icon-close" id="header-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input" id="header-search-input">\n    <span class="Navbar-search-icon" id="header-search"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob" id="header-menu-mobile">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>'], ['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>'], ['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar_menu_mob-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu_mob-menu-item">Registrate</a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar_menu_mob-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu_mob-menu-item">Registrate</a>\n              </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu_mob-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu-menu_mob-item">Logout</a>\n              </div>'], ['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu_mob-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu-menu_mob-item">Logout</a>\n              </div>']);
+	    _templateObject5 = _taggedTemplateLiteral(['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu_mob-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu_mob-menu-item">Logout</a>\n              </div>'], ['<div>\n                <a href="/app/usuario/', '" class="Navbar_menu_mob-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar_menu_mob-menu-item">Logout</a>\n              </div>']);
 
 	var _jquery = __webpack_require__(5);
 
@@ -27471,7 +27471,7 @@
 	'use strict';
 
 	var _templateObject = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  </aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  </aside>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>'], ['<aside id="aside">\n  ', '\n  ', '\n  ', '\n</aside>']);
+	    _templateObject2 = _taggedTemplateLiteral(['<aside id="aside">\n  ', '\n  ', '\n</aside>'], ['<aside id="aside">\n  ', '\n  ', '\n</aside>']);
 
 	var _jquery = __webpack_require__(5);
 
@@ -27509,7 +27509,7 @@
 	};
 
 	var userTemplate = function userTemplate(news, user) {
-	  return (0, _yoYo2.default)(_templateObject2, (0, _modules.profile)(user), (0, _modules.temas)(news), (0, _modules.asideSuscribe)());
+	  return (0, _yoYo2.default)(_templateObject2, (0, _modules.profile)(user), (0, _modules.temas)(news));
 	};
 
 /***/ },
@@ -27695,34 +27695,28 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var $burguer = (0, _jquery2.default)('.Navbar-icon-menu');
-	var $close = (0, _jquery2.default)('.Navbar-icon-close');
-	var $search = (0, _jquery2.default)('.Navbar-search-icon');
-	var $input = (0, _jquery2.default)('.Navbar-search-input');
-	var $menuMob = (0, _jquery2.default)('.Navbar_menu_mob');
-	var $menuDesktop = (0, _jquery2.default)('.Navbar-menu');
-	var $logoAnchor = (0, _jquery2.default)('#header-logo-anchor');
-	var $logoDiv = (0, _jquery2.default)('.Navbar-logo');
-	var $bg = (0, _jquery2.default)('#bg');
+	// When assinging DOM elements to variables causes error when those elements
+	// need to be recreated, like in this case. So working getting the jQuery
+	// object is a workaround for that.
 
 	// -------OPEN MENU
 
 	function openMenu() {
-	  $menuMob.addClass('active');
-	  $bg.css('display', 'block');
-	  $burguer.css('display', 'none');
+	  (0, _jquery2.default)('#header-menu-mobile').addClass('active');
+	  (0, _jquery2.default)('#bg').css('display', 'block');
+	  (0, _jquery2.default)('#header-burguer').css('display', 'none');
 	  (0, _jquery2.default)('body').css('overflow-y', 'hidden');
-	  $close.css('display', 'inline-block');
+	  (0, _jquery2.default)('#header-close').css('display', 'inline-block');
 	}
 
 	// -------CLOSE MENU
 
 	function closeMenu() {
-	  $menuMob.removeClass('active');
-	  $bg.css('display', 'none');
-	  $close.css('display', 'none');
+	  (0, _jquery2.default)('#header-menu-mobile').removeClass('active');
+	  (0, _jquery2.default)('#bg').css('display', 'none');
+	  (0, _jquery2.default)('#header-close').css('display', 'none');
 	  (0, _jquery2.default)('body').css('overflow-y', 'scroll');
-	  $burguer.css('display', 'inline-block');
+	  (0, _jquery2.default)('#header-burguer').css('display', 'inline-block');
 	}
 
 	// ------OPEN SEARCH
@@ -27730,26 +27724,26 @@
 
 	function searchInput() {
 	  if (!searchOpened) {
-	    $input.addClass('search-active');
-	    $menuDesktop.addClass('menu-search-active');
-	    $logoDiv.addClass('logo-search-active');
-	    $logoAnchor.addClass('logo-search-active');
+	    (0, _jquery2.default)('#header-search-input').addClass('search-active');
+	    (0, _jquery2.default)('#header-menu-desktop').addClass('menu-search-active');
+	    (0, _jquery2.default)('#header-logo').addClass('logo-search-active');
+	    (0, _jquery2.default)('#header-logo-anchor').addClass('logo-search-active');
 	    searchOpened = true;
 	  } else {
-	    $input.removeClass('search-active');
-	    $menuDesktop.removeClass('menu-search-active');
-	    $logoDiv.removeClass('logo-search-active');
-	    $logoAnchor.removeClass('logo-search-active');
+	    (0, _jquery2.default)('#header-search-input').removeClass('search-active');
+	    (0, _jquery2.default)('#header-menu-desktop').removeClass('menu-search-active');
+	    (0, _jquery2.default)('#header-logo').removeClass('logo-search-active');
+	    (0, _jquery2.default)('#header-logo-anchor').removeClass('logo-search-active');
 	    searchOpened = false;
 	  }
 	}
 
 	// -------EVENT HANDLERS
 
-	$burguer.on('click', openMenu);
-	$close.on('click', closeMenu);
-	$bg.on('click', closeMenu);
-	$search.on('click', searchInput);
+	(0, _jquery2.default)(document).on('click', '#header-burguer', openMenu);
+	(0, _jquery2.default)(document).on('click', '#header-close', closeMenu);
+	(0, _jquery2.default)(document).on('click', '#bg', closeMenu);
+	(0, _jquery2.default)(document).on('click', '#header-search', searchInput);
 
 /***/ },
 /* 142 */

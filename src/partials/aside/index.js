@@ -29,6 +29,5 @@ const userTemplate = function (news, user) {
   return yo`<aside id="aside">
   ${profile(user)}
   ${temas(news)}
-  ${asideSuscribe()}
 </aside>`
 }
