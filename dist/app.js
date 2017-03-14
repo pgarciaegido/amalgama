@@ -27546,7 +27546,7 @@
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>'], ['<div class="Aside_subscribe">\n        <h2 class="Aside_subscribe-title">\xA1Suscr\xEDbete</h2>\n        <p class="Aside_subscribe-subtitle">Suscr\xEDbete y te enviaremos un email cuando haya una nueva entrada. No te enviaremos publicidad, ni daremos tus datos a nadie. Palabra.</p>\n        <form action="" class="Aside_subscribe-form">\n          <label for="" class="Aside_subscribe-form-label">Email:<input type="email" placeholder="ejemplo@gmail.com"></label>\n          <input class="Aside_subscribe-form-button"type="submit" value="\xA1Reg\xEDstrame!">\n        </form>\n      </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>'], ['<div class="Aside_temas">\n    <h2 class="Aside_temas-title">Temas m\xE1s votados</h2>\n    ', '\n  </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>'], ['<div class="Aside_temas-tema">\n      <p class="Aside_temas-tema-title">', '</p>\n      <div class="Aside_temas-tema-info">\n        <span class="Aside_temas-tema-info-votes">', ' votos</span>\n        <span class="Aside_temas-tema-info-balance">', '</span>\n      </div>\n    </div>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <button class="Aside_profile-buttons-edit"><a href="/app/usuario/', '">Editar</a></button>\n        <form method="POST" action="/app/logout">\n          <input type="submit" value="Logout" class="Aside_profile-buttons-logout" />\n        </form>\n      </div>\n    </div>']);
+	    _templateObject5 = _taggedTemplateLiteral(['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <a href="/app/usuario/', '" class="Aside_profile-buttons-edit">Editar</a>\n        <a class="Aside_profile-buttons-logout">Logout</a>\n      </div>\n    </div>'], ['<div class="Aside_profile">\n      <h2 class="Aside_profile-title">Mi perfil</h2>\n      <h3 class="Aside_profile-username">', '</h3>\n      <div class="Aside_profile-buttons">\n        <a href="/app/usuario/', '" class="Aside_profile-buttons-edit">Editar</a>\n        <a class="Aside_profile-buttons-logout">Logout</a>\n      </div>\n    </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -27696,7 +27696,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// When assinging DOM elements to variables causes error when those elements
-	// need to be recreated, like in this case. So working getting the jQuery
+	// need to be recreated, like in this case. So getting directly the jQuery
 	// object is a workaround for that.
 
 	// -------OPEN MENU
@@ -27851,6 +27851,8 @@
 	var currentPassInvalid = "La contraseña actual es incorrecta.";
 	var noUser = "El usuario introducido no existe.";
 	var errPass = "La contraseña es incorrecta.";
+	var userExists = "El usuario ya está registrado. Por favor, elija otro nombre";
+	var shortPass = "La contraseña tiene que tener más de 8 caracteres.";
 
 	function errorMessage(query) {
 	  if (query === "invalid") {
@@ -27863,6 +27865,10 @@
 	    return noUser;
 	  } else if (query === "errpass") {
 	    return errPass;
+	  } else if (query === "uexists") {
+	    return userExists;
+	  } else if (query === "shortp") {
+	    return shortPass;
 	  }
 	  return '';
 	}
@@ -28496,7 +28502,6 @@
 	  // already converted in a proper message to send to client
 	  // If there are no queries, returns ''
 	  var feedback = (0, _query_handler2.default)(query);
-
 	  var main = document.getElementById('main-container');
 	  (0, _jquery2.default)(main).empty().append((0, _template2.default)(feedback));
 	});
@@ -28507,7 +28512,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div id="signup">\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="', '" />\n        </div>\n        <div>\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email" value="', '" />\n        </div>\n        <div>\n          Contrase\xF1a\n          <input type="password" name="password" />\n        </div>\n        <div>\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <div class="Signup_form-form-error">', '</div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3> \n    </div>\n  </div>'], ['<div id="signup">\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="', '" />\n        </div>\n        <div>\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email" value="', '" />\n        </div>\n        <div>\n          Contrase\xF1a\n          <input type="password" name="password" />\n        </div>\n        <div>\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <div class="Signup_form-form-error">', '</div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3> \n    </div>\n  </div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div id="signup">\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="', '" />\n        </div>\n        <div>\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email" value="', '" />\n        </div>\n        <div>\n          Contrase\xF1a\n          <input type="password" name="password" />\n        </div>\n        <div>\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <div class="Signup_form-form-error">', '</div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3>\n    </div>\n  </div>'], ['<div id="signup">\n    <div class="Signup_form">\n      <h1 class="Signup_form-title">\xA1Reg\xEDstrate y opina!</h1>\n      <form action="usersignup" method="post" class="Signup_form-form">\n        <div>\n          Nombre de usuario\n          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="', '" />\n        </div>\n        <div>\n          Email\n          <input type="email" placeholder="Introduzca su correo electr\xF3nico" name="email" value="', '" />\n        </div>\n        <div>\n          Contrase\xF1a\n          <input type="password" name="password" />\n        </div>\n        <div>\n          Confirma tu contrase\xF1a\n          <input type="password" name="password_confirmation" />\n        </div>\n        <div class="Signup_form-form-error">', '</div>\n        <input class="Signup_form-form-submit" type="Submit" value="\xA1Reg\xEDstrame!" />\n      </form>\n      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3>\n    </div>\n  </div>']);
 
 	var _yoYo = __webpack_require__(11);
 
@@ -28518,7 +28523,7 @@
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = function (feedback) {
-	  return (0, _yoYo2.default)(_templateObject, feedback.n || '', feedback.m || '', feedback.e || '');
+	  return (0, _yoYo2.default)(_templateObject, feedback.u || '', feedback.m || '', feedback.e || '');
 	};
 
 /***/ },

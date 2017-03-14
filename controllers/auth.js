@@ -2,7 +2,7 @@ var User = require('../data/models/user').User
 var u = require('./utils')
 
 function signup (req, res) {
-  var user = req.body.username
+  var username = req.body.username
   var email = req.body.email
   var pass = req.body.password
   var repPass = req.body.password_confirmation
@@ -12,10 +12,10 @@ function signup (req, res) {
 
   // Validates email
   if (!emailValidation) {
-    res.redirect('/registrate?e=invalid?u=' + user + '?m=' + email)
+    res.redirect('/registrate?e=invalid?u=' + username + '?m=' + email)
   } // Validates password
   else if (!passValidation) {
-    res.redirect('/registrate?e=dif?u=' + user + '?m=' + email)
+    res.redirect('/registrate?e=dif?u=' + username + '?m=' + email)
   }
 
   var user = new User({
@@ -31,8 +31,16 @@ function signup (req, res) {
     res.redirect('/app')
   }, function (err) {
     if (err) {
-      console.log(String(err))
-      res.send('No pudimos guardar tu info')
+      // User already exists
+      if (err.code === 11000){
+        res.redirect('/registrate?e=uexists?u=' + username + '?m=' + email)
+      // Password is too short
+      } else if (err.errors.password.kind === 'minlength') {
+        res.redirect('/registrate?e=shortp?u=' + username + '?m=' + email)
+      }
+      else{
+        res.send('No pudimos guardar tu info')
+      }
     }
   })
 }

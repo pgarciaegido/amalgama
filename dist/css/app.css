@@ -1461,19 +1461,15 @@ body{
 	font-size: 1em;
 	font-weight: 700;
 	font-size: .8em;
-	padding: 0 10px;
-	height: 40px;
+	padding: 10px;
+	text-decoration: none;
+	color: #5b86ff;
 }
 
 .Aside_profile-buttons-edit:hover, .Aside_profile-buttons-logout:hover{
 	background-color: #f1f1f1;
 	color: #5bcbff;
 	border: 2px solid #5bcbff;
-}
-
-.Aside_profile-buttons a{
-	text-decoration: none;
-	color: #5b86ff;
 }
 
 /*Components*/

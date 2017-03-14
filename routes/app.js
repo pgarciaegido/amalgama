@@ -4,11 +4,6 @@ var render = require('../controllers/render').renderIndex
 
 router.get('/', render)
 
-router.post('/logout', function (req, res) {
-  req.session = null
-  res.redirect('/app')
-})
-
 router.get('/logout', function (req, res) {
   req.session = null
   res.redirect('/app')

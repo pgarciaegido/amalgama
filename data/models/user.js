@@ -6,10 +6,9 @@ var saltRounds = 10
 
 // El JSON dentro de los valores de los keys se usarán para validar
 var UserSchema = new Schema({
-  username: {type: String, required: true, maxlength: [50, 'El nombre de usuario debe ser más corto'], index: {unique: true}},
+  username: {type: String, required: true, unique: true},
   password: {type: String, required: true, minlength: [8, 'La contraseña tiene que ser mayor de 8 caracteres']},
   email: {type: String, required: 'El correo es obligatorio'},
-  location: String,
   agreeVotes: Array,
   disagreeVotes: Array,
 })

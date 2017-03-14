@@ -7,7 +7,7 @@ module.exports = function (feedback) {
       <form action="usersignup" method="post" class="Signup_form-form">
         <div>
           Nombre de usuario
-          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="${feedback.n || ''}" />
+          <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="${feedback.u || ''}" />
         </div>
         <div>
           Email
@@ -24,7 +24,7 @@ module.exports = function (feedback) {
         <div class="Signup_form-form-error">${feedback.e || ''}</div>
         <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />
       </form>
-      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3> 
+      <h3 class="Signup_form-login">Ya tengo cuenta. Quisiera <a href="accede">acceder.</a></h3>
     </div>
   </div>`
 }

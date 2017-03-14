@@ -6,7 +6,7 @@
 		margin: 0;
 		margin-bottom: $margin5-desktop;
 	}
-	
+
 	&-username{
 		text-align: center;
 	}
@@ -18,17 +18,13 @@
 		&-edit, &-logout{
 			@mixin normalButton;
 			font-size: .8em;
-			padding: 0 10px;
-			height: 40px;
+			padding: 10px;
+			text-decoration: none;
+			color: $blue;
 		}
 
 		&-edit:hover, &-logout:hover{
 			@mixin hoverButton;
-		}
-
-		a{
-			text-decoration: none;
-			color: $blue;
 		}
 	}
 }

@@ -12,7 +12,6 @@ page('/registrate', header, (ctx, next) => {
   // already converted in a proper message to send to client
   // If there are no queries, returns ''
   const feedback = queryHandler(query)
-
   const main = document.getElementById('main-container')
   $(main).empty().append(template(feedback))
 })
