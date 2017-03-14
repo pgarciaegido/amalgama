@@ -6,7 +6,7 @@ body{
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	color: $black;
-	
+
 	@media (--desktop){
 		padding: 0 $margin3-mobile;
 	}
@@ -15,6 +15,7 @@ body{
 .container{
 	margin: 0 auto;
 	max-width: 1000px;
+	padding-bottom: $margin1-desktop;
 
 	#main-container{
 		display: flex;

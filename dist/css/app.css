@@ -64,6 +64,7 @@ body{
 .container{
 	margin: 0 auto;
 	max-width: 1000px;
+	padding-bottom: 75px;
 }
 
 .container #main-container{
@@ -839,6 +840,7 @@ body{
 /*Usuario*/
 
 #usuario{
+	width: 100%;
 	padding-top: 50px;
 	display: -webkit-box;
 	display: flex;
@@ -1788,6 +1790,23 @@ body{
   color: white;
   cursor: auto;
   border: 2px solid #5b86ff;
+}
+
+.Footer{
+  width: 100%;
+  padding: 20px 0;
+  background-color: #7b8085;
+}
+
+.Footer-container{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.Footer-container p{
+	margin: 0;
+	text-align: center;
+	color: white;
 }
 
 @media (max-width: 1050px){
