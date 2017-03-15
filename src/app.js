@@ -10,6 +10,7 @@ import './partials/signup'
 import './partials/search'
 import './partials/usuario'
 import './partials/usuario_editar'
+import './partials/welcome'
 
 $(document).ready(() => {
   articles()

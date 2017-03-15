@@ -1,0 +1,16 @@
+.Welcome{
+  padding-top: $margin1-desktop;
+  text-align: center;
+
+  &-message{
+    color: $blue;
+    margin-bottom: 30px;
+  }
+
+  &-redirect{
+    a{
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+}

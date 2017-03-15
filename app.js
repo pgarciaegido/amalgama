@@ -37,6 +37,7 @@ app.get('/registrate', render)
 app.post('/usersignup', auth.signup)
 app.get('/accede', render)
 app.post('/login', auth.login)
+app.get('/welcome', render)
 
 // Use sessionMiddleware to ensure the user is logged in, and then we route from /app.
 

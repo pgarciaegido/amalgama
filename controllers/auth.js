@@ -28,7 +28,7 @@ function signup (req, res) {
 
   // Using promises --> PREFERED
   user.save().then(function (us) {
-    res.redirect('/app')
+    res.redirect('/welcome')
   }, function (err) {
     if (err) {
       // User already exists

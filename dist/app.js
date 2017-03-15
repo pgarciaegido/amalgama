@@ -76,6 +76,8 @@
 
 	__webpack_require__(164);
 
+	__webpack_require__(166);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _jquery2.default)(document).ready(function () {
@@ -28916,6 +28918,45 @@
 	// IMPORTANT it looks that it doesnt work if there is another query
 	function editarForm(user, feedback) {
 	  return (0, _yoYo2.default)(_templateObject2, user._id, user.email, feedback.e);
+	}
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<div class="Welcome">\n    <h1 class="Welcome-message">Tu registro se ha producido satisfactoriamente.\xA1Gracias!</h1>\n    <p class="Welcome-redirect">En breve ser\xE1s redirigido a la p\xE1gina principal. Si no eres redirigido, clica <a href="/app">aqu\xED</p>\n    ', '\n  </div>\n  '], ['<div class="Welcome">\n    <h1 class="Welcome-message">Tu registro se ha producido satisfactoriamente.\xA1Gracias!</h1>\n    <p class="Welcome-redirect">En breve ser\xE1s redirigido a la p\xE1gina principal. Si no eres redirigido, clica <a href="/app">aqu\xED</p>\n    ', '\n  </div>\n  ']);
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _yoYo = __webpack_require__(11);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	var _page = __webpack_require__(1);
+
+	var _page2 = _interopRequireDefault(_page);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+	(0, _page2.default)('/welcome', function (ctx, next) {
+	  var main = document.getElementById('main-container');
+	  (0, _jquery2.default)(main).empty().append(template(redirectAfter));
+	});
+
+	function template(script) {
+	  return (0, _yoYo2.default)(_templateObject, script());
+	}
+
+	function redirectAfter() {
+	  setTimeout(function () {
+	    window.location = "/accede";
+	  }, 5000);
 	}
 
 /***/ }

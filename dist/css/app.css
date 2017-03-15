@@ -1805,6 +1805,21 @@ body{
 	color: white;
 }
 
+.Welcome{
+  padding-top: 75px;
+  text-align: center;
+}
+
+.Welcome-message{
+	color: #5b86ff;
+	margin-bottom: 30px;
+}
+
+.Welcome-redirect a{
+	text-decoration: none;
+	color: #5b86ff;
+}
+
 @media (max-width: 1050px){
 
 	body{
