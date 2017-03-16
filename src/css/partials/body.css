@@ -6,18 +6,21 @@ body{
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	color: $black;
-
-	@media (--desktop){
-		padding: 0 $margin3-mobile;
-	}
 }
 
 .container{
+	/*sticky footer*/
+	min-height: calc(100vh - 59px);
 	margin: 0 auto;
 	max-width: 1000px;
 	padding-bottom: $margin1-desktop;
+	min-height: calc(100vh - 59px);
 
 	#main-container{
 		display: flex;
+	}
+
+	@media (--desktop){
+		padding: 0 $margin3-mobile;
 	}
 }

@@ -62,9 +62,12 @@ body{
 }
 
 .container{
+	/*sticky footer*/
+	min-height: calc(100vh - 59px);
 	margin: 0 auto;
 	max-width: 1000px;
 	padding-bottom: 75px;
+	min-height: calc(100vh - 59px);
 }
 
 .container #main-container{
@@ -1882,7 +1885,7 @@ body{
 
 @media (max-width: 1050px){
 
-	body{
+	.container{
 		padding: 0 15px;
 	}
 
