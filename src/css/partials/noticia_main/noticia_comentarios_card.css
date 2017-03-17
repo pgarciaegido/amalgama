@@ -22,14 +22,6 @@
 		margin-bottom: 25px;
 
 		&-info{
-			display: flex;
-
-			&-avatar{
-				margin-right: 10px;
-				width: 35px;
-				height: 35px;
-				border-radius: 50%;
-			}
 
 			&-username{
 				margin: 0;

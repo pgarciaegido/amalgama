@@ -597,18 +597,6 @@ body{
 	margin-bottom: 25px;
 }
 
-.Noticias_comentarios_card-user-info{
-	display: -webkit-box;
-	display: flex;
-}
-
-.Noticias_comentarios_card-user-info-avatar{
-	margin-right: 10px;
-	width: 35px;
-	height: 35px;
-	border-radius: 50%;
-}
-
 .Noticias_comentarios_card-user-info-username{
 	margin: 0;
 	font-weight: 700;

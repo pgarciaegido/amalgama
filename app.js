@@ -34,7 +34,7 @@ app.use(cookieSession({
 app.get('/', redirect)
 app.get('/invitado', render)
 app.get('/registrate', render)
-app.post('/usersignup', auth.signup)
+app.post('/signup', auth.signup)
 app.get('/accede', render)
 app.post('/login', auth.login)
 app.get('/welcome', render)

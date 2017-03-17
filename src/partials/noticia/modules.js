@@ -177,7 +177,6 @@ function comCard (user, comment) {
     <p class="Noticias_comentarios_card-counter">#<span>${comment.number}</span></p>
     <div class="Noticias_comentarios_card-user">
       <div class="Noticias_comentarios_card-user-info">
-        <img src="/img/avatar.jpg" alt="" class="Noticias_comentarios_card-user-info-avatar" />
         <p class="Noticias_comentarios_card-user-info-username">${comment.username}</p>
       </div>
       <p class="Noticias_comentarios_card-user-date">${formatDate(comment.date)}</p>

@@ -6,9 +6,6 @@ module.exports = { asideRegister, asideSuscribe, temas, profile }
 function asideRegister () {
   return yo`<div class="Aside_registrate">
     <h2 class="Aside_registrate-title">Regístrate</h2>
-    <p class="Aside_registrate-subtitle">
-      Únete a la comunidad, vota y comparte tu opinión. ¡Queremos escucharte!
-    </p>
     <form class="Aside_registrate-form" action="/usersignup" method="POST">
       <label for="">Nombre usuario:
         <input name ="username" type="text">

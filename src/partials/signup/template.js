@@ -4,7 +4,7 @@ module.exports = function (feedback) {
   return yo`<div id="signup">
     <div class="Signup_form">
       <h1 class="Signup_form-title">¡Regístrate y opina!</h1>
-      <form action="usersignup" method="post" class="Signup_form-form">
+      <form action="signup" method="post" class="Signup_form-form">
         <div>
           Nombre de usuario
           <input type="text" placeholder="Introduzca su nombre de usuario" name="username" value="${feedback.u || ''}" />

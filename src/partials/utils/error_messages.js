@@ -4,6 +4,7 @@ module.exports = {
 
 const emailInvalid = "El email es inválido. Revise que esté bien escrito."
 const emailSame = "El email introducido es el mismo que ya tiene su cuenta."
+const emailExists = "El email ya está registrado."
 const passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales."
 const currentPassInvalid = "La contraseña actual es incorrecta."
 const noUser = "El usuario introducido no existe."
@@ -26,6 +27,8 @@ function errorMessage (query) {
     return userExists
   } else if (query === "shortp") {
     return shortPass
+  } else if (query === "eexists") {
+    return emailExists
   }
   return ''
 }

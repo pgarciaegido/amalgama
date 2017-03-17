@@ -2,16 +2,21 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var bcrypt = require('bcrypt')
 
-var saltRounds = 10
+// USER SCHEMA =================================================================
 
 // El JSON dentro de los valores de los keys se usarán para validar
 var UserSchema = new Schema({
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true, minlength: [8, 'La contraseña tiene que ser mayor de 8 caracteres']},
-  email: {type: String, required: 'El correo es obligatorio'},
+  email: {type: String, required: 'El correo es obligatorio', unique: true},
   agreeVotes: Array,
   disagreeVotes: Array,
 })
+
+
+// ENCRYPT PASSWORD ============================================================
+
+var saltRounds = 10
 
 // Encripta la contraseña
 UserSchema.pre('save', function(next) {
@@ -34,6 +39,8 @@ UserSchema.pre('save', function(next) {
         });
     });
 });
+
+// COMPARE PASSWORD ON LOGIN ===================================================
 
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
