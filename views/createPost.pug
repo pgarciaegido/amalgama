@@ -5,6 +5,9 @@ form(method="POST" action="/api/createnew")
 	label subtitle
 		input(type="text" name="subtitle")
 		br
+	label Password
+		input(type="password" name="password" placeholder="password")
+		br
 	label TAGS
 		br
 		label Espana
@@ -25,6 +28,6 @@ form(method="POST" action="/api/createnew")
 		label Oriente Medio
 			input(type="checkbox" name="tags" value="Oriente Medio")
 			br
-	textarea(type="text" name="media" placeholder="{elpais: 'url', elmundo: 'url'...}")
+	textarea(type="text" name="media" placeholder="{\"elpais\": \"url\", \"elmundo\": \"url\"...}")
 	br
 	input(type="submit" value="Subelo")

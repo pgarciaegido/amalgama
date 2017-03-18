@@ -1,28 +1,44 @@
 var Post = require('../data/models/posts')
 var User = require('../data/models/user').User
 var moment = require('moment')
+var createPassword = require('./secret')
 
-// Create news.
+// Create news =================================================================
 function createNew (req, res) {
-  var post = new Post({
-    title: req.body.title,
-    subtitle: req.body.subtitle,
-    tags: req.body.tags,
-    media: JSON.parse(req.body.media)
-  })
+  // Verifies if password is correct
+  var password = req.body.password
+  var media    = req.body.media
 
-  post.save(function (err, post) {
-    if (!err) {
-      console.log(post)
-      res.status(200).send({post: post})
-    } else {
-      console.log(err)
-      res.send('ha habido un error al guardar tu noticia.')
+  if (password !== createPassword.password) {
+    res.send('Incorrect password.')
+  }
+  else {
+    // Checks if media JSON is correctly formatted
+    try {
+      JSON.parse(media)
+    } catch (e) {
+      return res.send('The media JSON is incorrectly formatted. Please double check. ' + e)
     }
-  })
+
+    var post = new Post({
+      title: req.body.title,
+      subtitle: req.body.subtitle,
+      tags: req.body.tags,
+      media: JSON.parse(media)
+    })
+
+    post.save(function (err, post) {
+      if (!err) {
+        res.status(200).send({post: post})
+      } else {
+        console.log(err)
+        res.redirect('/api/create-new')
+      }
+    })
+  }
 }
 
-// Get list of all news.
+// Get list of all news ========================================================
 function getNews (req, res) {
   Post.find(function (err, post) {
     if (err) {
@@ -33,7 +49,7 @@ function getNews (req, res) {
 }
 
 
-// Get only one new.
+// Get only one new ============================================================
 function getNew (req, res) {
   Post.findById(req.params.id, function (err, post) {
     if (err) return console.log('Ha habido un error' + err)
@@ -42,7 +58,7 @@ function getNew (req, res) {
 }
 
 
-
+// Updates new already posted ==================================================
 function modifyNew (req, res) {
   var update = req.body
 
@@ -52,6 +68,8 @@ function modifyNew (req, res) {
   })
 }
 
+
+// Deletes new =================================================================
 function deleteNew (req, res) {
   Post.findById(req.params.id, function (err, post) {
     if (err) return console.log('Ha habido un error' + err)
@@ -62,7 +80,7 @@ function deleteNew (req, res) {
   })
 }
 
-// voting
+// voting ======================================================================
 function vote (req, res) {
 
   // Takes the _id in the url here and gets User id from session

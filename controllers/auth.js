@@ -72,6 +72,7 @@ function signup (req, res) {
 // LOGIN =======================================================================
 
 function login (req, res) {
+
   // Find user by username
   User.findOne({username: req.body.username}, function (err, user) {
     if (!user) {
