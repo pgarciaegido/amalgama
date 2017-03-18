@@ -81,13 +81,20 @@ function modifyNew (req, res) {
 
 // Deletes new =================================================================
 function deleteNew (req, res) {
-  Post.findById(req.params.id, function (err, post) {
-    if (err) return console.log('Ha habido un error' + err)
-    post.remove(function (err) {
-      if (err) return console.log('Ha habido un error al borrar la noticia:' + err)
-      res.redirect('/api/news')
+  password = req.body.password
+
+  if (password !== adminPassword) {
+    res.send('Password incorrect. Denied.')
+  }
+  else{
+    Post.findById(req.params.id, function (err, post) {
+      if (err) return console.log('Ha habido un error' + err)
+      post.remove(function (err) {
+        if (err) return console.log('Ha habido un error al borrar la noticia:' + err)
+        res.redirect('/api/news')
+      })
     })
-  })
+  }
 }
 
 // voting ======================================================================
