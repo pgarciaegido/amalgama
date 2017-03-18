@@ -1,7 +1,7 @@
 var Post = require('../data/models/posts')
 var User = require('../data/models/user').User
 var moment = require('moment')
-var createPassword = require('./secret')
+var adminPassword = require('./secret').password
 
 // Create news =================================================================
 function createNew (req, res) {
@@ -9,7 +9,7 @@ function createNew (req, res) {
   var password = req.body.password
   var media    = req.body.media
 
-  if (password !== createPassword.password) {
+  if (password !== adminPassword) {
     res.send('Incorrect password.')
   }
   else {
@@ -60,12 +60,22 @@ function getNew (req, res) {
 
 // Updates new already posted ==================================================
 function modifyNew (req, res) {
-  var update = req.body
+  var password = req.body.password
 
-  Post.findByIdAndUpdate(req.params.id, update, function (err, post) {
-    if (err) return console.log('Ha habido un error' + err)
-    res.redirect('/api/news')
-  })
+  if (password !== adminPassword) {
+    res.send('Password incorrect. Denied')
+  }
+
+  else {
+    var update = req.body
+
+    Post.findByIdAndUpdate(req.params.id, update, function (err, post) {
+      if (err) {
+        return console.log('Ha habido un error' + err)
+      }
+      res.redirect('/api/news')
+    })
+  }
 }
 
 
