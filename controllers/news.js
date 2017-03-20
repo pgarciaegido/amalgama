@@ -3,6 +3,15 @@ var User = require('../data/models/user').User
 var moment = require('moment')
 var adminPassword = require('./secret').password
 
+module.exports = {
+  createNew,
+  getNews,
+  getNew,
+  modifyNew,
+  deleteNew,
+  vote
+}
+
 // Create news =================================================================
 function createNew (req, res) {
   // Verifies if password is correct
@@ -99,10 +108,23 @@ function deleteNew (req, res) {
 
 // voting ======================================================================
 function vote (req, res) {
-
   // Takes the _id in the url here and gets User id from session
   let userId = req.session.user_id
-  let id = req.headers.referer.split('/').pop()
+  // If there is no session or the session cookie is modified, returns undefined
+  if (userId === undefined) {
+    return res.send('User does not exist')
+  }
+
+  let id
+  // If there is no post id referer
+  try{
+    id = req.headers.referer.split('/').pop()
+    console.log(id)
+  }
+  catch(e){
+    console.log(e)
+    return res.send('Post referer not included')
+  }
 
   // Gets the post URL. '/upvote'
   let path = req._parsedUrl.path
@@ -131,21 +153,21 @@ function vote (req, res) {
     update = { $inc: { disagreeVotes: -1 }}
   }
 
-  User.findByIdAndUpdate(userId, userUpdate, function (err, user){
-    if (err) return console.log('Ha habido un error' + err)
-  })
-
+  // Ensures post exists, then appends post to users array
+  // Find post
   Post.findByIdAndUpdate(id, update, function (err, post){
     if (err) return console.log('Ha habido un error' + err)
+
+    // If post does not exist (modified headers)
+    if(!post){
+      return res.send('Post does not exist. Check headers')
+    }
+
+    // Find user
+    User.findByIdAndUpdate(userId, userUpdate, function (err, user){
+      if (err) return console.log('Ha habido un error' + err)
+    })
+
     res.redirect(`/app/noticia/${id}`)
   })
-}
-
-module.exports = {
-  createNew,
-  getNews,
-  getNew,
-  modifyNew,
-  deleteNew,
-  vote
 }
