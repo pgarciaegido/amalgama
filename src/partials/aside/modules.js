@@ -6,7 +6,7 @@ module.exports = { asideRegister, asideSuscribe, temas, profile }
 function asideRegister () {
   return yo`<div class="Aside_registrate">
     <h2 class="Aside_registrate-title">Regístrate</h2>
-    <form class="Aside_registrate-form" action="/usersignup" method="POST">
+    <form class="Aside_registrate-form" action="/signup" method="POST">
       <label for="">Nombre usuario:
         <input name ="username" type="text">
       </label>
@@ -64,7 +64,7 @@ function profile (user) {
       <h3 class="Aside_profile-username">${user.username}</h3>
       <div class="Aside_profile-buttons">
         <a href="/app/usuario/${user.username}" class="Aside_profile-buttons-edit">Editar</a>
-        <a class="Aside_profile-buttons-logout">Logout</a>
+        <a href="/app/logout" class="Aside_profile-buttons-logout">Logout</a>
       </div>
     </div>`
 }

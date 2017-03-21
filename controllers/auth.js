@@ -20,7 +20,7 @@ function signup (req, res) {
   // Validates email
   if (!emailValidation) {
     res.redirect('/registrate?e=invalid?u=' + username + '?m=' + email)
-  } // Validates password
+  } // First password validation
   else if (!passValidation) {
     res.redirect('/registrate?e=dif?u=' + username + '?m=' + email)
   }
@@ -31,11 +31,14 @@ function signup (req, res) {
     password: pass
   })
 
-  /* HERE THE PASSWORD GETS HASHED */
+  /* HERE THE PASSWORD GETS HASHED; LOGICS ON USER MODEL */
 
   // Using promises --> PREFERED
   user.save().then(function (us) {
+    // Set cookies --> welcome page --> (happens on client)/app
+    req.session.user_id = us._id
     res.redirect('/welcome')
+
   }, function (err) {
     if (err) {
 

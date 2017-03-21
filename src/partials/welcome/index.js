@@ -18,6 +18,6 @@ function template (script) {
 
 function redirectAfter () {
   setTimeout(() => {
-    window.location = "/accede"
-  }, 5000)
+    window.location = "/app"
+  }, 2000)
 }
