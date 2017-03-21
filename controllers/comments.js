@@ -11,53 +11,62 @@ module.exports = {
   likeComment
 }
 
-// Creates new comment
+// Creates new comment =========================================================
 function createComment (req, res) {
-  let postRoute = req._parsedUrl.path
-  // The postiD is used on the second query
-  let postId = req.headers.referer.split('/').pop()
 
   // Makes a query to the user collection to get the username of the author
   User.findById(req.session.user_id, function(err, user){
     if(err){
       return console.log(err)
     }
+    // If there is no session
+    if (!user) {
+      return res.send('Your not logged in. Access denied.')
+    }
 
-    // Sets if the comment is on agree or in disagree
-    let ag = postRoute === '/commentagree' ? true : false
-    let disag = postRoute === '/commentdisagree' ? true : false
-
-    // Queries to get how many comments we have, so we can number our comments
-    let arg = {postid: postId, agree: ag, disagree: disag}
+    let postRoute = req._parsedUrl.path
+    // The postiD is used on the second query
+    let postId = req.headers.referer.split('/').pop()
 
     Post.findById(postId, function(err, post) {
       if (err){
         console.log(err)
       }
 
+      if (!post) {
+        return res.send('The post does not exist. Access denied.')
+      }
+
+      // Sets if the comment is on agree or in disagree
+      let ag = postRoute === '/commentagree' ? true : false
+      let disag = postRoute === '/commentdisagree' ? true : false
+
+      // Queries to get how many comments we have, so we can number our comments
+      let arg = {postid: postId, agree: ag, disagree: disag}
+
       Com.find(arg, function (err, comments) {
         if (err) return console.log('ha habido un error al obtener el numero de comentarios')
 
         let length = comments.length
+        console.log('Number of comments: ' + length)
 
         // Fills the schema
         let comment = new Com ({
-          number: length + 1,
-          userid: req.session.user_id,
-          username: user.username,
-          postid: req.headers.referer.split('/').pop(),
+          number   : length + 1,
+          userid   : req.session.user_id,
+          username : user.username,
+          postid   : postId,
           postTitle: post.title,
-          agree: ag,
-          disagree: disag,
-          comment: req.body.create,
-          likes: 0
+          agree    : ag,
+          disagree : disag,
+          comment  : req.body.create,
+          likes    : 0
         })
 
         // Save the comment in the db
         comment.save(function (err, comment) {
           if (!err) {
             // Redirect to the post
-            console.log(comment)
             res.redirect(req.headers.referer)
           } else {
             console.log(err)
@@ -70,7 +79,7 @@ function createComment (req, res) {
   })
 }
 
-// Gets all the comments in collection
+// Gets all the comments in collection =========================================
 function getComments (req, res) {
   Com.find(function (err, comments) {
     if (err) {
@@ -80,13 +89,14 @@ function getComments (req, res) {
   })
 }
 
-// Gets all the comments made in an specific post
+// Gets all the comments made in an specific post ==============================
 function getCommentsPost (req, res) {
   let postId = req.params.id
-  let query = req.query.s
+  let query  = req.query.s
   let condition
 
   // Conditional where the condition changes depending on query
+  // /api/get-comment-post/{id}/?s={agree}
   if (query === 'agree'){
     condition = {postid: postId, agree: true}
   }
@@ -103,9 +113,9 @@ function getCommentsPost (req, res) {
   })
 }
 
-// Gets all the comments made in an specific user
+// Gets all the comments made in an specific user ==============================
 function getCommentsUser (req, res) {
-  let userName = req.params.username
+  let userName  = req.params.username
   let condition = {username: userName}
 
   Com.find(condition).sort({date: -1}).exec(function(err, comments) {
@@ -116,28 +126,71 @@ function getCommentsUser (req, res) {
   })
 }
 
-// Likes or unlikes comment
+// Likes or unlikes comment ====================================================
 function likeComment (req, res) {
-
-  let postId = req.headers.referer.split('/').pop()
   let userId = req.session.user_id
 
-  // POST path to determine if the comment was already clicked
-  let path = req._parsedUrl.path
-  let commentId = path.split('/').pop()
-  let update
+  // Ensure user is logged in and exists
+  User.findById(userId, function(err, user) {
+    if (err) {
+      console.log(err)
+      return res.send('There is been an error checking user. Try again.')
+    }
 
-  // If the POST path doesn't include unlike, increase the vote and include de user on the array
-  if (path.indexOf('unlike') === -1){
-    update = { $addToSet: { likedBy: userId }, $inc: { likes: 1 } }
-  } else {
-  // Otherwise remove the user from array and decrease 1.
-    update = { $pull: { likedBy: userId }, $inc: { likes: -1 } }
-  }
+    if (!user) {
+      return res.send('There is no user logged in. Access denied.')
+    }
 
-  // From the commentId, update the value and redirect to the post
-  Com.findByIdAndUpdate(commentId, update, function (err, comment) {
-    if(err) console.log(err)
-    res.redirect('/app/noticia/' + postId)
+    let postId
+    // If headers are missing
+    try{
+      postId = req.headers.referer.split('/').pop()
+    }
+    catch(e) {
+      console.log('Trying to get POST ID error: ' + e)
+      return res.send('Headers should include referer. Access denied')
+    }
+
+    // Ensures that post exists
+    Post.findById(postId, function(err, post) {
+      if (err) {
+        console.log(err)
+        return res.send('There is been an error checking post. Try again.')
+      }
+      if (!post) {
+        return res.send('This post does not exist. Access denied.')
+      }
+
+      // POST path to determine if the comment was already clicked
+      let path      = req._parsedUrl.path
+      let commentId = path.split('/').pop()
+
+      // Checks if comment is liked by the logged in user. If it is, unlike.
+      Com.findById(commentId, function (err, com) {
+        if (err) {
+          return console.log(err)
+        }
+
+        if(!com) {
+          return res.send('This comment does not exist.')
+        }
+
+        let liked = false
+
+        for (let c in com.likedBy) {
+          if (userId === com.likedBy[c])
+            liked = true
+        }
+
+        let update = liked === false ? { $addToSet: { likedBy: userId }, $inc: { likes: 1 } }
+                                     : { $pull    : { likedBy: userId }, $inc: { likes: -1 } }
+
+        // From the commentId, update the value and redirect to the post
+        Com.findByIdAndUpdate(commentId, update, function (err, comment) {
+          if(err) console.log(err)
+          res.redirect('/app/noticia/' + postId)
+        })
+      })
+    })
   })
 }

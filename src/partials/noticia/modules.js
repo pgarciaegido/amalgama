@@ -198,7 +198,7 @@ function comCardForms (user, comment) {
     // if the logged user's id is on the array of liked comments, render liked button
     for (let i in comment.likedBy){
       if (comment.likedBy[i] === user._id){
-        return yo`<form method="POST" action="/api/comment-unlike/${comment._id}">
+        return yo`<form method="POST" action="/api/comment-like/${comment._id}">
           <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />
           </form>`
       }

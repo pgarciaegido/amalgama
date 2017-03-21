@@ -89,11 +89,13 @@ function login (req, res) {
           console.log(err)
           res.redirect('/accede')
         }
+        // If matches
         if(isMatch){
           // Cookies to remember user
           req.session.user_id = user._id
           res.redirect('/app')
         }
+        // If it doesnt match
         else{
           res.redirect('/accede?e=errpass?u=' + user.username)
         }
