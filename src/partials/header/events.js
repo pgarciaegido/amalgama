@@ -43,9 +43,18 @@ function searchInput () {
   }
 }
 
+// -------SEARCH
+function search (e) {
+  if (e.which === 13) {
+    let search = $('#header-search-input').val()
+    window.location.href = `/app/buscar?${search}`
+  }
+}
+
 // -------EVENT HANDLERS
 
 $(document).on('click', '#header-burguer', openMenu)
 $(document).on('click', '#header-close', closeMenu)
 $(document).on('click', '#bg', closeMenu)
 $(document).on('click', '#header-search', searchInput)
+$(document).on('keydown', '#header-search-input', search)

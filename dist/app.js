@@ -27768,12 +27768,21 @@
 	  }
 	}
 
+	// -------SEARCH
+	function search(e) {
+	  if (e.which === 13) {
+	    var _search = (0, _jquery2.default)('#header-search-input').val();
+	    window.location.href = '/app/buscar?' + _search;
+	  }
+	}
+
 	// -------EVENT HANDLERS
 
 	(0, _jquery2.default)(document).on('click', '#header-burguer', openMenu);
 	(0, _jquery2.default)(document).on('click', '#header-close', closeMenu);
 	(0, _jquery2.default)(document).on('click', '#bg', closeMenu);
 	(0, _jquery2.default)(document).on('click', '#header-search', searchInput);
+	(0, _jquery2.default)(document).on('keydown', '#header-search-input', search);
 
 /***/ },
 /* 143 */

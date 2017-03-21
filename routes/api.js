@@ -41,10 +41,8 @@ api.post('/commentagree', comCtrl.createComment)
 // Inserts a new comment disagreeing on a certain post
 api.post('/commentdisagree', comCtrl.createComment)
 
-// Likes a comment made by a user
+// Likes or unlikes a comment made by a user
 api.post('/comment-like/:id', comCtrl.likeComment)
-// Unlikes a comment made by a user (previously liked)
-api.post('/comment-unlike/:id', comCtrl.likeComment)
 
 // Gets the most voted posts (5 of them)
 api.get('/order-temas', asideCtrl.orderTemas)

@@ -12,6 +12,7 @@ function search (req, res) {
     if (err){
       console.log(err)
     }
+    // Returns json
     res.send(results)
   })
 }

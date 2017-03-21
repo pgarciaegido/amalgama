@@ -168,7 +168,8 @@ function likeComment (req, res) {
       // Checks if comment is liked by the logged in user. If it is, unlike.
       Com.findById(commentId, function (err, com) {
         if (err) {
-          return console.log(err)
+          console.log(err)
+          return res.send('There is been an error checking comment.')
         }
 
         if(!com) {
