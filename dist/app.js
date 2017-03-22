@@ -27911,6 +27911,8 @@
 	    return shortPass;
 	  } else if (query === "eexists") {
 	    return emailExists;
+	  } else if (query === "cerrpass") {
+	    return currentPassInvalid;
 	  }
 	  return '';
 	}

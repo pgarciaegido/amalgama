@@ -7,6 +7,12 @@ module.exports = {
 // Edits user info (password and email)
 function editUser (req, res) {
   var id = req.params.id
+  var session = req.session.user_id
+
+  // If not logged in
+  if (!session) {
+    return res.send('You are not logged in.')
+  }
 
   var newEmail = req.body.email
   var newPass = req.body.new_password
@@ -17,6 +23,11 @@ function editUser (req, res) {
 
   User.findById(id, function (err, usr) {
     if (err) console.log(err)
+
+    // If user does not exist or user is not the same as session.
+    if (!usr || id !== session) {
+      return res.send('Error with user info. Access denied')
+    }
 
     // If email is not valid and its not empty, redirect and alert a message
     if (!u.validateEmail(newEmail) && newEmail !== ''){
@@ -41,28 +52,40 @@ function editUser (req, res) {
 
     // Passwords dont match
     else if (newPass !== newPassVal) {
-      res.redirect('/app/editar/' + usr.username + '?e=dif')
+      return res.redirect('/app/editar/' + usr.username + '?e=dif')
     }
 
     // If both password match and current password is user password
-    else if (newPass === newPassVal && currPass === usr.password){
-      // If the new email = user email
-      if (newEmail === usr.email) {
-        // Only update password
-        update = {$set: {password: newPass}}
-      } else {
-        // Otherwise, update both password and email
-        update = {$set: {email: newEmail, password: newPass}}
+    usr.comparePassword(currPass, function (err, isMatch) {
+      if (err) return console.log(err)
+
+      if (!isMatch){
+        return res.redirect('/app/editar/' + usr.username + '?e=cerrpass')
       }
-    }
-    // If update is not undefined, update the database with the query
-    if(update !== undefined){
-      User.findByIdAndUpdate(id, update, function (err, user) {
-        if (err) {
-          console.log('there is been an error updating the user: ' + err)
+
+      usr.encrypt(newPass, function(err, hashedPass) {
+        console.log('in practise --> ' + hashedPass)
+        // If the new email = user email
+        if (newEmail === usr.email) {
+          // Only update password
+          update = {$set: {password: '12345678'}}
+        } else {
+          // Otherwise, update both password and email
+          update = {$set: {email: newEmail, password: '12345678'}}
         }
-        res.redirect('/app/editar/' + user.username)
+        // If update is not undefined, update the database with the query
+        if(update !== undefined){
+          User.findByIdAndUpdate(id, update, function (err, user) {
+            if (err) {
+              console.log('there is been an error updating the user: ' + err)
+            }
+            res.redirect('/app/editar/' + user.username)
+          })
+        }
+        else{
+          res.send('Error, no update')
+        }
       })
-    }
+    })
   })
 }

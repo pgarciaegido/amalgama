@@ -1,6 +1,11 @@
 var User = require('../data/models/user').User // Collection User
 
+module.exports = {
+  getCurrentUser
+}
+
 function getCurrentUser (req, res) {
+  // Avoids showing password on the request
   var usersProjection = {
     password: false
   }
@@ -11,8 +16,4 @@ function getCurrentUser (req, res) {
     }
     res.send(user)
   })
-}
-
-module.exports = {
-  getCurrentUser
 }

@@ -49,6 +49,21 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     });
 };
 
+// ENCRYPT PASSWORD WHEN EDITING ===============================================
+
+UserSchema.methods.encrypt = function(password, callback) {
+  // generate a salt
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+      if (err) return next(err);
+
+      // hash the password along with our new salt
+      bcrypt.hash(password, salt, function(err, hash) {
+          if (err) return next(err);
+          callback(null, hash);
+      })
+  })
+}
+
 // Our collection in mongodb is named after the string (first param), but it turns
 // it to plural (adding S)
 var User = mongoose.model('User', UserSchema)
