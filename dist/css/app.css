@@ -1106,6 +1106,14 @@ body{
 	text-align: center;
 }
 
+.Usuario_editar_data-form-success{
+	margin-bottom: 15px;
+	color: #e13c42;
+	font-weight: 700;
+	text-align: center;
+	color: #7ace7a;
+}
+
 .Usuario_editar_data-form input[type="submit"]{
 	padding: 11px 30px;
 	border-radius: 7px;

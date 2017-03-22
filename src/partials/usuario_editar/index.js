@@ -10,6 +10,7 @@ page('/app/editar/:username', getCurrentUser, header, (ctx, next) => {
   const user = ctx.user
   const query = ctx.querystring
   const feedback = queryHandler(query)
+  console.log(feedback)
 
   const main = document.getElementById('main-container')
   $(main).empty().append(template(user, feedback))

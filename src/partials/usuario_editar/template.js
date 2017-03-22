@@ -22,6 +22,7 @@ function editarForm (user, feedback) {
       <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contraseña:<input name="validate_password" type="password" /></label>
       <label class="Usuario_editar_data-form-currentpass" for="">Contraseña actual:<input name="current_password" type="password" /></label>
       <div class="Usuario_editar_data-form-error">${feedback.e}</div>
+      <div class="Usuario_editar_data-form-success">${feedback.suc}</div>
       <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">
     </form>
   </div>`

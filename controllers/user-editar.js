@@ -31,12 +31,12 @@ function editUser (req, res) {
 
     // If email is not valid and its not empty, redirect and alert a message
     if (!u.validateEmail(newEmail) && newEmail !== ''){
-      res.redirect('/app/editar/' + usr.username + '?e=invalid')
+      return res.redirect('/app/editar/' + usr.username + '?e=invalid')
     }
 
     // If the whole form is empty, just redirect to the same page
     else if (newEmail === '' && newPass === '' && newPassVal === '' && currPass === '') {
-      res.redirect('/app/editar/' + usr.username)
+      return res.redirect('/app/editar/' + usr.username)
     }
 
     // Only modifying email
@@ -63,27 +63,27 @@ function editUser (req, res) {
         return res.redirect('/app/editar/' + usr.username + '?e=cerrpass')
       }
 
+      // method hosted in user model
       usr.encrypt(newPass, function(err, hashedPass) {
-        console.log('in practise --> ' + hashedPass)
+        if (err) return console.log(err)
+
         // If the new email = user email
         if (newEmail === usr.email) {
           // Only update password
-          update = {$set: {password: '12345678'}}
+          update = {$set: {password: hashedPass}}
         } else {
           // Otherwise, update both password and email
-          update = {$set: {email: newEmail, password: '12345678'}}
+          update = {$set: {email: newEmail, password: hashedPass}}
         }
+
         // If update is not undefined, update the database with the query
         if(update !== undefined){
           User.findByIdAndUpdate(id, update, function (err, user) {
             if (err) {
               console.log('there is been an error updating the user: ' + err)
             }
-            res.redirect('/app/editar/' + user.username)
+            return res.redirect('/app/editar/' + user.username + '/?suc=upsuccess')
           })
-        }
-        else{
-          res.send('Error, no update')
         }
       })
     })

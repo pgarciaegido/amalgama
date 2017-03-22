@@ -68,17 +68,17 @@
 
 	__webpack_require__(143);
 
-	__webpack_require__(147);
+	__webpack_require__(148);
 
-	__webpack_require__(156);
+	__webpack_require__(157);
 
-	__webpack_require__(158);
+	__webpack_require__(159);
 
-	__webpack_require__(160);
+	__webpack_require__(161);
 
-	__webpack_require__(165);
+	__webpack_require__(166);
 
-	__webpack_require__(167);
+	__webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27853,6 +27853,8 @@
 
 	var _error_messages = __webpack_require__(146);
 
+	var _sucess_messages = __webpack_require__(147);
+
 	module.exports = function queryHandler(query) {
 	  if (query === '') return '';
 
@@ -27870,6 +27872,10 @@
 	  if (feedback.e) {
 	    feedback.e = (0, _error_messages.errorMessage)(feedback.e);
 	  }
+	  // Same with success messages
+	  else if (feedback.suc) {
+	      feedback.suc = (0, _sucess_messages.successMessage)(feedback.suc);
+	    }
 
 	  return feedback;
 	};
@@ -27919,6 +27925,24 @@
 
 /***/ },
 /* 147 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	  successMessage: successMessage
+	};
+
+	var sucUpdated = "¡Sus datos han sido actualizados correctamente!";
+
+	function successMessage(query) {
+	  if (query === "upsuccess") {
+	    return sucUpdated;
+	  }
+	}
+
+/***/ },
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27935,7 +27959,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(148);
+	var _template = __webpack_require__(149);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -27947,11 +27971,11 @@
 
 	var _get_percentage2 = _interopRequireDefault(_get_percentage);
 
-	var _comments = __webpack_require__(150);
+	var _comments = __webpack_require__(151);
 
 	var _comments2 = _interopRequireDefault(_comments);
 
-	var _modules = __webpack_require__(149);
+	var _modules = __webpack_require__(150);
 
 	var _ajax = __webpack_require__(141);
 
@@ -27978,7 +28002,7 @@
 	  (0, _jquery2.default)(document).ready(function () {
 	    (0, _get_percentage2.default)();
 	    __webpack_require__(142);
-	    __webpack_require__(151);
+	    __webpack_require__(152);
 	  });
 
 	  // coger id de la url para pedir ese post al json
@@ -28001,7 +28025,7 @@
 	}, _aside2.default);
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28016,7 +28040,7 @@
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _modules = __webpack_require__(149);
+	var _modules = __webpack_require__(150);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28033,7 +28057,7 @@
 	};
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28174,7 +28198,7 @@
 	}
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28196,7 +28220,7 @@
 	}
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28205,9 +28229,9 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(149);
+	var _modules = __webpack_require__(150);
 
-	var _votesLiked = __webpack_require__(152);
+	var _votesLiked = __webpack_require__(153);
 
 	var _votesLiked2 = _interopRequireDefault(_votesLiked);
 
@@ -28215,15 +28239,15 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _comments_events_functions = __webpack_require__(153);
+	var _comments_events_functions = __webpack_require__(154);
 
 	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
 
-	var _comments_events_vars = __webpack_require__(154);
+	var _comments_events_vars = __webpack_require__(155);
 
 	var _comments_events_vars2 = _interopRequireDefault(_comments_events_vars);
 
-	var _comments_events_sort = __webpack_require__(155);
+	var _comments_events_sort = __webpack_require__(156);
 
 	var _comments_events_sort2 = _interopRequireDefault(_comments_events_sort);
 
@@ -28255,7 +28279,7 @@
 	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28293,7 +28317,7 @@
 	};
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28302,9 +28326,9 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(149);
+	var _modules = __webpack_require__(150);
 
-	var _votesLiked = __webpack_require__(152);
+	var _votesLiked = __webpack_require__(153);
 
 	var _votesLiked2 = _interopRequireDefault(_votesLiked);
 
@@ -28341,7 +28365,7 @@
 	// Calls createShow
 	// Gives the 'open' comment button an id so now is used to closeit
 	function commentAgree() {
-	  var v = __webpack_require__(154);
+	  var v = __webpack_require__(155);
 	  createShow(v.createAgree, v.commentsAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-closeagree');
 	  v.comentarAgree.html('Cerrar');
@@ -28349,7 +28373,7 @@
 
 	// Opens input in disagree
 	function commentDisagree() {
-	  var v = __webpack_require__(154);
+	  var v = __webpack_require__(155);
 	  createShow(v.createDisagree, v.commentsDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-closedisagree');
 	  v.comentarDisagree.html('Cerrar');
@@ -28366,14 +28390,14 @@
 	}
 
 	function commentCloseAgree() {
-	  var v = __webpack_require__(154);
+	  var v = __webpack_require__(155);
 	  createHide(v.createAgree, v.commentsAgree, v.textAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-agree');
 	  v.comentarAgree.html('Comentar');
 	}
 
 	function commentCloseDisagree() {
-	  var v = __webpack_require__(154);
+	  var v = __webpack_require__(155);
 	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-disagree');
 	  v.comentarDisagree.html('Comentar');
@@ -28388,7 +28412,7 @@
 
 	// ---- $commentsMobile is an array of dom elements.
 	function commentsMobileInside(ev) {
-	  var v = __webpack_require__(154);
+	  var v = __webpack_require__(155);
 	  if ((0, _jquery2.default)(ev.target).attr('class').indexOf('disagree') !== -1) {
 	    if (disagreeOpened === false || disagreeOpened === undefined) {
 	      (0, _jquery2.default)(v.commentsMobile[3]).css('display', 'flex');
@@ -28417,7 +28441,7 @@
 	}
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28456,7 +28480,7 @@
 	};
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28465,15 +28489,15 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _modules = __webpack_require__(149);
+	var _modules = __webpack_require__(150);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Reappends another array with reordered comments, date or likes
 	module.exports = function sort(e) {
 	  // Require DOM elements and comments
-	  var v = __webpack_require__(154);
-	  var c = __webpack_require__(147);
+	  var v = __webpack_require__(155);
+	  var c = __webpack_require__(148);
 
 	  var thisData = (0, _jquery2.default)(this).attr('data-side'); //agree / disagree
 	  var thisSort = (0, _jquery2.default)(this).attr('data-sort'); // date / likes
@@ -28511,7 +28535,7 @@
 	}
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28528,7 +28552,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(157);
+	var _template = __webpack_require__(158);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28551,7 +28575,7 @@
 	});
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28571,7 +28595,7 @@
 	};
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28588,7 +28612,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(159);
+	var _template = __webpack_require__(160);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28615,7 +28639,7 @@
 	}, _aside2.default);
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28650,7 +28674,7 @@
 	}
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28667,13 +28691,13 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(161);
+	var _template = __webpack_require__(162);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _modules = __webpack_require__(163);
+	var _modules = __webpack_require__(164);
 
-	var _comments = __webpack_require__(150);
+	var _comments = __webpack_require__(151);
 
 	var _comments2 = _interopRequireDefault(_comments);
 
@@ -28698,7 +28722,7 @@
 			// Header events
 			__webpack_require__(142);
 			// Sorting comments events
-			__webpack_require__(164);
+			__webpack_require__(165);
 		});
 
 		module.exports = {
@@ -28708,7 +28732,7 @@
 	});
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28721,11 +28745,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(162);
+	var _comments_card = __webpack_require__(163);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(163);
+	var _modules = __webpack_require__(164);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28751,7 +28775,7 @@
 	}
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28775,7 +28799,7 @@
 	};
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28791,7 +28815,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(162);
+	var _comments_card = __webpack_require__(163);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -28850,7 +28874,7 @@
 	}
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28859,18 +28883,18 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(160);
+	var _index = __webpack_require__(161);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _modules = __webpack_require__(163);
+	var _modules = __webpack_require__(164);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Changes the comments to be sorted by date
 	var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
 	buttonDate.on('click', function (e) {
-	  var c = __webpack_require__(160);
+	  var c = __webpack_require__(161);
 	  clickSort(e, c.userComments);
 
 	  buttonDate.addClass('sort-comments-active');
@@ -28880,7 +28904,7 @@
 	// Changes the comments to be sorted by likes
 	var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
 	buttonLikes.on('click', function (e) {
-	  var c = __webpack_require__(160);
+	  var c = __webpack_require__(161);
 	  clickSort(e, c.userCommentsLikes);
 
 	  buttonLikes.addClass('sort-comments-active');
@@ -28894,7 +28918,7 @@
 	}
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28911,7 +28935,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(166);
+	var _template = __webpack_require__(167);
 
 	var _query_handler = __webpack_require__(145);
 
@@ -28926,19 +28950,20 @@
 	  var user = ctx.user;
 	  var query = ctx.querystring;
 	  var feedback = (0, _query_handler2.default)(query);
+	  console.log(feedback);
 
 	  var main = document.getElementById('main-container');
 	  (0, _jquery2.default)(main).empty().append((0, _template.template)(user, feedback));
 	});
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    ', '\n  </div>'], ['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    ', '\n  </div>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']);
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <div class="Usuario_editar_data-form-success">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <div class="Usuario_editar_data-form-success">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']);
 
 	var _yoYo = __webpack_require__(12);
 
@@ -28959,11 +28984,11 @@
 	// uses methodOverride to PUT a POST form. Notice the query ?_method=put
 	// IMPORTANT it looks that it doesnt work if there is another query
 	function editarForm(user, feedback) {
-	  return (0, _yoYo2.default)(_templateObject2, user._id, user.email, feedback.e);
+	  return (0, _yoYo2.default)(_templateObject2, user._id, user.email, feedback.e, feedback.suc);
 	}
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
