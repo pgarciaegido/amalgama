@@ -4,7 +4,7 @@ var userCtrl = require('../controllers/user')
 var comCtrl = require('../controllers/comments')
 var asideCtrl = require('../controllers/aside')
 var searchCtrl = require('../controllers/search')
-var renderCreate = require('../controllers/render').renderCreate
+var render = require('../controllers/render')
 var editUser = require('../controllers/user-editar')
 
 var sessionMiddleware = require('../middlewares/session') // middleware to ensure that user is logged in
@@ -16,9 +16,11 @@ api.get('/news', newsCtrl.getNews)
 // Gets and specific post by its mongo_id
 api.get('/news/:id', newsCtrl.getNew)
 // Renders a form to fill a new post
-api.get('/create-new', renderCreate)
+api.get('/create-new', render.renderCreate)
 // Creates an instance on db with new post
 api.post('/createnew', newsCtrl.createNew)
+// Renders modify post
+api.get('/modifynew/:id', render.renderEdit)
 // Modify certain post
 api.put('/modifynew/:id', newsCtrl.modifyNew)
 // Delete certain post

@@ -1,0 +1,40 @@
+.Post_handle{
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+
+  h1{
+    text-align: center;
+  }
+
+  form{
+    input, textarea{
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    .tags-alert{
+      box-sizing: border-box;
+      padding: 10px;
+      background-color: #FAAD97;
+    }
+
+    .tags{
+      display: flex;
+
+      .first-column{
+        margin-right: 10px;
+      }
+    }
+
+    input[type="checkbox"]{
+      width: auto;
+    }
+
+    .available-media{
+      background-color: #ccc;
+      padding: 5px;
+    }
+  }
+}

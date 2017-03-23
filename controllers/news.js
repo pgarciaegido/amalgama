@@ -76,13 +76,14 @@ function modifyNew (req, res) {
   }
 
   else {
+    var postId = req.params.id
     var update = req.body
 
-    Post.findByIdAndUpdate(req.params.id, update, function (err, post) {
+    Post.findByIdAndUpdate(postId, update, function (err, post) {
       if (err) {
         return console.log('Ha habido un error' + err)
       }
-      res.redirect('/api/news')
+      res.redirect('/api/news/' + postId)
     })
   }
 }

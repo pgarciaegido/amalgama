@@ -62,6 +62,8 @@
 @import './partials/aside/aside_subscribe';
 @import './partials/aside/aside_profile';
 
+/* Post handle (create and edit new posts)*/
+@import './partials/post_handle/post_handle';
 
 /*Components*/
 

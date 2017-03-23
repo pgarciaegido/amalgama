@@ -16,7 +16,7 @@ var routerApi = require('./routes/api')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs')
 
 // Serve the DIST folder
 app.use(express.static('dist'))
