@@ -19,7 +19,7 @@ $(document).ready(() => {
   // Little delay so it shows fully rendered.
   setTimeout(() => {
     hideLoader()
-  }, 150)
+  }, 200)
 
 })
 

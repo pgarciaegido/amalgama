@@ -76,7 +76,7 @@ function getCommentsDisagree (ctx, next) {
 
 function getSearch (ctx, next) {
   // Gets the query (if there is one)
-  // e.g. s="asturias" --> asturias
+  // e.g. s="asturias" --> asturies
   let query = ctx.querystring.split('=').pop()
   $.get(`/api/buscar/?s=${query}`, (data) => {
     ctx.query = query
