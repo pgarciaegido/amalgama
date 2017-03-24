@@ -78,7 +78,13 @@ function getSearch (ctx, next) {
   // Gets the query (if there is one)
   // e.g. s="asturias" --> asturies
   let query = ctx.querystring.split('=').pop()
-  $.get(`/api/buscar/?s=${query}`, (data) => {
+  // Gets the path: categoria or buscar
+  let path = ctx.pathname.split('/')[2]
+
+  let route = path === 'buscar' ? `/api/buscar/?s=${query}`
+                                : `/api/categoria/?s=${query}`
+
+  $.get(route, (data) => {
     ctx.query = query
     ctx.search = data
     next()

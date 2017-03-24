@@ -75,29 +75,30 @@ function signup (req, res) {
 // LOGIN =======================================================================
 
 function login (req, res) {
-
+  var username = req.body.username
+  var password = req.body.password
   // Find user by username
-  User.findOne({username: req.body.username}, function (err, user) {
+  User.findOne({username: username}, function (err, user) {
     if (!user) {
       console.log(err)
       // If there is no user with that name, returns error message
-      res.redirect('/accede?e=nouser?u=' + req.body.username)
+      return res.redirect('/accede?e=nouser?u=' + username)
     } else {
       // comparePassword method defined in model. Returns true or false
-      user.comparePassword(req.body.password, function (err, isMatch) {
+      user.comparePassword(password, function (err, isMatch) {
         if (err){
           console.log(err)
-          res.redirect('/accede')
+          return res.redirect('/accede')
         }
         // If matches
         if(isMatch){
           // Cookies to remember user
           req.session.user_id = user._id
-          res.redirect('/app')
+          return res.redirect('/app')
         }
         // If it doesnt match
         else{
-          res.redirect('/accede?e=errpass?u=' + user.username)
+          return res.redirect('/accede?e=errpass?u=' + user.username)
         }
       })
     }

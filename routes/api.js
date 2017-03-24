@@ -57,5 +57,6 @@ api.get('/currentuser', userCtrl.getCurrentUser)
 
 // Search page. It normally works like '/buscar/?s=something'
 api.get('/buscar', searchCtrl.search)
+api.get('/categoria', searchCtrl.search)
 
 module.exports = api
