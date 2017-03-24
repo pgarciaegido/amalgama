@@ -15,6 +15,7 @@ module.exports = function (date, tags) {
       </div>`
 }
 
+// Sets an anchor to go to
 function displayTags (tags) {
   return tags.map(function (tag) {
     return yo`<span class="Details-tags-text"><a href="/app/categoria/?s=${tag}">${tag}</a></span>`

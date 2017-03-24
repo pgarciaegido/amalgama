@@ -12653,6 +12653,7 @@
 	  return (0, _yoYo2.default)(_templateObject, (0, _date2.default)(date), displayTags(tags));
 	};
 
+	// Sets an anchor to go to
 	function displayTags(tags) {
 	  return tags.map(function (tag) {
 	    return (0, _yoYo2.default)(_templateObject2, tag, tag);
@@ -27898,12 +27899,14 @@
 	var emailInvalid = "El email es inválido. Revise que esté bien escrito.";
 	var emailSame = "El email introducido es el mismo que ya tiene su cuenta.";
 	var emailExists = "El email ya está registrado.";
+	var emailsDiffer = "Los emails introducidos no coinciden";
 	var passwordNotMatch = "Las contraseñas no coinciden. Revise que sean iguales.";
 	var currentPassInvalid = "La contraseña actual es incorrecta.";
 	var noUser = "El usuario introducido no existe.";
 	var errPass = "La contraseña es incorrecta.";
 	var userExists = "El usuario ya está registrado. Por favor, elija otro nombre";
 	var shortPass = "La contraseña tiene que tener más de 8 caracteres.";
+	var unknown = "Se ha producido un error desconocido. Por favor intentelo de nuevo más tarde.";
 
 	function errorMessage(query) {
 	  if (query === "invalid") {
@@ -27924,6 +27927,10 @@
 	    return emailExists;
 	  } else if (query === "cerrpass") {
 	    return currentPassInvalid;
+	  } else if (query === "edif") {
+	    return emailsDiffer;
+	  } else if (query === "unknown") {
+	    return unknown;
 	  }
 	  return '';
 	}
@@ -27996,7 +28003,6 @@
 	  var user = ctx.user;
 	  var commentsAgree = ctx.commentsAgree;
 	  var commentsDisagree = ctx.commentsDisagree;
-	  console.log(post);
 
 	  var commentsAgreeLikes = [];
 	  var commentsDisagreeLikes = [];
@@ -28079,7 +28085,7 @@
 	    _templateObject10 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
 	    _templateObject11 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
 	    _templateObject12 = _taggedTemplateLiteral(['\n  ', '\n  '], ['\n  ', '\n  ']),
-	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <img src="/img/cancel-circle-gray.svg" id="close-', '" class="Noticia_comentarios_list-comments-create-cancel" />\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
+	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
 	    _templateObject14 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
 	    _templateObject15 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n          <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>'], ['<form method="POST" action="/api/comment-like/', '">\n          <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>']),
 	    _templateObject16 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n    <input type="submit" value="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>'], ['<form method="POST" action="/api/comment-like/', '">\n    <input type="submit" value="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>']);
@@ -28643,7 +28649,6 @@
 	  var main = document.getElementById('main-container');
 	  var posts = ctx.search;
 	  var query = ctx.query;
-	  console.log(posts);
 	  (0, _jquery2.default)(main).empty().append(_template2.default.template(posts, query));
 	  next();
 	}
@@ -28655,7 +28660,7 @@
 	'use strict';
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="main" class="Search">\n    <h1 class="Search-title">Buscar</h1>\n    <h2 class="Search-subtitle">Resultados de: ', '</h2>\n    ', '\n  </div>\n'], ['<div id="main" class="Search">\n    <h1 class="Search-title">Buscar</h1>\n    <h2 class="Search-subtitle">Resultados de: ', '</h2>\n    ', '\n  </div>\n']),
-	    _templateObject2 = _taggedTemplateLiteral(['<a class="Search-card" href="/app/noticia/', '"><div class="Search-card-container">\n    <h3 class="Search-card-title">', '</h3>\n    <div class="Search-card-details">\n      <div class="Search-card-details-left">\n        <span class="Search-card-details-left-date">', '</span>\n        <span class="Search-card-details-left-votes">Votos: ', '</span>\n      </div>\n      <div class="Search-card-details-right">\n        <img src="/img/thumbs-up-green.svg" alt="" class="Search-card-details-right-up-img" />\n        <span class="Search-card-details-right-up-votes">', '</span>\n        <span>\xB7</span>\n        <span class="Search-card-details-right-down-votes">', '</span>\n        <img src="/img/thumbs-down-red.svg" alt="" class="Search-card-details-right-down-img" />\n      </div>\n    </div>\n  </div></a>'], ['<a class="Search-card" href="/app/noticia/', '"><div class="Search-card-container">\n    <h3 class="Search-card-title">', '</h3>\n    <div class="Search-card-details">\n      <div class="Search-card-details-left">\n        <span class="Search-card-details-left-date">', '</span>\n        <span class="Search-card-details-left-votes">Votos: ', '</span>\n      </div>\n      <div class="Search-card-details-right">\n        <img src="/img/thumbs-up-green.svg" alt="" class="Search-card-details-right-up-img" />\n        <span class="Search-card-details-right-up-votes">', '</span>\n        <span>\xB7</span>\n        <span class="Search-card-details-right-down-votes">', '</span>\n        <img src="/img/thumbs-down-red.svg" alt="" class="Search-card-details-right-down-img" />\n      </div>\n    </div>\n  </div></a>']);
+	    _templateObject2 = _taggedTemplateLiteral(['<a class="Search-card" href="/app/noticia/', '"><div class="Search-card-container">\n    <h3 class="Search-card-title">', '</h3>\n    <div class="Search-card-details">\n      <div class="Search-card-details-left">\n        <span class="Search-card-details-left-date">', '</span>\n        <span class="Search-card-details-left-votes">Votos: ', '</span>\n      </div>\n      <div class="Search-card-details-right">\n        <span class="Search-card-details-right-up-img"></span>\n        <span class="Search-card-details-right-up-votes">', '</span>\n        <span>\xB7</span>\n        <span class="Search-card-details-right-down-votes">', '</span>\n        <span class="Search-card-details-right-down-img"></span>\n      </div>\n    </div>\n  </div></a>'], ['<a class="Search-card" href="/app/noticia/', '"><div class="Search-card-container">\n    <h3 class="Search-card-title">', '</h3>\n    <div class="Search-card-details">\n      <div class="Search-card-details-left">\n        <span class="Search-card-details-left-date">', '</span>\n        <span class="Search-card-details-left-votes">Votos: ', '</span>\n      </div>\n      <div class="Search-card-details-right">\n        <span class="Search-card-details-right-up-img"></span>\n        <span class="Search-card-details-right-up-votes">', '</span>\n        <span>\xB7</span>\n        <span class="Search-card-details-right-down-votes">', '</span>\n        <span class="Search-card-details-right-down-img"></span>\n      </div>\n    </div>\n  </div></a>']);
 
 	var _yoYo = __webpack_require__(12);
 
@@ -28973,7 +28978,9 @@
 	'use strict';
 
 	var _templateObject = _taggedTemplateLiteral(['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    ', '\n  </div>'], ['<div id="usuario_editar" class="Usuario_editar">\n    <h1 class="Usuario_editar-title">', ': Editar perfil</h1>\n    ', '\n  </div>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <div class="Usuario_editar_data-form-success">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      <label class="Usuario_editar_data-form-email" for="">Correo electr\xF3nico:<input name="email" type="email" value="', '" /></label>\n      <label class="Usuario_editar_data-form-newpass" for="">Nueva contrase\xF1a:<input name="new_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-newpass2" for="">Repita la nueva contrase\xF1a:<input name="validate_password" type="password" /></label>\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual:<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <div class="Usuario_editar_data-form-success">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']);
+	    _templateObject2 = _taggedTemplateLiteral(['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      ', '\n      ', '\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual (obligatorio):<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <div class="Usuario_editar_data-form-success">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>'], ['<div class="Usuario_editar_data">\n    <h2 class="Usuario_editar_data-title">Mis datos</h2>\n    <form method="post" action="/api/editar-user/', '?_method=put" class="Usuario_editar_data-form">\n      ', '\n      ', '\n      <label class="Usuario_editar_data-form-currentpass" for="">Contrase\xF1a actual (obligatorio):<input name="current_password" type="password" /></label>\n      <div class="Usuario_editar_data-form-error">', '</div>\n      <div class="Usuario_editar_data-form-success">', '</div>\n      <input type="submit" class="Usuario_editar_data-form-submit" value="Actualizar">\n    </form>\n  </div>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<div class="Usuario_editar_data-form-email">\n    <label>Nuevo correo electr\xF3nico:\n      <input name="email" type="email"/>\n    </label>\n    <label>Confirmar nuevo correo:\n      <input name="verify_email" type="vemail" />\n    </label>\n  </div>'], ['<div class="Usuario_editar_data-form-email">\n    <label>Nuevo correo electr\xF3nico:\n      <input name="email" type="email"/>\n    </label>\n    <label>Confirmar nuevo correo:\n      <input name="verify_email" type="vemail" />\n    </label>\n  </div>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<div class="Usuario_editar_data-form-newpass">\n    <label>Nueva contrase\xF1a:\n      <input name="new_password" type="password"/>\n    </label>\n    <label>Repita la nueva contrase\xF1a:\n      <input name="validate_password" type="password"/>\n    </label>\n  </div>'], ['<div class="Usuario_editar_data-form-newpass">\n    <label>Nueva contrase\xF1a:\n      <input name="new_password" type="password"/>\n    </label>\n    <label>Repita la nueva contrase\xF1a:\n      <input name="validate_password" type="password"/>\n    </label>\n  </div>']);
 
 	var _yoYo = __webpack_require__(12);
 
@@ -28994,7 +29001,15 @@
 	// uses methodOverride to PUT a POST form. Notice the query ?_method=put
 	// IMPORTANT it looks that it doesnt work if there is another query
 	function editarForm(user, feedback) {
-	  return (0, _yoYo2.default)(_templateObject2, user._id, user.email, feedback.e, feedback.suc);
+	  return (0, _yoYo2.default)(_templateObject2, user._id, emailForm(), passwordForm(), feedback.e, feedback.suc);
+	}
+
+	function emailForm() {
+	  return (0, _yoYo2.default)(_templateObject3);
+	}
+
+	function passwordForm() {
+	  return (0, _yoYo2.default)(_templateObject4);
 	}
 
 /***/ },

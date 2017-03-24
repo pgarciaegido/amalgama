@@ -19,7 +19,6 @@ page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getComme
   const user = ctx.user
   const commentsAgree = ctx.commentsAgree
   const commentsDisagree = ctx.commentsDisagree
-  console.log(post)
 
   let commentsAgreeLikes = []
   let commentsDisagreeLikes = []

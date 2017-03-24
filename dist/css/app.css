@@ -515,11 +515,14 @@ body{
 }
 
 .Noticia_comentarios_list-comments-create-cancel{
+	background: no-repeat url(/img/sprite.svg) -30px -1px;
+	background-size: auto;
 	position: absolute;
-	bottom: 266px;
+	bottom: 255px;
 	z-index: 10;
 	right: 20px;
-	width: 20px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 }
 
@@ -1095,6 +1098,14 @@ body{
 	margin: 20px 0;
 }
 
+.Usuario_editar_data-form-email,
+		.Usuario_editar_data-form-newpass {
+	border: 2px solid #f1f1f1;
+	box-sizing: border-box;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
 .Usuario_editar_data-form-currentpass input{
 	margin-bottom: 15px;
 }
@@ -1205,17 +1216,17 @@ body{
 
 /*width: 150px;*/
 
-.Search-card-details-right img{
-	width: 16px;
-}
-
 .Search-card-details-right span{
 	padding-top: 5px;
 	font-weight: 700;
 }
 
 .Search-card-details-right-up-img{
-	padding-right: 10px;
+	background: no-repeat url(/img/sprite.svg) -154px -34px;
+	background-size: auto;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
 }
 
 .Search-card-details-right-up-votes{
@@ -1229,7 +1240,11 @@ body{
 }
 
 .Search-card-details-right-down-img{
-	padding-left: 10px;
+	margin-left: 10px;
+	background: no-repeat url(/img/sprite.svg) -130px -35px;
+	background-size: auto;
+	width: 20px;
+	height: 20px;
 }
 
 /*Aside*/

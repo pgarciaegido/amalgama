@@ -48,11 +48,14 @@
 			transition: .4s ease-in;
 
 			&-cancel{
+				background: no-repeat url(/img/sprite.svg) -30px -1px;
+    		background-size: auto;
 				position: absolute;
-		    bottom: 266px;
+		    bottom: 255px;
 		    z-index: 10;
 		    right: 20px;
-		    width: 20px;
+		    width: 30px;
+				height: 30px;
 		    cursor: pointer;
 			}
 

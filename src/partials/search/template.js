@@ -25,11 +25,11 @@ function card (post) {
         <span class="Search-card-details-left-votes">Votos: ${post.agreeVotes + post.disagreeVotes}</span>
       </div>
       <div class="Search-card-details-right">
-        <img src="/img/thumbs-up-green.svg" alt="" class="Search-card-details-right-up-img" />
+        <span class="Search-card-details-right-up-img"></span>
         <span class="Search-card-details-right-up-votes">${post.agreeVotes}</span>
         <span>·</span>
         <span class="Search-card-details-right-down-votes">${post.disagreeVotes}</span>
-        <img src="/img/thumbs-down-red.svg" alt="" class="Search-card-details-right-down-img" />
+        <span class="Search-card-details-right-down-img"></span>
       </div>
     </div>
   </div></a>`

@@ -26,6 +26,14 @@
 			}
 		}
 
+		&-email,
+		&-newpass {
+			border: 2px solid $gray-soft;
+			box-sizing: border-box;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+
 		&-currentpass{
 			input{
 				margin-bottom: 15px;

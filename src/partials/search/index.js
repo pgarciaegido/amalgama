@@ -20,7 +20,6 @@ function search (ctx, next) {
   let main = document.getElementById('main-container')
   let posts = ctx.search
   let query = ctx.query
-  console.log(posts)
   $(main).empty().append(template.template(posts, query))
   next()
 }

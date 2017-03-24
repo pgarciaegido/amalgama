@@ -54,9 +54,6 @@
         justify-content: space-between;
         /*width: 150px;*/
 
-        img{
-          width: 16px;
-        }
 
         span{
           padding-top: 5px;
@@ -66,7 +63,11 @@
         &-up{
 
           &-img{
-            padding-right: 10px;
+            background: no-repeat url(/img/sprite.svg) -154px -34px;
+            background-size: auto;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
           }
 
           &-votes{
@@ -83,7 +84,11 @@
           }
 
           &-img{
-            padding-left: 10px;
+            margin-left: 10px;
+            background: no-repeat url(/img/sprite.svg) -130px -35px;
+            background-size: auto;
+            width: 20px;
+            height: 20px;
           }
         }
       }
