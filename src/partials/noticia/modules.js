@@ -96,7 +96,7 @@ function noticiaComentariosAgree (n, u, cA) {
   return yo`<div class="Noticia_comentarios-comentarios-agree">
       <div class="Noticia_comentarios-comentarios-agree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
-        <img src="/img/arrow-green.svg" alt="" id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow" />
+        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>
         <div class="Noticia_comentarios-comentarios-agree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
           ${votingFormsAgree(n, u)}
@@ -116,7 +116,7 @@ function noticiaComentariosDisagree (n, u, cD) {
   return yo`<div class="Noticia_comentarios-comentarios-disagree">
       <div class="Noticia_comentarios-comentarios-disagree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
-        <img src="/img/arrow-red.svg" alt="" id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow" />
+        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>
         <div class="Noticia_comentarios-comentarios-disagree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
           ${votingFormsDisagree(n, u)}

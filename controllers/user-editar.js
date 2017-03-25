@@ -60,7 +60,7 @@ function editUser (req, res) {
   // *********** CHECKING USER EXISTS AND EXISTING PASSWORD  *****************
 
   var update
-  console.log('llega0')
+
   User.findById(id, function (err, usr) {
     if (err) console.log(err)
 

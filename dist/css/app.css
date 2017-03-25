@@ -295,6 +295,8 @@ body{
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
+/*********************************** AGREE *******************************/
+
 .Noticia_comentarios-comentarios-agree{
 	width: 50%;
 	padding-right: 30px;
@@ -348,6 +350,8 @@ body{
 	cursor: pointer;
 	background: no-repeat url(/img/sprite.svg) -63px -61px;
 }
+
+/******************************** DISAGREE ******************************/
 
 .Noticia_comentarios-comentarios-disagree{
 	width: 50%;
@@ -2157,6 +2161,7 @@ body{
 
 	.Noticia_comentarios-comentarios-agree-header-votes-counter{
 		font-size: 1.1em;
+		padding-right: 10px;
 	}
 
 	.Noticia_comentarios-comentarios-disagree-header-title{
@@ -2165,6 +2170,7 @@ body{
 
 	.Noticia_comentarios-comentarios-disagree-header-votes-counter{
 		font-size: 1.1em;
+		padding-right: 10px;
 	}
 
 	.Usuario_main_comments-stats{
@@ -2201,6 +2207,7 @@ body{
 
 	.Noticia_comentarios-comentarios-agree{
 		margin-bottom: 30px;
+		position: relative;
 		width: 100%;
 		padding-right: 0;
 		padding: 0 15px;
@@ -2211,6 +2218,7 @@ body{
 
 	.Noticia_comentarios-comentarios-agree-header{
 		margin-bottom: 30px;
+		position: relative;
 		width: 100%;
 		padding-right: 0;
 		padding: 0 15px;
@@ -2222,11 +2230,19 @@ body{
 
 	.Noticia_comentarios-comentarios-agree-header-arrow{
 		display: block;
-		padding: 0 30px;
+		position: absolute;
+		right: calc(50% - 30px);
+		top: calc(50% - 10px);
+		background: no-repeat url(/img/sprite.svg) -104px -62px;
+		background-size: auto;
+		height: 20px;
+		width: 30px;
+		cursor: pointer;
 	}
 
 	.Noticia_comentarios-comentarios-disagree{
 		margin-bottom: 30px;
+		position: relative;
 		width: 100%;
 		padding-right: 0;
 		padding: 0 15px;
@@ -2237,6 +2253,7 @@ body{
 
 	.Noticia_comentarios-comentarios-disagree-header{
 		margin-bottom: 30px;
+		position: relative;
 		width: 100%;
 		padding-right: 0;
 		padding: 0 15px;
@@ -2248,7 +2265,14 @@ body{
 
 	.Noticia_comentarios-comentarios-disagree-header-arrow{
 		display: block;
-		padding: 0 30px;
+		position: absolute;
+		right: calc(50% - 30px);
+		top: calc(50% - 10px);
+		background: no-repeat url(/img/sprite.svg) -104px -79px;
+		background-size: auto;
+		height: 20px;
+		width: 30px;
+		cursor: pointer;
 	}
 
 	.Noticia_comentarios_list-order{

@@ -160,6 +160,7 @@
 
 @define-mixin commentsHeaderMobile{
 	margin-bottom: $margin2-mobile;
+	position: relative;
 	width: 100%;
 	padding-right: 0;
 	padding: 0 $margin3-mobile;

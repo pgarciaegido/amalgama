@@ -15,6 +15,7 @@
 			display: block;
 		}
 
+		/*********************************** AGREE *******************************/
 		&-agree{
 			width: 50%;
 			padding-right: 30px;
@@ -46,7 +47,14 @@
 
 					@media (--mobile-big){
 						display: block;
-						padding: 0 30px;
+						position: absolute;
+						right: calc(50% - 30px);
+						top: calc(50% - 10px);
+						background: no-repeat url(/img/sprite.svg) -104px -62px;
+    				background-size: auto;
+    				height: 20px;
+    				width: 30px;
+  				  cursor: pointer;
 					}
 				}
 
@@ -59,6 +67,7 @@
 
 						@media(--mobile-small){
 							font-size: 1.1em;
+							padding-right: 10px;
 						}
 					}
 
@@ -80,7 +89,7 @@
 
 			}
 		}
-
+		/******************************** DISAGREE ******************************/
 		&-disagree{
 			width: 50%;
 			padding-left: 30px;
@@ -111,7 +120,14 @@
 
 					@media (--mobile-big){
 						display: block;
-						padding: 0 30px;
+						position: absolute;
+						right: calc(50% - 30px);
+						top: calc(50% - 10px);
+						background: no-repeat url(/img/sprite.svg) -104px -79px;
+    				background-size: auto;
+    				height: 20px;
+    				width: 30px;
+  				  cursor: pointer;
 					}
 				}
 
@@ -124,6 +140,7 @@
 
 						@media(--mobile-small){
 							font-size: 1.1em;
+							padding-right: 10px;
 						}
 					}
 
