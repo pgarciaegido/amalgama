@@ -69,14 +69,14 @@ function commentCloseDisagree () {
 }
 
 // ----- Open Comments on Mobile
-function commentsMobile (ev) {
-  let agreeOpened
-  let disagreeOpened
-  commentsMobileInside(ev)
-}
 
+let disagreeOpened
+let agreeOpened
 // ---- $commentsMobile is an array of dom elements.
-function commentsMobileInside (ev) {
+// commentsMobile[0] && [3] is HEADER
+// commentsMobile[1] && [4] is CONTAINER
+// commentsMobile[2] && [5] is COMMENT BUTTON
+function commentsMobile (ev) {
   var v = require('./comments_events_vars')
   if ($(ev.target).attr('class').indexOf('disagree') !== -1) {
     if (disagreeOpened === false || disagreeOpened === undefined) {

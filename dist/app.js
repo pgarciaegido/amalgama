@@ -28415,14 +28415,14 @@
 	}
 
 	// ----- Open Comments on Mobile
-	function commentsMobile(ev) {
-	  var agreeOpened = void 0;
-	  var disagreeOpened = void 0;
-	  commentsMobileInside(ev);
-	}
 
+	var disagreeOpened = void 0;
+	var agreeOpened = void 0;
 	// ---- $commentsMobile is an array of dom elements.
-	function commentsMobileInside(ev) {
+	// commentsMobile[0] && [3] is HEADER
+	// commentsMobile[1] && [4] is CONTAINER
+	// commentsMobile[2] && [5] is COMMENT BUTTON
+	function commentsMobile(ev) {
 	  var v = __webpack_require__(155);
 	  if ((0, _jquery2.default)(ev.target).attr('class').indexOf('disagree') !== -1) {
 	    if (disagreeOpened === false || disagreeOpened === undefined) {
