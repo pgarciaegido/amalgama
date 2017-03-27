@@ -12,7 +12,13 @@ function renderIndex (req, res) {
 }
 
 function renderCreate (req, res) {
-  res.render('createPost')
+  // Empty variables so templates work correctly.
+  res.render('createPost',
+              {id: '',
+               title: '',
+               subtitle: '',
+               tags: '',
+               media: ''})
 }
 
 // Renders edit form with post info ============================================

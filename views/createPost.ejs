@@ -1,76 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Amalgama</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700,700i|Roboto:400,700" rel="stylesheet">
-  </head>
+<%- include header -%>
   <body>
     <div class="Post_handle">
       <h1>Create new Post</h1>
       <h2 class="error"></h2>
-      <form method="POST" action="/api/createnew">
-        <label>Title<br/>
-          <input type="text" name="title"/>
-        </label><br/>
-        <label>Subtitle<br/>
-          <textarea type="text" name="subtitle"/></textarea><br/>
-        </label>
-        <label>Password
-          <input type="password" name="password" placeholder="password"/><br/>
-        </label>
+        <!-- title - subtitle - password -->
+        <%- include ./create_edit-form/form-title_subtitle_pass %>
         <!-- TAGS -->
-        <h3>Tags (serán las etiquetas de la noticia)</h3>
-        <div class="tags">
-          <div class="first-column">
-            <label>Espana
-              <input type="checkbox" name="tags" value="España"/><br/>
-            </label>
-            <label>Internacional
-              <input type="checkbox" name="tags" value="Internacional"/><br/>
-            </label>
-            <label>Francia
-              <input type="checkbox" name="tags" value="Francia"/><br/>
-            </label>
-            <label>Europa
-              <input type="checkbox" name="tags" value="Europa"/><br/>
-            </label>
-            <label>China
-              <input type="checkbox" name="tags" value="China"/><br/>
-            </label>
-            <label>Oriente Medio
-              <input type="checkbox" name="tags" value="Oriente Medio"/><br/>
-            </label>
-          </div>
-          <div class="second-column">
-            <label>Reino Unido
-              <input type="checkbox" name="tags" value="Reino Unido"/><br/>
-            </label>
-            <label>Africa
-              <input type="checkbox" name="tags" value="Africa"/><br/>
-            </label>
-            <label>Rusia
-              <input type="checkbox" name="tags" value="Rusia"/><br/>
-            </label>
-            <label>Madrid
-              <input type="checkbox" name="tags" value="Madrid"/><br/>
-            </label>
-            <label>Alemania
-              <input type="checkbox" name="tags" value="Alemania"/><br/>
-            </label>
-            <label>Italia
-              <input type="checkbox" name="tags" value="Italia"/><br/>
-            </label>
-          </div>
-        </div>
-        <!-- / TAGS -->
-        <h3>Medios</h3>
-        <h5 class="available-media">Disponibles (usar este nombre): abc, bild, corriere-della-sera, elmundo, elpais, larazon, la-republica, le-figaro, le-monde, the-daily-telegraph, the-guardian, the-new-york-times, the-washington-post, usa-today</h5>
-        <textarea type="text" name="media" placeholder="{&quot;elpais&quot;: &quot;url&quot;, &quot;elmundo&quot;: &quot;url&quot;...}"></textarea><br/>
-        <input type="submit" value="Subelo"/>
-      </form>
+        <%- include ./create_edit-form/form-tags %>
+        <!-- media -->
+        <%- include ./create_edit-form/form-media %>
     </div>
-  </body>
-</html>
+<%- include footer -%>
