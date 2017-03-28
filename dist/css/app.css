@@ -334,6 +334,7 @@ body{
 /* Agree icons*/
 
 .Noticia_comentarios-comentarios-agree-header-votes-icon{
+	margin-top: 16px;
 	border: none;
 	background-size: auto;
 	width: 35px;
@@ -343,6 +344,7 @@ body{
 }
 
 .Noticia_comentarios-comentarios-agree-header-votes-icon-liked{
+	margin-top: 16px;
 	border: none;
 	background-size: auto;
 	width: 35px;
@@ -390,6 +392,7 @@ body{
 /* Disagree icons*/
 
 .Noticia_comentarios-comentarios-disagree-header-votes-icon{
+	margin-top: 16px;
 	border: none;
 	background-size: auto;
 	width: 35px;
@@ -399,6 +402,7 @@ body{
 }
 
 .Noticia_comentarios-comentarios-disagree-header-votes-icon-liked{
+	margin-top: 16px;
 	border: none;
 	background-size: auto;
 	width: 35px;
@@ -439,6 +443,72 @@ body{
 #comentar-closedisagree{
 	color: #e13c42;
 	border: 2px solid #e13c42;
+}
+
+/* SMALL LOADER */
+
+#like-post-loader{
+  font-size: 10px;
+  margin-top: 25px;
+  text-indent: -9999em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: #5b86ff;
+  background: -webkit-linear-gradient(left, #5b86ff 10%, rgba(91, 203, 255, 0) 42%);
+  background: linear-gradient(to right, #5b86ff 10%, rgba(91, 203, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#like-post-loader:before {
+  width: 50%;
+  height: 50%;
+  background: #5b86ff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+#like-post-loader:after {
+  background: white;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .Noticia_comentarios_list-order{

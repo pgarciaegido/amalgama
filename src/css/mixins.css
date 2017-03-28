@@ -92,6 +92,7 @@
 }
 
 @define-mixin likePostSprite {
+	margin-top: 16px;
 	border: none;
 	background-size: auto;
 	width: 35px;

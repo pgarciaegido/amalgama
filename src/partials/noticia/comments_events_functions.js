@@ -109,20 +109,24 @@ function commentsMobile (ev) {
 
 // AJAX calls to vote in the background without refreshing with a form!
 function ajaxVote () {
-  const thumbupLiked = yo`<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>`
-  const thumbup      = yo`<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>`
-
+  // Thumbup and thumbup-liked buttons
+  const thumbupLiked   = yo`<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>`
+  const thumbup        = yo`<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>`
+  // Thumbdown and thumbdown-liked buttons
   const thumbdownLiked = yo`<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>`
   const thumbdown      = yo`<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>`
+  // Loader
+  const loader         = yo`<span id="like-post-loader"></span>`
 
   let id = $(this).attr('id')
-  let uri, $hide, $show, $container
+  let uri, $hide, $show, $container, operation
   // Depending on clicked button, creates logics
   if (id === 'thumbup'){
     uri = 'upvote'
     $hide = $('#thumbup')
     $show = thumbupLiked
     $container = $('#agree-votes-container')
+    operation = 1
   }
 
   else if (id === 'thumbup-liked'){
@@ -130,6 +134,7 @@ function ajaxVote () {
     $hide = $('#thumbup-liked')
     $show = thumbup
     $container = $('#agree-votes-container')
+    operation = -1
   }
 
   else if (id === 'thumbdown'){
@@ -137,6 +142,7 @@ function ajaxVote () {
     $hide = $('#thumbdown')
     $show = thumbdownLiked
     $container = $('#disagree-votes-container')
+    operation = 1
   }
 
   else if (id === 'thumbdown-liked'){
@@ -144,11 +150,25 @@ function ajaxVote () {
     $hide = $('#thumbdown-liked')
     $show = thumbdown
     $container = $('#disagree-votes-container')
+    operation = -1
   }
 
-  $.post(`/api/${uri}`, (data) => {
-    console.log(data)
-    $hide.remove()
+  // Includes loader and gets counter number
+  $hide.remove()
+  $container.append(loader)
+  let $counter = $container.find('.post-counter')
+
+  // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter
+  // data sends the number of likes before updating
+  $.post(`/apdjasfi/${uri}`, (data) => {
+    $(loader).remove()
     $container.append($show)
+    $counter.html(Number(data) + Number(operation))
+  })
+  //handles error. Logs error and reset previus icon
+  .fail((response) => {
+    console.log(response.responseText)
+    $(loader).remove()
+    $container.append($hide)
   })
 }

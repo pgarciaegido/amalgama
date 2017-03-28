@@ -90,7 +90,7 @@ function noticiaComentariosAgree (n, u, cA) {
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
         <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>
         <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">
-          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
+          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter post-counter">${n.agreeVotes}</h2>
           ${votingPicsAgree(n, u)}
         </div>
       </div>
@@ -110,7 +110,7 @@ function noticiaComentariosDisagree (n, u, cD) {
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
         <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>
         <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">
-          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
+          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter post-counter">${n.disagreeVotes}</h2>
           ${votingPicsDisagree(n, u)}
         </div>
       </div>

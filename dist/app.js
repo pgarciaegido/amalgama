@@ -28081,8 +28081,8 @@
 	    _templateObject6 = _taggedTemplateLiteral(['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>'], ['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>']),
 	    _templateObject7 = _taggedTemplateLiteral(['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>'], ['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>']),
 	    _templateObject8 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']),
-	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
-	    _templateObject10 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
+	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter post-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter post-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
+	    _templateObject10 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter post-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter post-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
 	    _templateObject11 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
 	    _templateObject12 = _taggedTemplateLiteral(['\n  ', '\n  '], ['\n  ', '\n  ']),
 	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
@@ -28342,7 +28342,8 @@
 	var _templateObject = _taggedTemplateLiteral(['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>'], ['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>'], ['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>'], ['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']);
+	    _templateObject4 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<span id="like-post-loader"></span>'], ['<span id="like-post-loader"></span>']);
 
 	var _jquery = __webpack_require__(5);
 
@@ -28471,44 +28472,65 @@
 
 	// AJAX calls to vote in the background without refreshing with a form!
 	function ajaxVote() {
+	  // Thumbup and thumbup-liked buttons
 	  var thumbupLiked = (0, _yoYo2.default)(_templateObject);
 	  var thumbup = (0, _yoYo2.default)(_templateObject2);
-
+	  // Thumbdown and thumbdown-liked buttons
 	  var thumbdownLiked = (0, _yoYo2.default)(_templateObject3);
 	  var thumbdown = (0, _yoYo2.default)(_templateObject4);
+	  // Loader
+	  var loader = (0, _yoYo2.default)(_templateObject5);
 
 	  var id = (0, _jquery2.default)(this).attr('id');
 	  var uri = void 0,
 	      $hide = void 0,
 	      $show = void 0,
-	      $container = void 0;
+	      $container = void 0,
+	      operation = void 0;
 	  // Depending on clicked button, creates logics
 	  if (id === 'thumbup') {
 	    uri = 'upvote';
 	    $hide = (0, _jquery2.default)('#thumbup');
 	    $show = thumbupLiked;
 	    $container = (0, _jquery2.default)('#agree-votes-container');
+	    operation = 1;
 	  } else if (id === 'thumbup-liked') {
 	    uri = 'unupvote';
 	    $hide = (0, _jquery2.default)('#thumbup-liked');
 	    $show = thumbup;
 	    $container = (0, _jquery2.default)('#agree-votes-container');
+	    operation = -1;
 	  } else if (id === 'thumbdown') {
-	    uri = 'undownvote';
+	    uri = 'downvote';
 	    $hide = (0, _jquery2.default)('#thumbdown');
 	    $show = thumbdownLiked;
 	    $container = (0, _jquery2.default)('#disagree-votes-container');
+	    operation = 1;
 	  } else if (id === 'thumbdown-liked') {
 	    uri = 'undownvote';
 	    $hide = (0, _jquery2.default)('#thumbdown-liked');
 	    $show = thumbdown;
 	    $container = (0, _jquery2.default)('#disagree-votes-container');
+	    operation = -1;
 	  }
 
-	  _jquery2.default.post('/api/' + uri, function (data) {
-	    console.log(data);
-	    $hide.remove();
+	  // Includes loader and gets counter number
+	  $hide.remove();
+	  $container.append(loader);
+	  var $counter = $container.find('.post-counter');
+
+	  // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter
+	  // data sends the number of likes before updating
+	  _jquery2.default.post('/apdjasfi/' + uri, function (data) {
+	    (0, _jquery2.default)(loader).remove();
 	    $container.append($show);
+	    $counter.html(Number(data) + Number(operation));
+	  })
+	  //handles error. Logs error and reset previus icon
+	  .fail(function (response) {
+	    console.log(response.responseText);
+	    (0, _jquery2.default)(loader).remove();
+	    $container.append($hide);
 	  });
 	}
 
