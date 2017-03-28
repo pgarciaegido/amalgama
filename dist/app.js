@@ -28077,12 +28077,12 @@
 	    _templateObject2 = _taggedTemplateLiteral(['<section class="Noticia_informate">\n    <h2 class="Noticia_informate-encabezado">Inf\xF3rmate</h2>\n    <div class="Noticia_informate-media">\n    ', '\n    </div>\n  </section>'], ['<section class="Noticia_informate">\n    <h2 class="Noticia_informate-encabezado">Inf\xF3rmate</h2>\n    <div class="Noticia_informate-media">\n    ', '\n    </div>\n  </section>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<a target="_blank" class="Noticia_informate-media-item" href="', '">\n    <div><img src="/img/media/', '.svg" alt="', '" /></div>\n  </a>'], ['<a target="_blank" class="Noticia_informate-media-item" href="', '">\n    <div><img src="/img/media/', '.svg" alt="', '" /></div>\n  </a>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<section class="Noticia_comentarios">\n    <h2 class="Noticia_comentarios-encabezado">Participa</h2>\n    <div class="Noticia_comentarios-comentarios">\n      ', '\n      ', '\n    </div>\n  </section>'], ['<section class="Noticia_comentarios">\n    <h2 class="Noticia_comentarios-encabezado">Participa</h2>\n    <div class="Noticia_comentarios-comentarios">\n      ', '\n      ', '\n    </div>\n  </section>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<form method="POST" action="/api/unupvote">\n    <input type="submit" value="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />\n  </form>'], ['<form method="POST" action="/api/unupvote">\n    <input type="submit" value="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />\n  </form>']),
-	    _templateObject6 = _taggedTemplateLiteral(['<form method="POST" action="/api/upvote">\n    <input type="submit" value="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/upvote">\n    <input type="submit" value="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />\n  </form>']),
-	    _templateObject7 = _taggedTemplateLiteral(['<form method="POST" action="/api/undownvote">\n    <input type="submit" value="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />\n  </form>'], ['<form method="POST" action="/api/undownvote">\n    <input type="submit" value="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />\n  </form>']),
-	    _templateObject8 = _taggedTemplateLiteral(['<form method="POST" action="/api/downvote">\n    <input type="submit" value="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>'], ['<form method="POST" action="/api/downvote">\n    <input type="submit" value="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />\n  </form>']),
-	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
-	    _templateObject10 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>'], ['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>']),
+	    _templateObject6 = _taggedTemplateLiteral(['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>'], ['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>']),
+	    _templateObject7 = _taggedTemplateLiteral(['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>'], ['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>']),
+	    _templateObject8 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']),
+	    _templateObject9 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-agree">\n      <div class="Noticia_comentarios-comentarios-agree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>\n        <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>\n        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-agree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
+	    _templateObject10 = _taggedTemplateLiteral(['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>'], ['<div class="Noticia_comentarios-comentarios-disagree">\n      <div class="Noticia_comentarios-comentarios-disagree-header">\n        <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>\n        <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>\n        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">\n          <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">', '</h2>\n          ', '\n        </div>\n      </div>\n      <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">\n        ', '\n      </div>\n      <div class="Noticia_comentarios-comentarios-buttons Noticia_hide_on_mobile">\n\n        <button id="comentar-disagree" class="Noticia_comentarios-comentarios-buttons-comment">Comentar</button>\n      </div>\n    </div>']),
 	    _templateObject11 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
 	    _templateObject12 = _taggedTemplateLiteral(['\n  ', '\n  '], ['\n  ', '\n  ']),
 	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
@@ -28128,7 +28128,7 @@
 	// *********** Templates for agree and disagree
 
 	// We loop throu all the liked news by user. If so, display one icon or other
-	function votingFormsAgree(n, u) {
+	function votingPicsAgree(n, u) {
 	  var votedAgree = yo(_templateObject5);
 
 	  var unVotedAgree = yo(_templateObject6);
@@ -28144,7 +28144,7 @@
 	  return unVotedAgree;
 	}
 
-	function votingFormsDisagree(n, u) {
+	function votingPicsDisagree(n, u) {
 	  var votedDisagree = yo(_templateObject7);
 
 	  var unVotedDisagree = yo(_templateObject8);
@@ -28160,11 +28160,11 @@
 	}
 
 	function noticiaComentariosAgree(n, u, cA) {
-	  return yo(_templateObject9, n.agreeVotes, votingFormsAgree(n, u), comList(u, cA, 'agree'));
+	  return yo(_templateObject9, n.agreeVotes, votingPicsAgree(n, u), comList(u, cA, 'agree'));
 	}
 
 	function noticiaComentariosDisagree(n, u, cD) {
-	  return yo(_templateObject10, n.disagreeVotes, votingFormsDisagree(n, u), comList(u, cD, 'disagree'));
+	  return yo(_templateObject10, n.disagreeVotes, votingPicsDisagree(n, u), comList(u, cD, 'disagree'));
 	}
 
 	// ************* Template for list of comments
@@ -28289,6 +28289,12 @@
 	(0, _jquery2.default)(document).on('click', '#arrow-disagree', _comments_events_functions2.default.commentsMobile);
 	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
 
+	// -------- Votes
+	(0, _jquery2.default)(document).on('click', '#thumbup', _comments_events_functions2.default.ajaxVote);
+	(0, _jquery2.default)(document).on('click', '#thumbup-liked', _comments_events_functions2.default.ajaxVote);
+	(0, _jquery2.default)(document).on('click', '#thumbdown', _comments_events_functions2.default.ajaxVote);
+	(0, _jquery2.default)(document).on('click', '#thumbdown-liked', _comments_events_functions2.default.ajaxVote);
+
 /***/ },
 /* 153 */
 /***/ function(module, exports, __webpack_require__) {
@@ -28333,6 +28339,11 @@
 
 	'use strict';
 
+	var _templateObject = _taggedTemplateLiteral(['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>'], ['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>'], ['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>'], ['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']);
+
 	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
@@ -28347,7 +28358,13 @@
 
 	var _moment2 = _interopRequireDefault(_moment);
 
+	var _yoYo = __webpack_require__(12);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 	module.exports = {
 	  createShow: createShow,
@@ -28356,7 +28373,8 @@
 	  commentDisagree: commentDisagree,
 	  commentCloseAgree: commentCloseAgree,
 	  commentCloseDisagree: commentCloseDisagree,
-	  commentsMobile: commentsMobile
+	  commentsMobile: commentsMobile,
+	  ajaxVote: ajaxVote
 	};
 
 	// //////////////////////////// Functions
@@ -28449,6 +28467,49 @@
 	      agreeOpened = false;
 	    }
 	  }
+	}
+
+	// AJAX calls to vote in the background without refreshing with a form!
+	function ajaxVote() {
+	  var thumbupLiked = (0, _yoYo2.default)(_templateObject);
+	  var thumbup = (0, _yoYo2.default)(_templateObject2);
+
+	  var thumbdownLiked = (0, _yoYo2.default)(_templateObject3);
+	  var thumbdown = (0, _yoYo2.default)(_templateObject4);
+
+	  var id = (0, _jquery2.default)(this).attr('id');
+	  var uri = void 0,
+	      $hide = void 0,
+	      $show = void 0,
+	      $container = void 0;
+	  // Depending on clicked button, creates logics
+	  if (id === 'thumbup') {
+	    uri = 'upvote';
+	    $hide = (0, _jquery2.default)('#thumbup');
+	    $show = thumbupLiked;
+	    $container = (0, _jquery2.default)('#agree-votes-container');
+	  } else if (id === 'thumbup-liked') {
+	    uri = 'unupvote';
+	    $hide = (0, _jquery2.default)('#thumbup-liked');
+	    $show = thumbup;
+	    $container = (0, _jquery2.default)('#agree-votes-container');
+	  } else if (id === 'thumbdown') {
+	    uri = 'undownvote';
+	    $hide = (0, _jquery2.default)('#thumbdown');
+	    $show = thumbdownLiked;
+	    $container = (0, _jquery2.default)('#disagree-votes-container');
+	  } else if (id === 'thumbdown-liked') {
+	    uri = 'undownvote';
+	    $hide = (0, _jquery2.default)('#thumbdown-liked');
+	    $show = thumbdown;
+	    $container = (0, _jquery2.default)('#disagree-votes-container');
+	  }
+
+	  _jquery2.default.post('/api/' + uri, function (data) {
+	    console.log(data);
+	    $hide.remove();
+	    $container.append($show);
+	  });
 	}
 
 /***/ },

@@ -109,12 +109,14 @@ function deleteNew (req, res) {
 
 // voting ======================================================================
 function vote (req, res) {
+  console.log('Holaaaa')
   // Takes the _id in the url here and gets User id from session
   let userId = req.session.user_id
   // If there is no session or the session cookie is modified, returns undefined
   if (userId === undefined) {
     return res.send('User does not exist')
   }
+
 
   let id
   // If there is no post id referer
@@ -136,14 +138,19 @@ function vote (req, res) {
   // Increases/decreases the agreeVotes/disagreeVotes of the post by 1
   let update
 
+  // Get if is thumb up or thumb down
+  let agree = false
+
   // Conditional where the POST url tells what we want to do
   if (path === '/upvote') {
     userUpdate = { $addToSet: { agreeVotes: id }}
     update = { $inc: { agreeVotes: 1 }}
+    agree = true
   }
   else if (path === '/unupvote') {
     userUpdate = { $pull: { agreeVotes: id }}
     update = { $inc: { agreeVotes: -1 }}
+    agree = true
   }
   else if (path === '/downvote') {
     userUpdate = { $addToSet: { disagreeVotes: id }}
@@ -160,15 +167,14 @@ function vote (req, res) {
     if (err) return console.log('Ha habido un error' + err)
 
     // If post does not exist (modified headers)
-    if(!post){
-      return res.send('Post does not exist. Check headers')
-    }
+    if(!post) return res.send('Post does not exist. Check headers')
 
     // Find user
     User.findByIdAndUpdate(userId, userUpdate, function (err, user){
       if (err) return console.log('Ha habido un error' + err)
-    })
 
-    res.redirect(`/app/noticia/${id}`)
+      if (agree) return res.send(String(post.agreeVotes))
+      return res.send(String(post.disagreeVotes))
+    })
   })
 }

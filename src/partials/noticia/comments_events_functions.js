@@ -2,6 +2,7 @@ import $           from 'jquery'
 import { comCard } from './modules'
 import votesLiked  from './votesLiked'
 import moment      from 'moment'
+import yo          from 'yo-yo'
 
 module.exports = {
   createShow,
@@ -10,7 +11,8 @@ module.exports = {
   commentDisagree,
   commentCloseAgree,
   commentCloseDisagree,
-  commentsMobile
+  commentsMobile,
+  ajaxVote
 }
 
 // //////////////////////////// Functions
@@ -103,4 +105,50 @@ function commentsMobile (ev) {
       agreeOpened = false
     }
   }
+}
+
+// AJAX calls to vote in the background without refreshing with a form!
+function ajaxVote () {
+  const thumbupLiked = yo`<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>`
+  const thumbup      = yo`<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>`
+
+  const thumbdownLiked = yo`<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>`
+  const thumbdown      = yo`<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>`
+
+  let id = $(this).attr('id')
+  let uri, $hide, $show, $container
+  // Depending on clicked button, creates logics
+  if (id === 'thumbup'){
+    uri = 'upvote'
+    $hide = $('#thumbup')
+    $show = thumbupLiked
+    $container = $('#agree-votes-container')
+  }
+
+  else if (id === 'thumbup-liked'){
+    uri = 'unupvote'
+    $hide = $('#thumbup-liked')
+    $show = thumbup
+    $container = $('#agree-votes-container')
+  }
+
+  else if (id === 'thumbdown'){
+    uri = 'downvote'
+    $hide = $('#thumbdown')
+    $show = thumbdownLiked
+    $container = $('#disagree-votes-container')
+  }
+
+  else if (id === 'thumbdown-liked'){
+    uri = 'undownvote'
+    $hide = $('#thumbdown-liked')
+    $show = thumbdown
+    $container = $('#disagree-votes-container')
+  }
+
+  $.post(`/api/${uri}`, (data) => {
+    console.log(data)
+    $hide.remove()
+    $container.append($show)
+  })
 }

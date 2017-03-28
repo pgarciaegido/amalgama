@@ -30,3 +30,9 @@ $(document).on('click', '#arrow-agree', func.commentsMobile)
 $(document).on('click', '#title-agree', func.commentsMobile)
 $(document).on('click', '#arrow-disagree', func.commentsMobile)
 $(document).on('click', '#title-disagree', func.commentsMobile)
+
+// -------- Votes
+$(document).on('click', '#thumbup', func.ajaxVote)
+$(document).on('click', '#thumbup-liked', func.ajaxVote)
+$(document).on('click', '#thumbdown', func.ajaxVote)
+$(document).on('click', '#thumbdown-liked', func.ajaxVote)

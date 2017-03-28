@@ -53,14 +53,10 @@ function noticiaComentarios (n, u, cA, cD) {
 // *********** Templates for agree and disagree
 
 // We loop throu all the liked news by user. If so, display one icon or other
-function votingFormsAgree (n, u) {
-  const votedAgree = yo`<form method="POST" action="/api/unupvote">
-    <input type="submit" value="" id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked" />
-  </form>`
+function votingPicsAgree (n, u) {
+  const votedAgree = yo`<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>`
 
-  const unVotedAgree = yo`<form method="POST" action="/api/upvote">
-    <input type="submit" value="" id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon" />
-  </form>`
+  const unVotedAgree = yo`<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>`
 
   // Loop around users liked posts
   for (let i in u.agreeVotes) {
@@ -73,14 +69,10 @@ function votingFormsAgree (n, u) {
   return unVotedAgree
 }
 
-function votingFormsDisagree (n, u) {
-  const votedDisagree = yo`<form method="POST" action="/api/undownvote">
-    <input type="submit" value="" id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked" />
-  </form>`
+function votingPicsDisagree (n, u) {
+  const votedDisagree = yo`<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>`
 
-  const unVotedDisagree = yo`<form method="POST" action="/api/downvote">
-    <input type="submit" value="" id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon" />
-  </form>`
+  const unVotedDisagree = yo`<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>`
 
   for (let i in u.disagreeVotes) {
     // If the post id is inside the user's array
@@ -97,9 +89,9 @@ function noticiaComentariosAgree (n, u, cA) {
       <div class="Noticia_comentarios-comentarios-agree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-agree-header-title">A Favor</h2>
         <span id="arrow-agree" class="Noticia_comentarios-comentarios-agree-header-arrow"></span>
-        <div class="Noticia_comentarios-comentarios-agree-header-votes">
+        <div id="agree-votes-container" class="Noticia_comentarios-comentarios-agree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-agree-header-votes-counter">${n.agreeVotes}</h2>
-          ${votingFormsAgree(n, u)}
+          ${votingPicsAgree(n, u)}
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
@@ -117,9 +109,9 @@ function noticiaComentariosDisagree (n, u, cD) {
       <div class="Noticia_comentarios-comentarios-disagree-header">
         <h2 id="title-disagree" class="Noticia_comentarios-comentarios-disagree-header-title">En Contra</h2>
         <span id="arrow-disagree" class="Noticia_comentarios-comentarios-disagree-header-arrow"></span>
-        <div class="Noticia_comentarios-comentarios-disagree-header-votes">
+        <div id="disagree-votes-container" class="Noticia_comentarios-comentarios-disagree-header-votes">
           <h2 class="Noticia_comentarios-comentarios-disagree-header-votes-counter">${n.disagreeVotes}</h2>
-          ${votingFormsDisagree(n, u)}
+          ${votingPicsDisagree(n, u)}
         </div>
       </div>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
