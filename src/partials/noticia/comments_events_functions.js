@@ -157,18 +157,23 @@ function ajaxVote () {
   $hide.remove()
   $container.append(loader)
   let $counter = $container.find('.post-counter')
+  let $feedback = $container.parent().next()
 
-  // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter
+  // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter and sends fb message
   // data sends the number of likes before updating
-  $.post(`/apdjasfi/${uri}`, (data) => {
+  $.post(`/api/${uri}`, (data) => {
     $(loader).remove()
     $container.append($show)
     $counter.html(Number(data) + Number(operation))
+    $feedback.addClass('success-like')
+    setTimeout(() => { $feedback.removeClass('success-like') }, 3000)
   })
-  //handles error. Logs error and reset previus icon
+  //handles error. Logs error and reset previus icon. Insert fb message and then removes it
   .fail((response) => {
     console.log(response.responseText)
     $(loader).remove()
     $container.append($hide)
+    $feedback.addClass('error-like')
+    setTimeout(() => { $feedback.removeClass('error-like') }, 3000)
   })
 }

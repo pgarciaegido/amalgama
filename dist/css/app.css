@@ -445,6 +445,42 @@ body{
 	border: 2px solid #e13c42;
 }
 
+/* FEEDBACK */
+
+.noticia-comments-feedback{
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	opacity: 0;
+	visibility: hidden;
+	margin-top: 5px;
+}
+
+.error-like:before{
+	content: 'Ha habido un error al registrar su voto. Pruebe de nuevo más tarde';
+}
+
+.error-like{
+	color: #e13c42;
+	opacity: 1;
+	visibility: visible;
+}
+
+.success-like:before{
+	content: '¡Su voto se ha registrado correctamente!'
+}
+
+.success-like{
+	color: #7ace7a;
+	opacity: 1;
+	visibility: visible;
+}
+
+.smothly-disappear{
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+	opacity: 0;
+}
+
 /* SMALL LOADER */
 
 #like-post-loader{
@@ -509,6 +545,11 @@ body{
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.Noticia_comentarios_list{
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 }
 
 .Noticia_comentarios_list-order{

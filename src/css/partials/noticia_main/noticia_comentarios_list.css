@@ -1,4 +1,6 @@
 .Noticia_comentarios_list{
+	transition: 0.3s;
+
 	&-order{
 		display: flex;
 		margin-bottom: $margin4-desktop;

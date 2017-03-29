@@ -94,6 +94,7 @@ function noticiaComentariosAgree (n, u, cA) {
           ${votingPicsAgree(n, u)}
         </div>
       </div>
+      <h5 class="noticia-comments-feedback"></h5>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-agree">
         ${comList(u, cA, 'agree')}
       </div>
@@ -114,6 +115,7 @@ function noticiaComentariosDisagree (n, u, cD) {
           ${votingPicsDisagree(n, u)}
         </div>
       </div>
+      <h5 class="noticia-comments-feedback"></h5>
       <div class="Noticia_comentarios_list" id="Noticia_comentarios-disagree">
         ${comList(u, cD, 'disagree')}
       </div>

@@ -188,6 +188,40 @@
 	border: 2px solid $red;
 }
 
+/* FEEDBACK */
+
+.noticia-comments-feedback{
+	transition: 0.3s;
+	opacity: 0;
+	visibility: hidden;
+	margin-top: 5px;
+}
+
+.error-like:before{
+	content: 'Ha habido un error al registrar su voto. Pruebe de nuevo más tarde';
+}
+
+.error-like{
+	color: $red;
+	opacity: 1;
+	visibility: visible;
+}
+
+.success-like:before{
+	content: '¡Su voto se ha registrado correctamente!'
+}
+
+.success-like{
+	color: $green;
+	opacity: 1;
+	visibility: visible;
+}
+
+.smothly-disappear{
+	transition: 0.3s;
+	opacity: 0;
+}
+
 /* SMALL LOADER */
 
 #like-post-loader{
