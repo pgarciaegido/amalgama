@@ -178,7 +178,7 @@ function comCard (user, comment) {
     <p class="Noticias_comentarios_card-comment">${comment.comment}</p>
     <div class="Noticias_comentarios_card-feedback">
       <div class="Noticias_comentarios_card-feedback-like">
-        ${comCardForms(user, comment)}
+        ${comCardPics(user, comment)}
         <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">${comment.likes}</p>
         <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>
       </div>
@@ -187,19 +187,15 @@ function comCard (user, comment) {
 }
 
 // Renders comment like button
-function comCardForms (user, comment) {
+function comCardPics (user, comment) {
   if (comment.likedBy.length > 0){
     // if the logged user's id is on the array of liked comments, render liked button
     for (let i in comment.likedBy){
       if (comment.likedBy[i] === user._id){
-        return yo`<form method="POST" action="/api/comment-like/${comment._id}">
-          <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />
-          </form>`
+        return yo`<span id="new-card-liked" data-comment="${comment._id}" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>`
       }
     }
   }
   // otherwise return non liked button
-  return yo`<form method="POST" action="/api/comment-like/${comment._id}">
-    <input type="submit" value="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />
-  </form>`
+  return yo`<span id="new-card" data-comment="${comment._id}" class="Noticias_comentarios_card-feedback-like-icon"></span>`
 }

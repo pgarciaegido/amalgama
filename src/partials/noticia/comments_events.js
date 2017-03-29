@@ -3,6 +3,7 @@ import { comCard } from './modules'
 import votesLiked  from './votesLiked'
 import moment      from 'moment'
 import func        from './comments_events_functions'
+import votes       from './vote_post_comments_ajax.js'
 import v           from './comments_events_vars'
 import sort        from './comments_events_sort'
 
@@ -32,7 +33,11 @@ $(document).on('click', '#arrow-disagree', func.commentsMobile)
 $(document).on('click', '#title-disagree', func.commentsMobile)
 
 // -------- Votes
-$(document).on('click', '#thumbup', func.ajaxVote)
-$(document).on('click', '#thumbup-liked', func.ajaxVote)
-$(document).on('click', '#thumbdown', func.ajaxVote)
-$(document).on('click', '#thumbdown-liked', func.ajaxVote)
+$(document).on('click', '#thumbup', votes.ajaxVotePosts)
+$(document).on('click', '#thumbup-liked', votes.ajaxVotePosts)
+$(document).on('click', '#thumbdown', votes.ajaxVotePosts)
+$(document).on('click', '#thumbdown-liked', votes.ajaxVotePosts)
+
+// -------- Votes on comments
+$(document).on('click', '#new-card-liked', votes.ajaxVoteComment)
+$(document).on('click', '#new-card', votes.ajaxVoteComment)

@@ -44,6 +44,7 @@ api.post('/commentagree', comCtrl.createComment)
 api.post('/commentdisagree', comCtrl.createComment)
 
 // Likes or unlikes a comment made by a user
+// :id => comment_id
 api.post('/comment-like/:id', comCtrl.likeComment)
 
 // Gets the most voted posts (5 of them)

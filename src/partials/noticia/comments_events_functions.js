@@ -11,8 +11,7 @@ module.exports = {
   commentDisagree,
   commentCloseAgree,
   commentCloseDisagree,
-  commentsMobile,
-  ajaxVote
+  commentsMobile
 }
 
 // //////////////////////////// Functions
@@ -105,84 +104,4 @@ function commentsMobile (ev) {
       agreeOpened = false
     }
   }
-}
-
-// AJAX calls to vote in the background without refreshing with a form!
-function ajaxVote () {
-  // Thumbup and thumbup-liked buttons
-  const thumbupLiked   = yo`<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>`
-  const thumbup        = yo`<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>`
-  // Thumbdown and thumbdown-liked buttons
-  const thumbdownLiked = yo`<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>`
-  const thumbdown      = yo`<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>`
-  // Loader
-  const loader         = yo`<span id="like-post-loader"></span>`
-
-  let id = $(this).attr('id')
-  let uri, $hide, $show, $container, operation
-  // Depending on clicked button, creates logics
-  if (id === 'thumbup'){
-    uri = 'upvote'
-    $hide = $('#thumbup')
-    $show = thumbupLiked
-    $container = $('#agree-votes-container')
-    operation = 1
-  }
-
-  else if (id === 'thumbup-liked'){
-    uri = 'unupvote'
-    $hide = $('#thumbup-liked')
-    $show = thumbup
-    $container = $('#agree-votes-container')
-    operation = -1
-  }
-
-  else if (id === 'thumbdown'){
-    uri = 'downvote'
-    $hide = $('#thumbdown')
-    $show = thumbdownLiked
-    $container = $('#disagree-votes-container')
-    operation = 1
-  }
-
-  else if (id === 'thumbdown-liked'){
-    uri = 'undownvote'
-    $hide = $('#thumbdown-liked')
-    $show = thumbdown
-    $container = $('#disagree-votes-container')
-    operation = -1
-  }
-
-  // Includes loader and gets counter number
-  $hide.remove()
-  $container.append(loader)
-  let $counter = $container.find('.post-counter')
-  let $feedback = $container.parent().next()
-
-  // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter and sends fb message
-  // data sends the number of likes before updating
-  $.post(`/api/${uri}`, (data) => {
-    // If there is Error on the reply
-    if (data.indexOf('Error') !== -1)
-      return ajaxErrorResponse(loader, $container, $hide, $feedback)
-
-    $(loader).remove()
-    $container.append($show)
-    $counter.html(Number(data) + Number(operation))
-    $feedback.addClass('success-like')
-    setTimeout(() => { $feedback.removeClass('success-like') }, 3000)
-  })
-  //handles error. Logs error and reset previus icon. Insert fb message and then removes it
-  .fail((response) => {
-    console.log(response.responseText)
-    return ajaxErrorResponse(loader, $container, $hide, $feedback)
-  })
-}
-
-// Handles replies on ajax error
-function ajaxErrorResponse(loader, $container, $hide, $feedback){
-  $(loader).remove()
-  $container.append($hide)
-  $feedback.addClass('error-like')
-  setTimeout(() => { $feedback.removeClass('error-like') }, 3000)
 }

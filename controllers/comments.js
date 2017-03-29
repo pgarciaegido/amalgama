@@ -134,11 +134,11 @@ function likeComment (req, res) {
   User.findById(userId, function(err, user) {
     if (err) {
       console.log(err)
-      return res.send('There is been an error checking user. Try again.')
+      return res.send('Error. There is been an error checking user. Try again.')
     }
 
     if (!user) {
-      return res.send('There is no user logged in. Access denied.')
+      return res.send('Error. There is no user logged in. Access denied.')
     }
 
     let postId
@@ -148,17 +148,17 @@ function likeComment (req, res) {
     }
     catch(e) {
       console.log('Trying to get POST ID error: ' + e)
-      return res.send('Headers should include referer. Access denied')
+      return res.send('Error. Headers should include referer. Access denied')
     }
 
     // Ensures that post exists
     Post.findById(postId, function(err, post) {
       if (err) {
         console.log(err)
-        return res.send('There is been an error checking post. Try again.')
+        return res.send('Error. There is been an error checking post. Try again.')
       }
       if (!post) {
-        return res.send('This post does not exist. Access denied.')
+        return res.send('Error. This post does not exist. Access denied.')
       }
 
       // POST path to determine if the comment was already clicked
@@ -169,11 +169,11 @@ function likeComment (req, res) {
       Com.findById(commentId, function (err, com) {
         if (err) {
           console.log(err)
-          return res.send('There is been an error checking comment.')
+          return res.send('Error. There is been an error checking comment.')
         }
 
         if(!com) {
-          return res.send('This comment does not exist.')
+          return res.send('Error. This comment does not exist.')
         }
 
         let liked = false
@@ -189,7 +189,7 @@ function likeComment (req, res) {
         // From the commentId, update the value and redirect to the post
         Com.findByIdAndUpdate(commentId, update, function (err, comment) {
           if(err) console.log(err)
-          res.redirect('/app/noticia/' + postId)
+          return res.send(String(comment.likedBy.length))
         })
       })
     })

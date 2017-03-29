@@ -70,15 +70,15 @@
 
 	__webpack_require__(148);
 
-	__webpack_require__(157);
+	__webpack_require__(158);
 
-	__webpack_require__(159);
+	__webpack_require__(160);
 
-	__webpack_require__(161);
+	__webpack_require__(162);
 
-	__webpack_require__(166);
+	__webpack_require__(167);
 
-	__webpack_require__(168);
+	__webpack_require__(169);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28087,8 +28087,8 @@
 	    _templateObject12 = _taggedTemplateLiteral(['\n  ', '\n  '], ['\n  ', '\n  ']),
 	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
 	    _templateObject14 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
-	    _templateObject15 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n          <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>'], ['<form method="POST" action="/api/comment-like/', '">\n          <input type="submit" value="" id="new-card-liked" class="Noticias_comentarios_card-feedback-like-icon-liked" />\n          </form>']),
-	    _templateObject16 = _taggedTemplateLiteral(['<form method="POST" action="/api/comment-like/', '">\n    <input type="submit" value="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>'], ['<form method="POST" action="/api/comment-like/', '">\n    <input type="submit" value="" id="new-card" class="Noticias_comentarios_card-feedback-like-icon" />\n  </form>']);
+	    _templateObject15 = _taggedTemplateLiteral(['<span id="new-card-liked" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>'], ['<span id="new-card-liked" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>']),
+	    _templateObject16 = _taggedTemplateLiteral(['<span id="new-card" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon"></span>'], ['<span id="new-card" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon"></span>']);
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -28191,11 +28191,11 @@
 	// ************* Template for the comment card.
 
 	function comCard(user, comment) {
-	  return yo(_templateObject14, comment.number, comment.username, formatDate(comment.date), comment.comment, comCardForms(user, comment), comment.likes);
+	  return yo(_templateObject14, comment.number, comment.username, formatDate(comment.date), comment.comment, comCardPics(user, comment), comment.likes);
 	}
 
 	// Renders comment like button
-	function comCardForms(user, comment) {
+	function comCardPics(user, comment) {
 	  if (comment.likedBy.length > 0) {
 	    // if the logged user's id is on the array of liked comments, render liked button
 	    for (var i in comment.likedBy) {
@@ -28254,11 +28254,15 @@
 
 	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
 
+	var _vote_post_comments_ajax = __webpack_require__(156);
+
+	var _vote_post_comments_ajax2 = _interopRequireDefault(_vote_post_comments_ajax);
+
 	var _comments_events_vars = __webpack_require__(155);
 
 	var _comments_events_vars2 = _interopRequireDefault(_comments_events_vars);
 
-	var _comments_events_sort = __webpack_require__(156);
+	var _comments_events_sort = __webpack_require__(157);
 
 	var _comments_events_sort2 = _interopRequireDefault(_comments_events_sort);
 
@@ -28290,10 +28294,14 @@
 	(0, _jquery2.default)(document).on('click', '#title-disagree', _comments_events_functions2.default.commentsMobile);
 
 	// -------- Votes
-	(0, _jquery2.default)(document).on('click', '#thumbup', _comments_events_functions2.default.ajaxVote);
-	(0, _jquery2.default)(document).on('click', '#thumbup-liked', _comments_events_functions2.default.ajaxVote);
-	(0, _jquery2.default)(document).on('click', '#thumbdown', _comments_events_functions2.default.ajaxVote);
-	(0, _jquery2.default)(document).on('click', '#thumbdown-liked', _comments_events_functions2.default.ajaxVote);
+	(0, _jquery2.default)(document).on('click', '#thumbup', _vote_post_comments_ajax2.default.ajaxVotePosts);
+	(0, _jquery2.default)(document).on('click', '#thumbup-liked', _vote_post_comments_ajax2.default.ajaxVotePosts);
+	(0, _jquery2.default)(document).on('click', '#thumbdown', _vote_post_comments_ajax2.default.ajaxVotePosts);
+	(0, _jquery2.default)(document).on('click', '#thumbdown-liked', _vote_post_comments_ajax2.default.ajaxVotePosts);
+
+	// -------- Votes on comments
+	(0, _jquery2.default)(document).on('click', '#new-card-liked', _vote_post_comments_ajax2.default.ajaxVoteComment);
+	(0, _jquery2.default)(document).on('click', '#new-card', _vote_post_comments_ajax2.default.ajaxVoteComment);
 
 /***/ },
 /* 153 */
@@ -28339,12 +28347,6 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>'], ['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>']),
-	    _templateObject2 = _taggedTemplateLiteral(['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>'], ['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>']),
-	    _templateObject3 = _taggedTemplateLiteral(['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>'], ['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>']),
-	    _templateObject4 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']),
-	    _templateObject5 = _taggedTemplateLiteral(['<span id="like-post-loader"></span>'], ['<span id="like-post-loader"></span>']);
-
 	var _jquery = __webpack_require__(5);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
@@ -28365,8 +28367,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 	module.exports = {
 	  createShow: createShow,
 	  createHide: createHide,
@@ -28374,8 +28374,7 @@
 	  commentDisagree: commentDisagree,
 	  commentCloseAgree: commentCloseAgree,
 	  commentCloseDisagree: commentCloseDisagree,
-	  commentsMobile: commentsMobile,
-	  ajaxVote: ajaxVote
+	  commentsMobile: commentsMobile
 	};
 
 	// //////////////////////////// Functions
@@ -28470,8 +28469,80 @@
 	  }
 	}
 
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = {
+	  'comentarAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
+	  'comentarDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
+	  'cancelarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-cancel'),
+	  'cancelarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-cancel'),
+	  'createAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
+	  'createDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
+	  'commentsAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),
+	  'commentsDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments'),
+	  'enviarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
+	  'enviarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
+	  'textAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('#textarea'),
+	  'textDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('#textarea'),
+	  'commentLikeIcon': (0, _jquery2.default)('.Noticias_comentarios_card-feedback-like-icon'),
+	  'commentLikeIconLiked': (0, _jquery2.default)('.Noticias_comentarios_card-feedback-like-icon-liked'),
+	  'commentLikeCounter': (0, _jquery2.default)('#comments-like-counter'),
+	  'arrowAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-arrow'),
+	  'arrowDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-arrow'),
+	  'titleAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-title'),
+	  'titleDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-title'),
+	  'commentsMobile': (0, _jquery2.default)('.Noticia_hide_on_mobile'),
+	  'buttonDateAgree': (0, _jquery2.default)('#noticia-sort-new-agree'),
+	  'buttonLikesAgree': (0, _jquery2.default)('#noticia-sort-likes-agree'),
+	  'buttonDateDisagree': (0, _jquery2.default)('#noticia-sort-new-disagree'),
+	  'buttonLikesDisagree': (0, _jquery2.default)('#noticia-sort-likes-disagree')
+	};
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _templateObject = _taggedTemplateLiteral(['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>'], ['<span id="thumbup-liked" class="Noticia_comentarios-comentarios-agree-header-votes-icon-liked"></span>']),
+	    _templateObject2 = _taggedTemplateLiteral(['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>'], ['<span id="thumbup" class="Noticia_comentarios-comentarios-agree-header-votes-icon"></span>']),
+	    _templateObject3 = _taggedTemplateLiteral(['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>'], ['<span id="thumbdown-liked" class="Noticia_comentarios-comentarios-disagree-header-votes-icon-liked"></span>']),
+	    _templateObject4 = _taggedTemplateLiteral(['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>'], ['<span id="thumbdown" class="Noticia_comentarios-comentarios-disagree-header-votes-icon"></span>']),
+	    _templateObject5 = _taggedTemplateLiteral(['<span id="like-post-loader"></span>'], ['<span id="like-post-loader"></span>']),
+	    _templateObject6 = _taggedTemplateLiteral(['<span id="new-card-liked" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>'], ['<span id="new-card-liked" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>']),
+	    _templateObject7 = _taggedTemplateLiteral(['<span id="new-card" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon"></span>'], ['<span id="new-card" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon"></span>']);
+
+	var _jquery = __webpack_require__(5);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _yoYo = __webpack_require__(12);
+
+	var _yoYo2 = _interopRequireDefault(_yoYo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 	// AJAX calls to vote in the background without refreshing with a form!
-	function ajaxVote() {
+
+	module.exports = {
+	  ajaxVotePosts: ajaxVotePosts,
+	  ajaxVoteComment: ajaxVoteComment
+	};
+
+	// VOTE POST FRONT HANDLER =====================================================
+	function ajaxVotePosts() {
 	  // Thumbup and thumbup-liked buttons
 	  var thumbupLiked = (0, _yoYo2.default)(_templateObject);
 	  var thumbup = (0, _yoYo2.default)(_templateObject2);
@@ -28487,28 +28558,29 @@
 	      $show = void 0,
 	      $container = void 0,
 	      operation = void 0;
+
 	  // Depending on clicked button, creates logics
 	  if (id === 'thumbup') {
 	    uri = 'upvote';
-	    $hide = (0, _jquery2.default)('#thumbup');
+	    $hide = (0, _jquery2.default)(this);
 	    $show = thumbupLiked;
 	    $container = (0, _jquery2.default)('#agree-votes-container');
 	    operation = 1;
 	  } else if (id === 'thumbup-liked') {
 	    uri = 'unupvote';
-	    $hide = (0, _jquery2.default)('#thumbup-liked');
+	    $hide = (0, _jquery2.default)(this);
 	    $show = thumbup;
 	    $container = (0, _jquery2.default)('#agree-votes-container');
 	    operation = -1;
 	  } else if (id === 'thumbdown') {
 	    uri = 'downvote';
-	    $hide = (0, _jquery2.default)('#thumbdown');
+	    $hide = (0, _jquery2.default)(this);
 	    $show = thumbdownLiked;
 	    $container = (0, _jquery2.default)('#disagree-votes-container');
 	    operation = 1;
 	  } else if (id === 'thumbdown-liked') {
 	    uri = 'undownvote';
-	    $hide = (0, _jquery2.default)('#thumbdown-liked');
+	    $hide = (0, _jquery2.default)(this);
 	    $show = thumbdown;
 	    $container = (0, _jquery2.default)('#disagree-votes-container');
 	    operation = -1;
@@ -28551,47 +28623,50 @@
 	  }, 3000);
 	}
 
+	// VOTE COMMENT HANDLER ========================================================
+
+	function ajaxVoteComment() {
+
+	  var id = (0, _jquery2.default)(this).attr('id');
+	  var $container = (0, _jquery2.default)(this).parent();
+	  var $counter = $container.find('#comments-like-counter');
+	  var commentId = (0, _jquery2.default)(this).attr('data-comment');
+
+	  var voted = (0, _yoYo2.default)(_templateObject6, commentId);
+	  var unVoted = (0, _yoYo2.default)(_templateObject7, commentId);
+
+	  var operation = void 0,
+	      $hide = void 0,
+	      $show = void 0;
+
+	  if (id === 'new-card') {
+	    $hide = (0, _jquery2.default)(this);
+	    $show = voted;
+	    operation = 1;
+	  } else if (id === 'new-card-liked') {
+	    $hide = (0, _jquery2.default)(this);
+	    $show = unVoted;
+	    operation = -1;
+	  }
+
+	  $hide.remove();
+
+	  _jquery2.default.post('/api/comment-like/' + commentId, function (data) {
+	    // If there is Error on the reply
+	    // if (data.indexOf('Error') !== -1)
+	    //   return ajaxErrorResponse(loader, $container, $hide, $feedback)
+	    console.log(data);
+	    $container.prepend($show);
+	    $counter.html(Number(data) + Number(operation));
+	  })
+	  //handles error. Logs error and reset previus icon. Insert fb message and then removes it
+	  .fail(function (response) {
+	    console.log(response.responseText);
+	  });
+	}
+
 /***/ },
-/* 155 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	module.exports = {
-	  'comentarAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	  'comentarDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree').find('.Noticia_comentarios-comentarios-buttons-comment'),
-	  'cancelarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create-cancel'),
-	  'cancelarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create-cancel'),
-	  'createAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments-create'),
-	  'createDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments-create'),
-	  'commentsAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments'),
-	  'commentsDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments'),
-	  'enviarAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
-	  'enviarDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('.Noticia_comentarios_list-comments-create-buttons-enviar'),
-	  'textAgree': (0, _jquery2.default)('#Noticia_comentarios-agree').find('.Noticia_comentarios_list-comments').find('#textarea'),
-	  'textDisagree': (0, _jquery2.default)('#Noticia_comentarios-disagree').find('.Noticia_comentarios_list-comments').find('#textarea'),
-	  'commentLikeIcon': (0, _jquery2.default)('.Noticias_comentarios_card-feedback-like-icon'),
-	  'commentLikeIconLiked': (0, _jquery2.default)('.Noticias_comentarios_card-feedback-like-icon-liked'),
-	  'commentLikeCounter': (0, _jquery2.default)('#comments-like-counter'),
-	  'arrowAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-arrow'),
-	  'arrowDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-arrow'),
-	  'titleAgree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-agree-header-title'),
-	  'titleDisagree': (0, _jquery2.default)('.Noticia_comentarios-comentarios-disagree-header-title'),
-	  'commentsMobile': (0, _jquery2.default)('.Noticia_hide_on_mobile'),
-	  'buttonDateAgree': (0, _jquery2.default)('#noticia-sort-new-agree'),
-	  'buttonLikesAgree': (0, _jquery2.default)('#noticia-sort-likes-agree'),
-	  'buttonDateDisagree': (0, _jquery2.default)('#noticia-sort-new-disagree'),
-	  'buttonLikesDisagree': (0, _jquery2.default)('#noticia-sort-likes-disagree')
-	};
-
-/***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28646,7 +28721,7 @@
 	}
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28663,7 +28738,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(158);
+	var _template = __webpack_require__(159);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28686,7 +28761,7 @@
 	});
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28706,7 +28781,7 @@
 	};
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28723,7 +28798,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(160);
+	var _template = __webpack_require__(161);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28754,7 +28829,7 @@
 	}
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28789,7 +28864,7 @@
 	}
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28806,11 +28881,11 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(162);
+	var _template = __webpack_require__(163);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _modules = __webpack_require__(164);
+	var _modules = __webpack_require__(165);
 
 	var _comments = __webpack_require__(151);
 
@@ -28837,7 +28912,7 @@
 			// Header events
 			__webpack_require__(142);
 			// Sorting comments events
-			__webpack_require__(165);
+			__webpack_require__(166);
 		});
 
 		module.exports = {
@@ -28847,7 +28922,7 @@
 	});
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28860,11 +28935,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(163);
+	var _comments_card = __webpack_require__(164);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(164);
+	var _modules = __webpack_require__(165);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28890,7 +28965,7 @@
 	}
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28914,7 +28989,7 @@
 	};
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28930,7 +29005,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(163);
+	var _comments_card = __webpack_require__(164);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -28989,7 +29064,7 @@
 	}
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28998,18 +29073,18 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(161);
+	var _index = __webpack_require__(162);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _modules = __webpack_require__(164);
+	var _modules = __webpack_require__(165);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Changes the comments to be sorted by date
 	var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
 	buttonDate.on('click', function (e) {
-	  var c = __webpack_require__(161);
+	  var c = __webpack_require__(162);
 	  clickSort(e, c.userComments);
 
 	  buttonDate.addClass('sort-comments-active');
@@ -29019,7 +29094,7 @@
 	// Changes the comments to be sorted by likes
 	var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
 	buttonLikes.on('click', function (e) {
-	  var c = __webpack_require__(161);
+	  var c = __webpack_require__(162);
 	  clickSort(e, c.userCommentsLikes);
 
 	  buttonLikes.addClass('sort-comments-active');
@@ -29033,7 +29108,7 @@
 	}
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29050,7 +29125,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(167);
+	var _template = __webpack_require__(168);
 
 	var _query_handler = __webpack_require__(145);
 
@@ -29072,7 +29147,7 @@
 	});
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29113,7 +29188,7 @@
 	}
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
