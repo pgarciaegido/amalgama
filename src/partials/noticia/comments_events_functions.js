@@ -162,6 +162,10 @@ function ajaxVote () {
   // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter and sends fb message
   // data sends the number of likes before updating
   $.post(`/api/${uri}`, (data) => {
+    // If there is Error on the reply
+    if (data.indexOf('Error') !== -1)
+      return ajaxErrorResponse(loader, $container, $hide, $feedback)
+
     $(loader).remove()
     $container.append($show)
     $counter.html(Number(data) + Number(operation))
@@ -171,9 +175,14 @@ function ajaxVote () {
   //handles error. Logs error and reset previus icon. Insert fb message and then removes it
   .fail((response) => {
     console.log(response.responseText)
-    $(loader).remove()
-    $container.append($hide)
-    $feedback.addClass('error-like')
-    setTimeout(() => { $feedback.removeClass('error-like') }, 3000)
+    return ajaxErrorResponse(loader, $container, $hide, $feedback)
   })
+}
+
+// Handles replies on ajax error
+function ajaxErrorResponse(loader, $container, $hide, $feedback){
+  $(loader).remove()
+  $container.append($hide)
+  $feedback.addClass('error-like')
+  setTimeout(() => { $feedback.removeClass('error-like') }, 3000)
 }

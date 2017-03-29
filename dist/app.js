@@ -28523,6 +28523,9 @@
 	  // AJAX call: Removes loader, appends new icon and sums or substracts 1 to counter and sends fb message
 	  // data sends the number of likes before updating
 	  _jquery2.default.post('/api/' + uri, function (data) {
+	    // If there is Error on the reply
+	    if (data.indexOf('Error') !== -1) return ajaxErrorResponse(loader, $container, $hide, $feedback);
+
 	    (0, _jquery2.default)(loader).remove();
 	    $container.append($show);
 	    $counter.html(Number(data) + Number(operation));
@@ -28534,13 +28537,18 @@
 	  //handles error. Logs error and reset previus icon. Insert fb message and then removes it
 	  .fail(function (response) {
 	    console.log(response.responseText);
-	    (0, _jquery2.default)(loader).remove();
-	    $container.append($hide);
-	    $feedback.addClass('error-like');
-	    setTimeout(function () {
-	      $feedback.removeClass('error-like');
-	    }, 3000);
+	    return ajaxErrorResponse(loader, $container, $hide, $feedback);
 	  });
+	}
+
+	// Handles replies on ajax error
+	function ajaxErrorResponse(loader, $container, $hide, $feedback) {
+	  (0, _jquery2.default)(loader).remove();
+	  $container.append($hide);
+	  $feedback.addClass('error-like');
+	  setTimeout(function () {
+	    $feedback.removeClass('error-like');
+	  }, 3000);
 	}
 
 /***/ },

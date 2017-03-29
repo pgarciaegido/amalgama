@@ -109,72 +109,98 @@ function deleteNew (req, res) {
 
 // voting ======================================================================
 function vote (req, res) {
-  console.log('Holaaaa')
   // Takes the _id in the url here and gets User id from session
   let userId = req.session.user_id
   // If there is no session or the session cookie is modified, returns undefined
   if (userId === undefined) {
-    return res.send('User does not exist')
+    return res.send('Error. User does not exist')
   }
 
 
-  let id
+  let postId
   // If there is no post id referer
   try{
-    id = req.headers.referer.split('/').pop()
-    console.log(id)
+    postId = req.headers.referer.split('/').pop()
   }
   catch(e){
     console.log(e)
-    return res.send('Post referer not included')
+    return res.send('Error. Post referer not included')
   }
 
   // Gets the post URL. '/upvote'
   let path = req._parsedUrl.path
 
-  // Push the id of the new to the user's array of voted news
-  let userUpdate
+  // Check if user has already liked
+  let voted = false
+  User.findById(userId, function(err, u) {
+    if (err) return console.log(err)
 
-  // Increases/decreases the agreeVotes/disagreeVotes of the post by 1
-  let update
+    // If vote is to agree
+    if (path === '/upvote' || path === '/unupvote'){
+      for (let i in u.agreeVotes) {
+        if (u.agreeVotes[i] === postId)
+          voted = true
+      }
+    } else if (path === '/downvote' || path === '/undownvote') {
+      for (let i in u.disagreeVotes) {
+        if (u.disagreeVotes[i] === postId)
+          voted = true
+      }
+    }
 
-  // Get if is thumb up or thumb down
-  let agree = false
+    // Push the id of the new to the user's array of voted news
+    let userUpdate
 
-  // Conditional where the POST url tells what we want to do
-  if (path === '/upvote') {
-    userUpdate = { $addToSet: { agreeVotes: id }}
-    update = { $inc: { agreeVotes: 1 }}
-    agree = true
-  }
-  else if (path === '/unupvote') {
-    userUpdate = { $pull: { agreeVotes: id }}
-    update = { $inc: { agreeVotes: -1 }}
-    agree = true
-  }
-  else if (path === '/downvote') {
-    userUpdate = { $addToSet: { disagreeVotes: id }}
-    update = { $inc: { disagreeVotes: 1 }}
-  }
-  else if (path === '/undownvote') {
-    userUpdate = { $pull: { disagreeVotes: id }}
-    update = { $inc: { disagreeVotes: -1 }}
-  }
+    // Increases/decreases the agreeVotes/disagreeVotes of the post by 1
+    let update
 
-  // Ensures post exists, then appends post to users array
-  // Find post
-  Post.findByIdAndUpdate(id, update, function (err, post){
-    if (err) return console.log('Ha habido un error' + err)
+    // Get if is thumb up or thumb down
+    let agree = false
 
-    // If post does not exist (modified headers)
-    if(!post) return res.send('Post does not exist. Check headers')
+    // Conditional where the POST url tells what we want to do
+    if (path === '/upvote') {
+      if (voted) return res.send('Error. You have voted already')
 
-    // Find user
-    User.findByIdAndUpdate(userId, userUpdate, function (err, user){
-      if (err) return console.log('Ha habido un error' + err)
+      userUpdate = { $addToSet: { agreeVotes: postId }}
+      update = { $inc: { agreeVotes: 1 }}
+      agree = true
+    }
+    else if (path === '/unupvote') {
+      if (!voted) return res.send('Error. You havent voted')
 
-      if (agree) return res.send(String(post.agreeVotes))
-      return res.send(String(post.disagreeVotes))
+      userUpdate = { $pull: { agreeVotes: postId }}
+      update = { $inc: { agreeVotes: -1 }}
+      agree = true
+    }
+    else if (path === '/downvote') {
+      if (voted) return res.send('Error. You have voted already')
+
+      userUpdate = { $addToSet: { disagreeVotes: postId }}
+      update = { $inc: { disagreeVotes: 1 }}
+    }
+    else if (path === '/undownvote') {
+      if (!voted) return res.send('Error. You havent voted')
+
+      userUpdate = { $pull: { disagreeVotes: postId }}
+      update = { $inc: { disagreeVotes: -1 }}
+    }
+
+    // Ensures post exists, then appends post to users array
+    // Find post
+    Post.findByIdAndUpdate(postId, update, function (err, post){
+      if (err) return console.log('Error. Ha habido un error ' + err)
+
+      // If post does not exist (modified headers)
+      if(!post) return res.send('Error. Post does not exist. Check headers')
+
+      // Find user
+      User.findByIdAndUpdate(userId, userUpdate, function (err, user){
+        if (err) return console.log('Error. Ha habido un error' + err)
+
+        if (agree) return res.send(String(post.agreeVotes))
+
+        return res.send(String(post.disagreeVotes))
+      })
     })
   })
 }
