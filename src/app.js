@@ -17,10 +17,7 @@ $(document).ready(() => {
   articles()
   percentage()
   // Little delay so it shows fully rendered.
-  setTimeout(() => {
-    hideLoader()
-  }, 200)
-
+  setTimeout(() => { hideLoader() }, 200)
 })
 
 page()

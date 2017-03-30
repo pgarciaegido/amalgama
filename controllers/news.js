@@ -21,30 +21,29 @@ function createNew (req, res) {
   if (password !== adminPassword) {
     res.send('Incorrect password.')
   }
-  else {
-    // Checks if media JSON is correctly formatted
-    try {
-      JSON.parse(media)
-    } catch (e) {
-      return res.send('The media JSON is incorrectly formatted. Please double check. ' + e)
-    }
-
-    var post = new Post({
-      title: req.body.title,
-      subtitle: req.body.subtitle,
-      tags: req.body.tags,
-      media: JSON.parse(media)
-    })
-
-    post.save(function (err, post) {
-      if (!err) {
-        res.status(200).send({post: post})
-      } else {
-        console.log(err)
-        res.redirect('/api/create-new')
-      }
-    })
+  let jsonParsed
+  // Checks if media JSON is correctly formatted
+  try {
+    jsonParsed = JSON.parse(media)
+  } catch (e) {
+    return res.send('The media JSON is incorrectly formatted. Please double check. ' + e)
   }
+
+  var post = new Post({
+    title: req.body.title,
+    subtitle: req.body.subtitle,
+    tags: req.body.tags,
+    media: jsonParsed
+  })
+
+  post.save(function (err, post) {
+    if (!err) {
+      res.status(200).send({post: post})
+    } else {
+      console.log(err)
+      res.redirect('/api/create-new')
+    }
+  })
 }
 
 // Get list of all news ========================================================
@@ -72,20 +71,18 @@ function modifyNew (req, res) {
   var password = req.body.password
 
   if (password !== adminPassword) {
-    res.send('Password incorrect. Denied')
+    return res.send('Password incorrect. Denied')
   }
 
-  else {
-    var postId = req.params.id
-    var update = req.body
+  var postId = req.params.id
+  var update = req.body
 
-    Post.findByIdAndUpdate(postId, update, function (err, post) {
-      if (err) {
-        return console.log('Ha habido un error' + err)
-      }
-      res.redirect('/api/news/' + postId)
-    })
-  }
+  Post.findByIdAndUpdate(postId, update, function (err, post) {
+    if (err) {
+      return console.log('Ha habido un error' + err)
+    }
+    res.redirect('/api/news/' + postId)
+  })
 }
 
 

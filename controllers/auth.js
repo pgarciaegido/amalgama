@@ -47,11 +47,11 @@ function signup (req, res) {
         console.log(err.message)
         // Error message (username_1 and email_1):
         // E11000 duplicate key error collection: users.users index: username_1 dup key: { : "test" }
-        if (err.message.indexOf('email_1') === 58) {
+        if (err.message.indexOf('email_1') != -1) {
           res.redirect('/registrate?e=eexists?u=' + username + '?m=' + email)
         }
 
-        else if (err.message.indexOf('username_1') === 58){
+        else if (err.message.indexOf('username_1') != -1){
           res.redirect('/registrate?e=uexists?u=' + username + '?m=' + email)
         }
 

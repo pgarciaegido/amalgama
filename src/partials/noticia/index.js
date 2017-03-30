@@ -5,6 +5,7 @@ import template   from './template'
 import aside      from '../aside'
 import percentage from '../votes_bar/get_percentage'
 import comments   from '../utils/comments'
+import {showLoader, hideLoader} from '../utils/loader'
 import {sortComments} from './modules'
 
 import { getAsideNew, getPost, getCurrentUser, getCommentsAgree, getCommentsDisagree } from '../ajax'
@@ -15,22 +16,24 @@ import { getAsideNew, getPost, getCurrentUser, getCommentsAgree, getCommentsDisa
 // header renders header
 // getPosts gets the post we are about to render
 page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getCommentsDisagree, header, getPost, (ctx, next) => {
-  const post = ctx.post
+
+  let post = ctx.post
   const user = ctx.user
   const commentsAgree = ctx.commentsAgree
   const commentsDisagree = ctx.commentsDisagree
+
+  // Parses json string
+  try{
+    post.media = JSON.parse(post.media)
+  } catch (e) {
+    console.log('JSON already parsed...')
+  }
 
   let commentsAgreeLikes = []
   let commentsDisagreeLikes = []
 
   comments.sortByLikes(commentsAgree, commentsAgreeLikes)
   comments.sortByLikes(commentsDisagree, commentsDisagreeLikes)
-
-  $(document).ready(function () {
-    percentage()
-    require('../header/events')
-    require('./comments_events')
-  })
 
   // coger id de la url para pedir ese post al json
   let id = document.URL.split('/').pop()
@@ -47,6 +50,12 @@ page('/app/noticia/:id', getAsideNew, getCurrentUser, getCommentsAgree, getComme
     commentsDisagreeLikes,
     user
   }
+
+  $(document).ready(function () {
+    percentage()
+    require('../header/events')
+    require('./comments_events')
+  })
 
   next()
 }, aside)

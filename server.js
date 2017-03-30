@@ -3,7 +3,7 @@ var mongoose = require('mongoose')
 var app = require('./app')
 
 // ******** UNCOMMENT ON PRODUCTION ***********
-// app.settings.env = 'production'
+app.settings.env = 'production'
 
 // Checks if is working on development or production for DB
 app.settings.env === 'development' ? mongoose.connect(config.dbDev)
