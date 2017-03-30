@@ -15,11 +15,11 @@ module.exports = function (feedback) {
         </div>
         <div>
           Contraseña
-          <input type="password" name="password" />
+          <input pattern=".{8,}" required title="La contraseña has de tener 8 caracteres mínimo" type="password" name="password" />
         </div>
         <div>
           Confirma tu contraseña
-          <input type="password" name="password_confirmation" />
+          <input pattern=".{8,}" required title="La contraseña has de tener 8 caracteres mínimo" type="password" name="password_confirmation" />
         </div>
         <div class="Signup_form-form-error">${feedback.e || ''}</div>
         <input class="Signup_form-form-submit" type="Submit" value="¡Regístrame!" />

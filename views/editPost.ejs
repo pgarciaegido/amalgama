@@ -2,6 +2,7 @@
 <body>
   <div class="Post_handle">
     <h1>Edit Post</h1>
+    <form method="POST" action="/api/modifynew/<%= id %>?_method=put">
     <!-- title - subtitle - password -->
     <%- include ./create_edit-form/form-title_subtitle_pass %>
     <!-- TAGS -->
