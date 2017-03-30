@@ -1,6 +1,5 @@
 import $           from 'jquery'
 import { comCard } from './modules'
-import votesLiked  from './votesLiked'
 import moment      from 'moment'
 import func        from './comments_events_functions'
 import votes       from './vote_post_comments_ajax.js'

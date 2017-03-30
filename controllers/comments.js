@@ -188,7 +188,7 @@ function likeComment (req, res) {
 
         // From the commentId, update the value and redirect to the post
         Com.findByIdAndUpdate(commentId, update, function (err, comment) {
-          if(err) console.log(err)
+          if(err) return console.log(err)
           return res.send(String(comment.likedBy.length))
         })
       })

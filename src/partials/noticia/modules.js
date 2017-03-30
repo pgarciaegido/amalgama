@@ -183,6 +183,7 @@ function comCard (user, comment) {
         <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>
       </div>
     </div>
+    <div id="comments-like-error" class="Noticias_comentarios_card-error"></div>
   </div>`
 }
 

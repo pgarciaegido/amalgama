@@ -8,15 +8,17 @@ import aside      from '../aside'
 
 import { getNew, getAsideNew, getCurrentUser } from '../ajax'
 
-// Homepage when not logged in
+page('/', (ctx, next) => {
+  window.location.href = '/app'
+})
 
+// Homepage when not logged in
 page('/invitado', header, getNew, getAsideNew, (ctx, next) => {
   loadHomepage(ctx)
   next()
 }, aside)
 
 // Homepage when logged in
-
 page('/app', getCurrentUser, header, getNew, getAsideNew, (ctx, next) => {
   loadHomepage(ctx)
   next()

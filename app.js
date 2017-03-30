@@ -31,7 +31,7 @@ app.use(cookieSession({
 
 // ************************ ROUTES FROM ROOT
 
-app.get('/', redirect)
+app.get('/', render)
 app.get('/invitado', render)
 app.get('/registrate', render)
 app.post('/signup', auth.signup)

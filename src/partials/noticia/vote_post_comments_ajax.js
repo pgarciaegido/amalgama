@@ -94,10 +94,11 @@ function ajaxErrorResponse(loader, $container, $hide, $feedback){
 
 function ajaxVoteComment () {
 
-  let id = $(this).attr('id')
+  let id         = $(this).attr('id')
   let $container = $(this).parent()
-  let $counter = $container.find('#comments-like-counter')
-  let commentId = $(this).attr('data-comment')
+  let $error     = $container.parent().next()
+  let $counter   = $container.find('#comments-like-counter')
+  let commentId  = $(this).attr('data-comment')
 
   const voted   = yo`<span id="new-card-liked" data-comment="${commentId}" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>`
   const unVoted = yo`<span id="new-card" data-comment="${commentId}" class="Noticias_comentarios_card-feedback-like-icon"></span>`
@@ -119,14 +120,21 @@ function ajaxVoteComment () {
 
   $.post(`/api/comment-like/${commentId}`, (data) => {
     // If there is Error on the reply
-    // if (data.indexOf('Error') !== -1)
-    //   return ajaxErrorResponse(loader, $container, $hide, $feedback)
-    console.log(data)
+    if (data.indexOf('Error') !== -1)
+      return commentErrorHandler($error, $hide, $container)
+
     $container.prepend($show)
     $counter.html(Number(data) + Number(operation))
   })
   //handles error. Logs error and reset previus icon. Insert fb message and then removes it
   .fail((response) => {
-    console.log(response.responseText)
+    // console.log(response.responseText)
+    commentErrorHandler($error, $hide, $container)
   })
+}
+
+function commentErrorHandler ($error, $hide, $container) {
+  $container.prepend($hide)
+  $error.html('No se ha podido realizar esta operación. Intentelo más tarde.')
+  setTimeout(() => { $error.html('') }, 3000)
 }

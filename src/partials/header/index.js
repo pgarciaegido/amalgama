@@ -13,7 +13,7 @@ function headerTemplate (user) {
 <nav class="Navbar">
   <span class="Navbar-icon-menu" id="header-burguer"></span>
   <span class="Navbar-icon-close" id="header-close"></span>
-  <a href="/" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>
+  <a href="/app" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>
   <div class="Navbar-search">
     ${headerDesktop(user)}
     <input type="search" class="Navbar-search-input" id="header-search-input">

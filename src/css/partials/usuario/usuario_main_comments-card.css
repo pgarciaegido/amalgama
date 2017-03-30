@@ -35,9 +35,12 @@
 			display: flex;
 
 			&-icon{
-				margin-top: -4px;
-				margin-right: 4px;
+				background: no-repeat url(/img/sprite.svg) -2px -40px;
+				background-size: auto;
+				height: 15px;
 				width: 15px;
+				margin-top: 0;
+				margin-right: 7px;
 			}
 
 			&-counter{
@@ -45,7 +48,7 @@
 				font-size: $comment-card;
 			}
 
-			span{
+			&-megusta{
 				padding-left: 6px;
 				margin: 0;
 				font-size: $comment-card;

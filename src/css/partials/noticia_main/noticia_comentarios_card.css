@@ -76,4 +76,11 @@
 			}
 		}
 	}
+
+	&-error{
+		padding-top: 10px;
+		color: $red;
+		font-size: 0.8em;
+		font-weight: 700;
+	}
 }

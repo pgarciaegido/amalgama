@@ -70,15 +70,15 @@
 
 	__webpack_require__(148);
 
-	__webpack_require__(158);
+	__webpack_require__(157);
 
-	__webpack_require__(160);
+	__webpack_require__(159);
 
-	__webpack_require__(162);
+	__webpack_require__(161);
 
-	__webpack_require__(167);
+	__webpack_require__(166);
 
-	__webpack_require__(169);
+	__webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11251,15 +11251,17 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Homepage when not logged in
+	(0, _page2.default)('/', function (ctx, next) {
+	  window.location.href = '/app';
+	});
 
+	// Homepage when not logged in
 	(0, _page2.default)('/invitado', _index2.default, _ajax.getNew, _ajax.getAsideNew, function (ctx, next) {
 	  loadHomepage(ctx);
 	  next();
 	}, _aside2.default);
 
 	// Homepage when logged in
-
 	(0, _page2.default)('/app', _ajax.getCurrentUser, _index2.default, _ajax.getNew, _ajax.getAsideNew, function (ctx, next) {
 	  loadHomepage(ctx);
 	  next();
@@ -27450,7 +27452,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu" id="header-burguer"></span>\n  <span class="Navbar-icon-close" id="header-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input" id="header-search-input">\n    <span class="Navbar-search-icon" id="header-search"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob" id="header-menu-mobile">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu" id="header-burguer"></span>\n  <span class="Navbar-icon-close" id="header-close"></span>\n  <a href="/" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input" id="header-search-input">\n    <span class="Navbar-search-icon" id="header-search"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob" id="header-menu-mobile">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
+	var _templateObject = _taggedTemplateLiteral(['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu" id="header-burguer"></span>\n  <span class="Navbar-icon-close" id="header-close"></span>\n  <a href="/app" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input" id="header-search-input">\n    <span class="Navbar-search-icon" id="header-search"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob" id="header-menu-mobile">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>'], ['<div>\n<nav class="Navbar">\n  <span class="Navbar-icon-menu" id="header-burguer"></span>\n  <span class="Navbar-icon-close" id="header-close"></span>\n  <a href="/app" id="header-logo-anchor"><div class="Navbar-logo" id="header-logo"></div></a>\n  <div class="Navbar-search">\n    ', '\n    <input type="search" class="Navbar-search-input" id="header-search-input">\n    <span class="Navbar-search-icon" id="header-search"></span>\n  </div>\n</nav>\n<nav class="Navbar_menu_mob" id="header-menu-mobile">\n  <ul class="Navbar_menu_mob-menu">\n    ', '\n  </ul>\n</nav>\n<div id="bg"></div>\n</div>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>'], ['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="./accede" class="Navbar-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar-menu-item">Registrate</a>\n              </div>']),
 	    _templateObject3 = _taggedTemplateLiteral(['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>'], ['<div class="Navbar-menu" id="header-menu-desktop">\n                <a href="/app/usuario/', '" class="Navbar-menu-item">Mi perfil</a>\n                <a href="/app/logout" class="Navbar-menu-item">Logout</a>\n              </div>']),
 	    _templateObject4 = _taggedTemplateLiteral(['<div>\n                <a href="./accede" class="Navbar_menu_mob-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu_mob-menu-item">Registrate</a>\n              </div>'], ['<div>\n                <a href="./accede" class="Navbar_menu_mob-menu-item">Accede</a>\n                <a href="./registrate" class="Navbar_menu_mob-menu-item">Registrate</a>\n              </div>']),
@@ -28086,7 +28088,7 @@
 	    _templateObject11 = _taggedTemplateLiteral(['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>'], ['<div>\n  <div class="Noticia_comentarios_list-order Noticia_hide_on_mobile">\n    <button id="noticia-sort-likes-', '" data-side="', '" data-sort="likes" class="Noticia_comentarios_list-order-votes">M\xE1s votado</button>\n    <button id="noticia-sort-new-', '" data-side="', '" data-sort="date" class="Noticia_comentarios_list-order-new sort-comments-active">M\xE1s nuevos</button>\n  </div>\n  <div id="noticia-comments-container-', '" class="Noticia_comentarios_list-comments Noticia_hide_on_mobile">\n    ', '\n    ', '\n  </div>\n  </div>']),
 	    _templateObject12 = _taggedTemplateLiteral(['\n  ', '\n  '], ['\n  ', '\n  ']),
 	    _templateObject13 = _taggedTemplateLiteral(['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>'], ['<form method="POST" action="/api/', '" class="Noticia_comentarios_list-comments-create">\n    <span id="close-', '" class="Noticia_comentarios_list-comments-create-cancel"></span>\n    <textarea name="create" id="textarea" cols="30" rows="10"></textarea>\n    <div class="Noticia_comentarios_list-comments-create-buttons">\n      <input type="submit" id="enviar-comments" class="Noticia_comentarios_list-comments-create-buttons-enviar" value="Enviar" />\n    </div>\n  </form>']),
-	    _templateObject14 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n  </div>']),
+	    _templateObject14 = _taggedTemplateLiteral(['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n    <div id="comments-like-error" class="Noticias_comentarios_card-error"></div>\n  </div>'], ['<div class="Noticias_comentarios_card">\n    <p class="Noticias_comentarios_card-counter">#<span>', '</span></p>\n    <div class="Noticias_comentarios_card-user">\n      <div class="Noticias_comentarios_card-user-info">\n        <p class="Noticias_comentarios_card-user-info-username">', '</p>\n      </div>\n      <p class="Noticias_comentarios_card-user-date">', '</p>\n    </div>\n    <p class="Noticias_comentarios_card-comment">', '</p>\n    <div class="Noticias_comentarios_card-feedback">\n      <div class="Noticias_comentarios_card-feedback-like">\n        ', '\n        <p id="comments-like-counter" class="Noticias_comentarios_card-feedback-like-counter">', '</p>\n        <span class="Noticias_comentarios_card-feedback-like-megusta">me gusta</span>\n      </div>\n    </div>\n    <div id="comments-like-error" class="Noticias_comentarios_card-error"></div>\n  </div>']),
 	    _templateObject15 = _taggedTemplateLiteral(['<span id="new-card-liked" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>'], ['<span id="new-card-liked" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon-liked"></span>']),
 	    _templateObject16 = _taggedTemplateLiteral(['<span id="new-card" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon"></span>'], ['<span id="new-card" data-comment="', '" class="Noticias_comentarios_card-feedback-like-icon"></span>']);
 
@@ -28242,27 +28244,23 @@
 
 	var _modules = __webpack_require__(150);
 
-	var _votesLiked = __webpack_require__(153);
-
-	var _votesLiked2 = _interopRequireDefault(_votesLiked);
-
 	var _moment = __webpack_require__(24);
 
 	var _moment2 = _interopRequireDefault(_moment);
 
-	var _comments_events_functions = __webpack_require__(154);
+	var _comments_events_functions = __webpack_require__(153);
 
 	var _comments_events_functions2 = _interopRequireDefault(_comments_events_functions);
 
-	var _vote_post_comments_ajax = __webpack_require__(156);
+	var _vote_post_comments_ajax = __webpack_require__(155);
 
 	var _vote_post_comments_ajax2 = _interopRequireDefault(_vote_post_comments_ajax);
 
-	var _comments_events_vars = __webpack_require__(155);
+	var _comments_events_vars = __webpack_require__(154);
 
 	var _comments_events_vars2 = _interopRequireDefault(_comments_events_vars);
 
-	var _comments_events_sort = __webpack_require__(157);
+	var _comments_events_sort = __webpack_require__(156);
 
 	var _comments_events_sort2 = _interopRequireDefault(_comments_events_sort);
 
@@ -28313,49 +28311,7 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// ////// THIS FUNCTION INCREASES OR DECREASES THE VOTE COUNTER WHEN CLICKING A HANDLER
-
-	module.exports = function votesLiked(that, sign, votes, barNum, newHandler) {
-	  // --- Gets counter number through the class name
-	  var counter = that.siblings();
-	  counter = counter.map(function () {
-	    if ((0, _jquery2.default)(this).attr('class').indexOf('counter') !== -1) {
-	      return this;
-	    }
-	  });
-	  var temp = counter.text();
-
-	  // ----if the sign is positive, we add 1, otherwise, we substract 1
-
-	  var newNumber = sign ? Number(temp) + 1 : Number(temp) - 1;
-	  counter.text(newNumber);
-
-	  // ------if the number is related directly with votes bar, change that numbers too
-
-	  if (barNum !== null) {
-	    (0, _jquery2.default)('.Votes_bar').find(barNum).html(newNumber);
-	  }
-	  that.css('display', 'none');
-	  that.siblings(newHandler).css('display', 'block');
-	};
-
-/***/ },
-/* 154 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
 	var _modules = __webpack_require__(150);
-
-	var _votesLiked = __webpack_require__(153);
-
-	var _votesLiked2 = _interopRequireDefault(_votesLiked);
 
 	var _moment = __webpack_require__(24);
 
@@ -28394,7 +28350,7 @@
 	// Calls createShow
 	// Gives the 'open' comment button an id so now is used to closeit
 	function commentAgree() {
-	  var v = __webpack_require__(155);
+	  var v = __webpack_require__(154);
 	  createShow(v.createAgree, v.commentsAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-closeagree');
 	  v.comentarAgree.html('Cerrar');
@@ -28402,7 +28358,7 @@
 
 	// Opens input in disagree
 	function commentDisagree() {
-	  var v = __webpack_require__(155);
+	  var v = __webpack_require__(154);
 	  createShow(v.createDisagree, v.commentsDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-closedisagree');
 	  v.comentarDisagree.html('Cerrar');
@@ -28419,14 +28375,14 @@
 	}
 
 	function commentCloseAgree() {
-	  var v = __webpack_require__(155);
+	  var v = __webpack_require__(154);
 	  createHide(v.createAgree, v.commentsAgree, v.textAgree, v.comentarAgree);
 	  v.comentarAgree.attr('id', 'comentar-agree');
 	  v.comentarAgree.html('Comentar');
 	}
 
 	function commentCloseDisagree() {
-	  var v = __webpack_require__(155);
+	  var v = __webpack_require__(154);
 	  createHide(v.createDisagree, v.commentsDisagree, v.textDisagree, v.comentarDisagree);
 	  v.comentarDisagree.attr('id', 'comentar-disagree');
 	  v.comentarDisagree.html('Comentar');
@@ -28441,7 +28397,7 @@
 	// commentsMobile[1] && [4] is CONTAINER
 	// commentsMobile[2] && [5] is COMMENT BUTTON
 	function commentsMobile(ev) {
-	  var v = __webpack_require__(155);
+	  var v = __webpack_require__(154);
 	  if ((0, _jquery2.default)(ev.target).attr('class').indexOf('disagree') !== -1) {
 	    if (disagreeOpened === false || disagreeOpened === undefined) {
 	      (0, _jquery2.default)(v.commentsMobile[3]).css('display', 'flex');
@@ -28470,7 +28426,7 @@
 	}
 
 /***/ },
-/* 155 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28509,7 +28465,7 @@
 	};
 
 /***/ },
-/* 156 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28629,6 +28585,7 @@
 
 	  var id = (0, _jquery2.default)(this).attr('id');
 	  var $container = (0, _jquery2.default)(this).parent();
+	  var $error = $container.parent().next();
 	  var $counter = $container.find('#comments-like-counter');
 	  var commentId = (0, _jquery2.default)(this).attr('data-comment');
 
@@ -28653,20 +28610,28 @@
 
 	  _jquery2.default.post('/api/comment-like/' + commentId, function (data) {
 	    // If there is Error on the reply
-	    // if (data.indexOf('Error') !== -1)
-	    //   return ajaxErrorResponse(loader, $container, $hide, $feedback)
-	    console.log(data);
+	    if (data.indexOf('Error') !== -1) return commentErrorHandler($error, $hide, $container);
+
 	    $container.prepend($show);
 	    $counter.html(Number(data) + Number(operation));
 	  })
 	  //handles error. Logs error and reset previus icon. Insert fb message and then removes it
 	  .fail(function (response) {
-	    console.log(response.responseText);
+	    // console.log(response.responseText)
+	    commentErrorHandler($error, $hide, $container);
 	  });
 	}
 
+	function commentErrorHandler($error, $hide, $container) {
+	  $container.prepend($hide);
+	  $error.html('No se ha podido realizar esta operación. Intentelo más tarde.');
+	  setTimeout(function () {
+	    $error.html('');
+	  }, 3000);
+	}
+
 /***/ },
-/* 157 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28682,7 +28647,7 @@
 	// Reappends another array with reordered comments, date or likes
 	module.exports = function sort(e) {
 	  // Require DOM elements and comments
-	  var v = __webpack_require__(155);
+	  var v = __webpack_require__(154);
 	  var c = __webpack_require__(148);
 
 	  var thisData = (0, _jquery2.default)(this).attr('data-side'); //agree / disagree
@@ -28721,7 +28686,7 @@
 	}
 
 /***/ },
-/* 158 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28738,7 +28703,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(159);
+	var _template = __webpack_require__(158);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28761,7 +28726,7 @@
 	});
 
 /***/ },
-/* 159 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28781,7 +28746,7 @@
 	};
 
 /***/ },
-/* 160 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28798,7 +28763,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(161);
+	var _template = __webpack_require__(160);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -28829,7 +28794,7 @@
 	}
 
 /***/ },
-/* 161 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28864,7 +28829,7 @@
 	}
 
 /***/ },
-/* 162 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28881,11 +28846,11 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(163);
+	var _template = __webpack_require__(162);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _modules = __webpack_require__(165);
+	var _modules = __webpack_require__(164);
 
 	var _comments = __webpack_require__(151);
 
@@ -28912,7 +28877,7 @@
 			// Header events
 			__webpack_require__(142);
 			// Sorting comments events
-			__webpack_require__(166);
+			__webpack_require__(165);
 		});
 
 		module.exports = {
@@ -28922,7 +28887,7 @@
 	});
 
 /***/ },
-/* 163 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28935,11 +28900,11 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(164);
+	var _comments_card = __webpack_require__(163);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
-	var _modules = __webpack_require__(165);
+	var _modules = __webpack_require__(164);
 
 	var _modules2 = _interopRequireDefault(_modules);
 
@@ -28965,12 +28930,12 @@
 	}
 
 /***/ },
-/* 164 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">', '</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>'], ['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">', '</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <img src="/img/thumbs-up-black.svg" alt="" class="Usuario_main_comments-card-details-like-icon">\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>']);
+	var _templateObject = _taggedTemplateLiteral(['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">', '</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <span class="Usuario_main_comments-card-details-like-icon"></span>\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>'], ['<div class="Usuario_main_comments-card">\n  <h2 class="Usuario_main_comments-card-title">', '</h2>\n  <p class="Usuario_main_comments-card-text">', '</p>\n  <div class="Usuario_main_comments-card-details">\n    <p class="Usuario_main_comments-card-details-date">', '</p>\n    <div class="Usuario_main_comments-card-details-like">\n      <span class="Usuario_main_comments-card-details-like-icon"></span>\n      <p id="comments-like-counter" class="Usuario_main_comments-card-details-like-counter">', '</p>\n      <span class="Usuario_main_comments-card-details-like-megusta">me gusta</span>\n    </div>\n  </div>\n</div>']);
 
 	var _yoYo = __webpack_require__(12);
 
@@ -28989,7 +28954,7 @@
 	};
 
 /***/ },
-/* 165 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29005,7 +28970,7 @@
 
 	var _yoYo2 = _interopRequireDefault(_yoYo);
 
-	var _comments_card = __webpack_require__(164);
+	var _comments_card = __webpack_require__(163);
 
 	var _comments_card2 = _interopRequireDefault(_comments_card);
 
@@ -29064,7 +29029,7 @@
 	}
 
 /***/ },
-/* 166 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29073,18 +29038,18 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
-	var _index = __webpack_require__(162);
+	var _index = __webpack_require__(161);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _modules = __webpack_require__(165);
+	var _modules = __webpack_require__(164);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Changes the comments to be sorted by date
 	var buttonDate = (0, _jquery2.default)('#usuario-sort-date');
 	buttonDate.on('click', function (e) {
-	  var c = __webpack_require__(162);
+	  var c = __webpack_require__(161);
 	  clickSort(e, c.userComments);
 
 	  buttonDate.addClass('sort-comments-active');
@@ -29094,7 +29059,7 @@
 	// Changes the comments to be sorted by likes
 	var buttonLikes = (0, _jquery2.default)('#usuario-sort-likes');
 	buttonLikes.on('click', function (e) {
-	  var c = __webpack_require__(162);
+	  var c = __webpack_require__(161);
 	  clickSort(e, c.userCommentsLikes);
 
 	  buttonLikes.addClass('sort-comments-active');
@@ -29108,7 +29073,7 @@
 	}
 
 /***/ },
-/* 167 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29125,7 +29090,7 @@
 
 	var _page2 = _interopRequireDefault(_page);
 
-	var _template = __webpack_require__(168);
+	var _template = __webpack_require__(167);
 
 	var _query_handler = __webpack_require__(145);
 
@@ -29147,7 +29112,7 @@
 	});
 
 /***/ },
-/* 168 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29188,7 +29153,7 @@
 	}
 
 /***/ },
-/* 169 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
