@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "standard",
-    "start": "concurrently \" mongod\" nodemon server \" gulp watch\" \"atom .\""
+    "start": "node server",
+    "dev": "concurrently \" mongod\" nodemon server \" gulp watch\" \"atom .\""
   },
   "standard": {
     "ignore": [
