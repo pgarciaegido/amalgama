@@ -3,8 +3,9 @@ var router = express.Router()
 var render = require('../controllers/render').renderIndex
 
 router.get('/', function(req, res) {
-  if (req.session) render()
-  res.redirect('/invitado')
+  console.log(req.session)
+  if (req.session) res.render('index')
+  res.redirect('invitado')
 })
 
 router.get('/logout', function (req, res) {
