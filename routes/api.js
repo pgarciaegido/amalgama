@@ -23,7 +23,7 @@ api.post('/createnew', newsCtrl.createNew)
 api.get('/modifynew/:id', render.renderEdit)
 // Modify certain post
 api.put('/modifynew/:id', newsCtrl.modifyNew)
-// Delete certain post
+// Delete certain post. Do so with POSTMAN
 api.delete('/deletenew/:id', newsCtrl.deleteNew)
 
 // Upvotes or downvote posts

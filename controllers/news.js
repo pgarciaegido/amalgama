@@ -132,13 +132,13 @@ function vote (req, res) {
   User.findById(userId, function(err, u) {
     if (err) return console.log(err)
 
-    // If vote is to agree
-    if (path === '/upvote' || path === '/unupvote'){
-      for (let i in u.agreeVotes) {
-        if (u.agreeVotes[i] === postId)
-          voted = true
-      }
-    } else if (path === '/downvote' || path === '/undownvote') {
+    // Check if user has already liked or disliked a post
+    for (let i in u.agreeVotes) {
+      if (u.agreeVotes[i] === postId)
+        voted = true
+    }
+
+    if (!voted) {
       for (let i in u.disagreeVotes) {
         if (u.disagreeVotes[i] === postId)
           voted = true
