@@ -13,7 +13,7 @@ module.exports = {
 
 function noticiaCuerpo (n) {
   return yo`<section class="Noticia_cuerpo">
-    <h2 class="Noticia_cuerpo-breadcrumb">España</h2>
+    <h2 class="Noticia_cuerpo-breadcrumb">${n.tags[0]}</h2>
     <h1 class="Noticia_cuerpo-title">${n.title}</h1>
     ${details(n.date, n.tags)}
     <h4 class="Noticia_cuerpo-entradilla">${n.subtitle}</h4>
