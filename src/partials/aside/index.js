@@ -1,4 +1,3 @@
-import $  from 'jquery'
 import yo from 'yo-yo'
 
 import { colorBalance } from './logics'
@@ -7,13 +6,14 @@ import { colorBalance } from './logics'
 import { asideRegister, asideSuscribe, temas, profile } from './modules'
 
 module.exports = function aside (ctx) {
-  const container = $('#main-container')
+  const container = document.getElementById('main-container')
   const ordered = ctx.ordered
-  if (document.URL.indexOf('invitado') == -1) {
+
+  if (ctx.user) {
     let user = ctx.user
-    container.append(userTemplate(ordered, user))
+    container.appendChild(userTemplate(ordered, user))
   } else {
-    container.append(invitadoTemplate(ordered))
+    container.appendChild(invitadoTemplate(ordered))
   }
   colorBalance()
 }

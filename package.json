@@ -6,7 +6,7 @@
   "scripts": {
     "test": "standard",
     "start": "node server",
-    "dev": "concurrently \" mongod\" nodemon server \" gulp watch\" \"atom .\""
+    "dev": "concurrently \" mongod\" nodemon server \" gulp watch\" \"atom .\" \"start chrome \"http://localhost:8080\"\""
   },
   "standard": {
     "ignore": [
