@@ -25,9 +25,9 @@ page('/app', getCurrentUser, header, getNew, getAsideNew, (ctx, next) => {
 }, aside)
 
 function loadHomepage (ctx) {
-  require('../header/events')
-  require('../feed/feed_events')
   $(document).ready(() => {
+    require('../header/events')
+    require('../feed/feed_events')
     articles()
     percentage()
   })

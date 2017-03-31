@@ -11157,49 +11157,21 @@
 
 /***/ },
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 
-	var _jquery = __webpack_require__(5);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// Get heights of titles and details, so we can add padding to equal the cards
-
-	module.exports = function articles() {
-	  var _this = this;
-
-	  var heights = [];
-	  // Get heights of elements
-	  (0, _jquery2.default)('.Feed-article').each(function (i, obj) {
-	    var title = (0, _jquery2.default)(_this).find((0, _jquery2.default)('.Feed-article-title'));
-	    title = title.outerHeight(true);
-	    var details = (0, _jquery2.default)(_this).find((0, _jquery2.default)('.Details'));
-	    details = details.height();
-
-	    var total = title + details;
-	    heights.push(total);
-	  });
-
-	  // Get highest card
-	  var votesBar = (0, _jquery2.default)('.Feed-article').find((0, _jquery2.default)('.Votes_bar'));
+	module.exports = function articlesSetEqualHeights() {
+	  var titles = Array.from(document.getElementsByClassName('Feed-article-title'));
 	  var highest = 0;
-
-	  for (var i in heights) {
-	    if (heights[i] > highest) {
-	      highest = heights[i];
-	    }
-	  }
-
-	  // Add padding to the shortest cards
-	  votesBar.each(function (i, obj) {
-	    if (heights[i] !== highest) {
-	      var padding = highest - heights[i] + 'px';
-	      (0, _jquery2.default)(obj).css('padding-top', padding);
-	    }
+	  // Get highest title offset
+	  titles.forEach(function (title) {
+	    if (title.offsetHeight > highest) highest = title.offsetHeight;
+	  });
+	  // Sets margin-bottom
+	  titles.forEach(function (title) {
+	    var separator = title.parentElement.getElementsByClassName('feed-separator')[0];
+	    if (title.offsetHeight < highest) separator.style.paddingBottom = Number(highest - title.offsetHeight) + 'px';
 	  });
 	};
 
@@ -11307,9 +11279,9 @@
 	}, _aside2.default);
 
 	function loadHomepage(ctx) {
-	  __webpack_require__(149);
-	  __webpack_require__(7);
 	  (0, _jquery2.default)(document).ready(function () {
+	    __webpack_require__(149);
+	    __webpack_require__(7);
 	    (0, _feed_events2.default)();
 	    (0, _get_percentage2.default)();
 	  });
@@ -28332,7 +28304,7 @@
 
 	'use strict';
 
-	var _templateObject = _taggedTemplateLiteral(['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>'], ['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>']),
+	var _templateObject = _taggedTemplateLiteral(['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="feed-separator"></div>\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>'], ['<article class="Feed-article">\n      <h2 class="Feed-article-title">', '</h2>\n        ', '\n      <div class="feed-separator"></div>\n      <div class="Feed-article-bars">\n        ', '\n      </div>\n        ', '\n    </article>']),
 	    _templateObject2 = _taggedTemplateLiteral(['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>'], ['<a href=', ' class="Feed-article-button">Ver m\xE1s</a>']);
 
 	var _yoYo = __webpack_require__(12);
@@ -28498,13 +28470,10 @@
 
 	// If the balance is positive, color = green
 	function colorBalance() {
-	  debugger;
 	  // Array.from creates an array from an HTMLCollection
 	  var temas = Array.from(document.getElementsByClassName('Aside_temas-tema'));
 	  temas.forEach(function (tema) {
-	    console.log(tema);
 	    var balance = tema.getElementsByClassName('Aside_temas-tema-info-balance')[0];
-	    console.log(balance);
 	    if (balance.innerHTML.charAt(0) !== '-') balance.style.color = '#7ace7a';
 	  });
 	}

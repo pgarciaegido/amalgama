@@ -9,6 +9,7 @@ module.exports = function feed (n) {
   return yo`<article class="Feed-article">
       <h2 class="Feed-article-title">${n.title}</h2>
         ${details(n.date, n.tags)}
+      <div class="feed-separator"></div>
       <div class="Feed-article-bars">
         ${votesBar(n.agreeVotes, n.disagreeVotes)}
       </div>
